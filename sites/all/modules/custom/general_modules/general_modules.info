@@ -1,0 +1,16 @@
+name = General Modules
+core = 7.x
+package = Features
+version = 7.x-1.00
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = backup_migrate
+dependencies[] = ctools
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = features
+dependencies[] = features_diff
+dependencies[] = googleanalytics
+dependencies[] = views
+dependencies[] = views_ui
+features[features_api][] = api:2
