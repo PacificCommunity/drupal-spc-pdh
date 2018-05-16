@@ -11,6 +11,7 @@ dependencies[] = diff
 dependencies[] = features
 dependencies[] = features_diff
 dependencies[] = googleanalytics
+dependencies[] = page_manager
 dependencies[] = views
 dependencies[] = views_ui
 features[features_api][] = api:2
