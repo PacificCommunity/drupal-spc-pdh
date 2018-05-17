@@ -1,0 +1,13 @@
+name = Main layout
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panels_mini
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = panels_mini:panels_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = site_template__panel_context_f9a98f20-2aaf-4069-9127-c7acc313b74c
+features[panels_mini][] = footer
+features[panels_mini][] = header
