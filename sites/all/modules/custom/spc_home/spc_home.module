@@ -4,6 +4,12 @@
  * Code for the SPC Home feature.
  */
 
+include_once 'spc_home.features.inc';
+/**
+ * @file
+ * Code for the SPC Home feature.
+ */
+
 /**
  * Implements hook_preprocess_bean().
  */
