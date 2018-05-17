@@ -1,5 +1,5 @@
-name = Parrot Bootstrap 3
-description = Parrot sits on the shoulders of some great projects. Parrot is a Drupal 7 Mothership subtheme that uses Twitter Bootstrap 3.
+name = SPC
+description = SPC sits on the shoulders of some great projects. SPC is a Drupal 7 Mothership subtheme that uses Twitter Bootstrap 3.
 screenshot = screenshot.png
 engine = phptemplate
 core = 7.x
@@ -151,9 +151,3 @@ settings[mothership_classes_body_freeform] = ''
 settings[mothership_classes_block_freeform] = ''
 settings[mothership_classes_node_freeform] = ''
 settings[mothership_classes_region_freeform] = ''
-
-; Information added by drupal.org packaging script on 2013-07-16
-version = "7.x-1.x-dev"
-core = "7.x"
-project = "Parrot"
-datestamp = "1373983271"
