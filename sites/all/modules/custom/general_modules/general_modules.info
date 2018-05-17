@@ -20,6 +20,7 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = panels_everywhere
 dependencies[] = panels_mini
+dependencies[] = spc_home
 dependencies[] = views
 dependencies[] = views_ui
 features[features_api][] = api:2
