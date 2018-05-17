@@ -13,7 +13,7 @@ $plugin = array(
         'template'  => 'parrot_styles-pane',
 
         // Change theme name 'parrot' to match changed theme name.
-        'path'      => drupal_get_path('theme', 'parrot') . '/plugins/styles/parrot_styles',
+        'path'      => drupal_get_path('theme', 'spc') . '/plugins/styles/parrot_styles',
         'variables' => array(
           'content'  => NULL,
           'settings' => NULL,

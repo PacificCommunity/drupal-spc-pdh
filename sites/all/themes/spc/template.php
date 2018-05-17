@@ -4,11 +4,11 @@
 */
 
 
-function parrot_preprocess_html(&$vars) {
+function spc_preprocess_html(&$vars) {
   //  kpr($vars['content']);
 }
 
-function parrot_preprocess_page(&$vars,$hook) {
+function spc_preprocess_page(&$vars,$hook) {
   //typekit
   //drupal_add_js('http://use.typekit.com/XXX.js', 'external');
   //drupal_add_js('try{Typekit.load();}catch(e){}', array('type' => 'inline'));
@@ -35,11 +35,11 @@ function parrot_preprocess_page(&$vars,$hook) {
   }
 }
 
-function parrot_preprocess_region(&$vars,$hook) {
+function spc_preprocess_region(&$vars,$hook) {
   //  kpr($vars['content']);
 }
 
-function parrot_preprocess_block(&$vars, $hook) {
+function spc_preprocess_block(&$vars, $hook) {
   //  kpr($vars['content']);
 
   //lets look for unique block in a region $region-$blockcreator-$delta
@@ -78,15 +78,15 @@ function parrot_preprocess_block(&$vars, $hook) {
 
 }
 
-function parrot_preprocess_node(&$vars,$hook) {
+function spc_preprocess_node(&$vars,$hook) {
   //  kpr($vars['content']);
 }
 
-function parrot_preprocess_comment(&$vars,$hook) {
+function spc_preprocess_comment(&$vars,$hook) {
   //  kpr($vars['content']);
 }
 
-function parrot_preprocess_field(&$vars,$hook) {
+function spc_preprocess_field(&$vars,$hook) {
   //  kpr($vars['content']);
   //add class to a specific field
   switch ($vars['element']['#field_name']) {
@@ -106,6 +106,6 @@ function parrot_preprocess_field(&$vars,$hook) {
 
 }
 
-function parrot_preprocess_maintenance_page(){
+function spc_preprocess_maintenance_page(){
   //  kpr($vars['content']);
 }
