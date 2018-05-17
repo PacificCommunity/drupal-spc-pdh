@@ -1,0 +1,6 @@
+name = SPC Home Banner
+description = Home banner with CKAN search
+package = public-action
+version = VERSION
+core = 7.x
+files[] = spc_home_banner.module

@@ -21,7 +21,6 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = panels_everywhere
 dependencies[] = panels_mini
-dependencies[] = spc_home
 dependencies[] = pathauto
 dependencies[] = token
 dependencies[] = views
