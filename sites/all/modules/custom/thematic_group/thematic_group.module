@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Thematic group feature.
+ */
+
+include_once 'thematic_group.features.inc';
