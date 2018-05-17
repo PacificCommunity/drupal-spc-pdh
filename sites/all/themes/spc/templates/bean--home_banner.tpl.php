@@ -28,18 +28,14 @@
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <?php
+    print render($content['field_banner_image']);
+  ?>
   <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      print render($content['field_banner_image']);
-     ?>
-     <div class="edu-home-banner-block-main">
-      <div class="edu-home-banner-block">
-        <?php
-          print render($content['field_banner_title']);
-          print render($content['field_banner_sub_title']);
-        ?>
+    <div class="spc-home-banner-block-main">
+      <div class="spc-home-banner-block">
         <?php if(!empty($content['search_block'])) : ?>
-          <div id="edu-home-banner-search">
+          <div id="spc-home-banner-search">
             <?php print render($content['search_block']); ?>
           </div>
         <?php endif; ?>

@@ -1,0 +1,40 @@
+<?php
+/**
+ * Implements hook_preprocess_bean().
+ */
+
+function spc_home_preprocess_entity(&$vars) {
+  $type = $vars['entity_type'];
+  if ($type == 'bean') {
+    $bean = $vars['bean'];
+    $bean_type = $bean->type;
+    if ($bean_type == 'home_banner') {
+      $search_form = drupal_get_form('ckan_search_form');
+      $vars['content']['search_block'] = $search_form;
+    }
+  }
+}
+
+function ckan_search_form($form_state) {
+  $form = array();
+
+  $form['ckan_search'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#attributes' => array(
+      'placeholder' => 'Search'
+    )
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+
+  $form['#submit'] = array('ckan_search_submit');
+
+  return $form;
+}
+
+function ckan_search_submit($form, &$form_state) {
+	$form_state['redirect'] = array('/data/dataset', array('query' => array('q' => $form_state['values']['ckan_search'])));
+}
