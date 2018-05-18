@@ -1,0 +1,112 @@
+<?php
+
+  // Search criteria prepared for c-style formatting
+  const CKAN_SEARCH_CRIT_THEMATIC_AREA = 'extras_thematic_area_string:"%s"';
+
+// Additional search param names
+const CKAN_SEARCH_PARAM_POPULAR_FIRST = 'ext_popular_first';
+
+// Various static values
+const CKAN_DEFAULT_ORG_IMAGE = '/base/images/placeholder-organization.png';
+
+
+/**
+ * Implements hook_theme().
+ */
+function ckan_tweaks_theme($existing, $type, $theme, $path)
+{
+  if($type == 'module')
+  {
+    return [
+      'ckan_dataset_overview' => [
+        'variables' => array('dataset'=>3),
+        'template' => 'ckan_dataset_overview'
+      ]
+    ];
+  }
+  return [];
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function ckan_tweaks_block_info() {
+  $blocks['ckan_tweaks-recent_datasets'] = [
+    'info' => t('CKAN recently upated datasets')
+  ];
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ckan_tweaks_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'ckan_tweaks-recent_datasets':
+      $node = menu_get_object();
+      if (!isset($node->field_ckan_thematic_group_id)) {
+        break;
+      }
+      $id = $node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['value'];
+
+      $recent = _ckan_tweaks_search_datasets(
+        [
+          'q' => sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $id),
+          CKAN_SEARCH_PARAM_POPULAR_FIRST => true
+        ]
+      );
+      $ckan_url = $recent['ckan_url'];
+
+      $datasets = array_map(
+        _ckan_tweaks_create_dataset_mapper($ckan_url),
+        $recent['results']
+      );
+
+      foreach ($datasets as &$dataset) {
+        $dataset = theme('ckan_dataset_overview', ['dataset'=>$dataset]);
+      }
+
+      $block['subject'] = t('Recent CKAN updates');
+      $block['content'] = implode('', $datasets);
+      break;
+  }
+  return $block;
+}
+
+
+function _ckan_tweaks_search_datasets($params) {
+  $client = govcms_ckan_client();
+
+  $resp = $client->get('action/package_search', $params);
+  if (!$resp->valid) {
+    watchdog(
+      'ckan_tweaks',
+      'Cannot obtain recent datasets: %status',
+      ['%status' => $resp->status],
+      WATCHDOG_WARNING
+    );
+    return ['count' => 0, 'results' => []];
+  }
+  return [
+    'count' => $resp->data->count,
+    'results' => $resp->data->results,
+    'ckan_url' => variable_get('govcms_ckan_endpoint_url', '')
+  ];
+}
+
+function _ckan_tweaks_create_dataset_mapper($ckan_url) {
+  return function ($dataset) use ($ckan_url) {
+    $image_url = $dataset->organization->image_url;
+    if (!url_is_external($image_url)) {
+      $image_url = $ckan_url . ($image_url ? "/uploads/group/{$image_url}" : CKAN_DEFAULT_ORG_IMAGE);
+    }
+
+    return [
+      'title' => $dataset->title,
+      'description' => $dataset->notes,
+      'image_url' => $image_url,
+      'ckan_url' => $ckan_url . '/dataset/' . $dataset->name
+    ];
+  };
+}
