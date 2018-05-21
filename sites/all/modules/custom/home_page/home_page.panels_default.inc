@@ -27,6 +27,7 @@ function home_page_default_panels_mini() {
     'style_settings' => array(
       'default' => NULL,
       'one_fw_main' => NULL,
+      'minipanel_one_main_fw' => NULL,
     ),
   );
   $display->cache = array();
@@ -37,10 +38,10 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-1002a62e-977e-4dba-8b46-4cc1b036861e';
+  $pane->pid = 'new-7545418a-c403-40e9-835b-2be3335359c8';
   $pane->panel = 'minipanel_one_main_fw';
   $pane->type = 'block';
-  $pane->subtype = 'node-recent';
+  $pane->subtype = 'bean-article-on-home-page';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -56,11 +57,11 @@ function home_page_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '1002a62e-977e-4dba-8b46-4cc1b036861e';
-  $display->content['new-1002a62e-977e-4dba-8b46-4cc1b036861e'] = $pane;
-  $display->panels['minipanel_one_main_fw'][0] = 'new-1002a62e-977e-4dba-8b46-4cc1b036861e';
+  $pane->uuid = '7545418a-c403-40e9-835b-2be3335359c8';
+  $display->content['new-7545418a-c403-40e9-835b-2be3335359c8'] = $pane;
+  $display->panels['minipanel_one_main_fw'][0] = 'new-7545418a-c403-40e9-835b-2be3335359c8';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1002a62e-977e-4dba-8b46-4cc1b036861e';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['blog_preview'] = $mini;
 

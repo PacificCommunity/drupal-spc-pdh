@@ -3,9 +3,6 @@
     <div class='row'>
         <?php $thematic_groups_home = $content['field_thematic_groups_home']['#object']->field_thematic_groups_home['und'];
         foreach ($thematic_groups_home as $key => $value) {
-            if ($key > 5)
-                break;
-
             $entity = entity_uri('node', $value['entity']);
             $entity_path_alias = drupal_get_path_alias($entity['path']);  
             if (!empty($value['entity']->field_icon)) {

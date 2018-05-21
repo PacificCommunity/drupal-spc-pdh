@@ -7652,7 +7652,17 @@ button.close {
   font-weight: 600;
   text-align: center;
 }
+<<<<<<< HEAD
+.bean-article-on-home-page article footer {
+  display: none;
+}
+.bean-article-on-home-page article .field-type-image {
+  float: right;
+}
+.node-type-thematic-group .field-type-image {
+=======
 .node-type-thematic-group .thematic-group-image {
+>>>>>>> 43349f7c85780bfe87cff3a6a24abde612991f08
   float: right;
 }
 .node-type-thematic-group .dataset-title {
