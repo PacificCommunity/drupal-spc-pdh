@@ -14,6 +14,7 @@ dependencies[] = diff
 dependencies[] = ds
 dependencies[] = entity
 dependencies[] = entity_token
+dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = features_diff
 dependencies[] = googleanalytics
