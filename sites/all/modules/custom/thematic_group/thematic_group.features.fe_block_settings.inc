@@ -36,8 +36,8 @@ function thematic_group_default_fe_block_settings() {
         'weight' => 0,
       ),
       'spc' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'spc',
         'weight' => -13,
       ),

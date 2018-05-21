@@ -7652,6 +7652,7 @@ button.close {
   font-weight: 600;
   text-align: center;
 }
+<<<<<<< HEAD
 .bean-article-on-home-page article footer {
   display: none;
 }
@@ -7659,8 +7660,17 @@ button.close {
   float: right;
 }
 .node-type-thematic-group .field-type-image {
+=======
+.node-type-thematic-group .thematic-group-image {
+>>>>>>> 43349f7c85780bfe87cff3a6a24abde612991f08
   float: right;
 }
 .node-type-thematic-group .dataset-title {
   text-align: center;
+}
+.node-type-thematic-group .thematic-group-articles {
+  clear: both;
+}
+.node-type-thematic-group .thematic-group-article-item {
+  display: inline-block;
 }
