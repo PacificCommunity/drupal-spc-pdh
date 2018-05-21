@@ -7652,3 +7652,9 @@ button.close {
   font-weight: 600;
   text-align: center;
 }
+.node-type-thematic-group .field-type-image {
+  float: right;
+}
+.node-type-thematic-group .dataset-title {
+  text-align: center;
+}
