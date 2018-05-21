@@ -11,6 +11,42 @@ function home_page_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'bean-article_on_home_page-field_article_on_home_page'.
+  $field_instances['bean-article_on_home_page-field_article_on_home_page'] = array(
+    'bundle' => 'article_on_home_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_article_on_home_page',
+    'label' => 'Article on Home Page',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance:
   // 'bean-browse_by_data_category-field_thematic_groups_home'.
   $field_instances['bean-browse_by_data_category-field_thematic_groups_home'] = array(
     'bundle' => 'browse_by_data_category',
@@ -198,6 +234,7 @@ function home_page_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Article on Home Page');
   t('Banner Image');
   t('Banner Sub Title');
   t('Banner Title');

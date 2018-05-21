@@ -7652,6 +7652,12 @@ button.close {
   font-weight: 600;
   text-align: center;
 }
+.bean-article-on-home-page article footer {
+  display: none;
+}
+.bean-article-on-home-page article .field-type-image {
+  float: right;
+}
 .node-type-thematic-group .field-type-image {
   float: right;
 }
