@@ -7647,6 +7647,11 @@ button.close {
 #mini-panel-data_category .pane-title {
   text-align: center;
 }
+.bean-browse-by-data-category .thumbnail .group-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
 .node-type-thematic-group .field-type-image {
   float: right;
 }
