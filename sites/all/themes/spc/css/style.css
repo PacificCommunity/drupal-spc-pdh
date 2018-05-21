@@ -7647,9 +7647,15 @@ button.close {
 #mini-panel-data_category .pane-title {
   text-align: center;
 }
-.node-type-thematic-group .field-type-image {
+.node-type-thematic-group .thematic-group-image {
   float: right;
 }
 .node-type-thematic-group .dataset-title {
   text-align: center;
+}
+.node-type-thematic-group .thematic-group-articles {
+  clear: both;
+}
+.node-type-thematic-group .thematic-group-article-item {
+  display: inline-block;
 }
