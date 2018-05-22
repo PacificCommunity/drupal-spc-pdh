@@ -7658,6 +7658,9 @@ button.close {
 .bean-article-on-home-page article .field-type-image {
   float: right;
 }
+#mini-panel-footer {
+  margin-top: 25px;
+}
 .node-type-thematic-group .thematic-group-image {
   float: right;
 }
