@@ -90,6 +90,13 @@ function thematic_group_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_extras_field_template';
+  $strongarm->value = 1;
+  $export['ds_extras_field_template'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__thematic_group';
   $strongarm->value = array(
     'view_modes' => array(
@@ -114,11 +121,17 @@ function thematic_group_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(),
@@ -179,6 +192,13 @@ function thematic_group_strongarm() {
   $strongarm->name = 'node_submitted_thematic_group';
   $strongarm->value = 0;
   $export['node_submitted_thematic_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panels_everywhere_site_template_enabled';
+  $strongarm->value = TRUE;
+  $export['panels_everywhere_site_template_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

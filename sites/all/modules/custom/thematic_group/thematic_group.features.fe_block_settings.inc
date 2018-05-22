@@ -35,6 +35,12 @@ function thematic_group_default_fe_block_settings() {
         'theme' => 'seven',
         'weight' => 0,
       ),
+      'spc' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'spc',
+        'weight' => -13,
+      ),
     ),
     'title' => '',
     'visibility' => 0,

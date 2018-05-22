@@ -27,6 +27,7 @@ function home_page_default_panels_mini() {
     'style_settings' => array(
       'default' => NULL,
       'one_fw_main' => NULL,
+      'minipanel_one_main_fw' => NULL,
     ),
   );
   $display->cache = array();
@@ -37,10 +38,10 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-1002a62e-977e-4dba-8b46-4cc1b036861e';
+  $pane->pid = 'new-7545418a-c403-40e9-835b-2be3335359c8';
   $pane->panel = 'minipanel_one_main_fw';
   $pane->type = 'block';
-  $pane->subtype = 'node-recent';
+  $pane->subtype = 'bean-article-on-home-page';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -56,11 +57,11 @@ function home_page_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '1002a62e-977e-4dba-8b46-4cc1b036861e';
-  $display->content['new-1002a62e-977e-4dba-8b46-4cc1b036861e'] = $pane;
-  $display->panels['minipanel_one_main_fw'][0] = 'new-1002a62e-977e-4dba-8b46-4cc1b036861e';
+  $pane->uuid = '7545418a-c403-40e9-835b-2be3335359c8';
+  $display->content['new-7545418a-c403-40e9-835b-2be3335359c8'] = $pane;
+  $display->panels['minipanel_one_main_fw'][0] = 'new-7545418a-c403-40e9-835b-2be3335359c8';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1002a62e-977e-4dba-8b46-4cc1b036861e';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['blog_preview'] = $mini;
 
@@ -92,19 +93,16 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-7043e1f5-0c5f-4e10-8317-79cfe621b6c5';
+  $pane->pid = 'new-d81f15e8-602a-42a8-87cc-5c120a104342';
   $pane->panel = 'minipanel_one_main_fw';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
+  $pane->type = 'block';
+  $pane->subtype = 'bean-browse-by-data-category';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => 'Browse by Data category',
-    'title' => 'Browse by Data category',
-    'title_heading' => 'h2',
-    'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque, leo a euismod accumsan, lectus arcu blandit sem, ut rutrum orci nulla eget orci. Sed orci odio, aliquet et tristique id, dapibus vitae nibh. Nunc dictum et diam nec facilisis. Nulla facilisi. Nulla facilisi. Duis ex dolor, facilisis quis sapien eu, dapibus lobortis augue. Nulla sodales mollis risus, non tempor lectus faucibus sed. Sed vel libero nibh. Vivamus in tortor orci. Praesent maximus, dolor a pharetra pulvinar, sem augue egestas est, et tristique nisl lorem nec leo.',
-    'format' => 'full_html',
-    'substitute' => TRUE,
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -114,9 +112,9 @@ function home_page_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '7043e1f5-0c5f-4e10-8317-79cfe621b6c5';
-  $display->content['new-7043e1f5-0c5f-4e10-8317-79cfe621b6c5'] = $pane;
-  $display->panels['minipanel_one_main_fw'][0] = 'new-7043e1f5-0c5f-4e10-8317-79cfe621b6c5';
+  $pane->uuid = 'd81f15e8-602a-42a8-87cc-5c120a104342';
+  $display->content['new-d81f15e8-602a-42a8-87cc-5c120a104342'] = $pane;
+  $display->panels['minipanel_one_main_fw'][0] = 'new-d81f15e8-602a-42a8-87cc-5c120a104342';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;

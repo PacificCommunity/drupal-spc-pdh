@@ -63,7 +63,7 @@ function thematic_group_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -97,6 +97,62 @@ function thematic_group_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-thematic_group-field_articles_and_publications'.
+  $field_instances['node-thematic_group-field_articles_and_publications'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'bypass_access' => FALSE,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'thematic_group_artiacle',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_articles_and_publications',
+    'label' => 'Articles and Publications',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-thematic_group-field_ckan_thematic_group_id'.
   $field_instances['node-thematic_group-field_ckan_thematic_group_id'] = array(
     'bundle' => 'thematic_group',
@@ -115,7 +171,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -222,7 +278,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -259,6 +315,7 @@ function thematic_group_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Articles and Publications');
   t('CKAN thematic group ID');
   t('Comment');
   t('Description');

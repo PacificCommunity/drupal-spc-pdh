@@ -7647,3 +7647,26 @@ button.close {
 #mini-panel-data_category .pane-title {
   text-align: center;
 }
+.bean-browse-by-data-category .thumbnail .group-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+.bean-article-on-home-page article footer {
+  display: none;
+}
+.bean-article-on-home-page article .field-type-image {
+  float: right;
+}
+.node-type-thematic-group .thematic-group-image {
+  float: right;
+}
+.node-type-thematic-group .dataset-title {
+  text-align: center;
+}
+.node-type-thematic-group .thematic-group-articles {
+  clear: both;
+}
+.node-type-thematic-group .thematic-group-article-item {
+  display: inline-block;
+}
