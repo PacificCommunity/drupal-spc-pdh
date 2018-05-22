@@ -1,0 +1,82 @@
+<?php
+/**
+ * @file
+ * Code for the CKAN Meny Syncronize module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ckan_menu_sync_menu() {
+  $items = array();
+  $items['ckanext/menus/sync'] = array(
+    'page callback' => 'ckan_menu_sync_items',
+    'access callback' => TRUE,
+  );
+  $items['admin/config/ckanext/menus'] = array(
+    'title' => 'CKAN Menu Syncronize',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ckan_menu_sync_settings_form'),
+    'access arguments' => array('administer menu'),
+    'file' => 'ckan_menu_sync.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Returns formatted JSON dict
+ */
+function ckan_menu_sync_items () {
+  $menus = array_filter(variable_get('ckan_menu_sync_menus', array('main-menu')), 'ckan_menu_sync_menus');
+  return drupal_json_output(array_reduce($menus, 'ckan_menu_sync_load', array()));
+}
+
+/**
+ * Returns formatted menus list
+ * @param $option
+ * @return bool
+ */
+function ckan_menu_sync_menus (&$option) {
+  return (bool)$option;
+}
+
+
+/**
+ * Loads menu, applies formatter and returns result
+ * @param  string $name - menu name
+ * @return array        - formatted dict of menu links
+ */
+function ckan_menu_sync_load($result, $name) {
+  $menu = array_filter(menu_tree_all_data($name), 'ckan_menu_sync_filter');
+  $menu = array_map('ckan_menu_sync_prepare', $menu);
+  $result[$name] = array_values($menu);
+  return $result;
+}
+
+/**
+ * Returns formatted menu item
+ * @param  array $link - array with link data
+ * @return array       - formatted array
+ */
+function ckan_menu_sync_prepare(&$link) {
+  $item = $link['link'];
+  $url = url(drupal_get_path_alias($item['link_path']), [
+    'absolute' => TRUE,
+    'query' => $item['options']['query'] ?? NULL,
+    'fragment' => $item['options']['fragment'] ?? NULL,
+  ]);
+  $children = array_map(
+    'ckan_menu_sync_prepare',
+    array_filter($link['below'], 'ckan_menu_sync_filter')
+  );
+  return array($url, $item['link_title'], array_values($children));
+}
+
+/**
+ * Drop hidden links
+ * @param  array $item - array with link data
+ * @return bool       - link is visible
+ */
+function ckan_menu_sync_filter(&$item){
+  return !$item['link']['hidden'];
+}

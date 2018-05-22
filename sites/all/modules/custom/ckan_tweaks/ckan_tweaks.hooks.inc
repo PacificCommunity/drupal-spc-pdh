@@ -61,6 +61,7 @@ function ckan_tweaks_block_view($delta = '') {
 
       $block['subject'] = t('Recent CKAN updates [@total total]', ['@total' => $total]);
       $block['content'] = implode('', $datasets);
+
       break;
   }
   return $block;

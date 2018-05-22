@@ -39,3 +39,15 @@ function _ckan_tweaks_create_dataset_mapper($ckan_url) {
     ];
   };
 }
+
+function _ckan_tweaks_organization_list() {
+  $client = govcms_ckan_client();
+  $response = $client->get('action/organization_list', ['all_fields' => TRUE]);
+  return $response->valid ? $response->data : [];
+}
+
+function _ckan_tweaks_thematic_area_list() {
+  $client = govcms_ckan_client();
+  $response = $client->get('action/spc_thematic_area_list');
+  return $response->valid ? $response->data : [];
+}
