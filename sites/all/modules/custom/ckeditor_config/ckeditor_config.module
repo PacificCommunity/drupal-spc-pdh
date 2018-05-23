@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CDU ckeditor config feature.
+ */
+
+include_once 'ckeditor_config.features.inc';
