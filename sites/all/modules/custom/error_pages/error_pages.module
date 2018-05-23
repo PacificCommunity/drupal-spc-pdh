@@ -1,0 +1,49 @@
+<?php
+/**
+ * @file
+ * Code for the Street Theatre Error Pages feature.
+ */
+
+include_once 'error_pages.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function error_pages_menu() {
+  $items['admin/config/404-page-settings'] = array(
+    'title' => '404 page settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('error_pages_404_admin_form'),
+    'access arguments' => array('administer custom error pages'),
+    'file' => 'error_pages.admin.inc'
+  );
+  $items['admin/config/403-page-settings'] = array(
+    'title' => '403 page settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('error_pages_403_admin_form'),
+    'access arguments' => array('administer custom error pages'),
+    'file' => 'error_pages.admin.inc'
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function error_pages_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}
+
+ /**
+ * Implements hook_permission().
+ */
+function error_pages_permission() {
+  return array(
+    'administer custom error pages' => array(
+      'title' => t('Administer custom error pages'),
+      'description' => t('Access to customization 403 and 404 error pages'),
+    ),
+  );
+}
