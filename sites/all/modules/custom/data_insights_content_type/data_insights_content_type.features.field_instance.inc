@@ -79,7 +79,7 @@ function data_insights_content_type_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_data_insights_preview',
     'label' => 'Preview',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'display_summary' => 0,
       'text_processing' => 1,
