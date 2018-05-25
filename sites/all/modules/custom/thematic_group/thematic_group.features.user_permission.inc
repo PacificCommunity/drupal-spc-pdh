@@ -45,5 +45,56 @@ function thematic_group_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'search content'.
+  $permissions['search content'] = array(
+    'name' => 'search content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'search',
+  );
+
+  // Exported permission: 'view any article_on_home_page bean'.
+  $permissions['view any article_on_home_page bean'] = array(
+    'name' => 'view any article_on_home_page bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'view any browse_by_data_category bean'.
+  $permissions['view any browse_by_data_category bean'] = array(
+    'name' => 'view any browse_by_data_category bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'view any ckan_search bean'.
+  $permissions['view any ckan_search bean'] = array(
+    'name' => 'view any ckan_search bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'view any home_banner bean'.
+  $permissions['view any home_banner bean'] = array(
+    'name' => 'view any home_banner bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'bean',
+  );
+
   return $permissions;
 }
