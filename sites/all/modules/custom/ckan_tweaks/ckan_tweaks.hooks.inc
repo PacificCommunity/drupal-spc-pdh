@@ -34,11 +34,7 @@ function ckan_tweaks_block_view($delta = '') {
   switch ($delta) {
     case 'ckan_tweaks-recent_datasets':
       $node = menu_get_object();
-      if (!isset($node->field_ckan_thematic_group_id)) {
-        break;
-      }
-      $id = $node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['value'];
-
+      $id = _ckan_tweaks_get_thematic_area_from_node($node);
       $recent = _ckan_tweaks_search_datasets(
         [
           'q' => sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $id),

@@ -18,7 +18,7 @@ function spc_home_banner_preprocess_entity(&$vars) {
 function ckan_search_form($form_state) {
   $form = array();
 
-  $form['ckan_search'] = array(
+  $form['term'] = array(
     '#type' => 'textfield',
     '#required' => TRUE,
     '#attributes' => array(
@@ -36,5 +36,27 @@ function ckan_search_form($form_state) {
 }
 
 function ckan_search_submit($form, &$form_state) {
-	$form_state['redirect'] = array('/data/dataset', array('query' => array('q' => $form_state['values']['ckan_search'])));
+  $term = $search_type = $thematic_area = NULL;
+  extract($form_state['values'], EXTR_IF_EXISTS);
+
+  switch ($search_type) {
+    case 'dataset':
+      $redirect_info = [
+        rtrim(_ckan_tweaks_get_ckan_url()) . '/dataset',
+        array(
+          'query' => [
+            CKAN_SEARCH_NAME_THEMATIC_AREA => $thematic_area,
+            'q' => $term
+          ]
+        )
+      ];
+      break;
+
+    case 'article':
+    default:
+      $redirect_info = [sprintf('/search/articles/%s/%s', $term, $thematic_area)];
+      break;
+  }
+
+  $form_state['redirect'] = $redirect_info;
 }

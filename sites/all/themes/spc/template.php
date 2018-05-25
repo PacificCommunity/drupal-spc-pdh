@@ -109,3 +109,30 @@ function spc_preprocess_field(&$vars,$hook) {
 function spc_preprocess_maintenance_page(){
   //  kpr($vars['content']);
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
+  $node = menu_get_object();
+  $id = _ckan_tweaks_get_thematic_area_from_node($node);
+  if ($id) {
+    $form['thematic_area'] = [
+      '#type' => 'hidden',
+      '#value' => $id
+    ];
+  }
+
+  $form['search_type'] = [
+    '#type' => 'select',
+    '#default_value' => 'article',
+    '#options' => [
+      'article' => t('Article'),
+      'dataset' => t('Dataset')
+    ],
+    '#required' => TRUE,
+  ];
+
+  // Put submit after newly added fields
+  $form['submit']['#weight'] = 10;
+}

@@ -1,7 +1,8 @@
 <?php
 
 // Search criteria prepared for c-style formatting
-const CKAN_SEARCH_CRIT_THEMATIC_AREA = 'extras_thematic_area_string:"%s"';
+const CKAN_SEARCH_NAME_THEMATIC_AREA = 'extras_thematic_area_string';
+const CKAN_SEARCH_CRIT_THEMATIC_AREA = CKAN_SEARCH_NAME_THEMATIC_AREA . ':"%s"';
 
 // Additional search param names
 const CKAN_SEARCH_PARAM_POPULAR_FIRST = 'ext_popular_first';

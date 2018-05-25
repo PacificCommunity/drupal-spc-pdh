@@ -25,8 +25,12 @@ function _ckan_tweaks_search_datasets($params) {
   return [
     'count' => $resp->data->count,
     'results' => $resp->data->results,
-    'ckan_url' => variable_get('govcms_ckan_endpoint_url', '')
+    'ckan_url' => _ckan_tweaks_get_ckan_url()
   ];
+}
+
+function _ckan_tweaks_get_ckan_url() {
+  return variable_get('govcms_ckan_endpoint_url', '');
 }
 
 function _ckan_tweaks_create_dataset_mapper($ckan_url) {
@@ -50,4 +54,10 @@ function _ckan_tweaks_thematic_area_list() {
   $client = govcms_ckan_client();
   $response = $client->get('action/spc_thematic_area_list');
   return $response->valid ? $response->data : [];
+}
+
+function _ckan_tweaks_get_thematic_area_from_node($node) {
+  if (isset($node->field_ckan_thematic_group_id)) {
+    return $node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['value'];
+  }
 }
