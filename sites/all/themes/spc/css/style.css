@@ -7661,6 +7661,19 @@ button.close {
 #mini-panel-footer {
   margin-top: 25px;
 }
+.data-insights-promoted .data-insights-promoted-group {
+  display: flex;
+}
+.data-insights-promoted .data-insights-promoted-group .data-insights-promoted-item {
+  flex-grow: 1;
+  display: inline-block;
+  background: #f2fcff;
+  padding: 10px;
+  margin-left: 10px;
+}
+.data-insights-promoted .data-insights-promoted-group .data-insights-promoted-item:first-child {
+  margin-left: 0px;
+}
 .node-type-thematic-group .thematic-group-image {
   float: right;
 }

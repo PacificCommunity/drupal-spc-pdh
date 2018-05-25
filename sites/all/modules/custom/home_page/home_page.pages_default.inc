@@ -50,6 +50,7 @@ function home_page_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'one_fw_main' => NULL,
     ),
   );
   $display->cache = array();
@@ -106,28 +107,32 @@ function home_page_default_page_manager_pages() {
   $display->content['new-30c9dbb2-c313-4ea7-b380-db0e386418b7'] = $pane;
   $display->panels['one_fw_main'][1] = 'new-30c9dbb2-c313-4ea7-b380-db0e386418b7';
   $pane = new stdClass();
-  $pane->pid = 'new-8329377c-e083-4e74-aed2-39e8baae9ff0';
+  $pane->pid = 'new-51cd8e13-babc-4247-8f3f-5d31ed2de764';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'data_insights';
+  $pane->type = 'block';
+  $pane->subtype = 'views-data_insights_promoted-block';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => 'Data Insights',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
+    'style' => 'default',
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'data-insights-promoted container',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = '8329377c-e083-4e74-aed2-39e8baae9ff0';
-  $display->content['new-8329377c-e083-4e74-aed2-39e8baae9ff0'] = $pane;
-  $display->panels['one_fw_main'][2] = 'new-8329377c-e083-4e74-aed2-39e8baae9ff0';
+  $pane->uuid = '51cd8e13-babc-4247-8f3f-5d31ed2de764';
+  $display->content['new-51cd8e13-babc-4247-8f3f-5d31ed2de764'] = $pane;
+  $display->panels['one_fw_main'][2] = 'new-51cd8e13-babc-4247-8f3f-5d31ed2de764';
   $pane = new stdClass();
   $pane->pid = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
   $pane->panel = 'one_fw_main';
