@@ -41,7 +41,7 @@ function ckan_tweaks_block_view($delta = '') {
           CKAN_SEARCH_PARAM_POPULAR_FIRST => true
         ]
       );
-      $ckan_url = $recent['ckan_url'];
+      $ckan_url = _ckan_tweaks_get_ckan_url();
 
       $datasets = array_map(
         _ckan_tweaks_create_dataset_mapper($ckan_url),

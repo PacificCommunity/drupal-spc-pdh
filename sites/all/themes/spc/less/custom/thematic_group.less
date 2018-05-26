@@ -6,7 +6,13 @@
 		text-align: center;
 	}
 	.thematic-group-articles {
-		clear: both;
+		display: flex;
+    .thematic-group-articles-item {
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
 	}
 	.thematic-group-article-item {
 		display: inline-block;

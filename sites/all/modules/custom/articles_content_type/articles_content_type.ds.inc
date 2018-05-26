@@ -61,20 +61,6 @@ function articles_content_type_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_articles_and_publications' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'prefix' => '<h2>Related Articles and Publications</h2>',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'thematic-group-articles',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
   );
   $export['node|thematic_group|full'] = $ds_fieldsetting;
 
@@ -133,14 +119,12 @@ function articles_content_type_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_display_image',
         2 => 'body',
-        3 => 'field_articles_and_publications',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_display_image' => 'ds_content',
       'body' => 'ds_content',
-      'field_articles_and_publications' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

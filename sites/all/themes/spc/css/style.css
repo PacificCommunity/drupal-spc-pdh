@@ -7681,7 +7681,13 @@ button.close {
   text-align: center;
 }
 .node-type-thematic-group .thematic-group-articles {
-  clear: both;
+  display: flex;
+}
+.node-type-thematic-group .thematic-group-articles .thematic-group-articles-item {
+  margin-left: 20px;
+}
+.node-type-thematic-group .thematic-group-articles .thematic-group-articles-item:first-child {
+  margin-left: 0px;
 }
 .node-type-thematic-group .thematic-group-article-item {
   display: inline-block;

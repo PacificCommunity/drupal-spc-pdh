@@ -1,7 +1,7 @@
 name = Thematic group
 core = 7.x
 package = Features
-version = 7.x-1.06
+version = 7.x-1.07
 dependencies[] = bean
 dependencies[] = ckan_tweaks
 dependencies[] = ctools
@@ -67,4 +67,5 @@ features[variable][] = node_submitted_thematic_group
 features[variable][] = panels_everywhere_site_template_enabled
 features[variable][] = pathauto_node_thematic_group_pattern
 features[variable][] = save_continue_thematic_group
+features[views_view][] = related_articles_and_publications
 features[views_view][] = search_articles

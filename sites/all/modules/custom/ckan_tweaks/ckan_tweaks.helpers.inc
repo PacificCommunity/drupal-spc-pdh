@@ -24,8 +24,7 @@ function _ckan_tweaks_search_datasets($params) {
   }
   return [
     'count' => $resp->data->count,
-    'results' => $resp->data->results,
-    'ckan_url' => _ckan_tweaks_get_ckan_url()
+    'results' => $resp->data->results
   ];
 }
 

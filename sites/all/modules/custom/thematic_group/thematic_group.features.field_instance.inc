@@ -116,13 +116,8 @@ function thematic_group_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 1,
-          'use_content_language' => 1,
-          'view_mode' => 'thematic_group_artiacle',
-        ),
-        'type' => 'entityreference_entity_view',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'teaser' => array(

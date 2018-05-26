@@ -168,12 +168,64 @@ function articles_content_type_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_thematic_group'.
+  $field_instances['node-article-field_thematic_group'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'bypass_access' => FALSE,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic_group_artiacle' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_thematic_group',
+    'label' => 'Thematic group',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 31,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Enter a comma-separated list of words to describe your content.');
   t('Image');
   t('Tags');
+  t('Thematic group');
   t('Upload an image to go with this article.');
 
   return $field_instances;
