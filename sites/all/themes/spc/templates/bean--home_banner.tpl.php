@@ -34,12 +34,19 @@
   <div class="content"<?php print $content_attributes; ?>>
     <div class="spc-home-banner-block-main">
       <div class="spc-home-banner-block">
-        <?php if(!empty($content['search_block'])) : ?>
-          <div id="spc-home-banner-search">
-            <?php print render($content['search_block']); ?>
-          </div>
-        <?php endif; ?>
-       </div>
-     </div>
+        <div class="banner-title">
+          <?php
+            print render($content['field_banner_title']);
+            print render($content['field_banner_sub_title']);
+          ?>
+        </div>
+        <div id="spc-home-banner-search">
+          <?php
+          if (!empty($content['search_block'])) :
+            print render($content['search_block']); 
+          endif; ?>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
