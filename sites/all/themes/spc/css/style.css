@@ -7796,6 +7796,7 @@ button.close {
   background-color: rgba(140, 188, 218, 0.25);
   flex-grow: 1;
   display: inline-block;
+  width: 50%;
   margin-left: 10px;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:first-child {
@@ -7827,7 +7828,7 @@ button.close {
 .view-all-link:after {
   content: '';
   position: absolute;
-  top: -4px;
+  top: -2px;
   left: 54%;
   width: 17px;
   height: 35px;
@@ -7901,13 +7902,15 @@ button.close {
 }
 #mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-second-column .field-type-ds .read-more-link a {
   color: #1d7bbc;
+  font-weight: 700;
   position: relative;
   padding-right: 20px;
 }
 #mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-second-column .field-type-ds .read-more-link a:after {
-  content: "\f105";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 30px;
+  content: '';
+  width: 16px;
+  height: 32px;
+  background: url(../img/spc/read_more_arrow.png) 50% 50% no-repeat;
   position: absolute;
   top: -7px;
   right: 0;
