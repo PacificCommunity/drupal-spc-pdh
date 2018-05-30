@@ -230,6 +230,154 @@ function home_page_default_panels_mini() {
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
+  $mini->name = 'datasets_on_home_page';
+  $mini->category = 'Home Page';
+  $mini->admin_title = 'Datasets on Home Page';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'two_50';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'two_50_top' => NULL,
+      'two_50_first' => NULL,
+      'two_50_second' => NULL,
+      'two_50_bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'fffef516-1e37-4281-9bc5-1b12a7d26492';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'datasets_on_home_page';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-62fd3d7b-aa9c-496a-986c-d3e9001b0521';
+  $pane->panel = 'two_50_first';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => 'Latest Datasets',
+    'title_heading' => 'h2',
+    'body' => '<div class=\'dataset-on-home-page\'>
+<p class=\'dataset-title\'>Supporting Data Driven Progress Towards SDGs in Pacific Agriculture and Fisheries</p>
+<div class=\'dataset-groups\'><p><img src="https://dev.spc.links.com.au/sites/default/files/geoscience.png" /> Geosience</p></div>
+<p class=\'dataset-date\'>Release Date: <span>May 28, 2018</span></p>
+<div class=\'dataset-formats\'>File Format: <span>HTML</span><span>JSON</span></div>
+</div>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '62fd3d7b-aa9c-496a-986c-d3e9001b0521';
+  $display->content['new-62fd3d7b-aa9c-496a-986c-d3e9001b0521'] = $pane;
+  $display->panels['two_50_first'][0] = 'new-62fd3d7b-aa9c-496a-986c-d3e9001b0521';
+  $pane = new stdClass();
+  $pane->pid = 'new-16e146b8-03d8-4014-a2f5-30acd3bb1904';
+  $pane->panel = 'two_50_first';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<a href="/data" class="view-all-link">View All</a>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '16e146b8-03d8-4014-a2f5-30acd3bb1904';
+  $display->content['new-16e146b8-03d8-4014-a2f5-30acd3bb1904'] = $pane;
+  $display->panels['two_50_first'][1] = 'new-16e146b8-03d8-4014-a2f5-30acd3bb1904';
+  $pane = new stdClass();
+  $pane->pid = 'new-76f9f0f6-90f4-4ffa-8af3-d1c695ee883e';
+  $pane->panel = 'two_50_second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => 'Popular Datasets',
+    'title_heading' => 'h2',
+    'body' => '<div class=\'dataset-on-home-page\'>
+<p class=\'dataset-title\'>Supporting Data Driven Progress Towards SDGs in Pacific Agriculture and Fisheries</p>
+<div class=\'dataset-groups\'><p><img src="https://dev.spc.links.com.au/sites/default/files/geoscience.png" /> Geosience</p></div>
+<p class=\'dataset-date\'>Release Date: <span>May 28, 2018</span></p>
+<div class=\'dataset-formats\'>File Format: <span>HTML</span><span>JSON</span></div>
+</div>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '76f9f0f6-90f4-4ffa-8af3-d1c695ee883e';
+  $display->content['new-76f9f0f6-90f4-4ffa-8af3-d1c695ee883e'] = $pane;
+  $display->panels['two_50_second'][0] = 'new-76f9f0f6-90f4-4ffa-8af3-d1c695ee883e';
+  $pane = new stdClass();
+  $pane->pid = 'new-718d8023-bac3-4a73-83d0-8f3f8e574c10';
+  $pane->panel = 'two_50_second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<a href="/data" class="view-all-link">View All</a>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '718d8023-bac3-4a73-83d0-8f3f8e574c10';
+  $display->content['new-718d8023-bac3-4a73-83d0-8f3f8e574c10'] = $pane;
+  $display->panels['two_50_second'][1] = 'new-718d8023-bac3-4a73-83d0-8f3f8e574c10';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $mini->display = $display;
+  $export['datasets_on_home_page'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
   $mini->name = 'home_banner';
   $mini->category = 'Home Page';
   $mini->admin_title = 'Home Banner';
