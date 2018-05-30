@@ -7890,6 +7890,12 @@ button.close {
   background-color: #fff;
   padding: 50px 0;
 }
+#mini-panel-blog_preview h2 {
+  font-size: 40px;
+  font-weight: 300;
+  color: #032f47;
+  text-align: center;
+}
 #mini-panel-blog_preview .field-item {
   margin-bottom: 30px;
 }
