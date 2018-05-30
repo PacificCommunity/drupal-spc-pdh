@@ -17,6 +17,15 @@ function articles_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'article_view_on_homepage' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 400,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 10,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -66,6 +75,16 @@ function articles_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Upload an image to go with this article.',
     'display' => array(
+      'article_view_on_homepage' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'large',
+        ),
+        'type' => 'image',
+        'weight' => 4,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -130,6 +149,12 @@ function articles_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Enter a comma-separated list of words to describe your content.',
     'display' => array(
+      'article_view_on_homepage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -175,6 +200,12 @@ function articles_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'article_view_on_homepage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
