@@ -197,17 +197,19 @@ function main_layout_default_panels_mini() {
   $display->content['new-534e12e9-4d6a-47c3-87b5-894fbf1f6fba'] = $pane;
   $display->panels['two_50_first'][0] = 'new-534e12e9-4d6a-47c3-87b5-894fbf1f6fba';
   $pane = new stdClass();
-  $pane->pid = 'new-88e15ae5-281a-4892-a4de-08bd53460535';
-  $pane->panel = 'two_50_first';
-  $pane->type = 'page_site_name';
-  $pane->subtype = 'page_site_name';
+  $pane->pid = 'new-6825822c-cbe0-4df1-8ab0-e971bb813cd8';
+  $pane->panel = 'two_50_second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'linked' => 0,
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<button class="header-menu"><input type="checkbox" /><span></span><span></span><span></span></button>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -215,11 +217,11 @@ function main_layout_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '88e15ae5-281a-4892-a4de-08bd53460535';
-  $display->content['new-88e15ae5-281a-4892-a4de-08bd53460535'] = $pane;
-  $display->panels['two_50_first'][1] = 'new-88e15ae5-281a-4892-a4de-08bd53460535';
+  $pane->uuid = '6825822c-cbe0-4df1-8ab0-e971bb813cd8';
+  $display->content['new-6825822c-cbe0-4df1-8ab0-e971bb813cd8'] = $pane;
+  $display->panels['two_50_second'][0] = 'new-6825822c-cbe0-4df1-8ab0-e971bb813cd8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;
