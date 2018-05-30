@@ -178,6 +178,29 @@ function home_page_default_page_manager_pages() {
   $pane->uuid = '933b1597-31a5-43da-816d-f065d38a1c53';
   $display->content['new-933b1597-31a5-43da-816d-f065d38a1c53'] = $pane;
   $display->panels['one_fw_main'][4] = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
+  $pane = new stdClass();
+  $pane->pid = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'datasets_on_home_page';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '7b27c8e1-534e-4371-a946-7081425b0c24';
+  $display->content['new-7b27c8e1-534e-4371-a946-7081425b0c24'] = $pane;
+  $display->panels['one_fw_main'][5] = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -46,6 +46,7 @@ features[page_manager_pages][] = home
 features[panels_mini][] = blog_preview
 features[panels_mini][] = data_category
 features[panels_mini][] = data_insights
+features[panels_mini][] = datasets_on_home_page
 features[panels_mini][] = home_banner
 features[variable][] = site_frontpage
 features[variable][] = theme_default

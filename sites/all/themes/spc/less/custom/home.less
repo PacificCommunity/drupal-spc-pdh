@@ -174,7 +174,8 @@
         content: '';
         position: absolute;
         top: -2px;
-        left: 54%;
+        left: auto;
+        padding-left: 30px;
         width: 17px;
         height: 35px;
         background: url(../img/spc/view_all_arrow.png) 50% 50% no-repeat;
@@ -262,6 +263,66 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+#mini-panel-datasets_on_home_page {
+    padding: 50px 0;
+    &:before {
+        content: '';
+        background: url(../img/spc/dataset_block_border.png) 50% 50% no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 6px;
+    }
+    .region {
+        h2 {
+            font-size: 40px;
+            font-weight: 300;
+            color:  #032f47;
+            text-align: center;
+            margin: 40px 0;
+        }
+    }
+    .dataset-on-home-page {
+        font-size: 18px;
+        font-weight: 300px;
+        color: #393f45;
+        border-bottom: 2px solid #036295;
+        margin-bottom: 25px;   
+        .dataset-title {
+            font-size: 22px;
+            color: #046298;
+        }     
+        .dataset-groups {
+            font-size: 14px;
+            color: #036295;
+            img {
+                width: 18px;
+                height: auto;
+            }
+        }
+        .dataset-date {
+            span {
+                color: #c60c30;
+            }
+        }
+        .dataset-formats {
+            margin-bottom: 15px;
+            span {
+                display: inline-block;
+                margin-right: 5px;
+                font-size: 12px;
+                font-weight: 700;
+                color: #fff;
+                line-height: 20px;
+                width: 55px;
+                height: 20px;
+                border-radius: 5px;
+                background-color: #2585bd;
+                text-align: center
             }
         }
     }
