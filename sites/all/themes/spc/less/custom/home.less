@@ -1,33 +1,102 @@
 #mini-panel-home_banner {
     position: relative;
+    .field-type-image {
+        background: #fff;
+    }
     img {
         min-width: 1200px;
-        max-width: 100%;;
+        max-width: 100%;
+        opacity: 0.5;
     }
-    #spc-home-banner-search {
+    .banner-title {
+        color:  #032f47;
+        font-size: 28px;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 135px;
+        &>.field-type-text-long:first-child {
+            font-size: 50px;
+            margin-bottom: 35px;
+        }
+    }
+    .spc-home-banner-block {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        width: 800px;
+        transform: translate(-50%, -50%);
         #ckan-search-form {
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
             &>div {
                 display: inline-block;
                 input {
-                    height: 40px;
+                    height: 60px;
                     width: 500px;
+                    border-radius: 5px;
+                    border: none; 
+                    box-shadow: none;
+                    padding: 0 10px;
+                    font-weight: 300;
                 }
             }
+            select {
+                position: relative;
+                background-color: #fff;
+                font-weight: 300;
+                padding: 0 15px;
+                border-radius: 5px;
+                height: 60px;
+                width: 110px;
+                border: none;
+            }
             input[type='submit'] {
-                height: 40px;
+                height: 60px;
+                width: 140px;
+                border-radius: 5px;
+                color: #fff;
+                background-color: #036295;
+                text-transform: uppercase;
+                border: none;
             }
         }
     }
 }
 
+.data-category-title {
+    background-color:  #393f45;
+    height: 50px;
+    h2 {
+        line-height: 50px;
+        color: #fff;
+        font-size: 28px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+    }
+}
+
 #mini-panel-data_category {
-    background-color: #fbf7ea;
+    background-color: #fff;
+    padding: 75px 0 90px;
     .pane-title {
         text-align: center;
+    }
+    .thumbnail {
+        border: none;
+        img {
+            margin-bottom: 15px;
+        }
+        .group-title {
+            font-size: 18px;
+            font-weight: 400;
+            color: #1d7bbc;
+        }
+    }
+    a:hover {
+        text-decoration: none;
     }
 }
 
@@ -52,22 +121,145 @@
     }
 }
 
-#mini-panel-footer {
-    margin-top: 25px;
+#mini-panel-data_insights {
+    background: #fff url(../img/spc/gradient_block.png) 50% 50% no-repeat;
+    background-size: cover;
+    padding: 50px 0;
+    h2 {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 40px;
+        font-weight: 400;
+        text-align: center;
+        margin: 0 0 55px 0;
+    }
+    .data-insights-promoted-group {
+        display: flex;
+        margin-bottom: 60px;
+        .data-insights-promoted-item {
+            background-color:  rgba(140, 188, 218, 0.25);
+            flex-grow: 1;
+            display: inline-block;
+            margin-left: 10px;
+            &:first-child {
+                margin-left: 0px;
+            }
+            h2 {
+                line-height: 1.2;
+                margin: 15px 0 20px;
+                a {
+                    color:  #084255;
+                    font-size: 25px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    &:hover {
+                        color:  #084255;
+                    }
+                }
+            }
+        }
+    }
 }
 
-.data-insights-promoted {
-    .data-insights-promoted-group {
-	display: flex;
-	.data-insights-promoted-item {
-	    flex-grow: 1;
-	    display: inline-block;
-	    background: #f2fcff;
-	    padding: 10px;
-	    margin-left: 10px;
-	    &:first-child {
-		margin-left: 0px;
-	    }
-	}
+.view-all-link {
+    color:  #032f47;
+    font-size: 22px;
+    display: block;
+    text-align: center;
+    position: relative;
+    &:hover {
+        color:  #032f47;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: 54%;
+        width: 17px;
+        height: 35px;
+        background: url(../img/spc/view_all_arrow.png) 50% 50% no-repeat;
+    }
+
+}
+
+#mini-panel-blog_preview {
+    background-color: #fff;
+    padding: 50px 0;
+    .field-item {
+        margin-bottom: 30px;
+        .view-mode-article_view_on_homepage {
+            display: flex;
+            align-items: center;
+            .group-article-item {
+                display: inline-block;
+            }
+            .group-article-first-column {
+                position: relative;
+                width: 70%;
+                .article-title-block {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 315px;
+                    height: 210px;
+                    background-color: rgba(3, 98, 149, 0.6);
+                    padding: 20px;
+                    h3 {
+                        margin: 0;
+                        font-weight: 300;
+                        color: #fff;
+                    }
+                    &:after { 
+                        content: '';
+                        position: absolute;
+                        bottom: 20px;
+                        right: 20px;
+                        background: url(../img/spc/energy_2.png) 50% 50% no-repeat;
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                .field-type-image {
+                    margin: 0 30px 0 155px;
+                    height: 310px;
+                    width: 615px;
+                    overflow: hidden;
+                    img {
+                      width: 100%;
+                      height: auto;  
+                    }
+                }
+            }
+            .group-article-second-column {
+                width: 30%;
+                font-size: 16px;
+                font-weight: 300;
+                .field-type-ds {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    .read-more-link {
+                        font-size: 14px;
+                        font-weight: 400;
+                        text-align: right;
+                        a {
+                            color: #1d7bbc;
+                            position: relative;
+                            padding-right: 20px;
+                            &:after {
+                                content: "\f105";
+                                font: normal normal normal 14px/1 FontAwesome;
+                                font-size: 30px;
+                                position: absolute;
+                                top: -7px;
+                                right: 0;
+                            }
+                            &:hover {
+                                color: #1d7bbc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

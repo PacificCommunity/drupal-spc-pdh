@@ -76,7 +76,7 @@ function home_page_image_default_styles() {
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 2000,
-          'height' => 400,
+          'height' => 550,
         ),
         'weight' => 1,
       ),

@@ -13,7 +13,7 @@ function home_page_field_default_field_bases() {
   // Exported field_base: 'field_article_on_home_page'.
   $field_bases['field_article_on_home_page'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 4,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_article_on_home_page',
@@ -108,7 +108,7 @@ function home_page_field_default_field_bases() {
   // Exported field_base: 'field_thematic_groups_home'.
   $field_bases['field_thematic_groups_home'] = array(
     'active' => 1,
-    'cardinality' => 6,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_thematic_groups_home',
