@@ -84,6 +84,32 @@ function home_page_default_page_manager_pages() {
   $display->content['new-17f835fa-82b6-4062-8db5-ba52c7e7f587'] = $pane;
   $display->panels['one_fw_main'][0] = 'new-17f835fa-82b6-4062-8db5-ba52c7e7f587';
   $pane = new stdClass();
+  $pane->pid = 'new-63a88106-5b10-4a80-959e-8965fe91d13f';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<div class="data-category-title"><h2>Browse by Data Category</h2></div>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '63a88106-5b10-4a80-959e-8965fe91d13f';
+  $display->content['new-63a88106-5b10-4a80-959e-8965fe91d13f'] = $pane;
+  $display->panels['one_fw_main'][1] = 'new-63a88106-5b10-4a80-959e-8965fe91d13f';
+  $pane = new stdClass();
   $pane->pid = 'new-30c9dbb2-c313-4ea7-b380-db0e386418b7';
   $pane->panel = 'one_fw_main';
   $pane->type = 'panels_mini';
@@ -101,38 +127,34 @@ function home_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '30c9dbb2-c313-4ea7-b380-db0e386418b7';
   $display->content['new-30c9dbb2-c313-4ea7-b380-db0e386418b7'] = $pane;
-  $display->panels['one_fw_main'][1] = 'new-30c9dbb2-c313-4ea7-b380-db0e386418b7';
+  $display->panels['one_fw_main'][2] = 'new-30c9dbb2-c313-4ea7-b380-db0e386418b7';
   $pane = new stdClass();
-  $pane->pid = 'new-51cd8e13-babc-4247-8f3f-5d31ed2de764';
+  $pane->pid = 'new-f26b1da5-ff16-4919-814c-54cb9bcd09f7';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'block';
-  $pane->subtype = 'views-data_insights_promoted-block';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'data_insights';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Data Insights',
+    'override_title' => 0,
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
-    'style' => 'default',
     'settings' => NULL,
   );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'data-insights-promoted container',
-  );
+  $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = '51cd8e13-babc-4247-8f3f-5d31ed2de764';
-  $display->content['new-51cd8e13-babc-4247-8f3f-5d31ed2de764'] = $pane;
-  $display->panels['one_fw_main'][2] = 'new-51cd8e13-babc-4247-8f3f-5d31ed2de764';
+  $pane->uuid = 'f26b1da5-ff16-4919-814c-54cb9bcd09f7';
+  $display->content['new-f26b1da5-ff16-4919-814c-54cb9bcd09f7'] = $pane;
+  $display->panels['one_fw_main'][3] = 'new-f26b1da5-ff16-4919-814c-54cb9bcd09f7';
   $pane = new stdClass();
   $pane->pid = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
   $pane->panel = 'one_fw_main';
@@ -151,11 +173,11 @@ function home_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '933b1597-31a5-43da-816d-f065d38a1c53';
   $display->content['new-933b1597-31a5-43da-816d-f065d38a1c53'] = $pane;
-  $display->panels['one_fw_main'][3] = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
+  $display->panels['one_fw_main'][4] = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

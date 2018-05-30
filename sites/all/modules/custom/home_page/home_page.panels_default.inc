@@ -60,6 +60,32 @@ function home_page_default_panels_mini() {
   $pane->uuid = '7545418a-c403-40e9-835b-2be3335359c8';
   $display->content['new-7545418a-c403-40e9-835b-2be3335359c8'] = $pane;
   $display->panels['minipanel_one_main_fw'][0] = 'new-7545418a-c403-40e9-835b-2be3335359c8';
+  $pane = new stdClass();
+  $pane->pid = 'new-3f7a85b7-7328-49ac-b648-7f39df5a3fda';
+  $pane->panel = 'minipanel_one_main_fw';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<a href="/blog" class="view-all-link">View All</a>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '3f7a85b7-7328-49ac-b648-7f39df5a3fda';
+  $display->content['new-3f7a85b7-7328-49ac-b648-7f39df5a3fda'] = $pane;
+  $display->panels['minipanel_one_main_fw'][1] = 'new-3f7a85b7-7328-49ac-b648-7f39df5a3fda';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;
@@ -148,19 +174,16 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-87b0552b-034a-43c4-b986-6a4580a28b3d';
+  $pane->pid = 'new-ca363cdb-2029-4a30-a17a-c551ac5d9568';
   $pane->panel = 'minipanel_one_main_fw';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
+  $pane->type = 'block';
+  $pane->subtype = 'views-data_insights_promoted-block';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => 'Data insights',
-    'title' => 'Data insights',
-    'title_heading' => 'h2',
-    'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie sapien sit amet justo malesuada, facilisis lobortis purus commodo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec luctus leo vel ipsum imperdiet ultrices. Phasellus et ligula leo. Duis auctor felis id fermentum tincidunt. Aliquam eu est vitae augue pellentesque iaculis eget condimentum sem. Praesent condimentum convallis libero non lacinia. Donec ac sapien tempor, tempor neque a, tempus quam. Aliquam volutpat dui in nulla iaculis, at condimentum libero malesuada. Praesent fringilla massa id lorem congue malesuada. Suspendisse eget ullamcorper erat. Ut elementum tristique porta.',
-    'format' => 'filtered_html',
-    'substitute' => TRUE,
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -170,9 +193,35 @@ function home_page_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '87b0552b-034a-43c4-b986-6a4580a28b3d';
-  $display->content['new-87b0552b-034a-43c4-b986-6a4580a28b3d'] = $pane;
-  $display->panels['minipanel_one_main_fw'][0] = 'new-87b0552b-034a-43c4-b986-6a4580a28b3d';
+  $pane->uuid = 'ca363cdb-2029-4a30-a17a-c551ac5d9568';
+  $display->content['new-ca363cdb-2029-4a30-a17a-c551ac5d9568'] = $pane;
+  $display->panels['minipanel_one_main_fw'][0] = 'new-ca363cdb-2029-4a30-a17a-c551ac5d9568';
+  $pane = new stdClass();
+  $pane->pid = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
+  $pane->panel = 'minipanel_one_main_fw';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<a href="/data-insights" class="view-all-link">View All</a>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '633f1b3e-6783-402e-bda4-33e5e0e03e50';
+  $display->content['new-633f1b3e-6783-402e-bda4-33e5e0e03e50'] = $pane;
+  $display->panels['minipanel_one_main_fw'][1] = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;
