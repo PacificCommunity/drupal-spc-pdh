@@ -7726,6 +7726,7 @@ button.close {
 #mini-panel-home_banner img {
   min-width: 1200px;
   max-width: 100%;
+  height: auto;
   opacity: 0.5;
 }
 #mini-panel-home_banner .banner-title {
@@ -7733,11 +7734,11 @@ button.close {
   font-size: 28px;
   font-weight: 300;
   text-align: center;
-  margin-bottom: 135px;
+  margin-bottom: 60px;
 }
 #mini-panel-home_banner .banner-title > .field-type-text-long:first-child {
   font-size: 50px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 #mini-panel-home_banner .spc-home-banner-block {
   position: absolute;
@@ -7895,6 +7896,7 @@ button.close {
   font-weight: 300;
   color: #032f47;
   text-align: center;
+  margin: 0 0 50px;
 }
 #mini-panel-blog_preview .field-item {
   margin-bottom: 30px;
