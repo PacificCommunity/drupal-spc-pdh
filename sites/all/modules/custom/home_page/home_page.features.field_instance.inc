@@ -88,7 +88,7 @@ function home_page_field_default_field_instances() {
   $field_instances['bean-home_banner-field_banner_image'] = array(
     'bundle' => 'home_banner',
     'deleted' => 0,
-    'description' => 'Image dimensions must be 1200px x 400px or larger',
+    'description' => 'Image dimensions must be 1000px x 400px or larger',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -113,7 +113,7 @@ function home_page_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '1200x400',
+      'min_resolution' => '1000x400',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -205,7 +205,7 @@ function home_page_field_default_field_instances() {
   t('Banner Image');
   t('Banner Sub Title');
   t('Banner Title');
-  t('Image dimensions must be 1200px x 400px or larger');
+  t('Image dimensions must be 1000px x 400px or larger');
   t('Thematic Groups Home');
 
   return $field_instances;
