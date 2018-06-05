@@ -29,6 +29,7 @@
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php
+    $thematic_landing_banner = $content['field_thematic_banner']['#items'][0]['value'];
     print render($content['field_banner_image']);
   ?>
   <div class="content"<?php print $content_attributes; ?>>
@@ -42,11 +43,37 @@
         </div>
         <div id="spc-home-banner-search">
           <?php
-          if (!empty($content['search_block'])) :
-            print render($content['search_block']); 
+          if (!empty($content['search_block'])):
+            if ($thematic_landing_banner == 0):
+              print render($content['search_block']); 
+            else:
+              print render($content['search_block']); 
+            endif;
           endif; ?>
         </div>
       </div>
+      <?php if ($thematic_landing_banner == 1): ?>
+          <div class="banner-links">
+            <div class="col-md-4 link-block">
+              <div class="icon-wrapper">
+                <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
+              </div>
+              <span>326</span><br> Datasets
+            </div>
+            <div class="col-md-4 link-block">
+              <div class="icon-wrapper">
+                <img src="/sites/all/themes/spc/img/spc/article_icon.png">
+              </div>
+              <span>326</span><br> Articles
+            </div>
+            <div class="col-md-4 link-block">
+              <div class="icon-wrapper">
+                <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
+              </div>
+              <span>326</span><br> Publications
+            </div>
+          </div>
+        <?php endif; ?>
     </div>
   </div>
 </div>

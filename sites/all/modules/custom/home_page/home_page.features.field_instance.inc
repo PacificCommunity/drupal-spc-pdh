@@ -84,6 +84,45 @@ function home_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'bean-browse_by_data_category-field_thematic_page'.
+  $field_instances['bean-browse_by_data_category-field_thematic_page'] = array(
+    'bundle' => 'browse_by_data_category',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Is it Thematic Landing Page?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_thematic_page',
+    'label' => 'Thematic Page',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'bean-home_banner-field_banner_image'.
   $field_instances['bean-home_banner-field_banner_image'] = array(
     'bundle' => 'home_banner',
@@ -148,7 +187,7 @@ function home_page_field_default_field_instances() {
     'entity_type' => 'bean',
     'field_name' => 'field_banner_sub_title',
     'label' => 'Banner Sub Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -183,7 +222,7 @@ function home_page_field_default_field_instances() {
     'entity_type' => 'bean',
     'field_name' => 'field_banner_title',
     'label' => 'Banner Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -199,6 +238,44 @@ function home_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-home_banner-field_thematic_banner'.
+  $field_instances['bean-home_banner-field_thematic_banner'] = array(
+    'bundle' => 'home_banner',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Is it banner for Thematic Landing Page?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_thematic_banner',
+    'label' => 'Thematic banner',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 14,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Article on Home Page');
@@ -206,7 +283,11 @@ function home_page_field_default_field_instances() {
   t('Banner Sub Title');
   t('Banner Title');
   t('Image dimensions must be 1000px x 400px or larger');
+  t('Is it Thematic Landing Page?');
+  t('Is it banner for Thematic Landing Page?');
   t('Thematic Groups Home');
+  t('Thematic Page');
+  t('Thematic banner');
 
   return $field_instances;
 }

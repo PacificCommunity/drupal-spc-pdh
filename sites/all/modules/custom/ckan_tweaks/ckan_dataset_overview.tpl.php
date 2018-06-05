@@ -1,23 +1,12 @@
-<div class="col-md-3">
-    <div class="panel panel-primary ">
-	<div class="panel-title dataset-title">
-	    <a href="<?= $dataset['ckan_url'] ?>">
-		<?= $dataset['title'] ?>
-	    </a>
-
+<div class="dataset-preview">
+	<p class="dataset-title">
+		<a href="<?= $dataset['ckan_url'] ?>">
+			<?= $dataset['title'] ?>
+		</a>
+	</p>
+	<div class="dataset-groups">
+		<p><img width="100%" class="media-object" src="<?= $dataset['image_url'] ?>" alt="..."> Geosience</p>
 	</div>
-	<div class="panel-body">
-	    <div class="media">
-		<div class="media-left">
-		    <div class="col-xs-6 col-md-12">
-			<img width="100%" class="media-object" src="<?= $dataset['image_url'] ?>" alt="...">
-		    </div>
-		</div>
-		<div class="col-md-12">
-		    <?= $dataset['description'] ?>
-		</div>
-	    </div>
-
-	</div>
-    </div>
+	<p class="dataset-date">Release Date: <span>May 28, 2018</span></p>
+	<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
 </div>
