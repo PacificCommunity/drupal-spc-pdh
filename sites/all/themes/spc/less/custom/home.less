@@ -1,23 +1,28 @@
-#mini-panel-home_banner {
+#mini-panel-home_banner, #thematic_landing_banner {
     position: relative;
     .field-type-image {
         background: #fff;
+        max-width: 100%;
+        overflow: hidden;
+        clear: both;
     }
     img {
         min-width: 1200px;
-        max-width: 100%;
+        min-height: 600px;
         height: auto;
-        opacity: 0.5;
+        opacity: 0.6;
     }
     .banner-title {
         color:  #032f47;
         font-size: 28px;
         font-weight: 300;
         text-align: center;
-        margin-bottom: 60px;
         &>.field-type-text-long:first-child {
             font-size: 50px;
             margin-bottom: 25px;
+        }
+        &>.field-type-text-long:last-child {
+            margin-bottom: 60px;
         }
     }
     .spc-home-banner-block {
@@ -122,6 +127,24 @@
     }
 }
 
+.data-insights-promoted-item {
+    background-color:  rgba(140, 188, 218, 0.25);
+    margin-bottom: 30px;
+    h2 {
+        line-height: 1.2;
+        margin: 15px 0 20px;
+        a {
+            color:  #084255;
+            font-size: 25px;
+            font-weight: 400;
+            text-transform: uppercase;
+            &:hover {
+                color:  #084255;
+            }
+        }
+    }
+}
+
 #mini-panel-data_insights {
     background: #fff url(../img/spc/gradient_block.png) 50% 50% no-repeat;
     background-size: cover;
@@ -136,27 +159,17 @@
     .data-insights-promoted-group {
         display: flex;
         margin-bottom: 60px;
-        .data-insights-promoted-item {
-            background-color:  rgba(140, 188, 218, 0.25);
+        .data-insights-promoted-item { 
             flex-grow: 1;
             display: inline-block;
             width: 50%;
             margin-left: 10px;
+            margin-bottom: 0;
             &:first-child {
                 margin-left: 0px;
             }
             h2 {
-                line-height: 1.2;
                 margin: 15px 0 20px;
-                a {
-                    color:  #084255;
-                    font-size: 25px;
-                    font-weight: 400;
-                    text-transform: uppercase;
-                    &:hover {
-                        color:  #084255;
-                    }
-                }
             }
         }
     }
@@ -294,44 +307,45 @@
             margin: 40px 0;
         }
     }
-    .dataset-on-home-page {
-        font-size: 18px;
-        font-weight: 300px;
-        color: #393f45;
-        border-bottom: 2px solid #036295;
-        margin-bottom: 25px;   
-        .dataset-title {
-            font-size: 22px;
-            color: #046298;
-        }     
-        .dataset-groups {
-            font-size: 14px;
-            color: #036295;
-            img {
-                width: 18px;
-                height: auto;
-            }
+}
+
+.dataset-preview {
+    font-size: 18px;
+    font-weight: 300px;
+    color: #393f45;
+    border-bottom: 2px solid #036295;
+    margin-bottom: 25px;   
+    .dataset-title {
+        font-size: 22px;
+        color: #046298;
+    }     
+    .dataset-groups {
+        font-size: 14px;
+        color: #036295;
+        img {
+            width: 18px;
+            height: auto;
         }
-        .dataset-date {
-            span {
-                color: #c60c30;
-            }
+    }
+    .dataset-date {
+        span {
+            color: #c60c30;
         }
-        .dataset-formats {
-            margin-bottom: 15px;
-            span {
-                display: inline-block;
-                margin-right: 5px;
-                font-size: 12px;
-                font-weight: 700;
-                color: #fff;
-                line-height: 20px;
-                width: 55px;
-                height: 20px;
-                border-radius: 5px;
-                background-color: #2585bd;
-                text-align: center
-            }
+    }
+    .dataset-formats {
+        margin-bottom: 15px;
+        span {
+            display: inline-block;
+            margin-right: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 20px;
+            width: 55px;
+            height: 20px;
+            border-radius: 5px;
+            background-color: #2585bd;
+            text-align: center
         }
     }
 }
