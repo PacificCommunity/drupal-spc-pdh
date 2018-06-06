@@ -62,7 +62,7 @@ function articles_content_type_strongarm() {
         'custom_settings' => TRUE,
       ),
       'thematic_group_artiacle' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -86,6 +86,12 @@ function articles_content_type_strongarm() {
         'custom_settings' => FALSE,
       ),
       'article_view_on_homepage' => array(
+        'custom_settings' => TRUE,
+      ),
+      'thematic_group_article' => array(
+        'custom_settings' => TRUE,
+      ),
+      'related_articles_and_publication' => array(
         'custom_settings' => TRUE,
       ),
     ),

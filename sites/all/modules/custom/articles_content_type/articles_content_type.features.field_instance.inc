@@ -33,6 +33,12 @@ function articles_content_type_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'related_articles_and_publication' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -46,7 +52,13 @@ function articles_content_type_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 1,
+      ),
+      'thematic_group_article' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -95,6 +107,16 @@ function articles_content_type_field_default_field_instances() {
         'type' => 'image',
         'weight' => -1,
       ),
+      'related_articles_and_publication' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'publication_preview__200x280_',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -110,7 +132,17 @@ function articles_content_type_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'medium',
+          'image_style' => 'publication_preview__200x280_',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
+      'thematic_group_article' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'publication_preview__200x280_',
         ),
         'type' => 'image',
         'weight' => 2,
@@ -162,6 +194,12 @@ function articles_content_type_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 10,
       ),
+      'related_articles_and_publication' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -169,6 +207,12 @@ function articles_content_type_field_default_field_instances() {
         'weight' => 2,
       ),
       'thematic_group_artiacle' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'thematic_group_article' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -216,6 +260,12 @@ function articles_content_type_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 11,
       ),
+      'related_articles_and_publication' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -226,7 +276,13 @@ function articles_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
+      ),
+      'thematic_group_article' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
     ),
     'ds_extras_field_template' => '',

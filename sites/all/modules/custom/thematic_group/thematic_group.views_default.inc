@@ -34,7 +34,7 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'thematic-group-articles-item';
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'thematic_group_artiacle';
+  $handler->display->display_options['row_options']['view_mode'] = 'related_articles_and_publication';
   /* Relationship: Entity Reference: Referencing entity */
   $handler->display->display_options['relationships']['reverse_field_articles_and_publications_node']['id'] = 'reverse_field_articles_and_publications_node';
   $handler->display->display_options['relationships']['reverse_field_articles_and_publications_node']['table'] = 'node';
