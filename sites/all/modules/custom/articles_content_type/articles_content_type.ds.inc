@@ -54,13 +54,13 @@ function articles_content_type_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|article|thematic_group_artiacle';
+  $ds_fieldsetting->id = 'node|article|related_articles_and_publication';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'article';
-  $ds_fieldsetting->view_mode = 'thematic_group_artiacle';
+  $ds_fieldsetting->view_mode = 'related_articles_and_publication';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '3',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -70,13 +70,8 @@ function articles_content_type_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
-    'field_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
-  $export['node|article|thematic_group_artiacle'] = $ds_fieldsetting;
+  $export['node|article|related_articles_and_publication'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -158,21 +153,19 @@ function articles_content_type_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|article|thematic_group_artiacle';
+  $ds_layout->id = 'node|article|related_articles_and_publication';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'article';
-  $ds_layout->view_mode = 'thematic_group_artiacle';
+  $ds_layout->view_mode = 'related_articles_and_publication';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'group_tg_article_items',
-        1 => 'field_image',
-        2 => 'title',
+        0 => 'field_image',
+        1 => 'title',
       ),
     ),
     'fields' => array(
-      'group_tg_article_items' => 'ds_content',
       'field_image' => 'ds_content',
       'title' => 'ds_content',
     ),
@@ -187,7 +180,7 @@ function articles_content_type_ds_layout_settings_info() {
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
   );
-  $export['node|article|thematic_group_artiacle'] = $ds_layout;
+  $export['node|article|related_articles_and_publication'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -242,12 +235,12 @@ function articles_content_type_ds_view_modes_info() {
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
-  $ds_view_mode->view_mode = 'thematic_group_artiacle';
-  $ds_view_mode->label = 'Thematic group artiacle';
+  $ds_view_mode->view_mode = 'related_articles_and_publication';
+  $ds_view_mode->label = 'Related articles and publication';
   $ds_view_mode->entities = array(
     'node' => 'node',
   );
-  $export['thematic_group_artiacle'] = $ds_view_mode;
+  $export['related_articles_and_publication'] = $ds_view_mode;
 
   return $export;
 }
