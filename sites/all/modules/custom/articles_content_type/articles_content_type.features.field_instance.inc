@@ -92,7 +92,7 @@ function articles_content_type_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'large',
+          'image_style' => 'home_page_articles',
         ),
         'type' => 'image',
         'weight' => 4,

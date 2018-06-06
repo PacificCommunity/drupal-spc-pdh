@@ -49,6 +49,11 @@ function articles_content_type_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'ds_post_date_long',
     ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|article|article_view_on_homepage'] = $ds_fieldsetting;
 
