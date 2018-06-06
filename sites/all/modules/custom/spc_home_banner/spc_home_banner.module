@@ -40,7 +40,12 @@ function ckan_search_submit($form, &$form_state) {
   extract($form_state['values'], EXTR_IF_EXISTS);
 
   switch ($search_type) {
+    case 'article':
+      $redirect_info = [sprintf('/search/articles/%s/%s', $term, $thematic_area)];
+      break;
+
     case 'dataset':
+    default:
       $redirect_info = [
         rtrim(_ckan_tweaks_get_ckan_url()) . '/dataset',
         array(
@@ -50,11 +55,6 @@ function ckan_search_submit($form, &$form_state) {
           ]
         )
       ];
-      break;
-
-    case 'article':
-    default:
-      $redirect_info = [sprintf('/search/articles/%s/%s', $term, $thematic_area)];
       break;
   }
 

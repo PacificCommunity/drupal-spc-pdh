@@ -121,18 +121,18 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
       '#type' => 'hidden',
       '#value' => $id
     ];
+
+    $form['search_type'] = [
+      '#type' => 'select',
+      '#default_value' => 'article',
+      '#options' => [
+        'article' => t('Article'),
+        'dataset' => t('Dataset')
+      ],
+      '#required' => TRUE,
+    ];
+    
+    // Put submit after newly added fields
+    $form['submit']['#weight'] = 10;
   }
-
-  $form['search_type'] = [
-    '#type' => 'select',
-    '#default_value' => 'article',
-    '#options' => [
-      'article' => t('Article'),
-      'dataset' => t('Dataset')
-    ],
-    '#required' => TRUE,
-  ];
-
-  // Put submit after newly added fields
-  $form['submit']['#weight'] = 10;
 }
