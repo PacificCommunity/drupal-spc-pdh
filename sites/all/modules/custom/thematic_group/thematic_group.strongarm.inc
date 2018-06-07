@@ -124,6 +124,12 @@ function thematic_group_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'article_view_on_homepage' => array(
+        'custom_settings' => FALSE,
+      ),
+      'related_articles_and_publication' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

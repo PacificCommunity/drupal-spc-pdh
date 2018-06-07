@@ -31,7 +31,7 @@ function articles_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'related_articles_and_publication' => array(
         'label' => 'hidden',
@@ -105,7 +105,7 @@ function articles_content_type_field_default_field_instances() {
           'image_style' => 'large',
         ),
         'type' => 'image',
-        'weight' => -1,
+        'weight' => 1,
       ),
       'related_articles_and_publication' => array(
         'label' => 'hidden',
@@ -189,10 +189,9 @@ function articles_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'related_articles_and_publication' => array(
         'label' => 'above',
@@ -251,14 +250,14 @@ function articles_content_type_field_default_field_instances() {
         'weight' => 3,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 11,
+        'weight' => 6,
       ),
       'related_articles_and_publication' => array(
         'label' => 'above',

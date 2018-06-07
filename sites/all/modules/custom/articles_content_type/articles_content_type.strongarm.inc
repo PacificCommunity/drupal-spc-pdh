@@ -19,6 +19,7 @@ function articles_content_type_strongarm() {
     'group_tg_article_items|node|article|thematic_group_artiacle' => FALSE,
     'group_article_first_column|node|article|article_view_on_homepage' => FALSE,
     'group_article_second_column|node|article|article_view_on_homepage' => FALSE,
+    'group_title_block|node|article|default' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 

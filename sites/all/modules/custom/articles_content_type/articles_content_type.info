@@ -1,7 +1,7 @@
 name = Articles content type
 core = 7.x
 package = Features
-version = 7.x-1.03
+version = 7.x-1.04
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = entityreference
@@ -30,6 +30,7 @@ features[field_base][] = field_thematic_group
 features[field_group][] = group_article_first_column|node|article|article_view_on_homepage
 features[field_group][] = group_article_second_column|node|article|article_view_on_homepage
 features[field_group][] = group_tg_article_items|node|article|thematic_group_artiacle
+features[field_group][] = group_title_block|node|article|default
 features[field_instance][] = node-article-body
 features[field_instance][] = node-article-field_image
 features[field_instance][] = node-article-field_tags
