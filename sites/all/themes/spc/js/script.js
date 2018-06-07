@@ -1,5 +1,5 @@
 (function ($) {
-    var titles = $('#mini-panel-thematic_articles_and_publicatio .thematic-group-articles-item h4 a')
+    var titles = $('.thematic-group-articles .thematic-group-article-item h4 a')
     if (titles) {
         titles.each(function(){
             var title = this.innerText;

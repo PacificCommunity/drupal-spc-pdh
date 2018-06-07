@@ -170,13 +170,26 @@ function thematic_group_default_page_manager_handlers() {
   $display->content['new-7bcf81d9-e00f-438d-bf0e-656b021b301e'] = $pane;
   $display->panels['one_fw_main'][3] = 'new-7bcf81d9-e00f-438d-bf0e-656b021b301e';
   $pane = new stdClass();
-  $pane->pid = 'new-7f7e9b28-581c-43ab-88f8-fc47c7564340';
+  $pane->pid = 'new-5a614e60-7b6c-4dfb-b83d-c0cbd947af5f';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'thematic_articles_and_publicatio';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_articles_and_publications';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'entityreference_entity_view',
+    'delta_limit' => '0',
+    'delta_offset' => '0',
+    'delta_reversed' => 0,
+    'formatter_settings' => array(
+      'link' => 1,
+      'bypass_access' => 0,
+      'view_mode' => 'related_articles_and_publication',
+      'links' => 1,
+      'use_content_language' => 1,
+    ),
+    'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -185,13 +198,16 @@ function thematic_group_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'thematic-group-articles',
+  );
   $pane->extras = array();
   $pane->position = 4;
   $pane->locks = array();
-  $pane->uuid = '7f7e9b28-581c-43ab-88f8-fc47c7564340';
-  $display->content['new-7f7e9b28-581c-43ab-88f8-fc47c7564340'] = $pane;
-  $display->panels['one_fw_main'][4] = 'new-7f7e9b28-581c-43ab-88f8-fc47c7564340';
+  $pane->uuid = '5a614e60-7b6c-4dfb-b83d-c0cbd947af5f';
+  $display->content['new-5a614e60-7b6c-4dfb-b83d-c0cbd947af5f'] = $pane;
+  $display->panels['one_fw_main'][4] = 'new-5a614e60-7b6c-4dfb-b83d-c0cbd947af5f';
   $pane = new stdClass();
   $pane->pid = 'new-4f5fc7a9-76cb-46cf-8a66-9c78c6ba551f';
   $pane->panel = 'one_fw_main';
