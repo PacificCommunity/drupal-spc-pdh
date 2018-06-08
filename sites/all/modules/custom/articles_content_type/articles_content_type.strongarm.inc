@@ -20,6 +20,8 @@ function articles_content_type_strongarm() {
     'group_article_first_column|node|article|article_view_on_homepage' => FALSE,
     'group_article_second_column|node|article|article_view_on_homepage' => FALSE,
     'group_title_block|node|article|default' => FALSE,
+    'group_thematic_groups|node|article|default' => FALSE,
+    'group_with_icon|node|thematic_group|group_with_icon' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -94,6 +96,12 @@ function articles_content_type_strongarm() {
       ),
       'related_articles_and_publication' => array(
         'custom_settings' => TRUE,
+      ),
+      'similar_posts' => array(
+        'custom_settings' => TRUE,
+      ),
+      'group_with_icon' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(

@@ -130,6 +130,12 @@ function thematic_group_strongarm() {
       'related_articles_and_publication' => array(
         'custom_settings' => FALSE,
       ),
+      'group_with_icon' => array(
+        'custom_settings' => TRUE,
+      ),
+      'similar_posts' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

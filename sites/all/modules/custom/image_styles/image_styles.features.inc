@@ -25,6 +25,21 @@ function image_styles_image_default_styles() {
     ),
   );
 
+  // Exported image style: icon__25x25_.
+  $styles['icon__25x25_'] = array(
+    'label' => 'Icon (25x25)',
+    'effects' => array(
+      5 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 25,
+          'height' => 25,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: publication_preview__200x280_.
   $styles['publication_preview__200x280_'] = array(
     'label' => 'Publication preview (200x280)',
@@ -34,6 +49,21 @@ function image_styles_image_default_styles() {
         'data' => array(
           'width' => 200,
           'height' => 280,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: similar_posts.
+  $styles['similar_posts'] = array(
+    'label' => 'Similar Posts (165x165)',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 165,
+          'height' => 165,
         ),
         'weight' => 1,
       ),
