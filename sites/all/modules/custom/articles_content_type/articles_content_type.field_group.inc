@@ -111,6 +111,38 @@ function articles_content_type_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_thematic_groups|node|article|default';
+  $field_group->group_name = 'group_thematic_groups';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'article';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_title_block';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_thematic_group',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => '',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-thematic-groups field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_thematic_groups|node|article|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_title_block|node|article|default';
   $field_group->group_name = 'group_title_block';
   $field_group->entity_type = 'node';
@@ -121,10 +153,10 @@ function articles_content_type_field_group_info() {
     'label' => 'Title block',
     'weight' => '0',
     'children' => array(
-      0 => 'field_thematic_group',
-      1 => 'title',
-      2 => 'author',
-      3 => 'post_date',
+      0 => 'title',
+      1 => 'author',
+      2 => 'post_date',
+      3 => 'group_thematic_groups',
     ),
     'format_type' => 'div',
     'format_settings' => array(

@@ -1,0 +1,118 @@
+.breadcrumb {
+    background-color: transparent;
+    a {
+        font-size: 25px;
+        font-weight: 400;
+        color: #056199
+    } 
+}
+.article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    font-size: 26px;
+    font-weight: 300;
+    color: #2a2c2d;
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color:  #032f47;
+        margin: 50px 0 25px;
+    }
+    .field-type-image {
+        margin: 15px 0;
+        text-align: center;
+    }
+}
+.group-title-block {
+    margin-bottom: 30px;
+    .field-type-ds {
+        display: inline-block;
+        font-size: 25px;
+        font-weight: 300;
+        color:  #191a1b;
+        margin-bottom: 20px;
+        position: relative;
+        &:first-of-type {
+            margin-right: 20px;
+            &:after {
+                content: '';
+                position: absolute;
+                right: -13px;
+                top: 8px;
+                width: 1px;
+                height: 20px;
+                background-color: #191a1b;
+            }
+        }
+    }
+}
+.group-with-icon {
+    font-size: 16px;
+    font-weight: 300;
+    color:  #036295;
+    display: inline-block;
+    margin-right: 12px;
+    .field-type-image {
+        display: inline-block;
+    }
+    p {
+        display: inline-block;
+        a {
+            color:  #036295;
+            &:hover, &:focus, &:active {
+                color:  #036295;
+            } 
+        }
+    }
+}
+.related-datasets {
+    background-color: #f8f8f8;
+    padding: 50px 0 70px;
+    h2 {
+        font-size: 30px;
+        font-weight: 700;
+        color: #032f47;
+        text-align: center;
+        margin: 0 0 40px;
+    }
+    .field-type-entityreference {
+        max-width: 800px;
+		margin: 0 auto;
+    }
+}
+.similar-posts {
+    padding: 45px 0 100px;
+    h2 {
+        font-size: 30px;
+        font-weight: 700;
+        color: #032f47;
+        text-align: center;
+        margin: 0 0 40px;
+    }
+    .field-type-entityreference {
+        max-width: 800px;
+		margin: 0 auto;
+    }
+    .field-items {
+        display: flex;
+        .field-item {
+            margin-left: 20px;
+            display: inline-block;
+            max-width: 190px;
+            &:first-child {
+                margin-left: 0px;
+            }
+            .thematic-group-article-item {
+                text-align: center;
+                h4 {
+                    a {
+                        font-size: 14px;
+                        font-weight: 300;
+                        color:  #263340;
+                    }
+                }
+            }
+        }
+    }
+}

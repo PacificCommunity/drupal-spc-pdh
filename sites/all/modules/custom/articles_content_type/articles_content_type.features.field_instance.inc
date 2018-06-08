@@ -39,6 +39,12 @@ function articles_content_type_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 9,
       ),
+      'similar_posts' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -117,6 +123,16 @@ function articles_content_type_field_default_field_instances() {
         'type' => 'image',
         'weight' => 0,
       ),
+      'similar_posts' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'similar_posts',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -174,6 +190,65 @@ function articles_content_type_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_similar_posts'.
+  $field_instances['node-article-field_similar_posts'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'article_view_on_homepage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'related_articles_and_publication' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'similar_posts' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_similar_posts',
+    'label' => 'Similar Posts',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'node-article-field_tags'.
   $field_instances['node-article-field_tags'] = array(
     'bundle' => 'article',
@@ -191,13 +266,19 @@ function articles_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'related_articles_and_publication' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'similar_posts' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -253,13 +334,20 @@ function articles_content_type_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'group_with_icon',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 6,
+        'type' => 'entityreference_entity_view',
+        'weight' => 7,
       ),
       'related_articles_and_publication' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'similar_posts' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -310,6 +398,7 @@ function articles_content_type_field_default_field_instances() {
   t('Body');
   t('Enter a comma-separated list of words to describe your content.');
   t('Image');
+  t('Similar Posts');
   t('Tags');
   t('Thematic group');
   t('Upload an image to go with this article.');
