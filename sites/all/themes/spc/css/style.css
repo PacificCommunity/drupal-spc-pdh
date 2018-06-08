@@ -7850,6 +7850,9 @@ button.close {
   margin-bottom: 30px;
   overflow: auto;
 }
+.data-insights-promoted-item img {
+  width: 100%;
+}
 .data-insights-promoted-item h2 {
   line-height: 1.2;
   margin: 15px 0 20px;
