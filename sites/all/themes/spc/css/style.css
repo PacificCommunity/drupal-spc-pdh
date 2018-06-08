@@ -7856,7 +7856,6 @@ button.close {
   color: #084255;
   font-size: 25px;
   font-weight: 400;
-  text-transform: uppercase;
 }
 .data-insights-promoted-item h2 a:hover {
   color: #084255;
@@ -7926,7 +7925,7 @@ button.close {
   flex-wrap: wrap;
 }
 #mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-left: 10px;
   max-width: 280px;
 }
