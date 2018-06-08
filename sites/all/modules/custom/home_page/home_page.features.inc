@@ -61,27 +61,3 @@ function home_page_fe_nodequeue_export_fields() {
 
   return $nodequeues;
 }
-
-/**
- * Implements hook_image_default_styles().
- */
-function home_page_image_default_styles() {
-  $styles = array();
-
-  // Exported image style: home_banner_full_width.
-  $styles['home_banner_full_width'] = array(
-    'label' => 'Home banner full width',
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 2000,
-          'height' => 550,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  return $styles;
-}

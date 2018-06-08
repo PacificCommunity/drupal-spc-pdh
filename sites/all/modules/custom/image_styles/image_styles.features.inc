@@ -10,15 +10,30 @@
 function image_styles_image_default_styles() {
   $styles = array();
 
-  // Exported image style: home_page_articles.
-  $styles['home_page_articles'] = array(
-    'label' => 'Home Page Articles (600x300)',
+  // Exported image style: home_banner_full_width.
+  $styles['home_banner_full_width'] = array(
+    'label' => 'Home banner full width',
     'effects' => array(
-      3 => array(
+      1 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 600,
-          'height' => 300,
+          'width' => 1800,
+          'height' => 500,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: home_page_articles.
+  $styles['home_page_articles'] = array(
+    'label' => 'Home Page Articles (275x275)',
+    'effects' => array(
+      7 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 275,
+          'height' => 275,
         ),
         'weight' => 1,
       ),
