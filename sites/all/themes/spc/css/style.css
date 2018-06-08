@@ -7605,8 +7605,8 @@ button.close {
 #mini-panel-header {
   background: #036295 url(../img/spc/header_gradient.png) 50% 50% no-repeat;
   background-size: cover;
-  height: 100px;
-  line-height: 100px;
+  height: 80px;
+  line-height: 80px;
   color: #fff;
 }
 #mini-panel-header #logo img {
@@ -7727,11 +7727,12 @@ button.close {
   max-width: 100%;
   overflow: hidden;
   clear: both;
+  text-align: center;
 }
 #mini-panel-home_banner img,
 #thematic_landing_banner img {
   min-width: 1200px;
-  min-height: 600px;
+  min-height: 400px;
   height: auto;
   opacity: 0.6;
 }
@@ -7815,7 +7816,7 @@ button.close {
 }
 #mini-panel-data_category {
   background-color: #fff;
-  padding: 75px 0 90px;
+  padding: 60px 0;
 }
 #mini-panel-data_category .pane-title {
   text-align: center;
@@ -7838,12 +7839,6 @@ button.close {
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-}
-.bean-article-on-home-page article footer {
-  display: none;
-}
-.bean-article-on-home-page article .field-type-image {
-  float: right;
 }
 .data-insights-promoted-item {
   background-color: rgba(140, 188, 218, 0.25);
@@ -7926,91 +7921,33 @@ button.close {
   text-align: center;
   margin: 0 0 50px;
 }
-#mini-panel-blog_preview .field-item {
-  margin-bottom: 30px;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage {
+#mini-panel-blog_preview .bean-article-on-home-page .field-items {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 }
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-item {
-  display: inline-block;
+#mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item {
+  margin-bottom: 40px;
+  margin-left: 10px;
+  max-width: 280px;
 }
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-first-column {
-  position: relative;
-  width: 70%;
+#mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item:first-child {
+  margin-left: 0;
 }
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-first-column .article-title-block {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 315px;
-  height: 210px;
-  background-color: rgba(3, 98, 149, 0.6);
-  padding: 20px;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-first-column .article-title-block h3 {
-  margin: 0;
+#mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item .article-title-block h3 a {
+  font-size: 26px;
   font-weight: 300;
-  color: #fff;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-first-column .article-title-block:after {
-  content: '';
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: url(../img/spc/energy_2.png) 50% 50% no-repeat;
-  width: 50px;
-  height: 50px;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-first-column .field-type-image {
-  margin: 0 30px 0 155px;
-  height: 310px;
-  width: 615px;
-  overflow: hidden;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-first-column .field-type-image img {
-  width: 100%;
-  height: auto;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-second-column {
-  width: 30%;
-  font-size: 16px;
-  font-weight: 300;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-second-column .field-type-ds {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-second-column .field-type-ds .read-more-link {
-  font-size: 14px;
-  font-weight: 400;
-  text-align: right;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-second-column .field-type-ds .read-more-link a {
-  color: #1d7bbc;
-  font-weight: 700;
-  position: relative;
-  padding-right: 20px;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-second-column .field-type-ds .read-more-link a:after {
-  content: '';
-  width: 16px;
-  height: 32px;
-  background: url(../img/spc/read_more_arrow.png) 50% 50% no-repeat;
-  position: absolute;
-  top: -7px;
-  right: 0;
-}
-#mini-panel-blog_preview .field-item .view-mode-article_view_on_homepage .group-article-second-column .field-type-ds .read-more-link a:hover {
-  color: #1d7bbc;
+  color: #273340;
 }
 #mini-panel-datasets_on_home_page {
   padding: 50px 0;
+  position: relative;
 }
 #mini-panel-datasets_on_home_page:before {
   content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   background: url(../img/spc/dataset_block_border.png) 50% 50% no-repeat;
   background-size: cover;
   width: 100%;
@@ -8021,7 +7958,7 @@ button.close {
   font-weight: 300;
   color: #032f47;
   text-align: center;
-  margin: 40px 0;
+  margin: 0 0 40px;
 }
 .dataset-preview {
   font-size: 18px;

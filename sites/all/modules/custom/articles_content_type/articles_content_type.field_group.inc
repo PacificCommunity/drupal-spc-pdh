@@ -21,11 +21,8 @@ function articles_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '0',
-    'children' => array(
-      0 => 'field_image',
-      1 => 'title',
-    ),
+    'weight' => '2',
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => '',
@@ -54,7 +51,7 @@ function articles_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
       0 => 'body',
       1 => 'node_link',

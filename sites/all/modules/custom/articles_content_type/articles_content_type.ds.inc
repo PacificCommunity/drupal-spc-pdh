@@ -18,11 +18,11 @@ function articles_content_type_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'article_view_on_homepage';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '3',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h3',
         'class' => '',
         'ft' => array(
@@ -31,23 +31,6 @@ function articles_content_type_ds_field_settings_info() {
           'suffix' => '</div>',
         ),
       ),
-    ),
-    'node_link' => array(
-      'weight' => '11',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link text' => 'Read more',
-        'link class' => '',
-        'wrapper' => 'p',
-        'class' => 'read-more-link',
-        'ft' => array(),
-      ),
-    ),
-    'post_date' => array(
-      'weight' => '9',
-      'label' => 'hidden',
-      'format' => 'ds_post_date_long',
     ),
     'field_image' => array(
       'formatter_settings' => array(
@@ -153,23 +136,13 @@ function articles_content_type_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'group_article_first_column',
-        1 => 'group_article_second_column',
-        2 => 'title',
-        3 => 'field_image',
-        4 => 'post_date',
-        5 => 'body',
-        6 => 'node_link',
+        0 => 'field_image',
+        1 => 'title',
       ),
     ),
     'fields' => array(
-      'group_article_first_column' => 'ds_content',
-      'group_article_second_column' => 'ds_content',
-      'title' => 'ds_content',
       'field_image' => 'ds_content',
-      'post_date' => 'ds_content',
-      'body' => 'ds_content',
-      'node_link' => 'ds_content',
+      'title' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
