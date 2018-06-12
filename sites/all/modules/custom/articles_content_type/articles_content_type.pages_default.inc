@@ -117,16 +117,44 @@ function articles_content_type_default_page_manager_handlers() {
   $display->content['new-5ce633a0-d332-4931-b938-31b7380a0027'] = $pane;
   $display->panels['one_fw_main'][1] = 'new-5ce633a0-d332-4931-b938-31b7380a0027';
   $pane = new stdClass();
-  $pane->pid = 'new-9f94a7a9-ea30-4fec-8f2e-2fd4ba5ab505';
+  $pane->pid = 'new-5d1901c9-3186-42d3-b292-cbc30100598d';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'block';
-  $pane->subtype = 'ckan_tweaks-ckan_tweaks-recent_datasets';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Related Datasets',
-    'override_title_heading' => 'h2',
+    'admin_title' => '',
+    'title' => 'Related Datasets',
+    'title_heading' => 'h2',
+    'body' => '<div class="container">
+<div class="dataset-preview">
+<p><a href="https://dev.spc.links.com.au/data/dataset/public-domain-wcpfc-purse-seine-catch-data">Public Domain WCPFC Purse Seine Catch Data </a></p>
+
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/sites/default/files/geoscience-sm_1.png" /> Geosience</p>
+</div>
+
+<p>Release Date: <span>May 28, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
+</div>
+
+<div class="dataset-preview">
+<p><a href="https://dev.spc.links.com.au/data/dataset/public-domain-wcpfc-purse-seine-catch-data">Public Domain WCPFC Purse Seine Catch Data </a></p>
+
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/sites/default/files/geoscience-sm_1.png" /> Geosience</p>
+</div>
+
+<p>Release Date: <span>May 28, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
+</div>
+</div>
+',
+    'format' => 'full_html',
+    'substitute' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -139,9 +167,9 @@ function articles_content_type_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = '9f94a7a9-ea30-4fec-8f2e-2fd4ba5ab505';
-  $display->content['new-9f94a7a9-ea30-4fec-8f2e-2fd4ba5ab505'] = $pane;
-  $display->panels['one_fw_main'][2] = 'new-9f94a7a9-ea30-4fec-8f2e-2fd4ba5ab505';
+  $pane->uuid = '5d1901c9-3186-42d3-b292-cbc30100598d';
+  $display->content['new-5d1901c9-3186-42d3-b292-cbc30100598d'] = $pane;
+  $display->panels['one_fw_main'][2] = 'new-5d1901c9-3186-42d3-b292-cbc30100598d';
   $pane = new stdClass();
   $pane->pid = 'new-cffe60f8-73ee-4213-9cd0-767d0be2159a';
   $pane->panel = 'one_fw_main';
