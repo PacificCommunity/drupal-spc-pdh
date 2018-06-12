@@ -31,50 +31,68 @@
   <?php
     $thematic_landing_banner = $content['field_thematic_banner']['#items'][0]['value'];
     $thematic_landing_img = $content['field_banner_image'][0]['#item']['uri'];
-  ?>
-  <div class="banner-image" style="background-image: url(<?php print file_create_url($thematic_landing_img); ?>)"></div>
-  <div class="content"<?php print $content_attributes; ?>>
-    <div class="spc-home-banner-block-main">
-      <div class="spc-home-banner-block">
-        <div class="banner-title">
-          <?php
-            print render($content['field_banner_title']);
-            print render($content['field_banner_sub_title']);
-          ?>
-        </div>
-        <div id="spc-home-banner-search">
-          <?php
-          if (!empty($content['search_block'])):
-            if ($thematic_landing_banner == 0):
-              print render($content['search_block']); 
-            else:
-              print render($content['search_block']); 
-            endif;
-          endif; ?>
-        </div>
-      </div>
-      <?php if ($thematic_landing_banner == 1): ?>
-          <div class="banner-links hidden-xs">
-            <div class="col-md-4 col-sm-4 link-block">
-              <div class="icon-wrapper">
-                <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
-              </div>
-              <span>326</span><br> Datasets
+    if ($thematic_landing_banner == 0):
+      ?>
+      <div class="banner-image" style="background-image: url(<?php print file_create_url($thematic_landing_img); ?>)"></div>
+      <div class="content"<?php print $content_attributes; ?>>
+        <div class="spc-home-banner-block-main">
+          <div class="spc-home-banner-block">
+            <div class="banner-title">
+              <?php
+                print render($content['field_banner_title']);
+                print render($content['field_banner_sub_title']);
+              ?>
             </div>
-            <div class="col-md-4 col-sm-4 link-block">
-              <div class="icon-wrapper">
-                <img src="/sites/all/themes/spc/img/spc/article_icon.png">
-              </div>
-              <span>326</span><br> Articles
-            </div>
-            <div class="col-md-4 col-sm-4 link-block">
-              <div class="icon-wrapper">
-                <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
-              </div>
-              <span>326</span><br> Publications
+            <div id="spc-home-banner-search">
+              <?php
+              if (!empty($content['search_block'])):
+                print render($content['search_block']); 
+              endif; ?>
             </div>
           </div>
-        <?php endif; ?>
-    </div>
-  </div>
+        </div>
+      </div>
+    <?php elseif ($thematic_landing_banner == 1): 
+      $node = menu_get_object(); 
+      $banner_image = $node->field_banner_image_thematic['und'][0]['uri']; ?>
+      <div class="banner-image" style="background-image: url(<?php if ($banner_image): print(file_create_url($banner_image)); else: print(file_create_url($thematic_landing_img)); endif; ?>)"></div>
+      <div class="content"<?php print $content_attributes; ?>
+        <div class="spc-home-banner-block-main">
+          <div class="spc-home-banner-block">
+            <div class="banner-title">
+              <?php
+                print render($content['field_banner_title']);
+                print render($content['field_banner_sub_title']);
+              ?>
+            </div>
+            <div id="spc-home-banner-search">
+              <?php
+              if (!empty($content['search_block'])):
+                print render($content['search_block']); 
+              endif; ?>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-links hidden-xs">
+        <div class="col-md-4 col-sm-4 link-block">
+          <div class="icon-wrapper">
+            <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
+          </div>
+          <span>326</span><br> Datasets
+        </div>
+        <div class="col-md-4 col-sm-4 link-block">
+          <div class="icon-wrapper">
+            <img src="/sites/all/themes/spc/img/spc/article_icon.png">
+          </div>
+          <span>326</span><br> Articles
+        </div>
+        <div class="col-md-4 col-sm-4 link-block">
+          <div class="icon-wrapper">
+            <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
+          </div>
+          <span>326</span><br> Publications
+        </div>
+      </div>
+    <?php endif; ?>
 </div>

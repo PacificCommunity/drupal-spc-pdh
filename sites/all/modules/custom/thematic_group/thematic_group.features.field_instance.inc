@@ -153,6 +153,69 @@ function thematic_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-thematic_group-field_banner_image_thematic'.
+  $field_instances['node-thematic_group-field_banner_image_thematic'] = array(
+    'bundle' => 'thematic_group',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_image_thematic',
+    'label' => 'Banner Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance:
   // 'node-thematic_group-field_ckan_thematic_group_id'.
   $field_instances['node-thematic_group-field_ckan_thematic_group_id'] = array(
@@ -343,6 +406,7 @@ function thematic_group_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Articles and Publications');
+  t('Banner Image');
   t('CKAN thematic group ID');
   t('Comment');
   t('Description');
