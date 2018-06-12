@@ -290,12 +290,18 @@ function home_page_default_panels_mini() {
     'admin_title' => '',
     'title' => 'Latest Datasets',
     'title_heading' => 'h2',
-    'body' => '<div class=\'dataset-on-home-page\'>
-<p class=\'dataset-title\'>Supporting Data Driven Progress Towards SDGs in Pacific Agriculture and Fisheries</p>
-<div class=\'dataset-groups\'><p><img src="https://dev.spc.links.com.au/sites/default/files/geoscience.png" /> Geosience</p></div>
-<p class=\'dataset-date\'>Release Date: <span>May 28, 2018</span></p>
-<div class=\'dataset-formats\'>File Format: <span>HTML</span><span>JSON</span></div>
-</div>',
+    'body' => '<div class="dataset-preview">
+<p><a href="https://dev.spc.links.com.au/data/dataset/public-domain-wcpfc-purse-seine-catch-data">Public Domain WCPFC Purse Seine Catch Data </a></p>
+
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/sites/default/files/geoscience-sm_1.png" /> Geosience</p>
+</div>
+
+<p>Release Date: <span>May 28, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
+</div>
+',
     'format' => 'full_html',
     'substitute' => TRUE,
   );
@@ -347,12 +353,18 @@ function home_page_default_panels_mini() {
     'admin_title' => '',
     'title' => 'Popular Datasets',
     'title_heading' => 'h2',
-    'body' => '<div class=\'dataset-on-home-page\'>
-<p class=\'dataset-title\'>Supporting Data Driven Progress Towards SDGs in Pacific Agriculture and Fisheries</p>
-<div class=\'dataset-groups\'><p><img src="https://dev.spc.links.com.au/sites/default/files/geoscience.png" /> Geosience</p></div>
-<p class=\'dataset-date\'>Release Date: <span>May 28, 2018</span></p>
-<div class=\'dataset-formats\'>File Format: <span>HTML</span><span>JSON</span></div>
-</div>',
+    'body' => '<div class="dataset-preview">
+<p><a href="https://dev.spc.links.com.au/data/dataset/public-domain-wcpfc-purse-seine-catch-data">Public Domain WCPFC Purse Seine Catch Data </a></p>
+
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/sites/default/files/geoscience-sm_1.png" /> Geosience</p>
+</div>
+
+<p>Release Date: <span>May 28, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
+</div>
+',
     'format' => 'full_html',
     'substitute' => TRUE,
   );
