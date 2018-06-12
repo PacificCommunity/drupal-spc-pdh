@@ -1,7 +1,7 @@
 name = Thematic group
 core = 7.x
 package = Features
-version = 7.x-1.14
+version = 7.x-1.15
 dependencies[] = bean
 dependencies[] = ckan_tweaks
 dependencies[] = ctools
