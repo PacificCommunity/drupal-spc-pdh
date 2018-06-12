@@ -221,14 +221,9 @@ function thematic_group_default_page_manager_handlers() {
     'title_heading' => 'h2',
     'body' => '<h2>Latest Tweets</h2>
 
-<div class="row">
-<div class="col-md-3">
-<img alt="" height="447" src="/sites/all/themes/spc/img/spc/tweet1.png" width="297" /> 
-</div>
-<div class="col-md-3">
-<img alt="" height="447" src="/sites/all/themes/spc/img/spc/tweet1.png" width="297" />
-</div>
-</div>
+<div class="col-md-3 col-sm-4"><img alt="" height="447" src="/sites/all/themes/spc/img/spc/tweet1.png" width="297" /></div>
+
+<div class="col-md-3 col-sm-4"><img alt="" height="447" src="/sites/all/themes/spc/img/spc/tweet1.png" width="297" /></div>
 ',
     'format' => 'full_html',
     'substitute' => 1,

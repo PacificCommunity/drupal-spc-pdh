@@ -30,8 +30,9 @@
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php
     $thematic_landing_banner = $content['field_thematic_banner']['#items'][0]['value'];
-    print render($content['field_banner_image']);
+    $thematic_landing_img = $content['field_banner_image'][0]['#item']['uri'];
   ?>
+  <div class="banner-image" style="background-image: url(<?php print file_create_url($thematic_landing_img); ?>)"></div>
   <div class="content"<?php print $content_attributes; ?>>
     <div class="spc-home-banner-block-main">
       <div class="spc-home-banner-block">
@@ -53,20 +54,20 @@
         </div>
       </div>
       <?php if ($thematic_landing_banner == 1): ?>
-          <div class="banner-links">
-            <div class="col-md-4 link-block">
+          <div class="banner-links hidden-xs">
+            <div class="col-md-4 col-sm-4 link-block">
               <div class="icon-wrapper">
                 <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
               </div>
               <span>326</span><br> Datasets
             </div>
-            <div class="col-md-4 link-block">
+            <div class="col-md-4 col-sm-4 link-block">
               <div class="icon-wrapper">
                 <img src="/sites/all/themes/spc/img/spc/article_icon.png">
               </div>
               <span>326</span><br> Articles
             </div>
-            <div class="col-md-4 link-block">
+            <div class="col-md-4 col-sm-4 link-block">
               <div class="icon-wrapper">
                 <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
               </div>
