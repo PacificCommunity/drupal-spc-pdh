@@ -5,8 +5,18 @@
 		</a>
 	</p>
 	<div class="dataset-groups">
-		<p><img width="100%" class="media-object" src="<?= $dataset['image_url'] ?>" alt="..."> Geosience</p>
+		<p><img width="100%" class="media-object" src="<?= $dataset['image_url'] ?>" alt="..."> <?= $dataset['organization'] ?></p>
 	</div>
-	<p class="dataset-date">Release Date: <span>May 28, 2018</span></p>
-	<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
+	<p class="dataset-date">Release Date: <span><?= $dataset['release_date'] ?></span></p>
+	<div class="dataset-formats">File Format: 
+		<?php foreach ($dataset['resources'] as $res) { ?>
+			<span>
+				<?php if ($res->format) {
+					print(strtoupper($res->format));
+				} else {
+					print('DATA');
+				} ?>
+			</span>
+		<?php } ?>
+	</div>
 </div>
