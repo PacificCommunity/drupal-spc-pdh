@@ -7817,8 +7817,7 @@ button.close {
 }
 #mini-panel-data_category {
   background-color: #fff;
-  padding: 60px 0;
-  border-top: 5px solid #0e6fa7;
+  padding: 10px 0;
 }
 #mini-panel-data_category .pane-title {
   text-align: center;
@@ -7843,7 +7842,7 @@ button.close {
   text-align: center;
 }
 .data-insights-promoted-item {
-  background-color: rgba(140, 188, 218, 0.25);
+  background-color: #fff;
   margin-bottom: 30px;
   overflow: auto;
 }
@@ -7868,7 +7867,7 @@ button.close {
   padding: 50px 0;
 }
 #mini-panel-data_insights h2 {
-  color: rgba(255, 255, 255, 0.65);
+  color: #032f47;
   font-size: 40px;
   font-weight: 400;
   text-align: center;
@@ -7935,7 +7934,7 @@ button.close {
   margin-left: 0;
 }
 #mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item .article-title-block h3 a {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 300;
   color: #273340;
 }

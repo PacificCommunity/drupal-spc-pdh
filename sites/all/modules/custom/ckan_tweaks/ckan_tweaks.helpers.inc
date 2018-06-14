@@ -34,11 +34,15 @@ function _ckan_tweaks_get_ckan_url() {
 
 function _ckan_tweaks_create_dataset_mapper($ckan_url) {
   return function ($dataset) use ($ckan_url) {
+    $release_date = date_create($dataset->metadata_created);
     return [
       'title' => $dataset->title,
       'description' => $dataset->short_notes,
       'image_url' => $dataset->organization_image_url,
-      'ckan_url' => $ckan_url . '/dataset/' . $dataset->name
+      'ckan_url' => $ckan_url . '/dataset/' . $dataset->name,
+      'organization' => $dataset->organization->title,
+      'release_date' => date_format($release_date, 'F j, Y'),
+      'resources' => $dataset->resources
     ];
   };
 }
