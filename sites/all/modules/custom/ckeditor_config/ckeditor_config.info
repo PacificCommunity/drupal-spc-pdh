@@ -1,7 +1,7 @@
 name = Ckeditor config
 core = 7.x
 package = Site Configurations
-version = 7.x-1.01
+version = 7.x-1.02
 project = ckeditor_config
 dependencies[] = ckeditor
 dependencies[] = ctools
