@@ -7844,6 +7844,10 @@ button.close {
 .data-insights-promoted-item {
   background-color: #fff;
   margin-bottom: 30px;
+  overflow: hidden;
+}
+.data-insights-promoted-item .field-type-text-with-summary,
+.data-insights-promoted-item .insight-body {
   overflow: auto;
 }
 .data-insights-promoted-item img {

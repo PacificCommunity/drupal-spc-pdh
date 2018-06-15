@@ -121,7 +121,10 @@
 .data-insights-promoted-item {
     background-color:  #fff;
     margin-bottom: 30px;
-    overflow: auto;
+    overflow: hidden;
+    .field-type-text-with-summary, .insight-body {
+        overflow: auto;
+    }
     img {
       width: 100%;
     }
