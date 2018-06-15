@@ -1,7 +1,7 @@
 name = Ckeditor config
 core = 7.x
 package = Site Configurations
-version = 7.x-1.02
+version = 7.x-1.03
 project = ckeditor_config
 dependencies[] = ckeditor
 dependencies[] = ctools
@@ -14,6 +14,7 @@ features[ckeditor_profile][] = CKEditor Global Profile
 features[ckeditor_profile][] = Full
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
+features[filter][] = filtered_html
 features[filter][] = plain_text
 features[variable][] = elfinder_settings_filesystem_dirperm
 features[variable][] = elfinder_settings_filesystem_fileperm
