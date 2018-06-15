@@ -38,7 +38,8 @@ function ckan_tweaks_block_view($delta = '') {
       $recent = _ckan_tweaks_search_datasets(
         [
           'q' => sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $id),
-          CKAN_SEARCH_PARAM_POPULAR_FIRST => true
+          CKAN_SEARCH_PARAM_POPULAR_FIRST => true,
+          'rows' => 4
         ]
       );
       $ckan_url = _ckan_tweaks_get_ckan_url();
