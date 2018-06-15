@@ -8175,11 +8175,26 @@ button.close {
 #node_content {
   padding: 80px 0 60px;
 }
-#thematic_insight .data-insights-promoted-item .field-type-text-with-summary p {
+#thematic_insight .data-insights-promoted-item {
+  background-color: #dfeaf2;
+}
+#thematic_insight .data-insights-promoted-item .insight-body {
   text-align: center;
 }
+#thematic_insight .data-insights-promoted-item .release-date {
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  color: #393f45;
+  font-weight: 300;
+  padding: 0 15px;
+}
+#thematic_insight .data-insights-promoted-item .release-date span {
+  color: #c60c30;
+}
 #thematic_insight .data-insights-promoted-item h2 {
-  margin: 30px 0;
+  line-height: 1;
+  margin: 10px 0 20px;
 }
 #thematic_insight .data-insights-promoted-item h2 a {
   color: #036295;

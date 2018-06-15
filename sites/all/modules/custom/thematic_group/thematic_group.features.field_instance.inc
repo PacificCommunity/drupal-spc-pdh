@@ -268,6 +268,63 @@ function thematic_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-thematic_group-field_data_insight_thematic'.
+  $field_instances['node-thematic_group-field_data_insight_thematic'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Data insight to show on thematic landing page',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'bypass_access' => FALSE,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_data_insight_thematic',
+    'label' => 'Data insight',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 33,
+    ),
+  );
+
   // Exported field_instance: 'node-thematic_group-field_display_image'.
   $field_instances['node-thematic_group-field_display_image'] = array(
     'bundle' => 'thematic_group',
@@ -409,6 +466,8 @@ function thematic_group_field_default_field_instances() {
   t('Banner Image');
   t('CKAN thematic group ID');
   t('Comment');
+  t('Data insight');
+  t('Data insight to show on thematic landing page');
   t('Description');
   t('Display image');
   t('Icon');
