@@ -27,7 +27,7 @@ function ckan_search_form($form_state) {
   );
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Search'),
+    '#value' => '',
   );
 
   $form['#submit'] = array('ckan_search_submit');
