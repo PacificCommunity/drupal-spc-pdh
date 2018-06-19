@@ -7717,6 +7717,19 @@ button.close {
   border: none;
   font-weight: 700;
 }
+.node-type-page table thead tr {
+  background-color: #032f47;
+}
+.node-type-page table thead tr th {
+  font-weight: 400;
+  color: #fff;
+}
+.node-type-page table tr td {
+  padding: 5px 15px;
+}
+.node-type-page table tr td:first-child {
+  text-align: center;
+}
 #mini-panel-home_banner,
 #thematic_landing_banner {
   position: relative;
