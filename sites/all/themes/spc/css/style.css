@@ -7889,7 +7889,9 @@ button.close {
   color: #084255;
 }
 #mini-panel-data_insights {
-  background: #fff url(../img/spc/insights_bg.jpg) 50% 50% no-repeat;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/insights_bg.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   background-size: cover;
   padding: 20px 0;
 }
@@ -7918,7 +7920,7 @@ button.close {
   margin-left: 0px;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item h2 {
-  margin: 15px 0 20px;
+  margin: 0;
 }
 #mini-panel-data_insights .view-all-link {
   color: #fff;
@@ -7946,7 +7948,7 @@ button.close {
   background: url(../img/spc/view_all_arrow.png) 50% 50% no-repeat;
 }
 #mini-panel-blog_preview {
-  background: #114976 linear-gradient(to right, #114976, rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to right, #114976, rgba(0, 0, 0, 0.2));
   padding: 20px 0;
 }
 #mini-panel-blog_preview h2 {
