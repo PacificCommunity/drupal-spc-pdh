@@ -46,7 +46,7 @@
             <div id="spc-home-banner-search">
               <?php
               if (!empty($content['search_block'])):
-                print render($content['search_block']); 
+                print render($content['search_block']);
               endif; ?>
             </div>
           </div>
