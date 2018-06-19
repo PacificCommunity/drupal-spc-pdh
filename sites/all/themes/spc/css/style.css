@@ -7670,7 +7670,7 @@ button.close {
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 #mini-panel-footer {
-  background: #036295 url(../img/spc/footer_gradient.png) 50% 50% no-repeat;
+  background: #032f47 url(../img/spc/footer_gradient.png) 50% 50% no-repeat;
   background-size: cover;
   padding: 85px 0 45px;
   font-size: 18px;
