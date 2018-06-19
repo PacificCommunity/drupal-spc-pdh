@@ -82,24 +82,29 @@ function main_layout_default_panels_mini() {
     'body' => '<div class="row">
 <div class="col-md-6">
 <h3>WHO WE ARE</h3>
+
 <ul>
-<li>About Us</li>
-<li>Member</li>
-<li>Contact Us</li>
-<li>Staff Email</li>
-<li>Our Work</li>
+	<li>About Us</li>
+	<li>Member</li>
+	<li>Contact Us</li>
+	<li>Staff Email</li>
+	<li>Our Work</li>
 </ul>
 </div>
+
 <div class="col-md-6">
 <h3>RESOURCES</h3>
+
 <ul>
-<li>Privacy Policy</li>
-<li>Terms & Condions</li>
-<li>Sitemap</li>
-<li>FAQ</li>
+    <li><a href="https://dev.spc.links.com.au/content/member-countries">Member Countries</a></li>
+	<li>Privacy Policy</li>
+	<li>Terms &amp; Condions</li>
+	<li>Sitemap</li>
+	<li>FAQ</li>
 </ul>
 </div>
-</div>',
+</div>
+',
     'format' => 'full_html',
     'substitute' => TRUE,
   );
