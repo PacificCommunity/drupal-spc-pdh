@@ -55,7 +55,7 @@ function thematic_group_field_default_field_bases() {
   // Exported field_base: 'field_articles_and_publications'.
   $field_bases['field_articles_and_publications'] = array(
     'active' => 1,
-    'cardinality' => 5,
+    'cardinality' => 4,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_articles_and_publications',

@@ -79,19 +79,19 @@
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
           </div>
-          <span>326</span><br> Datasets
+          <span>225</span><br> Datasets
         </div>
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/article_icon.png">
           </div>
-          <span>326</span><br> Articles
+          <span>181</span><br> Articles
         </div>
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
           </div>
-          <span>326</span><br> Publications
+          <span>72</span><br> Publications
         </div>
       </div>
     <?php endif; ?>

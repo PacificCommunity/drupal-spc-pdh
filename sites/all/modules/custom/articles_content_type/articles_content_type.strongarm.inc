@@ -22,6 +22,7 @@ function articles_content_type_strongarm() {
     'group_title_block|node|article|default' => FALSE,
     'group_thematic_groups|node|article|default' => FALSE,
     'group_with_icon|node|thematic_group|group_with_icon' => FALSE,
+    'group_countries_wrapper|node|page|default' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
