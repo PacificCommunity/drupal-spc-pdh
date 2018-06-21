@@ -7797,12 +7797,12 @@ button.close {
 #mini-panel-home_banner .spc-home-banner-block #ckan-search-form select,
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form select {
   position: relative;
-  background-color: #fff;
+  background-color: #eee;
   font-weight: 300;
   padding: 0 15px;
   border-radius: 5px;
   height: 60px;
-  width: 110px;
+  width: auto;
   border: none;
 }
 #mini-panel-home_banner .spc-home-banner-block #ckan-search-form input[type='submit'],
@@ -8063,8 +8063,8 @@ button.close {
   text-align: center;
 }
 .thematic-group-articles {
-  padding: 60px 0 80px;
-  background-color: #dfeaf2;
+  padding: 20px 0 20px;
+  background: linear-gradient(to right, #114976, rgba(0, 0, 0, 0.2));
 }
 .thematic-group-articles .field-type-entityreference {
   max-width: 1170px;
@@ -8097,11 +8097,14 @@ button.close {
   margin: 0;
 }
 .thematic-group-articles h4 a {
-  color: #2b3234;
+  color: #fff;
+}
+.thematic-group-articles h2 {
+  color: #fff;
 }
 .thematic-heading-block {
-  height: 90px;
-  line-height: 90px;
+  height: 60px;
+  line-height: 60px;
   clear: both;
   padding: 0 50px;
 }
@@ -8111,6 +8114,7 @@ button.close {
   color: #036295;
   font-size: 25px;
   font-weight: 300;
+  padding: 0;
 }
 .thematic-heading-block button img {
   max-height: 42px;
@@ -8158,7 +8162,7 @@ button.close {
   width: 1px;
   height: 52px;
   background-color: #7d98a9;
-  right: 10px;
+  right: 7px;
   top: 4px;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:last-of-type {
@@ -8239,7 +8243,7 @@ button.close {
   color: #036295;
 }
 #mini-panel-latest_datasets_and_insight {
-  padding: 60px 0 80px;
+  padding: 20px 0 20px;
 }
 #mini-panel-latest_datasets_and_insight:before {
   content: '';
@@ -8251,7 +8255,7 @@ button.close {
   top: -60px;
 }
 #latest_tweets {
-  padding: 60px 0 100px;
+  padding: 20px 0 30px;
 }
 .breadcrumb {
   background-color: transparent;

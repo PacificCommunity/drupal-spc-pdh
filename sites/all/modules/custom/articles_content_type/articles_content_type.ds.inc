@@ -88,6 +88,11 @@ function articles_content_type_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|article|related_articles_and_publication'] = $ds_fieldsetting;
 
