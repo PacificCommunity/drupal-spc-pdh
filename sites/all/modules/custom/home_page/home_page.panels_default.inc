@@ -291,15 +291,55 @@ function home_page_default_panels_mini() {
     'title' => 'Latest Datasets',
     'title_heading' => 'h2',
     'body' => '<div class="dataset-preview">
-<p><a href="https://dev.spc.links.com.au/data/dataset/public-domain-wcpfc-purse-seine-catch-data">Public Domain WCPFC Purse Seine Catch Data </a></p>
-
+<div class="dataset-title">
+<p><a href="https://dev.spc.links.com.au/data/dataset/iaea-ocean-acidification-resources">IAEA Ocean Acidification Resources </a></p>
+</div>
 <div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/sites/default/files/geoscience-sm_1.png" /> Geosience</p>
+<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-003815.876776IAEA-square-logo.jpg" /> IAEA</p>
 </div>
 
-<p>Release Date: <span>May 28, 2018</span></p>
+<p class="dataset-date">Release Date: <span>June 14, 2018</span></p>
 
-<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
+<div class="dataset-formats">File Format: <span>WEBSITE</span></div>
+</div>
+
+<div class="dataset-preview">
+<div class="dataset-title">
+<p><a href="https://dev.spc.links.com.au/data/dataset/beche-de-mer-exports-1980-2016">Beche-de-mer exports 1980-2016 </a></p>
+</div>
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000127.404197FAME-txt-logo-tr.png" /> SPC FAME</p>
+</div>
+
+<p class="dataset-date">Release Date: <span>May 28, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>CSV</span></div>
+</div>
+
+<div class="dataset-preview">
+<div class="dataset-title">
+<p><a href="https://dev.spc.links.com.au/data/dataset/iaea-marine-information-system-maris">IAEA Marine Information System (MARiS) </a></p>
+</div>
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-003815.876776IAEA-square-logo.jpg" /> IAEA</p>
+</div>
+
+<p class="dataset-date">Release Date: <span>June 13, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>DATA</span></div>
+</div>
+
+<div class="dataset-preview">
+<div class="dataset-title">
+<p><a href="https://dev.spc.links.com.au/data/dataset/ffa-vessels-good-standing-list-august-2016">FFA Vessels - Good Standing List - August 2016 </a></p>
+</div>
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-05-235210.962258ffa-logo.png" /> FFA</p>
+</div>
+
+<p class="dataset-date">Release Date: <span>June 8, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>XLS</span></div>
 </div>
 ',
     'format' => 'full_html',
@@ -354,15 +394,55 @@ function home_page_default_panels_mini() {
     'title' => 'Popular Datasets',
     'title_heading' => 'h2',
     'body' => '<div class="dataset-preview">
-<p><a href="https://dev.spc.links.com.au/data/dataset/public-domain-wcpfc-purse-seine-catch-data">Public Domain WCPFC Purse Seine Catch Data </a></p>
-
+<div class="dataset-title">
+<p><a href="https://dev.spc.links.com.au/data/dataset/average-price-paid-to-fisher-of-sea-cucumber-per-species-and-grade">Average price paid to fisher of sea cucumber per species and grade </a></p>
+</div>
 <div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/sites/default/files/geoscience-sm_1.png" /> Geosience</p>
+<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000127.404197FAME-txt-logo-tr.png" /> SPC FAME</p>
 </div>
 
-<p>Release Date: <span>May 28, 2018</span></p>
+<p class="dataset-date">Release Date: <span>June 14, 2018</span></p>
 
-<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
+<div class="dataset-formats">File Format: <span>XLS</span></div>
+</div>
+
+<div class="dataset-preview">
+<div class="dataset-title">
+<p><a href="https://dev.spc.links.com.au/data/dataset/swamp-taro-crop-genetic-collections-for-distributions">Swamp Taro - Crop Genetic Collections for Distributions </a></p>
+</div>
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000225.537367LRD-txt-logo.png" /> SPC LRD</p>
+</div>
+
+<p class="dataset-date">Release Date: <span>May 28, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>XLS</span></div>
+</div>
+
+<div class="dataset-preview">
+<div class="dataset-title">
+<p><a href="https://dev.spc.links.com.au/data/dataset/new-caledonia-durand-reef-2017-multi-beam-bathymetry-survey">New Caledonia, Durand Reef, 2017, Multi - Beam Bathymetry Survey </a></p>
+</div>
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000034.021861GEM-txt-logo.png" /> SPC GEM</p>
+</div>
+
+<p class="dataset-date">Release Date: <span>June 13, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>PDF</span></div>
+</div>
+
+<div class="dataset-preview">
+<div class="dataset-title">
+<p><a href="https://dev.spc.links.com.au/data/dataset/tonga-population-and-housing-census-2016">Tonga Population and Housing Census 2016 </a></p>
+</div>
+<div class="dataset-groups">
+<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000436.261253SDD-txt-logo.png" /> SPC SDD</p>
+</div>
+
+<p class="dataset-date">Release Date: <span>June 8, 2018</span></p>
+
+<div class="dataset-formats">File Format: <span>XLS</span></div>
 </div>
 ',
     'format' => 'full_html',
