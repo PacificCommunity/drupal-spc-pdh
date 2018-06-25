@@ -164,42 +164,41 @@ function home_page_default_page_manager_pages() {
     'title' => '',
     'title_heading' => 'h2',
     'body' => '<div class="container">
-  <div class="row">
-    <div class="col-md-4 col-sm-5 col-xs-12">
-      <h2>Member Countries</h2>
-    </div>
-    <div class="col-md-8 col-sm-7 col-xs-12">
-      <div class="dropdown">
-        <div class="btn btn-default dropdown-toggle"\\ id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Click here to view our member country data portals</div>
-        <ul class="dropdown-menu" aria-labelledby="memberCountries">
-          <li><a href="/">American Samoa</a></li>
-          <li><a href="/">Cook Islands</a></li>
-          <li><a href="/">Fiji</a></li>
-          <li><a href="/">French Polynesia</a></li>
-          <li><a href="/">Guam</a></li>
-          <li><a href="/">Kiribati</a></li>
-          <li><a href="/">Marshall Islands</a></li>
-          <li><a href="/">Federated States of Micronesia</a></li>
-          <li><a href="/">Nauru</a></li>
-          <li><a href="/">New Caledonia</a></li>
-          <li><a href="/">Niue</a></li>
-          <li><a href="/">Northern Mariana Islands</a></li>
-          <li><a href="/">Palau</a></li>
-          <li><a href="/">Papua New Guinea</a></li>
-          <li><a href="/">Pitcairn Islands</a></li>
-          <li><a href="https://samoa-demo.spc.links.com.au/">Samoa</a></li>
-          <li><a href="/">Solomon Islands</a></li>
-          <li><a href="/">Tokelau</a></li>
-          <li><a href="/">Tonga</a></li>
-          <li><a href="/">Tuvalu</a></li>
-          <li><a href="/">Vanuatu</a></li>
-          <li><a href="/">Wallis and Futuna</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-',
+	<div class="row">
+		<div class="col-md-4 col-sm-5 col-xs-12">
+			<h2>Member Countries</h2>
+		</div>
+		<div class="col-md-8 col-sm-7 col-xs-12">
+			<div class="dropdown">
+				<div class="btn btn-default dropdown-toggle" id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Click here to view our member country data portals</div>
+				<ul class="dropdown-menu" aria-labelledby="memberCountries">
+					<li><a target="_blank" href="/">American Samoa</a></li>
+					<li><a target="_blank" href="/">Cook Islands</a></li>
+					<li><a target="_blank" href="/">Fiji</a></li>
+					<li><a target="_blank" href="/">French Polynesia</a></li>
+					<li><a target="_blank" href="/">Guam</a></li>
+					<li><a target="_blank" href="/">Kiribati</a></li>
+					<li><a target="_blank" href="/">Marshall Islands</a></li>
+					<li><a target="_blank" href="/">Federated States of Micronesia</a></li>
+					<li><a target="_blank" href="/">Nauru</a></li>
+					<li><a target="_blank" href="/">New Caledonia</a></li>
+					<li><a target="_blank" href="/">Niue</a></li>
+					<li><a target="_blank" href="/">Northern Mariana Islands</a></li>
+					<li><a target="_blank" href="/">Palau</a></li>
+					<li><a target="_blank" href="/">Papua New Guinea</a></li>
+					<li><a target="_blank" href="/">Pitcairn Islands</a></li>
+					<li><a target="_blank" href="https://samoa-demo.spc.links.com.au/">Samoa</a></li>
+					<li><a target="_blank" href="/">Solomon Islands</a></li>
+					<li><a target="_blank" href="/">Tokelau</a></li>
+					<li><a target="_blank" href="/">Tonga</a></li>
+					<li><a target="_blank" href="/">Tuvalu</a></li>
+					<li><a target="_blank" href="/">Vanuatu</a></li>
+					<li><a target="_blank" href="/">Wallis and Futuna</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>',
     'format' => 'full_html',
     'substitute' => TRUE,
   );
