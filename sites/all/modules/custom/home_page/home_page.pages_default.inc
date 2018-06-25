@@ -153,6 +153,71 @@ function home_page_default_page_manager_pages() {
   $display->content['new-933b1597-31a5-43da-816d-f065d38a1c53'] = $pane;
   $display->panels['one_fw_main'][3] = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
   $pane = new stdClass();
+  $pane->pid = 'new-380d5754-3229-4c08-984c-893e36297435';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Member Countries',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-5 col-xs-12">
+      <h2>Member Countries</h2>
+    </div>
+    <div class="col-md-8 col-sm-7 col-xs-12">
+      <div class="dropdown">
+        <div class="btn btn-default dropdown-toggle"\\ id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Click here to view our member country data portals</div>
+        <ul class="dropdown-menu" aria-labelledby="memberCountries">
+          <li><a href="/">American Samoa</a></li>
+          <li><a href="/">Cook Islands</a></li>
+          <li><a href="/">Fiji</a></li>
+          <li><a href="/">French Polynesia</a></li>
+          <li><a href="/">Guam</a></li>
+          <li><a href="/">Kiribati</a></li>
+          <li><a href="/">Marshall Islands</a></li>
+          <li><a href="/">Federated States of Micronesia</a></li>
+          <li><a href="/">Nauru</a></li>
+          <li><a href="/">New Caledonia</a></li>
+          <li><a href="/">Niue</a></li>
+          <li><a href="/">Northern Mariana Islands</a></li>
+          <li><a href="/">Palau</a></li>
+          <li><a href="/">Papua New Guinea</a></li>
+          <li><a href="/">Pitcairn Islands</a></li>
+          <li><a href="https://samoa-demo.spc.links.com.au/">Samoa</a></li>
+          <li><a href="/">Solomon Islands</a></li>
+          <li><a href="/">Tokelau</a></li>
+          <li><a href="/">Tonga</a></li>
+          <li><a href="/">Tuvalu</a></li>
+          <li><a href="/">Vanuatu</a></li>
+          <li><a href="/">Wallis and Futuna</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => 'member-countries-block',
+    'css_class' => '',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '380d5754-3229-4c08-984c-893e36297435';
+  $display->content['new-380d5754-3229-4c08-984c-893e36297435'] = $pane;
+  $display->panels['one_fw_main'][4] = 'new-380d5754-3229-4c08-984c-893e36297435';
+  $pane = new stdClass();
   $pane->pid = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $pane->panel = 'one_fw_main';
   $pane->type = 'panels_mini';
@@ -170,11 +235,11 @@ function home_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '7b27c8e1-534e-4371-a946-7081425b0c24';
   $display->content['new-7b27c8e1-534e-4371-a946-7081425b0c24'] = $pane;
-  $display->panels['one_fw_main'][4] = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
+  $display->panels['one_fw_main'][5] = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
