@@ -7730,6 +7730,13 @@ button.close {
 .node-type-page table tr td:first-child {
   text-align: center;
 }
+.node-type-page table tr td a {
+  color: #2a2c2d;
+}
+.node-type-page table tr td a:hover,
+.node-type-page table tr td a:focus {
+  color: #2a2c2d;
+}
 #mini-panel-home_banner,
 #thematic_landing_banner {
   position: relative;
@@ -8035,11 +8042,31 @@ button.close {
   font-weight: 700;
   color: #fff;
   line-height: 20px;
-  width: 55px;
   height: 20px;
+  width: auto;
+  padding: 0 10px;
   border-radius: 5px;
   background-color: #2585bd;
   text-align: center;
+}
+#member-countries-block {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/insights_bg.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 0;
+}
+#member-countries-block h2 {
+  margin: 0;
+  color: #fff;
+}
+#member-countries-block .btn.dropdown-toggle {
+  font-size: 16px;
+  border: none;
+  width: 400px;
+}
+#member-countries-block .dropdown-menu {
+  width: 400px;
 }
 .node-type-thematic-group h2 {
   font-size: 40px;
@@ -8410,6 +8437,12 @@ button.close {
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
+  #member-countries-block {
+    padding: 30px 0;
+  }
+  #member-countries-block .btn.dropdown-toggle {
+    margin-top: 15px;
+  }
 }
 @media (max-width: 488px) {
   #mini-panel-home_banner .spc-home-banner-block #ckan-search-form > div input {
@@ -8442,5 +8475,13 @@ button.close {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-left: 1px solid #7d98a9;
+  }
+  #member-countries-block .btn.dropdown-toggle {
+    font-size: 14px;
+    white-space: pre-wrap;
+    width: 100%;
+  }
+  #member-countries-block .dropdown-menu {
+    width: 100%;
   }
 }
