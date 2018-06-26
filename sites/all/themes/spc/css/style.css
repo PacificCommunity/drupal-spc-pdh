@@ -8050,23 +8050,39 @@ button.close {
   text-align: center;
 }
 #member-countries-block {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/insights_bg.jpg);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/background_01.jpg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 40px 0;
+  height: 300px;
 }
 #member-countries-block h2 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #fff;
   margin: 0;
+}
+#member-countries-block h3 {
+  font-weight: 400;
   color: #fff;
 }
 #member-countries-block .btn.dropdown-toggle {
   font-size: 16px;
   border: none;
-  width: 400px;
+  width: 365px;
+  text-align: left;
 }
 #member-countries-block .dropdown-menu {
-  width: 400px;
+  width: 365px;
+}
+#member-countries-block .container {
+  height: 100%;
+}
+#member-countries-block .row {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .node-type-thematic-group h2 {
   font-size: 40px;
@@ -8438,10 +8454,14 @@ button.close {
     flex-wrap: wrap;
   }
   #member-countries-block {
-    padding: 30px 0;
+    height: auto;
+    padding: 25px 0 50px;
   }
   #member-countries-block .btn.dropdown-toggle {
     margin-top: 15px;
+  }
+  #member-countries-block .row {
+    display: block;
   }
 }
 @media (max-width: 488px) {
