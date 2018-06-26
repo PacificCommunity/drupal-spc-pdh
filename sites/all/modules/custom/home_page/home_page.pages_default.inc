@@ -130,29 +130,6 @@ function home_page_default_page_manager_pages() {
   $display->content['new-f26b1da5-ff16-4919-814c-54cb9bcd09f7'] = $pane;
   $display->panels['one_fw_main'][2] = 'new-f26b1da5-ff16-4919-814c-54cb9bcd09f7';
   $pane = new stdClass();
-  $pane->pid = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
-  $pane->panel = 'one_fw_main';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'blog_preview';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '933b1597-31a5-43da-816d-f065d38a1c53';
-  $display->content['new-933b1597-31a5-43da-816d-f065d38a1c53'] = $pane;
-  $display->panels['one_fw_main'][3] = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
-  $pane = new stdClass();
   $pane->pid = 'new-5fce722d-8361-48a3-9572-c2c8bc9c336d';
   $pane->panel = 'one_fw_main';
   $pane->type = 'custom';
@@ -165,12 +142,13 @@ function home_page_default_page_manager_pages() {
     'title_heading' => 'h2',
     'body' => '<div class="container">
 	<div class="row">
-		<div class="col-md-4 col-sm-5 col-xs-12">
-			<h2>Member Countries</h2>
+		<div class="col-md-5 col-sm-6 col-xs-12">
+			<h2>Country Data</h2>
+			<h3>View data and knowledge by Pacific Island country</h3>
 		</div>
-		<div class="col-md-8 col-sm-7 col-xs-12">
+		<div class="col-md-7 col-sm-6 col-xs-12">
 			<div class="dropdown">
-				<div class="btn btn-default dropdown-toggle" id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Click here to view our member country data portals</div>
+				<div class="btn btn-default dropdown-toggle" id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Member Countries</div>
 				<ul class="dropdown-menu" aria-labelledby="memberCountries">
 					<li><a target="_blank" href="/">American Samoa</a></li>
 					<li><a target="_blank" href="/">Cook Islands</a></li>
@@ -211,11 +189,34 @@ function home_page_default_page_manager_pages() {
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '5fce722d-8361-48a3-9572-c2c8bc9c336d';
   $display->content['new-5fce722d-8361-48a3-9572-c2c8bc9c336d'] = $pane;
-  $display->panels['one_fw_main'][4] = 'new-5fce722d-8361-48a3-9572-c2c8bc9c336d';
+  $display->panels['one_fw_main'][3] = 'new-5fce722d-8361-48a3-9572-c2c8bc9c336d';
+  $pane = new stdClass();
+  $pane->pid = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'blog_preview';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '933b1597-31a5-43da-816d-f065d38a1c53';
+  $display->content['new-933b1597-31a5-43da-816d-f065d38a1c53'] = $pane;
+  $display->panels['one_fw_main'][4] = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
   $pane = new stdClass();
   $pane->pid = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $pane->panel = 'one_fw_main';
