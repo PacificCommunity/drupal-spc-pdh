@@ -7955,7 +7955,10 @@ button.close {
   background: url(../img/spc/view_all_arrow.png) 50% 50% no-repeat;
 }
 #mini-panel-blog_preview {
-  background: linear-gradient(to right, #114976, rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/background_01.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 20px 0;
 }
 #mini-panel-blog_preview h2 {
@@ -8050,12 +8053,12 @@ button.close {
   text-align: center;
 }
 #member-countries-block {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/background_01.jpg);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/background_02.jpg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 40px 0;
-  height: 300px;
+  height: 525px;
 }
 #member-countries-block h2 {
   font-size: 40px;
