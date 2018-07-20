@@ -372,7 +372,7 @@ function articles_content_type_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_thematic_group',
-    'label' => 'Thematic group',
+    'label' => 'Topic',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -397,7 +397,7 @@ function articles_content_type_field_default_field_instances() {
   t('Image');
   t('Similar Posts');
   t('Tags');
-  t('Thematic group');
+  t('Topic');
   t('Upload an image to go with this article.');
 
   return $field_instances;

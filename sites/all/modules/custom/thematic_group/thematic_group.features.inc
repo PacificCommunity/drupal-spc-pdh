@@ -38,7 +38,7 @@ function thematic_group_views_api($module = NULL, $api = NULL) {
 function thematic_group_node_info() {
   $items = array(
     'thematic_group' => array(
-      'name' => t('Thematic group'),
+      'name' => t('Topic'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
