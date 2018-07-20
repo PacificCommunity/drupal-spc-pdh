@@ -110,7 +110,7 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['arguments']['keys']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['keys']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['keys']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: CKAN thematic group ID (field_ckan_thematic_group_id) */
+  /* Contextual filter: Content: CKAN topic ID (field_ckan_thematic_group_id) */
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['id'] = 'field_ckan_thematic_group_id_value';
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['table'] = 'field_data_field_ckan_thematic_group_id';
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['field'] = 'field_ckan_thematic_group_id_value';

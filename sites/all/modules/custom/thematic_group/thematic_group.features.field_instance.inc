@@ -250,15 +250,17 @@ function thematic_group_field_default_field_instances() {
         'weight' => 4,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ckan_thematic_group_id',
-    'label' => 'CKAN thematic group ID',
-    'required' => FALSE,
+    'label' => 'CKAN topic ID',
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -464,7 +466,7 @@ function thematic_group_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Articles and Publications');
   t('Banner Image');
-  t('CKAN thematic group ID');
+  t('CKAN topic ID');
   t('Comment');
   t('Data insight');
   t('Data insight to show on thematic landing page');

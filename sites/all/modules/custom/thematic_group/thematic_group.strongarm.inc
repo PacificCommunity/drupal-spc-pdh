@@ -14,7 +14,7 @@ function thematic_group_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_thematic_group';
-  $strongarm->value = 'edit-display';
+  $strongarm->value = 'edit-submission';
   $export['additional_settings__active_tab_thematic_group'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -216,7 +216,7 @@ function thematic_group_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_thematic_group_pattern';
-  $strongarm->value = '[node:content-type]/[node:title]';
+  $strongarm->value = 'topic/[node:title]';
   $export['pathauto_node_thematic_group_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
