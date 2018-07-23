@@ -280,70 +280,16 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-62fd3d7b-aa9c-496a-986c-d3e9001b0521';
+  $pane->pid = 'new-235cc7f0-ceb5-4eb4-a4dc-b6149b16a8fb';
   $pane->panel = 'two_50_first';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
+  $pane->type = 'block';
+  $pane->subtype = 'ckan_tweaks-ckan_tweaks-recent_datasets';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => '',
-    'title' => 'Latest Datasets',
-    'title_heading' => 'h2',
-    'body' => '<div class="dataset-preview">
-<div class="dataset-title">
-<p><a href="https://dev.spc.links.com.au/data/dataset/iaea-ocean-acidification-resources">IAEA Ocean Acidification Resources </a></p>
-</div>
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-003815.876776IAEA-square-logo.jpg" /> IAEA</p>
-</div>
-
-<p class="dataset-date">Release Date: <span>June 14, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>WEBSITE</span></div>
-</div>
-
-<div class="dataset-preview">
-<div class="dataset-title">
-<p><a href="https://dev.spc.links.com.au/data/dataset/beche-de-mer-exports-1980-2016">Beche-de-mer exports 1980-2016 </a></p>
-</div>
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000127.404197FAME-txt-logo-tr.png" /> SPC FAME</p>
-</div>
-
-<p class="dataset-date">Release Date: <span>May 28, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>CSV</span></div>
-</div>
-
-<div class="dataset-preview">
-<div class="dataset-title">
-<p><a href="https://dev.spc.links.com.au/data/dataset/iaea-marine-information-system-maris">IAEA Marine Information System (MARiS) </a></p>
-</div>
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-003815.876776IAEA-square-logo.jpg" /> IAEA</p>
-</div>
-
-<p class="dataset-date">Release Date: <span>June 13, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>DATA</span></div>
-</div>
-
-<div class="dataset-preview">
-<div class="dataset-title">
-<p><a href="https://dev.spc.links.com.au/data/dataset/ffa-vessels-good-standing-list-august-2016">FFA Vessels - Good Standing List - August 2016 </a></p>
-</div>
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-05-235210.962258ffa-logo.png" /> FFA</p>
-</div>
-
-<p class="dataset-date">Release Date: <span>June 8, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>XLS</span></div>
-</div>
-',
-    'format' => 'full_html',
-    'substitute' => TRUE,
+    'override_title' => 1,
+    'override_title_text' => 'Latest Datasets',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -353,9 +299,9 @@ function home_page_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '62fd3d7b-aa9c-496a-986c-d3e9001b0521';
-  $display->content['new-62fd3d7b-aa9c-496a-986c-d3e9001b0521'] = $pane;
-  $display->panels['two_50_first'][0] = 'new-62fd3d7b-aa9c-496a-986c-d3e9001b0521';
+  $pane->uuid = '235cc7f0-ceb5-4eb4-a4dc-b6149b16a8fb';
+  $display->content['new-235cc7f0-ceb5-4eb4-a4dc-b6149b16a8fb'] = $pane;
+  $display->panels['two_50_first'][0] = 'new-235cc7f0-ceb5-4eb4-a4dc-b6149b16a8fb';
   $pane = new stdClass();
   $pane->pid = 'new-16e146b8-03d8-4014-a2f5-30acd3bb1904';
   $pane->panel = 'two_50_first';
@@ -383,70 +329,16 @@ function home_page_default_panels_mini() {
   $display->content['new-16e146b8-03d8-4014-a2f5-30acd3bb1904'] = $pane;
   $display->panels['two_50_first'][1] = 'new-16e146b8-03d8-4014-a2f5-30acd3bb1904';
   $pane = new stdClass();
-  $pane->pid = 'new-76f9f0f6-90f4-4ffa-8af3-d1c695ee883e';
+  $pane->pid = 'new-0b9ed538-e3a5-4415-bf4e-0953ad3f9aab';
   $pane->panel = 'two_50_second';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
+  $pane->type = 'block';
+  $pane->subtype = 'ckan_tweaks-ckan_tweaks-popular_datasets';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => '',
-    'title' => 'Popular Datasets',
-    'title_heading' => 'h2',
-    'body' => '<div class="dataset-preview">
-<div class="dataset-title">
-<p><a href="https://dev.spc.links.com.au/data/dataset/average-price-paid-to-fisher-of-sea-cucumber-per-species-and-grade">Average price paid to fisher of sea cucumber per species and grade </a></p>
-</div>
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000127.404197FAME-txt-logo-tr.png" /> SPC FAME</p>
-</div>
-
-<p class="dataset-date">Release Date: <span>June 14, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>XLS</span></div>
-</div>
-
-<div class="dataset-preview">
-<div class="dataset-title">
-<p><a href="https://dev.spc.links.com.au/data/dataset/swamp-taro-crop-genetic-collections-for-distributions">Swamp Taro - Crop Genetic Collections for Distributions </a></p>
-</div>
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000225.537367LRD-txt-logo.png" /> SPC LRD</p>
-</div>
-
-<p class="dataset-date">Release Date: <span>May 28, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>XLS</span></div>
-</div>
-
-<div class="dataset-preview">
-<div class="dataset-title">
-<p><a href="https://dev.spc.links.com.au/data/dataset/new-caledonia-durand-reef-2017-multi-beam-bathymetry-survey">New Caledonia, Durand Reef, 2017, Multi - Beam Bathymetry Survey </a></p>
-</div>
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000034.021861GEM-txt-logo.png" /> SPC GEM</p>
-</div>
-
-<p class="dataset-date">Release Date: <span>June 13, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>PDF</span></div>
-</div>
-
-<div class="dataset-preview">
-<div class="dataset-title">
-<p><a href="https://dev.spc.links.com.au/data/dataset/tonga-population-and-housing-census-2016">Tonga Population and Housing Census 2016 </a></p>
-</div>
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/data/uploads/group/2018-06-11-000436.261253SDD-txt-logo.png" /> SPC SDD</p>
-</div>
-
-<p class="dataset-date">Release Date: <span>June 8, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>XLS</span></div>
-</div>
-',
-    'format' => 'full_html',
-    'substitute' => TRUE,
+    'override_title' => 1,
+    'override_title_text' => 'Popular Datasets',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -456,9 +348,9 @@ function home_page_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '76f9f0f6-90f4-4ffa-8af3-d1c695ee883e';
-  $display->content['new-76f9f0f6-90f4-4ffa-8af3-d1c695ee883e'] = $pane;
-  $display->panels['two_50_second'][0] = 'new-76f9f0f6-90f4-4ffa-8af3-d1c695ee883e';
+  $pane->uuid = '0b9ed538-e3a5-4415-bf4e-0953ad3f9aab';
+  $display->content['new-0b9ed538-e3a5-4415-bf4e-0953ad3f9aab'] = $pane;
+  $display->panels['two_50_second'][0] = 'new-0b9ed538-e3a5-4415-bf4e-0953ad3f9aab';
   $pane = new stdClass();
   $pane->pid = 'new-718d8023-bac3-4a73-83d0-8f3f8e574c10';
   $pane->panel = 'two_50_second';

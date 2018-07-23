@@ -7,6 +7,9 @@ const CKAN_SEARCH_CRIT_THEMATIC_AREA = CKAN_SEARCH_NAME_THEMATIC_AREA . ':"%s"';
 // Additional search param names
 const CKAN_SEARCH_PARAM_POPULAR_FIRST = 'ext_popular_first';
 
+// Sorting
+const CKAN_SEARCH_SORT_LATEST_FIRST = 'metadata_modified desc';
+
 // Various static values
 const CKAN_DEFAULT_ORG_IMAGE = '/base/images/placeholder-organization.png';
 
