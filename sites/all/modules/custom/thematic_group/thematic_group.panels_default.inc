@@ -63,10 +63,10 @@ function thematic_group_default_panels_mini() {
   $display->content['new-adba4518-a062-4948-8fda-10fa1f61eae5'] = $pane;
   $display->panels['two_50_first'][0] = 'new-adba4518-a062-4948-8fda-10fa1f61eae5';
   $pane = new stdClass();
-  $pane->pid = 'new-435c4a1a-3d9b-4587-9fa9-bfb8b1941fa8';
+  $pane->pid = 'new-76244da1-1c2e-45c3-adaa-b36e4cc17d39';
   $pane->panel = 'two_50_second';
   $pane->type = 'block';
-  $pane->subtype = 'ckan_tweaks-ckan_tweaks-recent_datasets';
+  $pane->subtype = 'ckan_tweaks-ckan_tweaks-popular_datasets';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -82,9 +82,9 @@ function thematic_group_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '435c4a1a-3d9b-4587-9fa9-bfb8b1941fa8';
-  $display->content['new-435c4a1a-3d9b-4587-9fa9-bfb8b1941fa8'] = $pane;
-  $display->panels['two_50_second'][0] = 'new-435c4a1a-3d9b-4587-9fa9-bfb8b1941fa8';
+  $pane->uuid = '76244da1-1c2e-45c3-adaa-b36e4cc17d39';
+  $display->content['new-76244da1-1c2e-45c3-adaa-b36e4cc17d39'] = $pane;
+  $display->panels['two_50_second'][0] = 'new-76244da1-1c2e-45c3-adaa-b36e4cc17d39';
   $pane = new stdClass();
   $pane->pid = 'new-1e546a01-22f2-4d4e-8650-ddecd2e504a6';
   $pane->panel = 'two_50_top';
@@ -96,7 +96,8 @@ function thematic_group_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<h2>Latest Datasets</h2>',
+    'body' => '<h2>Popular Datasets</h2>
+',
     'format' => 'full_html',
     'substitute' => TRUE,
   );
