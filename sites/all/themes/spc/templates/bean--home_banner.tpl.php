@@ -75,8 +75,14 @@
         </div>
       </div>
       <?php 
-        $topic_count = !empty($node->field_ckan_thematic_group_id) ? _ckan_tweaks_count_datasets_for_thematic_area($node->field_ckan_thematic_group_id['und'][0]['safe_value']) : 0;
-        $publications_count = !empty($node->field_publications) ? $node->field_publications['und'][0]['value'] : 0;
+        if($cached = cache_get('topic_count', 'cache'))  {
+          $topic_count = $cached->data;
+        }
+        if(empty($topic_count) && $topic_count != '0') {
+          $topic_count = !empty($node->field_ckan_thematic_group_id) ? _ckan_tweaks_count_datasets_for_thematic_area($node->field_ckan_thematic_group_id['und'][0]['safe_value']) : '0';
+          cache_set('topic_count', $topic_count, 'cache', time() + 60*60*6);
+        }
+        $publications_count = !empty($node->field_publications) ? $node->field_publications['und'][0]['value'] : '0';
       ?>
       <div class="banner-links hidden-xs">
         <div class="col-md-4 col-sm-4 link-block">
