@@ -9,6 +9,7 @@ const CKAN_SEARCH_PARAM_POPULAR_FIRST = 'ext_popular_first';
 
 // Sorting
 const CKAN_SEARCH_SORT_LATEST_FIRST = 'metadata_modified desc';
+const CKAN_SEARCH_SORT_MOST_VIEWED_FIRST = 'extras_ga_view_count desc';
 
 // Various static values
 const CKAN_DEFAULT_ORG_IMAGE = '/base/images/placeholder-organization.png';

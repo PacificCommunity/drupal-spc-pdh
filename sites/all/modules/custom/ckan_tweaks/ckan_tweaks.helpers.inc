@@ -11,7 +11,6 @@ function _ckan_tweaks_count_datasets_for_thematic_area($id) {
 
 function _ckan_tweaks_search_datasets($params) {
   $client = govcms_ckan_client();
-
   $resp = $client->get('action/package_search', $params);
   if (!$resp->valid) {
     watchdog(
