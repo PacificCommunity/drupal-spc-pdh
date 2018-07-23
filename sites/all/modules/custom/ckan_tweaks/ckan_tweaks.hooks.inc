@@ -38,16 +38,18 @@ function ckan_tweaks_block_view($delta = '') {
   switch ($delta) {
     case 'ckan_tweaks-recent_datasets':
     case 'ckan_tweaks-popular_datasets':
+      $show_popular = intval($delta === 'ckan_tweaks-popular_datasets');
       $node = menu_get_object();
       $id = _ckan_tweaks_get_thematic_area_from_node($node);
-      $recent = _ckan_tweaks_search_datasets(
-        [
-          'q' => $node ? sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $id) : '*:*',
-          // CKAN has some problems with true/false. Use 1/0 instead
-          CKAN_SEARCH_PARAM_POPULAR_FIRST => intval($delta === 'ckan_tweaks-popular_datasets'),
-          'rows' => 4
-        ]
-      );
+      $query_dict = [
+        'q' => $node ? sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $id) : '*:*',
+        'sort' => constant('CKAN_SEARCH_SORT_' . ($show_popular ? 'MOST_VIEWED' : 'LATEST') . '_FIRST'),
+        'rows' => 4
+      ];
+      if ($node) {
+        $query_dict[CKAN_SEARCH_PARAM_POPULAR_FIRST] = TRUE;
+      }
+      $recent = _ckan_tweaks_search_datasets($query_dict);
 
       $ckan_url = _ckan_tweaks_get_ckan_url();
 
