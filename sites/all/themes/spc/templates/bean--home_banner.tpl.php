@@ -74,24 +74,28 @@
           </div>
         </div>
       </div>
+      <?php 
+        $topic_count = !empty($node->field_ckan_thematic_group_id) ? _ckan_tweaks_count_datasets_for_thematic_area($node->field_ckan_thematic_group_id['und'][0]['safe_value']) : 0;
+        $publications_count = !empty($node->field_publications) ? $node->field_publications['und'][0]['value'] : 0;
+      ?>
       <div class="banner-links hidden-xs">
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
           </div>
-          <span>225</span><br> Datasets
+          <span><?= $topic_count ?></span><br> Datasets
         </div>
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/article_icon.png">
           </div>
-          <span>181</span><br> Articles
+          <span><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></span><br> Articles
         </div>
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
           </div>
-          <span>72</span><br> Publications
+          <span><?= $publications_count ?></span><br> Publications
         </div>
       </div>
     <?php endif; ?>
