@@ -17,6 +17,12 @@ function data_insights_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'data_insights_list_page' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'data_insights_on_topic_page' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -64,6 +70,13 @@ function data_insights_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'data_insights_list_page' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'data_insights_on_topic_page' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -115,6 +128,16 @@ function data_insights_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'data_insights_list_page' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'bypass_access' => FALSE,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
       'data_insights_on_topic_page' => array(
         'label' => 'above',
         'settings' => array(),
