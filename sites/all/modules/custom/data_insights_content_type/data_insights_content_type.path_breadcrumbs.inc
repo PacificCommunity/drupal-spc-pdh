@@ -40,5 +40,25 @@ function data_insights_content_type_path_breadcrumbs_settings_info() {
   $path_breadcrumb->weight = 0;
   $export['data_insights_individual_view'] = $path_breadcrumb;
 
+  $path_breadcrumb = new stdClass();
+  $path_breadcrumb->api_version = 1;
+  $path_breadcrumb->machine_name = 'data_insights_list_page';
+  $path_breadcrumb->name = 'Data Insights List page';
+  $path_breadcrumb->path = 'data-insights';
+  $path_breadcrumb->data = array(
+    'titles' => array(
+      0 => 'Data Insights',
+    ),
+    'paths' => array(
+      0 => '<none>',
+    ),
+    'home' => 1,
+    'translatable' => 0,
+    'arguments' => array(),
+    'access' => array(),
+  );
+  $path_breadcrumb->weight = 0;
+  $export['data_insights_list_page'] = $path_breadcrumb;
+
   return $export;
 }

@@ -125,6 +125,9 @@ function data_insights_content_type_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'data_insights_list_page' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

@@ -23,6 +23,13 @@ function data_insights_content_type_ctools_plugin_api($module = NULL, $api = NUL
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function data_insights_content_type_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function data_insights_content_type_node_info() {
