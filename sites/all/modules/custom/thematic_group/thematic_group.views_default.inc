@@ -102,10 +102,18 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'data_insights_on_topic_page';
+  $handler->display->display_options['row_options']['load_comments'] = 0;
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'data_insights_on_topic_page';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -118,6 +126,15 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Topic (field_topic) */
+  $handler->display->display_options['arguments']['field_topic_target_id']['id'] = 'field_topic_target_id';
+  $handler->display->display_options['arguments']['field_topic_target_id']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['arguments']['field_topic_target_id']['field'] = 'field_topic_target_id';
+  $handler->display->display_options['arguments']['field_topic_target_id']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_topic_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_topic_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_topic_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_topic_target_id']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

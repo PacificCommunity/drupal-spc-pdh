@@ -130,41 +130,6 @@ function thematic_group_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_data_insight_thematic'.
-  $field_bases['field_data_insight_thematic'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_data_insight_thematic',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'data_insights' => 'data_insights',
-        ),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
   // Exported field_base: 'field_display_image'.
   $field_bases['field_display_image'] = array(
     'active' => 1,
