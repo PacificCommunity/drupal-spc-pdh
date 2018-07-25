@@ -7737,6 +7737,9 @@ button.close {
 .node-type-page table tr td a:focus {
   color: #2a2c2d;
 }
+.breadcrumb-box {
+  margin-top: 15px;
+}
 .breadcrumb-box .breadcrumb a,
 .breadcrumb-box .breadcrumb span,
 .breadcrumb-box .breadcrumb .delimiter {
