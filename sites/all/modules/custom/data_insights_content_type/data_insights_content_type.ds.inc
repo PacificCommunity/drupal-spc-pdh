@@ -108,6 +108,19 @@ function data_insights_content_type_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'field_data_insights_preview' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'insights-list-preview',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|data_insights|data_insights_list_page'] = $ds_fieldsetting;
 
@@ -171,13 +184,11 @@ function data_insights_content_type_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'title',
         1 => 'field_data_insights_preview',
-        2 => 'field_topic',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_data_insights_preview' => 'ds_content',
-      'field_topic' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
