@@ -155,12 +155,8 @@ function data_insights_content_type_field_default_field_instances() {
       ),
       'data_insights_list_page' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'data_insights_on_topic_page' => array(

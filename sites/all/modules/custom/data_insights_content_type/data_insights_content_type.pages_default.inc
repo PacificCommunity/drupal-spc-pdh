@@ -191,7 +191,10 @@ function data_insights_content_type_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'breadcrumb-box container',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -226,7 +229,10 @@ function data_insights_content_type_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container data-insights-list',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
