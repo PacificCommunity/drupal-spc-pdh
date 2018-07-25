@@ -21,7 +21,7 @@ function data_insights_content_type_path_breadcrumbs_settings_info() {
       1 => '!page_title',
     ),
     'paths' => array(
-      0 => '<none>',
+      0 => 'data-insights',
       1 => '<none>',
     ),
     'home' => 1,
