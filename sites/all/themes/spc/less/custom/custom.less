@@ -152,3 +152,77 @@
         }
     }
 }
+
+.breadcrumb-box {
+    .breadcrumb {
+        a, span, .delimiter {
+            font-family: 'Calibri';
+            color: #056199;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: center;
+        }
+        span {
+            color: #444e4e;
+        }
+    }
+}
+
+.not-front {
+    .node-data-insights {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+        h2 {                
+            font-family: 'Calibri';
+            color: #032f47;
+            font-size: 2.3rem;
+            font-weight: 700;
+            text-align: left;
+        }
+        .author {
+            margin-right: 4px;
+            position: relative;
+            display: inline-block;
+            &:after {
+                content: '';
+                position: absolute;
+                right: -5px;
+                top: 3px;
+                width: 1px;
+                height: 13px;
+                background-color: #191a1b;
+            }
+            &:before {
+                content: 'by';
+                margin-right: 2px;
+            }
+        }
+        .post-date {
+            margin-left: 4px;
+            display: inline-block;
+        }
+        .author, .post-date {
+            font-family: 'Calibri';
+            color: #191a1b;
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .body-text {
+            font-family: 'Calibri';
+            font-weight: 300;
+            line-height: 31.25px;
+            color: #2a2c2d;
+            font-size: 18px;
+        }
+        .insights-topic {
+            font-family: 'Calibri';
+            margin-bottom: 50px;
+        }
+        .preview {
+            margin-bottom: 25px;
+            font-family: 'Calibri';
+        }
+    }
+}
