@@ -7810,13 +7810,15 @@ button.close {
   font-family: 'Calibri';
 }
 .not-front .data-insights-list .data-insights-list-item {
-  height: 41rem;
+  height: 40rem;
   margin-bottom: 35px;
 }
-.not-front .data-insights-list .data-insights-list-item h2 {
+.not-front .data-insights-list .data-insights-list-item .insight-title {
   margin: 0;
   padding: 10px;
   background-color: #036295;
+}
+.not-front .data-insights-list .data-insights-list-item .insight-title a {
   color: #fff;
   font-size: 2rem;
 }
@@ -7837,7 +7839,7 @@ button.close {
   border: 1px solid #bcdfe5;
 }
 .not-front .data-insights-list .insights-list-preview {
-  height: 34rem;
+  height: 100%;
 }
 .not-front .data-insights-list .item-list-pager {
   padding-top: 1px;
