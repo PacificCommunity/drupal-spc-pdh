@@ -41,7 +41,7 @@ function data_insights_content_type_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '2',
       'label' => 'hidden',
-      'format' => 'ds_post_date_medium',
+      'format' => 'ds_post_date_insights_date_format',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',

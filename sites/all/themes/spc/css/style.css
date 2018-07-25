@@ -7770,9 +7770,9 @@ button.close {
   content: '';
   position: absolute;
   right: -5px;
-  top: 3px;
+  top: 4px;
   width: 1px;
-  height: 13px;
+  height: 14px;
   background-color: #191a1b;
 }
 .not-front .node-data-insights .author:before {
