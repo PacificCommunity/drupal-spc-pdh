@@ -107,6 +107,14 @@ function data_insights_content_type_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => 'insight-title',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
     ),
     'field_data_insights_preview' => array(
       'formatter_settings' => array(
