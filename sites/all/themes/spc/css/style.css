@@ -7849,6 +7849,9 @@ button.close {
 .not-front .data-insights-list .insights-list-preview {
   height: 100%;
 }
+.not-front .data-insights-list .insights-list-preview p:first-child {
+  height: 100%;
+}
 .not-front .data-insights-list .insights-list-preview img {
   height: 100%;
 }
