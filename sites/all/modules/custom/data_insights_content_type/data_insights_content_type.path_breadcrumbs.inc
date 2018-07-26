@@ -35,7 +35,21 @@ function data_insights_content_type_path_breadcrumbs_settings_info() {
         ),
       ),
     ),
-    'access' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'data_insights' => 'data_insights',
+            ),
+          ),
+          'context' => 'node',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $path_breadcrumb->weight = 0;
   $export['data_insights_individual_view'] = $path_breadcrumb;

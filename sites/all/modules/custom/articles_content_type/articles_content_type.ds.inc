@@ -60,12 +60,7 @@ function articles_content_type_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '5',
       'label' => 'hidden',
-      'format' => 'ds_post_date_long',
-    ),
-    'field_thematic_group' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
+      'format' => 'ds_post_date_insights_date_format',
     ),
   );
   $export['node|article|default'] = $ds_fieldsetting;
