@@ -104,6 +104,15 @@ function articles_content_type_strongarm() {
       'group_with_icon' => array(
         'custom_settings' => FALSE,
       ),
+      'data_insights_individual_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_list_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_on_topic_page' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

@@ -74,8 +74,8 @@ function articles_content_type_default_page_manager_handlers() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'article-breadcrumbs',
-    'css_class' => 'container',
+    'css_id' => '',
+    'css_class' => 'breadcrumb-box container',
   );
   $pane->extras = array();
   $pane->position = 0;
