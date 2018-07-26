@@ -66,6 +66,9 @@ stylesheets[all][] = mothership-layout.css
 ; Bootstrap 3 JS
 scripts[] = js/bootstrap.min.js
 
+; https://github.com/liabru/jquery-match-height
+scripts[] = js/jquery.matchHeight.js
+
 scripts[] = js/script.js
 
 ;-------------- Panel layouts --------------
