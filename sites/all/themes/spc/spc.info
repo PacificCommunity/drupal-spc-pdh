@@ -37,6 +37,8 @@ regions[highlighted] = Highlighted
 
 
 ;-------------- C S S -------------
+stylesheets[all][] = css/ma5-mobile-menu.css
+
 stylesheets[all][] = css/style.css
 
 ;-------------- CSS FOAD -------------
@@ -65,6 +67,9 @@ stylesheets[all][] = mothership-layout.css
 
 ; Bootstrap 3 JS
 scripts[] = js/bootstrap.min.js
+
+scripts[] = js/jquery.touchSwipe.min.js
+scripts[] = js/ma5-mobile-menu.js
 
 scripts[] = js/script.js
 

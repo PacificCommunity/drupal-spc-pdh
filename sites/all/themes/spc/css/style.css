@@ -7602,45 +7602,30 @@ button.close {
     display: none !important;
   }
 }
-#mini-panel-header {
+#header {
   background: #032f47 url(../img/spc/header_gradient.png) 50% 50% no-repeat;
   background-size: cover;
   height: 70px;
   line-height: 70px;
   color: #fff;
+  position: relative;
 }
-#mini-panel-header #logo img {
+#header #logo img {
   max-height: 100px;
 }
-#mini-panel-header #search-block-form {
-  color: #000;
+#header #main-menu {
+  position: absolute;
+  right: 30px;
+  top: 7px;
 }
-#mini-panel-header #search-block-form > div {
-  display: inline-block;
-}
-#mini-panel-header p {
-  margin-bottom: 0;
-}
-#mini-panel-header .region.two-50-second p {
-  text-align: right;
-}
-#mini-panel-header button.header-menu {
+button.header-menu-btn {
   position: relative;
   background-color: transparent;
   border: none;
+  height: 35px;
+  width: 65px;
 }
-#mini-panel-header button.header-menu input {
-  display: block;
-  width: 52px;
-  height: 32px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
-#mini-panel-header button.header-menu span {
+button.header-menu-btn span {
   display: block;
   width: 40px;
   height: 2px;
@@ -7651,21 +7636,24 @@ button.close {
   transform-origin: 4px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
-#mini-panel-header button.header-menu span:first-child {
+button.header-menu-btn span:first-child {
   transform-origin: 0% 0%;
   margin-top: 0;
 }
-#mini-panel-header button.header-menu span:nth-last-child(2) {
+button.header-menu-btn span:nth-child(2) {
   transform-origin: 0% 100%;
 }
-#mini-panel-header button.header-menu input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-4px, -23px);
+button.header-menu-btn:focus {
+  outline: none;
 }
-#mini-panel-header button.header-menu input:checked ~ span:nth-last-child(2) {
+.ma5-menu-active button.header-menu-btn span {
+  opacity: 1;
+  transform: rotate(45deg) translate(7px, -14px);
+}
+.ma5-menu-active button.header-menu-btn span:nth-child(2) {
   transform: rotate(-45deg) translate(0, 20px);
 }
-#mini-panel-header button.header-menu input:checked ~ span:nth-last-child(3) {
+.ma5-menu-active button.header-menu-btn span:nth-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
@@ -7881,6 +7869,62 @@ button.close {
   background-color: #036295;
   color: #fff;
   border-radius: 5px;
+}
+.ma5-mobile-menu-container {
+  background-color: #1d5f89;
+}
+.ma5-menu-panel {
+  background-color: #1d5f89;
+}
+.ma5-menu-panel .ma5-btn-enter {
+  background-color: transparent;
+}
+.ma5-menu-panel li {
+  border-bottom: 1px solid rgba(246, 240, 234, 0.5);
+}
+.ma5-menu-panel li:hover {
+  background-color: rgba(246, 240, 234, 0.5);
+}
+.ma5-menu-panel li:hover a {
+  color: #1d5f89;
+}
+.ma5-menu-panel li:hover .ma5-btn-enter i {
+  color: #1d5f89;
+}
+.ma5-menu-panel li:first-child {
+  margin-top: 70px;
+  border-top: 1px solid rgba(246, 240, 234, 0.5);
+}
+.ma5-menu-panel div.ma5-leave-bar {
+  text-align: left;
+  color: #fff;
+  font-size: 16px;
+  height: 70px;
+  line-height: 70px;
+  text-transform: none;
+  padding: 0 0 0 90px;
+}
+.ma5-menu-panel div.ma5-leave-bar .ma5-btn-leave {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  padding: 0;
+  overflow: hidden;
+  right: auto;
+  background-color: rgba(246, 240, 234, 0.25);
+  color: #fff;
+  cursor: pointer;
+}
+.ma5-menu-panel a {
+  color: #fff;
+  font-weight: 300;
+}
+.admin-menu .ma5-mobile-menu-container {
+  margin-top: 29px;
 }
 #mini-panel-home_banner,
 #thematic_landing_banner {
