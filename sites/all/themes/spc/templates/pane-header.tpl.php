@@ -27,7 +27,6 @@
   </div>
   <div id="main-menu">
     <button class="header-menu-btn ma5-toggle-menu" type="button">
-      <input type="checkbox">
       <span></span>
       <span></span>
       <span></span>

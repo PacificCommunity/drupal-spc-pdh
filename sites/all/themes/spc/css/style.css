@@ -7616,25 +7616,16 @@ button.close {
 #header #main-menu {
   position: absolute;
   right: 30px;
-  top: 2px;
+  top: 7px;
 }
-#header button.header-menu-btn {
+button.header-menu-btn {
   position: relative;
   background-color: transparent;
   border: none;
+  height: 35px;
+  width: 65px;
 }
-#header button.header-menu-btn input {
-  display: block;
-  width: 52px;
-  height: 32px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
-#header button.header-menu-btn span {
+button.header-menu-btn span {
   display: block;
   width: 40px;
   height: 2px;
@@ -7645,21 +7636,24 @@ button.close {
   transform-origin: 4px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
-#header button.header-menu-btn span:first-child {
+button.header-menu-btn span:first-child {
   transform-origin: 0% 0%;
   margin-top: 0;
 }
-#header button.header-menu-btn span:nth-last-child(2) {
+button.header-menu-btn span:nth-child(2) {
   transform-origin: 0% 100%;
 }
-#header button.header-menu-btn input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-4px, -23px);
+button.header-menu-btn:focus {
+  outline: none;
 }
-#header button.header-menu-btn input:checked ~ span:nth-last-child(2) {
+.ma5-menu-active button.header-menu-btn span {
+  opacity: 1;
+  transform: rotate(45deg) translate(7px, -14px);
+}
+.ma5-menu-active button.header-menu-btn span:nth-child(2) {
   transform: rotate(-45deg) translate(0, 20px);
 }
-#header button.header-menu-btn input:checked ~ span:nth-last-child(3) {
+.ma5-menu-active button.header-menu-btn span:nth-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
