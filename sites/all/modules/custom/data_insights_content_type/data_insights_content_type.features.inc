@@ -30,6 +30,25 @@ function data_insights_content_type_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_fe_date_custom_date_formats().
+ */
+function data_insights_content_type_fe_date_custom_date_formats() {
+  $custom_date_formats = array();
+  $custom_date_formats['F d, Y'] = 'F d, Y';
+  return $custom_date_formats;
+}
+
+/**
+ * Implements hook_date_format_types().
+ */
+function data_insights_content_type_date_format_types() {
+  $format_types = array();
+  // Exported date format type: insights_date_format
+  $format_types['insights_date_format'] = 'Insights date format';
+  return $format_types;
+}
+
+/**
  * Implements hook_node_info().
  */
 function data_insights_content_type_node_info() {

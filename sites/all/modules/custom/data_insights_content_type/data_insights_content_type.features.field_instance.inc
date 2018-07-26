@@ -17,6 +17,13 @@ function data_insights_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'data_insights_individual_page' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
       'data_insights_list_page' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -34,7 +41,7 @@ function data_insights_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -70,6 +77,13 @@ function data_insights_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'data_insights_individual_page' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
       'data_insights_list_page' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -89,7 +103,7 @@ function data_insights_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -128,14 +142,21 @@ function data_insights_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'data_insights_list_page' => array(
+      'data_insights_individual_page' => array(
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'group_with_icon',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
+      ),
+      'data_insights_list_page' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'data_insights_on_topic_page' => array(
@@ -152,7 +173,7 @@ function data_insights_content_type_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',

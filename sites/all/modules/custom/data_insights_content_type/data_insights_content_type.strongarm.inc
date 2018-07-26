@@ -62,6 +62,13 @@ function data_insights_content_type_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_insights_date_format';
+  $strongarm->value = 'F d, Y';
+  $export['date_format_insights_date_format'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'diff_enable_revisions_page_node_data_insights';
   $strongarm->value = 1;
   $export['diff_enable_revisions_page_node_data_insights'] = $strongarm;
@@ -126,6 +133,9 @@ function data_insights_content_type_strongarm() {
         'custom_settings' => FALSE,
       ),
       'data_insights_list_page' => array(
+        'custom_settings' => TRUE,
+      ),
+      'data_insights_individual_page' => array(
         'custom_settings' => TRUE,
       ),
     ),

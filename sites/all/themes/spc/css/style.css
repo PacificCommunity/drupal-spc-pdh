@@ -7731,6 +7731,137 @@ button.close {
 .node-type-page table tr td a:focus {
   color: #2a2c2d;
 }
+.breadcrumb-box {
+  margin-top: 15px;
+}
+.breadcrumb-box .breadcrumb a,
+.breadcrumb-box .breadcrumb span,
+.breadcrumb-box .breadcrumb .delimiter {
+  font-family: 'Calibri';
+  color: #056199;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+}
+.breadcrumb-box .breadcrumb span {
+  color: #444e4e;
+}
+.not-front .node-data-insights {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 75px;
+}
+.not-front .node-data-insights h2 {
+  font-family: 'Calibri';
+  color: #032f47;
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-align: left;
+}
+.not-front .node-data-insights .author {
+  margin-right: 4px;
+  position: relative;
+  display: inline-block;
+}
+.not-front .node-data-insights .author:after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 4px;
+  width: 1px;
+  height: 14px;
+  background-color: #191a1b;
+}
+.not-front .node-data-insights .author:before {
+  content: 'by';
+  margin-right: 2px;
+}
+.not-front .node-data-insights .post-date {
+  margin-left: 4px;
+  display: inline-block;
+}
+.not-front .node-data-insights .author,
+.not-front .node-data-insights .post-date {
+  font-family: 'Calibri';
+  color: #191a1b;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.not-front .node-data-insights .body-text {
+  font-family: 'Calibri';
+  font-weight: 300;
+  line-height: 31.25px;
+  color: #2a2c2d;
+  font-size: 18px;
+}
+.not-front .node-data-insights .insights-topic {
+  font-family: 'Calibri';
+  margin-bottom: 50px;
+}
+.not-front .node-data-insights .preview {
+  margin-bottom: 25px;
+  font-family: 'Calibri';
+}
+.not-front .data-insights-list .data-insights-list-item {
+  height: 40rem;
+  margin-bottom: 35px;
+}
+.not-front .data-insights-list .data-insights-list-item .insight-title {
+  margin: 0;
+  padding: 10px;
+  background-color: #036295;
+}
+.not-front .data-insights-list .data-insights-list-item .insight-title a {
+  color: #fff;
+  font-size: 2rem;
+}
+.not-front .data-insights-list .data-insights-list-item img {
+  width: 100%;
+}
+.not-front .data-insights-list .data-insights-list-item iframe {
+  width: 100%;
+  height: 100%;
+}
+.not-front .data-insights-list .data-insights-list-item tbody td {
+  padding: 15px;
+  vertical-align: top;
+}
+.not-front .data-insights-list .data-insights-list-item .node-data-insights {
+  margin-bottom: 0;
+  height: 100%;
+  border: 1px solid #bcdfe5;
+}
+.not-front .data-insights-list .insights-list-preview {
+  height: 100%;
+}
+.not-front .data-insights-list .item-list-pager {
+  padding-top: 1px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  clear: both;
+}
+.not-front .data-insights-list .item-list-pager .pager {
+  font-family: 'Calibri';
+}
+.not-front .data-insights-list .item-list-pager .pager li a {
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #bcdfe5;
+  color: #fff;
+}
+.not-front .data-insights-list .item-list-pager .previous a,
+.not-front .data-insights-list .item-list-pager .next a {
+  float: none;
+}
+.not-front .data-insights-list .item-list-pager .current a,
+.not-front .data-insights-list .item-list-pager .current {
+  padding: 7px 12px;
+  background-color: #036295;
+  color: #fff;
+  border-radius: 5px;
+}
 .ma5-mobile-menu-container {
   background-color: #1d5f89;
 }
@@ -8557,4 +8688,12 @@ button.close {
   #member-countries-block .dropdown-menu {
     width: 100%;
   }
+}
+@font-face {
+  font-family: 'Calibri Bold';
+  src: url(../fonts/CALIBRIB.TTF);
+}
+@font-face {
+  font-family: 'Calibri';
+  src: url(../fonts/Calibri.ttf);
 }

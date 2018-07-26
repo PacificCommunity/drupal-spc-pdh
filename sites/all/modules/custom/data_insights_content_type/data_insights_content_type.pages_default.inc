@@ -73,7 +73,10 @@ function data_insights_content_type_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'breadcrumb-box container',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -95,7 +98,7 @@ function data_insights_content_type_default_page_manager_handlers() {
     'identifier' => '',
     'link' => 0,
     'leave_node_title' => 1,
-    'build_mode' => 'teaser',
+    'build_mode' => 'data_insights_individual_page',
     'context' => 'argument_entity_id:node_1',
     'override_title_heading' => 'h2',
   );
@@ -103,7 +106,10 @@ function data_insights_content_type_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -185,7 +191,10 @@ function data_insights_content_type_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'breadcrumb-box container',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -220,7 +229,10 @@ function data_insights_content_type_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container data-insights-list',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();

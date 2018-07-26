@@ -13,3 +13,17 @@
     $('body>div.panel-display').addClass('ma5-page');
         
 })(jQuery);
+
+jQuery( document ).ready(function() {
+    var block_height = jQuery('.data-insights-list-item .node-data-insights').height();
+    jQuery.each(jQuery('.data-insights-list-item'), function(index, value){
+        var title_height = jQuery(this).find('.node-data-insights .insight-title').outerHeight(true);
+        var preview_height = block_height - title_height;
+        var preview = jQuery(this).find('.node-data-insights .insights-list-preview');
+        if(jQuery(preview).find('iframe').parents('p').length > 0){
+            jQuery(jQuery(preview).find('iframe').parents('p')).height(preview_height);
+
+        }
+        jQuery(preview).height(preview_height);
+    });
+});

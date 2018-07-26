@@ -143,6 +143,144 @@
     }
 }
 
+.breadcrumb-box {
+    margin-top: 15px;
+    .breadcrumb {
+        a, span, .delimiter {
+            font-family: 'Calibri';
+            color: #056199;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: center;
+        }
+        span {
+            color: #444e4e;
+        }
+    }
+}
+
+.not-front {
+    .node-data-insights {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-bottom: 75px;
+        h2 {                
+            font-family: 'Calibri';
+            color: #032f47;
+            font-size: 2.3rem;
+            font-weight: 700;
+            text-align: left;
+        }
+        .author {
+            margin-right: 4px;
+            position: relative;
+            display: inline-block;
+            &:after {
+                content: '';
+                position: absolute;
+                right: -5px;
+                top: 4px;
+                width: 1px;
+                height: 14px;
+                background-color: #191a1b;
+            }
+            &:before {
+                content: 'by';
+                margin-right: 2px;
+            }
+        }
+        .post-date {
+            margin-left: 4px;
+            display: inline-block;
+        }
+        .author, .post-date {
+            font-family: 'Calibri';
+            color: #191a1b;
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .body-text {
+            font-family: 'Calibri';
+            font-weight: 300;
+            line-height: 31.25px;
+            color: #2a2c2d;
+            font-size: 18px;
+        }
+        .insights-topic {
+            font-family: 'Calibri';
+            margin-bottom: 50px;
+        }
+        .preview {
+            margin-bottom: 25px;
+            font-family: 'Calibri';
+        }
+    }
+    .data-insights-list {
+        .data-insights-list-item {
+            height: 40rem;
+            margin-bottom: 35px;
+            .insight-title {
+                margin: 0;
+                padding: 10px;
+                background-color: #036295;
+                a {
+                    color: #fff;
+                    font-size: 2rem;
+                }
+            }
+            img {
+                width: 100%;
+            }
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+            tbody {
+                td {
+                    padding: 15px;
+                    vertical-align: top;
+                }
+            }
+            .node-data-insights {
+                margin-bottom: 0;
+                height: 100%;
+                border: 1px solid #bcdfe5;
+            }
+        }
+        .insights-list-preview {
+            height: 100%;
+        }
+        .item-list-pager {
+            padding-top: 1px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            .pager {
+                font-family: 'Calibri';
+                li a {
+                    padding: 5px 12px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: #bcdfe5;
+                    color: #fff;
+                }
+            }
+            clear: both;
+            .previous, .next {
+                a {
+                  float: none;  
+                }  
+            }
+            .current a, .current{
+                padding: 7px 12px;
+                background-color: #036295;
+                color: #fff;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
 .ma5-mobile-menu-container {
     background-color:  #1d5f89;
 }
