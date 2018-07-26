@@ -169,6 +169,14 @@
     }
 }
 
+@media (min-width: 768px) {
+    .not-front {
+        .data-insights-list {
+            max-width: 750px;
+        }
+    }
+}
+
 .not-front {
     .node-data-insights {
         max-width: 800px;
@@ -227,9 +235,10 @@
         }
     }
     .data-insights-list {
+        max-width: 1080px;
         .data-insights-list-item {
-            height: 40rem;
-            margin-bottom: 35px;
+            height: 30rem;
+            margin-bottom: 50px;
             .insight-title {
                 margin: 0;
                 padding: 10px;
@@ -260,6 +269,9 @@
         }
         .insights-list-preview {
             height: 100%;
+            img {
+                height: 100%;
+            }
         }
         .item-list-pager {
             padding-top: 1px;

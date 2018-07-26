@@ -7752,6 +7752,11 @@ button.close {
 .breadcrumb-box .breadcrumb span {
   color: #444e4e;
 }
+@media (min-width: 768px) {
+  .not-front .data-insights-list {
+    max-width: 750px;
+  }
+}
 .not-front .node-data-insights {
   max-width: 800px;
   margin: 0 auto;
@@ -7809,9 +7814,12 @@ button.close {
   margin-bottom: 25px;
   font-family: 'Calibri';
 }
+.not-front .data-insights-list {
+  max-width: 1080px;
+}
 .not-front .data-insights-list .data-insights-list-item {
-  height: 40rem;
-  margin-bottom: 35px;
+  height: 30rem;
+  margin-bottom: 50px;
 }
 .not-front .data-insights-list .data-insights-list-item .insight-title {
   margin: 0;
@@ -7839,6 +7847,9 @@ button.close {
   border: 1px solid #bcdfe5;
 }
 .not-front .data-insights-list .insights-list-preview {
+  height: 100%;
+}
+.not-front .data-insights-list .insights-list-preview img {
   height: 100%;
 }
 .not-front .data-insights-list .item-list-pager {
