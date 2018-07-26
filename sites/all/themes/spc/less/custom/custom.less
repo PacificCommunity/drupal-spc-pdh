@@ -1,30 +1,23 @@
-#mini-panel-header {
+#header {
     background: #032f47 url(../img/spc/header_gradient.png) 50% 50% no-repeat;
     background-size: cover;
     height: 70px;
     line-height: 70px;
     color: #fff;
+    position: relative;
     #logo {
         img {
             max-height: 100px;
         }
     }
-    #search-block-form {
-        color: #000;
-        &>div {
-            display: inline-block;
-        }
-    }
-    p {
-        margin-bottom: 0;
-    }
-    .region.two-50-second {
-        p {
-            text-align: right;
-        }
+
+    #main-menu {
+        position: absolute;
+        right: 30px;
+        top: 2px;
     }
 
-    button.header-menu {
+    button.header-menu-btn {
         position: relative;
         background-color: transparent;
         border: none;
@@ -53,16 +46,13 @@
                         background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                         opacity 0.55s ease;
         }
-
         span:first-child {
             transform-origin: 0% 0%;
             margin-top: 0;
         }
-
         span:nth-last-child(2) {
             transform-origin: 0% 100%;
         } 
-
         input:checked ~ span {
             opacity: 1;
             transform: rotate(45deg) translate(-4px, -23px);
@@ -150,5 +140,65 @@
                 }
             }
         }
+    }
+}
+
+.ma5-mobile-menu-container {
+    background-color:  #1d5f89;
+}
+.ma5-menu-panel {
+    background-color:  #1d5f89;
+    .ma5-btn-enter {
+        background-color:  transparent;
+    }
+    li {
+        border-bottom: 1px solid rgba(246, 240, 234, 0.5);
+        &:hover {
+            background-color: rgba(246, 240, 234, 0.5);
+            a {
+                color: #1d5f89; 
+            }
+            .ma5-btn-enter i {
+                color: #1d5f89; 
+            }
+        }
+        &:first-child {
+            margin-top: 70px;
+            border-top: 1px solid rgba(246, 240, 234, 0.5);
+        }
+    }
+    div.ma5-leave-bar {
+        text-align: left;
+        color: #fff;
+        font-size: 16px;
+        height: 70px;
+        line-height: 70px;
+        text-transform: none;
+        padding: 0 0 0 90px;
+        .ma5-btn-leave {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            padding: 0;
+            overflow: hidden;
+            right: auto;
+            background-color: rgba(246, 240, 234, 0.25);
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+    a {
+        color: #fff;
+        font-weight: 300;
+    }
+}
+
+.admin-menu {
+    .ma5-mobile-menu-container {
+        margin-top: 29px;
     }
 }

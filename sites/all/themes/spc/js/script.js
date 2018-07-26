@@ -9,4 +9,7 @@
             }
         })
     }
+
+    $('body>div.panel-display').addClass('ma5-page');
+        
 })(jQuery);
