@@ -23,6 +23,10 @@ function articles_content_type_strongarm() {
     'group_thematic_groups|node|article|default' => FALSE,
     'group_with_icon|node|thematic_group|group_with_icon' => FALSE,
     'group_countries_wrapper|node|page|default' => FALSE,
+    'group_content|node|article|featured' => FALSE,
+    'group_meta|node|article|featured' => FALSE,
+    'group_content|node|article|list' => FALSE,
+    'group_meta|node|article|list' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -103,6 +107,12 @@ function articles_content_type_strongarm() {
       ),
       'group_with_icon' => array(
         'custom_settings' => FALSE,
+      ),
+      'featured' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list' => array(
+        'custom_settings' => TRUE,
       ),
       'data_insights_individual_page' => array(
         'custom_settings' => FALSE,
