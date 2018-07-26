@@ -37,6 +37,10 @@ function main_layout_default_page_manager_handlers() {
     'style_settings' => array(
       'default' => NULL,
       'one_fw_main' => NULL,
+      'top' => NULL,
+      'top_mobile' => NULL,
+      'middle' => NULL,
+      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -47,17 +51,13 @@ function main_layout_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-618fce2f-0af2-4aae-8283-5d1c67dd8279';
+  $pane->pid = 'new-76756daa-4481-490d-92e2-d11c2348a824';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'header';
+  $pane->type = 'pane_header';
+  $pane->subtype = 'pane_header';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
+  $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
@@ -66,9 +66,9 @@ function main_layout_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '618fce2f-0af2-4aae-8283-5d1c67dd8279';
-  $display->content['new-618fce2f-0af2-4aae-8283-5d1c67dd8279'] = $pane;
-  $display->panels['one_fw_main'][0] = 'new-618fce2f-0af2-4aae-8283-5d1c67dd8279';
+  $pane->uuid = '76756daa-4481-490d-92e2-d11c2348a824';
+  $display->content['new-76756daa-4481-490d-92e2-d11c2348a824'] = $pane;
+  $display->panels['one_fw_main'][0] = 'new-76756daa-4481-490d-92e2-d11c2348a824';
   $pane = new stdClass();
   $pane->pid = 'new-7cf39553-5f6a-467e-83ca-825bbac3d063';
   $pane->panel = 'one_fw_main';
@@ -117,7 +117,7 @@ function main_layout_default_page_manager_handlers() {
   $display->content['new-45d1a1a5-f548-4cb4-8ed1-6354b280769f'] = $pane;
   $display->panels['one_fw_main'][2] = 'new-45d1a1a5-f548-4cb4-8ed1-6354b280769f';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-618fce2f-0af2-4aae-8283-5d1c67dd8279';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['site_template__panel_context_f9a98f20-2aaf-4069-9127-c7acc313b74c'] = $handler;
 

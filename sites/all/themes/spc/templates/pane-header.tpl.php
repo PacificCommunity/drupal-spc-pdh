@@ -33,7 +33,7 @@
       <span></span>
     </button>
     <nav class="ma5-menu-mobile">
-      <?= create_main_menu($menu_array); ?>
+      <?= create_main_menu(); ?>
     </nav>
   </div>
 </header>
