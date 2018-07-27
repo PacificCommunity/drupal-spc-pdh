@@ -12,6 +12,20 @@
 
     $('body>div.panel-display').addClass('ma5-page');
         
+  /**
+   * Element equalheights
+   *
+   */
+  Drupal.behaviors.columnEqualHeights = {
+    attach: function (context) {
+      $('.view-content').each(function() {
+        $(this).children('.eq-col').find('.node-article').matchHeight({
+          byRow: true
+        });
+      });
+    }
+  };
+
 })(jQuery);
 
 jQuery( document ).ready(function() {
