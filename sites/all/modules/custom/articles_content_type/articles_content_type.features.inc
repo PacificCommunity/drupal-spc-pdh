@@ -17,6 +17,9 @@ function articles_content_type_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
+  if ($module == "panels_mini" && $api == "panels_default") {
+    return array("version" => "1");
+  }
   if ($module == "path_breadcrumbs" && $api == "path_breadcrumbs") {
     return array("version" => "1");
   }
@@ -42,13 +45,22 @@ function articles_content_type_image_default_styles() {
   $styles['featured_article'] = array(
     'label' => 'Featured Article',
     'effects' => array(
-      4 => array(
+      7 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 1200,
+          'width' => 1080,
           'height' => 292,
         ),
         'weight' => 1,
+      ),
+      8 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 292,
+          'upscale' => 1,
+        ),
+        'weight' => 2,
       ),
     ),
   );

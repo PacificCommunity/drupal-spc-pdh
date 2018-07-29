@@ -7870,31 +7870,36 @@ button.header-menu-btn:focus {
   color: #fff;
   border-radius: 5px;
 }
-.not-front .articles-list {
+.not-front.articles-page .breadcrumb-box .breadcrumb {
+  margin-bottom: 47px;
+}
+.not-front.articles-page .articles-list {
   margin-top: 30px;
 }
-.not-front .articles-list .item-list-pager {
+.not-front.articles-page .articles-list .item-list-pager {
   padding-top: 1px;
   padding-bottom: 15px;
   margin-bottom: 15px;
   clear: both;
 }
-.not-front .articles-list .item-list-pager .pager {
+.not-front.articles-page .articles-list .item-list-pager .pager {
   font-family: 'Calibri';
+  margin-bottom: 86px;
+  margin-top: 37px;
 }
-.not-front .articles-list .item-list-pager .pager li a {
+.not-front.articles-page .articles-list .item-list-pager .pager li a {
   padding: 5px 12px;
   border-radius: 5px;
   border: none;
   background-color: #bcdfe5;
   color: #fff;
 }
-.not-front .articles-list .item-list-pager .previous a,
-.not-front .articles-list .item-list-pager .next a {
+.not-front.articles-page .articles-list .item-list-pager .previous a,
+.not-front.articles-page .articles-list .item-list-pager .next a {
   float: none;
 }
-.not-front .articles-list .item-list-pager .current a,
-.not-front .articles-list .item-list-pager .current {
+.not-front.articles-page .articles-list .item-list-pager .current a,
+.not-front.articles-page .articles-list .item-list-pager .current {
   padding: 7px 12px;
   background-color: #036295;
   color: #fff;
@@ -8649,24 +8654,26 @@ button.header-menu-btn:focus {
   padding: 0px;
   margin: 0px;
   overflow: hidden;
+  font-family: "Calibri Light";
+  color: #2a2c2d;
 }
 .node-article .field-type-image {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.node-article .field-type-image img {
-  max-width: 100%;
-}
 .node-article .node-content-container {
   padding: 0px;
+}
+.node-article .node-content-container h2 {
+  font-family: "Calibri Bold";
 }
 .node-article .node-content-container a {
   color: #032f47;
 }
 .node-article .node-content-container .node-meta {
   font-size: 12px;
-  color: #1a1b1b;
+  color: #2a2c2d;
 }
 .node-article .node-content-container .node-meta .node-topic {
   margin-left: 18px;
@@ -8684,6 +8691,7 @@ button.header-menu-btn:focus {
   font-size: 12px;
   font-weight: 700;
   position: relative;
+  text-transform: capitalize;
 }
 .node-article .node-links a:after {
   content: "";
@@ -8700,9 +8708,10 @@ button.header-menu-btn:focus {
 }
 .node-article.view-mode-featured .node-content-container {
   border: 1px solid #bcdfe5;
-  padding: 23px 50px 43px 58px;
+  padding: 23px 50px 20px 58px;
 }
 .node-article.view-mode-featured .node-content-container h2 {
+  color: #032f47;
   font-size: 20px;
   font-weight: 700;
   padding-bottom: 10px;
@@ -8717,11 +8726,13 @@ button.header-menu-btn:focus {
   padding: 0px 3px;
 }
 .node-article.view-mode-featured .node-content-container .node-body {
+  line-height: 1.75em;
   margin-bottom: 25px;
 }
 .node-article.view-mode-list {
   margin-bottom: 28px;
   position: relative;
+  min-height: 424px;
 }
 .node-article.view-mode-list .field-type-image {
   border: 1px solid #bcdfe5;
@@ -8730,7 +8741,7 @@ button.header-menu-btn:focus {
 .node-article.view-mode-list .node-content-container {
   border: 1px solid #bcdfe5;
   padding: 19px 20px 15px 18px;
-  min-height: 240px;
+  min-height: 250px;
   overflow: hidden;
 }
 .node-article.view-mode-list .node-content-container h2 {
@@ -8739,6 +8750,8 @@ button.header-menu-btn:focus {
   padding: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
+  line-height: 1.5em;
+  color: #032f47;
 }
 .node-article.view-mode-list .node-content-container .node-meta {
   margin-top: 14px;
@@ -8746,6 +8759,8 @@ button.header-menu-btn:focus {
 }
 .node-article.view-mode-list .node-content-container .node-body {
   margin-bottom: 14px;
+  font-size: 12px;
+  line-height: 1.75em;
 }
 .node-article.view-mode-list .node-links {
   padding: 0px 32px;
@@ -8780,6 +8795,11 @@ button.header-menu-btn:focus {
   width: 1px;
   height: 20px;
   background-color: #191a1b;
+}
+@media (min-width: 992px) {
+  .articles-page #mini-panel-articles_page_content .container {
+    max-width: 1080px;
+  }
 }
 @media (max-width: 991px) {
   #mini-panel-home_banner .spc-home-banner-block,
@@ -8867,9 +8887,22 @@ button.header-menu-btn:focus {
 }
 @font-face {
   font-family: 'Calibri Bold';
-  src: url(../fonts/CALIBRIB.TTF);
+  src: url('../fonts/Calibri-Bold.ttf');
+  src: url('../fonts/Calibri-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Calibri-Bold.woff2') format('woff2'), url('../fonts/Calibri-Bold.woff') format('woff'), url('../fonts/Calibri-Bold.ttf') format('truetype'), url('../fonts/Calibri-Bold.svg#Calibri-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Calibri Light';
+  src: url('../fonts/Calibri-Light.ttf');
+  src: url('../fonts/Calibri-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Calibri-Light.woff2') format('woff2'), url('../fonts/Calibri-Light.woff') format('woff'), url('../fonts/Calibri-Light.ttf') format('truetype'), url('../fonts/Calibri-Light.svg#Calibri-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'Calibri';
-  src: url(../fonts/Calibri.ttf);
+  src: url('../fonts/Calibri.ttf');
+  src: url('../fonts/Calibri.eot?#iefix') format('embedded-opentype'), url('../fonts/Calibri.woff2') format('woff2'), url('../fonts/Calibri.woff') format('woff'), url('../fonts/Calibri.ttf') format('truetype'), url('../fonts/Calibri.svg#Calibri') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
