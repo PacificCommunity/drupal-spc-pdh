@@ -128,22 +128,27 @@
     padding: 0px;
     margin: 0px;
     overflow: hidden;
+    font-family: "Calibri Light";
+    color: #2a2c2d;
     .field-type-image {
         display: flex;
         justify-content: center;
         align-items: center;
         img {
-            max-width: 100%
+            // max-width: 100%
         }
     }
     .node-content-container {
         padding: 0px;
+        h2 {
+            font-family: "Calibri Bold";
+        }
         a {
             color: #032f47;
         }
         .node-meta {
             font-size: 12px;
-            color: #1a1b1b;
+            color: #2a2c2d;
             .node-topic {
                 margin-left: 18px;
                 display: inline-block;
@@ -163,6 +168,7 @@
             font-size: 12px;
             font-weight: 700;
             position: relative;
+            text-transform: capitalize;
             &:after {
                 content: "";
                 width: 6px;
@@ -181,8 +187,9 @@
     &.view-mode-featured {
         .node-content-container {
             border: 1px solid #bcdfe5;
-            padding: 23px 50px 43px 58px;
+            padding: 23px 50px 20px 58px;
             h2 {
+                color: #032f47;
                 font-size: 20px;
                 font-weight: 700;
                 padding-bottom: 10px;
@@ -197,6 +204,7 @@
                 }
             }
             .node-body {
+                line-height: 1.75em;
                 margin-bottom: 25px;
             }
         }
@@ -204,6 +212,7 @@
     &.view-mode-list {
         margin-bottom: 28px;
         position: relative;
+        min-height: 424px;
         .field-type-image {
             border: 1px solid #bcdfe5;
             border-bottom: none;
@@ -211,7 +220,7 @@
         .node-content-container {
             border: 1px solid #bcdfe5;
             padding: 19px 20px 15px 18px;
-            min-height: 240px;
+            min-height: 250px;
             overflow: hidden;
             h2 {
                 font-size: 14px;
@@ -219,6 +228,8 @@
                 padding: 0px;
                 margin-top: 0px;
                 margin-bottom: 0px;
+                line-height: 1.5em;
+                color: #032f47;
             }
             .node-meta {
                 margin-top: 14px;
@@ -226,6 +237,8 @@
             }
             .node-body {
                 margin-bottom: 14px;
+                font-size: 12px;
+                line-height: 1.75em;
             }
         }
         .node-links {
