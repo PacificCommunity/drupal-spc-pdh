@@ -25,14 +25,5 @@
       </div>
     </div>
   </div>
-  <div id="main-menu">
-    <button class="header-menu-btn ma5-toggle-menu" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="ma5-menu-mobile">
-      <?= create_main_menu(); ?>
-    </nav>
-  </div>
+  <?= create_main_menu(); ?>
 </header>

@@ -1,10 +1,11 @@
 name = Main layout
 core = 7.x
 package = Features
-version = 7.x-1.02
+version = 7.x-1.03
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = menu
+dependencies[] = menu_export
 dependencies[] = page_manager
 dependencies[] = panels_mini
 dependencies[] = spc_main_menu

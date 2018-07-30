@@ -27,9 +27,16 @@ function loop_menu($menu, $menu_layout, $counter_li=False, $parent_name=False) {
 
 function create_main_menu() {
   $menu_array = menu_tree_output(menu_tree_all_data('main-menu'));
-  $menu_layout = '<ul class="ma5-ul">';
+  $menu_layout = '<div id="main-menu">
+  <button class="header-menu-btn ma5-toggle-menu" type="button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="ma5-menu-mobile">
+  <ul class="ma5-ul">';
   $menu_layout = loop_menu($menu_array, $menu_layout);
-  $menu_layout = $menu_layout . '</ul>';
+  $menu_layout = $menu_layout . '</ul></nav></div>';
 
   return $menu_layout;
 }
