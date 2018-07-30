@@ -1,0 +1,6 @@
+name = SPC Menu Export
+description = Export menus
+package = public-action
+version = VERSION
+core = 7.x
+files[] = menu_export.module
