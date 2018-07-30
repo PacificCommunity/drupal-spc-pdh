@@ -7618,6 +7618,11 @@ button.close {
   right: 30px;
   top: 7px;
 }
+@media (max-width: 767px) {
+  #header #main-menu {
+    right: 8px;
+  }
+}
 button.header-menu-btn {
   position: relative;
   background-color: transparent;
