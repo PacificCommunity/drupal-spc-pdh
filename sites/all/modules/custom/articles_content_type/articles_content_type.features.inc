@@ -45,15 +45,15 @@ function articles_content_type_image_default_styles() {
   $styles['featured_article'] = array(
     'label' => 'Featured Article',
     'effects' => array(
-      7 => array(
+      8 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 1080,
+          'width' => 1010,
           'height' => 292,
         ),
         'weight' => 1,
       ),
-      8 => array(
+      9 => array(
         'name' => 'image_scale',
         'data' => array(
           'width' => '',
