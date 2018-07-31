@@ -8746,7 +8746,7 @@ button.header-menu-btn:focus {
 }
 .node-article.view-mode-list .node-content-container {
   border: 1px solid #bcdfe5;
-  padding: 22px 18px;
+  padding: 18px;
   min-height: 255px;
   overflow: hidden;
 }
@@ -8760,8 +8760,8 @@ button.header-menu-btn:focus {
   color: #032f47;
 }
 .node-article.view-mode-list .node-content-container .node-meta {
-  margin-top: 14px;
-  margin-bottom: 20px;
+  margin-top: 12px;
+  margin-bottom: 14px;
 }
 .node-article.view-mode-list .node-content-container .node-body {
   margin-bottom: 14px;
