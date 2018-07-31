@@ -49,7 +49,17 @@ function articles_content_type_default_panels_mini() {
   $pane->type = 'views_panes';
   $pane->subtype = 'articles_list-panel_pane_1';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'query_string_exists',
+        'settings' => array(
+          'key' => 'page',
+        ),
+        'not' => TRUE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_title' => 1,
     'override_title_text' => '',

@@ -17,11 +17,11 @@ function articles_content_type_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'node/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Articles',
+      0 => 'Blog',
       1 => '!page_title',
     ),
     'paths' => array(
-      0 => 'articles',
+      0 => 'blog',
       1 => '<none>',
     ),
     'home' => 1,
