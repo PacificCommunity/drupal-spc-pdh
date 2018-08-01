@@ -46,6 +46,7 @@ function dashboard_secondary_page_datasets_autocomplete($string) {
   if (empty($resp->data)) {
   	return drupal_json_output($matches);;
   }
+  $matches = array();
   foreach ($resp->data as $item) {
   	$matches[$item->name] = $item->title;
   }
