@@ -367,3 +367,36 @@
         align-items: center;
     }
 }
+
+.dashboards-home {
+    .jcarousel-skin-default {
+        margin-bottom: 25px;
+        .jcarousel-container-horizontal {
+            width: auto;
+            height: auto;
+            position: relative;
+            .jcarousel-clip-horizontal {
+                width: auto;
+            }
+            .jcarousel-list {
+                display: flex;
+                .jcarousel-item {
+                    height: auto;
+                    &>div {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        h2 {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+        .jcarousel-next-horizontal, .jcarousel-prev-horizontal {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
