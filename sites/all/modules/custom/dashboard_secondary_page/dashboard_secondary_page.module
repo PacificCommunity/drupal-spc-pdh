@@ -24,15 +24,30 @@ function dashboard_secondary_page_menu() {
  * Callback function for datasets autocomplete.
  */
 function dashboard_secondary_page_datasets_autocomplete($string) {
-	$matches = array();
+	// Default match list.
+	$matches = array(
+		$string => t('No matches were found')
+	);
+	// Search params.
 	$params = array(
 		'q' => $string,
 		'limit' => 10
 	);
-  $client = govcms_ckan_client();
-  $resp = $client->get('action/package_autocomplete', $params);
+	try {
+	  $client = govcms_ckan_client();
+  	$resp = $client->get('action/package_autocomplete', $params);
+	}
+	catch (Exception $e) {
+		watchdog_exception('dashboard_secondary_page', $e);
+	}
   if (!$resp->valid) {
-    return $matches;
+    return drupal_json_output($matches);
+  }
+  if (empty($resp->data)) {
+  	return drupal_json_output($matches);;
+  }
+  foreach ($resp->data as $item) {
+  	$matches[$item->name] = $item->title;
   }
   drupal_json_output($matches);
 }
