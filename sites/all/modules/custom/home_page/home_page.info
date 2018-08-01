@@ -1,7 +1,7 @@
 name = Home Page
 core = 7.x
 package = Features
-version = 7.x-1.15
+version = 7.x-1.16
 dependencies[] = bean_admin_ui
 dependencies[] = ctools
 dependencies[] = data_insights_content_type
@@ -37,7 +37,6 @@ features[fe_block_settings][] = panels_mini-data_category
 features[fe_block_settings][] = panels_mini-data_insights
 features[fe_block_settings][] = panels_mini-datasets_on_home_page
 features[fe_block_settings][] = panels_mini-footer
-features[fe_block_settings][] = panels_mini-header
 features[fe_block_settings][] = panels_mini-home_banner
 features[fe_block_settings][] = views-data_insights_promoted-block
 features[fe_nodequeue][] = data_insights
