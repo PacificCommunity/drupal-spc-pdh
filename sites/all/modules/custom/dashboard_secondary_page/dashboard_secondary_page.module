@@ -1,0 +1,54 @@
+<?php
+/**
+ * @file
+ * Code for the Dashboard Secondary Page feature.
+ */
+
+include_once 'dashboard_secondary_page.features.inc';
+
+
+/**
+ * Implements hook_menu().
+ */
+function dashboard_secondary_page_menu() {
+  $items = array();
+  $items['dashboard_secondary_page/datasets/autocomplete'] = array(
+    'page callback' => 'dashboard_secondary_page_datasets_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK
+  );
+  return $items;
+}
+
+/**
+ * Callback function for datasets autocomplete.
+ */
+function dashboard_secondary_page_datasets_autocomplete($string) {
+	$matches = array();
+	$params = array(
+		'q' => $string,
+		'limit' => 10
+	);
+  $client = govcms_ckan_client();
+  $resp = $client->get('action/package_autocomplete', $params);
+  if (!$resp->valid) {
+    return $matches;
+  }
+  drupal_json_output($matches);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function dashboard_secondary_page_form_node_form_alter(&$form, &$form_state, $form_id) {
+  $field_name = 'field_dsp_datasets';
+  if (!isset($form[$field_name])) { 
+  	return; 
+  }
+  foreach($form[$field_name][LANGUAGE_NONE] as $delta => $element) {
+    if (!is_numeric($delta)) { 
+    	continue;
+    }
+    $form[$field_name][LANGUAGE_NONE][$delta]['value']['#autocomplete_path'] = 'dashboard_secondary_page/datasets/autocomplete';
+  }
+}
