@@ -246,32 +246,6 @@ function home_page_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['panels_mini-header'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'header',
-    'module' => 'panels_mini',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['panels_mini-home_banner'] = array(
     'cache' => -1,
     'custom' => 0,
