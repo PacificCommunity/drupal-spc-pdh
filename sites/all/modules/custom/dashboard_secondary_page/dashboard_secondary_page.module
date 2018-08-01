@@ -1,0 +1,69 @@
+<?php
+/**
+ * @file
+ * Code for the Dashboard Secondary Page feature.
+ */
+
+include_once 'dashboard_secondary_page.features.inc';
+
+
+/**
+ * Implements hook_menu().
+ */
+function dashboard_secondary_page_menu() {
+  $items = array();
+  $items['dashboard_secondary_page/datasets/autocomplete'] = array(
+    'page callback' => 'dashboard_secondary_page_datasets_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK
+  );
+  return $items;
+}
+
+/**
+ * Callback function for datasets autocomplete.
+ */
+function dashboard_secondary_page_datasets_autocomplete($string) {
+	// Default match list.
+	$matches = array(
+		$string => t('No matches were found')
+	);
+	// Search params.
+	$params = array(
+		'q' => $string,
+		'limit' => 10
+	);
+	try {
+	  $client = govcms_ckan_client();
+  	$resp = $client->get('action/package_autocomplete', $params);
+	}
+	catch (Exception $e) {
+		watchdog_exception('dashboard_secondary_page', $e);
+	}
+  if (!$resp->valid) {
+    return drupal_json_output($matches);
+  }
+  if (empty($resp->data)) {
+  	return drupal_json_output($matches);;
+  }
+  foreach ($resp->data as $item) {
+  	$matches[$item->name] = $item->title;
+  }
+  drupal_json_output($matches);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function dashboard_secondary_page_form_node_form_alter(&$form, &$form_state, $form_id) {
+  $field_name = 'field_dsp_datasets';
+  if (!isset($form[$field_name])) { 
+  	return; 
+  }
+  foreach($form[$field_name][LANGUAGE_NONE] as $delta => $element) {
+    if (!is_numeric($delta)) { 
+    	continue;
+    }
+    $form[$field_name][LANGUAGE_NONE][$delta]['value']['#autocomplete_path'] = 'dashboard_secondary_page/datasets/autocomplete';
+  }
+}
