@@ -8316,6 +8316,37 @@ button.header-menu-btn:focus {
   display: flex;
   align-items: center;
 }
+.dashboards-home .jcarousel-skin-default {
+  margin-bottom: 25px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal {
+  width: auto;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list {
+  display: flex;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item {
+  height: auto;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item > div h2 {
+  font-size: 22px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-next-horizontal,
+.dashboards-home .jcarousel-skin-default .jcarousel-prev-horizontal {
+  top: 50%;
+  transform: translateY(-50%);
+}
 .node-type-thematic-group h2 {
   font-size: 40px;
   font-weight: 300;

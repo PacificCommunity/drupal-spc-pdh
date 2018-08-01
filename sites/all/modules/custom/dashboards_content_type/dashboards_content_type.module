@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Dashboards content type feature.
+ */
+
+include_once 'dashboards_content_type.features.inc';
