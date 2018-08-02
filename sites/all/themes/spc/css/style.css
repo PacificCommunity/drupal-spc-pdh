@@ -9056,6 +9056,9 @@ button.header-menu-btn:focus {
   #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:last-of-type {
     width: 40%;
   }
+  #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type {
+    width: 100%;
+  }
 }
 @font-face {
   font-family: 'Calibri Bold';
