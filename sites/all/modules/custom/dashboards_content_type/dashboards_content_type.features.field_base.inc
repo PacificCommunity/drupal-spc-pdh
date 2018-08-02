@@ -138,7 +138,9 @@ function dashboards_content_type_field_default_field_bases() {
         'sort' => array(
           'type' => 'none',
         ),
-        'target_bundles' => array(),
+        'target_bundles' => array(
+          'dsp' => 'dsp',
+        ),
       ),
       'target_type' => 'node',
     ),
