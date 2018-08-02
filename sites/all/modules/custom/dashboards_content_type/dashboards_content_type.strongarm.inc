@@ -83,6 +83,17 @@ function dashboards_content_type_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_extras_view_modes_dashboards';
+  $strongarm->value = array(
+    0 => 'default',
+    1 => 'teaser',
+    2 => 'dashboards_preview',
+  );
+  $export['ds_extras_view_modes_dashboards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__dashboards';
   $strongarm->value = array(
     'view_modes' => array(
