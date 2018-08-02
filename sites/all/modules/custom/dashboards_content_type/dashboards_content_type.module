@@ -5,3 +5,19 @@
  */
 
 include_once 'dashboards_content_type.features.inc';
+
+function dashboards_content_type_preprocess_node(&$variables) {
+	$type = $variables['type'];
+	if (in_array($type, array('dashboards'))) {
+		if (function_exists('ckan_search_form')) {
+			$ckan_search_form = drupal_get_form('ckan_search_form');
+			$variables['content']['ckan_search_form'] = array(
+				'#type' => 'container',
+				'#attributes' => array(
+					'class' => array('ckan-search-form-wrapper')
+				)
+			);
+			$variables['content']['ckan_search_form']['form'] = $ckan_search_form;
+		}
+	}
+}
