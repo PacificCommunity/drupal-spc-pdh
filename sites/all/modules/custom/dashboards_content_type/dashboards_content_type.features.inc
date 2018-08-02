@@ -11,6 +11,12 @@ function dashboards_content_type_ctools_plugin_api($module = NULL, $api = NULL) 
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -54,6 +60,47 @@ function dashboards_content_type_fe_nodequeue_export_fields() {
   );
 
   return $nodequeues;
+}
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function dashboards_content_type_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: dashboard_banner.
+  $styles['dashboard_banner'] = array(
+    'label' => 'Dashboard Banner',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 310,
+          'upscale' => 1,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: dashboard_logo.
+  $styles['dashboard_logo'] = array(
+    'label' => 'Dashboard Logo',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 210,
+          'height' => 70,
+          'upscale' => 0,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  return $styles;
 }
 
 /**
