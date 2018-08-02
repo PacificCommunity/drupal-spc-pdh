@@ -27,6 +27,7 @@ function articles_content_type_strongarm() {
     'group_meta|node|article|featured' => FALSE,
     'group_content|node|article|list' => FALSE,
     'group_meta|node|article|list' => FALSE,
+    'group_insight_wrapper|node|data_insights|teaser' => TRUE,
   );
   $export['default_field_group'] = $strongarm;
 
