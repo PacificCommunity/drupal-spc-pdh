@@ -84,6 +84,21 @@ function dashboards_content_type_image_default_styles() {
     ),
   );
 
+  // Exported image style: dashboard_goal__140x140.
+  $styles['dashboard_goal__140x140'] = array(
+    'label' => 'Dashboard Goal (140x140)',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 140,
+          'height' => 140,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
   // Exported image style: dashboard_logo.
   $styles['dashboard_logo'] = array(
     'label' => 'Dashboard Logo',
