@@ -8887,6 +8887,10 @@ button.header-menu-btn:focus {
   padding-left: 15px;
   padding-right: 15px;
 }
+.node-type-dashboards .dashboard-goals {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
 @media (max-width: 1199px) {
   #mini-panel-footer input[type="text"] {
     width: 65%;
