@@ -90,6 +90,35 @@ function dashboards_content_type_default_page_manager_handlers() {
   $pane->uuid = '9faf1a7a-9023-403d-a605-48d28358d08e';
   $display->content['new-9faf1a7a-9023-403d-a605-48d28358d08e'] = $pane;
   $display->panels['one_fw_main'][0] = 'new-9faf1a7a-9023-403d-a605-48d28358d08e';
+  $pane = new stdClass();
+  $pane->pid = 'new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'dashboard_goals-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container dashboard-goals',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'd77fbd0e-fe3c-493b-ae43-489aacb1b58b';
+  $display->content['new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b'] = $pane;
+  $display->panels['one_fw_main'][1] = 'new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
