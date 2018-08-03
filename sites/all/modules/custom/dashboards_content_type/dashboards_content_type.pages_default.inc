@@ -52,10 +52,10 @@ function dashboards_content_type_default_page_manager_handlers() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
-      'one_fw_main' => array(),
+      'one_fw_main' => NULL,
     ),
     'one_fw_main' => array(
-      'style' => 'wrapper_element',
+      'style' => 'default',
     ),
   );
   $display->cache = array();
