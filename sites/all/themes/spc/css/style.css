@@ -8886,6 +8886,10 @@ button.header-menu-btn:focus {
   #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:first-child {
     margin-bottom: 30px;
   }
+  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item iframe {
+    display: block;
+    margin: 0 auto;
+  }
   .thematic-group-articles .field-type-entityreference .field-items .field-item {
     margin-bottom: 30px;
   }
@@ -8900,6 +8904,9 @@ button.header-menu-btn:focus {
   }
   .breadcrumb {
     padding: 8px 0;
+  }
+  #member-countries-block .btn.dropdown-toggle {
+    width: 330px;
   }
 }
 @media (max-width: 767px) {
@@ -8981,7 +8988,7 @@ button.header-menu-btn:focus {
     margin-bottom: 20px;
     width: 190px;
   }
-  .node-type-article img {
+  .node-type-article .article img {
     width: 100%;
   }
 }
