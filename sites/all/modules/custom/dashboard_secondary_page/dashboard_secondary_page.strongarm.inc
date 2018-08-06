@@ -85,14 +85,69 @@ function dashboard_secondary_page_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__dsp';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'article_view_on_homepage' => array(
+        'custom_settings' => FALSE,
+      ),
+      'dashboards_preview' => array(
+        'custom_settings' => FALSE,
+      ),
+      'group_with_icon' => array(
+        'custom_settings' => FALSE,
+      ),
+      'related_articles_and_publication' => array(
+        'custom_settings' => FALSE,
+      ),
+      'similar_posts' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_individual_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_list_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_on_topic_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '1',
         ),
       ),
       'display' => array(),
