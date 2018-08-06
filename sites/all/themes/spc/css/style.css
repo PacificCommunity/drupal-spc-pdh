@@ -8891,6 +8891,74 @@ button.header-menu-btn:focus {
   padding-top: 90px;
   padding-bottom: 90px;
 }
+/* dsp */
+.node-type-dsp .goals-navigation {
+  clear: both;
+}
+.node-type-dsp .goals-navigation .dropdown button {
+  background: transparent;
+  border: none;
+  color: #036295;
+}
+.node-type-dsp .goals-navigation .dropdown button .fa-caret-up {
+  display: none;
+}
+.node-type-dsp .goals-navigation .dropdown button .fa-caret-down {
+  display: initial;
+}
+.node-type-dsp .goals-navigation .dropdown.open button .fa-caret-up {
+  display: initial;
+}
+.node-type-dsp .goals-navigation .dropdown.open button .fa-caret-down {
+  display: none;
+}
+.node-type-dsp .node-dsp.view-mode-full {
+  font-family: "Calibri";
+  font-size: 14px;
+  font-weight: 300;
+  color: #2a2c2d;
+  clear: both;
+  padding-top: 50px;
+}
+.node-type-dsp .node-dsp.view-mode-full .container {
+  max-width: 1000px;
+}
+.node-type-dsp .node-dsp.view-mode-full h1 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 0;
+}
+.node-type-dsp .node-dsp.view-mode-full p {
+  margin-bottom: 20px;
+}
+.node-type-dsp .node-dsp.view-mode-full .field.field-type-image {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.node-type-dsp .node-dsp.view-mode-full .goal-body-wrapper {
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+.node-type-dsp .node-dsp.view-mode-full .field-collection-view {
+  padding: 0;
+  margin: 0 0 60px 0;
+}
+.node-type-dsp .node-dsp.view-mode-full .field-collection-view .target-title {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.node-type-dsp .node-dsp.view-mode-full .field-collection-view .target-definition {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+.node-type-dsp .node-dsp.view-mode-full .field-collection-view .target-definition p {
+  margin-bottom: 0;
+}
 @media (max-width: 1199px) {
   #mini-panel-footer input[type="text"] {
     width: 65%;
@@ -9049,6 +9117,12 @@ button.header-menu-btn:focus {
   }
   .node-type-article .article img {
     width: 100%;
+  }
+  #mini-panel-datasets_on_home_page .view-all-link {
+    margin-bottom: 40px;
+  }
+  #mini-panel-datasets_on_home_page .region h2 {
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 569px) {
