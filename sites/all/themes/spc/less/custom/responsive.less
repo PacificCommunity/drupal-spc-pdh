@@ -10,6 +10,17 @@
             height: auto;
         }
     }
+    .thematic-group-articles {
+        .field-type-entityreference {
+            .field-items {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .field-item {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 992px) {
@@ -74,7 +85,6 @@
         }
     }
     .thematic-group-articles .field-type-entityreference .field-items .field-item {
-        margin-bottom: 30px;
         &.even {
             margin-left: 0;
         }
@@ -116,7 +126,6 @@
         .field-type-entityreference {
             .field-items {
                 justify-content: space-evenly;
-                flex-wrap: wrap;
             }
         }
     }
@@ -179,8 +188,8 @@
         .insights-topic {
             margin-bottom: 25px;
         }
-        img {
-            width: 100%;
+        img, iframe {
+            max-width: 100%;
         }
     }
     .node-type-article {
