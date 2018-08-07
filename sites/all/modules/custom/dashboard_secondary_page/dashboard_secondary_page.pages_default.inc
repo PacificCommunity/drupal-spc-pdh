@@ -131,7 +131,7 @@ function dashboard_secondary_page_default_page_manager_handlers() {
   $display->content['new-94f25777-1130-4d35-8f14-7acc829e3675'] = $pane;
   $display->panels['middle'][1] = 'new-94f25777-1130-4d35-8f14-7acc829e3675';
   $pane = new stdClass();
-  $pane->pid = 'new-a53806b1-4706-48e9-a71b-1e64bde69a9a';
+  $pane->pid = 'new-63fda8cf-1190-442d-b308-9efb6c1f8479';
   $pane->panel = 'middle';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_dsp_datasets';
@@ -146,20 +146,23 @@ function dashboard_secondary_page_default_page_manager_handlers() {
     'formatter_settings' => array(),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_text' => 'Link to all related datasets',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container dsp-datasets-wrapper',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'a53806b1-4706-48e9-a71b-1e64bde69a9a';
-  $display->content['new-a53806b1-4706-48e9-a71b-1e64bde69a9a'] = $pane;
-  $display->panels['middle'][2] = 'new-a53806b1-4706-48e9-a71b-1e64bde69a9a';
+  $pane->uuid = '63fda8cf-1190-442d-b308-9efb6c1f8479';
+  $display->content['new-63fda8cf-1190-442d-b308-9efb6c1f8479'] = $pane;
+  $display->panels['middle'][2] = 'new-63fda8cf-1190-442d-b308-9efb6c1f8479';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
