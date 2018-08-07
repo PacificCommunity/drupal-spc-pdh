@@ -1,7 +1,7 @@
 <?php if ($element['datasets_info']): ?>
-  <ul class="dsp-datasets">
+  <div class="dsp-datasets">
     <?php foreach ($element['datasets_info'] as $dataset) { ?>
-      <li class="dataset-preview">
+      <div class="dataset-preview">
         <p class="dataset-title">
           <?php 
             $ckan_url = variable_get('govcms_ckan_endpoint_url', ''); 
@@ -23,7 +23,7 @@
             </span>
           <?php } ?>
         </div>
-      </li>
+      </div>
     <?php } ?>
-  </ul>
+  </div>
 <?php endif; ?>
