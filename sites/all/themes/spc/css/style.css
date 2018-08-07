@@ -8900,6 +8900,7 @@ button.header-menu-btn:focus {
   background: transparent;
   border: none;
   color: #036295;
+  padding: 0;
 }
 .node-type-dsp .goals-navigation .dropdown button .fa-caret-up {
   display: none;
