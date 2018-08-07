@@ -8893,6 +8893,7 @@ button.header-menu-btn:focus {
 }
 /* dsp */
 .node-type-dsp .goals-navigation {
+  padding: 0 40px;
   clear: both;
 }
 .node-type-dsp .goals-navigation .dropdown button {
@@ -8911,6 +8912,19 @@ button.header-menu-btn:focus {
 }
 .node-type-dsp .goals-navigation .dropdown.open button .fa-caret-down {
   display: none;
+}
+.node-type-dsp .goals-navigation .dropdown ul {
+  width: 300px;
+}
+.node-type-dsp .goals-navigation .dropdown ul li {
+  margin-bottom: 5px;
+}
+.node-type-dsp .goals-navigation .dropdown ul li a {
+  white-space: pre-wrap;
+  color: #036295;
+}
+.node-type-dsp .goals-navigation .dropdown ul li:hover a {
+  color: #333;
 }
 .node-type-dsp .node-dsp.view-mode-full {
   font-family: "Calibri";
@@ -9120,6 +9134,15 @@ button.header-menu-btn:focus {
   #mini-panel-datasets_on_home_page .region h2 {
     margin-bottom: 20px;
   }
+  .node-type-dsp .node-dsp.view-mode-full .field.field-type-image {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .node-type-dsp .node-dsp.view-mode-full .field.field-type-image img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 569px) {
   .thematic-group-articles .field-type-entityreference .field-items .field-item {
@@ -9193,6 +9216,9 @@ button.header-menu-btn:focus {
     width: 40%;
   }
   #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type {
+    width: 100%;
+  }
+  .node-type-dsp .goals-navigation .dropdown ul {
     width: 100%;
   }
 }
