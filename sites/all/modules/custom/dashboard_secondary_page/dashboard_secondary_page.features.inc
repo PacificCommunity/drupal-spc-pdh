@@ -23,6 +23,13 @@ function dashboard_secondary_page_ctools_plugin_api($module = NULL, $api = NULL)
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function dashboard_secondary_page_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function dashboard_secondary_page_image_default_styles() {

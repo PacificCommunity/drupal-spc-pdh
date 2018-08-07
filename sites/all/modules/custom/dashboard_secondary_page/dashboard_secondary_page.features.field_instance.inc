@@ -186,7 +186,11 @@ function dashboard_secondary_page_field_default_field_instances() {
   // Exported field_instance: 'node-dsp-field_dsp_color'.
   $field_instances['node-dsp-field_dsp_color'] = array(
     'bundle' => 'dsp',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'jquery_colorpicker' => '036295',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(

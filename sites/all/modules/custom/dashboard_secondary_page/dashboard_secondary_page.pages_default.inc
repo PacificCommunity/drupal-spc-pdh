@@ -63,6 +63,44 @@ function dashboard_secondary_page_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-8fb1b918-aaf5-4e24-83f5-9c186c1a8373';
+  $pane->panel = 'middle';
+  $pane->type = 'views';
+  $pane->subtype = 'dashboard_for_sdp';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 1,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'default',
+    'context' => array(
+      0 => 'argument_entity_id:node_1.nid',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '8fb1b918-aaf5-4e24-83f5-9c186c1a8373';
+  $display->content['new-8fb1b918-aaf5-4e24-83f5-9c186c1a8373'] = $pane;
+  $display->panels['middle'][0] = 'new-8fb1b918-aaf5-4e24-83f5-9c186c1a8373';
+  $pane = new stdClass();
   $pane->pid = 'new-94f25777-1130-4d35-8f14-7acc829e3675';
   $pane->panel = 'middle';
   $pane->type = 'node_content';
@@ -87,11 +125,11 @@ function dashboard_secondary_page_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '94f25777-1130-4d35-8f14-7acc829e3675';
   $display->content['new-94f25777-1130-4d35-8f14-7acc829e3675'] = $pane;
-  $display->panels['middle'][0] = 'new-94f25777-1130-4d35-8f14-7acc829e3675';
+  $display->panels['middle'][1] = 'new-94f25777-1130-4d35-8f14-7acc829e3675';
   $pane = new stdClass();
   $pane->pid = 'new-a53806b1-4706-48e9-a71b-1e64bde69a9a';
   $pane->panel = 'middle';
@@ -117,11 +155,11 @@ function dashboard_secondary_page_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'a53806b1-4706-48e9-a71b-1e64bde69a9a';
   $display->content['new-a53806b1-4706-48e9-a71b-1e64bde69a9a'] = $pane;
-  $display->panels['middle'][1] = 'new-a53806b1-4706-48e9-a71b-1e64bde69a9a';
+  $display->panels['middle'][2] = 'new-a53806b1-4706-48e9-a71b-1e64bde69a9a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
