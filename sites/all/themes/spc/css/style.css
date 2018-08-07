@@ -8989,12 +8989,14 @@ button.header-menu-btn:focus {
   margin-bottom: 20px;
 }
 .node-type-dsp .dsp-datasets {
-  column-count: 2;
-  list-style: none;
-  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 75px;
 }
 .node-type-dsp .dsp-datasets .dataset-preview {
+  display: inline-block;
+  width: 49.3%;
   font-family: "Calibri";
   font-size: 14px;
   font-weight: 300;
@@ -9193,8 +9195,11 @@ button.header-menu-btn:focus {
     display: block;
     margin: 0 auto;
   }
-  .dsp-datasets {
+  .node-type-dsp .dsp-datasets {
     column-count: 1;
+  }
+  .node-type-dsp .dsp-datasets .dataset-preview {
+    width: 100%;
   }
 }
 @media (max-width: 569px) {

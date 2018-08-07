@@ -165,11 +165,13 @@
 		}
 	}
 	.dsp-datasets {
-		column-count: 2;
-		list-style: none;
-		padding-left: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 		margin-bottom: 75px;
 		.dataset-preview {
+			display: inline-block;
+			width: 49.3%;
 			font-family: "Calibri";
 			font-size: 14px;
 			font-weight: 300;
