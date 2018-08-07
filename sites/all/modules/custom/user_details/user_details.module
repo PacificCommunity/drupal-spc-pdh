@@ -1,0 +1,98 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter
+ *
+ *
+ */
+function user_details_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  $suffixes = ['dashboards', 'topics'];
+  foreach ($suffixes as $suffix) {
+    $form['field_user_' . $suffix]['#access'] = user_access('administer users');
+  }
+}
+
+/**
+ * Implements hook_node_access
+ *
+ *
+ */
+function user_details_node_access($node, $op, $account) {
+  $user = user_load($account->uid);
+  if ('create' === $op) {
+    return NODE_ACCESS_IGNORE;
+  }
+  return ['SPCUserPermissionChecker', $node->type]($node->nid, $op, $user);
+}
+
+
+/**
+ * All static methods with names identical to content types will be used for
+ * checking user permission.
+ *
+ * $nid {string} id of tested node
+ * $op {string} performed operation.
+ * $user {stdClass} tested user
+ */
+class SPCUserPermissionChecker {
+  const ALLOW = NODE_ACCESS_ALLOW;
+  const DENY = NODE_ACCESS_DENY;
+  const IGNORE = NODE_ACCESS_IGNORE;
+
+  public static function __callStatic($name, $args) {
+    return self::IGNORE;
+  }
+
+  private static function getDashboardIds($user) {
+    return self::flatNodeReference($user->field_user_dashboards);
+  }
+
+  private static function getTopicIds($user) {
+    return self::flatNodeReference($user->field_user_topics);
+  }
+
+  private static function flatNodeReference($field) {
+    return array_column($field[LANGUAGE_NONE] ?? [], 'target_id');
+  }
+
+  private static function allowForGroupMember($nid, $group) {
+    if (in_array($nid, $group)) {
+      return self::ALLOW;
+    }
+    return self::__callStatic(null, null);
+  }
+
+  private static function allowForChildGroupMember($nid, $group, $childField) {
+    foreach ($group as $id) {
+      $parent = node_load($id);
+      $children = self::flatNodeReference($parent->$childField);
+      if (in_array($nid, $children)) {
+        return self::ALLOW;
+      }
+    }
+    return self::__callStatic(null, null);
+  }
+
+  public static function thematic_group($nid, $op, $user) {
+    return self::allowForGroupMember($nid, static::getTopicIds($user));
+  }
+  public static function dashboards($nid, $op, $user) {
+    return self::allowForGroupMember($nid, static::getDashboardIds($user));
+  }
+
+  public static function data_insights($nid, $op, $user) {
+    return self::allowForChildGroupMember($nid, static::getTopicIds($user), 'field_data_insight_thematic');
+  }
+
+  public static function article($nid, $op, $user) {
+    return self::allowForChildGroupMember($nid, static::getTopicIds($user), 'field_articles_and_publications');
+  }
+
+  public static function dsp($nid, $op, $user) {
+    return self::allowForChildGroupMember($nid, static::getDashboardIds($user), 'field_indicators');
+  }
+}
