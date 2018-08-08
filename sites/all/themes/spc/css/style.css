@@ -8316,36 +8316,57 @@ button.header-menu-btn:focus {
   display: flex;
   align-items: center;
 }
-.dashboards-home .jcarousel-skin-default {
+.dashboards-home,
+.topics-home {
+  margin-top: 15px;
   margin-bottom: 25px;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal {
+.dashboards-home .jcarousel-skin-default,
+.topics-home .jcarousel-skin-default {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal,
+.topics-home .jcarousel-skin-default .jcarousel-container-horizontal {
   width: auto;
   height: auto;
   position: relative;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal,
+.topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal {
   width: auto;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list {
-  display: flex;
-}
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item,
+.topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item {
   height: auto;
+  border: none;
+  width: 140px;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item > div {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item > div,
+.topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item > div {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item > div h2 {
-  font-size: 22px;
-}
-.dashboards-home .jcarousel-skin-default .jcarousel-next-horizontal,
-.dashboards-home .jcarousel-skin-default .jcarousel-prev-horizontal {
+.dashboards-home .jcarousel-skin-default .jcarousel-next,
+.topics-home .jcarousel-skin-default .jcarousel-next {
+  background: url(../img/spc/carousel_next.png) no-repeat center center;
   top: 50%;
   transform: translateY(-50%);
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-prev,
+.topics-home .jcarousel-skin-default .jcarousel-prev {
+  background: url(../img/spc/carousel_prev.png) no-repeat center center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.topics-home {
+  border-bottom: 2px solid #ebebeb;
+}
+.topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h2 {
+  font-family: "Calibri";
+  font-size: 16px;
+  font-weight: 300;
+  color: #1d7bbc;
+  margin-top: 10px;
 }
 .node-type-thematic-group h2 {
   font-size: 40px;
