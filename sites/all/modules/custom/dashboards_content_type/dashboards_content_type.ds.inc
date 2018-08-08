@@ -73,6 +73,25 @@ function dashboards_content_type_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_icon_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'row',
+          'fis-at' => '',
+          'fis-def-at' => TRUE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'dashboard-logo col-md-12 col-sm-12 col-xs-12',
+          'fi-at' => '',
+          'fi-def-at' => TRUE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
+        ),
+      ),
+    ),
     'field_body_text' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -93,25 +112,6 @@ function dashboards_content_type_ds_field_settings_info() {
           'fi-cl' => 'dashboard-body',
           'fi-at' => '',
           'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_icon_logo' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fis' => TRUE,
-          'fis-el' => 'div',
-          'fis-cl' => 'row',
-          'fis-at' => '',
-          'fis-def-at' => TRUE,
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'dashboard-logo col-md-12 col-sm-12 col-xs-12',
-          'fi-at' => '',
-          'fi-def-at' => TRUE,
           'fi-odd-even' => FALSE,
           'fi-first-last' => FALSE,
         ),

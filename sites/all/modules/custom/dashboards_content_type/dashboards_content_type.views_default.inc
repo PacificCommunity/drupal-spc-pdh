@@ -136,7 +136,8 @@ function dashboards_content_type_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['style_options']['wrap'] = '0';
-  $handler->display->display_options['style_options']['visible'] = '6';
+  $handler->display->display_options['style_options']['visible'] = '';
+  $handler->display->display_options['style_options']['responsive'] = 1;
   $handler->display->display_options['style_options']['scroll'] = '1';
   $handler->display->display_options['style_options']['auto'] = '0';
   $handler->display->display_options['style_options']['autoPause'] = 1;
