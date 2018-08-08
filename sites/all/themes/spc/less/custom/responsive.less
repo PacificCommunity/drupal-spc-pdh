@@ -13,9 +13,9 @@
     .thematic-group-articles {
         .field-type-entityreference {
             .field-items {
-                justify-content: space-between;
                 flex-wrap: wrap;
-                .field-item {
+                .field-item, .field-item.even {
+                    margin-left: 20px;
                     margin-bottom: 30px;
                 }
             }
@@ -43,8 +43,11 @@
         .bean-article-on-home-page {
             .field-items {
                 justify-content: center;
-                .field-item.even {
-                    margin-left: 0;
+                .field-item {
+                    margin-left: 30px;
+                    &.even {
+                        margin-left: 0;
+                    }
                 }
             }
         }
@@ -84,11 +87,6 @@
             }
         }
     }
-    .thematic-group-articles .field-type-entityreference .field-items .field-item {
-        &.even {
-            margin-left: 0;
-        }
-    }
     #mini-panel-latest_datasets_and_insight {
         #two-50-middle-wrapper {
             .region {
@@ -104,6 +102,25 @@
     }
     #member-countries-block .btn.dropdown-toggle {
         width: 330px;
+    }
+    .thematic-group-articles {
+        .field-type-entityreference {
+            .field-items {
+                .field-item, .field-item.even {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 859px) {
+    .thematic-group-articles {
+        .field-type-entityreference {
+            .field-items {
+                justify-content: center;
+            }
+        }
     }
 }
 
@@ -232,8 +249,26 @@
 }
 
 @media (max-width: 569px) {
-    .thematic-group-articles .field-type-entityreference .field-items .field-item {
-        margin-left: 0;
+    #mini-panel-blog_preview {
+        .bean-article-on-home-page {
+            .field-items {
+                .field-item {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .thematic-group-articles {
+        .field-type-entityreference {
+            .field-items {
+                .field-item {
+                    margin-left: 0;
+                    &.even {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
     }
 }
 

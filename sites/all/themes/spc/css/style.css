@@ -9034,10 +9034,11 @@ button.header-menu-btn:focus {
     height: auto;
   }
   .thematic-group-articles .field-type-entityreference .field-items {
-    justify-content: space-between;
     flex-wrap: wrap;
   }
-  .thematic-group-articles .field-type-entityreference .field-items .field-item {
+  .thematic-group-articles .field-type-entityreference .field-items .field-item,
+  .thematic-group-articles .field-type-entityreference .field-items .field-item.even {
+    margin-left: 20px;
     margin-bottom: 30px;
   }
 }
@@ -9053,6 +9054,9 @@ button.header-menu-btn:focus {
   }
   #mini-panel-blog_preview .bean-article-on-home-page .field-items {
     justify-content: center;
+  }
+  #mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item {
+    margin-left: 30px;
   }
   #mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item.even {
     margin-left: 0;
@@ -9086,9 +9090,6 @@ button.header-menu-btn:focus {
     display: block;
     margin: 0 auto;
   }
-  .thematic-group-articles .field-type-entityreference .field-items .field-item.even {
-    margin-left: 0;
-  }
   #mini-panel-latest_datasets_and_insight #two-50-middle-wrapper .region {
     width: 100%;
   }
@@ -9100,6 +9101,15 @@ button.header-menu-btn:focus {
   }
   #member-countries-block .btn.dropdown-toggle {
     width: 330px;
+  }
+  .thematic-group-articles .field-type-entityreference .field-items .field-item,
+  .thematic-group-articles .field-type-entityreference .field-items .field-item.even {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 859px) {
+  .thematic-group-articles .field-type-entityreference .field-items {
+    justify-content: center;
   }
 }
 @media (max-width: 767px) {
@@ -9199,7 +9209,13 @@ button.header-menu-btn:focus {
   }
 }
 @media (max-width: 569px) {
+  #mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item {
+    margin-left: 0;
+  }
   .thematic-group-articles .field-type-entityreference .field-items .field-item {
+    margin-left: 0;
+  }
+  .thematic-group-articles .field-type-entityreference .field-items .field-item.even {
     margin-left: 0;
   }
 }
