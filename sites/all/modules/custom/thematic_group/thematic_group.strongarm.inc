@@ -136,6 +136,27 @@ function thematic_group_strongarm() {
       'similar_posts' => array(
         'custom_settings' => FALSE,
       ),
+      'topic_preview' => array(
+        'custom_settings' => TRUE,
+      ),
+      'dashboards_preview' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_individual_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_list_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_on_topic_page' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
