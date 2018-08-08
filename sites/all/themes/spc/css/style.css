@@ -8346,6 +8346,17 @@ button.header-menu-btn:focus {
 .topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item > div {
   height: 100%;
 }
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h2,
+.topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h2 {
+  font-family: "Calibri";
+  font-weight: 300;
+  margin-top: 10px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item .field-type-image,
+.topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item .field-type-image {
+  height: 75px;
+  line-height: 75px;
+}
 .dashboards-home .jcarousel-skin-default .jcarousel-next,
 .topics-home .jcarousel-skin-default .jcarousel-next {
   background: url(../img/spc/carousel_next.png) no-repeat center center;
@@ -8362,11 +8373,12 @@ button.header-menu-btn:focus {
   border-bottom: 2px solid #ebebeb;
 }
 .topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h2 {
-  font-family: "Calibri";
   font-size: 16px;
-  font-weight: 300;
   color: #1d7bbc;
-  margin-top: 10px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h2 {
+  font-size: 12px;
+  color: #1d7bbc;
 }
 .node-type-thematic-group h2 {
   font-size: 40px;

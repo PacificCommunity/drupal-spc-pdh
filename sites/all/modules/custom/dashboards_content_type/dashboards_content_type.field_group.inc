@@ -25,7 +25,7 @@ function dashboards_content_type_field_group_info() {
     'children' => array(
       0 => 'title',
     ),
-    'format_type' => 'div_background_image',
+    'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Banner',
       'instance_settings' => array(
@@ -34,6 +34,10 @@ function dashboards_content_type_field_group_info() {
         'background_image' => 'field_main_image',
         'image_style' => 'dashboard_banner',
         'classes' => 'container-fluid dashboard-banner-container',
+        'element' => 'div',
+        'attributes' => '',
+        'required_fields' => 1,
+        'id' => '',
       ),
       'formatter' => 'open',
     ),
