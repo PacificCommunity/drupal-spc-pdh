@@ -152,5 +152,14 @@ function thematic_group_ds_view_modes_info() {
   );
   $export['group_with_icon'] = $ds_view_mode;
 
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'topic_preview';
+  $ds_view_mode->label = 'Topic preview';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['topic_preview'] = $ds_view_mode;
+
   return $export;
 }

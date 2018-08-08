@@ -33,6 +33,30 @@ function thematic_group_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function thematic_group_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: topics_carousel__70x70_.
+  $styles['topics_carousel__70x70_'] = array(
+    'label' => 'Topics carousel (70x70)',
+    'effects' => array(
+      11 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 70,
+          'height' => 70,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function thematic_group_node_info() {
