@@ -9052,7 +9052,7 @@ button.header-menu-btn:focus {
     width: 100%;
   }
   #mini-panel-blog_preview .bean-article-on-home-page .field-items {
-    justify-content: space-evenly;
+    justify-content: center;
   }
   #mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item.even {
     margin-left: 0;
@@ -9112,7 +9112,7 @@ button.header-menu-btn:focus {
     width: 480px;
   }
   .thematic-group-articles .field-type-entityreference .field-items {
-    justify-content: space-evenly;
+    justify-content: center;
   }
   #member-countries-block {
     height: auto;
@@ -9131,25 +9131,17 @@ button.header-menu-btn:focus {
     top: 47%;
   }
   #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:last-of-type {
-    margin-left: 0;
-    border-radius: 5px;
-    border-left: 1px solid #7d98a9;
     display: inline-block;
-    width: 20%;
+    width: 30%;
   }
   #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:last-of-type select {
     width: 100%;
     padding: 0 8px;
-    font-size: 22px;
+    font-size: 20px;
   }
   #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type {
-    border-radius: 5px;
-    border-right: 1px solid #7d98a9;
     display: inline-block;
     width: 70%;
-  }
-  #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type::after {
-    content: none;
   }
   #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type input {
     width: 100%;
@@ -9226,16 +9218,11 @@ button.header-menu-btn:focus {
   #thematic_landing_banner .spc-home-banner-block {
     padding: 0 15px;
   }
-  #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:last-of-type {
-    display: block;
-    margin-left: 0;
-    width: 30%;
-    margin: 0 auto;
+  #thematic_landing_banner .spc-home-banner-block #ckan-search-form > div:first-of-type input,
+  #thematic_landing_banner .spc-home-banner-block #ckan-search-form > div:last-of-type input,
+  #thematic_landing_banner .spc-home-banner-block #ckan-search-form > div:first-of-type select,
+  #thematic_landing_banner .spc-home-banner-block #ckan-search-form > div:last-of-type select {
+    font-size: 14px;
   }
   .breadcrumb {
     margin-bottom: 5px;
@@ -9273,12 +9260,6 @@ button.header-menu-btn:focus {
     top: 18px;
     right: 18px;
     font-size: 25px;
-  }
-  #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:last-of-type {
-    width: 40%;
-  }
-  #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type {
-    width: 100%;
   }
   .node-type-dsp .goals-navigation .dropdown ul {
     width: 100%;
