@@ -59,6 +59,32 @@ function thematic_group_ds_field_settings_info() {
   );
   $export['node|thematic_group|group_with_icon'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|thematic_group|topic_preview';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'thematic_group';
+  $ds_fieldsetting->view_mode = 'topic_preview';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
+    'field_icon' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|thematic_group|topic_preview'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -133,6 +159,37 @@ function thematic_group_ds_layout_settings_info() {
     'layout_disable_css' => FALSE,
   );
   $export['node|thematic_group|group_with_icon'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|thematic_group|topic_preview';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'thematic_group';
+  $ds_layout->view_mode = 'topic_preview';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_icon',
+        1 => 'title',
+      ),
+    ),
+    'fields' => array(
+      'field_icon' => 'ds_content',
+      'title' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|thematic_group|topic_preview'] = $ds_layout;
 
   return $export;
 }

@@ -75,11 +75,12 @@ function thematic_group_image_default_styles() {
   $styles['topics_carousel__70x70_'] = array(
     'label' => 'Topics carousel (70x70)',
     'effects' => array(
-      11 => array(
-        'name' => 'image_scale_and_crop',
+      12 => array(
+        'name' => 'image_scale',
         'data' => array(
           'width' => 70,
           'height' => 70,
+          'upscale' => 1,
         ),
         'weight' => 1,
       ),
