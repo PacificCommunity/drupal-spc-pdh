@@ -42,7 +42,7 @@
     #mini-panel-blog_preview {
         .bean-article-on-home-page {
             .field-items {
-                justify-content: space-evenly;
+                justify-content: center;
                 .field-item.even {
                     margin-left: 0;
                 }
@@ -125,7 +125,7 @@
     .thematic-group-articles {
         .field-type-entityreference {
             .field-items {
-                justify-content: space-evenly;
+                justify-content: center;
             }
         }
     }
@@ -147,25 +147,17 @@
             top: 47%;
             #ckan-search-form {
                 div:last-of-type {
-                    margin-left: 0;
-                    border-radius: 5px;
-                    border-left: 1px solid #7d98a9;
                     display: inline-block;
-                    width: 20%;
+                    width: 30%;
                     select {
                         width: 100%;
                         padding: 0 8px;
-                        font-size: 22px;
+                        font-size: 20px;
                     }
                 }
                 div:first-of-type {
-                    border-radius: 5px;
-                    border-right: 1px solid #7d98a9;
                     display: inline-block;
                     width: 70%;
-                    &::after {
-                        content: none;
-                    }
                     input {
                         width: 100%;
                     }
@@ -272,16 +264,10 @@
     #thematic_landing_banner .spc-home-banner-block {
         padding: 0 15px;
         #ckan-search-form {
-            div:first-of-type {
-                display: block;
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            div:last-of-type {
-                display: block;
-                margin-left: 0;
-                width: 30%;
-                margin: 0 auto;
+            &>div:first-of-type, &>div:last-of-type{
+                input, select {
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -327,16 +313,6 @@
             top: 18px;
             right: 18px;
             font-size: 25px;
-        }
-    }
-    #thematic_landing_banner .spc-home-banner-block {
-        #ckan-search-form {
-            div:last-of-type {
-                width: 40%;
-            }
-            div:first-of-type {
-                width: 100%;
-            }
         }
     }
     .node-type-dsp {
