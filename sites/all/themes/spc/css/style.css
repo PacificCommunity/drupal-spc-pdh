@@ -8318,8 +8318,15 @@ button.header-menu-btn:focus {
 }
 .dashboards-home,
 .topics-home {
-  margin-top: 15px;
-  margin-bottom: 25px;
+  margin: 25px 0;
+}
+.dashboards-home h2,
+.topics-home h2 {
+  font-size: 40px;
+  font-weight: 300;
+  color: #032f47;
+  text-align: center;
+  margin-top: 0;
 }
 .dashboards-home .jcarousel-skin-default,
 .topics-home .jcarousel-skin-default {
@@ -8346,8 +8353,8 @@ button.header-menu-btn:focus {
 .topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item > div {
   height: 100%;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h2,
-.topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h2 {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h4,
+.topics-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h4 {
   font-family: "Calibri";
   font-weight: 300;
   margin-top: 10px;
@@ -8372,11 +8379,11 @@ button.header-menu-btn:focus {
 .topics-home {
   border-bottom: 2px solid #ebebeb;
 }
-.topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h2 {
+.topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
   font-size: 16px;
   color: #1d7bbc;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h2 {
+.dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
   font-size: 12px;
   color: #1d7bbc;
 }
