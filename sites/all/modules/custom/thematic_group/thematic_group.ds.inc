@@ -72,13 +72,8 @@ function thematic_group_ds_field_settings_info() {
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h2',
+        'wrapper' => 'h4',
         'class' => '',
-        'ft' => array(),
-      ),
-    ),
-    'field_icon' => array(
-      'formatter_settings' => array(
         'ft' => array(),
       ),
     ),
