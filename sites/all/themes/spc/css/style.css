@@ -8322,11 +8322,12 @@ button.header-menu-btn:focus {
 }
 .dashboards-home h2,
 .topics-home h2 {
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 300;
   color: #032f47;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 20px;
 }
 .dashboards-home .jcarousel-skin-default,
 .topics-home .jcarousel-skin-default {
