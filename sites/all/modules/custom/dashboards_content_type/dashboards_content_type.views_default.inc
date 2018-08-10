@@ -29,14 +29,18 @@ function dashboards_content_type_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['row_class'] = 'col col-xs-6 col-sm-4 col-md-2';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = '6';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['field_goals_value']['id'] = 'field_goals_value';
-  $handler->display->display_options['relationships']['field_goals_value']['table'] = 'field_data_field_goals';
-  $handler->display->display_options['relationships']['field_goals_value']['field'] = 'field_goals_value';
-  $handler->display->display_options['relationships']['field_goals_value']['label'] = 'field_goals';
-  $handler->display->display_options['relationships']['field_goals_value']['required'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_indicators_target_id']['id'] = 'field_indicators_target_id';
+  $handler->display->display_options['relationships']['field_indicators_target_id']['table'] = 'field_data_field_indicators';
+  $handler->display->display_options['relationships']['field_indicators_target_id']['field'] = 'field_indicators_target_id';
+  $handler->display->display_options['relationships']['field_indicators_target_id']['label'] = 'field_indicators';
+  $handler->display->display_options['relationships']['field_indicators_target_id']['required'] = TRUE;
   /* Field: Field collection item: Rendered Field collection item */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_field_collection_item';
@@ -75,23 +79,18 @@ function dashboards_content_type_views_default_views() {
   /* Display: Goals */
   $handler = $view->new_display('panel_pane', 'Goals', 'panel_pane_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_goals_url']['id'] = 'field_goals_url';
-  $handler->display->display_options['fields']['field_goals_url']['table'] = 'field_data_field_goals_url';
-  $handler->display->display_options['fields']['field_goals_url']['field'] = 'field_goals_url';
-  $handler->display->display_options['fields']['field_goals_url']['relationship'] = 'field_goals_value';
-  $handler->display->display_options['fields']['field_goals_url']['label'] = '';
-  $handler->display->display_options['fields']['field_goals_url']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_goals_url']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_goals_icon']['id'] = 'field_goals_icon';
-  $handler->display->display_options['fields']['field_goals_icon']['table'] = 'field_data_field_goals_icon';
-  $handler->display->display_options['fields']['field_goals_icon']['field'] = 'field_goals_icon';
-  $handler->display->display_options['fields']['field_goals_icon']['relationship'] = 'field_goals_value';
-  $handler->display->display_options['fields']['field_goals_icon']['label'] = '';
-  $handler->display->display_options['fields']['field_goals_icon']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_goals_icon']['alter']['path'] = 'node/[field_goals_url]';
-  $handler->display->display_options['fields']['field_goals_icon']['element_label_colon'] = FALSE;
+  /* Field: Content: Icon/Logo */
+  $handler->display->display_options['fields']['field_dsp_icon']['id'] = 'field_dsp_icon';
+  $handler->display->display_options['fields']['field_dsp_icon']['table'] = 'field_data_field_dsp_icon';
+  $handler->display->display_options['fields']['field_dsp_icon']['field'] = 'field_dsp_icon';
+  $handler->display->display_options['fields']['field_dsp_icon']['relationship'] = 'field_indicators_target_id';
+  $handler->display->display_options['fields']['field_dsp_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_dsp_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_dsp_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_dsp_icon']['settings'] = array(
+    'image_style' => 'dashboard_goal__140x140',
+    'image_link' => 'content',
+  );
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;

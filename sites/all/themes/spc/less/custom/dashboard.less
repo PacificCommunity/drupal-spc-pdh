@@ -4,7 +4,7 @@
 			.dashboard-logo {
 				height: 70px;
 				vertical-align: middle;
-				margin: 0 0 0 35px;
+				margin: 0 40px 0 40px;
 				display: flex;
 				align-items: center;
 				img {
@@ -32,8 +32,62 @@
 			}
 			.dashboard-search-container {
 				min-height: 185px;
+				font-family: "Calibri";
+				padding-top: 36px;
+				padding-bottom: 58px;
+				h3 {
+					margin-top: 0px;
+					text-align: center;
+					color: #032f47;
+					font-size: 23px;
+					font-weight: 700;
+				}
 				.ckan-search-form-wrapper {
-					display: none;
+					text-align: center;
+					form {
+						width: 435px;
+						height: 65px;
+						padding: 5px;
+						display: inline-block;
+						border: 1px solid #1c7abb;
+						text-align: left;
+						@media (max-width: 440px) {
+							width: 100%;
+							display: flex;
+						}
+						& > div,
+						& > input[type=submit] {
+							float: left;
+							display: inline-block;
+						}
+						input[type=text] {
+							height: 55px;
+							width: 320px;
+							background-color: #1c7abb;
+							color: #fff;
+							font-size: 16px;
+							font-weight: 300;
+							font-style: italic;
+							text-align: left;
+							padding: 0px 14px;
+							border: none;
+							vertical-align: middle;
+							@media (max-width: 440px) {
+								width: 100%;
+							}
+						}
+						input[type=submit] {
+							border: none;
+							background-color: unset;
+							color:  #032f47;
+							font-size: 19px;
+							font-weight: 400;
+							text-align: left;
+							height: 100%;
+							padding-left: 30px;
+							width: auto;
+						}
+					}
 				}
 			}
 			.dashboard-body-container {
@@ -55,6 +109,19 @@
 	.dashboard-goals {
 		padding-top: 90px;
 		padding-bottom: 90px;
+		.col {
+			text-align: center;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			a {
+				overflow: hidden;
+				display: inline-block;
+				img {
+					max-width: 100%;
+					min-width: 100px;
+				}
+			}
+		}
 	}
 }
 

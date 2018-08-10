@@ -10,7 +10,11 @@ function dashboards_content_type_preprocess_node(&$variables) {
 	$type = $variables['type'];
 	if (in_array($type, array('dashboards'))) {
 		if (function_exists('ckan_search_form')) {
-			$ckan_search_form = drupal_get_form('ckan_search_form');
+			$search_form_state = array();
+			$search_form_state['build_info']['args'] = array();
+			$search_form_state['search_form_settings']['submit_text'] = t('Search');
+			$search_form_state['search_form_settings']['input_text'] = t('Search for data');
+			$ckan_search_form = drupal_build_form('ckan_search_form', $search_form_state);
 			$variables['content']['ckan_search_form'] = array(
 				'#type' => 'container',
 				'#attributes' => array(
@@ -18,6 +22,20 @@ function dashboards_content_type_preprocess_node(&$variables) {
 				)
 			);
 			$variables['content']['ckan_search_form']['form'] = $ckan_search_form;
+		}
+	}
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dashboards_content_type_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
+	if (isset($form_state['search_form_settings'])) {
+		if (isset($form_state['search_form_settings']['submit_text'])) {
+			$form['submit']['#value'] = $form_state['search_form_settings']['submit_text'];
+		}
+		if (isset($form_state['search_form_settings']['input_text'])) {
+			$form['term']['#attributes']['placeholder'] = $form_state['search_form_settings']['input_text'];
 		}
 	}
 }

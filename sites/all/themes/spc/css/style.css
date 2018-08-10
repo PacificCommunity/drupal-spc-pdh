@@ -8880,7 +8880,7 @@ button.header-menu-btn:focus {
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-logo {
   height: 70px;
   vertical-align: middle;
-  margin: 0 0 0 35px;
+  margin: 0 40px 0 40px;
   display: flex;
   align-items: center;
 }
@@ -8910,9 +8910,67 @@ button.header-menu-btn:focus {
 }
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container {
   min-height: 185px;
+  font-family: "Calibri";
+  padding-top: 36px;
+  padding-bottom: 58px;
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container h3 {
+  margin-top: 0px;
+  text-align: center;
+  color: #032f47;
+  font-size: 23px;
+  font-weight: 700;
 }
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper {
-  display: none;
+  text-align: center;
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form {
+  width: 435px;
+  height: 65px;
+  padding: 5px;
+  display: inline-block;
+  border: 1px solid #1c7abb;
+  text-align: left;
+}
+@media (max-width: 440px) {
+  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form {
+    width: 100%;
+    display: flex;
+  }
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form > div,
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form > input[type=submit] {
+  float: left;
+  display: inline-block;
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text] {
+  height: 55px;
+  width: 320px;
+  background-color: #1c7abb;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: left;
+  padding: 0px 14px;
+  border: none;
+  vertical-align: middle;
+}
+@media (max-width: 440px) {
+  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text] {
+    width: 100%;
+  }
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=submit] {
+  border: none;
+  background-color: unset;
+  color: #032f47;
+  font-size: 19px;
+  font-weight: 400;
+  text-align: left;
+  height: 100%;
+  padding-left: 30px;
+  width: auto;
 }
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-body-container {
   background-color: #00a9c3;
@@ -8931,6 +8989,19 @@ button.header-menu-btn:focus {
 .node-type-dashboards .dashboard-goals {
   padding-top: 90px;
   padding-bottom: 90px;
+}
+.node-type-dashboards .dashboard-goals .col {
+  text-align: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.node-type-dashboards .dashboard-goals .col a {
+  overflow: hidden;
+  display: inline-block;
+}
+.node-type-dashboards .dashboard-goals .col a img {
+  max-width: 100%;
+  min-width: 100px;
 }
 /* dsp */
 .node-type-dsp .goals-navigation {
