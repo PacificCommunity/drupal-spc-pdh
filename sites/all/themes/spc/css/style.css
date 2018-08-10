@@ -8956,6 +8956,16 @@ button.header-menu-btn:focus {
   border: none;
   vertical-align: middle;
 }
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text]::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text]:-ms-input-placeholder {
+  color: #fff;
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text]::-webkit-input-placeholder {
+  color: #fff;
+}
 @media (max-width: 440px) {
   .node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text] {
     width: 100%;
