@@ -25,7 +25,7 @@ function dashboards_content_type_field_group_info() {
     'children' => array(
       0 => 'title',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'div_background_image',
     'format_settings' => array(
       'label' => 'Banner',
       'instance_settings' => array(
@@ -38,6 +38,7 @@ function dashboards_content_type_field_group_info() {
         'attributes' => '',
         'required_fields' => 1,
         'id' => '',
+        'background_color' => '',
       ),
       'formatter' => 'open',
     ),
@@ -114,20 +115,20 @@ function dashboards_content_type_field_group_info() {
   $field_group->mode = 'full';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Search',
+    'label' => 'Find data',
     'weight' => '2',
     'children' => array(
       0 => 'ckan_search_form',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'Search',
+      'label' => 'Find data',
       'instance_settings' => array(
         'id' => '',
         'classes' => 'dashboard-search-container',
         'element' => 'div',
-        'show_label' => '0',
-        'label_element' => 'div',
+        'show_label' => '1',
+        'label_element' => 'h3',
         'attributes' => '',
       ),
     ),
@@ -138,8 +139,8 @@ function dashboards_content_type_field_group_info() {
   // Included for use with string extractors like potx.
   t('Banner');
   t('Body');
+  t('Find data');
   t('Logo');
-  t('Search');
 
   return $field_groups;
 }
