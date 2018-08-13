@@ -60,8 +60,11 @@
 							float: left;
 							display: inline-block;
 						}
+						& > div {
+							height: 100%;
+						}
 						input[type=text] {
-							height: 55px;
+							height: 100%;
 							width: 320px;
 							background-color: #1c7abb;
 							color: #fff;
@@ -103,23 +106,49 @@
 					line-height: 1.75em;
 					padding-left: 15px;
 					padding-right: 15px;
+					@media (max-width: 767px) {
+						padding-left: 30px;
+						padding-right: 30px;
+					}
 				}
 			}
 		}
 	}
 	.dashboard-goals {
 		padding-top: 90px;
-		padding-bottom: 90px;
-		.col {
-			text-align: center;
-			padding-top: 7px;
-			padding-bottom: 7px;
-			a {
-				overflow: hidden;
-				display: inline-block;
-				img {
-					max-width: 100%;
-					min-width: 100px;
+		padding-bottom: 60px;
+		.inner {
+			padding: 0px 70px;
+			@media (max-width: 991px) {
+				padding: 40px;
+			}
+			@media (max-width: 375px) {
+				padding: 20px;
+			}
+		}
+		.row {
+			.col {
+				margin-top: 0px;
+				margin-bottom: 30px;
+				max-height: 140px;
+				@media (max-width: 1199px) {
+					margin-bottom: 20px;
+				}
+				@media (max-width: 991px) {
+					margin-bottom: 30px;
+					text-align: center;
+				}
+				@media (max-width: 375px) {
+					margin-bottom: 20px;
+				}
+				a {
+					overflow: hidden;
+					display: inline-block;
+					img {
+						max-width: 100%;
+						min-width: 100px;
+						height: auto;
+					}
 				}
 			}
 		}

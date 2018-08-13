@@ -8943,8 +8943,11 @@ button.header-menu-btn:focus {
   float: left;
   display: inline-block;
 }
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form > div {
+  height: 100%;
+}
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text] {
-  height: 55px;
+  height: 100%;
   width: 320px;
   background-color: #1c7abb;
   color: #fff;
@@ -8996,22 +8999,58 @@ button.header-menu-btn:focus {
   padding-left: 15px;
   padding-right: 15px;
 }
+@media (max-width: 767px) {
+  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-body-container .dashboard-body {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 .node-type-dashboards .dashboard-goals {
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 60px;
 }
-.node-type-dashboards .dashboard-goals .col {
-  text-align: center;
-  padding-top: 7px;
-  padding-bottom: 7px;
+.node-type-dashboards .dashboard-goals .inner {
+  padding: 0px 70px;
 }
-.node-type-dashboards .dashboard-goals .col a {
+@media (max-width: 991px) {
+  .node-type-dashboards .dashboard-goals .inner {
+    padding: 40px;
+  }
+}
+@media (max-width: 375px) {
+  .node-type-dashboards .dashboard-goals .inner {
+    padding: 20px;
+  }
+}
+.node-type-dashboards .dashboard-goals .row .col {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  max-height: 140px;
+}
+@media (max-width: 1199px) {
+  .node-type-dashboards .dashboard-goals .row .col {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .node-type-dashboards .dashboard-goals .row .col {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .node-type-dashboards .dashboard-goals .row .col {
+    margin-bottom: 20px;
+  }
+}
+.node-type-dashboards .dashboard-goals .row .col a {
   overflow: hidden;
   display: inline-block;
 }
-.node-type-dashboards .dashboard-goals .col a img {
+.node-type-dashboards .dashboard-goals .row .col a img {
   max-width: 100%;
   min-width: 100px;
+  height: auto;
 }
 /* dsp */
 .node-type-dsp .goals-navigation {
