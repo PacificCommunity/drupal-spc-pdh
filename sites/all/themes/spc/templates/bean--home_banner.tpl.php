@@ -52,9 +52,9 @@
           </div>
         </div>
       </div>
-    <?php elseif ($thematic_landing_banner == 1): 
-      $node = menu_get_object(); 
-      $banner_image = $node->field_banner_image_thematic['und'][0]['uri']; ?>
+    <?php elseif ($thematic_landing_banner == 1):
+      $node = menu_get_object();
+      $banner_image = $node->field_banner_image_thematic[LANGUAGE_NONE][0]['uri'] ?? null; ?>
       <div class="banner-image" style="background-image: url(<?php if ($banner_image): print(file_create_url($banner_image)); else: print(file_create_url($thematic_landing_img)); endif; ?>)"></div>
       <div class="content"<?php print $content_attributes; ?>
         <div class="spc-home-banner-block-main">
@@ -68,13 +68,13 @@
             <div id="spc-home-banner-search">
               <?php
               if (!empty($content['search_block'])):
-                print render($content['search_block']); 
+                print render($content['search_block']);
               endif; ?>
             </div>
           </div>
         </div>
       </div>
-      <?php 
+      <?php
         $cached = cache_get('datasets_count'.$node->nid, 'cache');
         if ($cached) {
           $datasets_count = $cached->data;

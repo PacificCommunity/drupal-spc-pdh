@@ -175,6 +175,16 @@ function thematic_group_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'fontawesome_shim';
+  $strongarm->value = array(
+    'use_shim' => 1,
+    'external_location' => '',
+  );
+  $export['fontawesome_shim'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'govcms_ckan_cache_fail_ttl';
   $strongarm->value = '3600';
   $export['govcms_ckan_cache_fail_ttl'] = $strongarm;

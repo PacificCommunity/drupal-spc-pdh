@@ -46,7 +46,7 @@ function thematic_group_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'group_with_icon';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '3',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -54,6 +54,13 @@ function thematic_group_ds_field_settings_info() {
         'wrapper' => 'p',
         'class' => '',
         'ft' => array(),
+      ),
+    ),
+    'field_fa_icon' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
       ),
     ),
   );
@@ -66,8 +73,13 @@ function thematic_group_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'thematic_group';
   $ds_fieldsetting->view_mode = 'topic_preview';
   $ds_fieldsetting->settings = array(
+    'ds_fa_icon' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -75,6 +87,15 @@ function thematic_group_ds_field_settings_info() {
         'wrapper' => 'h4',
         'class' => '',
         'ft' => array(),
+      ),
+    ),
+    'field_fa_icon' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+          'prefix' => '<a href="[node:url]">',
+          'suffix' => '</a>',
+        ),
       ),
     ),
   );
@@ -133,12 +154,14 @@ function thematic_group_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'group_with_icon',
-        1 => 'field_icon',
-        2 => 'title',
+        1 => 'field_fa_icon',
+        2 => 'field_icon',
+        3 => 'title',
       ),
     ),
     'fields' => array(
       'group_with_icon' => 'ds_content',
+      'field_fa_icon' => 'ds_content',
       'field_icon' => 'ds_content',
       'title' => 'ds_content',
     ),
@@ -165,11 +188,15 @@ function thematic_group_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_icon',
-        1 => 'title',
+        0 => 'ds_fa_icon',
+        1 => 'field_fa_icon',
+        2 => 'field_icon',
+        3 => 'title',
       ),
     ),
     'fields' => array(
+      'ds_fa_icon' => 'ds_content',
+      'field_fa_icon' => 'ds_content',
       'field_icon' => 'ds_content',
       'title' => 'ds_content',
     ),

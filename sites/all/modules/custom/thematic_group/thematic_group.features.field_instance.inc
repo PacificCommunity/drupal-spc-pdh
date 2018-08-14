@@ -81,7 +81,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -117,7 +117,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -141,7 +141,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -203,7 +203,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -247,7 +247,7 @@ function thematic_group_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -271,7 +271,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -333,7 +333,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -399,7 +399,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -429,6 +429,73 @@ function thematic_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-thematic_group-field_fa_icon'.
+  $field_instances['node-thematic_group-field_fa_icon'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'fontawesome_iconpicker',
+        'settings' => array(
+          'size' => '1x',
+        ),
+        'type' => 'fontawesome_iconpicker_icon',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'hidden',
+        'module' => 'fontawesome_iconpicker',
+        'settings' => array(
+          'size' => '2x',
+        ),
+        'type' => 'fontawesome_iconpicker_icon',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'hidden',
+        'module' => 'fontawesome_iconpicker',
+        'settings' => array(
+          'size' => '5x',
+        ),
+        'type' => 'fontawesome_iconpicker_icon',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_fa_icon',
+    'label' => 'FA Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'fontawesome_iconpicker',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'fontawesome_iconpicker_textfield',
+      'weight' => 35,
+    ),
+  );
+
   // Exported field_instance: 'node-thematic_group-field_icon'.
   $field_instances['node-thematic_group-field_icon'] = array(
     'bundle' => 'thematic_group',
@@ -443,7 +510,7 @@ function thematic_group_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -459,7 +526,7 @@ function thematic_group_field_default_field_instances() {
           'image_style' => 'icon__25x25_',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -475,11 +542,11 @@ function thematic_group_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'topics_carousel__70x70_',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -549,7 +616,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -583,6 +650,7 @@ function thematic_group_field_default_field_instances() {
   t('Data insight to show on thematic landing page');
   t('Description');
   t('Display image');
+  t('FA Icon');
   t('Icon');
   t('Publications');
 

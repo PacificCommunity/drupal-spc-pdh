@@ -24,7 +24,8 @@ function thematic_group_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_icon',
-      1 => 'title',
+      1 => 'field_fa_icon',
+      2 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
