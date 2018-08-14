@@ -248,14 +248,26 @@ function home_page_default_page_manager_pages() {
   $display->content['new-5fce722d-8361-48a3-9572-c2c8bc9c336d'] = $pane;
   $display->panels['one_fw_main'][4] = 'new-5fce722d-8361-48a3-9572-c2c8bc9c336d';
   $pane = new stdClass();
-  $pane->pid = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
+  $pane->pid = 'new-b1681305-27f2-4cb3-b9f9-7e7b64243916';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'blog_preview';
+  $pane->type = 'views';
+  $pane->subtype = 'latest_stories';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 0,
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'stories_on_homepage',
+    'override_title' => 1,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
@@ -263,13 +275,16 @@ function home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'latest-stories-homepage',
+  );
   $pane->extras = array();
   $pane->position = 5;
   $pane->locks = array();
-  $pane->uuid = '933b1597-31a5-43da-816d-f065d38a1c53';
-  $display->content['new-933b1597-31a5-43da-816d-f065d38a1c53'] = $pane;
-  $display->panels['one_fw_main'][5] = 'new-933b1597-31a5-43da-816d-f065d38a1c53';
+  $pane->uuid = 'b1681305-27f2-4cb3-b9f9-7e7b64243916';
+  $display->content['new-b1681305-27f2-4cb3-b9f9-7e7b64243916'] = $pane;
+  $display->panels['one_fw_main'][5] = 'new-b1681305-27f2-4cb3-b9f9-7e7b64243916';
   $pane = new stdClass();
   $pane->pid = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $pane->panel = 'one_fw_main';
