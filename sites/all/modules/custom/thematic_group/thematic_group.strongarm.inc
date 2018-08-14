@@ -175,6 +175,16 @@ function thematic_group_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'fontawesome_external';
+  $strongarm->value = array(
+    'use_cdn' => 0,
+    'external_location' => 'https://use.fontawesome.com/releases/v5.1.1/js/all.js',
+  );
+  $export['fontawesome_external'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'fontawesome_shim';
   $strongarm->value = array(
     'use_shim' => 1,

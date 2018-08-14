@@ -1,7 +1,7 @@
 name = Thematic group
 core = 7.x
 package = Features
-version = 7.x-1.27
+version = 7.x-1.28
 dependencies[] = bean
 dependencies[] = ckan_tweaks
 dependencies[] = ctools
@@ -87,6 +87,7 @@ features[variable][] = diff_show_preview_changes_node_thematic_group
 features[variable][] = diff_view_mode_preview_node_thematic_group
 features[variable][] = ds_extras_field_template
 features[variable][] = field_bundle_settings_node__thematic_group
+features[variable][] = fontawesome_external
 features[variable][] = fontawesome_shim
 features[variable][] = govcms_ckan_cache_fail_ttl
 features[variable][] = govcms_ckan_cache_ttl
