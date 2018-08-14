@@ -174,7 +174,7 @@ function dashboards_content_type_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_indicators',
-    'label' => 'Indicators',
+    'label' => 'Secondary Dashboard pages',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -259,8 +259,8 @@ function dashboards_content_type_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body text');
   t('Icon/Logo');
-  t('Indicators');
   t('Main image');
+  t('Secondary Dashboard pages');
 
   return $field_instances;
 }
