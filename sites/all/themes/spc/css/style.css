@@ -8219,6 +8219,53 @@ button.header-menu-btn:focus {
   font-weight: 300;
   color: #fff;
 }
+.latest-stories-homepage {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/background_01.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 0;
+}
+.latest-stories-homepage h2 {
+  font-size: 40px;
+  font-weight: 300;
+  color: #fff;
+  margin: 0 0 50px;
+}
+.latest-stories-homepage .view-all-link {
+  color: #fff;
+}
+.latest-stories-homepage .view-all-link:after {
+  background: url(../img/spc/view_all_arrow_white.png) 50% 50% no-repeat;
+}
+.latest-stories-homepage .field-items {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+.latest-stories-homepage .field-items .field-item {
+  margin-bottom: 30px;
+  margin-left: 10px;
+  max-width: 275px;
+}
+.latest-stories-homepage .field-items .field-item:first-child {
+  margin-left: 0;
+}
+.latest-stories-homepage .field-items .field-item .views-field-title {
+  font-family: "Calibri Light";
+}
+.latest-stories-homepage .field-items .field-item .views-field-title a {
+  font-size: 22px;
+  font-weight: 300;
+  color: #fff;
+}
+.latest-stories-homepage .field-items .field-item .views-field-title a h3 {
+  font-size: 22px;
+}
+.latest-stories-homepage .field-items .field-item .views-field-field-image img {
+  width: 100%;
+  height: 100%;
+}
 #mini-panel-datasets_on_home_page {
   padding: 50px 0;
   position: relative;

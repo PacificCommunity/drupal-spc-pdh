@@ -59,5 +59,29 @@ function home_page_fe_nodequeue_export_fields() {
     'count' => 0,
   );
 
+  // Exported nodequeues: latest_stories
+  $nodequeues['latest_stories'] = array(
+    'name' => 'latest_stories',
+    'title' => 'Latest Stories',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'insert_at_front' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'article',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
+
   return $nodequeues;
 }
