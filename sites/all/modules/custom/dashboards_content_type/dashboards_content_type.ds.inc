@@ -28,6 +28,11 @@ function dashboards_content_type_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
+    'field_icon_logo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|dashboards|dashboards_preview'] = $ds_fieldsetting;
 
