@@ -30,7 +30,7 @@ function dashboards_content_type_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['row_class'] = 'col col-xs-6 col-sm-4 col-md-2';
+  $handler->display->display_options['style_options']['row_class'] = 'column';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['columns'] = '6';
   $handler->display->display_options['row_plugin'] = 'fields';
