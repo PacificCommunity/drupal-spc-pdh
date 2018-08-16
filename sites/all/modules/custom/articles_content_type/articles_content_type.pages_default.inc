@@ -138,7 +138,9 @@ function articles_content_type_default_page_manager_handlers() {
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
-    'formatter_settings' => array(),
+    'formatter_settings' => array(
+      'rows' => '5',
+    ),
     'context' => 'relationship_entity_from_field:field_thematic_group-node-node_1',
     'override_title' => 1,
     'override_title_text' => 'Related Datasets',
@@ -159,60 +161,6 @@ function articles_content_type_default_page_manager_handlers() {
   $pane->uuid = '8a95675d-a1c5-4822-bb90-fee1f5e296bd';
   $display->content['new-8a95675d-a1c5-4822-bb90-fee1f5e296bd'] = $pane;
   $display->panels['one_fw_main'][2] = 'new-8a95675d-a1c5-4822-bb90-fee1f5e296bd';
-  $pane = new stdClass();
-  $pane->pid = 'new-5d1901c9-3186-42d3-b292-cbc30100598d';
-  $pane->panel = 'one_fw_main';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => '',
-    'title' => 'Related Datasets',
-    'title_heading' => 'h2',
-    'body' => '<div class="container">
-<div class="dataset-preview">
-<p><a href="https://dev.spc.links.com.au/data/dataset/public-domain-wcpfc-purse-seine-catch-data">Public Domain WCPFC Purse Seine Catch Data </a></p>
-
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/sites/default/files/geoscience-sm_1.png" /> Geosience</p>
-</div>
-
-<p>Release Date: <span>May 28, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
-</div>
-
-<div class="dataset-preview">
-<p><a href="https://dev.spc.links.com.au/data/dataset/public-domain-wcpfc-purse-seine-catch-data">Public Domain WCPFC Purse Seine Catch Data </a></p>
-
-<div class="dataset-groups">
-<p><img alt="..." src="https://dev.spc.links.com.au/sites/default/files/geoscience-sm_1.png" /> Geosience</p>
-</div>
-
-<p>Release Date: <span>May 28, 2018</span></p>
-
-<div class="dataset-formats">File Format: <span>HTML</span> <span>JSON</span></div>
-</div>
-</div>
-',
-    'format' => 'full_html',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'related-datasets',
-  );
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '5d1901c9-3186-42d3-b292-cbc30100598d';
-  $display->content['new-5d1901c9-3186-42d3-b292-cbc30100598d'] = $pane;
-  $display->panels['one_fw_main'][3] = 'new-5d1901c9-3186-42d3-b292-cbc30100598d';
   $pane = new stdClass();
   $pane->pid = 'new-cffe60f8-73ee-4213-9cd0-767d0be2159a';
   $pane->panel = 'one_fw_main';
@@ -245,11 +193,11 @@ function articles_content_type_default_page_manager_handlers() {
     'css_class' => 'similar-posts',
   );
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'cffe60f8-73ee-4213-9cd0-767d0be2159a';
   $display->content['new-cffe60f8-73ee-4213-9cd0-767d0be2159a'] = $pane;
-  $display->panels['one_fw_main'][4] = 'new-cffe60f8-73ee-4213-9cd0-767d0be2159a';
+  $display->panels['one_fw_main'][3] = 'new-cffe60f8-73ee-4213-9cd0-767d0be2159a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
