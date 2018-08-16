@@ -76,6 +76,7 @@ function ckan_tweaks_field_formatter_settings_summary($field, $instance, $view_m
  */
 function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, &$items, $display) {
 	$element = array();
+
 	if (empty($items)) {
 		return $element;
 	}
@@ -83,11 +84,7 @@ function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instan
 	$settings = $display['settings'];
 	$rows = $settings['rows'];
   
-  $element['container'] = array(
-  	'#type' => 'container',
-  	'#attributes' => array('class' => array('container', 'datasets-container'))
-  );
-	foreach ($items as $item) {
+	foreach ($items as $delta => $item) {
 		// Getting group value.
 		$group = $item['safe_value'];
 		if (empty($group)) {
@@ -109,6 +106,10 @@ function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instan
 	  if (empty($datasets)) {
 	  	continue;
 	  }
+	  $element[$delta]['container'] = array(
+	  	'#type' => 'container',
+	  	'#attributes' => array('class' => array('container', 'datasets-container'))
+	  );
 	  // Display section.
 	  foreach ($datasets as &$dataset) {
 	    $element['container'][] = array(
