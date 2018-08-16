@@ -27,7 +27,16 @@ function articles_content_type_default_page_manager_handlers() {
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Topic',
+        'keyword' => 'topic',
+        'name' => 'entity_from_field:field_thematic_group-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
     'name' => '',
     'access' => array(
       'plugins' => array(
@@ -117,11 +126,45 @@ function articles_content_type_default_page_manager_handlers() {
   $display->content['new-5ce633a0-d332-4931-b938-31b7380a0027'] = $pane;
   $display->panels['one_fw_main'][1] = 'new-5ce633a0-d332-4931-b938-31b7380a0027';
   $pane = new stdClass();
+  $pane->pid = 'new-8a95675d-a1c5-4822-bb90-fee1f5e296bd';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_ckan_thematic_group_id';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'ckan_datasets',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(),
+    'context' => 'relationship_entity_from_field:field_thematic_group-node-node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Related Datasets',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'style' => 'default',
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'related-datasets',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '8a95675d-a1c5-4822-bb90-fee1f5e296bd';
+  $display->content['new-8a95675d-a1c5-4822-bb90-fee1f5e296bd'] = $pane;
+  $display->panels['one_fw_main'][2] = 'new-8a95675d-a1c5-4822-bb90-fee1f5e296bd';
+  $pane = new stdClass();
   $pane->pid = 'new-5d1901c9-3186-42d3-b292-cbc30100598d';
   $pane->panel = 'one_fw_main';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
@@ -165,11 +208,11 @@ function articles_content_type_default_page_manager_handlers() {
     'css_class' => 'related-datasets',
   );
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '5d1901c9-3186-42d3-b292-cbc30100598d';
   $display->content['new-5d1901c9-3186-42d3-b292-cbc30100598d'] = $pane;
-  $display->panels['one_fw_main'][2] = 'new-5d1901c9-3186-42d3-b292-cbc30100598d';
+  $display->panels['one_fw_main'][3] = 'new-5d1901c9-3186-42d3-b292-cbc30100598d';
   $pane = new stdClass();
   $pane->pid = 'new-cffe60f8-73ee-4213-9cd0-767d0be2159a';
   $pane->panel = 'one_fw_main';
@@ -202,11 +245,11 @@ function articles_content_type_default_page_manager_handlers() {
     'css_class' => 'similar-posts',
   );
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'cffe60f8-73ee-4213-9cd0-767d0be2159a';
   $display->content['new-cffe60f8-73ee-4213-9cd0-767d0be2159a'] = $pane;
-  $display->panels['one_fw_main'][3] = 'new-cffe60f8-73ee-4213-9cd0-767d0be2159a';
+  $display->panels['one_fw_main'][4] = 'new-cffe60f8-73ee-4213-9cd0-767d0be2159a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
