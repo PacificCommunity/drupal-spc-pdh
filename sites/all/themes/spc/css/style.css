@@ -9058,6 +9058,18 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   padding-top: 28px;
   padding-bottom: 28px;
 }
+@media (min-width: 1400px) {
+  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-body-container .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 1060px) and (max-width: 1399px) {
+  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-body-container .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-body-container .dashboard-body {
   font-family: "Calibri";
   color: #fff;
