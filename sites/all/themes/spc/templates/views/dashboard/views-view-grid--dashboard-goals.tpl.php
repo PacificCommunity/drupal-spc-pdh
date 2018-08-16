@@ -18,14 +18,12 @@
     <div class="description"><?php print $caption; ?></div>
   <?php endif; ?>
   <div class="inner">
-    <?php foreach ($rows as $row_number => $columns): ?>
-      <div <?php if ($row_classes[$row_number]):?> class="row <?php print $row_classes[$row_number]; ?>"<?php endif; ?>>
-        <?php foreach ($columns as $column_number => $item): ?>
-          <div <?php if ($column_classes[$row_number][$column_number]): ?> class="<?php print $column_classes[$row_number][$column_number]; ?>"<?php endif; ?>>
-            <?php print $item; ?>
-          </div>
-        <?php endforeach; ?>
-      </div>
-    <?php endforeach; ?>
+      <?php foreach ($rows as $row_number => $columns): ?>
+          <?php foreach ($columns as $column_number => $item): ?>
+            <div <?php if ($column_classes[$row_number][$column_number]): ?> class="<?php print $column_classes[$row_number][$column_number]; ?>"<?php endif; ?>>
+              <?php print $item; ?>
+            </div>
+          <?php endforeach; ?>
+      <?php endforeach; ?>
   </div>
 </div>

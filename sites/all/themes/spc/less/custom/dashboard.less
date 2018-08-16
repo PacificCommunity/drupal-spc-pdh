@@ -76,6 +76,7 @@
 							padding: 0px 14px;
 							border: none;
 							vertical-align: middle;
+							font-family: "Calibri Light";
 							.placeholder(#fff);
 							@media (max-width: 440px) {
 								width: 100%;
@@ -99,8 +100,19 @@
 				background-color: #00a9c3;
 				padding-top: 28px;
 				padding-bottom: 28px;
+				.container {
+					@media (min-width: 1400px) {
+						padding-left: 0px;
+						padding-right: 0px;
+					}
+					@media (min-width: 1060px) and (max-width: 1399px) {
+						padding-left: 0px;
+						padding-right: 0px;
+					}
+
+				}
 				.dashboard-body {
-					font-family: "Calibri";
+					font-family: "Calibri Light";
 					color: #fff;
 					font-weight: 300;
 					font-size: 17px;
@@ -119,37 +131,25 @@
 		padding-top: 90px;
 		padding-bottom: 60px;
 		.inner {
-			padding: 0px 70px;
+			max-width: 840px;
+			margin: auto;
+			overflow: hidden;
 			@media (max-width: 991px) {
-				padding: 40px;
+				max-width: 560px
 			}
-			@media (max-width: 375px) {
-				padding: 20px;
+			@media (max-width: 589px) {
+				max-width: 420px
 			}
-		}
-		.row {
-			.col {
-				margin-top: 0px;
-				margin-bottom: 30px;
-				max-height: 140px;
-				@media (max-width: 1199px) {
-					margin-bottom: 20px;
-				}
-				@media (max-width: 991px) {
-					margin-bottom: 30px;
-					text-align: center;
-				}
-				@media (max-width: 375px) {
-					margin-bottom: 20px;
-				}
-				a {
-					overflow: hidden;
-					display: inline-block;
-					img {
-						max-width: 100%;
-						min-width: 100px;
-						height: auto;
-					}
+			@media (max-width: 449px) {
+				max-width: 280px
+			}
+			@media (max-width: 309px) {
+				max-width: 140px
+			}
+			.column {
+				float: left;
+				img {
+					padding: 7px;
 				}
 			}
 		}
