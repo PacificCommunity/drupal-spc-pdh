@@ -408,6 +408,44 @@ function home_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-members_countries-field_show'.
+  $field_instances['bean-members_countries-field_show'] = array(
+    'bundle' => 'members_countries',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_show',
+    'label' => 'Show',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 2,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Article on Home Page');
@@ -420,6 +458,7 @@ function home_page_field_default_field_instances() {
   t('Is it Thematic Landing Page?');
   t('Is it banner for Thematic Landing Page?');
   t('Latest Stories Background');
+  t('Show');
   t('Thematic Groups Home');
   t('Thematic Page');
   t('Thematic banner');
