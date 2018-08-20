@@ -5,3 +5,19 @@
  */
 
 include_once 'home_page.features.inc';
+
+/**
+ * Implementation of hook_preprocess_HOOK().
+ */
+function home_page_preprocess_entity(&$variables) {
+	if ($variables['entity_type'] == 'bean') {
+		$bean = $variables['bean'];
+		if (in_array($bean->type, array('members_countries'))) {
+			$variables['show'] = 0;
+			$wrapper = entity_metadata_wrapper('bean', $bean);
+			if (isset($wrapper->field_show)) {
+				$variables['show'] = $wrapper->field_show->raw();
+			}
+		}
+	}
+}

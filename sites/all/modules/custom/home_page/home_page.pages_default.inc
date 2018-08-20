@@ -206,77 +206,10 @@ function home_page_default_page_manager_pages() {
   $display->content['new-f26b1da5-ff16-4919-814c-54cb9bcd09f7'] = $pane;
   $display->panels['one_fw_main'][4] = 'new-f26b1da5-ff16-4919-814c-54cb9bcd09f7';
   $pane = new stdClass();
-  $pane->pid = 'new-5fce722d-8361-48a3-9572-c2c8bc9c336d';
-  $pane->panel = 'one_fw_main';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(),
-  );
-  $pane->configuration = array(
-    'admin_title' => 'Member Countries',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => '<div class="container">
-	<div class="row">
-		<div class="col-md-5 col-sm-6 col-xs-12">
-			<h2>Country Data</h2>
-			<h3>View data and knowledge by Pacific Island country</h3>
-		</div>
-		<div class="col-md-7 col-sm-6 col-xs-12">
-			<div class="dropdown">
-				<div class="btn btn-default dropdown-toggle" id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Member Countries</div>
-				<ul class="dropdown-menu" aria-labelledby="memberCountries">
-					<li><a target="_blank" href="/">American Samoa</a></li>
-					<li><a target="_blank" href="/">Cook Islands</a></li>
-					<li><a target="_blank" href="/">Fiji</a></li>
-					<li><a target="_blank" href="/">French Polynesia</a></li>
-					<li><a target="_blank" href="/">Guam</a></li>
-					<li><a target="_blank" href="/">Kiribati</a></li>
-					<li><a target="_blank" href="/">Marshall Islands</a></li>
-					<li><a target="_blank" href="/">Federated States of Micronesia</a></li>
-					<li><a target="_blank" href="/">Nauru</a></li>
-					<li><a target="_blank" href="/">New Caledonia</a></li>
-					<li><a target="_blank" href="/">Niue</a></li>
-					<li><a target="_blank" href="/">Northern Mariana Islands</a></li>
-					<li><a target="_blank" href="/">Palau</a></li>
-					<li><a target="_blank" href="/">Papua New Guinea</a></li>
-					<li><a target="_blank" href="/">Pitcairn Islands</a></li>
-					<li><a target="_blank" href="https://samoa-demo.spc.links.com.au/">Samoa</a></li>
-					<li><a target="_blank" href="/">Solomon Islands</a></li>
-					<li><a target="_blank" href="/">Tokelau</a></li>
-					<li><a target="_blank" href="/">Tonga</a></li>
-					<li><a target="_blank" href="/">Tuvalu</a></li>
-					<li><a target="_blank" href="/">Vanuatu</a></li>
-					<li><a target="_blank" href="/">Wallis and Futuna</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>',
-    'format' => 'full_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => 'member-countries-block',
-    'css_class' => '',
-  );
-  $pane->extras = array();
-  $pane->position = 5;
-  $pane->locks = array();
-  $pane->uuid = '5fce722d-8361-48a3-9572-c2c8bc9c336d';
-  $display->content['new-5fce722d-8361-48a3-9572-c2c8bc9c336d'] = $pane;
-  $display->panels['one_fw_main'][5] = 'new-5fce722d-8361-48a3-9572-c2c8bc9c336d';
-  $pane = new stdClass();
-  $pane->pid = 'new-b9de9a4e-b57c-48d1-b38d-8e9eff735177';
+  $pane->pid = 'new-236ae88a-4fbd-4499-9e20-c293dbba6ca1';
   $pane->panel = 'one_fw_main';
   $pane->type = 'block';
-  $pane->subtype = 'bean-members-countries';
+  $pane->subtype = 'bean-home-members-countries';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -289,15 +222,15 @@ function home_page_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'member-countries-block',
-    'css_class' => '',
+    'css_id' => '',
+    'css_class' => 'member-countries',
   );
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 5;
   $pane->locks = array();
-  $pane->uuid = 'b9de9a4e-b57c-48d1-b38d-8e9eff735177';
-  $display->content['new-b9de9a4e-b57c-48d1-b38d-8e9eff735177'] = $pane;
-  $display->panels['one_fw_main'][6] = 'new-b9de9a4e-b57c-48d1-b38d-8e9eff735177';
+  $pane->uuid = '236ae88a-4fbd-4499-9e20-c293dbba6ca1';
+  $display->content['new-236ae88a-4fbd-4499-9e20-c293dbba6ca1'] = $pane;
+  $display->panels['one_fw_main'][5] = 'new-236ae88a-4fbd-4499-9e20-c293dbba6ca1';
   $pane = new stdClass();
   $pane->pid = 'new-b1681305-27f2-4cb3-b9f9-7e7b64243916';
   $pane->panel = 'one_fw_main';
@@ -331,11 +264,11 @@ function home_page_default_page_manager_pages() {
     'css_class' => 'latest-stories-homepage',
   );
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = 'b1681305-27f2-4cb3-b9f9-7e7b64243916';
   $display->content['new-b1681305-27f2-4cb3-b9f9-7e7b64243916'] = $pane;
-  $display->panels['one_fw_main'][7] = 'new-b1681305-27f2-4cb3-b9f9-7e7b64243916';
+  $display->panels['one_fw_main'][6] = 'new-b1681305-27f2-4cb3-b9f9-7e7b64243916';
   $pane = new stdClass();
   $pane->pid = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $pane->panel = 'one_fw_main';
@@ -354,11 +287,11 @@ function home_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = '7b27c8e1-534e-4371-a946-7081425b0c24';
   $display->content['new-7b27c8e1-534e-4371-a946-7081425b0c24'] = $pane;
-  $display->panels['one_fw_main'][8] = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
+  $display->panels['one_fw_main'][7] = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

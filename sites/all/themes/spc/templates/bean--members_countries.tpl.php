@@ -26,47 +26,32 @@
  * @see template_preprocess_entity()
  * @see template_process()
  */
-
 ?>
-<?php if($show) : ?>
-<div class="container">
-	<div class="row">
-	<div class="col-md-5 col-sm-6 col-xs-12">
-		<h2><?php print $title; ?></h2>
-		<h3><?php print t('View data and knowledge by Pacific Island country'); ?></h3>
-	</div>
 
-	<div class="col-md-7 col-sm-6 col-xs-12">
-		<div class="dropdown">
-		<div class="btn btn-default dropdown-toggle" id="memberCountries">
-			<?php print t('Member Countries'); ?>
-		</div>
-		<ul>
-			<li><a href="/" target="_blank">American Samoa</a></li>
-			<li><a href="/" target="_blank">Cook Islands</a></li>
-			<li><a href="/" target="_blank">Fiji</a></li>
-			<li><a href="/" target="_blank">French Polynesia</a></li>
-			<li><a href="/" target="_blank">Guam</a></li>
-			<li><a href="/" target="_blank">Kiribati</a></li>
-			<li><a href="/" target="_blank">Marshall Islands</a></li>
-			<li><a href="/" target="_blank">Federated States of Micronesia</a></li>
-			<li><a href="/" target="_blank">Nauru</a></li>
-			<li><a href="/" target="_blank">New Caledonia</a></li>
-			<li><a href="/" target="_blank">Niue</a></li>
-			<li><a href="/" target="_blank">Northern Mariana Islands</a></li>
-			<li><a href="/" target="_blank">Palau</a></li>
-			<li><a href="/" target="_blank">Papua New Guinea</a></li>
-			<li><a href="/" target="_blank">Pitcairn Islands</a></li>
-			<li><a href="https://samoa-demo.spc.links.com.au/" target="_blank">Samoa</a></li>
-			<li><a href="/" target="_blank">Solomon Islands</a></li>
-			<li><a href="/" target="_blank">Tokelau</a></li>
-			<li><a href="/" target="_blank">Tonga</a></li>
-			<li><a href="/" target="_blank">Tuvalu</a></li>
-			<li><a href="/" target="_blank">Vanuatu</a></li>
-			<li><a href="/" target="_blank">Wallis and Futuna</a></li>
-		</ul>
+<?php if ($show) : ?>
+	<div id="member-countries-block">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-5 col-sm-6 col-xs-12">
+				<h2><?php print $title; ?></h2>
+				<h3><?php print t('View data and knowledge by Pacific Island country'); ?></h3>
+			</div>
+
+			<div class="col-md-7 col-sm-6 col-xs-12">
+				<div class="dropdown">
+				<div class="btn btn-default dropdown-toggle" id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<?php print t('Member Countries'); ?>
+				</div>
+				<?php if (!empty($variables['field_members_countries'])) : ?>
+					<ul class="dropdown-menu">
+						<?php foreach (element_children($variables['field_members_countries']) as $children_key) : ?>
+							<li><?php print drupal_render($content['field_members_countries'][$children_key]); ?></li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+				</div>
+			</div>
+			</div>
 		</div>
 	</div>
-	</div>
-</div>
 <?php endif; ?>
