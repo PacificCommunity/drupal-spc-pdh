@@ -40,4 +40,39 @@ jQuery( document ).ready(function() {
         }
         jQuery(preview).height(preview_height);
     });
+
+  jQuery('.list-tweets').slick({
+    dots: false,
+    infinite: false,
+    speed: 600,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          arrows: false,
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          arrows: false,
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+  console.log($('body'));
 });

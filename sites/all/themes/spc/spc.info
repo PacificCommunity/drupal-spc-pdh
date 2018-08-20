@@ -38,7 +38,8 @@ regions[highlighted] = Highlighted
 
 ;-------------- C S S -------------
 stylesheets[all][] = css/ma5-mobile-menu.css
-
+stylesheets[all][] = css/slick.css
+stylesheets[all][] = css/slick-theme.css
 stylesheets[all][] = css/style.css
 
 ;-------------- CSS FOAD -------------
@@ -74,6 +75,7 @@ scripts[] = js/ma5-mobile-menu.js
 ; https://github.com/liabru/jquery-match-height
 scripts[] = js/jquery.matchHeight.js
 
+scripts[] = js/slick.min.js
 scripts[] = js/script.js
 
 ;-------------- Panel layouts --------------
