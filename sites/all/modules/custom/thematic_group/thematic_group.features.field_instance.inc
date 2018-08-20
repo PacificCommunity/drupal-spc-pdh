@@ -640,6 +640,127 @@ function thematic_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-thematic_group-field_show_tweets'.
+  $field_instances['node-thematic_group-field_show_tweets'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Display tweets on Topic page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_show_tweets',
+    'label' => 'Show tweets',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'node-thematic_group-field_twitter_account_names'.
+  $field_instances['node-thematic_group-field_twitter_account_names'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Twitter Account name should be provided without the "@" sign. For example "@spc_cps" will be "spc_cps".',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_twitter_account_names',
+    'label' => 'Twitter Account names',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 38,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Articles and Publications');
@@ -650,9 +771,13 @@ function thematic_group_field_default_field_instances() {
   t('Data insight to show on thematic landing page');
   t('Description');
   t('Display image');
+  t('Display tweets on Topic page.');
   t('FA Icon');
   t('Icon');
   t('Publications');
+  t('Show tweets');
+  t('Twitter Account name should be provided without the "@" sign. For example "@spc_cps" will be "spc_cps".');
+  t('Twitter Account names');
 
   return $field_instances;
 }

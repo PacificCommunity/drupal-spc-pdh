@@ -102,10 +102,10 @@ function _spc_tweet_mapper($tweet) {
 			'text' => $tweet->full_text,
 			'created_at' => $tweet->created_at,
 			'timestamp' => $timestmp,
-			'urls' => $tweet->entities->urls ? property_exists($tweet->entities, 'urls') : array(),
-			'media' => $tweet->entities->media ? property_exists($tweet->entities, 'media') : array(),
-			'hashtags' => $tweet->entities->hashtags ? property_exists($tweet->entities, 'hashtags') : array(),
-			'user_mentions' => $tweet->entities->user_mentions ? property_exists($tweet->entities, 'user_mentions') : array() 
+			'urls' => property_exists($tweet->entities, 'urls') ? $tweet->entities->urls : array(),
+			'media' => property_exists($tweet->entities, 'media') ? $tweet->entities->media : array(),
+			'hashtags' => property_exists($tweet->entities, 'hashtags') ? $tweet->entities->hashtags : array(),
+			'user_mentions' => property_exists($tweet->entities, 'user_mentions') ? $tweet->entities->user_mentions : array() 
 	    ];
 	}
 	return array();
@@ -129,41 +129,30 @@ function _spc_tweet_how_long_ago($timestmp) {
 
 function _spc_tweet_parse_text($tweet) {
 	$item = $tweet;
-	// var_dump($item['urls']);
 	if (array_key_exists('urls', $item) && $item['urls']) {
-		// var_dump(3333354);
-		// var_dump($item['urls']);
 	    foreach ($item['urls'] as $key => $value) {
-	    	var_dump($value->expanded_url);
-	    	echo "<hr>";
 	    	$replace = "<a href='".$value->expanded_url."' target='_blank'>". $value->display_url ."</a>";
 	    	$item['text'] = str_replace($value->url, $replace, $item['text']);
 	    }
 	}
-	// if (array_key_exists('media', $item) && $item['media']) {
-	//     foreach ($item['media'] as $key => $value) {
-	//     	var_dump($item['media']);
-	//     	var_dump(444444444444444444444444444);
-	//     	$replace = "<a href='".$value->url."' target='_blank'><img class='media-image' src='". $value->media_url_https ."'></img></a>";
-	//     	$item['text'] = str_replace($value->url, $replace, $item['text']);
-	//     }
-	// }
-	// if (array_key_exists('hashtags', $item) && $item['hashtags']) {
-	//     foreach ($item['hashtags'] as $key => $value) {
-	//     	var_dump($item['hashtags']);
-	//     	var_dump(222222222222222222222);
-	//     	$replace = "<a href='https://twitter.com/hashtag/".$value->text."?src=hash' target='_blank'>#". $value->text ."</a>";
-	//     	$item['text'] = str_replace('#' . $value->text, $replace, $item['text']);
-	//     }
-	// }
- //    if (array_key_exists('user_mentions', $item) && $item['user_mentions']) {
-	//     foreach ($item['user_mentions'] as $key => $value) {
-	//     	var_dump($item['user_mentions']);
-	//     	var_dump(1111111111111111111111111);
-	//     	$replace = "<a href='https://twitter.com/".$value->screen_name."' target='_blank'>@". $value->screen_name ."</a>";
-	//     	$item['text'] = str_replace('@'. $value->screen_name, $replace, $item['text']);
-	//     }
-	// }
+	if (array_key_exists('media', $item) && $item['media']) {
+	    foreach ($item['media'] as $key => $value) {
+	    	$replace = "<a href='".$value->url."' target='_blank'><img class='media-image' src='". $value->media_url_https ."'></img></a>";
+	    	$item['text'] = str_replace($value->url, $replace, $item['text']);
+	    }
+	}
+	if (array_key_exists('hashtags', $item) && $item['hashtags']) {
+	    foreach ($item['hashtags'] as $key => $value) {
+	    	$replace = "<a href='https://twitter.com/hashtag/".$value->text."?src=hash' target='_blank'>#". $value->text ."</a>";
+	    	$item['text'] = str_replace('#' . $value->text, $replace, $item['text']);
+	    }
+	}
+    if (array_key_exists('user_mentions', $item) && $item['user_mentions']) {
+	    foreach ($item['user_mentions'] as $key => $value) {
+	    	$replace = "<a href='https://twitter.com/".$value->screen_name."' target='_blank'>@". $value->screen_name ."</a>";
+	    	$item['text'] = str_replace('@'. $value->screen_name, $replace, $item['text']);
+	    }
+	}
  	return $item['text'];
 }
 
@@ -186,19 +175,19 @@ function spc_twitter_block_view($delta = '') {
 					$tw_access_token = variable_get('tw_access_token', '');
 					$tw_access_token_secret = variable_get('tw_access_token_secret', '');
 					$tw_limit = variable_get('tw_items_limit', 10);
+					if (!$tw_limit) {
+						$tw_limit = 10;
+					} 
 		    		$tweets = array();
 		    		if ($tw_consumer_key && $tw_consumer_secret && $tw_access_token && $tw_access_token_secret && $tw_limit) {
 				    	$connection = new TwitterOAuth($tw_consumer_key, $tw_consumer_secret, $tw_access_token, $tw_access_token_secret);
-				    	echo "<hr>";
 				    	foreach ($screen_names['und'] as $key => $name) {
 				    		$data = $connection->get("statuses/user_timeline", ["count" => $tw_limit, "exclude_replies" => true, "screen_name" => $name['value'], "source" => "web", "tweet_mode" => "extended"]);
-				    		if ($data->errors) {
+				    		if (isset($data->errors)) {
 				    			watchdog('spc_twitter_connection_error', '<pre>' . print_r($data->errors, TRUE) . '</pre>');				    			
 				    		}
 				    		else {
 					    		foreach ($data as &$item) {
-					    			var_dump($item);
-					    			dsm($item);
 						    		$item = _spc_tweet_mapper($item);
 						    		$tweets[] = $item;
 						    	}

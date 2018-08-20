@@ -1,7 +1,7 @@
 <div class="tweet-item">
 	<div class="content-block">
 		<div>
-			<a href="https://twitter.com/<?= $tweet_item['screen_name'] ?>">
+			<a href="https://twitter.com/<?= $tweet_item['screen_name'] ?>" target="_blank">
 				<img class="avatar" src="<?= $tweet_item['profile_image_url']; ?>" alt=" <?= $tweet_item['name'] ?>">
 				<div class="FullNameGroup">
 					<strong class="fullname">
