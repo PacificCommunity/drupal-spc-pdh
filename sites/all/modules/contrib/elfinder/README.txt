@@ -1,11 +1,14 @@
 elFinder file manager integration module for Drupal
 ===================================================
 
-
 System Requirements:
 
  - Drupal 7.x
- - elFinder 1.2
+ - elFinder 2.0.9+ 
+
+   Note: elFinder 2.0rc1 no more supported - use 2.x dev build from 
+         http://sourceforge.net/projects/drupal-elfinder/files/Library/ 
+         or use production version if it is available
 
 Optional:
  
@@ -16,7 +19,7 @@ Optional:
     - FCKeditor
     - TinyMCE 3
     - BUEdtor
-    - jWYSIWYG (Drupal 6.x, jWYSIWYG 0.93+, jquery 1.3+, jquery ui 1.7+)
+    - jWYSIWYG (jWYSIWYG 0.93+, jquery 1.3+, jquery ui 1.7+)
     - YUI Editor
     - WYMeditor
 
@@ -24,7 +27,7 @@ Optional:
 Installation:
 
   1. Unpack archive contents into modules/elfinder
-  2. Get latest elFinder at https://sourceforge.net/projects/elfinder/ and it's contents to sites/all/libraries/elfinder
+  2. Get latest elFinder at http://sourceforge.net/projects/drupal-elfinder/files/Library/ and it's contents to sites/all/libraries/elfinder
   3. REMOVE following files from library directory if it exists to avoid security hole:
 
      sites/all/libraries/elfinder/elfinder.html
@@ -76,3 +79,6 @@ Known Issues:
 
  - Not all editors supported
  - Conflicting with some devel module features
+
+
+
