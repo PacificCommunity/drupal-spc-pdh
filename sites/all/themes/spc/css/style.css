@@ -8674,6 +8674,92 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 #latest_tweets {
   padding: 20px 0 30px;
 }
+.latest-tweets-block {
+  padding: 20px 0 30px;
+}
+.slick-slider .slick-track {
+  display: flex;
+}
+.slick-slider .slick-slide {
+  height: auto;
+}
+.list-tweets {
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-tweets .slick-prev,
+.list-tweets .slick-next {
+  background: black;
+}
+.list-tweets .slick-next {
+  background: url(../img/spc/carousel_next.png) no-repeat center center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.list-tweets .slick-next:before {
+  content: '';
+}
+.list-tweets .slick-prev {
+  background: url(../img/spc/carousel_prev.png) no-repeat center center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.list-tweets .slick-prev:before {
+  content: '';
+}
+.list-tweets .slick-next.slick-disabled,
+.list-tweets .slick-prev.slick-disabled {
+  display: none!important;
+}
+.list-tweets .tweet-item {
+  padding: 15px;
+}
+.list-tweets .tweet-item .content-block {
+  border-radius: 10px;
+  height: 100%;
+  padding: 15px;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.list-tweets .tweet-item .content-block .avatar {
+  float: left;
+  margin-top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -moz-force-broken-image-icon: 1;
+  margin-right: 5px;
+}
+.list-tweets .tweet-item .content-block .FullNameGroup {
+  margin-top: 5px;
+  display: inline;
+}
+.list-tweets .tweet-item .content-block .FullNameGroup .fullname {
+  word-break: break-all;
+  color: #14171a;
+  font-size: 14px;
+  font-weight: bold;
+}
+.list-tweets .tweet-item .content-block .date-created {
+  display: inline-block;
+  color: #686c6e;
+  font-size: 12px;
+  float: right;
+  margin-top: 0px;
+}
+.list-tweets .tweet-item .content-block .text {
+  margin-top: 40px;
+}
+.list-tweets .tweet-item .content-block .screen-name {
+  float: left;
+  color: #686c6e;
+  font-size: 12px;
+}
+.list-tweets .tweet-item .content-block .media-image {
+  width: 100%;
+  top: 0px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
 .breadcrumb {
   background-color: transparent;
 }

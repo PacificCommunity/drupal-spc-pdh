@@ -218,40 +218,31 @@ function thematic_group_default_page_manager_handlers() {
   $display->content['new-5a614e60-7b6c-4dfb-b83d-c0cbd947af5f'] = $pane;
   $display->panels['one_fw_main'][4] = 'new-5a614e60-7b6c-4dfb-b83d-c0cbd947af5f';
   $pane = new stdClass();
-  $pane->pid = 'new-4f5fc7a9-76cb-46cf-8a66-9c78c6ba551f';
+  $pane->pid = 'new-fd88377d-2526-4207-a19c-644795a46ff0';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
+  $pane->type = 'block';
+  $pane->subtype = 'spc_twitter-spc_twitter_topic_tweets';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => '<h2>Latest Tweets</h2>
-
-<div class="col-md-3 col-sm-6 col-xs-12"><img alt="" height="447" src="/sites/all/themes/spc/img/spc/tweet1.png" width="297" /></div>
-
-<div class="col-md-3 col-sm-6 col-xs-12"><img alt="" height="447" src="/sites/all/themes/spc/img/spc/tweet1.png" width="297" /></div>
-
-',
-    'format' => 'full_html',
-    'substitute' => 1,
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'latest_tweets',
-    'css_class' => 'container',
+    'css_id' => '',
+    'css_class' => 'container latest-tweets-block',
   );
   $pane->extras = array();
   $pane->position = 5;
   $pane->locks = array();
-  $pane->uuid = '4f5fc7a9-76cb-46cf-8a66-9c78c6ba551f';
-  $display->content['new-4f5fc7a9-76cb-46cf-8a66-9c78c6ba551f'] = $pane;
-  $display->panels['one_fw_main'][5] = 'new-4f5fc7a9-76cb-46cf-8a66-9c78c6ba551f';
+  $pane->uuid = 'fd88377d-2526-4207-a19c-644795a46ff0';
+  $display->content['new-fd88377d-2526-4207-a19c-644795a46ff0'] = $pane;
+  $display->panels['one_fw_main'][5] = 'new-fd88377d-2526-4207-a19c-644795a46ff0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-4ce022c5-0b6a-422e-9df0-b82a44a5af38';
   $handler->conf['display'] = $display;
