@@ -163,7 +163,7 @@ function spc_twitter_block_view($delta = '') {
     	$current_node = menu_get_object();
 		$twitter_users = array('link_digital', 'spc_cps');
     	if ($current_node && $current_node->type == 'thematic_group') {
-    		if ($current_node->field_show_tweets['und'][0]['value'] && $current_node->field_twitter_account_names) {
+    		if ($current_node->field_show_tweets && $current_node->field_show_tweets['und'][0]['value'] && $current_node->field_twitter_account_names) {
     			$screen_names = $current_node->field_twitter_account_names;
 	    		$cache_name = 'cache_topic_' . $current_node->vid;
 		    	if ($cached = cache_get($cache_name, 'cache')) {
