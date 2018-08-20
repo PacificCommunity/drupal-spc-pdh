@@ -42,18 +42,21 @@ jQuery( document ).ready(function() {
     });
 
   jQuery('.list-tweets').slick({
-    dots: false,
+    // dots: true,
     infinite: false,
     speed: 600,
     slidesToShow: 4,
     slidesToScroll: 4,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1025,
         settings: {
           arrows: false,
           slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToScroll: 3,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          infinite: true,
         }
       },
       {
@@ -61,7 +64,10 @@ jQuery( document ).ready(function() {
         settings: {
           arrows: false,
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          infinite: true,
         }
       },
       {
@@ -69,7 +75,10 @@ jQuery( document ).ready(function() {
         settings: {
           arrows: false,
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          infinite: true,
         }
       }
     ]
