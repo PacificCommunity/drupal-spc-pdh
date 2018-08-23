@@ -49,7 +49,7 @@ function dashboards_content_type_ds_field_settings_info() {
       'format' => 'default',
     ),
     'title' => array(
-      'weight' => '4',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -192,24 +192,22 @@ function dashboards_content_type_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'group_logo',
-        1 => 'group_banner',
+        1 => 'title',
         2 => 'field_icon_logo',
-        3 => 'group_search',
+        3 => 'group_banner',
         4 => 'ckan_search_form',
         5 => 'field_body_text',
         6 => 'group_body',
-        7 => 'title',
       ),
     ),
     'fields' => array(
       'group_logo' => 'ds_content',
-      'group_banner' => 'ds_content',
+      'title' => 'ds_content',
       'field_icon_logo' => 'ds_content',
-      'group_search' => 'ds_content',
+      'group_banner' => 'ds_content',
       'ckan_search_form' => 'ds_content',
       'field_body_text' => 'ds_content',
       'group_body' => 'ds_content',
-      'title' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
