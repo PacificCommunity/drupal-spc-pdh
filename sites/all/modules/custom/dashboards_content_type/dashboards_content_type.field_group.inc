@@ -23,7 +23,8 @@ function dashboards_content_type_field_group_info() {
     'label' => 'Banner',
     'weight' => '1',
     'children' => array(
-      0 => 'title',
+      0 => 'ckan_search_form',
+      1 => 'title',
     ),
     'format_type' => 'div_background_image',
     'format_settings' => array(
@@ -117,9 +118,7 @@ function dashboards_content_type_field_group_info() {
   $field_group->data = array(
     'label' => 'Find data',
     'weight' => '2',
-    'children' => array(
-      0 => 'ckan_search_form',
-    ),
+    'children' => array(),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Find data',

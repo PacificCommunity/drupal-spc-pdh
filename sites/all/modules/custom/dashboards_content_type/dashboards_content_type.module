@@ -19,7 +19,8 @@ function dashboards_content_type_preprocess_node(&$variables) {
 				'#type' => 'container',
 				'#attributes' => array(
 					'class' => array('ckan-search-form-wrapper')
-				)
+				),
+				'#weight' => 1
 			);
 			$variables['content']['ckan_search_form']['form'] = $ckan_search_form;
 		}
