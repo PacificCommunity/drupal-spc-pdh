@@ -9067,8 +9067,11 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   background-size: cover;
   background-position: left top;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding-top: 100px;
+  font-family: "Calibri";
 }
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container h1 {
   font-family: "Calibri";
@@ -9077,45 +9080,33 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-weight: 400;
   line-height: 1em;
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container {
-  min-height: 185px;
-  font-family: "Calibri";
-  padding-top: 36px;
-  padding-bottom: 58px;
-}
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container h3 {
-  margin-top: 0px;
-  text-align: center;
-  color: #032f47;
-  font-size: 23px;
-  font-weight: 700;
-}
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper {
   text-align: center;
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form {
   width: 435px;
   height: 65px;
   padding: 5px;
   display: inline-block;
   border: 1px solid #1c7abb;
   text-align: left;
+  background-color: #fff;
 }
 @media (max-width: 440px) {
-  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form {
+  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form {
     width: 100%;
     display: flex;
   }
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form > div,
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form > input[type=submit] {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form > div,
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form > input[type=submit] {
   float: left;
   display: inline-block;
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form > div {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form > div {
   height: 100%;
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text] {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form input[type=text] {
   height: 100%;
   width: 320px;
   background-color: #1c7abb;
@@ -9129,22 +9120,22 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   vertical-align: middle;
   font-family: "Calibri Light";
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text]::-moz-placeholder {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form input[type=text]::-moz-placeholder {
   color: #fff;
   opacity: 1;
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text]:-ms-input-placeholder {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form input[type=text]:-ms-input-placeholder {
   color: #fff;
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text]::-webkit-input-placeholder {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form input[type=text]::-webkit-input-placeholder {
   color: #fff;
 }
 @media (max-width: 440px) {
-  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=text] {
+  .node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form input[type=text] {
     width: 100%;
   }
 }
-.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container .ckan-search-form-wrapper form input[type=submit] {
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-banner-container .ckan-search-form-wrapper form input[type=submit] {
   border: none;
   background-color: unset;
   color: #032f47;
@@ -9154,6 +9145,19 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: 100%;
   padding-left: 30px;
   width: auto;
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container {
+  min-height: 185px;
+  font-family: "Calibri";
+  padding-top: 36px;
+  padding-bottom: 58px;
+}
+.node-type-dashboards .node-dashboards.view-mode-full .dashboard-search-container h3 {
+  margin-top: 0px;
+  text-align: center;
+  color: #032f47;
+  font-size: 23px;
+  font-weight: 700;
 }
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-body-container {
   background-color: #00a9c3;

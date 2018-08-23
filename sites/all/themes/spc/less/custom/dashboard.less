@@ -21,27 +21,17 @@
 				background-size: cover;
 				background-position: left top;
 				display: flex;
+				flex-direction: column;
+				align-items: center;
 				justify-content: center;
 				padding-top: 100px;
+				font-family: "Calibri";
 				h1 {
 					font-family: "Calibri";
 					color: #fff;
 					font-size: 42px;
 					font-weight: 400;
 					line-height: 1em;
-				}
-			}
-			.dashboard-search-container {
-				min-height: 185px;
-				font-family: "Calibri";
-				padding-top: 36px;
-				padding-bottom: 58px;
-				h3 {
-					margin-top: 0px;
-					text-align: center;
-					color: #032f47;
-					font-size: 23px;
-					font-weight: 700;
 				}
 				.ckan-search-form-wrapper {
 					text-align: center;
@@ -52,6 +42,7 @@
 						display: inline-block;
 						border: 1px solid #1c7abb;
 						text-align: left;
+						background-color: #fff;
 						@media (max-width: 440px) {
 							width: 100%;
 							display: flex;
@@ -95,6 +86,71 @@
 						}
 					}
 				}
+			}
+			.dashboard-search-container {
+				min-height: 185px;
+				font-family: "Calibri";
+				padding-top: 36px;
+				padding-bottom: 58px;
+				h3 {
+					margin-top: 0px;
+					text-align: center;
+					color: #032f47;
+					font-size: 23px;
+					font-weight: 700;
+				}
+				// .ckan-search-form-wrapper {
+				// 	text-align: center;
+				// 	form {
+				// 		width: 435px;
+				// 		height: 65px;
+				// 		padding: 5px;
+				// 		display: inline-block;
+				// 		border: 1px solid #1c7abb;
+				// 		text-align: left;
+				// 		@media (max-width: 440px) {
+				// 			width: 100%;
+				// 			display: flex;
+				// 		}
+				// 		& > div,
+				// 		& > input[type=submit] {
+				// 			float: left;
+				// 			display: inline-block;
+				// 		}
+				// 		& > div {
+				// 			height: 100%;
+				// 		}
+				// 		input[type=text] {
+				// 			height: 100%;
+				// 			width: 320px;
+				// 			background-color: #1c7abb;
+				// 			color: #fff;
+				// 			font-size: 16px;
+				// 			font-weight: 300;
+				// 			font-style: italic;
+				// 			text-align: left;
+				// 			padding: 0px 14px;
+				// 			border: none;
+				// 			vertical-align: middle;
+				// 			font-family: "Calibri Light";
+				// 			.placeholder(#fff);
+				// 			@media (max-width: 440px) {
+				// 				width: 100%;
+				// 			}
+				// 		}
+				// 		input[type=submit] {
+				// 			border: none;
+				// 			background-color: unset;
+				// 			color:  #032f47;
+				// 			font-size: 19px;
+				// 			font-weight: 400;
+				// 			text-align: left;
+				// 			height: 100%;
+				// 			padding-left: 30px;
+				// 			width: auto;
+				// 		}
+				// 	}
+				// }
 			}
 			.dashboard-body-container {
 				background-color: #00a9c3;
