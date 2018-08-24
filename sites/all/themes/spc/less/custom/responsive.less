@@ -38,7 +38,12 @@
         .spc-home-banner-block {
             width: 100%;
         }
-    } 
+    }
+    .dashboard-banner-container {
+        .ckan-search-form-wrapper {
+            width: 100%;
+        }
+    }
     #mini-panel-blog_preview {
         .bean-article-on-home-page {
             .field-items {
@@ -127,6 +132,20 @@
 @media (max-width: 767px) {
     #mini-panel-home_banner, #thematic_landing_banner {
         .spc-home-banner-block {
+            #ckan-search-form {
+                input[type='submit'] {
+                    width: 120px;
+                }
+                &>div {
+                    input {
+                        width: 480px;
+                    }
+                }
+            }
+        }
+    }
+    .dashboard-banner-container {
+        .ckan-search-form-wrapper {
             #ckan-search-form {
                 input[type='submit'] {
                     width: 120px;
@@ -285,6 +304,18 @@
             }
         }
     }
+    .dashboard-banner-container {
+        .ckan-search-form-wrapper {
+            #ckan-search-form {
+                &>div {
+                    input {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
     #node_content {
         padding: 80px 15px 60px;
     }
@@ -348,6 +379,22 @@
             top: 18px;
             right: 18px;
             font-size: 25px;
+        }
+    }
+    .dashboard-banner-container {
+        .ckan-search-form-wrapper {
+            #ckan-search-form {
+                &>div {
+                    input {
+                        width: 96%;
+                    }
+                    &:after {
+                        top: 18px;
+                        right: 18px;
+                        font-size: 25px;
+                    }
+                }
+            }
         }
     }
     .node-type-dsp {

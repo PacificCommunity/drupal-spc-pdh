@@ -15,147 +15,9 @@
 					}
 				}
 			}
-			.dashboard-banner-container {
-				min-height: 310px;
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: left top;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				padding-top: 100px;
-				font-family: "Calibri";
-				h1 {
-					font-family: "Calibri";
-					color: #fff;
-					font-size: 42px;
-					font-weight: 400;
-					line-height: 1em;
-				}
-				.ckan-search-form-wrapper {
-					text-align: center;
-					form {
-						width: 435px;
-						height: 65px;
-						padding: 5px;
-						display: inline-block;
-						border: 1px solid #1c7abb;
-						text-align: left;
-						background-color: #fff;
-						@media (max-width: 440px) {
-							width: 100%;
-							display: flex;
-						}
-						& > div,
-						& > input[type=submit] {
-							float: left;
-							display: inline-block;
-						}
-						& > div {
-							height: 100%;
-						}
-						input[type=text] {
-							height: 100%;
-							width: 320px;
-							background-color: #1c7abb;
-							color: #fff;
-							font-size: 16px;
-							font-weight: 300;
-							font-style: italic;
-							text-align: left;
-							padding: 0px 14px;
-							border: none;
-							vertical-align: middle;
-							font-family: "Calibri Light";
-							.placeholder(#fff);
-							@media (max-width: 440px) {
-								width: 100%;
-							}
-						}
-						input[type=submit] {
-							border: none;
-							background-color: unset;
-							color:  #032f47;
-							font-size: 19px;
-							font-weight: 400;
-							text-align: left;
-							height: 100%;
-							padding-left: 30px;
-							width: auto;
-						}
-					}
-				}
-			}
-			.dashboard-search-container {
-				min-height: 185px;
-				font-family: "Calibri";
-				padding-top: 36px;
-				padding-bottom: 58px;
-				h3 {
-					margin-top: 0px;
-					text-align: center;
-					color: #032f47;
-					font-size: 23px;
-					font-weight: 700;
-				}
-				// .ckan-search-form-wrapper {
-				// 	text-align: center;
-				// 	form {
-				// 		width: 435px;
-				// 		height: 65px;
-				// 		padding: 5px;
-				// 		display: inline-block;
-				// 		border: 1px solid #1c7abb;
-				// 		text-align: left;
-				// 		@media (max-width: 440px) {
-				// 			width: 100%;
-				// 			display: flex;
-				// 		}
-				// 		& > div,
-				// 		& > input[type=submit] {
-				// 			float: left;
-				// 			display: inline-block;
-				// 		}
-				// 		& > div {
-				// 			height: 100%;
-				// 		}
-				// 		input[type=text] {
-				// 			height: 100%;
-				// 			width: 320px;
-				// 			background-color: #1c7abb;
-				// 			color: #fff;
-				// 			font-size: 16px;
-				// 			font-weight: 300;
-				// 			font-style: italic;
-				// 			text-align: left;
-				// 			padding: 0px 14px;
-				// 			border: none;
-				// 			vertical-align: middle;
-				// 			font-family: "Calibri Light";
-				// 			.placeholder(#fff);
-				// 			@media (max-width: 440px) {
-				// 				width: 100%;
-				// 			}
-				// 		}
-				// 		input[type=submit] {
-				// 			border: none;
-				// 			background-color: unset;
-				// 			color:  #032f47;
-				// 			font-size: 19px;
-				// 			font-weight: 400;
-				// 			text-align: left;
-				// 			height: 100%;
-				// 			padding-left: 30px;
-				// 			width: auto;
-				// 		}
-				// 	}
-				// }
-			}
 			.dashboard-body-container {
-				background-color: #00a9c3;
-				padding-top: 28px;
-				padding-bottom: 28px;
+				padding-top: 48px;
+				padding-bottom: 45px;
 				.container {
 					@media (min-width: 1400px) {
 						padding-left: 0px;
@@ -169,7 +31,7 @@
 				}
 				.dashboard-body {
 					font-family: "Calibri Light";
-					color: #fff;
+					color: #2a2c2d;
 					font-weight: 300;
 					font-size: 17px;
 					line-height: 1.75em;
@@ -184,8 +46,8 @@
 		}
 	}
 	.dashboard-goals {
-		padding-top: 90px;
-		padding-bottom: 60px;
+		padding-top: 45px;
+		padding-bottom: 90px;
 		.inner {
 			max-width: 840px;
 			margin: auto;
@@ -209,6 +71,77 @@
 				}
 			}
 		}
+	}
+}
+
+.dashboard-banner-container {
+	min-height: 310px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 84px;
+	padding-bottom: 95px;
+	font-family: "Calibri";
+	h1 {
+		font-family: "Calibri";
+		color: #fff;
+		font-size: 42px;
+		font-weight: 400;
+		line-height: 1em;
+		padding: 0px 0px 50px 0px;
+		text-align: center;
+	}
+	.ckan-search-form-wrapper {
+		text-align: center;
+    #ckan-search-form {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      position: relative;
+      &>div {
+          display: inline-block;
+          position: relative;
+          &:after {
+              content: '\f002';
+              font: normal normal normal 35px/1 FontAwesome;
+              position: absolute;
+              top: 11px;
+              right: 10px;
+          }
+          input {
+              height: 60px;
+              width: 700px;
+              border-radius: 5px;
+              border: none;
+              box-shadow: none;
+              padding: 0 10px;
+              font-weight: 300;
+          }
+      }
+      select {
+          position: relative;
+          background-color: #eee;
+          font-weight: 300;
+          padding: 0 15px;
+          border-radius: 5px;
+          height: 60px;
+          width: auto;
+          border: none;
+      }
+      input[type='submit'] {
+          position: absolute;
+          top: 10px;
+          right: 60px;
+          width: 35px;
+          opacity: 0;
+          background: none;
+          border: none;
+      }
+    }
 	}
 }
 
