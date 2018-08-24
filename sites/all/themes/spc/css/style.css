@@ -8383,16 +8383,12 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   display: flex;
   align-items: center;
 }
-.dashboards-home,
-.topics-home {
-  margin: 25px 0;
-}
 .dashboards-home h2,
 .topics-home h2 {
   font-size: 25px;
   font-weight: 300;
   color: #032f47;
-  text-align: center;
+  text-align: left;
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -8445,11 +8441,20 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   transform: translateY(-50%);
 }
 .topics-home {
-  border-bottom: 2px solid #ebebeb;
+  margin: 0px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
   font-size: 16px;
   color: #1d7bbc;
+}
+.dashboards-home h2 {
+  margin-top: 34px;
+  margin-bottom: : 86px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item {
+  margin-right: 24px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
   font-size: 12px;

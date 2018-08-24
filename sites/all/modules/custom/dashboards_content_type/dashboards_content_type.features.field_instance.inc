@@ -75,7 +75,7 @@ function dashboards_content_type_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'topics_carousel__70x70_',
+          'image_style' => 'dashboard_goal__140x140',
         ),
         'type' => 'image',
         'weight' => 0,

@@ -126,8 +126,8 @@ function home_page_default_page_manager_pages() {
     'args' => '',
     'url' => '',
     'display' => 'block_1',
-    'override_title' => 0,
-    'override_title_text' => 'Topics',
+    'override_title' => 1,
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -174,7 +174,7 @@ function home_page_default_page_manager_pages() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'dashboards-home',
+    'css_class' => 'dashboards-home container',
   );
   $pane->extras = array();
   $pane->position = 3;
