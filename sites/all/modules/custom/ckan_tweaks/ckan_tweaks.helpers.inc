@@ -63,3 +63,7 @@ function _ckan_tweaks_get_thematic_area_from_node($node) {
     return $node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['value'];
   }
 }
+
+function _ckan_tweaks_search_page_by_topic($topic) {
+  return _ckan_tweaks_get_ckan_url() . '/dataset?q=' . urlencode(sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $topic));
+}

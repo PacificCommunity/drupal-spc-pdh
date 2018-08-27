@@ -79,24 +79,24 @@
         if ($cached) {
           $datasets_count = $cached->data;
         } else {
-          $datasets_count = !empty($node->field_ckan_thematic_group_id) ? _ckan_tweaks_count_datasets_for_thematic_area($node->field_ckan_thematic_group_id['und'][0]['safe_value']) : '0';
+          $datasets_count = !empty($node->field_ckan_thematic_group_id) ? _ckan_tweaks_count_datasets_for_thematic_area($node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['safe_value']) : '0';
           cache_set('datasets_count'.$node->nid, $datasets_count, 'cache', time() + 60*60*6);
         }
 
-        $publications_count = !empty($node->field_publications) ? $node->field_publications['und'][0]['value'] : '0';
+        $publications_count = !empty($node->field_publications) ? $node->field_publications[LANGUAGE_NONE][0]['value'] : '0';
       ?>
       <div class="banner-links hidden-xs">
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
           </div>
-          <span><?= $datasets_count ?></span><br> Datasets
+          <a href="<?= _ckan_tweaks_search_page_by_topic($node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['safe_value']) ?>"><span><?= $datasets_count ?></span><br> Datasets</a>
         </div>
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/article_icon.png">
           </div>
-          <span><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></span><br> Articles
+          <a href="/articles/by-topic/<?= $node->nid ?>"><span><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></span><br> Articles</a>
         </div>
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
