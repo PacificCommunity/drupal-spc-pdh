@@ -8389,7 +8389,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-weight: 300;
   color: #032f47;
   text-align: left;
-  margin-top: 0;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 .dashboards-home .jcarousel-skin-default,
@@ -8449,14 +8449,30 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-size: 16px;
   color: #1d7bbc;
 }
-.dashboards-home h2 {
-  margin-top: 34px;
-  margin-bottom: : 86px;
+.dashboards-home {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item {
+.dashboards-home h2 {
+  font-family: "Calibri";
+  margin-top: 34px;
+  margin-bottom: 86px;
+  font-size: 29px;
+}
+.dashboards-home .jcarousel-skin-default {
+  margin-bottom: 100px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list {
+  background: none;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item {
+  background: none;
   margin-right: 24px;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item .field-type-image {
+  height: 140px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h4 {
   font-size: 12px;
   color: #1d7bbc;
 }

@@ -424,7 +424,7 @@
         font-weight: 300;
         color: #032f47;
         text-align: left;
-        margin-top: 0;
+        margin-top: 0px;
         margin-bottom: 20px;
     }
     .jcarousel-skin-default {
@@ -485,17 +485,29 @@
     }
 }
 .dashboards-home {
+    background-repeat: no-repeat;
+    background-size: cover;
     h2 {
+        font-family: "Calibri";
         margin-top: 34px;
-        margin-bottom: : 86px;
+        margin-bottom: 86px;
+        font-size: 29px;
     }
     .jcarousel-skin-default {
-        .jcarousel-list {
-            .jcarousel-item {
-                margin-right: 24px;
-                h4 {
-                    font-size: 12px;
-                    color:  #1d7bbc;
+        margin-bottom: 100px;
+        .jcarousel-container-horizontal {
+            .jcarousel-list {
+                background: none;
+                .jcarousel-item {
+                    background: none;
+                    margin-right: 24px;
+                    .field-type-image {
+                        height: 140px;
+                    }
+                    h4 {
+                        font-size: 12px;
+                        color:  #1d7bbc;
+                    }
                 }
             }
         }
