@@ -171,10 +171,11 @@ function home_page_default_page_manager_pages() {
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
+    'style' => 'default',
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'dashboards-home container',
+    'css_class' => 'dashboards-home',
   );
   $pane->extras = array();
   $pane->position = 3;
