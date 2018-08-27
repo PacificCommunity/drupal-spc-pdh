@@ -8473,9 +8473,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: auto;
   width: auto;
 }
-.node-type-thematic-group .dataset-title {
-  text-align: center;
-}
 .thematic-group-articles {
   padding: 20px 0 20px;
   background: linear-gradient(to right, #114976, rgba(0, 0, 0, 0.2));
