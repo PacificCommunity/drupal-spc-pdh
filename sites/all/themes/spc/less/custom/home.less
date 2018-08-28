@@ -1,3 +1,11 @@
+.front {
+    #one-fw-wrapper {
+        .container {
+            max-width: 1014px;
+        }
+    }
+}
+
 #mini-panel-home_banner, #thematic_landing_banner {
     position: relative;
     .field-type-image {
@@ -160,10 +168,6 @@
 }
 
 #mini-panel-data_insights {
-    // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/insights_bg.jpg);
-    // background-position: 50% 50%;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     padding: 35px 0px 84px 0px;
     font-family: "Calibri";
     h2 {
@@ -481,6 +485,7 @@
         }
     }
 }
+
 .topics-home {
     margin: 0px;
     padding-top: 50px;
@@ -496,6 +501,7 @@
         }
     }
 }
+
 .dashboards-home {
     background-repeat: no-repeat;
     background-size: cover;
@@ -508,15 +514,18 @@
         font-size: 29px;
     }
     .jcarousel-skin-default {
-        max-width: 1060px;
+        max-width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
         .jcarousel-container-horizontal {
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 0px;
+            padding-right: 0px;
             .jcarousel-list {
                 background: none;
                 .jcarousel-item {
                     background: none;
                     margin-right: 24px;
+                    margin-left: 0px;
                     .field-type-image {
                         height: 140px;
                     }
@@ -526,6 +535,14 @@
                         margin-top: 13px;
                     }
                 }
+            }
+            .jcarousel-next {
+                top: 40%;
+                right: -40px;
+            }
+            .jcarousel-prev {
+                top: 40%;
+                left: -61px;
             }
         }
     }

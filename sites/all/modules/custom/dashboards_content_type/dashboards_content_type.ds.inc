@@ -28,7 +28,7 @@ function dashboards_content_type_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
-    'field_icon_logo' => array(
+    'field_main_image' => array(
       'formatter_settings' => array(
         'ft' => array(),
       ),
@@ -160,12 +160,12 @@ function dashboards_content_type_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_icon_logo',
+        0 => 'field_main_image',
         1 => 'title',
       ),
     ),
     'fields' => array(
-      'field_icon_logo' => 'ds_content',
+      'field_main_image' => 'ds_content',
       'title' => 'ds_content',
     ),
     'classes' => array(),

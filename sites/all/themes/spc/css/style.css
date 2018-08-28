@@ -7989,6 +7989,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .thematic-fa-link:hover {
   text-decoration: none;
 }
+.front #one-fw-wrapper .container {
+  max-width: 1014px;
+}
 #mini-panel-home_banner,
 #thematic_landing_banner {
   position: relative;
@@ -8471,11 +8474,13 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-size: 29px;
 }
 .dashboards-home .jcarousel-skin-default {
-  max-width: 1060px;
+  max-width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list {
   background: none;
@@ -8483,6 +8488,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item {
   background: none;
   margin-right: 24px;
+  margin-left: 0px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item .field-type-image {
   height: 140px;
@@ -8491,6 +8497,14 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-size: 13px;
   color: #1d7bbc;
   margin-top: 13px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next {
+  top: 40%;
+  right: -40px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev {
+  top: 40%;
+  left: -61px;
 }
 .node-type-thematic-group h2 {
   font-size: 40px;
