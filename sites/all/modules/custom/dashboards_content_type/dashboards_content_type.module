@@ -13,7 +13,7 @@ function dashboards_content_type_preprocess_node(&$variables) {
 			$search_form_state = array();
 			$search_form_state['build_info']['args'] = array();
 			$search_form_state['search_form_settings']['submit_text'] = t('Search');
-			$search_form_state['search_form_settings']['input_text'] = t('Search for data');
+			$search_form_state['search_form_settings']['input_text'] = t('Search');
 			$ckan_search_form = drupal_build_form('ckan_search_form', $search_form_state);
 			$variables['content']['ckan_search_form'] = array(
 				'#type' => 'container',
