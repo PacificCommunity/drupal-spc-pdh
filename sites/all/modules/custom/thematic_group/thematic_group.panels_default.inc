@@ -56,7 +56,7 @@ function thematic_group_default_panels_mini() {
     'feed_icons' => 0,
     'panel_args' => 1,
     'link_to_view' => 0,
-    'args' => '%node:title',
+    'args' => '%node:nid',
     'url' => '',
     'display' => 'block_1',
     'override_title' => 0,
