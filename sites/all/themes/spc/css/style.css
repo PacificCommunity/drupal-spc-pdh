@@ -7990,7 +7990,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   text-decoration: none;
 }
 .front #one-fw-wrapper .container {
-  max-width: 1014px;
+  padding: 0px 93px;
 }
 #mini-panel-home_banner,
 #thematic_landing_banner {
@@ -8472,6 +8472,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin-top: 0px;
   margin-bottom: 86px;
   font-size: 29px;
+  padding-left: 12px;
 }
 .dashboards-home .jcarousel-skin-default {
   max-width: 100%;
@@ -8479,32 +8480,34 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin-right: 0px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding: 0px;
+  margin: 0px;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal .jcarousel-list {
   background: none;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal .jcarousel-list .jcarousel-item {
   background: none;
-  margin-right: 24px;
-  margin-left: 0px;
+  margin-right: 12px;
+  margin-left: 12px;
+  width: 140px;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item .field-type-image {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal .jcarousel-list .jcarousel-item .field-type-image {
   height: 140px;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h4 {
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal .jcarousel-list .jcarousel-item h4 {
   font-size: 13px;
   color: #1d7bbc;
   margin-top: 13px;
+  margin-bottom: 0px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next {
   top: 40%;
-  right: -40px;
+  right: -29px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev {
   top: 40%;
-  left: -61px;
+  left: -29px;
 }
 .node-type-thematic-group h2 {
   font-size: 40px;
