@@ -8148,37 +8148,46 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   color: #084255;
 }
 #mini-panel-data_insights {
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 20px 0;
+  padding: 35px 0px 84px 0px;
+  font-family: "Calibri";
 }
 #mini-panel-data_insights h2 {
-  color: #fff;
-  font-size: 40px;
-  font-weight: 400;
+  color: #032f47;
+  font-size: 29px;
+  font-weight: 300;
   text-align: center;
-  margin: 0 0 55px 0;
+  margin: 0 0 60px 0;
 }
 #mini-panel-data_insights h2.pane-title {
   text-align: left;
 }
 #mini-panel-data_insights .data-insights-promoted-group {
   display: flex;
-  margin-bottom: 60px;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item {
   flex-grow: 1;
   display: inline-block;
   width: 50%;
-  margin-left: 10px;
+  margin-left: 30px;
   margin-bottom: 0;
+  border: 1px solid #bcdfe5;
+  min-height: 250px;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:first-child {
   margin-left: 0px;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item h2 {
   margin: 0;
+  background-color: #036295;
+  text-align: left;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 10px;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item h2 a {
+  font-size: 17px;
+  color: #fff;
+  text-decoration: none;
 }
 #mini-panel-data_insights .view-all-link {
   color: #fff;
@@ -8452,15 +8461,21 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .dashboards-home {
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 35px;
+  padding-bottom: 100px;
 }
 .dashboards-home h2 {
   font-family: "Calibri";
-  margin-top: 34px;
+  margin-top: 0px;
   margin-bottom: 86px;
   font-size: 29px;
 }
 .dashboards-home .jcarousel-skin-default {
-  margin-bottom: 100px;
+  max-width: 1060px;
+}
+.dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list {
   background: none;
@@ -8473,8 +8488,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: 140px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-list .jcarousel-item h4 {
-  font-size: 12px;
+  font-size: 13px;
   color: #1d7bbc;
+  margin-top: 13px;
 }
 .node-type-thematic-group h2 {
   font-size: 40px;

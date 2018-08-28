@@ -6,7 +6,7 @@
 ?>
 <style>
 	#mini-panel-data_insights {
-	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(<?php print file_create_url($data_insights_img); ?>);
+	/*background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(<?php print file_create_url($data_insights_img); ?>);*/
 	}
 	#member-countries-block {
 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(<?php print file_create_url($country_data_img); ?>);
