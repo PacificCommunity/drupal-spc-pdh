@@ -25,10 +25,10 @@ function home_page_strongarm() {
           'weight' => '1',
         ),
         'revision' => array(
-          'weight' => '6',
+          'weight' => '4',
         ),
         'view_mode' => array(
-          'weight' => '7',
+          'weight' => '5',
         ),
       ),
       'display' => array(),

@@ -85,3 +85,27 @@ function home_page_fe_nodequeue_export_fields() {
 
   return $nodequeues;
 }
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function home_page_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: scale_crop_230x230.
+  $styles['scale_crop_230x230'] = array(
+    'label' => 'Scale Crop 230x230',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 230,
+          'height' => 230,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
