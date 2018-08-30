@@ -7679,12 +7679,11 @@ button.header-menu-btn:focus {
 }
 #mini-panel-footer ul {
   list-style: none;
-  padding-left: 5px;
+  padding-left: 0;
 }
 #mini-panel-footer ul li {
   font-size: 16px;
   font-weight: 300;
-  margin-bottom: 10px;
 }
 #mini-panel-footer p {
   font-size: 16px;
@@ -8451,9 +8450,49 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-size: 16px;
   color: #1d7bbc;
 }
-.dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
+#mini-panel-footer .pane-title,
+#mini-panel-footer h2 {
+  font-size: 17px;
+  font-family: "Calibri";
+  text-transform: uppercase;
+}
+#mini-panel-footer .dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
   font-size: 12px;
   color: #1d7bbc;
+}
+#mini-panel-footer h2.pane-title {
+  margin-bottom: 24px;
+}
+#mini-panel-footer h2 {
+  margin-bottom: 20px;
+}
+#mini-panel-footer .bean-partner-logos .field-items {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+#mini-panel-footer .bean-partner-logos .field-items .partner-logo-item {
+  padding: 0 10px 20px 10px;
+}
+#mini-panel-footer .bean-partner-logos .field-items .partner-item {
+  padding: 10px;
+  background: #ffffff;
+  height: 100px;
+}
+#mini-panel-footer .social-links-block {
+  margin-bottom: 30px;
+}
+#mini-panel-footer .social-links-block .bean-social-links .field-items {
+  margin: 0 -5px;
+}
+#mini-panel-footer .social-links-block .bean-social-links .field-items .field-item {
+  height: 31px;
+  width: 31px;
+  float: left;
+  margin: 0 5px 10px 5px;
+}
+#mini-panel-footer nav ul li a {
+  font-size: 16px;
+  font-family: "Calibri Light";
 }
 .node-type-thematic-group h2 {
   font-size: 40px;
