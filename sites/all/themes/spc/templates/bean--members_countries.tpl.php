@@ -32,11 +32,14 @@
 	<div id="member-countries-block">
 		<div class="container">
 			<div class="row">
-			<div class="col-md-5 col-sm-6 col-xs-12">
-				<h2><?php print $title; ?></h2>
-				<h3><?php print t('View data and knowledge by Pacific Island country'); ?></h3>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h2><?php print $title; ?></h2>
+				</div>
 			</div>
-
+			<div class="row">
+				<div class="col-md-5 col-sm-6 col-xs-12">
+					<h3><?php print t('View data and knowledge by Pacific Island country'); ?></h3>
+				</div>
 			<div class="col-md-7 col-sm-6 col-xs-12">
 				<div class="dropdown">
 				<div class="btn btn-default dropdown-toggle" id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

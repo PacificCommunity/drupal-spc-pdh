@@ -21,7 +21,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 12,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -72,13 +72,9 @@ function dashboards_content_type_field_default_field_instances() {
     'display' => array(
       'dashboards_preview' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'topics_carousel__70x70_',
-        ),
-        'type' => 'image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -146,7 +142,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'above',
@@ -199,10 +195,14 @@ function dashboards_content_type_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'dashboards_preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'dashboard_goal__140x140',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
