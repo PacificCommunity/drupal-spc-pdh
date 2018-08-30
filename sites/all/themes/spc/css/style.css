@@ -7990,7 +7990,13 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   text-decoration: none;
 }
 .front #one-fw-wrapper .container {
-  max-width: 950px;
+  max-width: 1134px;
+}
+@media (min-width: 1134px) {
+  .front #one-fw-wrapper .container {
+    width: 1134px;
+    padding: 0px 60px;
+  }
 }
 .front .view-all-link {
   color: #032f47;
@@ -8388,18 +8394,21 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 40px 0;
-  height: 525px;
+  padding: 35px 0;
+  height: 300px;
+  font-family: "Calibri";
 }
 #member-countries-block h2 {
-  font-size: 40px;
-  font-weight: 400;
+  font-size: 29px;
+  font-weight: 300;
   color: #fff;
-  margin: 0;
+  margin: 0px 0px 70px 0px;
 }
 #member-countries-block h3 {
-  font-weight: 400;
+  font-size: 19px;
+  font-weight: 300;
   color: #fff;
+  max-width: 270px;
 }
 #member-countries-block .btn.dropdown-toggle {
   font-size: 16px;
@@ -8409,9 +8418,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 #member-countries-block .dropdown-menu {
   width: 365px;
-}
-#member-countries-block .container {
-  height: 100%;
 }
 #member-countries-block .row {
   height: 100%;
@@ -8480,6 +8486,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+.topics-home .jcarousel-skin-default {
+  max-width: 968px;
+}
 .topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
   font-size: 16px;
   color: #1d7bbc;
@@ -8495,16 +8504,15 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin-top: 0px;
   margin-bottom: 86px;
   font-size: 29px;
-  padding-left: 12px;
 }
 .dashboards-home .jcarousel-skin-default {
-  max-width: 100%;
+  max-width: 1014px;
   margin-left: 0px;
   margin-right: 0px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal {
   padding: 0px;
-  margin: 0px;
+  margin: 0px -12px 0px -12px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-clip-horizontal .jcarousel-list {
   background: none;
@@ -8526,11 +8534,11 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-next {
   top: 40%;
-  right: -29px;
+  right: -39px;
 }
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev {
   top: 40%;
-  left: -29px;
+  left: -39px;
 }
 .node-type-thematic-group h2 {
   font-size: 40px;
@@ -9498,7 +9506,8 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   .breadcrumb {
     padding: 8px 0;
   }
-  #member-countries-block .btn.dropdown-toggle {
+  #member-countries-block .btn.dropdown-toggle,
+  #member-countries-block .dropdown-menu {
     width: 330px;
   }
   .thematic-group-articles .field-type-entityreference .field-items .field-item,
@@ -9538,7 +9547,10 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
   #member-countries-block {
     height: auto;
-    padding: 25px 0 50px;
+    padding: 25px 0px 50px 0px;
+  }
+  #member-countries-block h2 {
+    margin-bottom: 30px;
   }
   #member-countries-block .btn.dropdown-toggle {
     margin-top: 15px;
@@ -9667,8 +9679,11 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 @media (max-width: 440px) {
   #member-countries-block .btn.dropdown-toggle {
     font-size: 14px;
-    white-space: pre-wrap;
     width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 0px;
   }
   #member-countries-block .dropdown-menu {
     width: 100%;

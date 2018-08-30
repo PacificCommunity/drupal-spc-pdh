@@ -1,7 +1,11 @@
 .front {
     #one-fw-wrapper {
         .container {
-            max-width: 950px;
+            max-width: 1134px;
+            @media (min-width: 1134px) {
+                width: 1134px;
+                padding: 0px 60px;
+            }
         }
     }
     .view-all-link {
@@ -421,21 +425,23 @@
 }
 
 #member-countries-block {
-    // background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/background_02.jpg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 40px 0;
-    height: 525px;
+    padding: 35px 0;
+    height: 300px;
+    font-family: "Calibri";
     h2 {
-        font-size: 40px;
-        font-weight: 400;
+        font-size: 29px;
+        font-weight: 300;
         color: #fff;
-        margin: 0;
+        margin: 0px 0px 70px 0px;
     }
     h3 {
-        font-weight: 400;
+        font-size: 19px;
+        font-weight: 300;
         color: #fff;
+        max-width: 270px;
     }
     .btn.dropdown-toggle {
         font-size: 16px;
@@ -445,9 +451,6 @@
     }
     .dropdown-menu {
         width: 365px;
-    }
-    .container {
-        height: 100%;;
     }
     .row {
         height: 100%;
@@ -513,6 +516,7 @@
     padding-top: 50px;
     padding-bottom: 50px;
     .jcarousel-skin-default {
+        max-width: 968px;
         .jcarousel-list {
             .jcarousel-item {
                 h4 {
@@ -534,15 +538,14 @@
         margin-top: 0px;
         margin-bottom: 86px;
         font-size: 29px;
-        padding-left: 12px;
     }
     .jcarousel-skin-default {
-        max-width: 100%;
+        max-width: 1014px;
         margin-left: 0px;
         margin-right: 0px;
         .jcarousel-container-horizontal {
             padding: 0px;
-            margin: 0px;
+            margin: 0px -12px 0px -12px;
             .jcarousel-clip-horizontal {
                 .jcarousel-list {
                     background: none;
@@ -565,11 +568,11 @@
             }
             .jcarousel-next {
                 top: 40%;
-                right: -29px;
+                right: -39px;
             }
             .jcarousel-prev {
                 top: 40%;
-                left: -29px;
+                left: -39px;
             }
         }
     }
