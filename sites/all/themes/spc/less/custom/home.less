@@ -433,12 +433,33 @@
         color: #fff;
         max-width: 270px;
     }
-    .btn.dropdown-toggle {
-        font-size: 16px;
-        border: none;
-        width: 365px;
-        text-align: left;
+    .dropdown {
+        .btn.dropdown-toggle {
+            font-size: 16px;
+            border: none;
+            width: 365px;
+            text-align: left;
+            position: relative;
+            &:after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                right: 16px;
+                top: 14px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 7px solid #036295;
+            }
+        }
+        &.open {
+            .btn.dropdown-toggle {
+                &:after {
+                    .rotate(180deg);
+                }
+            }
+        }
     }
+
     .dropdown-menu {
         width: 365px;
     }
