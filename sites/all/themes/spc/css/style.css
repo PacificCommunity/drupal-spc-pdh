@@ -8004,6 +8004,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-weight: 300;
   text-align: right;
   display: block;
+  font-family: "Calibri";
 }
 .front .view-all-link:hover {
   color: #032f47;
@@ -8286,11 +8287,12 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   padding: 35px 0px 68px 0px;
   font-family: "Calibri";
   color: #2a2c2d;
+  border: 2px solid #bcdfe5;
 }
 .latest-stories-homepage h2 {
   font-size: 29px;
   font-weight: 300;
-  color: #2a2c2d;
+  color: #032f47;
   margin: 0 0 58px 0px;
 }
 .latest-stories-homepage .field-items {
@@ -8303,7 +8305,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin-bottom: 30px;
   padding-left: 4px;
   padding-right: 4px;
-  max-width: 230px;
   float: left;
   width: 25%;
 }
@@ -8330,17 +8331,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 #mini-panel-datasets_on_home_page {
   padding: 50px 0;
   position: relative;
-}
-#mini-panel-datasets_on_home_page:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: url(../img/spc/dataset_block_border.png) 50% 50% no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 6px;
 }
 #mini-panel-datasets_on_home_page .region h2 {
   font-size: 40px;
