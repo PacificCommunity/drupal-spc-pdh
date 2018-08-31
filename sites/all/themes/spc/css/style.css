@@ -7662,53 +7662,6 @@ button.header-menu-btn:focus {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
-#mini-panel-footer {
-  background: #032f47 url(../img/spc/footer_gradient.png) 50% 50% no-repeat;
-  background-size: cover;
-  padding: 85px 0 45px;
-  font-size: 18px;
-  color: #d6deea;
-}
-#mini-panel-footer a {
-  color: #d6deea;
-}
-#mini-panel-footer h3 {
-  font-weight: 400;
-  font-size: 22px;
-  margin-bottom: 25px;
-}
-#mini-panel-footer ul {
-  list-style: none;
-  padding-left: 0;
-}
-#mini-panel-footer ul li {
-  font-size: 16px;
-  font-weight: 300;
-}
-#mini-panel-footer p {
-  font-size: 16px;
-  font-weight: 300;
-  margin-bottom: 20px;
-}
-#mini-panel-footer .social-icons {
-  width: 255px;
-  height: 40px;
-  background: url(../img/spc/social_media_icons.png) 50% 50% no-repeat;
-  margin-bottom: 20px;
-}
-#mini-panel-footer input[type="text"] {
-  height: 50px;
-  width: 400px;
-}
-#mini-panel-footer input[type="submit"] {
-  height: 50px;
-  width: 120px;
-  border-radius: 5px;
-  background-color: #032f47;
-  color: #d6deea;
-  border: none;
-  font-weight: 700;
-}
 .node-type-page table thead tr {
   background-color: #032f47;
 }
@@ -8544,50 +8497,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .dashboards-home .jcarousel-skin-default .jcarousel-container-horizontal .jcarousel-prev {
   top: 40%;
   left: -39px;
-}
-#mini-panel-footer .pane-title,
-#mini-panel-footer h2 {
-  font-size: 17px;
-  font-family: "Calibri";
-  text-transform: uppercase;
-}
-#mini-panel-footer .dashboards-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
-  font-size: 12px;
-  color: #1d7bbc;
-}
-#mini-panel-footer h2.pane-title {
-  margin-bottom: 24px;
-}
-#mini-panel-footer h2 {
-  margin-bottom: 20px;
-}
-#mini-panel-footer .bean-partner-logos .field-items {
-  margin-left: -10px;
-  margin-right: -10px;
-}
-#mini-panel-footer .bean-partner-logos .field-items .partner-logo-item {
-  padding: 0 10px 20px 10px;
-}
-#mini-panel-footer .bean-partner-logos .field-items .partner-item {
-  padding: 10px;
-  background: #ffffff;
-  height: 100px;
-}
-#mini-panel-footer .social-links-block {
-  margin-bottom: 30px;
-}
-#mini-panel-footer .social-links-block .bean-social-links .field-items {
-  margin: 0 -5px;
-}
-#mini-panel-footer .social-links-block .bean-social-links .field-items .field-item {
-  height: 31px;
-  width: 31px;
-  float: left;
-  margin: 0 5px 10px 5px;
-}
-#mini-panel-footer nav ul li a {
-  font-size: 16px;
-  font-family: "Calibri Light";
 }
 .node-type-thematic-group h2 {
   font-size: 40px;

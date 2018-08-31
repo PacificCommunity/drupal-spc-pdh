@@ -63,7 +63,7 @@ function main_layout_default_panels_mini() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'col-md-12 social-links-block',
+    'css_class' => 'social-links-block',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -89,7 +89,7 @@ function main_layout_default_panels_mini() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'col-md-6',
+    'css_class' => 'footer-menus-block',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -115,7 +115,7 @@ function main_layout_default_panels_mini() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'col-md-6',
+    'css_class' => 'footer-menus-block',
   );
   $pane->extras = array();
   $pane->position = 2;

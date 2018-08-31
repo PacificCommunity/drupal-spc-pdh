@@ -81,7 +81,7 @@
 */
 ?>
 <?php if (!empty($content['field_partner_link']) && !empty($content['field_partner_logo'])) { ?>
-  <div class="col-md-3 col-sm-6 partner-logo-item">
+  <div class="partner-logo-item">
     <?php 
       $url = $content['field_partner_link']['#items'][0]['safe_value'];
       $img_path = $content['field_partner_logo'][0]['#item']['uri'];
