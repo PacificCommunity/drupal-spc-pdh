@@ -41,6 +41,8 @@ stylesheets[all][] = css/ma5-mobile-menu.css
 stylesheets[all][] = css/slick.css
 stylesheets[all][] = css/slick-theme.css
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/footer_css/footer.css
+
 
 ;-------------- CSS FOAD -------------
 ;stylesheets[all][] = donteverloadmeagain.css
