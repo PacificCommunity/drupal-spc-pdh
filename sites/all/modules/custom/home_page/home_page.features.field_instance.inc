@@ -321,8 +321,8 @@ function home_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'bean-homepage_backgrounds-field_data_insights_background'.
-  $field_instances['bean-homepage_backgrounds-field_data_insights_background'] = array(
+  // 'bean-homepage_backgrounds-field_dashboards_background'.
+  $field_instances['bean-homepage_backgrounds-field_dashboards_background'] = array(
     'bundle' => 'homepage_backgrounds',
     'deleted' => 0,
     'description' => '',
@@ -335,13 +335,14 @@ function home_page_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'bean',
-    'field_name' => 'field_data_insights_background',
-    'label' => 'Data Insights Background',
-    'required' => FALSE,
+    'field_name' => 'field_dashboards_background',
+    'label' => 'Dashboards background',
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -354,6 +355,7 @@ function home_page_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'image',
       'settings' => array(
         'preview_image_style' => 'thumbnail',
@@ -361,50 +363,6 @@ function home_page_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'bean-homepage_backgrounds-field_latest_stories_background'.
-  $field_instances['bean-homepage_backgrounds-field_latest_stories_background'] = array(
-    'bundle' => 'homepage_backgrounds',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'bean',
-    'field_name' => 'field_latest_stories_background',
-    'label' => 'Latest Stories Background',
-    'required' => FALSE,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 4,
     ),
   );
 
@@ -505,11 +463,10 @@ function home_page_field_default_field_instances() {
   t('Banner Sub Title');
   t('Banner Title');
   t('Country Data Background');
-  t('Data Insights Background');
+  t('Dashboards background');
   t('Image dimensions must be 1000px x 400px or larger');
   t('Is it Thematic Landing Page?');
   t('Is it banner for Thematic Landing Page?');
-  t('Latest Stories Background');
   t('Members Countries');
   t('Show');
   t('Thematic Groups Home');
