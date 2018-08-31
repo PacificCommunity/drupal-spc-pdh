@@ -7404,7 +7404,9 @@ button.close {
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+#mini-panel-data_insights .data-insights-promoted-group:before,
+#mini-panel-data_insights .data-insights-promoted-group:after {
   content: " ";
   display: table;
 }
@@ -7453,7 +7455,8 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after {
+.modal-footer:after,
+#mini-panel-data_insights .data-insights-promoted-group:after {
   clear: both;
 }
 .center-block {
@@ -8109,33 +8112,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-weight: 600;
   text-align: center;
 }
-.data-insights-promoted-item {
-  background-color: #fff;
-  margin-bottom: 30px;
-  overflow: hidden;
-}
-.data-insights-promoted-item .field-type-text-with-summary,
-.data-insights-promoted-item .insight-body {
-  overflow: auto;
-}
-.data-insights-promoted-item img {
-  width: 100%;
-}
-.data-insights-promoted-item h2 {
-  line-height: 1.2;
-  margin: 15px 0 20px;
-}
-.data-insights-promoted-item h2 a {
-  color: #084255;
-  font-size: 25px;
-  font-weight: 400;
-}
-.data-insights-promoted-item h2 a:hover {
-  color: #084255;
-}
 #mini-panel-data_insights {
   padding: 35px 0px 84px 0px;
-  font-family: "Calibri";
+  font-family: "Calibri Light";
 }
 #mini-panel-data_insights h2 {
   color: #032f47;
@@ -8148,32 +8127,85 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   text-align: left;
 }
 #mini-panel-data_insights .data-insights-promoted-group {
-  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item {
-  flex-grow: 1;
-  display: inline-block;
-  width: 50%;
-  margin-left: 30px;
-  margin-bottom: 0;
-  border: 1px solid #bcdfe5;
-  min-height: 250px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  overflow: hidden;
 }
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:first-child {
-  margin-left: 0px;
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1),
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1),
+  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) {
+    float: left;
+    width: 50%;
+  }
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1) h2,
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) h2 {
+  font-size: 17px;
+}
+@media (min-width: 992px) {
+  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .node {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #bcdfe5;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item h2 {
+  color: #032f47;
   margin: 0;
-  background-color: #036295;
   text-align: left;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 11px;
   padding: 10px;
+  line-height: 15px;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item h2 a {
-  font-size: 17px;
-  color: #fff;
+  font-size: inherit;
+  color: inherit;
   text-decoration: none;
+  font-weight: 700;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content {
+  height: 250px;
+  overflow: hidden;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field * {
+  padding: 0px;
+  margin: 0px;
+  max-height: 100%;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field img,
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field iframe {
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
 }
 #mini-panel-data_insights .view-all-link {
   color: #fff;
@@ -8954,8 +8986,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   padding: 0px;
   margin: 0px;
   overflow: hidden;
-  font-family: "Calibri";
-  font-weight: lighter;
+  font-family: "Calibri Light";
   color: #2a2c2d;
 }
 .node-article .field-type-image {
@@ -8967,8 +8998,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   padding: 0px;
 }
 .node-article .node-content-container h2 {
-  font-family: "Calibri";
-  font-weight: bold;
+  font-family: "Calibri Bold";
 }
 .node-article .node-content-container a {
   color: #032f47;
@@ -9132,7 +9162,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
 }
 .node-type-dashboards .node-dashboards.view-mode-full .dashboard-body-container .dashboard-body {
-  font-family: "Calibri";
+  font-family: "Calibri Light";
   color: #2a2c2d;
   font-weight: 300;
   font-size: 17px;
@@ -9300,10 +9330,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin-top: 0;
 }
 .node-type-dsp .node-dsp.view-mode-full p {
-  font-family: "Calibri";
+  font-family: "Calibri Light";
   font-size: 16px;
   margin-bottom: 20px;
-  font-weight: lighter;
 }
 .node-type-dsp .node-dsp.view-mode-full .field.field-type-image {
   float: left;
@@ -9679,17 +9708,17 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
 }
 @font-face {
-  font-family: 'Calibri';
+  font-family: 'Calibri Bold';
   src: url('../fonts/Calibri-Bold.ttf');
   src: url('../fonts/Calibri-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Calibri-Bold.woff2') format('woff2'), url('../fonts/Calibri-Bold.woff') format('woff'), url('../fonts/Calibri-Bold.ttf') format('truetype'), url('../fonts/Calibri-Bold.svg#Calibri-Bold') format('svg');
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Calibri';
+  font-family: 'Calibri Light';
   src: url('../fonts/Calibri-Light.ttf');
   src: url('../fonts/Calibri-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Calibri-Light.woff2') format('woff2'), url('../fonts/Calibri-Light.woff') format('woff'), url('../fonts/Calibri-Light.ttf') format('truetype'), url('../fonts/Calibri-Light.svg#Calibri-Light') format('svg');
-  font-weight: lighter;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {

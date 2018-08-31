@@ -172,33 +172,9 @@
     }
 }
 
-.data-insights-promoted-item {
-    background-color:  #fff;
-    margin-bottom: 30px;
-    overflow: hidden;
-    .field-type-text-with-summary, .insight-body {
-        overflow: auto;
-    }
-    img {
-      width: 100%;
-    }
-    h2 {
-        line-height: 1.2;
-        margin: 15px 0 20px;
-        a {
-            color:  #084255;
-            font-size: 25px;
-            font-weight: 400;
-            &:hover {
-                color:  #084255;
-            }
-        }
-    }
-}
-
 #mini-panel-data_insights {
     padding: 35px 0px 84px 0px;
-    font-family: "Calibri";
+    font-family: "Calibri Light";
     h2 {
         color: #032f47;
         font-size: 29px;
@@ -210,29 +186,60 @@
         }
     }
     .data-insights-promoted-group {
-        display: flex;
+        .make-row();
         .data-insights-promoted-item {
-            flex-grow: 1;
-            display: inline-block;
-            width: 50%;
-            margin-left: 30px;
-            margin-bottom: 0;
-            border: 1px solid #bcdfe5;
-            min-height: 250px;
-            &:first-child {
-                margin-left: 0px;
+            &:nth-child(1),
+            &:nth-child(2) {
+                .make-md-column(6);
+                h2 {
+                    font-size: 17px;
+                }
+            }
+            .make-md-column(4);
+            margin-bottom: 30px;
+            background-color:  #fff;
+            overflow: hidden;
+            .node {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                border: 1px solid #bcdfe5;
             }
             h2 {
+                color: #032f47;
                 margin: 0;
-                background-color:  #036295;
                 text-align: left;
                 font-weight: 700;
-                font-size: 17px;
+                font-size: 11px;
                 padding: 10px;
+                line-height: 15px;
                 a {
-                    font-size: 17px;
-                    color: #fff;
+                    font-size: inherit;
+                    color: inherit;
                     text-decoration: none;
+                    font-weight: 700;
+                }
+            }
+            .content {
+                height: 250px;
+                overflow: hidden;
+                .field {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: auto;
+                    & * {
+                        padding: 0px;
+                        margin: 0px;
+                        max-height: 100%;
+                    }
+                    img, iframe {
+                        width: 100%;
+                        height: 100%;
+                        max-height: 250px;
+                    }
                 }
             }
         }

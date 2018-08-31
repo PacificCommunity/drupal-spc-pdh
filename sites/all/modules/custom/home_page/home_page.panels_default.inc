@@ -141,29 +141,6 @@ function home_page_default_panels_mini() {
   $pane->uuid = '633f1b3e-6783-402e-bda4-33e5e0e03e50';
   $display->content['new-633f1b3e-6783-402e-bda4-33e5e0e03e50'] = $pane;
   $display->panels['minipanel_one_main_fw'][1] = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
-  $pane = new stdClass();
-  $pane->pid = 'new-190aa8b1-0996-4935-8a0b-b392b1b9271a';
-  $pane->panel = 'minipanel_one_main_fw';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'data_insights';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '190aa8b1-0996-4935-8a0b-b392b1b9271a';
-  $display->content['new-190aa8b1-0996-4935-8a0b-b392b1b9271a'] = $pane;
-  $display->panels['minipanel_one_main_fw'][2] = 'new-190aa8b1-0996-4935-8a0b-b392b1b9271a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;

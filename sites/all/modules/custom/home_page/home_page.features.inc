@@ -40,7 +40,7 @@ function home_page_fe_nodequeue_export_fields() {
     'name' => 'data_insights',
     'title' => 'Data insights',
     'subqueue_title' => '',
-    'size' => 2,
+    'size' => 5,
     'link' => '',
     'link_remove' => '',
     'owner' => 'nodequeue',
