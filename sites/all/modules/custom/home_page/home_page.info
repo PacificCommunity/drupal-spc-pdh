@@ -1,7 +1,7 @@
 name = Home Page
 core = 7.x
 package = Features
-version = 7.x-1.25
+version = 7.x-1.26
 dependencies[] = bean_admin_ui
 dependencies[] = data_insights_content_type
 dependencies[] = fe_block
