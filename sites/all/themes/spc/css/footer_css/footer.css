@@ -24,6 +24,9 @@
   padding-right: 15px;
   box-sizing: border-box;
 }
+#mini-panel-footer .two-33-66-first .region-inner {
+  margin: 0 -15px;
+}
 #mini-panel-footer .two-33-66-second {
   position: relative;
   min-height: 1px;
