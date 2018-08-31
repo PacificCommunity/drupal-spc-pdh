@@ -191,11 +191,15 @@
             &:nth-child(1),
             &:nth-child(2) {
                 .make-md-column(6);
+                .make-sm-column(6);
+                .make-lg-column(12);
                 h2 {
                     font-size: 17px;
                 }
             }
             .make-md-column(4);
+            .make-sm-column(4);
+            .make-xs-column(12);
             margin-bottom: 30px;
             background-color:  #fff;
             overflow: hidden;
@@ -213,6 +217,9 @@
                 font-size: 11px;
                 padding: 10px;
                 line-height: 15px;
+                @media (max-width: @screen-sm) {
+                    font-size: 17px;
+                }
                 a {
                     font-size: inherit;
                     color: inherit;
@@ -236,7 +243,7 @@
                         max-height: 100%;
                     }
                     img, iframe {
-                        width: 100%;
+                        .img-responsive();
                         height: 100%;
                         max-height: 250px;
                     }
