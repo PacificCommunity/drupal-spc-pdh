@@ -8343,6 +8343,16 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-family: "Calibri";
   font-size: 15px;
 }
+@media (min-width: 768px) {
+  #mini-panel-datasets_on_home_page .region.two-50-first .region-inner {
+    padding-right: 35px;
+  }
+}
+@media (min-width: 768px) {
+  #mini-panel-datasets_on_home_page .region.two-50-second .region-inner {
+    left: 35px;
+  }
+}
 #mini-panel-datasets_on_home_page .region h2 {
   font-size: 29px;
   font-weight: 300;

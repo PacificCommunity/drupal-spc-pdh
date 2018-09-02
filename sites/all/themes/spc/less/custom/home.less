@@ -377,6 +377,20 @@
     font-family: "Calibri";
     font-size: 15px;
     .region {
+        &.two-50-first {            
+            .region-inner {
+                @media (min-width: @screen-sm) {
+                    padding-right: 35px;
+                }
+            }
+        }
+        &.two-50-second {            
+            .region-inner {
+                @media (min-width: @screen-sm) {
+                    left: 35px;
+                }
+            }
+        }
         h2 {
             font-size: 29px;
             font-weight: 300;
