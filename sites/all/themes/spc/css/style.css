@@ -8466,7 +8466,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   background-size: cover;
   padding: 35px 0;
   height: 300px;
-  font-family: "Calibri";
+  font-family: "Calibri Light";
 }
 #member-countries-block h2 {
   font-size: 29px;
@@ -8479,6 +8479,8 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-weight: 300;
   color: #fff;
   max-width: 270px;
+  margin: 0px;
+  line-height: 23px;
 }
 #member-countries-block .btn.dropdown-toggle {
   font-size: 16px;
