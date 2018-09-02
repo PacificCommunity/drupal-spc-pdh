@@ -372,14 +372,73 @@
 }
 
 #mini-panel-datasets_on_home_page {
-    padding: 50px 0;
+    padding: 35px 0px 80px 0px;
     position: relative;
+    font-family: "Calibri";
+    font-size: 15px;
     .region {
         h2 {
-            font-size: 40px;
+            font-size: 29px;
             font-weight: 300;
             color:  #032f47;
-            margin: 0 0 40px;
+            margin: 0 0 45px;
+        }
+        .dataset-preview {
+            font-size: 16px;
+            border-bottom: 1px solid #036295;
+            padding: 15px 0 20px 0px;
+            margin: 0px;
+            color: #393f45;
+            .dataset-title {
+                padding:0px;
+                margin-bottom: 15px;
+                font-size: 16px;
+                color: #046298;
+            }
+            .dataset-groups {
+                margin-bottom: 20px;
+                .organization {
+                    display: none;
+                }
+                p {
+                    margin: 0px;
+                    padding: 0px;
+                }
+                img {
+                    height: 32px;
+                    width: auto;
+                }
+            }
+            .dataset-date {
+                font-size: 15px;
+                color: #393f45;
+                margin-bottom: 16px;
+                line-height: 1em;
+                p {
+                    padding: 0px;
+                    margin: 0px;
+                }
+                span {
+                    font-size: inherit;
+                    color: #c60c30;
+                    &:first-child {
+                        margin-left: 10px;
+                    }
+                }
+
+            }
+            .dataset-formats {
+                font-size: 15px;
+                margin: 0px;
+                padding: 0px;
+                span {
+                    font-size: 11px;
+                    line-height: 22px;                    
+                }
+            }
+        }
+        .view-all-link {
+            margin-top: 35px;
         }
     }
 }
@@ -390,6 +449,10 @@
     color: #393f45;
     border-bottom: 2px solid #036295;
     margin-bottom: 25px;
+    label {
+        font-weight: 300;
+        margin-right: 10px;
+    }
     .dataset-title {
         font-size: 22px;
         color: #046298;

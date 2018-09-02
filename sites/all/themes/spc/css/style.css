@@ -8338,14 +8338,72 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: 100%;
 }
 #mini-panel-datasets_on_home_page {
-  padding: 50px 0;
+  padding: 35px 0px 80px 0px;
   position: relative;
+  font-family: "Calibri";
+  font-size: 15px;
 }
 #mini-panel-datasets_on_home_page .region h2 {
-  font-size: 40px;
+  font-size: 29px;
   font-weight: 300;
   color: #032f47;
-  margin: 0 0 40px;
+  margin: 0 0 45px;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview {
+  font-size: 16px;
+  border-bottom: 1px solid #036295;
+  padding: 15px 0 20px 0px;
+  margin: 0px;
+  color: #393f45;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-title {
+  padding: 0px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #046298;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-groups {
+  margin-bottom: 20px;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-groups .organization {
+  display: none;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-groups p {
+  margin: 0px;
+  padding: 0px;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-groups img {
+  height: 32px;
+  width: auto;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-date {
+  font-size: 15px;
+  color: #393f45;
+  margin-bottom: 16px;
+  line-height: 1em;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-date p {
+  padding: 0px;
+  margin: 0px;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-date span {
+  font-size: inherit;
+  color: #c60c30;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-date span:first-child {
+  margin-left: 10px;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-formats {
+  font-size: 15px;
+  margin: 0px;
+  padding: 0px;
+}
+#mini-panel-datasets_on_home_page .region .dataset-preview .dataset-formats span {
+  font-size: 11px;
+  line-height: 22px;
+}
+#mini-panel-datasets_on_home_page .region .view-all-link {
+  margin-top: 35px;
 }
 .dataset-preview {
   font-size: 18px;
@@ -8353,6 +8411,10 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   color: #393f45;
   border-bottom: 2px solid #036295;
   margin-bottom: 25px;
+}
+.dataset-preview label {
+  font-weight: 300;
+  margin-right: 10px;
 }
 .dataset-preview .dataset-title {
   font-size: 22px;
