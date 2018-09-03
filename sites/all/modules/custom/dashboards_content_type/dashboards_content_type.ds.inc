@@ -18,7 +18,7 @@ function dashboards_content_type_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'dashboards_preview';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -28,7 +28,7 @@ function dashboards_content_type_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
-    'field_main_image' => array(
+    'field_icon_logo' => array(
       'formatter_settings' => array(
         'ft' => array(),
       ),
@@ -160,12 +160,12 @@ function dashboards_content_type_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_main_image',
+        0 => 'field_icon_logo',
         1 => 'title',
       ),
     ),
     'fields' => array(
-      'field_main_image' => 'ds_content',
+      'field_icon_logo' => 'ds_content',
       'title' => 'ds_content',
     ),
     'classes' => array(),

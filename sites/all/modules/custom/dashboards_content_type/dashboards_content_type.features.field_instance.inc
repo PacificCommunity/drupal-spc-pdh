@@ -72,9 +72,13 @@ function dashboards_content_type_field_default_field_instances() {
     'display' => array(
       'dashboards_preview' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'scale_crop_230x230',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -142,7 +146,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 11,
       ),
       'default' => array(
         'label' => 'above',
@@ -196,13 +200,9 @@ function dashboards_content_type_field_default_field_instances() {
     'display' => array(
       'dashboards_preview' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'dashboard_goal__140x140',
-        ),
-        'type' => 'image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'hidden',
