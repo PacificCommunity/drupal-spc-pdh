@@ -37,13 +37,13 @@ function dashboard_secondary_page_image_default_styles() {
 
   // Exported image style: dashboard_sp_image.
   $styles['dashboard_sp_image'] = array(
-    'label' => 'Dashboard SP image (240x240)',
+    'label' => 'Dashboard SP image (255x255)',
     'effects' => array(
-      10 => array(
+      1 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 240,
-          'height' => 240,
+          'width' => 255,
+          'height' => 255,
         ),
         'weight' => 1,
       ),
