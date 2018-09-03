@@ -3,6 +3,8 @@
 // Search criteria prepared for c-style formatting
 const CKAN_SEARCH_NAME_THEMATIC_AREA = 'extras_thematic_area_string';
 const CKAN_SEARCH_CRIT_THEMATIC_AREA = CKAN_SEARCH_NAME_THEMATIC_AREA . ':"%s"';
+const CKAN_SEARCH_CRIT_UNSPECIFIED_DATASET_TYPE = '';
+const CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE = '+dataset_type:publications';
 
 // Additional search param names
 const CKAN_SEARCH_PARAM_POPULAR_FIRST = 'ext_popular_first';
@@ -51,10 +53,10 @@ function ckan_tweaks_field_formatter_settings_form($field, $instance, $view_mode
   $settings = $display['settings'];
   $element = array();
   $element['rows'] = array(
-    '#type' => 'textfield', 
+    '#type' => 'textfield',
     '#title' => t('Rows to display'),
     '#description' => t('Provide how many items to display.'),
-    '#default_value' => $settings['rows'], 
+    '#default_value' => $settings['rows'],
   );
   return $element;
 }
@@ -67,7 +69,7 @@ function ckan_tweaks_field_formatter_settings_summary($field, $instance, $view_m
   $settings = $display['settings'];
   $summary = t('Use CKAN datasets formatter to display @rows items', array(
   	'@rows' => $settings['rows']
-  )); 
+  ));
   return $summary;
 }
 
@@ -83,7 +85,7 @@ function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instan
 
 	$settings = $display['settings'];
 	$rows = $settings['rows'];
-  
+
 	foreach ($items as $delta => $item) {
 		// Getting group value.
 		$group = $item['safe_value'];
@@ -117,6 +119,5 @@ function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instan
 	    );
 	  }
 	}
-	
 	return $element;
 }

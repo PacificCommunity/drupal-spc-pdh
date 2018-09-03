@@ -75,22 +75,31 @@
         </div>
       </div>
       <?php
-        $cached = cache_get('datasets_count'.$node->nid, 'cache');
-        if ($cached) {
-          $datasets_count = $cached->data;
+        $cached_dataset_count = cache_get('datasets_count'.$node->nid, 'cache');
+        $cached_publications_count = cache_get('publications_count'.$node->nid, 'cache');
+
+        $thematic_id = $node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['safe_value'] ?? null;
+
+        if ($cached_dataset_count) {
+          $datasets_count = $cached_dataset_count->data;
         } else {
-          $datasets_count = !empty($node->field_ckan_thematic_group_id) ? _ckan_tweaks_count_datasets_for_thematic_area($node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['safe_value']) : '0';
-          cache_set('datasets_count'.$node->nid, $datasets_count, 'cache', time() + 60*60*6);
+          $datasets_count = $thematic_id ? _ckan_tweaks_count_datasets_for_thematic_area($thematic_id) : '0';
+          cache_set('datasets_count'.$node->nid, $datasets_count, 'cache', time(), 60*60*6);
         }
 
-        $publications_count = !empty($node->field_publications) ? $node->field_publications[LANGUAGE_NONE][0]['value'] : '0';
+        if ($cached_publications_count) {
+          $publications_count = $cached_publications_count->data;
+        } else {
+          $publications_count = $thematic_id ? _ckan_tweaks_count_publications_for_thematic_area($thematic_id) : '0';
+          cache_set('publications_count'.$node->nid, $publications_count, 'cache', time() + 60*60*6);
+        }
       ?>
       <div class="banner-links hidden-xs">
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
           </div>
-          <a href="<?= _ckan_tweaks_search_page_by_topic($node->field_ckan_thematic_group_id[LANGUAGE_NONE][0]['safe_value']) ?>"><span><?= $datasets_count ?></span><br> Datasets</a>
+          <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id) ?>"><span><?= $datasets_count ?></span><br> Datasets</a>
         </div>
         <div class="col-md-4 col-sm-4 link-block">
           <div class="icon-wrapper">
@@ -102,7 +111,7 @@
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
           </div>
-          <span><?= $publications_count ?></span><br> Publications
+          <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id, CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE) ?>"><span><?= $publications_count ?></span><br> Publications</a>
         </div>
       </div>
     <?php endif; ?>
