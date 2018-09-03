@@ -7960,7 +7960,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-weight: 300;
   text-align: right;
   display: block;
-  font-family: "Calibri";
+  font-family: "Calibri Light";
 }
 .front .view-all-link:hover {
   color: #032f47;
@@ -8191,7 +8191,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin: 0;
   text-align: left;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 15px;
   padding: 10px;
   line-height: 15px;
 }
@@ -8232,10 +8232,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   max-height: 250px;
 }
 #mini-panel-data_insights .view-all-link {
-  color: #fff;
-}
-#mini-panel-data_insights .view-all-link:after {
-  background: url(../img/spc/view_all_arrow_white.png) 50% 50% no-repeat;
+  color: #032f47;
 }
 .view-all-link {
   color: #032f47;
