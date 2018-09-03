@@ -6,8 +6,7 @@
 	</p>
 	<div class="dataset-groups">
 		<p>
-			<img width="100%" class="media-object" src="<?= $dataset['image_url'] ?>" alt="..."> 
-			<span class="organization"><?= $dataset['organization'] ?></span>
+			<img width="100%" class="media-object" src="<?= $dataset['image_url'] ?>" alt="..." title="<?= $dataset['organization'] ?>"> 
 		</p>
 	</div>
 	<p class="dataset-date"><label><?php print t('Release Date'); ?>:</label> <span><?= $dataset['release_date'] ?></span></p>
