@@ -51,7 +51,7 @@ function dashboard_secondary_page_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Indicators (field_indicators) */
+  /* Contextual filter: Content: Secondary Dashboard pages (field_indicators) */
   $handler->display->display_options['arguments']['field_indicators_target_id']['id'] = 'field_indicators_target_id';
   $handler->display->display_options['arguments']['field_indicators_target_id']['table'] = 'field_data_field_indicators';
   $handler->display->display_options['arguments']['field_indicators_target_id']['field'] = 'field_indicators_target_id';
