@@ -13,18 +13,14 @@ function thematic_group_user_default_permissions() {
   // Exported permission: 'create thematic_group content'.
   $permissions['create thematic_group content'] = array(
     'name' => 'create thematic_group content',
-    'roles' => array(
-      'Site Admin' => 'Site Admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any thematic_group content'.
   $permissions['delete any thematic_group content'] = array(
     'name' => 'delete any thematic_group content',
-    'roles' => array(
-      'Site Admin' => 'Site Admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -40,9 +36,7 @@ function thematic_group_user_default_permissions() {
   // Exported permission: 'edit any thematic_group content'.
   $permissions['edit any thematic_group content'] = array(
     'name' => 'edit any thematic_group content',
-    'roles' => array(
-      'Site Admin' => 'Site Admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
