@@ -4,7 +4,7 @@
             max-width: 1134px;
             @media (min-width: 1134px) {
                 width: 1134px;
-                padding: 0px 60px;
+                padding: 0px 95px;
             }
         }
     }
@@ -173,7 +173,7 @@
 }
 
 #mini-panel-data_insights {
-    padding: 35px 0px 84px 0px;
+    padding: 35px 0px 54px 0px;
     font-family: "Calibri Light";
     h2 {
         color: #032f47;
@@ -190,13 +190,28 @@
         .data-insights-promoted-item {
             &:nth-child(1),
             &:nth-child(2) {
+                height: 285px;
                 .make-md-column(6);
                 .make-sm-column(6);
                 .make-xs-column(12);
                 h2 {
                     font-size: 17px;
                 }
+                .content {
+                    max-height: 250px;
+                }
             }
+            &:nth-child(3) {
+                padding-right: 6px;
+            }////
+            &:nth-child(4) {
+                padding-right: 6px;
+                padding-left: 6px;
+            }
+            &:nth-child(5) {
+                padding-left: 6px;
+            }
+            height: 203px;
             .make-md-column(4);
             .make-sm-column(4);
             .make-xs-column(12);
@@ -228,7 +243,8 @@
                 }
             }
             .content {
-                height: 250px;
+                height: 100%;
+                // padding: 0px 10px 20px 10px;
                 overflow: hidden;
                 .field {
                     height: 100%;
@@ -246,6 +262,7 @@
                         .img-responsive();
                         height: 100%;
                         max-height: 250px;
+                        padding: 10px;
                     }
                 }
             }
@@ -374,14 +391,14 @@
     font-family: "Calibri Light";
     font-size: 17px;
     .region {
-        &.two-50-first {            
+        &.two-50-first {
             .region-inner {
                 @media (min-width: @screen-sm) {
                     padding-right: 35px;
                 }
             }
         }
-        &.two-50-second {            
+        &.two-50-second {
             .region-inner {
                 @media (min-width: @screen-sm) {
                     left: 35px;
