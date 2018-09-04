@@ -7950,7 +7950,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 @media (min-width: 1134px) {
   .front #one-fw-wrapper .container {
     width: 1134px;
-    padding: 0px 60px;
+    padding: 0px 95px;
   }
 }
 .front .view-all-link {
@@ -8113,7 +8113,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   text-align: center;
 }
 #mini-panel-data_insights {
-  padding: 35px 0px 84px 0px;
+  padding: 35px 0px 54px 0px;
   font-family: "Calibri Light";
 }
 #mini-panel-data_insights h2 {
@@ -8131,6 +8131,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin-right: -15px;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item {
+  height: 203px;
   position: relative;
   float: left;
   width: 100%;
@@ -8143,6 +8144,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1),
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) {
+  height: 285px;
   position: relative;
   float: left;
   width: 100%;
@@ -8167,6 +8169,20 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1) h2,
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) h2 {
   font-size: 17px;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1) .content,
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) .content {
+  max-height: 250px;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(3) {
+  padding-right: 6px;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(4) {
+  padding-right: 6px;
+  padding-left: 6px;
+}
+#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(5) {
+  padding-left: 6px;
 }
 @media (min-width: 992px) {
   #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item {
@@ -8207,7 +8223,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-weight: 700;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content {
-  height: 250px;
+  height: 100%;
   overflow: hidden;
 }
 #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field {
@@ -8230,6 +8246,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: auto;
   height: 100%;
   max-height: 250px;
+  padding: 10px;
 }
 #mini-panel-data_insights .view-all-link {
   color: #032f47;
