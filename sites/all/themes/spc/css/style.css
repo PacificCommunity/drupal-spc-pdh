@@ -8290,7 +8290,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   color: #fff;
 }
 .latest-stories-homepage {
-  padding: 35px 0px 68px 0px;
+  padding: 35px 0px 50px 0px;
   font-family: "Calibri Light";
   color: #2a2c2d;
 }
@@ -8320,14 +8320,13 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .latest-stories-homepage .field-items .field-item .views-field-title a {
   font-size: 19px;
   font-weight: 300;
-  color: #2a2c2d;
+  color: #1d7bbc;
 }
 .latest-stories-homepage .field-items .field-item .views-field-title a h3 {
   font-size: 19px;
-  padding: 0px 7px;
   margin-top: 15px;
   margin-bottom: 0px;
-  line-height: 1.5em;
+  line-height: 23px;
 }
 .latest-stories-homepage .field-items .field-item .views-field-field-image img {
   width: 100%;
