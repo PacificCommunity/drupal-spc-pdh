@@ -247,6 +247,7 @@ function general_modules_user_default_permissions() {
   $permissions['edit any article content'] = array(
     'name' => 'edit any article content',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
       'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
@@ -266,6 +267,7 @@ function general_modules_user_default_permissions() {
   $permissions['edit any data_insights content'] = array(
     'name' => 'edit any data_insights content',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
       'Site Admin' => 'Site Admin',
     ),
     'module' => 'node',
@@ -284,6 +286,7 @@ function general_modules_user_default_permissions() {
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
       'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
@@ -303,6 +306,7 @@ function general_modules_user_default_permissions() {
   $permissions['edit own article content'] = array(
     'name' => 'edit own article content',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
       'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
@@ -313,6 +317,7 @@ function general_modules_user_default_permissions() {
   $permissions['edit own data_insights content'] = array(
     'name' => 'edit own data_insights content',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
       'Site Admin' => 'Site Admin',
     ),
     'module' => 'node',
@@ -322,6 +327,7 @@ function general_modules_user_default_permissions() {
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
       'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),

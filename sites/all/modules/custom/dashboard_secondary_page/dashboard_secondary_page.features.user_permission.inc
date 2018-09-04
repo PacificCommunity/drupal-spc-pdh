@@ -41,6 +41,7 @@ function dashboard_secondary_page_user_default_permissions() {
   $permissions['edit any dsp content'] = array(
     'name' => 'edit any dsp content',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
       'Site Admin' => 'Site Admin',
     ),
     'module' => 'node',
@@ -50,6 +51,7 @@ function dashboard_secondary_page_user_default_permissions() {
   $permissions['edit own dsp content'] = array(
     'name' => 'edit own dsp content',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
       'Site Admin' => 'Site Admin',
     ),
     'module' => 'node',
