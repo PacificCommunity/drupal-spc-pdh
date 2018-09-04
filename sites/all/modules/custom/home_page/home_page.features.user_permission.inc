@@ -43,7 +43,9 @@ function home_page_user_default_permissions() {
   // Exported permission: 'edit any homepage_backgrounds bean'.
   $permissions['edit any homepage_backgrounds bean'] = array(
     'name' => 'edit any homepage_backgrounds bean',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'bean',
   );
 
@@ -51,6 +53,7 @@ function home_page_user_default_permissions() {
   $permissions['edit any members_countries bean'] = array(
     'name' => 'edit any members_countries bean',
     'roles' => array(
+      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'bean',
