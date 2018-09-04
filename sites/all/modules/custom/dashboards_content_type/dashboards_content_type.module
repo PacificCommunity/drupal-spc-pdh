@@ -15,6 +15,9 @@ function dashboards_content_type_preprocess_node(&$variables) {
 			$search_form_state['search_form_settings']['submit_text'] = t('Search');
 			$search_form_state['search_form_settings']['input_text'] = t('Search');
 			$ckan_search_form = drupal_build_form('ckan_search_form', $search_form_state);
+
+      $ckan_search_form['ckan_tags']['#value'] =  $variables['node']->field_ckan_tags[LANGUAGE_NONE][0]['safe_value'] ?? null;
+
 			$variables['content']['ckan_search_form'] = array(
 				'#type' => 'container',
 				'#attributes' => array(
@@ -24,6 +27,7 @@ function dashboards_content_type_preprocess_node(&$variables) {
 				'#weight' => 1
 			);
 			$variables['content']['ckan_search_form']['form'] = $ckan_search_form;
+
 		}
 	}
 }
@@ -39,5 +43,41 @@ function dashboards_content_type_form_ckan_search_form_alter(&$form, &$form_stat
 		if (isset($form_state['search_form_settings']['input_text'])) {
 			$form['term']['#attributes']['placeholder'] = $form_state['search_form_settings']['input_text'];
 		}
+
 	}
+}
+
+/**
+ * Implements hook_menu().
+ */
+function dashboards_content_type_menu() {
+  $items['dashboards_content_type/ckan_tags/autocomplete'] = [
+    'title' => 'CKAN Tags autocomplete',
+    'page callback' => 'ckan_tags_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  ];
+  return $items;
+}
+
+function dashboards_content_type_form_dashboards_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_ckan_tags'][LANGUAGE_NONE][0]['value']['#autocomplete_path'] = "dashboards_content_type/ckan_tags/autocomplete";
+  return $form;
+}
+
+function ckan_tags_autocomplete($q) {
+  $terms = explode(', ', $q);
+
+  $last_term = trim(array_pop($terms));
+  $url = _ckan_tweaks_get_ckan_url() . '/api/util/tag/autocomplete';
+  $query = http_build_query(['incomplete' => $last_term]);
+  $response =  drupal_http_request($url . '?' . $query);
+  $items = json_decode($response->data, TRUE)['ResultSet']['Result'];
+  $prefix = $terms ? (implode(', ', $terms) . ', ') : '';
+  $result = [];
+  foreach ($items as $tag) {
+    $result[$prefix . $tag['Name']] = $tag['Name'];
+  }
+
+  return drupal_json_output($result);
 }

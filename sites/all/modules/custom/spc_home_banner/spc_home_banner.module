@@ -25,6 +25,12 @@ function ckan_search_form($form_state) {
       'placeholder' => 'Search'
     )
   );
+
+  $form['ckan_tags'] = array(
+    '#type' => 'hidden',
+    '#required' => FALSE
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => '',
@@ -36,9 +42,8 @@ function ckan_search_form($form_state) {
 }
 
 function ckan_search_submit($form, &$form_state) {
-  $term = $search_type = $thematic_area = NULL;
+  $term = $search_type = $thematic_area = $ckan_tags = NULL;
   extract($form_state['values'], EXTR_IF_EXISTS);
-
   switch ($search_type) {
     case 'article':
       $redirect_info = [sprintf('/search/articles/%s/%s', $term, $thematic_area)];
@@ -46,14 +51,17 @@ function ckan_search_submit($form, &$form_state) {
 
     case 'dataset':
     default:
+      $tag_query = '';
+      if ($ckan_tags) {
+        $tag_query = '&tags=' . implode('&tags=', explode(', ', $ckan_tags));
+      }
       $redirect_info = [
-        rtrim(_ckan_tweaks_get_ckan_url()) . '/dataset',
-        array(
-          'query' => [
-            CKAN_SEARCH_NAME_THEMATIC_AREA => $thematic_area,
-            'q' => $term
-          ]
-        )
+        rtrim(_ckan_tweaks_get_ckan_url())
+        . '/dataset?'
+        . drupal_http_build_query([
+          CKAN_SEARCH_NAME_THEMATIC_AREA => $thematic_area,
+          'q' => $term,
+        ]) . $tag_query
       ];
       break;
   }
