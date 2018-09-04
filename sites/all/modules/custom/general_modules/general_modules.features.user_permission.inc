@@ -73,6 +73,7 @@ function general_modules_user_default_permissions() {
   $permissions['administer nodequeue'] = array(
     'name' => 'administer nodequeue',
     'roles' => array(
+      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'nodequeue',
@@ -92,7 +93,6 @@ function general_modules_user_default_permissions() {
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
@@ -102,7 +102,6 @@ function general_modules_user_default_permissions() {
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -126,7 +125,6 @@ function general_modules_user_default_permissions() {
   $permissions['create article content'] = array(
     'name' => 'create article content',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -135,9 +133,7 @@ function general_modules_user_default_permissions() {
   // Exported permission: 'create data_insights content'.
   $permissions['create data_insights content'] = array(
     'name' => 'create data_insights content',
-    'roles' => array(
-      'Site Admin' => 'Site Admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -145,7 +141,6 @@ function general_modules_user_default_permissions() {
   $permissions['create page content'] = array(
     'name' => 'create page content',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -155,7 +150,6 @@ function general_modules_user_default_permissions() {
   $permissions['delete any article content'] = array(
     'name' => 'delete any article content',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -171,9 +165,7 @@ function general_modules_user_default_permissions() {
   // Exported permission: 'delete any data_insights content'.
   $permissions['delete any data_insights content'] = array(
     'name' => 'delete any data_insights content',
-    'roles' => array(
-      'Site Admin' => 'Site Admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -188,7 +180,6 @@ function general_modules_user_default_permissions() {
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -227,7 +218,6 @@ function general_modules_user_default_permissions() {
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -237,7 +227,6 @@ function general_modules_user_default_permissions() {
   $permissions['delete terms in tags'] = array(
     'name' => 'delete terms in tags',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
@@ -247,8 +236,6 @@ function general_modules_user_default_permissions() {
   $permissions['edit any article content'] = array(
     'name' => 'edit any article content',
     'roles' => array(
-      'Content Editor' => 'Content Editor',
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -266,10 +253,7 @@ function general_modules_user_default_permissions() {
   // Exported permission: 'edit any data_insights content'.
   $permissions['edit any data_insights content'] = array(
     'name' => 'edit any data_insights content',
-    'roles' => array(
-      'Content Editor' => 'Content Editor',
-      'Site Admin' => 'Site Admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -286,8 +270,6 @@ function general_modules_user_default_permissions() {
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
     'roles' => array(
-      'Content Editor' => 'Content Editor',
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -338,7 +320,6 @@ function general_modules_user_default_permissions() {
   $permissions['edit terms in tags'] = array(
     'name' => 'edit terms in tags',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
@@ -368,7 +349,6 @@ function general_modules_user_default_permissions() {
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -408,7 +388,6 @@ function general_modules_user_default_permissions() {
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
     'roles' => array(
-      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
