@@ -8,7 +8,7 @@
 		background-image: url(<?php print file_create_url($dashboards_img); ?>);
 	}
 	#member-countries-block {
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(<?php print file_create_url($country_data_img); ?>);
+		background-image: url(<?php print file_create_url($country_data_img); ?>);
 	}
 	#mini-panel-datasets_on_home_page {
 		background-image: url(<?php print file_create_url($datasets_img); ?>);
