@@ -69,6 +69,16 @@ function general_modules_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer menu'.
+  $permissions['administer menu'] = array(
+    'name' => 'administer menu',
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu',
+  );
+
   // Exported permission: 'administer nodequeue'.
   $permissions['administer nodequeue'] = array(
     'name' => 'administer nodequeue',
