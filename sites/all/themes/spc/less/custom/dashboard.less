@@ -7,9 +7,9 @@
 				margin: 0;
 				display: flex;
 				align-items: center;
+				padding: 0 15px;
 				img {
 					max-width: 100%;
-					margin-left: 40px;
 					@media (max-width: 767px) {
 						margin-left: 0px;
 					}
@@ -146,7 +146,12 @@
 /* dsp */
 .node-type-dsp {
 	.goals-navigation {
-		padding: 0 40px;
+		height: 90px;
+		vertical-align: middle;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		padding: 0 15px;
 		clear: both;
 		.dropdown {
 			button {
@@ -286,6 +291,23 @@
 					line-height: 22px;
 					margin-right: 0;
 					margin-left: 5px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.node-type-dsp {
+		.goals-navigation {
+			padding: 0 100px;
+		}
+	}
+	.node-type-dashboards {
+		.node-dashboards {
+			&.view-mode-full {
+				.dashboard-logo {
+					padding: 0 100px;
 				}
 			}
 		}
