@@ -99,6 +99,17 @@ function general_modules_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer redirects'.
+  $permissions['administer redirects'] = array(
+    'name' => 'administer redirects',
+    'roles' => array(
+      'Content Editor' => 'Content Editor',
+      'Site Admin' => 'Site Admin',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'redirect',
+  );
+
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
