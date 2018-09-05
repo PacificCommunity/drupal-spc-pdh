@@ -9492,6 +9492,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 .node-type-dsp .goals-navigation .dropdown ul {
   width: 300px;
+  margin-top: 10px;
 }
 .node-type-dsp .goals-navigation .dropdown ul li {
   margin-bottom: 5px;
@@ -9600,6 +9601,11 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   line-height: 22px;
   margin-right: 0;
   margin-left: 5px;
+}
+.node-type-dsp .goals-logo {
+  max-height: 70px;
+  height: 100%;
+  width: auto;
 }
 @media (min-width: 992px) {
   .node-type-dsp .goals-navigation {
