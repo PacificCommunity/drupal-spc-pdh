@@ -8996,7 +8996,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   position: relative;
 }
 .article .group-title-block .field-type-ds:first-of-type {
-  margin-right: 6px;
+  margin-right: 12px;
 }
 .article .group-title-block .field-type-ds:first-of-type:after {
   content: '';
@@ -9009,9 +9009,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 .article .group-title-block .field-type-ds:first-of-type:before {
   content: 'by';
-}
-.article .group-title-block .field-type-ds:last-of-type {
-  margin-left: 5px;
 }
 .article .field-type-image {
   margin-bottom: 25px;
