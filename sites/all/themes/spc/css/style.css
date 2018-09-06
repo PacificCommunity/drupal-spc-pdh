@@ -7959,6 +7959,15 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
     padding: 0px 95px;
   }
 }
+.front #one-fw-wrapper #header .container {
+  max-width: 1170px;
+}
+@media (min-width: 1134px) {
+  .front #one-fw-wrapper #header .container {
+    width: 1170px;
+    padding: 0 15px;
+  }
+}
 .front .view-all-link {
   color: #032f47;
   font-size: 15px;
