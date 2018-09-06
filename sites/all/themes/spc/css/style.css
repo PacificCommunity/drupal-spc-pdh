@@ -7772,7 +7772,6 @@ button.header-menu-btn:focus {
 .not-front .data-insights-list .data-insights-list-item .insight-title {
   line-height: 1;
   padding: 10px;
-  padding-bottom: 0;
   margin: 0;
 }
 .not-front .data-insights-list .data-insights-list-item .insight-title a {
