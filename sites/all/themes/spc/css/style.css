@@ -7762,7 +7762,7 @@ button.header-menu-btn:focus {
 }
 .not-front .node-data-insights .preview {
   margin-top: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   font-family: 'Calibri';
 }
 .not-front .data-insights-list {
@@ -9011,7 +9011,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   content: 'by';
 }
 .article .field-type-image {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 .group-with-icon {
   font-family: 'Calibri';
