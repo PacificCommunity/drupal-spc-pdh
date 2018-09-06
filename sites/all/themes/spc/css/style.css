@@ -7778,6 +7778,7 @@ button.header-menu-btn:focus {
   color: #032f47;
   font-size: 17px;
   font-weight: 700;
+  font-family: 'Calibri Light';
 }
 .not-front .data-insights-list .data-insights-list-item img {
   width: 100%;
