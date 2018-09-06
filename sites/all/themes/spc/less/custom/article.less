@@ -18,6 +18,9 @@
         line-height: 31.25px;
         color: #2a2c2d;
         font-size: 18px;
+        p {
+            margin-bottom: 25px;
+        }
     }
     .group-title-block {
         margin-bottom: 50px;
@@ -30,11 +33,11 @@
             margin-bottom: 10px;
             position: relative;
             &:first-of-type {
-                margin-right: 4px;
+                margin-right: 6px;
                 &:after {
                     content: '';
                     position: absolute;
-                    right: -4px;
+                    right: -7px;
                     top: 4px;
                     width: 1px;
                     height: 14px;
@@ -43,6 +46,9 @@
                 &:before {
                     content: 'by';
                 }
+            }
+            &:last-of-type {
+                margin-left: 5px;
             }
         }
     }
