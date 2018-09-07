@@ -13,14 +13,18 @@ function dashboard_secondary_page_user_default_permissions() {
   // Exported permission: 'create dsp content'.
   $permissions['create dsp content'] = array(
     'name' => 'create dsp content',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any dsp content'.
   $permissions['delete any dsp content'] = array(
     'name' => 'delete any dsp content',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'node',
   );
 
@@ -36,7 +40,9 @@ function dashboard_secondary_page_user_default_permissions() {
   // Exported permission: 'edit any dsp content'.
   $permissions['edit any dsp content'] = array(
     'name' => 'edit any dsp content',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'node',
   );
 
