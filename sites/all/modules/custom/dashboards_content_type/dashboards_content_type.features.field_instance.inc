@@ -127,7 +127,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'scale_crop_230x230',
         ),
         'type' => 'image',

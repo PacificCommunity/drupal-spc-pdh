@@ -17,17 +17,6 @@ function dashboards_content_type_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'dashboards';
   $ds_fieldsetting->view_mode = 'dashboards_preview';
   $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => 'h4',
-        'class' => '',
-        'ft' => array(),
-      ),
-    ),
     'field_icon_logo' => array(
       'formatter_settings' => array(
         'ft' => array(),
