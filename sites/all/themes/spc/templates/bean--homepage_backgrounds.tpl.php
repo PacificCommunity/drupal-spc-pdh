@@ -5,12 +5,12 @@
 ?>
 <style>
 	.dashboards-home {
-		background-image: url(<?php print file_create_url($dashboards_img); ?>);
+		background-image: linear-gradient(rgba(176, 183, 187, 0.15), rgba(176, 183, 187, 0.15)), url(<?php print file_create_url($dashboards_img); ?>);
 	}
 	#member-countries-block {
-		background-image: url(<?php print file_create_url($country_data_img); ?>);
+		background-image: linear-gradient(rgba(176, 183, 187, 0.1), rgba(176, 183, 187, 0.1)), url(<?php print file_create_url($country_data_img); ?>);
 	}
 	#mini-panel-datasets_on_home_page {
-		background-image: url(<?php print file_create_url($datasets_img); ?>);
+		background-image: linear-gradient(rgba(176, 183, 187, 0.1), rgba(176, 183, 187, 0.1)), url(<?php print file_create_url($datasets_img); ?>);
 	}
 </style>

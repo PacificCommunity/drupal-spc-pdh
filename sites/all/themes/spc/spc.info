@@ -78,6 +78,7 @@ scripts[] = js/ma5-mobile-menu.js
 scripts[] = js/jquery.matchHeight.js
 
 scripts[] = js/slick.min.js
+scripts[] = js/jquery.dotdotdot.js
 scripts[] = js/script.js
 
 ;-------------- Panel layouts --------------
