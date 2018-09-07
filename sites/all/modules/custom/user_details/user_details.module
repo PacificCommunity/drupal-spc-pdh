@@ -59,18 +59,18 @@ class SPCUserPermissionChecker {
     return array_column($field[LANGUAGE_NONE] ?? [], 'target_id');
   }
 
-  private static function allowForGroupMember($nid, $group) {
-    if (in_array($nid, $group)) {
+  private static function allowForGroupMember($nid, $group, $user) {
+    if (in_array('Content Editor', $user->roles) && in_array($nid, $group)) {
       return self::ALLOW;
     }
     return self::__callStatic(null, null);
   }
 
-  private static function allowForChildGroupMember($nid, $group, $childField) {
+  private static function allowForChildGroupMember($nid, $group, $childField, $user) {
     foreach ($group as $id) {
       $parent = node_load($id);
       $children = self::flatNodeReference($parent->$childField);
-      if (in_array($nid, $children)) {
+      if (in_array('Content Editor', $user->roles) && in_array($nid, $children)) {
         return self::ALLOW;
       }
     }
@@ -78,21 +78,21 @@ class SPCUserPermissionChecker {
   }
 
   public static function thematic_group($nid, $op, $user) {
-    return self::allowForGroupMember($nid, static::getTopicIds($user));
+    return self::allowForGroupMember($nid, static::getTopicIds($user), $user);
   }
   public static function dashboards($nid, $op, $user) {
-    return self::allowForGroupMember($nid, static::getDashboardIds($user));
+    return self::allowForGroupMember($nid, static::getDashboardIds($user), $user);
   }
 
   public static function data_insights($nid, $op, $user) {
-    return self::allowForChildGroupMember($nid, static::getTopicIds($user), 'field_data_insight_thematic');
+    return self::allowForChildGroupMember($nid, static::getTopicIds($user), 'field_data_insight_thematic', $user);
   }
 
   public static function article($nid, $op, $user) {
-    return self::allowForChildGroupMember($nid, static::getTopicIds($user), 'field_articles_and_publications');
+    return self::allowForChildGroupMember($nid, static::getTopicIds($user), 'field_articles_and_publications', $user);
   }
 
   public static function dsp($nid, $op, $user) {
-    return self::allowForChildGroupMember($nid, static::getDashboardIds($user), 'field_indicators');
+    return self::allowForChildGroupMember($nid, static::getDashboardIds($user), 'field_indicators', $user);
   }
 }
