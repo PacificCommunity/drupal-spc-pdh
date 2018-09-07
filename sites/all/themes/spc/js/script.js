@@ -27,6 +27,13 @@
     }
   };
 
+  var dataset_titles = $('.dataset-preview .dataset-title a');
+  dataset_titles.each((ind, tiitle) => {
+    $(tiitle).dotdotdot({
+      height: 50
+    });
+  })
+
 })(jQuery);
 
 jQuery( document ).ready(function() {
