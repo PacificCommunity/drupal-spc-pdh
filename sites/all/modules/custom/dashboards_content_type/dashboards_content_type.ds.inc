@@ -161,12 +161,10 @@ function dashboards_content_type_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_icon_logo',
-        1 => 'title',
       ),
     ),
     'fields' => array(
       'field_icon_logo' => 'ds_content',
-      'title' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
