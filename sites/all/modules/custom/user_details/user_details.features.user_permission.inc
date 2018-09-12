@@ -14,8 +14,9 @@ function user_details_user_default_permissions() {
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
+      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'admin_menu',
   );
@@ -24,8 +25,9 @@ function user_details_user_default_permissions() {
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
+      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'system',
   );
@@ -44,8 +46,9 @@ function user_details_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
+      'Content Editor' => 'Content Editor',
+      'Site Admin' => 'Site Admin',
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'system',
   );
