@@ -7836,24 +7836,29 @@ button.header-menu-btn:focus {
   color: #fff;
   border-radius: 5px;
 }
-.not-front.articles-page .breadcrumb-box .breadcrumb {
+.not-front.articles-page .breadcrumb-box .breadcrumb,
+.not-front.page-articles .breadcrumb-box .breadcrumb {
   margin-bottom: 50px;
 }
-.not-front.articles-page .articles-list {
+.not-front.articles-page .articles-list,
+.not-front.page-articles .articles-list {
   margin-top: 30px;
 }
-.not-front.articles-page .articles-list .item-list-pager {
+.not-front.articles-page .articles-list .item-list-pager,
+.not-front.page-articles .articles-list .item-list-pager {
   padding-top: 1px;
   padding-bottom: 15px;
   margin-bottom: 15px;
   clear: both;
 }
-.not-front.articles-page .articles-list .item-list-pager .pager {
+.not-front.articles-page .articles-list .item-list-pager .pager,
+.not-front.page-articles .articles-list .item-list-pager .pager {
   font-family: 'Calibri';
   margin-bottom: 86px;
   margin-top: 37px;
 }
-.not-front.articles-page .articles-list .item-list-pager .pager li a {
+.not-front.articles-page .articles-list .item-list-pager .pager li a,
+.not-front.page-articles .articles-list .item-list-pager .pager li a {
   padding: 5px 12px;
   border-radius: 5px;
   border: none;
@@ -7861,11 +7866,15 @@ button.header-menu-btn:focus {
   color: #fff;
 }
 .not-front.articles-page .articles-list .item-list-pager .previous a,
-.not-front.articles-page .articles-list .item-list-pager .next a {
+.not-front.page-articles .articles-list .item-list-pager .previous a,
+.not-front.articles-page .articles-list .item-list-pager .next a,
+.not-front.page-articles .articles-list .item-list-pager .next a {
   float: none;
 }
 .not-front.articles-page .articles-list .item-list-pager .current a,
-.not-front.articles-page .articles-list .item-list-pager .current {
+.not-front.page-articles .articles-list .item-list-pager .current a,
+.not-front.articles-page .articles-list .item-list-pager .current,
+.not-front.page-articles .articles-list .item-list-pager .current {
   padding: 7px 12px;
   background-color: #036295;
   color: #fff;
@@ -9595,6 +9604,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 @media (min-width: 992px) {
   .articles-page #mini-panel-articles_page_content .container {
+    max-width: 1010px;
+  }
+  .page-articles .pane-articles-by-topic-page {
     max-width: 1010px;
   }
 }

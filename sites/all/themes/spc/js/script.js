@@ -19,8 +19,9 @@
    */
   Drupal.behaviors.columnEqualHeights = {
     attach: function (context) {
-      $('.view-content').each(function() {
-        $(this).children('.eq-col').find('.node-article').matchHeight({
+      $('.articles-list').each(function() {
+        console.log($(this).find('.eq-col'));
+        $(this).find('.eq-col').find('.node-article').matchHeight({
           byRow: true
         });
       });

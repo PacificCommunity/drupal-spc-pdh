@@ -250,3 +250,179 @@ function thematic_group_default_page_manager_handlers() {
 
   return $export;
 }
+
+/**
+ * Implements hook_default_page_manager_pages().
+ */
+function thematic_group_default_page_manager_pages() {
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'articles_by_topic';
+  $page->task = 'page';
+  $page->admin_title = 'Articles by topic';
+  $page->admin_description = '';
+  $page->path = 'articles/by-topic/%node';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Node: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_articles_by_topic__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'articles_by_topic';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '0ee05058-668c-4b96-94d2-8f94cb922e8d';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_articles_by_topic__panel';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-200984d1-dd6f-47eb-9370-9d48ef2b3c5e';
+  $pane->panel = 'middle';
+  $pane->type = 'page_breadcrumb';
+  $pane->subtype = 'page_breadcrumb';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'breadcrumb-box container',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '200984d1-dd6f-47eb-9370-9d48ef2b3c5e';
+  $display->content['new-200984d1-dd6f-47eb-9370-9d48ef2b3c5e'] = $pane;
+  $display->panels['middle'][0] = 'new-200984d1-dd6f-47eb-9370-9d48ef2b3c5e';
+  $pane = new stdClass();
+  $pane->pid = 'new-1cac2adc-44cb-48fe-9502-621d7afa91cd';
+  $pane->panel = 'middle';
+  $pane->type = 'views';
+  $pane->subtype = 'articles_by_topic_page';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '1',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 1,
+    'link_to_view' => 0,
+    'args' => '%node:nid',
+    'url' => '',
+    'display' => 'block_1',
+    'context' => array(
+      0 => '',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '1cac2adc-44cb-48fe-9502-621d7afa91cd';
+  $display->content['new-1cac2adc-44cb-48fe-9502-621d7afa91cd'] = $pane;
+  $display->panels['middle'][1] = 'new-1cac2adc-44cb-48fe-9502-621d7afa91cd';
+  $pane = new stdClass();
+  $pane->pid = 'new-d11d9b66-0558-4eed-b035-4469ffef6a3b';
+  $pane->panel = 'middle';
+  $pane->type = 'views';
+  $pane->subtype = 'articles_by_topic_page';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 1,
+    'nodes_per_page' => '6',
+    'pager_id' => '0',
+    'offset' => '1',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 1,
+    'link_to_view' => 0,
+    'args' => '%node:nid',
+    'url' => '',
+    'display' => 'block_2',
+    'context' => array(
+      0 => '',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container articles-list',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'd11d9b66-0558-4eed-b035-4469ffef6a3b';
+  $display->content['new-d11d9b66-0558-4eed-b035-4469ffef6a3b'] = $pane;
+  $display->panels['middle'][2] = 'new-d11d9b66-0558-4eed-b035-4469ffef6a3b';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['articles_by_topic'] = $page;
+
+  return $pages;
+
+}
