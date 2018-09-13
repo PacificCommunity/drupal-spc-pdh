@@ -89,23 +89,33 @@ function thematic_group_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Articles by Topic page';
+  $view->human_name = 'Articles by Topic Blocks';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Articles by Topic page';
+  $handler->display->display_options['title'] = 'Articles by Topic Blocks';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-12 col-md-12';
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'featured';
+  $handler->display->display_options['row_options']['load_comments'] = 0;
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'featured';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -122,6 +132,7 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['arguments']['field_thematic_group_target_id']['id'] = 'field_thematic_group_target_id';
   $handler->display->display_options['arguments']['field_thematic_group_target_id']['table'] = 'field_data_field_thematic_group';
   $handler->display->display_options['arguments']['field_thematic_group_target_id']['field'] = 'field_thematic_group_target_id';
+  $handler->display->display_options['arguments']['field_thematic_group_target_id']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['field_thematic_group_target_id']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_thematic_group_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_thematic_group_target_id']['summary']['format'] = 'default_summary';
@@ -141,9 +152,36 @@ function thematic_group_views_default_views() {
     'article' => 'article',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'articles/by-topic';
+  /* Display: By Topic: Main item */
+  $handler = $view->new_display('block', 'By Topic: Main item', 'block_1');
+
+  /* Display: By Topic: List items */
+  $handler = $view->new_display('block', 'By Topic: List items', 'block_2');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '«';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = '»';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col eq-col col-xs-12 col-sm-6 col-md-4';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'list';
+  $handler->display->display_options['row_options']['load_comments'] = 0;
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'list';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['articles_by_topic_page'] = $view;
 
   $view = new view();
