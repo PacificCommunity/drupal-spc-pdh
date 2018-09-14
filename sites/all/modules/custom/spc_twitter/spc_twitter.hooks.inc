@@ -96,65 +96,14 @@ function _spc_tweet_mapper($tweet) {
 	if ($tweet) {
 		$timestmp = strtotime($tweet->created_at);
 	    return [
-		    'name' => $tweet->user->name,
-			'screen_name' => $tweet->user->screen_name,
-			'profile_image_url' => $tweet->user->profile_image_url,
-			'text' => $tweet->full_text,
+			'id' => $tweet->id_str,
 			'created_at' => $tweet->created_at,
 			'timestamp' => $timestmp,
-			'urls' => property_exists($tweet->entities, 'urls') ? $tweet->entities->urls : array(),
-			'media' => property_exists($tweet->entities, 'media') ? $tweet->entities->media : array(),
-			'hashtags' => property_exists($tweet->entities, 'hashtags') ? $tweet->entities->hashtags : array(),
-			'user_mentions' => property_exists($tweet->entities, 'user_mentions') ? $tweet->entities->user_mentions : array() 
 	    ];
 	}
 	return array();
 }
 
-function _spc_tweet_how_long_ago($timestmp) {
-	$ago = false;
-	$elapsed = time() - $timestmp;
-	if ($elapsed < 60) {
-		$ago = $elapsed . 's';
-	} else if ($elapsed < 3600) {
-		$ago = round($elapsed / 60) . 'm';
-	} else if ($elapsed < 86400) {
-		$ago = round($elapsed / 3600) . 'h';
-	}
-	else if ($elapsed > 86400) {
-		$ago = date('D j M', $timestmp);
-	}
-	return $ago;
-}
-
-function _spc_tweet_parse_text($tweet) {
-	$item = $tweet;
-	if (array_key_exists('urls', $item) && $item['urls']) {
-	    foreach ($item['urls'] as $key => $value) {
-	    	$replace = "<a href='".$value->expanded_url."' target='_blank'>". $value->display_url ."</a>";
-	    	$item['text'] = str_replace($value->url, $replace, $item['text']);
-	    }
-	}
-	if (array_key_exists('media', $item) && $item['media']) {
-	    foreach ($item['media'] as $key => $value) {
-	    	$replace = "<a href='".$value->url."' target='_blank'><img class='media-image' src='". $value->media_url_https ."'></img></a>";
-	    	$item['text'] = str_replace($value->url, $replace, $item['text']);
-	    }
-	}
-	if (array_key_exists('hashtags', $item) && $item['hashtags']) {
-	    foreach ($item['hashtags'] as $key => $value) {
-	    	$replace = "<a href='https://twitter.com/hashtag/".$value->text."?src=hash' target='_blank'>#". $value->text ."</a>";
-	    	$item['text'] = str_replace('#' . $value->text, $replace, $item['text']);
-	    }
-	}
-    if (array_key_exists('user_mentions', $item) && $item['user_mentions']) {
-	    foreach ($item['user_mentions'] as $key => $value) {
-	    	$replace = "<a href='https://twitter.com/".$value->screen_name."' target='_blank'>@". $value->screen_name ."</a>";
-	    	$item['text'] = str_replace('@'. $value->screen_name, $replace, $item['text']);
-	    }
-	}
- 	return $item['text'];
-}
 
 function spc_twitter_block_view($delta = '') {
   $block = array();
@@ -182,7 +131,7 @@ function spc_twitter_block_view($delta = '') {
 		    		if ($tw_consumer_key && $tw_consumer_secret && $tw_access_token && $tw_access_token_secret && $tw_limit) {
 				    	$connection = new TwitterOAuth($tw_consumer_key, $tw_consumer_secret, $tw_access_token, $tw_access_token_secret);
 				    	foreach ($screen_names['und'] as $key => $name) {
-				    		$data = $connection->get("statuses/user_timeline", ["count" => $tw_limit, "exclude_replies" => true, "screen_name" => $name['value'], "source" => "web", "tweet_mode" => "extended"]);
+				    		$data = $connection->get("statuses/user_timeline", ["count" => $tw_limit, "exclude_replies" => true, "screen_name" => $name['value'], "source" => "web", "include_rts" => false]);
 				    		if (isset($data->errors)) {
 				    			watchdog('spc_twitter_connection_error', '<pre>' . print_r($data->errors, TRUE) . '</pre>');				    			
 				    		}
@@ -202,15 +151,17 @@ function spc_twitter_block_view($delta = '') {
 						if ($tweets) {
 							usort($tweets, "cmp");
 							$tweets = array_slice(array_reverse($tweets), 0, $tw_limit);
+							foreach ($tweets as &$tweet) {
+				    			$updated_tweet = $connection->get("statuses/oembed", ["url" => "https://twitter.com/Interior/status/" . $tweet['id'], "omit_script" => true, "hide_thread" => true]);
+				    			$tweet = $updated_tweet;
+							}
+
 					    	cache_set($cache_name, $tweets, 'cache', time() + 60*60);
 						}
 		    		}
 		    	}
 		    	if ($tweets) {
 					foreach ($tweets as &$item) {
-					    $item['text'] = _spc_tweet_parse_text($item);
-
-					    $item['time_ago'] = _spc_tweet_how_long_ago($item['timestamp']);
 						$item = theme('spc_tweet_item', ['tweet_item'=>$item]);
 					}
 
