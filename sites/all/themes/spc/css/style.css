@@ -8963,12 +8963,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .list-tweets .tweet-item {
   padding: 15px;
 }
-.list-tweets .tweet-item .content-block {
-  border-radius: 10px;
-  height: 100%;
-  padding: 15px;
-  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.4);
-}
 .list-tweets .tweet-item .content-block .avatar {
   float: left;
   margin-top: 0;
