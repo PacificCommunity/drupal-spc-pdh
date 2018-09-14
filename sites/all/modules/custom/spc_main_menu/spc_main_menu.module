@@ -9,7 +9,7 @@ function loop_menu($menu, $menu_layout, $counter_li=False, $parent_name=False) {
     }
     if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title'])) {
       $menu_layout = $menu_layout . '<li class="' . ($menu[$key]['#original_link']['depth'] == 1 ? 'ma5-li-' . $counter_li : 'ma5-li-' . $counter_ul . '-' . $counter_li) . '">';
-      $menu_layout = $menu_layout . '<a href="' . ($menu[$key]['#href'] == '<front>' ? '/' : '/' . drupal_get_path_alias($menu[$key]['#href'])) . '">' . $menu[$key]['#title'] . '</a>';
+      $menu_layout = $menu_layout . '<a href="' . ($menu[$key]['#href'] == '<front>' ? '/' : url(drupal_get_path_alias($menu[$key]['#href']))) . '">' . $menu[$key]['#title'] . '</a>';
     }
     
     if (!empty($menu[$key]['#below'])) {
