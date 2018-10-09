@@ -104,6 +104,28 @@ function spc_preprocess_field(&$vars,$hook) {
       break;
   }
 
+  if ($vars['element']['#field_name'] == 'field_dsp_datasets') {
+    $datasets_names = !empty($vars['element']['#items']) ? $vars['element']['#items'] : [];
+    $names = array();
+    foreach ($datasets_names as $id => $item) {
+      $names[] = $item['value'];
+    }
+    $names_str = '('.join(' OR ', $names).')';
+
+    $params = array(
+      'fq' => 'name:'.$names_str
+    );
+    try {
+      $client = govcms_ckan_client();
+      $resp = $client->get('action/package_search', $params);
+    }
+    catch (Exception $e) {
+      watchdog_exception('dashboard_secondary_page', $e);
+    }
+
+    $datasets_info = $resp->data->results;
+    $vars['element']['datasets_info'] = $datasets_info;
+  }
 }
 
 function spc_preprocess_maintenance_page(){

@@ -13,35 +13,45 @@ function thematic_group_user_default_permissions() {
   // Exported permission: 'create thematic_group content'.
   $permissions['create thematic_group content'] = array(
     'name' => 'create thematic_group content',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any thematic_group content'.
   $permissions['delete any thematic_group content'] = array(
     'name' => 'delete any thematic_group content',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own thematic_group content'.
   $permissions['delete own thematic_group content'] = array(
     'name' => 'delete own thematic_group content',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any thematic_group content'.
   $permissions['edit any thematic_group content'] = array(
     'name' => 'edit any thematic_group content',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own thematic_group content'.
   $permissions['edit own thematic_group content'] = array(
     'name' => 'edit own thematic_group content',
-    'roles' => array(),
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'node',
   );
 
@@ -54,26 +64,6 @@ function thematic_group_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
-  );
-
-  // Exported permission: 'view any article_on_home_page bean'.
-  $permissions['view any article_on_home_page bean'] = array(
-    'name' => 'view any article_on_home_page bean',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'bean',
-  );
-
-  // Exported permission: 'view any browse_by_data_category bean'.
-  $permissions['view any browse_by_data_category bean'] = array(
-    'name' => 'view any browse_by_data_category bean',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'bean',
   );
 
   // Exported permission: 'view any ckan_search bean'.

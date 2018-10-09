@@ -1,0 +1,42 @@
+<?php
+
+function loop_menu($menu, $menu_layout, $counter_li=False, $parent_name=False) {
+  $counter_ul = $counter_li;
+  $counter_li = 1;
+  foreach ($menu as $key => $value) {
+    if(!empty($menu[$key]['#original_link']) && $menu[$key]['#original_link']['depth'] != 1 && $counter_li == 1) {
+      $menu_layout = $menu_layout . '<div class="ma5-leave-bar"><span class="ma5-btn-leave"><i class="fa fa-chevron-left" aria-hidden="true"></i></span></span>' . $parent_name . '</div>';
+    }
+    if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title'])) {
+      $menu_layout = $menu_layout . '<li class="' . ($menu[$key]['#original_link']['depth'] == 1 ? 'ma5-li-' . $counter_li : 'ma5-li-' . $counter_ul . '-' . $counter_li) . '">';
+      $menu_layout = $menu_layout . '<a href="' . ($menu[$key]['#href'] == '<front>' ? '/' : url(drupal_get_path_alias($menu[$key]['#href']))) . '">' . $menu[$key]['#title'] . '</a>';
+    }
+    
+    if (!empty($menu[$key]['#below'])) {
+      $parent_name = $menu[$key]['#title'];
+      $menu_layout = $menu_layout . '<span class="ma5-btn-enter"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>';
+      $menu_layout = $menu_layout . '<ul class="ma5-ul-' . $counter_li . '">';
+      $menu_layout = loop_menu($menu[$key]['#below'], $menu_layout, $counter_li, $parent_name);
+      $menu_layout = $menu_layout . '</ul>';
+    } 
+    $menu_layout = $menu_layout . '</li>';
+    $counter_li++;
+  }
+  return $menu_layout;
+}
+
+function create_main_menu() {
+  $menu_array = menu_tree_output(menu_tree_all_data('main-menu'));
+  $menu_layout = '<div id="main-menu">
+  <button class="header-menu-btn ma5-toggle-menu" type="button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="ma5-menu-mobile">
+  <ul class="ma5-ul">';
+  $menu_layout = loop_menu($menu_array, $menu_layout);
+  $menu_layout = $menu_layout . '</ul></nav></div>';
+
+  return $menu_layout;
+}

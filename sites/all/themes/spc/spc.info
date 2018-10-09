@@ -37,7 +37,12 @@ regions[highlighted] = Highlighted
 
 
 ;-------------- C S S -------------
+stylesheets[all][] = css/ma5-mobile-menu.css
+stylesheets[all][] = css/slick.css
+stylesheets[all][] = css/slick-theme.css
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/footer_css/footer.css
+
 
 ;-------------- CSS FOAD -------------
 ;stylesheets[all][] = donteverloadmeagain.css
@@ -66,6 +71,14 @@ stylesheets[all][] = mothership-layout.css
 ; Bootstrap 3 JS
 scripts[] = js/bootstrap.min.js
 
+scripts[] = js/jquery.touchSwipe.min.js
+scripts[] = js/ma5-mobile-menu.js
+
+; https://github.com/liabru/jquery-match-height
+scripts[] = js/jquery.matchHeight.js
+
+scripts[] = js/slick.min.js
+scripts[] = js/jquery.dotdotdot.js
 scripts[] = js/script.js
 
 ;-------------- Panel layouts --------------

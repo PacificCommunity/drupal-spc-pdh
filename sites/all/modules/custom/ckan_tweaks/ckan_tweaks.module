@@ -3,12 +3,121 @@
 // Search criteria prepared for c-style formatting
 const CKAN_SEARCH_NAME_THEMATIC_AREA = 'extras_thematic_area_string';
 const CKAN_SEARCH_CRIT_THEMATIC_AREA = CKAN_SEARCH_NAME_THEMATIC_AREA . ':"%s"';
+const CKAN_SEARCH_CRIT_UNSPECIFIED_DATASET_TYPE = '';
+const CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE = '+dataset_type:publications';
 
 // Additional search param names
 const CKAN_SEARCH_PARAM_POPULAR_FIRST = 'ext_popular_first';
+
+// Sorting
+const CKAN_SEARCH_SORT_LATEST_FIRST = 'metadata_modified desc';
+const CKAN_SEARCH_SORT_MOST_VIEWED_FIRST = 'extras_ga_view_count desc';
 
 // Various static values
 const CKAN_DEFAULT_ORG_IMAGE = '/base/images/placeholder-organization.png';
 
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'ckan_tweaks.helpers.inc');
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'ckan_tweaks.hooks.inc');
+
+
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ckan_tweaks_preprocess_ckan_dataset_overview(&$variables) {
+	if (!empty($variables['template_variant'])) {
+		$variables['theme_hook_suggestions'][] = $variables['template_variant'];
+	}
+}
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function ckan_tweaks_field_formatter_info() {
+  return array(
+    'ckan_datasets' => array(
+      'label' => t('CKAN Datasets'),
+      'field types' => array('text'),
+      'settings' => array(
+      	'rows' => 10
+      )
+    )
+  );
+}
+
+/**
+* Implements hook_field_formatter_settings_form().
+*/
+function ckan_tweaks_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $element = array();
+  $element['rows'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Rows to display'),
+    '#description' => t('Provide how many items to display.'),
+    '#default_value' => $settings['rows'],
+  );
+  return $element;
+}
+
+/**
+* Implements hook_field_formatter_settings_summary().
+*/
+function ckan_tweaks_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $summary = t('Use CKAN datasets formatter to display @rows items', array(
+  	'@rows' => $settings['rows']
+  ));
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, &$items, $display) {
+	$element = array();
+
+	if (empty($items)) {
+		return $element;
+	}
+
+	$settings = $display['settings'];
+	$rows = $settings['rows'];
+
+	foreach ($items as $delta => $item) {
+		// Getting group value.
+		$group = $item['safe_value'];
+		if (empty($group)) {
+			continue;
+		}
+		// Getting datasets.
+	  $query_dict = array(
+	    'q' => sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $group),
+	    'sort' => CKAN_SEARCH_SORT_MOST_VIEWED_FIRST,
+	    'rows' => $rows
+	  );
+	  $query_dict[CKAN_SEARCH_PARAM_POPULAR_FIRST] = TRUE;
+	  $recent = _ckan_tweaks_search_datasets($query_dict);
+	  $ckan_url = _ckan_tweaks_get_ckan_url();
+	  $datasets = array_map(
+	    _ckan_tweaks_create_dataset_mapper($ckan_url),
+	    $recent['results']
+	  );
+	  if (empty($datasets)) {
+	  	continue;
+	  }
+	  $element[$delta]['container'] = array(
+	  	'#type' => 'container',
+	  	'#attributes' => array('class' => array('container', 'datasets-container'))
+	  );
+	  // Display section.
+	  foreach ($datasets as &$dataset) {
+	    $element[$delta]['container'][] = array(
+	    	'#markup' => theme('ckan_dataset_overview', array('dataset' => $dataset))
+	    );
+	  }
+	}
+	return $element;
+}

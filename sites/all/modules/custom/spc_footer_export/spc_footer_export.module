@@ -1,0 +1,20 @@
+<?php
+function spc_footer_export_menu() {
+    $items = array();
+    $items['footer_export'] = array(
+        'page callback' => 'spc_export_drupal_footer',
+        'access arguments' => array('access content'),
+	    'delivery callback' => 'drupal_json_output'
+     );
+    return $items;
+}
+
+
+function spc_export_drupal_footer() {
+    $block = module_invoke('panels_mini', 'block_view', 'footer');
+    $output = Array();
+
+    $output['main'][] = $block['content'];
+
+    return drupal_json_output($output);
+}

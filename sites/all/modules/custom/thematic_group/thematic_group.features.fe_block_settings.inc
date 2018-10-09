@@ -12,11 +12,11 @@ function thematic_group_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['bean-thematic-landing-banner'] = array(
-    'cache' => 1,
+  $export['views-articles_by_topic_page-block_1'] = array(
+    'cache' => -1,
     'custom' => 0,
-    'delta' => 'thematic-landing-banner',
-    'module' => 'bean',
+    'delta' => 'articles_by_topic_page-block_1',
+    'module' => 'views',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -38,11 +38,11 @@ function thematic_group_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['bean-thematic-page-heading'] = array(
-    'cache' => 1,
+  $export['views-articles_by_topic_page-block_2'] = array(
+    'cache' => -1,
     'custom' => 0,
-    'delta' => 'thematic-page-heading',
-    'module' => 'bean',
+    'delta' => 'articles_by_topic_page-block_2',
+    'module' => 'views',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),

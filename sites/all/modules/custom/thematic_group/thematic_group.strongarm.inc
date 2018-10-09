@@ -136,6 +136,27 @@ function thematic_group_strongarm() {
       'similar_posts' => array(
         'custom_settings' => FALSE,
       ),
+      'topic_preview' => array(
+        'custom_settings' => TRUE,
+      ),
+      'dashboards_preview' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_individual_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_list_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_on_topic_page' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -150,6 +171,26 @@ function thematic_group_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__thematic_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fontawesome_external';
+  $strongarm->value = array(
+    'use_cdn' => 0,
+    'external_location' => 'https://use.fontawesome.com/releases/v5.1.1/js/all.js',
+  );
+  $export['fontawesome_external'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fontawesome_shim';
+  $strongarm->value = array(
+    'use_shim' => 1,
+    'external_location' => '',
+  );
+  $export['fontawesome_shim'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

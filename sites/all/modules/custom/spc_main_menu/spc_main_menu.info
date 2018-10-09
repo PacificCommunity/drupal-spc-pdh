@@ -1,0 +1,6 @@
+name = SPC Main Menu
+description = Main menu for Drupal and CKAN
+package = public-action
+version = VERSION
+core = 7.x
+files[] = spc_main_menu.module

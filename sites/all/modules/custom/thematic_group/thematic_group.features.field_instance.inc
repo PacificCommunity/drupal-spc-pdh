@@ -77,6 +77,12 @@ function thematic_group_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'topic_preview' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
@@ -111,7 +117,7 @@ function thematic_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -130,6 +136,12 @@ function thematic_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -187,6 +199,12 @@ function thematic_group_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
@@ -229,7 +247,7 @@ function thematic_group_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -248,6 +266,12 @@ function thematic_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 4,
+      ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -304,6 +328,12 @@ function thematic_group_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -365,6 +395,12 @@ function thematic_group_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_display_image',
@@ -393,6 +429,73 @@ function thematic_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-thematic_group-field_fa_icon'.
+  $field_instances['node-thematic_group-field_fa_icon'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'fontawesome_iconpicker',
+        'settings' => array(
+          'size' => '1x',
+        ),
+        'type' => 'fontawesome_iconpicker_icon',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'hidden',
+        'module' => 'fontawesome_iconpicker',
+        'settings' => array(
+          'size' => '2x',
+        ),
+        'type' => 'fontawesome_iconpicker_icon',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'hidden',
+        'module' => 'fontawesome_iconpicker',
+        'settings' => array(
+          'size' => '5x',
+        ),
+        'type' => 'fontawesome_iconpicker_icon',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_fa_icon',
+    'label' => 'FA Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'fontawesome_iconpicker',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'fontawesome_iconpicker_textfield',
+      'weight' => 35,
+    ),
+  );
+
   // Exported field_instance: 'node-thematic_group-field_icon'.
   $field_instances['node-thematic_group-field_icon'] = array(
     'bundle' => 'thematic_group',
@@ -407,7 +510,7 @@ function thematic_group_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -423,7 +526,7 @@ function thematic_group_field_default_field_instances() {
           'image_style' => 'icon__25x25_',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -434,6 +537,16 @@ function thematic_group_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'topics_carousel__70x70_',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -462,6 +575,192 @@ function thematic_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-thematic_group-field_publications'.
+  $field_instances['node-thematic_group-field_publications'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_publications',
+    'label' => 'Publications',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 34,
+    ),
+  );
+
+  // Exported field_instance: 'node-thematic_group-field_show_tweets'.
+  $field_instances['node-thematic_group-field_show_tweets'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Display tweets on Topic page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_show_tweets',
+    'label' => 'Show tweets',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'node-thematic_group-field_twitter_account_names'.
+  $field_instances['node-thematic_group-field_twitter_account_names'] = array(
+    'bundle' => 'thematic_group',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Twitter Account name should be provided without the "@" sign. For example "@spc_cps" will be "spc_cps".',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'group_with_icon' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'topic_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_twitter_account_names',
+    'label' => 'Twitter Account names',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 38,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Articles and Publications');
@@ -472,7 +771,13 @@ function thematic_group_field_default_field_instances() {
   t('Data insight to show on thematic landing page');
   t('Description');
   t('Display image');
+  t('Display tweets on Topic page.');
+  t('FA Icon');
   t('Icon');
+  t('Publications');
+  t('Show tweets');
+  t('Twitter Account name should be provided without the "@" sign. For example "@spc_cps" will be "spc_cps".');
+  t('Twitter Account names');
 
   return $field_instances;
 }

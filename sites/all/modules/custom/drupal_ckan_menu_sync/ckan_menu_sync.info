@@ -1,6 +1,0 @@
-name = CKAN Menu Syncronize
-description = Exposes drupal menu links in order to use them in CKAN instance
-configure = admin/config/ckanext/menus
-core = 7.x
-version = 7.x-1.00
-package = CKAN

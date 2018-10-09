@@ -12,58 +12,6 @@ function home_page_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['bean-article-on-home-page'] = array(
-    'cache' => 1,
-    'custom' => 0,
-    'delta' => 'article-on-home-page',
-    'module' => 'bean',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['bean-browse-by-data-category'] = array(
-    'cache' => 1,
-    'custom' => 0,
-    'delta' => 'browse-by-data-category',
-    'module' => 'bean',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['bean-ckan-search'] = array(
     'cache' => 1,
     'custom' => 0,
@@ -116,11 +64,11 @@ function home_page_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['panels_mini-blog_preview'] = array(
-    'cache' => -1,
+  $export['bean-home-members-countries'] = array(
+    'cache' => 1,
     'custom' => 0,
-    'delta' => 'blog_preview',
-    'module' => 'panels_mini',
+    'delta' => 'home-members-countries',
+    'module' => 'bean',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -224,32 +172,6 @@ function home_page_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 'footer',
-    'module' => 'panels_mini',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['panels_mini-header'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'header',
     'module' => 'panels_mini',
     'node_types' => array(),
     'pages' => '',
