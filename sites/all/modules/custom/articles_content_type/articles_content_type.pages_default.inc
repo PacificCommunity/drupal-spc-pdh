@@ -139,7 +139,7 @@ function articles_content_type_default_page_manager_handlers() {
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
     'formatter_settings' => array(
-      'rows' => '10',
+      'rows' => '4',
     ),
     'context' => 'relationship_entity_from_field:field_thematic_group-node-node_1',
     'override_title' => 1,
