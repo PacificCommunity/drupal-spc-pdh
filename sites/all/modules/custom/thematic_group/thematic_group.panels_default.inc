@@ -21,7 +21,7 @@ function thematic_group_default_panels_mini() {
   $mini->contexts = array();
   $mini->relationships = array();
   $display = new panels_display();
-  $display->layout = 'two_50';
+  $display->layout = 'one';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -30,6 +30,8 @@ function thematic_group_default_panels_mini() {
       'two_50_first' => NULL,
       'two_50_second' => NULL,
       'two_50_bottom' => NULL,
+      'one_main' => NULL,
+      'one_fw_main' => NULL,
     ),
   );
   $display->cache = array();
@@ -40,90 +42,31 @@ function thematic_group_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-539ef284-2ba5-4b39-8450-db3c5e9e5fdc';
-  $pane->panel = 'two_50_first';
-  $pane->type = 'views';
-  $pane->subtype = 'data_insight_thematic';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '3',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 1,
-    'link_to_view' => 0,
-    'args' => '%node:nid',
-    'url' => '',
-    'display' => 'block_1',
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '539ef284-2ba5-4b39-8450-db3c5e9e5fdc';
-  $display->content['new-539ef284-2ba5-4b39-8450-db3c5e9e5fdc'] = $pane;
-  $display->panels['two_50_first'][0] = 'new-539ef284-2ba5-4b39-8450-db3c5e9e5fdc';
-  $pane = new stdClass();
   $pane->pid = 'new-76244da1-1c2e-45c3-adaa-b36e4cc17d39';
-  $pane->panel = 'two_50_second';
+  $pane->panel = 'one_main';
   $pane->type = 'block';
   $pane->subtype = 'ckan_tweaks-ckan_tweaks-popular_datasets';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_text' => 'Popular Datasets',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '76244da1-1c2e-45c3-adaa-b36e4cc17d39';
   $display->content['new-76244da1-1c2e-45c3-adaa-b36e4cc17d39'] = $pane;
-  $display->panels['two_50_second'][0] = 'new-76244da1-1c2e-45c3-adaa-b36e4cc17d39';
-  $pane = new stdClass();
-  $pane->pid = 'new-1e546a01-22f2-4d4e-8650-ddecd2e504a6';
-  $pane->panel = 'two_50_top';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => '<h2>Popular Datasets</h2>
-',
-    'format' => 'full_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '1e546a01-22f2-4d4e-8650-ddecd2e504a6';
-  $display->content['new-1e546a01-22f2-4d4e-8650-ddecd2e504a6'] = $pane;
-  $display->panels['two_50_top'][0] = 'new-1e546a01-22f2-4d4e-8650-ddecd2e504a6';
+  $display->panels['one_main'][0] = 'new-76244da1-1c2e-45c3-adaa-b36e4cc17d39';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;
