@@ -11,6 +11,52 @@ function thematic_group_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'bean-thematic_group_backgrounds-field_datasets_background'.
+  $field_instances['bean-thematic_group_backgrounds-field_datasets_background'] = array(
+    'bundle' => 'thematic_group_backgrounds',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_datasets_background',
+    'label' => 'Datasets background',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance:
   // 'comment-comment_node_thematic_group-comment_body'.
   $field_instances['comment-comment_node_thematic_group-comment_body'] = array(
     'bundle' => 'comment_node_thematic_group',
@@ -769,6 +815,7 @@ function thematic_group_field_default_field_instances() {
   t('Comment');
   t('Data insight');
   t('Data insight to show on thematic landing page');
+  t('Datasets background');
   t('Description');
   t('Display image');
   t('Display tweets on Topic page.');
