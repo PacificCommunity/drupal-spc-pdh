@@ -250,7 +250,7 @@ function thematic_group_default_page_manager_handlers() {
   $pane->panel = 'one_fw_main';
   $pane->type = 'views';
   $pane->subtype = 'latest_stories';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -287,6 +287,38 @@ function thematic_group_default_page_manager_handlers() {
   $display->content['new-6ac2635d-f456-48be-b754-d09687317c08'] = $pane;
   $display->panels['one_fw_main'][6] = 'new-6ac2635d-f456-48be-b754-d09687317c08';
   $pane = new stdClass();
+  $pane->pid = 'new-dbb951a4-5c98-4608-a390-c518710e5ea3';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'articles_list-topic_latest';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Articles and Publications',
+    'override_title_heading' => 'h2',
+    'arguments' => array(
+      'nid' => '',
+    ),
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'thematic-group-articles panel-style-narrow',
+  );
+  $pane->extras = array();
+  $pane->position = 7;
+  $pane->locks = array();
+  $pane->uuid = 'dbb951a4-5c98-4608-a390-c518710e5ea3';
+  $display->content['new-dbb951a4-5c98-4608-a390-c518710e5ea3'] = $pane;
+  $display->panels['one_fw_main'][7] = 'new-dbb951a4-5c98-4608-a390-c518710e5ea3';
+  $pane = new stdClass();
   $pane->pid = 'new-fd88377d-2526-4207-a19c-644795a46ff0';
   $pane->panel = 'one_fw_main';
   $pane->type = 'block';
@@ -307,11 +339,11 @@ function thematic_group_default_page_manager_handlers() {
     'css_class' => 'container latest-tweets-block',
   );
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = 'fd88377d-2526-4207-a19c-644795a46ff0';
   $display->content['new-fd88377d-2526-4207-a19c-644795a46ff0'] = $pane;
-  $display->panels['one_fw_main'][7] = 'new-fd88377d-2526-4207-a19c-644795a46ff0';
+  $display->panels['one_fw_main'][8] = 'new-fd88377d-2526-4207-a19c-644795a46ff0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-4ce022c5-0b6a-422e-9df0-b82a44a5af38';
   $handler->conf['display'] = $display;
