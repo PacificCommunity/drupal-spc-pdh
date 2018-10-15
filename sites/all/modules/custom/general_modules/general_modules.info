@@ -1,9 +1,10 @@
 name = General Modules
 core = 7.x
 package = Features
-version = 7.x-1.05
+version = 7.x-1.06
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
+dependencies[] = articles_syndication
 dependencies[] = backup_migrate
 dependencies[] = bean
 dependencies[] = bean_admin_ui

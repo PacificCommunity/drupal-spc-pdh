@@ -1,0 +1,5 @@
+name = Articles Syndication
+package = public-action
+version = 7.x-1.0.0
+core = 7.x
+files[] = articles_syndication.module
