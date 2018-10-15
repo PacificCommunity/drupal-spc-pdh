@@ -95,23 +95,32 @@
         }
       ?>
       <div class="banner-links hidden-xs">
-        <div class="col-md-4 col-sm-4 link-block">
+        <div class="link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
           </div>
-          <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id) ?>"><span><?= $datasets_count ?></span><br> Datasets</a>
+          <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id) ?>">
+            <span class="count"><?= $datasets_count ?></span>
+            <?php print t('Datasets'); ?>
+          </a>
         </div>
-        <div class="col-md-4 col-sm-4 link-block">
+        <div class="link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/article_icon.png">
           </div>
-          <a href="/articles/by-topic/<?= $node->nid ?>"><span><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></span><br> Articles</a>
+          <a href="/articles/by-topic/<?= $node->nid ?>">
+            <span class="count"><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></span>
+            <?php print t('Articles'); ?>
+          </a>
         </div>
-        <div class="col-md-4 col-sm-4 link-block">
+        <div class="link-block">
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
           </div>
-          <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id, CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE) ?>"><span><?= $publications_count ?></span><br> Publications</a>
+          <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id, CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE) ?>">
+            <span class="count"><?= $publications_count ?></span>
+            <?php print t('Publications'); ?>
+          </a>
         </div>
       </div>
     <?php endif; ?>

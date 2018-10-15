@@ -144,7 +144,11 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
       '#value' => $id
     ];
 
-    $form['search_type'] = [
+    $form['search_type_container'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('search-type-container'))
+    );
+    $form['search_type_container']['search_type'] = [
       '#type' => 'select',
       '#default_value' => 'article',
       '#options' => [

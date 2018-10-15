@@ -27,6 +27,16 @@
     }
   };
 
+  /**
+   * Element niceSelect
+   *
+   */
+  Drupal.behaviors.niceSelect = {
+    attach: function (context) {
+      $('.node-type-thematic-group #ckan-search-form select').niceSelect();
+    }
+  };
+
   var dataset_titles = $('.dataset-preview .dataset-title a');
   dataset_titles.each((ind, tiitle) => {
     $(tiitle).dotdotdot({
