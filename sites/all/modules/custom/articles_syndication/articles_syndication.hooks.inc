@@ -24,7 +24,8 @@ function syndication_article_create() {
   // Сhecks on required fields
   if (empty($_POST['title']) or empty($_POST['original_id'])) {
     watchdog('syndication_article', "Syndication failed. Required field is missing.");
-    exit("Syndication failed. Required field is missing.");
+    print("Syndication failed. Required field is missing.");
+    return;
   }
 
   $user_uid = 1;
@@ -32,9 +33,9 @@ function syndication_article_create() {
 
   // Creates an array with parameters for node creation
   $values = array();
-  $values['title'] = $_POST['title'];
-  $values['body'] = $_POST['body'];
-  $values['body_summary'] = $_POST['body_summary'];
+  $values['title'] = !empty($_POST['title']) ? $_POST['title'] : null;
+  $values['body'] = !empty($_POST['body']) ? $_POST['body'] : null;
+  $values['body_summary'] = !empty($_POST['body_summary']) ? $_POST['body_summary'] : null;
   $values['image'] = !empty($_POST['image']) ? $_POST['image'] : null;
   $values['tags']= !empty($_POST['tags']) ?  explode(', ', $_POST['tags']) : null;
 
@@ -55,7 +56,8 @@ function syndication_article_create() {
 
   // Saves logs
   watchdog('syndication_article', "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
-  exit("Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
+  print("Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
+  return;
 }
 
 
@@ -63,7 +65,8 @@ function syndication_article_update() {
   // Сhecks on required fields (for updating it's only "original_id")
   if (empty($_POST['original_id'])) {
     watchdog('syndication_article', "Syndication failed. Required field <original_id> is missing.");
-    exit("Syndication failed. Required field <original_id> is missing.");
+    print("Syndication failed. Required field <original_id> is missing.");
+    return;
   }
 
   $syndicated_id = $_POST['original_id'];
@@ -79,7 +82,8 @@ function syndication_article_update() {
   
   if (empty($result['node'])) {
     watchdog('syndication_article', "Syndication failed. Node with original_id=".$syndicated_id." doesn't exist.");
-    exit("Syndication failed. Node with original_id=".$syndicated_id." doesn't exist.");
+    print("Syndication failed. Node with original_id=".$syndicated_id." doesn't exist.");
+    return;
   }
 
   $nid = current($result['node'])->nid;
@@ -98,7 +102,8 @@ function syndication_article_update() {
   
   // Saves logs
   watchdog('syndication_article', "Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true));
-  exit("Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true));
+  print("Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true));
+  return;
 }
 
 
