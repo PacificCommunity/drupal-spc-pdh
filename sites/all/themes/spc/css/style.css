@@ -8807,6 +8807,11 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 #thematic_landing_banner .spc-home-banner-block {
   top: 30%;
 }
+#thematic_landing_banner .spc-home-banner-block #ckan-search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form input[type='text'] {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
