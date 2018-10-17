@@ -19,8 +19,29 @@ function articles_syndication_menu() {
   return $items;
 }
 
+function check_access() {
+  if ($_POST['access_key']) {
+    $hash = $_POST['access_key'];
+    $spass = variable_get('synpass');
+    if (!password_verify($spass, $hash)) {
+      watchdog('syndication_article', "Access denied. <access_key> field is incorrect.");
+      print("Access denied. <access_key> field is incorrect.");
+      return false;
+    } else {
+      return true;
+    }
+  } else {
+    watchdog('syndication_article', "Access denied. <access_key> field is missing.");
+    print("Access denied. <access_key> field is missing.");
+    return false;
+  }
+}
+
 
 function syndication_article_create() {
+  if (!check_access()) {
+    return;
+  }
   // Сhecks on required fields
   if (empty($_POST['title']) or empty($_POST['original_id'])) {
     watchdog('syndication_article', "Syndication failed. Required field is missing.");
@@ -62,6 +83,9 @@ function syndication_article_create() {
 
 
 function syndication_article_update() {
+  if (!check_access()) {
+    return;
+  }
   // Сhecks on required fields (for updating it's only "original_id")
   if (empty($_POST['original_id'])) {
     watchdog('syndication_article', "Syndication failed. Required field <original_id> is missing.");
