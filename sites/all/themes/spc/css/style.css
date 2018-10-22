@@ -8702,6 +8702,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: auto;
   width: auto;
 }
+.node-type-thematic-group .latest-tweets-block {
+  padding: 37px 0 98px;
+}
 .panel-style-narrow {
   padding: 35px 0px 50px 0px;
   font-family: "Calibri Light";
@@ -8769,18 +8772,27 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: 100%;
 }
 .thematic-heading-block {
-  height: 60px;
-  line-height: 60px;
+  height: 90px;
+  line-height: 90px;
   clear: both;
-  padding: 0 50px;
+  padding: 0px;
+}
+@media (max-width: 768px) {
+  .thematic-heading-block {
+    padding: 0px 15px;
+  }
 }
 .thematic-heading-block button {
   border: none;
   background-color: transparent;
   color: #036295;
-  font-size: 25px;
+  font-family: "Calibri Light";
+  font-size: 22px;
   font-weight: 300;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .thematic-heading-block button img {
   max-height: 42px;
@@ -8788,6 +8800,16 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   width: auto;
   height: auto;
   margin-right: 10px;
+}
+.thematic-heading-block button .thematic-fa-icon {
+  max-height: 42px;
+  max-width: 42px;
+  width: 42px;
+  height: auto;
+  margin-right: 10px;
+}
+.thematic-heading-block button .fa-caret-down {
+  margin-left: 16px;
 }
 .thematic-heading-block button i.fa {
   margin-left: 10px;
@@ -8799,13 +8821,14 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   outline: none;
 }
 .thematic-heading-block .dropdown-menu {
-  top: 92%;
+  top: 100%;
+  margin-top: 0px;
 }
 .thematic-heading-block .dropdown-menu a {
   color: #036295;
 }
 #thematic_landing_banner .spc-home-banner-block {
-  top: 30%;
+  top: 37%;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form {
   display: flex;
@@ -8817,6 +8840,17 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   border-bottom-right-radius: 0;
   width: 500px;
   padding-left: 18px;
+  font-family: "Calibri Light";
+}
+#thematic_landing_banner .spc-home-banner-block #ckan-search-form input[type='text']::-moz-placeholder {
+  color: #9caab8;
+  opacity: 1;
+}
+#thematic_landing_banner .spc-home-banner-block #ckan-search-form input[type='text']:-ms-input-placeholder {
+  color: #9caab8;
+}
+#thematic_landing_banner .spc-home-banner-block #ckan-search-form input[type='text']::-webkit-input-placeholder {
+  color: #9caab8;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div {
   border: 1px solid #7d98a9;
@@ -8824,6 +8858,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   float: left;
   position: relative;
   outline: 0;
+  z-index: 1;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type {
   border-top-left-radius: 5px;
@@ -8849,7 +8884,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   border-bottom-right-radius: 5px;
   background-color: #fff;
   overflow: visible;
-  z-index: -1;
+  z-index: 0;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div.search-type-container select {
   display: none;
@@ -8901,6 +8936,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   padding: 13px 0px;
   text-align: right;
   padding-right: 56px;
+  font-family: "Calibri Light";
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div.search-type-container div.nice-select ul.list {
   width: 100%;
@@ -8999,7 +9035,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 #node_content {
   padding: 57px 0 74px;
   color: #2a2c2d;
-  font-family: "Calibri";
+  font-family: "Calibri Light";
   font-size: 17px;
   font-weight: 300;
   line-height: 1.5em;

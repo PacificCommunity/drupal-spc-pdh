@@ -22,19 +22,6 @@ function thematic_group_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'field_display_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'thematic-group-image',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
   );
   $export['node|thematic_group|full'] = $ds_fieldsetting;
 
@@ -121,13 +108,11 @@ function thematic_group_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_display_image',
-        2 => 'body',
+        1 => 'body',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'field_display_image' => 'ds_content',
       'body' => 'ds_content',
     ),
     'classes' => array(),

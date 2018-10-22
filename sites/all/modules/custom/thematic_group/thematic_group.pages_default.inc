@@ -112,7 +112,10 @@ function thematic_group_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -336,7 +339,7 @@ function thematic_group_default_page_manager_handlers() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'container latest-tweets-block',
+    'css_class' => 'container latest-tweets-block panel-style-narrow',
   );
   $pane->extras = array();
   $pane->position = 8;
