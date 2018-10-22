@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function(e) {
   var modulePath = "/"+Drupal.settings.spcChart.path;
 
-  var width = 1160,
-    height = 975,
-    radius = (Math.min(width, height) / 2) - 10;
+  var width = 1170,
+    height = 1170,
+     radius = (Math.min(width, height) / 2) - 10;
 
   var chartBlock = d3.select("#sdgChart");
   var svg = chartBlock.append("svg")
-      .attr("width", width)
-      .attr("height", height)
+      .attr("preserveAspectRatio", "xMinYMin meet")
+      .attr("viewBox", "0 0 1170 1170")
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
   d3.json(modulePath+"/data/bars_data.json").then(function(data) {
 
-    var height = 775,
+    var height = 970,
       barHeight = height / 2 - 40;
       
     data.forEach(element => {
