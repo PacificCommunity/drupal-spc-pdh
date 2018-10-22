@@ -1,0 +1,28 @@
+#sdgChart {
+  display: inline-block;
+  position: relative; }
+  #sdgChart .center-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto; }
+
+svg {
+  font-family: sans-serif; }
+
+.domain-text {
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+.tooltip {
+  position: absolute;
+  height: auto;
+  width: 400px;
+  font-size: 12px;
+  color: #393f45;
+  padding: 5px 7px;
+  background: #dbedfb;
+  border-radius: 6px;
+  pointer-events: none; }

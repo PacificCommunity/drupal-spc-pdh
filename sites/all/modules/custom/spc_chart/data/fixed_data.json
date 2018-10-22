@@ -1,0 +1,145 @@
+{
+    "domains": [
+        {
+            "name": "People",
+            "value": 26
+        },
+        {
+            "name": "Prosperity",
+            "value": 17
+        },
+        {
+            "name": "Planet",
+            "value": 18
+        },
+        {
+            "name": "Peace",
+            "value": 5
+        },
+        {
+            "name": "Partnership",
+            "value": 14
+        }
+    ],
+    "goals": [
+        {
+            "name": "Goal 1",
+            "color": "#e5243a",
+            "link": "http://example.com",
+            "icon": "/images/cute.png",
+            "value": 3
+        },
+        {
+            "name": "Goal 2",
+            "color": "#dda73a",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 4
+        },
+        {
+            "name": "Goal 3",
+            "color": "#4d9f38",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 7
+        },
+        {
+            "name": "Goal 4",
+            "color": "#c5192d",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 6
+        },
+        {
+            "name": "Goal 5",
+            "color": "#ff3b21",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 6
+        },
+        {
+            "name": "Goal 6",
+            "color": "#26bce2",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 2
+        },
+        {
+            "name": "Goal 7", 
+            "color": "#fcc40b",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 2
+        },
+        {
+            "name": "Goal 8", 
+            "color": "#a21942",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 7
+        },
+        {
+            "name": "Goal 9",
+            "color": "#fd6925",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 2
+        },
+        {
+            "name": "Goal 10",
+            "color": "#dd1367",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 4
+        },
+        {
+            "name": "Goal 11",
+            "color": "#fd9b24",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 2
+        },
+        {
+            "name": "Goal 12",
+            "color": "#bf8a2e",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 2
+        },
+        {
+            "name": "Goal 13",
+            "color": "#3f7e44",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 4
+        },
+        {
+            "name": "Goal 14",
+            "color": "#0a98d9",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 7
+        },
+        {
+            "name": "Goal 15",
+            "color": "#55c02b",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 3
+        },
+        {
+            "name": "Goal 16",
+            "color": "#00699d",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 5
+        },
+        {
+            "name": "Goal 17",
+            "color": "#19486a",
+            "link": "",
+            "icon": "/images/cute.png",
+            "value": 14
+        }
+    ]
+}
