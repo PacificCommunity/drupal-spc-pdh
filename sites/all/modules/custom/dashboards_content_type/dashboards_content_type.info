@@ -1,7 +1,7 @@
 name = Dashboards content type
 core = 7.x
 package = Features
-version = 7.x-1.11
+version = 7.x-1.12
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = entityreference
@@ -15,6 +15,7 @@ dependencies[] = jquery_colorpicker
 dependencies[] = node
 dependencies[] = nodequeue
 dependencies[] = page_manager
+dependencies[] = spc_chart
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views

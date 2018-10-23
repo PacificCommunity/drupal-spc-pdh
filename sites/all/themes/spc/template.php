@@ -126,6 +126,12 @@ function spc_preprocess_field(&$vars,$hook) {
     $datasets_info = $resp->data->results;
     $vars['element']['datasets_info'] = $datasets_info;
   }
+
+  if ($vars['element']['#bundle'] == 'field_dsp_targets' && $vars['element']['#field_name'] == 'field_title') {
+    $target_title = $vars['element']['#items'][0]['value'];
+    $vars['items'][0]['#prefix'] = '<span id="'.drupal_html_class($target_title).'">';
+    $vars['items'][0]['#suffix'] = '</span>';
+  }
 }
 
 function spc_preprocess_maintenance_page(){
