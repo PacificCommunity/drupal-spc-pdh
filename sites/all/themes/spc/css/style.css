@@ -8705,6 +8705,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .node-type-thematic-group .latest-tweets-block {
   padding: 37px 0 98px;
 }
+.node-type-thematic-group .latest-tweets-block h2 {
+  margin-bottom: 40px;
+}
 .panel-style-narrow {
   padding: 35px 0px 50px 0px;
   font-family: "Calibri Light";
