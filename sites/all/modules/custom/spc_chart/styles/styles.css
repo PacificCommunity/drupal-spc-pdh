@@ -26,6 +26,10 @@ svg {
   letter-spacing: 2px; 
 }
 
+.bar-label {
+  font-size: 10px;
+}
+
 .tooltip {
   position: absolute;
   height: auto;

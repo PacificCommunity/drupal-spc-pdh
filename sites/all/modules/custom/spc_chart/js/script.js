@@ -190,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
         .data(barsNames)
         .enter()
       .append("text")
+        .attr("class", "bar-label")
         .style("text-anchor", "middle")
         .style("fill", function(d, i) {return "#3e3e3e";})
       .append("textPath")
