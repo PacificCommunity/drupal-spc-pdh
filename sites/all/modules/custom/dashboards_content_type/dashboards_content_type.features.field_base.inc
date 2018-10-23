@@ -107,6 +107,35 @@ function dashboards_content_type_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_interactive_chart_source'.
+  $field_bases['field_interactive_chart_source'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_interactive_chart_source',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
+  );
+
   // Exported field_base: 'field_main_image'.
   $field_bases['field_main_image'] = array(
     'active' => 1,
