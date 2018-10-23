@@ -15,7 +15,7 @@
     $fa_icon = $current_node->field_fa_icon[LANGUAGE_NONE][0]['value'] ?? null;
 ?>
 
-<div class="thematic-heading-block">
+<div class="thematic-heading-block container">
 	<div class="dropdown">
 	  <button type="button" id="thematic_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       <?php if ($fa_icon): ?>
