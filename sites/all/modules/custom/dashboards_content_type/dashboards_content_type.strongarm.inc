@@ -160,6 +160,9 @@ function dashboards_content_type_strongarm() {
         'path' => array(
           'weight' => '30',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
