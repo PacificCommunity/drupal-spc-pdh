@@ -1,9 +1,20 @@
 document.addEventListener("DOMContentLoaded", function(e) {
   var modulePath = "/"+Drupal.settings.spcChart.path;
 
+  var valuesDescription = [
+    "Tier 3 indicator. No established methodology",
+    "None, or insufficient country data",
+    "No achievement against the goal",
+    "Minimal achievement",
+    "Some achievement",
+    "Average Progress",
+    "Good Progress",
+    "Goal is fully achieved"
+  ]
+
   var width = 1170,
     height = 1170,
-     radius = (Math.min(width, height) / 2) - 10;
+    radius = (Math.min(width, height) / 2) - 10;
 
   var chartBlock = d3.select("#sdgChart");
   var svg = chartBlock.append("svg")
@@ -151,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
           div.transition()		
               .duration(200)		
               .style("opacity", .9);		
-          div	.html(d.description)	
+          div.html(d.description + '<br><b><i>' + valuesDescription[d.value] + '</i></b>')	
               .style("left", (d3.event.pageX) + "px")		
               .style("top", (d3.event.pageY - 28) + "px");	
           })					

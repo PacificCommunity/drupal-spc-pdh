@@ -13,7 +13,7 @@
   height: auto; 
 }
 
-svg {
+#sdgChart svg {
   display: inline-block;
   position: absolute;
   top: 0;
