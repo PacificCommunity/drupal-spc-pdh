@@ -104,8 +104,67 @@ function spc_preprocess_field(&$vars,$hook) {
       break;
   }
 
+  if ($vars['element']['#field_name'] == 'field_dsp_datasets') {
+    $datasets_names = !empty($vars['element']['#items']) ? $vars['element']['#items'] : [];
+    $names = array();
+    foreach ($datasets_names as $id => $item) {
+      $names[] = $item['value'];
+    }
+    $names_str = '('.join(' OR ', $names).')';
+
+    $params = array(
+      'fq' => 'name:'.$names_str
+    );
+    try {
+      $client = govcms_ckan_client();
+      $resp = $client->get('action/package_search', $params);
+    }
+    catch (Exception $e) {
+      watchdog_exception('dashboard_secondary_page', $e);
+    }
+
+    $datasets_info = $resp->data->results;
+    $vars['element']['datasets_info'] = $datasets_info;
+  }
+
+  if ($vars['element']['#bundle'] == 'field_dsp_targets' && $vars['element']['#field_name'] == 'field_title') {
+    $target_title = $vars['element']['#items'][0]['value'];
+    $vars['items'][0]['#prefix'] = '<span id="'.drupal_html_class($target_title).'">';
+    $vars['items'][0]['#suffix'] = '</span>';
+  }
 }
 
 function spc_preprocess_maintenance_page(){
   //  kpr($vars['content']);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
+  $node = menu_get_object();
+  $id = _ckan_tweaks_get_thematic_area_from_node($node);
+  if ($id) {
+    $form['thematic_area'] = [
+      '#type' => 'hidden',
+      '#value' => $id
+    ];
+
+    $form['search_type_container'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('search-type-container'))
+    );
+    $form['search_type_container']['search_type'] = [
+      '#type' => 'select',
+      '#default_value' => 'article',
+      '#options' => [
+        'article' => t('Article'),
+        'dataset' => t('Dataset')
+      ],
+      '#required' => TRUE,
+    ];
+    
+    // Put submit after newly added fields
+    $form['submit']['#weight'] = 10;
+  }
 }

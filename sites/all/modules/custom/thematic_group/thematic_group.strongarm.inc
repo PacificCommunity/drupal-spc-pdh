@@ -14,7 +14,7 @@ function thematic_group_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_thematic_group';
-  $strongarm->value = 'edit-display';
+  $strongarm->value = 'edit-submission';
   $export['additional_settings__active_tab_thematic_group'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -90,6 +90,13 @@ function thematic_group_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_extras_field_template';
+  $strongarm->value = 1;
+  $export['ds_extras_field_template'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__thematic_group';
   $strongarm->value = array(
     'view_modes' => array(
@@ -114,17 +121,76 @@ function thematic_group_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'article_view_on_homepage' => array(
+        'custom_settings' => FALSE,
+      ),
+      'related_articles_and_publication' => array(
+        'custom_settings' => FALSE,
+      ),
+      'group_with_icon' => array(
+        'custom_settings' => TRUE,
+      ),
+      'similar_posts' => array(
+        'custom_settings' => FALSE,
+      ),
+      'topic_preview' => array(
+        'custom_settings' => TRUE,
+      ),
+      'dashboards_preview' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_individual_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_list_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_on_topic_page' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '-5',
         ),
+        'path' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__thematic_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fontawesome_external';
+  $strongarm->value = array(
+    'use_cdn' => 0,
+    'external_location' => 'https://use.fontawesome.com/releases/v5.1.1/js/all.js',
+  );
+  $export['fontawesome_external'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fontawesome_shim';
+  $strongarm->value = array(
+    'use_shim' => 1,
+    'external_location' => '',
+  );
+  $export['fontawesome_shim'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -183,8 +249,15 @@ function thematic_group_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'panels_everywhere_site_template_enabled';
+  $strongarm->value = TRUE;
+  $export['panels_everywhere_site_template_enabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_thematic_group_pattern';
-  $strongarm->value = '[node:content-type]/[node:title]';
+  $strongarm->value = 'topic/[node:title]';
   $export['pathauto_node_thematic_group_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -1,23 +1,26 @@
-<div class="col-md-3">
-    <div class="panel panel-primary ">
-	<div class="panel-title dataset-title">
-	    <a href="<?= $dataset['ckan_url'] ?>">
-		<?= $dataset['title'] ?>
-	    </a>
-
-	</div>
-	<div class="panel-body">
-	    <div class="media">
-		<div class="media-left">
-		    <div class="col-xs-6 col-md-12">
-			<img width="100%" class="media-object" src="<?= $dataset['image_url'] ?>" alt="...">
-		    </div>
+<div class="dataset-preview">
+	<div class="dataset-preview-inner">
+		<p class="dataset-title">
+			<a href="<?= $dataset['ckan_url'] ?>">
+				<?= $dataset['title'] ?>
+			</a>
+		</p>
+		<div class="dataset-groups">
+			<p>
+				<img width="100%" class="media-object" src="<?= $dataset['image_url'] ?>" alt="..." title="<?= $dataset['organization'] ?>"> 
+			</p>
 		</div>
-		<div class="col-md-12">
-		    <?= $dataset['description'] ?>
+		<p class="dataset-date"><label><?php print t('Release Date'); ?>:</label> <span><?= $dataset['release_date'] ?></span></p>
+		<div class="dataset-formats"><label><?php print t('File Format'); ?>:</label>
+			<?php foreach ($dataset['resources'] as $res) { ?>
+				<span>
+					<?php if ($res->format) {
+						print(strtoupper($res->format));
+					} else {
+						print('DATA');
+					} ?>
+				</span>
+			<?php } ?>
 		</div>
-	    </div>
-
 	</div>
-    </div>
 </div>

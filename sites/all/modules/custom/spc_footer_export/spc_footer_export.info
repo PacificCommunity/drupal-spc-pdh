@@ -1,0 +1,6 @@
+name = SPC Footer Export
+description = Export Drupal Footer
+package = public-action
+version = VERSION
+core = 7.x
+files[] = spc_footer_export.module

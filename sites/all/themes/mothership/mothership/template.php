@@ -137,14 +137,14 @@ function mothership_preprocess(&$vars, $hook) {
 
     //--- modernizr love CDN style for the lazy ones
     if (theme_get_setting('mothership_modernizr')) {
-      drupal_add_js('http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js', 'external');
+      drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js', 'external');
     }
 
     //---- selectivizr
     $vars['selectivizr'] = '';
     if(theme_get_setting('mothership_selectivizr')) {
       $vars['selectivizr'] .= '<!--[if (gte IE 6)&(lte IE 8)]>' . "\n";;
-      $vars['selectivizr'] .= '<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>' . "\n";;
+      $vars['selectivizr'] .= '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>' . "\n";;
       $vars['selectivizr'] .= '<![endif]-->' . "\n";;
     }
 
