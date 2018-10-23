@@ -12,6 +12,8 @@ function spc_chart_init() {
 
 function spc_chart_preprocess_field(&$variables) {
 	if ($variables['element']['#bundle'] == 'dashboards' && $variables['element']['#field_name'] == 'field_body_text') {
-		$variables['items'][0]['#prefix'] = '<h2>SDGs Progress Wheels</h2><div id="sdgChart"></div>';
+		if (!empty($variables['element']['#object']->field_interactive_chart_source)) {
+			$variables['items'][0]['#prefix'] = '<h2>SDGs Progress Wheels</h2><div id="sdgChart"></div>';
+		}
 	}
 }
