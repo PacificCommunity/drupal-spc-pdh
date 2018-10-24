@@ -4,13 +4,17 @@
   padding-bottom: 100%;
   overflow: hidden;
 }
+
 #sdgChart .center-image {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 24%;
-  height: auto; 
+  height: 24%;
+  background-size: cover;
+  border: 5px solid #fff;
+  border-radius: 50%;
 }
 
 #sdgChart svg {
@@ -21,16 +25,16 @@
   font-family: sans-serif; 
 }
 
-.domain-text {
+#sdgChart .domain-text {
   text-transform: uppercase;
   letter-spacing: 2px; 
 }
 
-.bar-label {
+#sdgChart .bar-label {
   font-size: 10px;
 }
 
-.tooltip {
+.tooltip.chart-tooltip {
   position: absolute;
   height: auto;
   width: 400px;
