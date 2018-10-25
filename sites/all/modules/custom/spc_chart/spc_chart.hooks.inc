@@ -23,21 +23,41 @@ function spc_chart_preprocess_field(&$variables) {
 				$countries = $cached->data;
 			}
 			if (empty($countries)) {
-
 				$file_url = $variables['element']['#object']->field_interactive_chart_source[LANGUAGE_NONE][0]['url'];
-				$file = system_retrieve_file($file_url, NULL, FALSE, FILE_EXISTS_REPLACE);
-				// $file = system_retrieve_file('hhttp://example.com/ddd', NULL, FALSE, FILE_EXISTS_REPLACE);
-				// print("<pre>".print_r($file,true)."</pre>");
+				$file = system_retrieve_file($file_url, NULL, TRUE, FILE_EXISTS_REPLACE);
 
-				$filecontent = file_get_contents($file);
+				$node_title = $variables['element']['#object']->title;
+				$new_filename = drupal_html_class($node_title).'.xlsx';
+
+				if (empty($file)) {
+					watchdog('spc_chart', 'Can\'t download a file from '.$file_url.'. Existed file "'.$new_filename.'" will be using.');
+					$files = file_load_multiple(array(), array('uri' => 'public://'.$new_filename));
+					if (empty($files)) {
+						watchdog('spc_chart', 'File "'.$new_filename.'" doesn\'t exist!');
+						return;
+					}
+					$result = reset($files);
+				} else {
+					watchdog('spc_chart', 'Downloaded file from '.$file_url);
+					$file_info = pathinfo($file->uri);
+					if ($file_info['extension'] != 'xlsx') {
+						watchdog('spc_chart', 'File extension is incorrect! Must be "xlsx".');
+						return;
+					}
+
+					$new_destination = str_replace($file->filename, $new_filename, $file->uri);
+					$file->filename = $new_filename;
+					$result = file_move($file, $new_destination, FILE_EXISTS_REPLACE);
+				}
+
+				$filecontent = file_get_contents($result->uri);
 				$tmpfname = tempnam(sys_get_temp_dir(),"tmpxls");
 				file_put_contents($tmpfname,$filecontent);
-				
+
 				$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 				$excelObj = $excelReader->load($tmpfname);
 				$worksheet = $excelObj->getSheet(0);
 				$countries = array();
-				
 
 				$columns = range('B', 'S');
 				$rows = range(1, 81);
@@ -60,11 +80,10 @@ function spc_chart_preprocess_field(&$variables) {
 						}
 					}
 				}
-				// cache_set('sdgChartData', $countries, 'cache', time() + 60*60*24);
+				cache_set('sdgChartData', $countries, 'cache', time() + 60*60*24);
 			}
 			drupal_add_js(array('spcChart' => array('countriesData' => $countries)), array('type' => 'setting'));
 			$variables['items'][0]['#prefix'] = '<h2>SDGs Progress Wheels</h2><div id="sdgChart"></div>';
 		}
 	}
 }
- 
