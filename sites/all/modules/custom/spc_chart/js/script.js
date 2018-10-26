@@ -73,6 +73,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
     var select = d3.select("#sdgChartCountries")
     .on("change", changeCountry);
 
+    var barTooltip = d3.select("body").append("div")	
+      .attr("class", "tooltip chart-tooltip")				
+      .style("opacity", 0);
+
+    var goalTooltip = d3.select("body").append("div")	
+      .attr("class", "tooltip chart-tooltip goals-t")				
+      .style("opacity", 0);
+
     var options = select.selectAll("option")
         .data(Object.keys(countriesData))
         .enter()
@@ -97,6 +105,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
       .append("a")
         .attr("xlink:href", function(d) {return d.data.link;})
         .attr("target", "_blank")
+        .on("mouseover", function(d) {		
+          goalTooltip.transition()		
+            .duration(200)		
+            .style("opacity", .9);		
+          goalTooltip.html("Go to " + d.data.title)	
+            .style("left", (d3.event.pageX) + "px")		
+            .style("top", (d3.event.pageY - 28) + "px")
+          })
+        .on("mouseout", function(d) {		
+          goalTooltip.transition()		
+            .duration(500)
+            .style("opacity", 0)
+        });
 
     goals.append("path")
       .attr("class", "goal")
@@ -156,10 +177,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
       .endAngle(function(d,i) { return ((i+1) * 1 * Math.PI) / (numBarsData/2); })
       .innerRadius(100)
       .padAngle(.01);
-     
-    var div = d3.select("body").append("div")	
-      .attr("class", "tooltip chart-tooltip")				
-      .style("opacity", 0);
 
     var goal = svg.selectAll(".bar")
         .data(data)
@@ -179,17 +196,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
         .each(function(d) { d.outerRadius = 0; })
         .attr("d", arc)
         .on("mouseover", function(d) {		
-          div.transition()		
-              .duration(200)		
-              .style("opacity", .9);		
-          div.html(d.description + '<br><b><i>' + valuesDescription[d.value] + '</i></b>')	
-              .style("left", (d3.event.pageX) + "px")		
-              .style("top", (d3.event.pageY - 28) + "px");	
+          barTooltip.transition()		
+            .duration(200)		
+            .style("opacity", .9);		
+          barTooltip.html(d.description + "<br><b><i>" + valuesDescription[d.value] + "</i></b>")
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 28) + "px")
           })					
         .on("mouseout", function(d) {		
-            div.transition()		
-                .duration(500)		
-                .style("opacity", 0);	
+          barTooltip.transition()		
+            .duration(500)
+            .style("opacity", 0)
         });
 
     var updateBars = function(data) {
@@ -215,17 +232,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
             .each(function(d) { d.outerRadius = 0; })
             .attr("d", arc)
             .on("mouseover", function(d) {		
-              div.transition()		
-                  .duration(200)		
-                  .style("opacity", .9);		
-              div.html(d.description + '<br><b><i>' + valuesDescription[d.value] + '</i></b>')	
-                  .style("left", (d3.event.pageX) + "px")		
-                  .style("top", (d3.event.pageY - 28) + "px");	
+              barTooltip.transition()		
+                .duration(200)
+                .style("opacity", .9);
+              barTooltip.html(d.description + "<br><b><i>" + valuesDescription[d.value] + "</i></b>")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px")
               })					
             .on("mouseout", function(d) {		
-                div.transition()		
-                    .duration(500)		
-                    .style("opacity", 0);	
+              barTooltip.transition()
+                .duration(500)
+                .style("opacity", 0)
             });
 
         segments.transition().duration(1000)
