@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(e) {
-
+jQuery(document).ready(function() {
   var modulePath = "/"+Drupal.settings.spcChart.path;
 
   var valuesDescription = [
@@ -34,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     .sort(null);
 
   var chartBlock = d3.select("#sdgChart");
+
+  // console.log(d3.select("#select2-sdgChartCountries-container"))
 
   var svg = chartBlock.append("svg")
       .attr("preserveAspectRatio", "xMinYMin meet")
@@ -70,8 +71,29 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
   d3.json(modulePath+"/data/goals.json").then(function(data) {
 
-    var select = d3.select("#sdgChartCountries")
-    .on("change", changeCountry);
+    var select = d3.select("#sdgChartCountries");
+
+    select.selectAll("option")
+        .data(Object.keys(countriesData))
+        .enter()
+      .append("option")
+        .text(function (d) { return d; });
+
+    jQuery('#sdgChartCountries').select2({
+      width: '250px'
+    });
+
+    jQuery("#sdgChartCountries").on("select2:select", function(e) {
+      selectValue = d3.select("select").property("value");
+      let i = 0;
+      data.forEach(element => {
+        element.barsData.forEach((item) => {
+          item["value"] = countriesData[selectValue][i];
+          i += 1;
+        })
+      })
+      updateBars(data);
+    });
 
     var barTooltip = d3.select("body").append("div")	
       .attr("class", "tooltip chart-tooltip")				
@@ -80,24 +102,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
     var goalTooltip = d3.select("body").append("div")	
       .attr("class", "tooltip chart-tooltip goals-t")				
       .style("opacity", 0);
-
-    var options = select.selectAll("option")
-        .data(Object.keys(countriesData))
-        .enter()
-      .append("option")
-        .text(function (d) { return d; });
-
-    function changeCountry() {
-        selectValue = d3.select("select").property("value")
-        let i = 0;
-        data.forEach(element => {
-          element.barsData.forEach((item) => {
-            item["value"] = countriesData[selectValue][i];
-            i += 1;
-          })
-        });
-        updateBars(data);
-      };
 
     var goals = svg.selectAll(".goal")
         .data(pie(data))
