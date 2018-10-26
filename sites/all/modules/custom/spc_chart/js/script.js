@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(e) {
+
   var modulePath = "/"+Drupal.settings.spcChart.path;
 
   var valuesDescription = [
@@ -11,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     "Good Progress",
     "Goal is fully achieved"
   ]
+
+  var countriesData = Drupal.settings.spcChart.countriesData;
 
   var width = 1170,
     height = 1170,
@@ -31,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     .sort(null);
 
   var chartBlock = d3.select("#sdgChart");
+
   var svg = chartBlock.append("svg")
       .attr("preserveAspectRatio", "xMinYMin meet")
       .attr("viewBox", "0 0 1170 1170")
@@ -66,14 +70,26 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
   d3.json(modulePath+"/data/goals.json").then(function(data) {
 
-    var countriesData = Drupal.settings.spcChart.countriesData;
-    let i = 0;
-    data.forEach(element => {
-      element.barsData.forEach((item) => {
-        item['value'] = countriesData['australia'][i];
-        i += 1;
-      })
-    });
+    var select = d3.select("#sdgChartCountries")
+    .on("change", changeCountry);
+
+    var options = select.selectAll("option")
+        .data(Object.keys(countriesData))
+        .enter()
+      .append("option")
+        .text(function (d) { return d; });
+
+    function changeCountry() {
+        selectValue = d3.select("select").property("value")
+        let i = 0;
+        data.forEach(element => {
+          element.barsData.forEach((item) => {
+            item["value"] = countriesData[selectValue][i];
+            i += 1;
+          })
+        });
+        updateBars(data);
+      };
 
     var goals = svg.selectAll(".goal")
         .data(pie(data))
@@ -107,21 +123,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     // Inner bar chart
     var barHeight = 445;
-    
+
+    var barsNames = [];
+    var i = 0;
     data.forEach(element => {
       element.barsData.forEach(item => {
-        item['color'] = element.color;
+        barsNames.push(item.name);
+        item["color"] = element.color;
+        item["value"] = countriesData["Australia"][i];
+        i += 1;
       })
     });
 
-    var barsNames = [];
-    data.forEach(item => {
-      item.barsData.forEach(i => {
-        barsNames.push(i.name);
-      })
-    })
     var numBarsData = barsNames.length;
-
+   
     var barScale = d3.scaleLinear()
       .domain([0, d3.max(data, function(d) { return d3.max(d.barsData, function(d) { return d.value; }); })])
       .range([0, barHeight]);
@@ -141,6 +156,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
       .endAngle(function(d,i) { return ((i+1) * 1 * Math.PI) / (numBarsData/2); })
       .innerRadius(100)
       .padAngle(.01);
+     
+    var div = d3.select("body").append("div")	
+      .attr("class", "tooltip chart-tooltip")				
+      .style("opacity", 0);
 
     var goal = svg.selectAll(".bar")
         .data(data)
@@ -148,23 +167,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
       .append("g")
         .attr("class", "bar")
         .attr("transform", function(d,i) { return "rotate(" + (countRotate(i)) + ")"; });
-    
-    var div = d3.select("body").append("div")	
-        .attr("class", "tooltip chart-tooltip")				
-        .style("opacity", 0);
 
     var segments = goal.selectAll("path")
         .data(function(d) { return d.barsData; })
         .enter()
       .append("a")
         .attr("xlink:href", function(d) {return d.link;})
-        .attr("target", "_blank")
-      .append("path")
+        .attr("target", "_blank");
+
+      segments.append("path")
         .each(function(d) { d.outerRadius = 0; })
-        .style("fill", function (d) { return d.value === 1 ? "#b4b5b4" : (d.value === 0 ? "transparent" : (d.value === 2 ? "#fff" : d.color)); })
-        .style("stroke", function (d) {return d.value === 0 ? "#b4b5b4" : ""; })
-        .style("stroke-width", function (d) {return d.value === 0 ? "2px" : ""; })
-        .style("stroke-dasharray", function (d) {return d.value === 0 ? "2,2" : ""; })
         .attr("d", arc)
         .on("mouseover", function(d) {		
           div.transition()		
@@ -180,21 +192,64 @@ document.addEventListener("DOMContentLoaded", function(e) {
                 .style("opacity", 0);	
         });
 
-    segments.transition().duration(1000)
-      .attrTween("d", function(d,index) {
-        var i = d3.interpolate(d.outerRadius, barScale(d.value === 0 || d.value === 1 || d.value === 2 ? 7 : d.value));
-        return function(t) { d.outerRadius = i(t); return arc(d,index); };
-      });
+    var updateBars = function(data) {
+        var goal = svg.selectAll(".bar").data(data);
+        goal.exit().remove();
+
+        goal.enter()
+          .append("g")
+            .attr("class", "bar")
+            .attr("transform", function(d,i) { return "rotate(" + (countRotate(i)) + ")"; });
+
+        var segments = goal.selectAll("path")
+            .data(function(d) { return d.barsData; });
+         
+        segments.exit().remove();
+        segments.enter()
+          .append("a")
+            .attr("xlink:href", function(d) {return d.link;})
+            .attr("target", "_blank");
+
+        segments.enter()
+          .append("path")
+            .each(function(d) { d.outerRadius = 0; })
+            .attr("d", arc)
+            .on("mouseover", function(d) {		
+              div.transition()		
+                  .duration(200)		
+                  .style("opacity", .9);		
+              div.html(d.description + '<br><b><i>' + valuesDescription[d.value] + '</i></b>')	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", (d3.event.pageY - 28) + "px");	
+              })					
+            .on("mouseout", function(d) {		
+                div.transition()		
+                    .duration(500)		
+                    .style("opacity", 0);	
+            });
+
+        segments.transition().duration(1000)
+          .attrTween("d", function(d,index) {
+            var i = d3.interpolate(d.outerRadius, barScale(d.value === 0 || d.value === 1 || d.value === 2 ? 7 : d.value));
+            return function(t) { d.outerRadius = i(t); return arc(d,index); };
+          })
+          .style('fill', function (d) { return d.value === 1 ? "#b4b5b4" : (d.value === 0 ? "transparent" : (d.value === 2 ? "#fff" : d.color)); })
+          .style("stroke", function (d) {return d.value === 0 ? "#b4b5b4" : ""; })
+          .style("stroke-width", function (d) {return d.value === 0 ? "2px" : ""; })
+          .style("stroke-dasharray", function (d) {return d.value === 0 ? "2,2" : ""; });
+    }
+
+    updateBars(data);
 
     svg.selectAll("circle")
         .data(x.ticks(5))
         .enter()
-      .append("circle")
-        .attr("r", function(d) {return barScale(d);})
-        .style("fill", "none")
-        .style("stroke", "black")
-        .style("stroke-dasharray", "2,2")
-        .style("stroke-width",".5px");
+    .append("circle")
+      .attr("r", function(d) {return barScale(d);})
+      .style("fill", "none")
+      .style("stroke", "black")
+      .style("stroke-dasharray", "2,2")
+      .style("stroke-width",".5px");
 
     var labelRadius = barHeight * 1.025;
     var labels = svg.append("g")
