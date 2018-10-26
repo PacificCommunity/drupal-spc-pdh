@@ -45,3 +45,8 @@
   border-radius: 6px;
   pointer-events: none; 
 }
+.tooltip.chart-tooltip.goals-t {
+  width: auto;
+  color: #fff;
+  background: #393f45;
+}
