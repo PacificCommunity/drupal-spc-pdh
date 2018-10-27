@@ -9912,6 +9912,16 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   .thematic-group-articles .field-type-entityreference .field-items .field-item.even {
     margin-left: 0;
   }
+  .node-type-dashboards div#tabs .tabs.primary {
+    padding-left: 0;
+  }
+  .node-type-dashboards div#tabs .tabs.primary li {
+    display: block;
+  }
+  .node-type-dashboards div#tabs .tabs.primary li a {
+    display: block;
+    width: 100%;
+  }
 }
 @media (max-width: 488px) {
   #mini-panel-home_banner .spc-home-banner-block #ckan-search-form > div input {
