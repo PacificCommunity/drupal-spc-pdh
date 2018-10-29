@@ -7,7 +7,7 @@ if (isset($libraries['PHPExcel'])) {
 require_once $phpExcel.'/Classes/PHPExcel.php';
 
 function spc_chart_preprocess_field(&$variables) {
-	if ($variables['element']['#bundle'] == 'dashboards' && $variables['element']['#field_name'] == 'field_body_text') {
+	if ($variables['element']['#bundle'] == 'dashboards' && $variables['element']['#field_name'] == 'field_interactive_chart_source') {
 		if (!empty($variables['element']['#object']->field_interactive_chart_source)) {
 			if ($cached = cache_get('sdgChartData', 'cache')) {
 				$countries = $cached->data;
@@ -77,9 +77,6 @@ function spc_chart_preprocess_field(&$variables) {
 			drupal_add_js($module_path . '/js/select2.min.js');
 			drupal_add_js($module_path . '/js/d3.v5.min.js');
 			drupal_add_js($module_path . '/js/script.js');
-
-			$variables['items'][0]['#prefix'] = '<h2>SDGs Progress Wheels</h2><select id="sdgChartCountries"></select>';
-			$variables['items'][0]['#prefix'] .= '<div id="sdgChart"></div>';
 		}
 	}
 }
