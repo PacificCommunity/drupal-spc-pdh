@@ -29,6 +29,25 @@ function dashboards_content_type_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_chart_help_text'.
+  $field_bases['field_chart_help_text'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_chart_help_text',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_ckan_tags'.
   $field_bases['field_ckan_tags'] = array(
     'active' => 1,

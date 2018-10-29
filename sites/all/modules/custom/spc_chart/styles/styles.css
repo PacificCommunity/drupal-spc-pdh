@@ -1,28 +1,24 @@
 #sdgChart {
   position: relative; 
   width: 100%;
-  padding-bottom: 100%;
+  margin: 10px auto 0;
   overflow: hidden;
 }
 
 #sdgChart .center-image {
   position: absolute;
-  top: 50%;
+  top: 38%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 24%;
-  height: 24%;
+  transform: translateX(-50%);
+  width: 13%;
+  height: 20%;
   background-size: cover;
   border: 5px solid #fff;
   border-radius: 50%;
 }
 
 #sdgChart svg {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-family: sans-serif; 
+  font-family: sans-serif;
 }
 
 #sdgChart .domain-text {
@@ -31,7 +27,7 @@
 }
 
 #sdgChart .bar-label {
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .tooltip.chart-tooltip {
@@ -49,4 +45,22 @@
   width: auto;
   color: #fff;
   background: #393f45;
+}
+#chart h2 {
+  font-family: "Calibri Light";
+  font-size: 28;
+}
+#chart .select2-container .select2-selection--single {
+  height: 24px;
+}
+#chart .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 24px;
+}
+.chart-help-text {
+  font-family: "Calibri Light";
+  font-size: 17px;
+  line-height: 1.75em;
+  font-weight: 300;
+  color: #2a2c2d;
+  padding-bottom: 90px;
 }
