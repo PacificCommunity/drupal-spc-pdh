@@ -79,6 +79,35 @@ function dashboards_content_type_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_chart_settings|node|dashboards|form';
+  $field_group->group_name = 'group_chart_settings';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dashboards';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Chart settings',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_interactive_chart_source',
+      1 => 'field_chart_help_text',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-chart-settings field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_chart_settings|node|dashboards|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_logo|node|dashboards|full';
   $field_group->group_name = 'group_logo';
   $field_group->entity_type = 'node';
@@ -138,6 +167,7 @@ function dashboards_content_type_field_group_info() {
   // Included for use with string extractors like potx.
   t('Banner');
   t('Body');
+  t('Chart settings');
   t('Find data');
   t('Logo');
 
