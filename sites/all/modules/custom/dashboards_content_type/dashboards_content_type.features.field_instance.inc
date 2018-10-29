@@ -60,7 +60,60 @@ function dashboards_content_type_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 34,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-dashboards-field_chart_help_text'.
+  $field_instances['node-dashboards-field_chart_help_text'] = array(
+    'bundle' => 'dashboards',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'dashboards_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_chart_help_text',
+    'label' => 'Interactive chart help text',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 10,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 10,
     ),
   );
 
@@ -113,7 +166,7 @@ function dashboards_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 7,
     ),
   );
 
@@ -184,7 +237,7 @@ function dashboards_content_type_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 32,
+      'weight' => 3,
     ),
   );
 
@@ -241,7 +294,7 @@ function dashboards_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 35,
+      'weight' => 6,
     ),
   );
 
@@ -312,7 +365,7 @@ function dashboards_content_type_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 37,
+      'weight' => 9,
     ),
   );
 
@@ -375,7 +428,7 @@ function dashboards_content_type_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 33,
+      'weight' => 4,
     ),
   );
 
@@ -384,6 +437,7 @@ function dashboards_content_type_field_default_field_instances() {
   t('Body text');
   t('CKAN Tags');
   t('Icon/Logo');
+  t('Interactive chart help text');
   t('Interactive chart source');
   t('Main image');
   t('Secondary Dashboard pages');

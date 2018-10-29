@@ -14,11 +14,11 @@ jQuery(document).ready(function() {
 
   var countriesData = Drupal.settings.spcChart.countriesData;
 
-  var width = 1170,
-    height = 1170,
+  var width = 768,
+    height = 768,
     radius = (Math.min(width, height) / 2) - 10,
     domainWidth = 25,
-    goalWidth = 100;
+    goalWidth = 80;
 
   var domains_arc = d3.arc()
     .innerRadius(radius - domainWidth)
@@ -34,11 +34,9 @@ jQuery(document).ready(function() {
 
   var chartBlock = d3.select("#sdgChart");
 
-  // console.log(d3.select("#select2-sdgChartCountries-container"))
-
   var svg = chartBlock.append("svg")
       .attr("preserveAspectRatio", "xMinYMin meet")
-      .attr("viewBox", "0 0 1170 1170")
+      .attr("viewBox", "-225 0 1220 800")
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 
@@ -134,20 +132,20 @@ jQuery(document).ready(function() {
     goals.append("image")
       .attr("xlink:href",function(d,i){return modulePath+d.data.icon;})
       .attr("x", function(d){
-        return (goals_arc.centroid(d)[0] - 25);
+        return (goals_arc.centroid(d)[0] - 15);
       })
       .attr("y", function(d){
-        return (goals_arc.centroid(d)[1] - 25);
+        return (goals_arc.centroid(d)[1] - 15);
       })
-      .attr("width", "50")
-      .attr("height", "50");
+      .attr("width", "30")
+      .attr("height", "30");
 
     chartBlock.append("div")
       .attr("class", "center-image")
       .style("background", "#71a2d6 url("+modulePath+"/images/center-image.svg) no-repeat 50% 50%");
 
     // Inner bar chart
-    var barHeight = 445;
+    var barHeight = 275;
 
     var barsNames = [];
     var i = 0;
@@ -179,7 +177,7 @@ jQuery(document).ready(function() {
     var arc = d3.arc()
       .startAngle(function(d,i) { return (i * 1 * Math.PI) / (numBarsData/2); })
       .endAngle(function(d,i) { return ((i+1) * 1 * Math.PI) / (numBarsData/2); })
-      .innerRadius(100)
+      .innerRadius(75)
       .padAngle(.01);
 
     var goal = svg.selectAll(".bar")
