@@ -64,3 +64,11 @@
   color: #2a2c2d;
   padding-bottom: 90px;
 }
+
+@media (max-width: 425px) {
+  .tooltip.chart-tooltip {
+    width: 200px;
+    line-height: 1.2;
+    padding: 0 5px;
+  }
+}
