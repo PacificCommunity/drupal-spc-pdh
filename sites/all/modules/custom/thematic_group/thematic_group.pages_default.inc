@@ -298,7 +298,7 @@ function thematic_group_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Articles and Publications',
+    'override_title_text' => 'Articles',
     'override_title_heading' => 'h2',
     'arguments' => array(
       'nid' => '',
