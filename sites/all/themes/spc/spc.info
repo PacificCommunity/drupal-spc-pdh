@@ -76,6 +76,7 @@ scripts[] = js/ma5-mobile-menu.js
 
 ; https://github.com/liabru/jquery-match-height
 scripts[] = js/jquery.matchHeight.js
+scripts[] = js/jquery.nice-select.min.js
 
 scripts[] = js/slick.min.js
 scripts[] = js/jquery.dotdotdot.js
