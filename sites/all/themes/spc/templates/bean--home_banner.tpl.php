@@ -83,7 +83,7 @@
         if ($cached_dataset_count) {
           $datasets_count = $cached_dataset_count->data;
         } else {
-          $datasets_count = $thematic_id ? _ckan_tweaks_count_datasets_for_thematic_area($thematic_id) : '0';
+          $datasets_count = $thematic_id ? (_ckan_tweaks_count_datasets_for_thematic_area($thematic_id) - _ckan_tweaks_count_publications_for_thematic_area($thematic_id)) : '0';
           cache_set('datasets_count'.$node->nid, $datasets_count, 'cache', time(), 60*60*6);
         }
 
