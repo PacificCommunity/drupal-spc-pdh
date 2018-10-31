@@ -161,6 +161,80 @@ function dashboards_content_type_default_page_manager_handlers() {
   $pane->uuid = 'd77fbd0e-fe3c-493b-ae43-489aacb1b58b';
   $display->content['new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b'] = $pane;
   $display->panels['one_fw_main'][2] = 'new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b';
+  $pane = new stdClass();
+  $pane->pid = 'new-179b9d45-cc36-4b03-81a3-f79c7458245d';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_interactive_chart_source';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'link_default',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '179b9d45-cc36-4b03-81a3-f79c7458245d';
+  $display->content['new-179b9d45-cc36-4b03-81a3-f79c7458245d'] = $pane;
+  $display->panels['one_fw_main'][3] = 'new-179b9d45-cc36-4b03-81a3-f79c7458245d';
+  $pane = new stdClass();
+  $pane->pid = 'new-ee757a18-bc47-4feb-a6b1-b400f372f355';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_chart_help_text';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'smart_trim_format',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'trim_length' => '300',
+      'trim_type' => 'chars',
+      'trim_suffix' => '...',
+      'trim_link' => '0',
+      'more_link' => '0',
+      'more_text' => 'Read more',
+      'trim_options' => array(
+        'text' => 0,
+      ),
+      'trim_preserve_tags' => '',
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container chart-help-text',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'ee757a18-bc47-4feb-a6b1-b400f372f355';
+  $display->content['new-ee757a18-bc47-4feb-a6b1-b400f372f355'] = $pane;
+  $display->panels['one_fw_main'][4] = 'new-ee757a18-bc47-4feb-a6b1-b400f372f355';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

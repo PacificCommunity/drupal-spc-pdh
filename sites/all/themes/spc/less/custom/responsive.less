@@ -49,7 +49,8 @@
             width: 100%;
         }
     }
-    .latest-stories-homepage {
+    .latest-stories-homepage,
+    .thematic-group-articles {
         .field-items {
             .field-item {
                 .views-field-title {
@@ -82,14 +83,19 @@
     }
     #thematic_landing_banner {
         .banner-links {
-            height: 120px;
+            height: 100px;
             .link-block {
-                height: 120px;
-                padding-top: 18px;
+                height: 100px;
                 font-size: 26px;
+                &:nth-child(1) {
+                    padding-right: 40px;
+                }
+                &:nth-child(3) {
+                    padding-left: 40px;
+                }
                 .icon-wrapper {
-                    width: 90px;
-                    height: 90px;
+                    width: 60px;
+                    height: 60px;
                 }
             }
         }
@@ -163,7 +169,8 @@
             }
         }
     }
-    .latest-stories-homepage {
+    .latest-stories-homepage,
+    .thematic-group-articles {
         .field-items {
             .field-item {
                 max-width: 100%;
@@ -308,6 +315,20 @@
             }
         }
     }
+    .node-type-dashboards {
+        div#tabs {
+            .tabs.primary {
+                padding-left: 0;
+                li {
+                    display: block;
+                    a {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 488px) {
@@ -354,6 +375,23 @@
                     font-size: 14px;
                 }
             }
+            div.search-type-container {
+                width: auto;
+                font-size: 14px;
+                min-width: 90px;
+                div.nice-select {
+                    .current {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        padding-right: 30px;
+                        padding-left: 20px;
+                        font-size: 14px;
+                    }
+                    &:after {
+                        width: 30px;
+                    }
+                }
+            }
         }
     }
     .breadcrumb {
@@ -378,7 +416,7 @@
         .dropdown-menu {
             width: 100%;
         }
-    }    
+    }
 }
 
 @media (max-width: 342px) {
@@ -425,6 +463,15 @@
                 ul {
                     width: 100%;
                 }
+            }
+        }
+    }
+    .latest-stories-homepage,
+    .thematic-group-articles {
+        .field-items {
+            .field-item {
+                max-width: 100%;
+                width: 100%;
             }
         }
     }

@@ -20,11 +20,20 @@
   Drupal.behaviors.columnEqualHeights = {
     attach: function (context) {
       $('.articles-list').each(function() {
-        console.log($(this).find('.eq-col'));
         $(this).find('.eq-col').find('.node-article').matchHeight({
           byRow: true
         });
       });
+    }
+  };
+
+  /**
+   * Element niceSelect
+   *
+   */
+  Drupal.behaviors.niceSelect = {
+    attach: function (context) {
+      $('.node-type-thematic-group #ckan-search-form select').niceSelect();
     }
   };
 

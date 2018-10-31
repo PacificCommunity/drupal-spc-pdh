@@ -1,0 +1,74 @@
+#sdgChart {
+  position: relative; 
+  width: 100%;
+  margin: 10px auto 0;
+  overflow: hidden;
+}
+
+#sdgChart .center-image {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13%;
+  height: 20%;
+  background-size: cover;
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+
+#sdgChart svg {
+  font-family: sans-serif;
+}
+
+#sdgChart .domain-text {
+  text-transform: uppercase;
+  letter-spacing: 2px; 
+}
+
+#sdgChart .bar-label {
+  font-size: 8px;
+}
+
+.tooltip.chart-tooltip {
+  position: absolute;
+  height: auto;
+  width: 400px;
+  font-size: 12px;
+  color: #393f45;
+  padding: 5px 7px;
+  background: #dbedfb;
+  border-radius: 6px;
+  pointer-events: none; 
+}
+.tooltip.chart-tooltip.goals-t {
+  width: auto;
+  color: #fff;
+  background: #393f45;
+}
+#chart h2 {
+  font-family: "Calibri Light";
+  font-size: 28;
+}
+#chart .select2-container .select2-selection--single {
+  height: 24px;
+}
+#chart .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 24px;
+}
+.chart-help-text {
+  font-family: "Calibri Light";
+  font-size: 17px;
+  line-height: 1.75em;
+  font-weight: 300;
+  color: #2a2c2d;
+  padding-bottom: 90px;
+}
+
+@media (max-width: 425px) {
+  .tooltip.chart-tooltip {
+    width: 200px;
+    line-height: 1.2;
+    padding: 0 5px;
+  }
+}
