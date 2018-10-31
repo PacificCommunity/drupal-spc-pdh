@@ -49,7 +49,7 @@ function spc_chart_preprocess_field(&$variables) {
 				$worksheet = $excelObj->getSheet(0);
 				$countries = array();
 
-				$columns = range('B', 'S');
+				$columns = range('B', 'T');
 				$rows = range(1, 81);
 
 				foreach ($columns as $column) {
@@ -59,7 +59,9 @@ function spc_chart_preprocess_field(&$variables) {
 							if (!empty($cellValue)) {
 								if (substr($cellValue, 0, strlen('Code -')) == 'Code -') {
 									$countyKey = substr($cellValue, strlen('Code -'));
-								} 
+								} else {
+									$countyKey = $cellValue;
+								}
 								$countries[$countyKey] = array();
 							}
 						} else {
