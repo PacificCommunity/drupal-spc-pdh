@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
     "Average Progress",
     "Good Progress",
     "Goal is fully achieved"
-  ]
+  ];
 
   var countriesData = Drupal.settings.spcChart.countriesData;
 
@@ -75,7 +75,13 @@ jQuery(document).ready(function() {
         .data(Object.keys(countriesData))
         .enter()
       .append("option")
-        .text(function (d) { return d; });
+        .text(function (d) { return d; })
+        .each(function(d) {
+          var option = d3.select(this);
+          if (d == "Pacific Regional excl Aust and NZ") {
+            option.attr("selected", "selected");
+          }
+        });
 
     jQuery('#sdgChartCountries').select2({
       width: '250px'
@@ -153,7 +159,7 @@ jQuery(document).ready(function() {
       element.barsData.forEach(item => {
         barsNames.push(item.name);
         item["color"] = element.color;
-        item["value"] = countriesData["Australia"][i];
+        item["value"] = countriesData["Pacific Regional excl Aust and NZ"][i];
         i += 1;
       })
     });
@@ -161,11 +167,11 @@ jQuery(document).ready(function() {
     var numBarsData = barsNames.length;
    
     var barScale = d3.scaleLinear()
-      .domain([0, d3.max(data, function(d) { return d3.max(d.barsData, function(d) { return d.value; }); })])
+      .domain([0, 7])
       .range([0, barHeight]);
 
     var x = d3.scaleLinear()
-      .domain([0, d3.max(data, function(d) { return d3.max(d.barsData, function(d) { return d.value; }); })])
+      .domain([0, 7])
       .range([0, -barHeight]);
 
     function countRotate(i) {
