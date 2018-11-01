@@ -3,7 +3,7 @@
         "name": "Goal 1",
         "title": "SDG 1 - No Poverty",
         "color": "#eb1e2f",
-        "link": "https://dev.spc.links.com.au/content/sdg-1-no-poverty",
+        "link": "/node/60",
         "icon": "/images/01.png",
         "barsData": [
             {
@@ -27,7 +27,7 @@
         "name": "Goal 2",
         "title": "SDG 2 - Zero Hunger",
         "color": "#d2a12a",
-        "link": "https://dev.spc.links.com.au/content/sdg-2-zero-hunger",
+        "link": "/node/61",
         "icon": "/images/02.png",
         "barsData": [
             {
@@ -56,7 +56,7 @@
         "name": "Goal 3",
         "title": "SDG 3 - Good Health and Well-Being",
         "color": "#229b48",
-        "link": "https://dev.spc.links.com.au/content/sdg-3-good-health-and-well-being",
+        "link": "/node/62",
         "icon": "/images/03.png",
         "barsData": [
             {
@@ -100,7 +100,7 @@
         "name": "Goal 4",
         "title": "SDG 4 - Quality Education",
         "color": "#c22134",
-        "link": "https://dev.spc.links.com.au/content/sdg-4-quality-education",
+        "link": "/node/63",
         "icon": "/images/04.png",
         "barsData": [
             {
@@ -139,7 +139,7 @@
         "name": "Goal 5",
         "title": "SDG 5 - Gender Equality",
         "color": "#ef412a",
-        "link": "https://dev.spc.links.com.au/content/sdg-5-gender-equality",
+        "link": "/node/64",
         "icon": "/images/05.png",
         "barsData": [
             {
@@ -177,8 +177,8 @@
     {
         "name": "Goal 6",
         "title": "SDG 6 - Clean Water and Sanitation",
-        "color": "#fdb715",
-        "link": "https://dev.spc.links.com.au/content/sdg-6-clean-water-and-sanitation",
+        "color": "#5aadd6",
+        "link": "/node/65",
         "icon": "/images/06.png",
         "barsData": [
             {
@@ -196,8 +196,8 @@
     {
         "name": "Goal 7", 
         "title": "SDG 7 - Affordable and Clean Energy",
-        "color": "#8f1839",
-        "link": "https://dev.spc.links.com.au/content/sdg-7-affordable-and-clean-energy",
+        "color": "#ffbf00",
+        "link": "/node/66",
         "icon": "/images/07.png",
         "barsData": [
             {
@@ -215,8 +215,8 @@
     {
         "name": "Goal 8", 
         "title": "SDG 8 - Decent Work and Economic Growth",
-        "color": "#f36d26",
-        "link": "https://dev.spc.links.com.au/content/sdg-8-decent-work-and-economic-growth",
+        "color": "#a40138",
+        "link": "/node/67",
         "icon": "/images/08.png",
         "barsData": [
             {
@@ -259,8 +259,8 @@
     {
         "name": "Goal 9",
         "title": "SDG 9 - Industry, Innovation and Infrastructure",
-        "color": "#e01784",
-        "link": "https://dev.spc.links.com.au/content/sdg-9-industry-innovation-and-infrastructure",
+        "color": "#ff6500",
+        "link": "/node/68",
         "icon": "/images/09.png",
         "barsData": [
             {
@@ -278,8 +278,8 @@
     {
         "name": "Goal 10",
         "title": "SDG 10 - Reduced Inequalities",
-        "color": "#f99e27",
-        "link": "https://dev.spc.links.com.au/content/sdg-10-reduced-inequalities",
+        "color": "#f5028a",
+        "link": "/node/69",
         "icon": "/images/10.png",
         "barsData": [
             {
@@ -307,8 +307,8 @@
     {
         "name": "Goal 11",
         "title": "SDG 11 - Sustainable Cities and Communities",
-        "color": "#00add8",
-        "link": "https://dev.spc.links.com.au/content/sdg-11-sustainable-cities-and-communities",
+        "color": "#ffa200",
+        "link": "/node/70",
         "icon": "/images/11.png",
         "barsData": [
             {
@@ -327,7 +327,7 @@
         "name": "Goal 12",
         "title": "SDG 12 - Responsible Consumption and Production",
         "color": "#ce8d2a",
-        "link": "https://dev.spc.links.com.au/content/sdg-12-responsible-consumption-and-production",
+        "link": "/node/71",
         "icon": "/images/12.png",
         "barsData": [
             {
@@ -346,7 +346,7 @@
         "name": "Goal 13",
         "title": "SDG 13 - Climate Action",
         "color": "#48773e",
-        "link": "https://dev.spc.links.com.au/content/sdg-13-climate-action",
+        "link": "/node/72",
         "icon": "/images/13.png",
         "barsData": [
             {
@@ -375,7 +375,7 @@
         "name": "Goal 14",
         "title": "SDG 14 - Life Below Water",
         "color": "#047dbc",
-        "link": "https://dev.spc.links.com.au/content/sdg-14-life-below-water",
+        "link": "/node/73",
         "icon": "/images/14.png",
         "barsData": [
             {
@@ -419,7 +419,7 @@
         "name": "Goal 15",
         "title": "SDG 15 - Life on Land",
         "color": "#3dae49",
-        "link": "https://dev.spc.links.com.au/content/sdg-15-life-land",
+        "link": "/node/74",
         "icon": "/images/15.png",
         "barsData": [
             {
@@ -443,7 +443,7 @@
         "name": "Goal 16",
         "title": "SDG 16 - Peace, Justice and Strong Institutions",
         "color": "#00558b",
-        "link": "https://dev.spc.links.com.au/content/sdg-16-peace-justice-and-strong-institutions",
+        "link": "/node/75",
         "icon": "/images/16.png",
         "barsData": [
             {
@@ -477,7 +477,7 @@
         "name": "Goal 17",
         "title": "SDG 17 - Partnerships for the Goals",
         "color": "#1d3767",
-        "link": "https://dev.spc.links.com.au/content/sdg-17-partnerships-goals",
+        "link": "/node/76",
         "icon": "/images/17.png",
         "barsData": [
             {
