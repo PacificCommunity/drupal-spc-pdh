@@ -217,14 +217,18 @@
         margin-bottom: 28px;
         position: relative;
         min-height: 424px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #bcdfe5;
         .field-type-image {
-            border: 1px solid #bcdfe5;
-            border-bottom: none;
+            border-bottom: 1px solid #bcdfe5;
+            img {
+                max-width: 100%;
+            }
         }
         .node-content-container {
-            border: 1px solid #bcdfe5;
             padding: 18px;
-            min-height: 255px;
+            min-height: 210px;
             overflow: hidden;
             h2 {
                 font-size: 14px;
@@ -245,16 +249,22 @@
                 line-height: 1.75em;
             }
         }
-        .node-links {
-            padding: 0px 32px;
-            border-top: 1px solid #bcdfe5;
-            height: 46px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            position: absolute;
-            bottom: 0px;
+        .node-links-container {
+            align-self: end;
             width: 100%;
+            flex-grow: 1;
+            display: flex;
+            align-items: flex-end;
+            .node-links {
+                padding: 0px 32px;
+                border-top: 1px solid #bcdfe5;
+                height: 46px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 100%;
+                margin-top: 0px;
+            }
         }
     }
 }
