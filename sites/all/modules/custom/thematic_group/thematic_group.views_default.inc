@@ -311,6 +311,7 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_articles_and_publications_node']['id'] = 'reverse_field_articles_and_publications_node';
   $handler->display->display_options['relationships']['reverse_field_articles_and_publications_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_articles_and_publications_node']['field'] = 'reverse_field_articles_and_publications_node';
+  $handler->display->display_options['relationships']['reverse_field_articles_and_publications_node']['label'] = 'field_articles_and_publications';
   $handler->display->display_options['relationships']['reverse_field_articles_and_publications_node']['required'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -329,6 +330,7 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['arguments']['keys']['table'] = 'search_index';
   $handler->display->display_options['arguments']['keys']['field'] = 'keys';
   $handler->display->display_options['arguments']['keys']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['keys']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['keys']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['keys']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['keys']['summary_options']['items_per_page'] = '25';
@@ -338,6 +340,7 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['field'] = 'field_ckan_thematic_group_id_value';
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['relationship'] = 'reverse_field_articles_and_publications_node';
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_ckan_thematic_group_id_value']['summary_options']['items_per_page'] = '25';
@@ -359,20 +362,29 @@ function thematic_group_views_default_views() {
 
   /* Display: Search List */
   $handler = $view->new_display('panel_pane', 'Search List', 'panel_pane_1');
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'keys' => array(
-      'type' => 'user',
-      'context' => 'entity:bean.field-article-on-home-page',
+      'type' => 'panel',
+      'context' => 'string.html_safe',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
       'label' => 'Search: Search Terms',
     ),
     'field_ckan_thematic_group_id_value' => array(
-      'type' => 'user',
-      'context' => 'entity:bean.field-article-on-home-page',
+      'type' => 'panel',
+      'context' => 'string.html_safe',
       'context_optional' => 0,
-      'panel' => '0',
+      'panel' => '1',
       'fixed' => '',
       'label' => 'Content: CKAN topic ID (field_ckan_thematic_group_id)',
     ),

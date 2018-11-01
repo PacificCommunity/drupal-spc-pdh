@@ -589,7 +589,7 @@ function thematic_group_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Search ';
+  $display->title = '';
   $display->uuid = 'c14ff77e-1dc3-44b9-a2d7-5650cd84506f';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_articles_search__panel';
@@ -626,9 +626,16 @@ function thematic_group_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'keys' => '%term:html_safe',
-      'field_ckan_thematic_group_id_value' => '%thematic_area:html_safe',
+      'keys' => '',
+      'field_ckan_thematic_group_id_value' => '',
     ),
+    'context' => array(
+      0 => 'argument_string_1',
+      1 => 'argument_string_2',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -645,7 +652,7 @@ function thematic_group_default_page_manager_pages() {
   $display->content['new-4f5428cb-7bac-499b-b0d7-84f3984f1597'] = $pane;
   $display->panels['middle'][1] = 'new-4f5428cb-7bac-499b-b0d7-84f3984f1597';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-b29d238a-a968-4340-85c0-7e616a431dad';
+  $display->title_pane = 'new-4f5428cb-7bac-499b-b0d7-84f3984f1597';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['articles_search'] = $page;
