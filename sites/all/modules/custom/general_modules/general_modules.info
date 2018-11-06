@@ -23,6 +23,7 @@ dependencies[] = features
 dependencies[] = features_diff
 dependencies[] = field_collection
 dependencies[] = field_group
+dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = jcarousel
 dependencies[] = jquery_colorpicker
