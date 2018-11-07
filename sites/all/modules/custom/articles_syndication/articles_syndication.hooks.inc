@@ -14,8 +14,9 @@ function articles_syndication_menu() {
 }
 
 function article_syndicate() {
-  if (!check_access()) {
-    return;
+  $access = check_access();
+  if (!$access[0]) {
+    return drupal_json_output(array('code'=> 403, 'message' => $access[1]));
   }
 
   $syndicated_id = $_POST['original_id'];
@@ -43,15 +44,13 @@ function check_access() {
     $spass = variable_get('synpass');
     if (!password_verify($spass, $hash)) {
       watchdog('syndication_article', "Access denied. 'access_key' field is incorrect.");
-      print("Access denied. 'access_key' field is incorrect.");
-      return false;
+      return array(false, "Access denied. 'access_key' field is incorrect.");
     } else {
-      return true;
+      return array(true);
     }
   } else {
     watchdog('syndication_article', "Access denied. 'access_key' field is missing.");
-    print("Access denied. 'access_key' field is missing.");
-    return false;
+    return array(false, "Access denied. 'access_key' field is missing.");
   }
 }
 
@@ -60,8 +59,7 @@ function syndication_article_create() {
   // Сhecks on required fields
   if (empty($_POST['title']) or empty($_POST['original_id'])) {
     watchdog('syndication_article', "Syndication failed. Required field is missing.");
-    print("Syndication failed. Required field is missing.");
-    return;
+    return drupal_json_output(array('code'=> 400, 'message' => "Syndication failed. Required field is missing."));
   }
 
   $user_uid = 1;
@@ -92,8 +90,7 @@ function syndication_article_create() {
 
   // Saves logs
   watchdog('syndication_article', "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
-  print("Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
-  return;
+  return drupal_json_output(array('code'=> 200, 'message' => "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true)));
 }
 
 
@@ -101,8 +98,7 @@ function syndication_article_update($nid) {
   // Сhecks on required fields (for updating it's only "original_id")
   if (empty($_POST['original_id'])) {
     watchdog('syndication_article', "Syndication failed. Required field 'original_id' is missing.");
-    print("Syndication failed. Required field 'original_id' is missing.");
-    return;
+    return drupal_json_output(array('code'=> 400, 'message' => "Syndication failed. Required field 'original_id' is missing."));
   }
 
   $syndicated_id = $_POST['original_id'];
@@ -121,8 +117,7 @@ function syndication_article_update($nid) {
   
   // Saves logs
   watchdog('syndication_article', "Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true));
-  print("Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true));
-  return;
+  return drupal_json_output(array('code'=> 200, 'message' => "Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true)));
 }
 
 
