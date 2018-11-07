@@ -7845,28 +7845,33 @@ button.header-menu-btn:focus {
   border-radius: 5px;
 }
 .not-front.articles-page .breadcrumb-box .breadcrumb,
-.not-front.page-articles .breadcrumb-box .breadcrumb {
+.not-front.page-articles .breadcrumb-box .breadcrumb,
+.not-front.page-search .breadcrumb-box .breadcrumb {
   margin-bottom: 50px;
 }
 .not-front.articles-page .articles-list,
-.not-front.page-articles .articles-list {
+.not-front.page-articles .articles-list,
+.not-front.page-search .articles-list {
   margin-top: 30px;
 }
 .not-front.articles-page .articles-list .item-list-pager,
-.not-front.page-articles .articles-list .item-list-pager {
+.not-front.page-articles .articles-list .item-list-pager,
+.not-front.page-search .articles-list .item-list-pager {
   padding-top: 1px;
   padding-bottom: 15px;
   margin-bottom: 15px;
   clear: both;
 }
 .not-front.articles-page .articles-list .item-list-pager .pager,
-.not-front.page-articles .articles-list .item-list-pager .pager {
+.not-front.page-articles .articles-list .item-list-pager .pager,
+.not-front.page-search .articles-list .item-list-pager .pager {
   font-family: 'Calibri';
   margin-bottom: 86px;
   margin-top: 37px;
 }
 .not-front.articles-page .articles-list .item-list-pager .pager li a,
-.not-front.page-articles .articles-list .item-list-pager .pager li a {
+.not-front.page-articles .articles-list .item-list-pager .pager li a,
+.not-front.page-search .articles-list .item-list-pager .pager li a {
   padding: 5px 12px;
   border-radius: 5px;
   border: none;
@@ -7875,18 +7880,31 @@ button.header-menu-btn:focus {
 }
 .not-front.articles-page .articles-list .item-list-pager .previous a,
 .not-front.page-articles .articles-list .item-list-pager .previous a,
+.not-front.page-search .articles-list .item-list-pager .previous a,
 .not-front.articles-page .articles-list .item-list-pager .next a,
-.not-front.page-articles .articles-list .item-list-pager .next a {
+.not-front.page-articles .articles-list .item-list-pager .next a,
+.not-front.page-search .articles-list .item-list-pager .next a {
   float: none;
 }
 .not-front.articles-page .articles-list .item-list-pager .current a,
 .not-front.page-articles .articles-list .item-list-pager .current a,
+.not-front.page-search .articles-list .item-list-pager .current a,
 .not-front.articles-page .articles-list .item-list-pager .current,
-.not-front.page-articles .articles-list .item-list-pager .current {
+.not-front.page-articles .articles-list .item-list-pager .current,
+.not-front.page-search .articles-list .item-list-pager .current {
   padding: 7px 12px;
   background-color: #036295;
   color: #fff;
   border-radius: 5px;
+}
+.not-front.page-search .breadcrumb-box .breadcrumb span {
+  text-transform: capitalize;
+}
+.not-front.page-search .articles-list {
+  margin-top: 0px;
+}
+.not-front.page-search .articles-list .pager {
+  clear: both;
 }
 .ma5-mobile-menu-container {
   background-color: #1d5f89;
@@ -8702,6 +8720,12 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: auto;
   width: auto;
 }
+.node-type-thematic-group .latest-tweets-block {
+  padding: 37px 0 98px;
+}
+.node-type-thematic-group .latest-tweets-block h2 {
+  margin-bottom: 40px;
+}
 .panel-style-narrow {
   padding: 35px 0px 50px 0px;
   font-family: "Calibri Light";
@@ -8769,18 +8793,27 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: 100%;
 }
 .thematic-heading-block {
-  height: 60px;
-  line-height: 60px;
+  height: 90px;
+  line-height: 90px;
   clear: both;
-  padding: 0 50px;
+  padding: 0px;
+}
+@media (max-width: 768px) {
+  .thematic-heading-block {
+    padding: 0px 15px;
+  }
 }
 .thematic-heading-block button {
   border: none;
   background-color: transparent;
   color: #036295;
-  font-size: 25px;
+  font-family: "Calibri Light";
+  font-size: 22px;
   font-weight: 300;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .thematic-heading-block button img {
   max-height: 42px;
@@ -8788,6 +8821,16 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   width: auto;
   height: auto;
   margin-right: 10px;
+}
+.thematic-heading-block button .thematic-fa-icon {
+  max-height: 42px;
+  max-width: 42px;
+  width: 42px;
+  height: auto;
+  margin-right: 10px;
+}
+.thematic-heading-block button .fa-caret-down {
+  margin-left: 16px;
 }
 .thematic-heading-block button i.fa {
   margin-left: 10px;
@@ -8799,13 +8842,14 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   outline: none;
 }
 .thematic-heading-block .dropdown-menu {
-  top: 92%;
+  top: 100%;
+  margin-top: 0px;
 }
 .thematic-heading-block .dropdown-menu a {
   color: #036295;
 }
 #thematic_landing_banner .spc-home-banner-block {
-  top: 30%;
+  top: 37%;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form {
   display: flex;
@@ -8817,6 +8861,17 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   border-bottom-right-radius: 0;
   width: 500px;
   padding-left: 18px;
+  font-family: "Calibri Light";
+}
+#thematic_landing_banner .spc-home-banner-block #ckan-search-form input[type='text']::-moz-placeholder {
+  color: #9caab8;
+  opacity: 1;
+}
+#thematic_landing_banner .spc-home-banner-block #ckan-search-form input[type='text']:-ms-input-placeholder {
+  color: #9caab8;
+}
+#thematic_landing_banner .spc-home-banner-block #ckan-search-form input[type='text']::-webkit-input-placeholder {
+  color: #9caab8;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div {
   border: 1px solid #7d98a9;
@@ -8824,6 +8879,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   float: left;
   position: relative;
   outline: 0;
+  z-index: 1;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div:first-of-type {
   border-top-left-radius: 5px;
@@ -8849,7 +8905,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   border-bottom-right-radius: 5px;
   background-color: #fff;
   overflow: visible;
-  z-index: -1;
+  z-index: 0;
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div.search-type-container select {
   display: none;
@@ -8901,6 +8957,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   padding: 13px 0px;
   text-align: right;
   padding-right: 56px;
+  font-family: "Calibri Light";
 }
 #thematic_landing_banner .spc-home-banner-block #ckan-search-form div.search-type-container div.nice-select ul.list {
   width: 100%;
@@ -8930,7 +8987,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 #thematic_landing_banner .banner-links {
   height: 130px;
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.75);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -8999,7 +9056,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 #node_content {
   padding: 57px 0 74px;
   color: #2a2c2d;
-  font-family: "Calibri";
+  font-family: "Calibri Light";
   font-size: 17px;
   font-weight: 300;
   line-height: 1.5em;
@@ -9439,15 +9496,19 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin-bottom: 28px;
   position: relative;
   min-height: 424px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bcdfe5;
 }
 .node-article.view-mode-list .field-type-image {
-  border: 1px solid #bcdfe5;
-  border-bottom: none;
+  border-bottom: 1px solid #bcdfe5;
+}
+.node-article.view-mode-list .field-type-image img {
+  max-width: 100%;
 }
 .node-article.view-mode-list .node-content-container {
-  border: 1px solid #bcdfe5;
   padding: 18px;
-  min-height: 255px;
+  min-height: 210px;
   overflow: hidden;
 }
 .node-article.view-mode-list .node-content-container h2 {
@@ -9468,16 +9529,22 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-size: 14px;
   line-height: 1.75em;
 }
-.node-article.view-mode-list .node-links {
+.node-article.view-mode-list .node-links-container {
+  align-self: end;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.node-article.view-mode-list .node-links-container .node-links {
   padding: 0px 32px;
   border-top: 1px solid #bcdfe5;
   height: 46px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: absolute;
-  bottom: 0px;
   width: 100%;
+  margin-top: 0px;
 }
 .group-title-block {
   margin-bottom: 30px;
@@ -9827,6 +9894,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
     max-width: 1010px;
   }
   .page-articles .pane-articles-by-topic-page {
+    max-width: 1010px;
+  }
+  .page-search .articles-list {
     max-width: 1010px;
   }
 }

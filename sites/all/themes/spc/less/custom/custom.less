@@ -251,7 +251,9 @@ button.header-menu-btn {
             }
         }
     }
-    &.articles-page, &.page-articles {
+    &.articles-page,
+    &.page-articles,
+    &.page-search {
         .breadcrumb-box {
             .breadcrumb {
                 margin-bottom: 50px;
@@ -287,6 +289,26 @@ button.header-menu-btn {
                     color: #fff;
                     border-radius: 5px;
                 }
+            }
+        }
+    }
+    &.page-search {
+        .breadcrumb-box {
+            .breadcrumb {
+                span {
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .articles-list {
+            margin-top: 0px;
+            .node-article.view-mode-list {            
+                .node-content-container{
+
+                }
+            }
+            .pager {
+                clear: both;
             }
         }
     }

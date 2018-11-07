@@ -240,7 +240,7 @@ function home_page_default_page_manager_pages() {
   $pane->panel = 'one_fw_main';
   $pane->type = 'views';
   $pane->subtype = 'latest_stories';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -274,6 +274,32 @@ function home_page_default_page_manager_pages() {
   $display->content['new-b1681305-27f2-4cb3-b9f9-7e7b64243916'] = $pane;
   $display->panels['one_fw_main'][6] = 'new-b1681305-27f2-4cb3-b9f9-7e7b64243916';
   $pane = new stdClass();
+  $pane->pid = 'new-04ee6500-6811-4d2c-b166-e69c0a660aff';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'articles_list-home_latest';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Latest Stories',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'latest-stories-homepage',
+  );
+  $pane->extras = array();
+  $pane->position = 7;
+  $pane->locks = array();
+  $pane->uuid = '04ee6500-6811-4d2c-b166-e69c0a660aff';
+  $display->content['new-04ee6500-6811-4d2c-b166-e69c0a660aff'] = $pane;
+  $display->panels['one_fw_main'][7] = 'new-04ee6500-6811-4d2c-b166-e69c0a660aff';
+  $pane = new stdClass();
   $pane->pid = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $pane->panel = 'one_fw_main';
   $pane->type = 'panels_mini';
@@ -291,11 +317,11 @@ function home_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = '7b27c8e1-534e-4371-a946-7081425b0c24';
   $display->content['new-7b27c8e1-534e-4371-a946-7081425b0c24'] = $pane;
-  $display->panels['one_fw_main'][7] = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
+  $display->panels['one_fw_main'][8] = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
