@@ -4,14 +4,8 @@
 function articles_syndication_menu() {
   $items = array();
 
-  $items['syndication/article/create'] = array(
-    'page callback' => 'syndication_article_create',
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-  );
-
-  $items['syndication/article/update'] = array(
-    'page callback' => 'syndication_article_update',
+  $items['syndication/article_syndicate'] = array(
+    'page callback' => 'article_syndicate',
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
@@ -19,34 +13,53 @@ function articles_syndication_menu() {
   return $items;
 }
 
+function article_syndicate() {
+  $access = check_access();
+  if (!$access[0]) {
+    return drupal_json_output(array('code'=> 403, 'message' => $access[1]));
+  }
+
+  $syndicated_id = $_POST['original_id'];
+
+  // Gets node by "original_id"
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'article')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_syndicated_id', 'value', $syndicated_id, '=')
+    ->addMetaData('account', user_load(1));
+  $result = $query->execute();
+  
+  if (empty($result['node'])) {
+    syndication_article_create();
+  } else {
+    syndication_article_update(current($result['node'])->nid);
+  }
+  
+}
+
 function check_access() {
-  if ($_POST['access_key']) {
+  if (!empty($_POST['access_key'])) {
     $hash = $_POST['access_key'];
     $spass = variable_get('synpass');
     if (!password_verify($spass, $hash)) {
-      watchdog('syndication_article', "Access denied. <access_key> field is incorrect.");
-      print("Access denied. <access_key> field is incorrect.");
-      return false;
+      watchdog('syndication_article', "Access denied. 'access_key' field is incorrect.");
+      return array(false, "Access denied. 'access_key' field is incorrect.");
     } else {
-      return true;
+      return array(true);
     }
   } else {
-    watchdog('syndication_article', "Access denied. <access_key> field is missing.");
-    print("Access denied. <access_key> field is missing.");
-    return false;
+    watchdog('syndication_article', "Access denied. 'access_key' field is missing.");
+    return array(false, "Access denied. 'access_key' field is missing.");
   }
 }
 
 
 function syndication_article_create() {
-  if (!check_access()) {
-    return;
-  }
   // Сhecks on required fields
   if (empty($_POST['title']) or empty($_POST['original_id'])) {
     watchdog('syndication_article', "Syndication failed. Required field is missing.");
-    print("Syndication failed. Required field is missing.");
-    return;
+    return drupal_json_output(array('code'=> 400, 'message' => "Syndication failed. Required field is missing."));
   }
 
   $user_uid = 1;
@@ -77,40 +90,18 @@ function syndication_article_create() {
 
   // Saves logs
   watchdog('syndication_article', "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
-  print("Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
-  return;
+  return drupal_json_output(array('code'=> 200, 'message' => "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true)));
 }
 
 
-function syndication_article_update() {
-  if (!check_access()) {
-    return;
-  }
+function syndication_article_update($nid) {
   // Сhecks on required fields (for updating it's only "original_id")
   if (empty($_POST['original_id'])) {
-    watchdog('syndication_article', "Syndication failed. Required field <original_id> is missing.");
-    print("Syndication failed. Required field <original_id> is missing.");
-    return;
+    watchdog('syndication_article', "Syndication failed. Required field 'original_id' is missing.");
+    return drupal_json_output(array('code'=> 400, 'message' => "Syndication failed. Required field 'original_id' is missing."));
   }
 
   $syndicated_id = $_POST['original_id'];
-
-  // Gets node by "original_id"
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'article')
-    ->propertyCondition('status', 1)
-    ->fieldCondition('field_syndicated_id', 'value', $syndicated_id, '=')
-    ->addMetaData('account', user_load(1));
-  $result = $query->execute();
-  
-  if (empty($result['node'])) {
-    watchdog('syndication_article', "Syndication failed. Node with original_id=".$syndicated_id." doesn't exist.");
-    print("Syndication failed. Node with original_id=".$syndicated_id." doesn't exist.");
-    return;
-  }
-
-  $nid = current($result['node'])->nid;
   $node = node_load($nid);
 
   // Creates an array with parameters for node creation
@@ -126,8 +117,7 @@ function syndication_article_update() {
   
   // Saves logs
   watchdog('syndication_article', "Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true));
-  print("Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true));
-  return;
+  return drupal_json_output(array('code'=> 200, 'message' => "Node '$node->title' ($node->nid) was successfully updated with data: ".print_r($values,true)));
 }
 
 
@@ -169,16 +159,18 @@ function node_set_fields($node, $values) {
   if (!empty($values['image'])) {
     $file_image = system_retrieve_file($values['image'], 'public://pictures/', TRUE);
     $image_field = array();
-    array_push($image_field, array(
-      'fid' => $file_image->fid,
-      'uid' => $file_image->uid,
-      'uri' => $file_image->uri,
-      'filename' => $file_image->filename,
-      'filemime' => $file_image->filemime,
-      'status' => $file_image->status
-    ));
-    $node->field_image[LANGUAGE_NONE] = $image_field;
-  }
+    if (!empty($file_image )) {
+      array_push($image_field, array(
+        'fid' => $file_image->fid,
+        'uid' => $file_image->uid,
+        'uri' => $file_image->uri,
+        'filename' => $file_image->filename,
+        'filemime' => $file_image->filemime,
+        'status' => $file_image->status
+      ));
+      $node->field_image[LANGUAGE_NONE] = $image_field;
+    }
+  };
 
   node_save($node);
   return $node;
