@@ -35,8 +35,8 @@ function article_syndicate() {
   } else {
     syndication_article_update(current($result['node'])->nid);
   }
-  
 }
+
 
 function check_access() {
   if (!empty($_POST['access_key'])) {
@@ -127,6 +127,7 @@ function node_set_fields($node, $values) {
   if (!empty($values['body']) || !empty($values['body_summary'])) {
     $body_field = array();
     array_push($body_field, array(
+      'format' => 'filtered_html',
       'value' => $values['body'],
       'summary' => $values['body_summary']
     ));
