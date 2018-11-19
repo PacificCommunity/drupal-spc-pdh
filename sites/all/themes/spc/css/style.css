@@ -8515,10 +8515,13 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   padding: 0px;
   line-height: 22px;
 }
-.dataset-preview .dataset-formats span {
+.dataset-preview .dataset-formats a {
+  text-decoration: none;
+  margin-right: 5px;
+}
+.dataset-preview .dataset-formats a span {
   font-size: 11px;
   display: inline-block;
-  margin-right: 5px;
   font-weight: 700;
   color: #fff;
   height: 20px;
@@ -9859,10 +9862,13 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .node-type-dsp .dsp-datasets .dataset-preview .dataset-date span {
   color: #2a2c2d;
 }
-.node-type-dsp .dsp-datasets .dataset-preview .dataset-formats span {
+.node-type-dsp .dsp-datasets .dataset-preview .dataset-formats a {
+  text-decoration: none;
+  margin-left: 5px;
+}
+.node-type-dsp .dsp-datasets .dataset-preview .dataset-formats a span {
   line-height: 22px;
   margin-right: 0;
-  margin-left: 5px;
 }
 .node-type-dsp .goals-logo {
   max-height: 70px;
