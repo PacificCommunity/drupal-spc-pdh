@@ -14,15 +14,17 @@
 		</div>
 		<p class="dataset-date"><label><?php print t('Release Date'); ?>:</label> <span><?= $dataset['release_date'] ?></span></p>
 		<div class="dataset-formats"><label><?php print t('File Format'); ?>:</label>
-			<?php foreach ($dataset['resources'] as $res) { ?>
+			<?php $resources_formats = array();
+			foreach ($dataset['resources'] as $res) { ?>
+				<?php if ($res->format) {
+					array_push($resources_formats, strtoupper($res->format));
+				} else {
+					array_push($resources_formats, 'DATA');
+				} ?>
+			<?php } ?>
+			<?php foreach (array_unique($resources_formats) as $res) { ?>
 				<a href="<?= $dataset['ckan_url'] ?>">
-					<span>
-						<?php if ($res->format) {
-							print(strtoupper($res->format));
-						} else {
-							print('DATA');
-						} ?>
-					</span>
+					<span><?= $res; ?></span>
 				</a>
 			<?php } ?>
 		</div>
