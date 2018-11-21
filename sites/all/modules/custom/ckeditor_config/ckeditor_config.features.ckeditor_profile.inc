@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ckeditor_config.features.ckeditor_profile.inc
@@ -58,7 +59,7 @@ function ckeditor_config_ckeditor_profile_defaults() {
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
-        'filebrowser' => 'elfinder',
+        'filebrowser' => 'imce',
         'filebrowser_image' => '',
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
@@ -151,7 +152,7 @@ function ckeditor_config_ckeditor_profile_defaults() {
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
-        'filebrowser' => 'none',
+        'filebrowser' => 'imce',
         'filebrowser_image' => '',
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',

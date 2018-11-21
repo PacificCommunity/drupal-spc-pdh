@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ckeditor_config.features.filter.inc
