@@ -7990,6 +7990,60 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .thematic-fa-link:hover {
   text-decoration: none;
 }
+.page-user-login #block-system-main {
+  padding: 60px 0 80px;
+}
+.page-user-login form#user-login {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.page-user-login form#user-login label {
+  font-size: 16px;
+  color: #036295;
+}
+.page-user-login form#user-login label.required:after {
+  content: '*';
+  color: #f00;
+  padding-left: 4px;
+}
+.page-user-login form#user-login input {
+  display: block;
+  height: 45px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  color: #2a2c2d;
+  border: 1px solid #7d98a9;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0 10px;
+}
+.page-user-login form#user-login input[type='submit'] {
+  background-color: #036295;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 30px;
+}
+.page-user-login form#user-login input[type='submit']:hover {
+  background-color: #032f47;
+}
+.page-user-login form#user-login > div {
+  margin-bottom: 20px;
+}
+.page-user-login form#user-login .saml_sp_drupal_login-links li {
+  list-style: none;
+}
+.page-user-login form#user-login .saml_sp_drupal_login-links li a {
+  font-size: 16px;
+  color: #036295;
+}
+.page-user-login form#user-login .saml_sp_drupal_login-links li a:hover {
+  color: #032f47;
+}
+.page-user-login form#user-login small {
+  color: #2a2c2d;
+}
 .front #one-fw-wrapper .container {
   max-width: 1134px;
 }

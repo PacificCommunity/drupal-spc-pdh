@@ -399,3 +399,64 @@ button.header-menu-btn {
 .thematic-fa-link:hover {
   text-decoration: none;
 }
+
+.page-user-login {
+    #block-system-main {
+        padding: 60px 0 80px;
+    }
+    form#user-login {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 0 15px;
+        label {
+            font-size: 16px;
+            color: #036295;
+            &.required {
+                &:after {
+                    content: '*';
+                    color: #f00;
+                    padding-left: 4px;
+                }
+            }
+        }
+        input {
+            display: block;
+            height: 45px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 300;
+            color: #2a2c2d;
+            border: 1px solid #7d98a9;
+            border-radius: 5px;
+            box-shadow: none;
+            padding: 0 10px;
+            &[type='submit'] {
+                background-color: #036295;
+                font-weight: 400;
+                color: #fff;
+                margin-top: 30px;
+                &:hover {
+                    background-color: #032f47;
+                }
+            }
+        }
+        &>div {
+            margin-bottom: 20px;
+        }
+        .saml_sp_drupal_login-links {
+            li {
+                list-style: none;
+                a {
+                    font-size: 16px;
+                    color: #036295;
+                    &:hover {
+                        color: #032f47;
+                    }
+                }
+            }
+        }
+        small {
+            color: #2a2c2d;
+        }
+    }
+}
