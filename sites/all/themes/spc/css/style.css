@@ -8031,6 +8031,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .page-user-login form#user-login > div {
   margin-bottom: 20px;
 }
+.page-user-login form#user-login .saml_sp_drupal_login-links {
+  padding-left: 0;
+}
 .page-user-login form#user-login .saml_sp_drupal_login-links li {
   list-style: none;
 }
