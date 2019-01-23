@@ -77,7 +77,7 @@ function spc_chart_preprocess_field(&$variables) {
 			drupal_add_js(array('spcChart' => array('path' => $module_path)), array('type' => 'setting'));
 			drupal_add_js(array('spcChart' => array('countriesData' => $countries)), array('type' => 'setting'));
 			drupal_add_js($module_path . '/js/select2.min.js');
-			drupal_add_js($module_path . '/js/d3.v5.min.js');
+			drupal_add_js($module_path . '/js/d3.v4.min.js');
 			drupal_add_js($module_path . '/js/script.js');
 		}
 	}
