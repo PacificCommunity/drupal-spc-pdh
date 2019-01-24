@@ -72,3 +72,13 @@
     padding: 0 5px;
   }
 }
+
+/* IE10+ styles */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #sdgChart {
+    height: 700px !important;
+  }
+  #sdgChart .center-image {
+    left: 47% !important;
+  }
+}

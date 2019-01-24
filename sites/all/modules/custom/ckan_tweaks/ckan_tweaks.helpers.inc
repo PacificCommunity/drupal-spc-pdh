@@ -49,6 +49,7 @@ function _ckan_tweaks_create_dataset_mapper($ckan_url) {
       'image_url' => $dataset->organization_image_url,
       'ckan_url' => $ckan_url . '/dataset/' . $dataset->name,
       'organization' => $dataset->organization->title,
+      'organization_url' => $ckan_url . '/organization/' . $dataset->organization->name,
       'release_date' => date_format($release_date, 'F j, Y'),
       'resources' => $dataset->resources
     ];
