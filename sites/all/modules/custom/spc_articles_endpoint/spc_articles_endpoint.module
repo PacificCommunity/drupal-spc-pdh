@@ -1,0 +1,96 @@
+<?php
+/**
+	* Implements hook_menu().
+*/
+
+function spc_articles_endpoint_menu() {
+  $items = array();
+  $items['api/action/articles_list'] = array(
+    'page callback' => 'spc_articles_endpoint_list_callback',
+	'access arguments' => array('access content'),
+	'page arguments' => array(2),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function spc_articles_endpoint_list_callback() {
+	$params = drupal_get_query_parameters();
+	$nids = array();
+	$topic_title = '';
+	$topic_id = '';
+	$query = new EntityFieldQuery();
+	$query
+		->entityCondition('entity_type', 'node', '=')
+		->entityCondition('bundle', 'article')
+		->propertyCondition('status', 1)
+		->propertyOrderBy('changed', 'DESC');
+
+	if(!empty($params)) {
+		if(!empty($params['title'])) {
+			$query->propertyCondition('title', '%' .$params['title']. '%', 'like');
+		}
+		if(!empty($params['topic'])) {
+			$query_topic = new EntityFieldQuery();
+			$query_topic
+				->entityCondition('entity_type', 'node', '=')
+				->entityCondition('bundle', 'thematic_group')
+				->propertyCondition('status', 1)
+				->propertyCondition('title', $params['topic'], '=')
+				->range(0, 1);
+
+			$topic_r = $query_topic->execute();
+			if ($topic_r) {
+				$topic = node_load(array_values($topic_r['node'])[0]->nid);
+				if ($topic) {
+					$topic_title = $topic->title;
+					$topic_id = $topic->nid;
+				}
+			};
+			$query->fieldCondition('field_thematic_group', 'target_id', $topic_id, '=');
+		};
+	};
+	$result = $query->execute();
+
+	foreach ($result['node'] as $key => $value) {
+		array_push($nids, $value->nid);	
+	};
+	$nodes = node_load_multiple($nids);
+
+	$updated_nodes = array();
+	$topics_ids = array();
+	foreach ($nodes as $key => $value) {
+		if (!empty($value->field_thematic_group)) {
+			array_push($topics_ids, $value->field_thematic_group['und']['0']['target_id']);
+		}
+	};
+	$topics = node_load_multiple(array_unique($topics_ids));
+	foreach ($nodes as $key => $value) {
+		if(!empty($value->field_thematic_group)) {
+			$topic_id = $value->field_thematic_group['und']['0']['target_id'];
+			$topic_title = $topics[$topic_id]->title;
+		};
+		$array = array(
+			'id' => $value->nid,
+			'title' => $value->title,
+			'metadata_created' => date("Y-m-d\TH:i:s.u", $value->created),
+			'metadata_modified' => date("Y-m-d\TH:i:s.u", $value->changed),
+			'notes' => !empty($value->body) ? drupal_html_to_text($value->body['und']['0']['safe_value']) : '',
+			'type' => 'article',
+			'topic_id' => $topic_id,
+			'thematic_area_string' => array($topic_title)
+		);
+
+		array_push($updated_nodes, $array);
+	};
+	$count = count($updated_nodes);
+	$result = array('success' => true,
+		'result' => array(
+			'count'=> $count,
+			'results'=> array_slice($updated_nodes, 0))
+	);
+	return drupal_json_output($result);
+}
+
+?>
