@@ -28,8 +28,8 @@ function spc_articles_endpoint_list_callback() {
 		->propertyOrderBy('changed', 'DESC');
 
 	if(!empty($params)) {
-		if(!empty($params['title'])) {
-			$query->propertyCondition('title', '%' .$params['title']. '%', 'like');
+		if(!empty($params['query'])) {
+			$query->addTag('articlequery');
 		}
 		if(!empty($params['topic'])) {
 			$query_topic = new EntityFieldQuery();
@@ -91,6 +91,20 @@ function spc_articles_endpoint_list_callback() {
 			'results'=> array_slice($updated_nodes, 0))
 	);
 	return drupal_json_output($result);
+}
+
+/**
+	* Implements hook_query_TAG_alter().
+*/
+
+function spc_articles_endpoint_query_articlequery_alter(QueryAlterableInterface $query) {
+	$params = drupal_get_query_parameters();
+	if(!empty($params['query'])) {
+		$words = "%".$params['query']."%";
+		$query->leftJoin('field_data_body', 'b', 'node.nid = b.entity_id');
+	    $or = db_or()->condition('b.body_value', $words, 'LIKE')->condition('title', $words, 'LIKE');
+	    $query->condition($or);
+	}
 }
 
 ?>
