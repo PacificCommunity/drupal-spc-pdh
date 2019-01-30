@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * articles_content_type.views_default.inc
@@ -175,6 +176,14 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Syndicated ID */
+  $handler->display->display_options['fields']['field_syndicated_id']['id'] = 'field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['table'] = 'field_data_field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['field'] = 'field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['label'] = '';
+  $handler->display->display_options['fields']['field_syndicated_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_syndicated_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_syndicated_id']['type'] = 'text_plain';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -193,9 +202,11 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<h3>[title]</h3>';
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'test';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Promoted to front page */
   $handler->display->display_options['sorts']['promote']['id'] = 'promote';
@@ -241,6 +252,15 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['relationships']['field_articles_and_publications_target_id']['label'] = 'field_articles_and_publications';
   $handler->display->display_options['relationships']['field_articles_and_publications_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Syndicated ID */
+  $handler->display->display_options['fields']['field_syndicated_id']['id'] = 'field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['table'] = 'field_data_field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['field'] = 'field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['relationship'] = 'field_articles_and_publications_target_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['label'] = '';
+  $handler->display->display_options['fields']['field_syndicated_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_syndicated_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_syndicated_id']['type'] = 'text_plain';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
