@@ -51,7 +51,12 @@ function spc_articles_endpoint_list_callback() {
 			$query->fieldCondition('field_thematic_group', 'target_id', $topic_id, '=');
 		};
 	};
-	$result = $query->execute();
+
+	if(!empty($params) && !empty($params['disabled']) && $params['disabled'] == 'true') {
+		$result = array();
+	} else {
+		$result = $query->execute();
+	};
 
 	foreach ($result['node'] as $key => $value) {
 		array_push($nids, $value->nid);	
@@ -66,10 +71,13 @@ function spc_articles_endpoint_list_callback() {
 		}
 	};
 	$topics = node_load_multiple(array_unique($topics_ids));
+	$topic_facet = array('topic'=> array('items'=> []));
+	$topic_array = [];
 	foreach ($nodes as $key => $value) {
 		if(!empty($value->field_thematic_group)) {
 			$topic_id = $value->field_thematic_group['und']['0']['target_id'];
 			$topic_title = $topics[$topic_id]->title;
+			array_push($topic_array, $topic_title);
 		};
 		$array = array(
 			'id' => $value->nid,
@@ -77,18 +85,29 @@ function spc_articles_endpoint_list_callback() {
 			'metadata_created' => date("Y-m-d\TH:i:s.u", $value->created),
 			'metadata_modified' => date("Y-m-d\TH:i:s.u", $value->changed),
 			'notes' => !empty($value->body) ? drupal_html_to_text($value->body['und']['0']['safe_value']) : '',
-			'type' => 'article',
+			'type' => 'story',
 			'topic_id' => $topic_id,
 			'thematic_area_string' => array($topic_title)
 		);
 
 		array_push($updated_nodes, $array);
 	};
+	if ($topic_array) {
+		foreach (array_count_values($topic_array) as $key => $value) {
+			$arr = array(
+				'count'=> $value,
+				'display_name'=> $key,
+				'name'=> $key
+			);
+			array_push($topic_facet['topic']['items'], $arr);
+		}
+	}
 	$count = count($updated_nodes);
 	$result = array('success' => true,
 		'result' => array(
 			'count'=> $count,
-			'results'=> array_slice($updated_nodes, 0))
+			'results'=> array_slice($updated_nodes, 0),
+			'search_facets'=> $topic_facet)
 	);
 	return drupal_json_output($result);
 }
