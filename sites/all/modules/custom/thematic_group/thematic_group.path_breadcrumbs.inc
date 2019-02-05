@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * thematic_group.path_breadcrumbs.inc
@@ -13,11 +14,11 @@ function thematic_group_path_breadcrumbs_settings_info() {
   $path_breadcrumb = new stdClass();
   $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'articles_list_by_topic';
-  $path_breadcrumb->name = 'Articles List by Topic';
-  $path_breadcrumb->path = 'articles/by-topic/%node';
+  $path_breadcrumb->name = 'Stories List by Topic';
+  $path_breadcrumb->path = 'stories/by-topic/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Articles',
+      0 => 'Stories',
       1 => 'By Topic',
       2 => '%node:title',
     ),
@@ -59,17 +60,17 @@ function thematic_group_path_breadcrumbs_settings_info() {
   $path_breadcrumb = new stdClass();
   $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'search_articles';
-  $path_breadcrumb->name = 'Search Articles';
+  $path_breadcrumb->name = 'Search stories';
   $path_breadcrumb->path = 'search/articles/%term/%thematic_area';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Search Articles',
+      0 => 'Search Stories',
       1 => '!term',
       2 => '!thematic_area',
     ),
     'paths' => array(
-      0 => 'search/articles',
-      1 => 'search/articles/!term',
+      0 => 'search/stories',
+      1 => 'search/stories/!term',
       2 => '<none>',
     ),
     'home' => 1,
@@ -94,7 +95,7 @@ function thematic_group_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'search/articles';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Search Articles',
+      0 => 'Search Stories',
     ),
     'paths' => array(
       0 => '<none>',
@@ -110,15 +111,15 @@ function thematic_group_path_breadcrumbs_settings_info() {
   $path_breadcrumb = new stdClass();
   $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'search_articles_term';
-  $path_breadcrumb->name = 'Search Articles Term';
+  $path_breadcrumb->name = 'Search Stories Term';
   $path_breadcrumb->path = 'search/articles/%term';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Search Articles',
+      0 => 'Search Stories',
       1 => '!term',
     ),
     'paths' => array(
-      0 => 'search/articles',
+      0 => 'search/stories',
       1 => '<none>',
     ),
     'home' => 1,
