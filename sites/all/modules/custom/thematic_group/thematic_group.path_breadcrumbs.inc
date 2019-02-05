@@ -23,7 +23,7 @@ function thematic_group_path_breadcrumbs_settings_info() {
       2 => '%node:title',
     ),
     'paths' => array(
-      0 => 'blog',
+      0 => 'story',
       1 => '%node:url',
       2 => '%node:url',
     ),
