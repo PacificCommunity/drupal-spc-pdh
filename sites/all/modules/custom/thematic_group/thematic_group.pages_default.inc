@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * thematic_group.pages_default.inc
@@ -298,7 +299,7 @@ function thematic_group_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Articles',
+    'override_title_text' => 'Stories',
     'override_title_heading' => 'h2',
     'arguments' => array(
       'nid' => '',
@@ -364,9 +365,9 @@ function thematic_group_default_page_manager_pages() {
   $page->api_version = 1;
   $page->name = 'articles_by_topic';
   $page->task = 'page';
-  $page->admin_title = 'Articles by topic';
+  $page->admin_title = 'Stories by topic';
   $page->admin_description = '';
-  $page->path = 'articles/by-topic/%node';
+  $page->path = 'stories/by-topic/%node';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array(

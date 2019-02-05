@@ -108,9 +108,9 @@
           <div class="icon-wrapper">
             <img src="/sites/all/themes/spc/img/spc/article_icon.png">
           </div>
-          <a href="/articles/by-topic/<?= $node->nid ?>">
+          <a href="/stories/by-topic/<?= $node->nid ?>">
             <span class="count"><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></span>
-            <?php print t('Articles'); ?>
+            <?php print t('Stories'); ?>
           </a>
         </div>
         <div class="link-block">

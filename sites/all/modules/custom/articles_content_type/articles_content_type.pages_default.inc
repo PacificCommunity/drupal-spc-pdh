@@ -216,9 +216,9 @@ function articles_content_type_default_page_manager_pages() {
   $page->api_version = 1;
   $page->name = 'articles';
   $page->task = 'page';
-  $page->admin_title = 'Articles';
-  $page->admin_description = 'Provides articles list page';
-  $page->path = 'blog';
+  $page->admin_title = 'Stories';
+  $page->admin_description = 'Provides stories list page';
+  $page->path = 'story';
   $page->access = array(
     'logic' => 'and',
   );

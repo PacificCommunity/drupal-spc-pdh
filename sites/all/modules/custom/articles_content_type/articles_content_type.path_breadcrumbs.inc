@@ -14,15 +14,15 @@ function articles_content_type_path_breadcrumbs_settings_info() {
   $path_breadcrumb = new stdClass();
   $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'article_individual_view';
-  $path_breadcrumb->name = 'Article Individual View';
+  $path_breadcrumb->name = 'Story Individual View';
   $path_breadcrumb->path = 'node/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Blog',
+      0 => 'Story',
       1 => '!page_title',
     ),
     'paths' => array(
-      0 => 'blog',
+      0 => 'story',
       1 => '<none>',
     ),
     'home' => 1,
@@ -58,11 +58,11 @@ function articles_content_type_path_breadcrumbs_settings_info() {
   $path_breadcrumb = new stdClass();
   $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'articles_list_page';
-  $path_breadcrumb->name = 'Articles List Page';
-  $path_breadcrumb->path = 'blog';
+  $path_breadcrumb->name = 'Stories List Page';
+  $path_breadcrumb->path = 'story';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Articles',
+      0 => 'Stories',
     ),
     'paths' => array(
       0 => '<none>',
