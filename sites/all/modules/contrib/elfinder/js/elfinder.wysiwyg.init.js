@@ -1,4 +1,0 @@
-Drupal.elfinder = {
-  editor: {}
-
-}
