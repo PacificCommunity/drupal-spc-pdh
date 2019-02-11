@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * basic_page.strongarm.inc
@@ -57,6 +58,27 @@ function basic_page_strongarm() {
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'dashboards_preview' => array(
+        'custom_settings' => FALSE,
+      ),
+      'topic_preview' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_individual_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_list_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'data_insights_on_topic_page' => array(
         'custom_settings' => FALSE,
       ),
     ),
