@@ -7673,6 +7673,9 @@ button.header-menu-btn:focus {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
+.node-type-page table {
+  max-width: 800px;
+}
 .node-type-page table thead tr {
   background-color: #032f47;
 }
