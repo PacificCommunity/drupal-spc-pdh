@@ -108,7 +108,8 @@
       background-color: var(--filters-color);
       border: none;
       border-radius: 0;
-      padding: 0 10px; }
+      padding: 0 10px;
+      cursor: pointer; }
       .advanced-search-filters .filter-select .filter__control .filter__value-container {
         padding: 0;
         flex-wrap: nowrap; }
@@ -130,6 +131,9 @@
         .advanced-search-filters .filter-select .filter__control .filter__multi-value .filter__multi-value__label {
           color: #fff;
           color: var(--search-text-color); }
+        .advanced-search-filters .filter-select .filter__control .filter__multi-value .value-tooltip-wrapper {
+          display: flex;
+          overflow: hidden; }
       .advanced-search-filters .filter-select .filter__control.filter__control--menu-is-open {
         border: 1px solid #fff;
         border: 1px solid var(--search-text-color);
@@ -147,7 +151,8 @@
         font-size: 14px;
         font-weight: 300;
         padding-left: 15px;
-        padding-right: 25px; }
+        padding-right: 25px;
+        cursor: pointer; }
       .advanced-search-filters .filter-select .filter__menu .filter__option--is-focused {
         background-color: #3581aa;
         background-color: var(--filters-hover-color); }
