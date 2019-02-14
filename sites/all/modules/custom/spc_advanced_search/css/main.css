@@ -110,6 +110,9 @@
       border-radius: 0;
       padding: 0 10px;
       cursor: pointer; }
+      .advanced-search-filters .filter-select .filter__control .filter__input {
+        color: #fff;
+        color: var(--search-text-color); }
       .advanced-search-filters .filter-select .filter__control .filter__value-container {
         padding: 0;
         flex-wrap: nowrap; }
@@ -295,7 +298,11 @@
   .result-item:last-of-type {
     border-bottom: none; }
 
-@media (max-width: 970px) {
+@media (max-width: 1199px) {
+  .advanced-search-filters .filter-select {
+    width: 24%; } }
+
+@media (max-width: 991px) {
   .advanced-search-filters .filter-select {
     width: 49%; } }
 
