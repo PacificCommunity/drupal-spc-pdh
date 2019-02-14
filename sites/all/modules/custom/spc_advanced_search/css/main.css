@@ -290,20 +290,35 @@
   .result-item:last-of-type {
     border-bottom: none; }
 
-@media (max-width: 525px) {
-  .advanced-search-filters {
-    display: block; }
-    .advanced-search-filters .filter-select {
-      margin-left: auto;
-      margin-right: auto; } }
+@media (max-width: 970px) {
+  .advanced-search-filters .filter-select {
+    width: 49%; } }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .search-block {
-    flex-direction: column; }
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px; }
     .search-block .search-btn {
       margin: 15px auto 0; }
+    .search-block input[type='text'] {
+      padding-left: 30px; }
     .search-block:before {
-      top: 32%; } }
+      top: 32%;
+      left: 23px; }
+  .filter-block {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .advanced-search-filters .filter-select {
+    height: auto; }
+    .advanced-search-filters .filter-select .filter__control {
+      height: 40px; }
+      .advanced-search-filters .filter-select .filter__control .filter__value-container {
+        height: 100%; } }
+
+@media (max-width: 340px) {
+  .advanced-search-filters .filter-select .filter__control {
+    height: 50px; } }
 
 .lds-spinner {
   color: #fff;
