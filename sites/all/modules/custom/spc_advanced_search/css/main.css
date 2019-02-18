@@ -286,15 +286,19 @@
     float: right;
     font-size: 12px;
     color: #fc9d00; }
-  .result-item .resources-list .resource {
-    font-size: 14px;
-    font-weight: 400;
-    color: #fefefe;
-    background-color: #dfb100;
-    background-color: var(--resources-label);
-    border-radius: 5px;
-    padding: 1px 8px;
-    margin-right: 5px; }
+  .result-item .resources-list {
+    display: flex;
+    flex-wrap: wrap; }
+    .result-item .resources-list .resource {
+      font-size: 14px;
+      font-weight: 400;
+      color: #fefefe;
+      background-color: #dfb100;
+      background-color: var(--resources-label);
+      border-radius: 5px;
+      padding: 1px 8px;
+      margin-right: 5px;
+      margin-bottom: 10px; }
   .result-item:last-of-type {
     border-bottom: none; }
 
