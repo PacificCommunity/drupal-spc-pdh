@@ -33,7 +33,7 @@
     $thematic_landing_img = $content['field_banner_image'][0]['#item']['uri'];
     if ($thematic_landing_banner == 0):
       ?>
-      <div class="banner-image" style="background-image: url(<?php print file_create_url($thematic_landing_img); ?>)"></div>
+      <div class="banner-image" style="background-image: linear-gradient(135deg, rgba(0,198,236,0.85) 0%, rgba(0,3,102,0.95) 100%), url(<?php print file_create_url($thematic_landing_img); ?>)"></div>
       <div class="content"<?php print $content_attributes; ?>>
         <div class="spc-home-banner-block-main">
           <div class="spc-home-banner-block">

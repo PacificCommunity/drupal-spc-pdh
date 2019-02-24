@@ -1,6 +1,38 @@
 <?php
 
-function loop_menu($menu, $menu_layout, $counter_li=False, $parent_name=False) {
+// Usual menu tree
+function loop_menu_main($menu, $menu_layout) {
+  foreach ($menu as $key => $value) {
+    if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title'])) {
+      $menu_layout = $menu_layout . '<li class="' . (!empty($menu[$key]['#below']) ? 'dropdown' : '') . '">';
+    }
+    
+    if (!empty($menu[$key]['#below'])) {
+      $menu_layout = $menu_layout . '<a href="' . (!empty($menu[$key]) && $menu[$key]['#href'] == '<front>' ? '/' : url(drupal_get_path_alias($menu[$key]['#href']))) . '" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $menu[$key]['#title'] . '<i class="fa fa-chevron-down"></i></a>';
+      $menu_layout = $menu_layout . '<ul class="dropdown-menu">';
+      $menu_layout = loop_menu_main($menu[$key]['#below'], $menu_layout);
+      $menu_layout = $menu_layout . '</ul>';
+    } else {
+      $menu_layout = $menu_layout . '<a href="' . (!empty($menu[$key]) && $menu[$key]['#href'] == '<front>' ? '/' : url(drupal_get_path_alias($menu[$key]['#href']))) . '">' . $menu[$key]['#title'] . '</a>';
+    }
+    $menu_layout = $menu_layout . '</li>';
+  }
+  return $menu_layout;
+}
+
+function create_main_menu() {
+  $menu_array = menu_tree_output(menu_tree_all_data('main-menu'));
+  $menu_layout = '<nav id="main-menu" class="pull-right"><ul>';
+  $menu_layout = loop_menu_main($menu_array, $menu_layout);
+  $menu_layout = $menu_layout . '<li><a href="/user/login"><span class="login-icon"></span>Login</a></li>';
+  $menu_layout = $menu_layout . '</ul></nav>';
+
+  return $menu_layout;
+}
+
+
+// Old right side menu
+function loop_menu_mobile($menu, $menu_layout, $counter_li=False, $parent_name=False) {
   $counter_ul = $counter_li;
   $counter_li = 1;
   foreach ($menu as $key => $value) {
@@ -16,7 +48,7 @@ function loop_menu($menu, $menu_layout, $counter_li=False, $parent_name=False) {
       $parent_name = $menu[$key]['#title'];
       $menu_layout = $menu_layout . '<span class="ma5-btn-enter"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>';
       $menu_layout = $menu_layout . '<ul class="ma5-ul-' . $counter_li . '">';
-      $menu_layout = loop_menu($menu[$key]['#below'], $menu_layout, $counter_li, $parent_name);
+      $menu_layout = loop_menu_mobile($menu[$key]['#below'], $menu_layout, $counter_li, $parent_name);
       $menu_layout = $menu_layout . '</ul>';
     } 
     $menu_layout = $menu_layout . '</li>';
@@ -25,7 +57,7 @@ function loop_menu($menu, $menu_layout, $counter_li=False, $parent_name=False) {
   return $menu_layout;
 }
 
-function create_main_menu() {
+function create_mobile_menu() {
   $menu_array = menu_tree_output(menu_tree_all_data('main-menu'));
   $menu_layout = '<div id="main-menu">
   <button class="header-menu-btn ma5-toggle-menu" type="button">
@@ -35,7 +67,7 @@ function create_main_menu() {
   </button>
   <nav class="ma5-menu-mobile">
   <ul class="ma5-ul">';
-  $menu_layout = loop_menu($menu_array, $menu_layout);
+  $menu_layout = loop_menu_mobile($menu_array, $menu_layout);
   $menu_layout = $menu_layout . '</ul></nav></div>';
 
   return $menu_layout;
