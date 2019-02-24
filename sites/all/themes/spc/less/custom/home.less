@@ -24,7 +24,6 @@
         font-weight: 300;
         text-align: right;
         display: block;
-        font-family: "Calibri Light";
         &:hover {
             color:  #032f47;
         }
@@ -54,45 +53,50 @@
         text-align: center;
     }
     .banner-image {
-        height: 400px;
+        height: 908px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: cover;
     }
     .banner-title {
         color:  #fff;
-        font-size: 28px;
-        font-weight: 300;
         text-align: center;
-        &>.field-type-text-long:first-child {
-            font-size: 50px;
-            margin-bottom: 25px;
+        margin-bottom: 68px;
+        h1 {
+            font-size: 75px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            margin-top: 0;
+            strong {
+                color: @spc-accent-color;
+            }
         }
-        &>.field-type-text-long:last-child {
-            margin-bottom: 60px;
+        h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 0;
         }
     }
     .spc-home-banner-block {
         position: absolute;
-        top: 50%;
+        top: 388px;
         left: 50%;
         width: 800px;
         transform: translate(-50%, -50%);
         #ckan-search-form {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 20px;
             text-align: center;
             position: relative;
             &>div {
                 display: inline-block;
                 input {
-                    height: 60px;
-                    width: 700px;
-                    border-radius: 5px;
+                    height: 56px;
+                    width: 690px;
+                    border-radius: 26px;
                     border: none;
                     box-shadow: none;
-                    padding: 0 10px;
-                    font-weight: 300;
+                    padding: 0 28px;
                 }
             }
             select {
@@ -108,7 +112,7 @@
             input[type='submit'] {
                 position: absolute;
                 top: 10px;
-                right: 60px;
+                right: 80px;
                 width: 35px;
                 opacity: 0;
                 background: none;
@@ -125,10 +129,11 @@
                 position: relative;
                 &:after {
                     content: '\f002';
-                    font: normal normal normal 35px/1 FontAwesome;
+                    font: normal normal normal 25px/1 FontAwesome;
                     position: absolute;
-                    top: 11px;
-                    right: 10px;
+                    top: 15px;
+                    right: 30px;
+                    color: @spc-buttons-color;
                 }
             }
         }
@@ -183,7 +188,6 @@
 
 #mini-panel-data_insights {
     padding: 35px 0px 54px 0px;
-    font-family: "Calibri Light";
     h2 {
         color: #032f47;
         font-size: 29px;
@@ -347,7 +351,6 @@
 
 .latest-stories-homepage {
     padding: 35px 0px 50px 0px;
-    font-family: "Calibri Light";
     color: #2a2c2d;
     h2 {
         font-size: 29px;
@@ -367,7 +370,7 @@
             float: left;
             width: 25%;
             .views-field-title {
-                font-family: "Calibri Light";
+    
                 font-weight: 300;
                 a {
                     font-size: 19px;
@@ -397,7 +400,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px 0px 80px 0px;
-    font-family: "Calibri Light";
     font-size: 17px;
     .region {
         &.two-50-first, &.two-50-second {
@@ -445,7 +447,6 @@
 }
 
 .dataset-preview {
-    font-family: "Calibri Light";
     font-size: 17px;
     border-bottom: 1px solid #036295;
     padding: 12px 0 12px 0px;
@@ -528,7 +529,6 @@
     background-size: cover;
     padding: 35px 0;
     height: 300px;
-    font-family: "Calibri Light";
     h2 {
         font-size: 29px;
         font-weight: 300;
@@ -608,7 +608,6 @@
                         height: 100%;
                     }
                     h4 {
-                        font-family: "Calibri";
                         font-weight: 300;
                         margin-top: 10px;
                     }
@@ -633,13 +632,15 @@
 }
 
 .topics-home {
-    margin: 0px;
-    padding-top: 28px;
-    padding-bottom: 28px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     .jcarousel-skin-default {
         max-width: 968px;
         .jcarousel-list {
             .jcarousel-item {
+                background: transparent;
                 h4 {
                     font-size: 16px;
                     color:  #1d7bbc;
@@ -655,7 +656,6 @@
     padding-top: 35px;
     padding-bottom: 120px;
     h2 {
-        font-family: "Calibri Light";
         margin-top: 0px;
         margin-bottom: 54px;
         font-size: 29px;
