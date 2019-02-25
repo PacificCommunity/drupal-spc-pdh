@@ -2,7 +2,7 @@
 function menu_export_menu() {
     $items = array();
     $items['menu_export'] = array(
-        'page callback' => 'say_hello_world',
+        'page callback' => 'menu_export_callback',
         'access arguments' => array('access content'),
 	    'delivery callback' => 'drupal_json_output'
      );
@@ -10,7 +10,7 @@ function menu_export_menu() {
 }
 
 
-function say_hello_world() {
+function menu_export_callback() {
     $menu_main = menu_build_tree('main-menu');
     $menu_footer = menu_build_tree('menu-footer-menu');
     $output = Array();

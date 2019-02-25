@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * home_page.bean.inc

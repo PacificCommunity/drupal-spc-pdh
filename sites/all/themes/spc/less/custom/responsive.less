@@ -1,4 +1,16 @@
 @media (max-width: 1199px) {
+    #header {
+        #main-menu {
+            ul {
+                li {
+                    a {
+                        padding: 0 12px;
+                    }
+                }
+            }
+        }
+    }
+
     #mini-panel-footer { 
         input[type="text"] {
             width: 65%;
@@ -23,32 +35,15 @@
     }
 }
 
-@media (min-width: 992px) {
-  .articles-page {
-    #mini-panel-articles_page_content {
-      .container {
-        max-width: 1010px;
-      }
-    }
-  }
-  .page-articles {
-    .pane-articles-by-topic-page {
-        max-width: 1010px;
-    }
-  }
-  .page-search {
-    .articles-list {
-        max-width: 1010px;
-    }
-  }
-}
 
 @media (max-width: 991px) {
-    #mini-panel-home_banner, #thematic_landing_banner {
-        .spc-home-banner-block {
-            width: 100%;
-        }
+    body {
+        font-size: 12px;
     }
+    #main-menu {
+        display: none;
+    }
+
     .dashboard-banner-container {
         .ckan-search-form-wrapper {
             width: 100%;
@@ -135,31 +130,20 @@
     }
 }
 
-@media (max-width: 859px) {
-    .thematic-group-articles {
-        .field-type-entityreference {
-            .field-items {
-                justify-content: center;
-            }
-        }
-    }
-}
 
 @media (max-width: 767px) {
     #mini-panel-home_banner, #thematic_landing_banner {
         .spc-home-banner-block {
             #ckan-search-form {
-                input[type='submit'] {
-                    width: 120px;
-                }
                 &>div {
                     input {
-                        width: 480px;
+                        width: 100%;
                     }
                 }
             }
         }
     }
+
     .dashboard-banner-container {
         .ckan-search-form-wrapper {
             #ckan-search-form {
@@ -204,32 +188,6 @@
         }
         .row  {
             display: block;
-        }
-    }
-    #thematic_landing_banner {
-        .banner-image {
-            height: 300px;
-        }
-        .spc-home-banner-block {
-            top: 47%;
-            #ckan-search-form {
-                div:last-of-type {
-                    display: inline-block;
-                    width: 30%;
-                    select {
-                        width: 100%;
-                        padding: 0 8px;
-                        font-size: 20px;
-                    }
-                }
-                div:first-of-type {
-                    display: inline-block;
-                    width: 70%;
-                    input {
-                        width: 100%;
-                    }
-                }
-            }
         }
     }
     .node-type-thematic-group {
@@ -298,6 +256,7 @@
     }
 }
 
+
 @media (max-width: 569px) {
     #mini-panel-blog_preview {
         .bean-article-on-home-page {
@@ -336,19 +295,8 @@
     }
 }
 
+
 @media (max-width: 488px) {
-    #mini-panel-home_banner {
-        .spc-home-banner-block {
-            #ckan-search-form {
-                &>div {
-                    input {
-                        width: 100%;
-                        margin-bottom: 10px;
-                    }
-                }
-            }
-        }
-    }
     .dashboard-banner-container {
         .ckan-search-form-wrapper {
             #ckan-search-form {
@@ -372,33 +320,6 @@
             }
         }
     }
-    #thematic_landing_banner .spc-home-banner-block {
-        padding: 0 15px;
-        #ckan-search-form {
-            &>div:first-of-type, &>div:last-of-type{
-                input, select {
-                    font-size: 14px;
-                }
-            }
-            div.search-type-container {
-                width: auto;
-                font-size: 14px;
-                min-width: 90px;
-                div.nice-select {
-                    .current {
-                        padding-top: 20px;
-                        padding-bottom: 20px;
-                        padding-right: 30px;
-                        padding-left: 20px;
-                        font-size: 14px;
-                    }
-                    &:after {
-                        width: 30px;
-                    }
-                }
-            }
-        }
-    }
     .breadcrumb {
         margin-bottom: 5px;
     }
@@ -407,6 +328,7 @@
         padding-right: 18px;
     }
 }
+
 
 @media (max-width: 440px) {
     #member-countries-block {
@@ -424,6 +346,7 @@
     }
 }
 
+
 @media (max-width: 342px) {
     #mini-panel-footer {
         input[type="text"] {
@@ -433,17 +356,6 @@
         input[type="submit"] {
             margin: 0 auto;
             display: block;
-        }
-    }
-    #mini-panel-home_banner .spc-home-banner-block #ckan-search-form > div, 
-    #thematic_landing_banner .spc-home-banner-block #ckan-search-form > div {
-        input {
-            width: 96%;
-        }
-        &:after {
-            top: 18px;
-            right: 18px;
-            font-size: 25px;
         }
     }
     .dashboard-banner-container {

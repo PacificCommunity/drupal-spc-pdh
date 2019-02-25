@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * home_page.views_default.inc
@@ -182,6 +183,7 @@ function home_page_views_default_views() {
   $handler->display->display_options['style_options']['autoPause'] = 1;
   $handler->display->display_options['style_options']['easing'] = '';
   $handler->display->display_options['style_options']['vertical'] = 0;
+  $handler->display->display_options['style_options']['navigation'] = 'after';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'ds';
