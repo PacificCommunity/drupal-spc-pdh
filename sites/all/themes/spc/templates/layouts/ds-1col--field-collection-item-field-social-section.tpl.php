@@ -85,5 +85,5 @@
       $url = $content['field_social_link']['#items'][0]['safe_value'];
       $img_path = $content['field_social_icon'][0]['#item']['uri'];
     ?>
-      <a href="<?= $url ?>" style="background: url(<?php print file_create_url($img_path); ?>) center center no-repeat; background-size: contain; height: 100%; width: 100%; display: inline-block; opacity: 0.3;" target="_blank"></a>
+      <a href="<?= $url ?>" style="background: url(<?php print file_create_url($img_path); ?>) center center no-repeat; background-size: contain; height: 100%; width: 100%; display: inline-block;" target="_blank"></a>
 <?php }; ?>
