@@ -18,12 +18,12 @@
 <header id="header">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 col-sm-4 col-xs-5" id="logo-title">
+      <div class="col-md-3 col-sm-3 col-xs-5" id="logo-title">
         <?php if (!empty($logo)): ?>
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
         <?php endif; ?>
       </div>
-      <div class="col-md-8 col-sm-8 col-xs-7">
+      <div class="col-md-9 col-sm-9 col-xs-7">
         <?= create_main_menu(); ?>
       </div>
     </div>
