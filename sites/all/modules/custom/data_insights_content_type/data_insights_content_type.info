@@ -1,7 +1,7 @@
 name = Data Insights content type
 core = 7.x
 package = Features
-version = 7.x-1.05
+version = 7.x-1.06
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = entityreference

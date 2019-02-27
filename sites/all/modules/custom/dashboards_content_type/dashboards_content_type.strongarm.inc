@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboards_content_type.strongarm.inc
@@ -158,10 +159,10 @@ function dashboards_content_type_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'redirect' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
