@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * main_layout.panels_default.inc

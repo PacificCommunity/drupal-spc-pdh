@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboards_content_type.field_group.inc
@@ -23,8 +24,8 @@ function dashboards_content_type_field_group_info() {
     'label' => 'Banner',
     'weight' => '1',
     'children' => array(
-      0 => 'ckan_search_form',
-      1 => 'title',
+      0 => 'field_banner_title_db',
+      1 => 'ckan_search_form',
     ),
     'format_type' => 'div_background_image',
     'format_settings' => array(
@@ -34,12 +35,7 @@ function dashboards_content_type_field_group_info() {
         'label_element' => 'h2',
         'background_image' => 'field_main_image',
         'image_style' => 'dashboard_banner',
-        'classes' => 'container-fluid dashboard-banner-container',
-        'element' => 'div',
-        'attributes' => '',
-        'required_fields' => 1,
-        'id' => '',
-        'background_color' => '',
+        'classes' => 'banner-with-title',
       ),
       'formatter' => 'open',
     ),
@@ -57,7 +53,7 @@ function dashboards_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Body',
-    'weight' => '4',
+    'weight' => '2',
     'children' => array(
       0 => 'field_body_text',
     ),
@@ -87,7 +83,7 @@ function dashboards_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Chart settings',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_interactive_chart_source',
       1 => 'field_chart_help_text',

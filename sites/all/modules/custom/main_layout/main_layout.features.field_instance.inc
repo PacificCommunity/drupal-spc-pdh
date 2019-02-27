@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * main_layout.features.field_instance.inc
@@ -9,6 +10,80 @@
  */
 function main_layout_field_default_field_instances() {
   $field_instances = array();
+
+  // Exported field_instance: 'bean-banner_with_title-field_background'.
+  $field_instances['bean-banner_with_title-field_background'] = array(
+    'bundle' => 'banner_with_title',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_background',
+    'label' => 'background',
+    'required' => FALSE,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'bean-banner_with_title-field_title_bg'.
+  $field_instances['bean-banner_with_title-field_title_bg'] = array(
+    'bundle' => 'banner_with_title',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_title_bg',
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
 
   // Exported field_instance: 'bean-partner_logos-field_partners'.
   $field_instances['bean-partner_logos-field_partners'] = array(
@@ -244,6 +319,8 @@ function main_layout_field_default_field_instances() {
   t('Social Icon');
   t('Social Link');
   t('Social Section');
+  t('Title');
+  t('background');
 
   return $field_instances;
 }

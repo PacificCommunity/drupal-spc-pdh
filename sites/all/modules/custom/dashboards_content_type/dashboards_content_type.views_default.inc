@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboards_content_type.views_default.inc

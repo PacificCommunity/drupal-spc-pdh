@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboards_content_type.ds.inc
@@ -33,34 +34,9 @@ function dashboards_content_type_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'ckan_search_form' => array(
-      'weight' => '3',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '0',
-        'wrapper' => 'h1',
-        'class' => 'title',
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fis' => TRUE,
-          'fis-el' => 'div',
-          'fis-cl' => 'row',
-          'fis-at' => '',
-          'fis-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'col-md-12 col-sm-12 col-xs-12',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
     ),
     'field_body_text' => array(
       'formatter_settings' => array(
@@ -179,22 +155,22 @@ function dashboards_content_type_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'group_logo',
-        1 => 'title',
-        2 => 'field_icon_logo',
-        3 => 'group_banner',
-        4 => 'ckan_search_form',
-        5 => 'field_body_text',
-        6 => 'group_body',
+        1 => 'group_banner',
+        2 => 'field_banner_title_db',
+        3 => 'field_icon_logo',
+        4 => 'group_body',
+        5 => 'ckan_search_form',
+        6 => 'field_body_text',
       ),
     ),
     'fields' => array(
       'group_logo' => 'ds_content',
-      'title' => 'ds_content',
-      'field_icon_logo' => 'ds_content',
       'group_banner' => 'ds_content',
+      'field_banner_title_db' => 'ds_content',
+      'field_icon_logo' => 'ds_content',
+      'group_body' => 'ds_content',
       'ckan_search_form' => 'ds_content',
       'field_body_text' => 'ds_content',
-      'group_body' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
