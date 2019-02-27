@@ -7745,8 +7745,22 @@ body {
 }
 .breadcrumb-box {
   position: absolute;
-  top: 200px;
+  top: 100px;
+  padding-left: 55px;
   z-index: 1;
+}
+.breadcrumb-box .breadcrumb {
+  padding: 0;
+  margin: 0;
+}
+.breadcrumb-box .breadcrumb a,
+.breadcrumb-box .breadcrumb span,
+.breadcrumb-box .breadcrumb .delimiter {
+  color: #fff;
+  font-size: 12px;
+}
+.breadcrumb-box .element-invisible {
+  display: none;
 }
 .not-front .node-data-insights {
   max-width: 800px;
@@ -8076,6 +8090,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 #mini-panel-home_banner .spc-home-banner-block,
 #thematic_landing_banner .spc-home-banner-block {
+  width: 100%;
   padding: 0 15px;
   margin-top: -135px;
 }
@@ -9594,9 +9609,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
 }
 @media (max-width: 991px) {
-  body {
-    font-size: 12px;
-  }
   #main-menu {
     display: none;
   }
@@ -9619,31 +9631,11 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   #mini-panel-footer input[type="submit"] {
     width: 105px;
   }
-  #thematic_landing_banner .banner-links {
-    height: 100px;
-  }
-  #thematic_landing_banner .banner-links .link-block {
-    height: 100px;
-    font-size: 26px;
-  }
-  #thematic_landing_banner .banner-links .link-block:nth-child(1) {
-    padding-right: 40px;
-  }
-  #thematic_landing_banner .banner-links .link-block:nth-child(3) {
-    padding-left: 40px;
-  }
-  #thematic_landing_banner .banner-links .link-block .icon-wrapper {
-    width: 60px;
-    height: 60px;
-  }
   #mini-panel-latest_datasets_and_insight #two-50-middle-wrapper .region {
     width: 100%;
   }
   #mini-panel-latest_datasets_and_insight #two-50-middle-wrapper .region.two-50-first {
     margin-bottom: 30px;
-  }
-  .breadcrumb {
-    padding: 8px 0;
   }
   #member-countries-block .btn.dropdown-toggle,
   #member-countries-block .dropdown-menu {
@@ -9655,15 +9647,42 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
 }
 @media (max-width: 767px) {
-  #mini-panel-home_banner .spc-home-banner-block #ckan-search-form > div:first-child input,
-  #thematic_landing_banner .spc-home-banner-block #ckan-search-form > div:first-child input {
+  #ckan-search-form {
     width: 100%;
   }
-  .banner-with-title .ckan-search-form-wrapper #ckan-search-form input[type='submit'] {
-    width: 120px;
+  .topics-home .jcarousel-skin-default .jcarousel-container-horizontal {
+    height: auto;
+    padding: 10px 20px;
   }
-  .banner-with-title .ckan-search-form-wrapper #ckan-search-form > div input {
-    width: 480px;
+  .topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item {
+    width: 110px;
+  }
+  .topics-home .jcarousel-next {
+    right: 10px;
+  }
+  .topics-home .jcarousel-prev {
+    left: 10px;
+  }
+  #mini-panel-home_banner h1,
+  #thematic_landing_banner h1 {
+    font-size: 30px;
+  }
+  .node-type-dashboards .banner-with-title {
+    padding: 0 15px;
+  }
+  .node-type-dashboards .banner-with-title h1 {
+    font-size: 25px;
+  }
+  .banner-with-title {
+    height: 210px;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+  }
+  .banner-with-title h1 {
+    font-size: 26px;
+  }
+  .breadcrumb-box {
+    display: none;
   }
   .latest-stories-homepage .field-items .field-item,
   .thematic-group-articles .field-items .field-item {
@@ -9752,31 +9771,14 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   .thematic-group-articles .field-type-entityreference .field-items .field-item.even {
     margin-left: 0;
   }
-  .node-type-dashboards div#tabs .tabs.primary {
-    padding-left: 0;
-  }
-  .node-type-dashboards div#tabs .tabs.primary li {
-    display: block;
-  }
-  .node-type-dashboards div#tabs .tabs.primary li a {
-    display: block;
-    width: 100%;
-  }
 }
 @media (max-width: 488px) {
-  .banner-with-title .ckan-search-form-wrapper #ckan-search-form > div input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
   #node_content {
     padding: 80px 15px 60px;
   }
   .node-type-thematic-group .thematic-group-image img {
     margin-bottom: 15px;
     width: 100%;
-  }
-  .breadcrumb {
-    margin-bottom: 5px;
   }
   .node-article.view-mode-featured .node-content-container {
     padding-left: 18px;
@@ -9795,10 +9797,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   #member-countries-block .dropdown-menu {
     width: 100%;
   }
-  #thematic_landing_banner .spc-home-banner-block #spc-home-banner-search .nice-select ul li {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
 }
 @media (max-width: 342px) {
   #mini-panel-footer input[type="text"] {
@@ -9808,14 +9806,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   #mini-panel-footer input[type="submit"] {
     margin: 0 auto;
     display: block;
-  }
-  .banner-with-title .ckan-search-form-wrapper #ckan-search-form > div input {
-    width: 96%;
-  }
-  .banner-with-title .ckan-search-form-wrapper #ckan-search-form > div:after {
-    top: 18px;
-    right: 18px;
-    font-size: 25px;
   }
   .node-type-dsp .goals-navigation .dropdown ul {
     width: 100%;
