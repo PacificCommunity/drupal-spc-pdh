@@ -21,3 +21,50 @@ function home_page_preprocess_entity(&$variables) {
 		}
 	}
 }
+
+
+/**
+ * Implements hook_theme().
+ */
+
+function home_page_theme($existing, $type, $theme, $path) {
+  if($type == 'module'){
+    return [
+      'homepage_stats' => [
+		'variables' => array(),
+		'template' => 'homepage_stats'
+      ]
+    ];
+  }
+  return [];
+}
+
+
+/**
+ * Implements hook_block_info().
+ */
+
+function home_page_block_info() {
+  $blocks['home_page_stats_show'] = [
+    'info' => t('Homepage stats show')
+  ];
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+
+function home_page_block_view($delta='') {
+	$block = array();
+
+	switch($delta) {
+		case 'home_page_stats_show' :
+			$snippet= theme('homepage_stats');
+			$block['content'] = "<div>". $snippet ."</div>";
+			break;
+	}
+
+	return $block;
+}
