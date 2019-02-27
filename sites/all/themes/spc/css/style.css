@@ -8189,7 +8189,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 .topics-home .jcarousel-skin-default .jcarousel-container-horizontal {
   position: relative;
-  height: 135px;
+  height: auto;
   width: auto;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 13px;
@@ -9651,7 +9651,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
     width: 100%;
   }
   .topics-home .jcarousel-skin-default .jcarousel-container-horizontal {
-    height: auto;
     padding: 10px 20px;
   }
   .topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item {
