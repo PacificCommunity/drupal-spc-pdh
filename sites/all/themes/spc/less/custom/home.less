@@ -12,6 +12,26 @@
 
 #mini-panel-home_banner, #thematic_landing_banner {
     position: relative;
+    .region-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .bean-home-banner {
+            width: 100%;
+        }
+    }
+    h1 {
+        font-size: 54px;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0;
+        strong {
+            color: @spc-accent-color;
+        }
+    }
     .field-type-image {
         background: #fff;
         max-width: 100%;
@@ -20,7 +40,11 @@
         text-align: center;
     }
     .banner-image {
-        height: 908px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 648px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: cover;
@@ -28,84 +52,99 @@
     .banner-title {
         color:  #fff;
         text-align: center;
-        margin-bottom: 68px;
-        h1 {
-            font-size: 5.4em;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-            margin-top: 0;
-            strong {
-                color: @spc-accent-color;
-            }
-        }
         h2 {
-            font-size: 1.25em;
+            font-size: 13px;
             font-weight: 400;
             line-height: 1.5;
-            margin-top: 0;
+            margin-top: 12px;
         }
     }
     .spc-home-banner-block {
-        position: absolute;
-        top: 388px;
-        left: 50%;
         width: 100%;
-        transform: translate(-50%, -50%);
         padding: 0 15px;
-        #ckan-search-form {
-            font-size: 20px;
-            text-align: center;
-            position: relative;
-            &>div {
+        margin-top: -135px;
+    }
+}
+#spc-home-banner-search {
+    margin-top: 49px;
+    .nice-select {
+        .current {
+            display: none;
+        }
+        ul {
+            padding-left: 0;
+            margin-top: 21px;
+            margin-bottom: 0;
+            li {
+                position: relative;
+                list-style: none;
                 display: inline-block;
-                input {
-                    height: 56px;
-                    width: 690px;
-                    border-radius: 26px;
-                    border: none;
-                    box-shadow: none;
-                    padding: 0 28px;
+                font-size: 13px;
+                color: #fff;
+                line-height: 1;
+                padding-left: 22px;
+                margin: 0 29px;
+                cursor: pointer;
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
+                    top: -2px;
+                    width: 16px;
+                    height: 16px;
+                    border: 3px solid #fff;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                }
+                &.selected {
+                    &:before {
+                        background: #fff;
+                    }   
                 }
             }
-            select {
-                position: relative;
-                background-color: #eee;
-                font-weight: 300;
-                padding: 0 15px;
-                border-radius: 5px;
-                height: 60px;
-                width: auto;
-                border: none;
-            }
-            input[type='submit'] {
-                position: absolute;
-                top: 10px;
-                right: 80px;
-                width: 35px;
-                opacity: 0;
-                background: none;
-                border: none;
-            }
+        }
+        &:focus {
+            outline: none;
         }
     }
 }
-
-#mini-panel-home_banner {
-    .spc-home-banner-block {
-        #ckan-search-form {
-            &>div {
-                position: relative;
-                &:after {
-                    content: '';
-                    position: absolute;
-                    top: 15px;
-                    right: 30px;
-                    .sprite('../img/sprite/spc_new_sprite.png', 22px, 30px, -3px, 0);
-                    background-size: 130%;
-                }
+#ckan-search-form {
+    position: relative;
+    width: 494px;
+    text-align: center;
+    margin: 0 auto;
+    &>div:first-child {
+        position: relative;
+        width: 100%;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            right: 20px;
+            .sprite('../img/sprite/spc_new_sprite.png', 22px, 30px, -3px, 0);
+            background-size: 130%;
+        }
+        input {
+            height: 40px;
+            width: 100%;
+            border-radius: 20px;
+            border: none;
+            padding: 0 28px;
+            &[type='text'] {
+                font-size: 15px;
+                box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.16);
             }
         }
+    }
+    input[type='submit'] {
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        width: 35px;
+        opacity: 0;
+        background: none;
+        border: none;
     }
 }
 
@@ -115,15 +154,15 @@
     left: 0;
     right: 0;
     .jcarousel-skin-default {
-        max-width: 1100px;
+        max-width: 746px;
         margin: 0 auto;
         .jcarousel-container-horizontal {
             position: relative;
-            height: 190px;
+            height: 135px;
             width: auto;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 18px;
-            padding: 12px 45px;
+            border-radius: 13px;
+            padding: 10px 45px;
             .jcarousel-clip-horizontal {
                 width: auto;
             }
@@ -132,9 +171,9 @@
             .jcarousel-item {
                 height: auto;
                 border: none;
-                width: 170px;
+                width: 155px;
                 background: transparent;
-                padding: 18px 0;
+                padding: 14px 0;
                 &>div {
                     height: 100%;
                 }
@@ -142,23 +181,23 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 65px;
-                    height: 65px;
+                    width: 45px;
+                    height: 45px;
                     background: rgba(255, 255, 255, 0.1);
                     border-radius: 50%;
                     padding: 0;
                     margin: 0 auto;
                     svg {
-                        font-size: 30px;
+                        font-size: 20px;
                         color: #fff;
                     }
                 }
                 h4 {
-                    margin-top: 20px;
+                    margin-top: 12px;
                     margin-bottom: 0;
                 }
                 a {
-                    font-size: 1em;
+                    font-size: 13px;
                     font-weight: 400;
                     color: rgba(255, 255, 255, 0.35);
                     &:hover {
@@ -167,7 +206,7 @@
                 }
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.1);
-                    border-radius: 10px;
+                    border-radius: 5px;
                     a {
                         color: #fff;
                     }
@@ -184,9 +223,9 @@
     }
     .jcarousel-next, .jcarousel-prev {
         display: inline-block;
-        width: 10px;
-        height: 10px;
-        top: 90px;
+        width: 8px;
+        height: 8px;
+        top: 62px;
         right: 35px;
         background: transparent;
         border: solid #fff;
@@ -206,11 +245,13 @@
         }
     }
     .jcarousel-navigation {
+        font-size: 5px;
+        margin-top: 5px;
         li {
             a {
                 display: inline-block;
-                width: 8px;
-                height: 8px;
+                width: 5px;
+                height: 5px;
                 border: 1px solid #fff;
                 border-radius: 50%;
                 margin: 0 4px;

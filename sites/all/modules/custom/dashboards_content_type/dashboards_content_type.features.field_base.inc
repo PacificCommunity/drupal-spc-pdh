@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboards_content_type.features.field_base.inc
@@ -9,6 +10,25 @@
  */
 function dashboards_content_type_field_default_field_bases() {
   $field_bases = array();
+
+  // Exported field_base: 'field_banner_title_db'.
+  $field_bases['field_banner_title_db'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_banner_title_db',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
 
   // Exported field_base: 'field_body_text'.
   $field_bases['field_body_text'] = array(

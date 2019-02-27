@@ -29,6 +29,7 @@ function articles_content_type_strongarm() {
     'group_content|node|article|list' => FALSE,
     'group_meta|node|article|list' => FALSE,
     'group_insight_wrapper|node|data_insights|teaser' => TRUE,
+    'group_background_block|bean|banner_with_title|default' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
