@@ -8761,6 +8761,49 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   top: 50%;
   left: 0px;
 }
+#homepage-stats-block {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+#homepage-stats-block .homepage-stat-item {
+  display: inline-block;
+  padding: 0 65px;
+  position: relative;
+}
+#homepage-stats-block .homepage-stat-item:hover,
+#homepage-stats-block .homepage-stat-item a:hover {
+  text-decoration: none;
+}
+#homepage-stats-block .homepage-stat-item:first-child {
+  border-right: 1px solid #ededed;
+  padding-left: 0;
+}
+#homepage-stats-block .homepage-stat-item:last-child {
+  border-left: 1px solid #ededed;
+  padding-right: 0;
+}
+#homepage-stats-block .homepage-stat-item .homepage-stat-info {
+  display: inline-block;
+  color: #000;
+  margin-left: 45px;
+}
+#homepage-stats-block .homepage-stat-item .homepage-stat-info .homepage-stat-count {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 500;
+}
+#homepage-stats-block .homepage-stat-item .homepage-stat-info .homepage-stat-type {
+  font-size: 12px;
+  text-align: left;
+  margin-top: 5px;
+}
+#homepage-stats-block .homepage-stat-item .homepage-stat-icon {
+  height: 30px;
+  position: absolute;
+  top: 5px;
+}
 #thematic_landing_banner .spc-home-banner-block {
   margin-top: 0;
 }
@@ -9759,6 +9802,23 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
   .node-type-dsp .dsp-datasets .dataset-preview {
     width: 100%;
+  }
+  #homepage-stats-block {
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  #homepage-stats-block .homepage-stat-item {
+    padding: 0 5%;
+  }
+  #homepage-stats-block .homepage-stat-item .homepage-stat-info {
+    margin: 0;
+  }
+  #homepage-stats-block .homepage-stat-item .homepage-stat-info .homepage-stat-count {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  #homepage-stats-block .homepage-stat-item .homepage-stat-icon {
+    display: none;
   }
 }
 @media (max-width: 569px) {
