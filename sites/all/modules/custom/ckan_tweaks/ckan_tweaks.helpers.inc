@@ -17,6 +17,15 @@ function _ckan_tweaks_count_publications_for_thematic_area($id) {
   return _ckan_tweaks_search_datasets($params)['count'];
 }
 
+function _ckan_tweaks_count_ckan_entities($type='') {
+  $params = [
+    'q' => sprintf($type),
+    'rows' => 0
+  ];
+  return _ckan_tweaks_search_datasets($params)['count'];
+
+}
+
 
 function _ckan_tweaks_search_datasets($params) {
   $client = govcms_ckan_client();
@@ -76,4 +85,8 @@ function _ckan_tweaks_get_thematic_area_from_node($node) {
 
 function _ckan_tweaks_search_page_by_topic($topic, $dataset_type=CKAN_SEARCH_CRIT_UNSPECIFIED_DATASET_TYPE) {
   return _ckan_tweaks_get_ckan_url() . '/dataset?q=' . urlencode(sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $topic) . ' ' . $dataset_type);
+}
+
+function _ckan_tweaks_search_page($dataset_type='+!dataset_type:publications') {
+  return _ckan_tweaks_get_ckan_url() . '/dataset?q=' . urlencode($dataset_type);
 }
