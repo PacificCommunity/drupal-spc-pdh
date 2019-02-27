@@ -33,21 +33,22 @@
     $thematic_landing_img = $content['field_banner_image'][0]['#item']['uri'];
     if ($thematic_landing_banner == 0):
       ?>
-      <div class="banner-image" style="background-image: linear-gradient(135deg, rgba(0,198,236,0.85) 0%, rgba(0,3,102,0.95) 100%), url(<?php print file_create_url($thematic_landing_img); ?>)"></div>
-      <div class="content"<?php print $content_attributes; ?>>
-        <div class="spc-home-banner-block-main">
-          <div class="spc-home-banner-block">
-            <div class="banner-title">
-              <?php
-                print render($content['field_banner_title']);
-                print render($content['field_banner_sub_title']);
-              ?>
-            </div>
-            <div id="spc-home-banner-search">
-              <?php
-              if (!empty($content['search_block'])):
-                print render($content['search_block']);
-              endif; ?>
+      <div class="banner-image" style="background-image: linear-gradient(135deg, rgba(0,198,236,0.85) 0%, rgba(0,3,102,0.95) 80%), url(<?php print file_create_url($thematic_landing_img); ?>)">
+        <div class="content"<?php print $content_attributes; ?>>
+          <div class="spc-home-banner-block-main">
+            <div class="spc-home-banner-block">
+              <div class="banner-title">
+                <?php
+                  print render($content['field_banner_title']);
+                  print render($content['field_banner_sub_title']);
+                ?>
+              </div>
+              <div id="spc-home-banner-search">
+                <?php
+                if (!empty($content['search_block'])):
+                  print render($content['search_block']);
+                endif; ?>
+              </div>
             </div>
           </div>
         </div>
@@ -55,21 +56,22 @@
     <?php elseif ($thematic_landing_banner == 1):
       $node = menu_get_object();
       $banner_image = $node->field_banner_image_thematic[LANGUAGE_NONE][0]['uri'] ?? null; ?>
-      <div class="banner-image" style="background-image: url(<?php if ($banner_image): print(file_create_url($banner_image)); else: print(file_create_url($thematic_landing_img)); endif; ?>)"></div>
-      <div class="content"<?php print $content_attributes; ?>
-        <div class="spc-home-banner-block-main">
-          <div class="spc-home-banner-block">
-            <div class="banner-title">
-              <?php
-                print render($content['field_banner_title']);
-                print render($content['field_banner_sub_title']);
-              ?>
-            </div>
-            <div id="spc-home-banner-search">
-              <?php
-              if (!empty($content['search_block'])):
-                print render($content['search_block']);
-              endif; ?>
+      <div class="banner-image" style="background-image: linear-gradient(135deg, rgba(0,198,236,0.85) 0%, rgba(0,3,102,0.95) 80%), url(<?php if ($banner_image): print(file_create_url($banner_image)); else: print(file_create_url($thematic_landing_img)); endif; ?>)">
+        <div class="content"<?php print $content_attributes; ?>
+          <div class="spc-home-banner-block-main">
+            <div class="spc-home-banner-block">
+              <div class="banner-title">
+                <?php
+                  print render($content['field_banner_title']);
+                  print render($content['field_banner_sub_title']);
+                ?>
+              </div>
+              <div id="spc-home-banner-search">
+                <?php
+                if (!empty($content['search_block'])):
+                  print render($content['search_block']);
+                endif; ?>
+              </div>
             </div>
           </div>
         </div>

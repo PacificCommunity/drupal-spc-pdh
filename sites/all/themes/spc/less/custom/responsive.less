@@ -44,7 +44,7 @@
         display: none;
     }
 
-    .dashboard-banner-container {
+    .banner-with-title {
         .ckan-search-form-wrapper {
             width: 100%;
         }
@@ -135,7 +135,7 @@
     #mini-panel-home_banner, #thematic_landing_banner {
         .spc-home-banner-block {
             #ckan-search-form {
-                &>div {
+                &>div:first-child {
                     input {
                         width: 100%;
                     }
@@ -144,7 +144,7 @@
         }
     }
 
-    .dashboard-banner-container {
+    .banner-with-title {
         .ckan-search-form-wrapper {
             #ckan-search-form {
                 input[type='submit'] {
@@ -297,7 +297,7 @@
 
 
 @media (max-width: 488px) {
-    .dashboard-banner-container {
+    .banner-with-title {
         .ckan-search-form-wrapper {
             #ckan-search-form {
                 &>div {
@@ -344,6 +344,21 @@
             width: 100%;
         }
     }
+
+    #thematic_landing_banner {
+        .spc-home-banner-block {
+            #spc-home-banner-search {
+                .nice-select {
+                    ul {
+                        li {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    } 
 }
 
 
@@ -358,7 +373,7 @@
             display: block;
         }
     }
-    .dashboard-banner-container {
+    .banner-with-title {
         .ckan-search-form-wrapper {
             #ckan-search-form {
                 &>div {
