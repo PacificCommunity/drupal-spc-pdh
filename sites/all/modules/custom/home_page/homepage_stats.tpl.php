@@ -29,10 +29,10 @@
 			</a>
 		</div>
 		<div class="homepage-stat-item">
-			<a href="/stories/by-topic/<?= $node->nid ?>">
+			<a href="/story">
 				<img class="homepage-stat-icon" src="/sites/all/themes/spc/img/spc_new/stories_icon.png" alt="">
 				<div class="homepage-stat-info">
-					<div class="homepage-stat-count"><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></div>
+					<div class="homepage-stat-count"><?= views_embed_view('articles_by_topic','block_1'); ?></div>
 					<div class="homepage-stat-type"><?php print t('Stories'); ?></div>
 				</div>
 			</a>			

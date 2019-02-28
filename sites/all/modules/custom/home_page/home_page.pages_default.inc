@@ -286,10 +286,10 @@ function home_page_default_page_manager_pages() {
   $display->content['new-04ee6500-6811-4d2c-b166-e69c0a660aff'] = $pane;
   $display->panels['one_fw_main'][7] = 'new-04ee6500-6811-4d2c-b166-e69c0a660aff';
   $pane = new stdClass();
-  $pane->pid = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
+  $pane->pid = 'new-9205a530-2050-4804-b56d-2bd6b5231ae0';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'datasets_on_home_page';
+  $pane->type = 'block';
+  $pane->subtype = 'ckan_tweaks-ckan_dataset_tabs_block';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -305,9 +305,9 @@ function home_page_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 8;
   $pane->locks = array();
-  $pane->uuid = '7b27c8e1-534e-4371-a946-7081425b0c24';
-  $display->content['new-7b27c8e1-534e-4371-a946-7081425b0c24'] = $pane;
-  $display->panels['one_fw_main'][8] = 'new-7b27c8e1-534e-4371-a946-7081425b0c24';
+  $pane->uuid = '9205a530-2050-4804-b56d-2bd6b5231ae0';
+  $display->content['new-9205a530-2050-4804-b56d-2bd6b5231ae0'] = $pane;
+  $display->panels['one_fw_main'][8] = 'new-9205a530-2050-4804-b56d-2bd6b5231ae0';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
