@@ -1,7 +1,7 @@
 name = Main layout
 core = 7.x
 package = Features
-version = 7.x-1.07
+version = 7.x-1.08
 dependencies[] = bean
 dependencies[] = bean_admin_ui
 dependencies[] = ctools
@@ -31,6 +31,7 @@ features[ctools][] = strongarm:strongarm:1
 features[ds_layout_settings][] = field_collection_item|field_partners|default
 features[ds_layout_settings][] = field_collection_item|field_social_section|default
 features[fe_block_settings][] = bean-all-stories
+features[fe_block_settings][] = bean-banner-no-title
 features[fe_block_settings][] = bean-data-insights
 features[fe_block_settings][] = bean-partner-logos
 features[fe_block_settings][] = bean-social-links
