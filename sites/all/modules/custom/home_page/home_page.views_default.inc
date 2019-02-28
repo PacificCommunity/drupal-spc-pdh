@@ -265,8 +265,7 @@ function home_page_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'data-insights-promoted-item';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
@@ -276,13 +275,18 @@ function home_page_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
     'data_insights' => 'data_insights',
   );
+  /* Field: Content: Preview */
+  $handler->display->display_options['fields']['field_data_insights_preview']['id'] = 'field_data_insights_preview';
+  $handler->display->display_options['fields']['field_data_insights_preview']['table'] = 'field_data_field_data_insights_preview';
+  $handler->display->display_options['fields']['field_data_insights_preview']['field'] = 'field_data_insights_preview';
+  $handler->display->display_options['fields']['field_data_insights_preview']['label'] = '';
+  $handler->display->display_options['fields']['field_data_insights_preview']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
@@ -298,6 +302,13 @@ function home_page_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'data-insights-promoted-item';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['data_insights_promoted'] = $view;
 
   $view = new view();
