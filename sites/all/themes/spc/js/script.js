@@ -103,4 +103,20 @@ jQuery( document ).ready(function() {
     ]
   });
 
+  jQuery('.ckan-dataset-tab-container .carusel-of-items').slick({
+    dots: false,
+    infinite: true,
+    speed: 600,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+  });
+
+  jQuery('#nav-popular-datasets-tab').on('click', function(){
+    var slide_center = jQuery('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').find('.slick-center').first();
+    if (slide_center.length == 1 && slide_center.width() < 0) {
+      jQuery('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
+    } 
+  })
 });
