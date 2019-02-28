@@ -8,3 +8,11 @@
     height: @h;
     display: inline-block;
 }
+
+.res-sprite (@offset, @y) {
+	background-image: url('../img/sprite/sprite_res.png');
+	background-repeat: no-repeat;
+	background-position: (-34px * @offset) @y;
+	height: 34px;
+	width: 34px;
+}
