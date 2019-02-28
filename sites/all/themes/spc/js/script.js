@@ -103,6 +103,24 @@ jQuery( document ).ready(function() {
     ]
   });
 
+  // Count numbers by slick dots (and get active)
+  jQuery('.data-insights-promoted-group').slick({
+    slidesToShow: 3,
+    centerMode: true,
+    variableWidth: true,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
   jQuery('.ckan-dataset-tab-container .carusel-of-items').slick({
     dots: false,
     infinite: true,
