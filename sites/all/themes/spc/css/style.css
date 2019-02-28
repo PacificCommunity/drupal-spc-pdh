@@ -7406,10 +7406,6 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-#mini-panel-data_insights .data-insights-promoted-group:before,
-#mini-panel-data_insights .data-insights-promoted-group:after,
-#thematic_insight .data-insights-promoted-group:before,
-#thematic_insight .data-insights-promoted-group:after,
 #thematic-group-popular-datasets .region-inner:before,
 #thematic-group-popular-datasets .region-inner:after {
   content: " ";
@@ -7461,8 +7457,6 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-#mini-panel-data_insights .data-insights-promoted-group:after,
-#thematic_insight .data-insights-promoted-group:after,
 #thematic-group-popular-datasets .region-inner:after {
   clear: both;
 }
@@ -7727,7 +7721,7 @@ body {
 .container-on-banner .bean-banner-with-title + .container {
   background-color: #fff;
   border-radius: 5px;
-  margin-top: -415px;
+  margin-top: -420px;
 }
 .container-on-banner .breadcrumb-box {
   background-color: transparent;
@@ -7758,8 +7752,10 @@ body {
 }
 .breadcrumb-box {
   position: absolute;
-  top: 100px;
-  padding-left: 55px;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 0;
   z-index: 1;
 }
 .breadcrumb-box .breadcrumb {
@@ -8029,15 +8025,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .page-user-login form#user-login small {
   color: #2a2c2d;
 }
-.front #one-fw-wrapper .container {
-  max-width: 1134px;
-}
-@media (min-width: 1134px) {
-  .front #one-fw-wrapper .container {
-    width: 1134px;
-    padding: 0px 95px;
-  }
-}
 #mini-panel-home_banner,
 #thematic_landing_banner {
   position: relative;
@@ -8303,8 +8290,59 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .topics-home .jcarousel-navigation li.active a {
   background-color: #fff;
 }
+.data-insights-promoted-group.slick-slider {
+  max-width: 1340px;
+  margin: 0 auto;
+}
+.data-insights-promoted-group.slick-slider .slick-track {
+  height: 480px;
+}
+.data-insights-promoted-group.slick-slider .data-insights-promoted-item {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 377px;
+  width: 415px;
+  border-radius: 13px;
+  box-shadow: 0px 2px 25px 0px rgba(0, 5, 160, 0.15);
+  padding: 10px;
+  margin: 0 15px;
+  transition: height 0.55s ease;
+}
+.data-insights-promoted-group.slick-slider .data-insights-promoted-item.slick-current {
+  height: 457px;
+}
+.data-insights-promoted-group.slick-slider .data-insights-promoted-item .views-field-field-data-insights-preview {
+  flex: 1;
+  border-radius: 13px 13px 3px 3px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.data-insights-promoted-group.slick-slider .data-insights-promoted-item .views-field-field-data-insights-preview .field-content {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.data-insights-promoted-group.slick-slider .data-insights-promoted-item .views-field-field-data-insights-preview .field-content p {
+  margin-bottom: 0;
+  height: 100%;
+}
+.data-insights-promoted-group.slick-slider .data-insights-promoted-item .views-field-field-data-insights-preview img,
+.data-insights-promoted-group.slick-slider .data-insights-promoted-item .views-field-field-data-insights-preview iframe {
+  height: 100%;
+}
+.data-insights-promoted-group.slick-slider .data-insights-promoted-item a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+}
+.data-insights-promoted-group.slick-slider .slick-arrow {
+  background-color: red;
+}
 #mini-panel-data_insights {
-  padding: 35px 0px 54px 0px;
+  background: url('../img/spc_new/insights_hp_bg.png') no-repeat 50% 50%;
+  background-size: cover;
+  padding: 35px 50px 54px;
 }
 #mini-panel-data_insights h2 {
   color: #032f47;
@@ -8315,128 +8353,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 #mini-panel-data_insights h2.pane-title {
   text-align: left;
-}
-#mini-panel-data_insights .data-insights-promoted-group {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item {
-  height: 203px;
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 30px;
-  background-color: #fff;
-  overflow: hidden;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1),
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) {
-  height: 285px;
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 992px) {
-  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1),
-  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) {
-    float: left;
-    width: 50%;
-  }
-}
-@media (min-width: 768px) {
-  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1),
-  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) {
-    float: left;
-    width: 50%;
-  }
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1) h2,
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) h2 {
-  font-size: 17px;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(1) .content,
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(2) .content {
-  max-height: 250px;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(3) {
-  padding-right: 6px;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(4) {
-  padding-right: 6px;
-  padding-left: 6px;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item:nth-child(5) {
-  padding-left: 6px;
-}
-@media (min-width: 992px) {
-  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-@media (min-width: 768px) {
-  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .node {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border: 1px solid #bcdfe5;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item h2 {
-  color: #032f47;
-  margin: 0;
-  text-align: left;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 10px;
-  line-height: 15px;
-}
-@media (max-width: 768px) {
-  #mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item h2 {
-    font-size: 17px;
-  }
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item h2 a {
-  font-size: inherit;
-  color: inherit;
-  text-decoration: none;
-  font-weight: 700;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content {
-  height: 100%;
-  overflow: hidden;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field * {
-  padding: 0px;
-  margin: 0px;
-  max-height: 100%;
-}
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field img,
-#mini-panel-data_insights .data-insights-promoted-group .data-insights-promoted-item .content .field iframe {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  height: 100%;
-  max-height: 250px;
-  padding: 10px;
 }
 #mini-panel-data_insights .view-all-link {
   color: #032f47;
@@ -8909,89 +8825,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-size: 17px;
   font-weight: 300;
   line-height: 1.5em;
-}
-#thematic_insight {
-  padding-bottom: 55px;
-}
-#thematic_insight .pane-title {
-  margin-bottom: 52px;
-}
-#thematic_insight .data-insights-promoted-group {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item {
-  height: 200px;
-  float: left;
-  width: 100%;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 30px;
-  background-color: #fff;
-  overflow: hidden;
-}
-@media (min-width: 768px) {
-  #thematic_insight .data-insights-promoted-group .data-insights-promoted-item {
-    float: left;
-    width: 50%;
-  }
-}
-@media (min-width: 992px) {
-  #thematic_insight .data-insights-promoted-group .data-insights-promoted-item {
-    float: left;
-    width: 33.33333333%;
-  }
-}
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item .node {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border: 1px solid #bcdfe5;
-  margin-bottom: 0px;
-}
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item h2 {
-  color: #032f47;
-  margin: 0;
-  text-align: center;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 10px;
-  line-height: 15px;
-}
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item h2 a {
-  font-size: inherit;
-  color: inherit;
-  text-decoration: none;
-  font-weight: 700;
-}
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item .content {
-  height: 100%;
-  max-height: 165px;
-  overflow: hidden;
-}
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item .content .field {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-}
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item .content .field * {
-  padding: 0px;
-  margin: 0px;
-  max-height: 100%;
-}
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item .content .field img,
-#thematic_insight .data-insights-promoted-group .data-insights-promoted-item .content .field iframe {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  height: 100%;
-  max-height: 165px;
-  padding: 10px;
 }
 #thematic-group-popular-datasets {
   background-position: 50% 0%;
