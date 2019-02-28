@@ -158,7 +158,7 @@ function data_insights_content_type_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 9,
       ),
       'data_insights_on_topic_page' => array(
         'label' => 'above',
