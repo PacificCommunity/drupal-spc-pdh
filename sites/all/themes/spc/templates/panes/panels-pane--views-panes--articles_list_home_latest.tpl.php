@@ -1,5 +1,5 @@
 <div class="<?php print $classes; ?>" <?php  print $id; ?>>
-	<div class="container">
+	<div class="container-fluid">
 		<?php if ($admin_links): ?>
 			<?php print $admin_links; ?>
 		<?php endif; ?>

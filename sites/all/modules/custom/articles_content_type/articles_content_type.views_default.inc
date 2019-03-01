@@ -192,7 +192,7 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'scale_crop_230x230',
+    'image_style' => 'stories_slides',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
