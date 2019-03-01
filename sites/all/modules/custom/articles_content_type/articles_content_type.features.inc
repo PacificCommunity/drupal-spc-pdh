@@ -81,6 +81,21 @@ function articles_content_type_image_default_styles() {
     ),
   );
 
+  // Exported image style: stories_slides.
+  $styles['stories_slides'] = array(
+    'label' => 'Stories slides (320x224)',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 320,
+          'height' => 224,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 

@@ -222,25 +222,13 @@ function home_page_default_page_manager_pages() {
   $display->content['new-236ae88a-4fbd-4499-9e20-c293dbba6ca1'] = $pane;
   $display->panels['one_fw_main'][5] = 'new-236ae88a-4fbd-4499-9e20-c293dbba6ca1';
   $pane = new stdClass();
-  $pane->pid = 'new-b1681305-27f2-4cb3-b9f9-7e7b64243916';
+  $pane->pid = 'new-02ca8d4b-ae3c-4f9b-a209-3f1bd17643d8';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'views';
-  $pane->subtype = 'latest_stories';
-  $pane->shown = FALSE;
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'stories_on_the_hp';
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'stories_on_homepage',
     'override_title' => 1,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -249,42 +237,13 @@ function home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'latest-stories-homepage',
-  );
+  $pane->css = array();
   $pane->extras = array();
   $pane->position = 6;
   $pane->locks = array();
-  $pane->uuid = 'b1681305-27f2-4cb3-b9f9-7e7b64243916';
-  $display->content['new-b1681305-27f2-4cb3-b9f9-7e7b64243916'] = $pane;
-  $display->panels['one_fw_main'][6] = 'new-b1681305-27f2-4cb3-b9f9-7e7b64243916';
-  $pane = new stdClass();
-  $pane->pid = 'new-04ee6500-6811-4d2c-b166-e69c0a660aff';
-  $pane->panel = 'one_fw_main';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'articles_list-home_latest';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Latest Stories',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'latest-stories-homepage',
-  );
-  $pane->extras = array();
-  $pane->position = 7;
-  $pane->locks = array();
-  $pane->uuid = '04ee6500-6811-4d2c-b166-e69c0a660aff';
-  $display->content['new-04ee6500-6811-4d2c-b166-e69c0a660aff'] = $pane;
-  $display->panels['one_fw_main'][7] = 'new-04ee6500-6811-4d2c-b166-e69c0a660aff';
+  $pane->uuid = '02ca8d4b-ae3c-4f9b-a209-3f1bd17643d8';
+  $display->content['new-02ca8d4b-ae3c-4f9b-a209-3f1bd17643d8'] = $pane;
+  $display->panels['one_fw_main'][6] = 'new-02ca8d4b-ae3c-4f9b-a209-3f1bd17643d8';
   $pane = new stdClass();
   $pane->pid = 'new-9205a530-2050-4804-b56d-2bd6b5231ae0';
   $pane->panel = 'one_fw_main';
@@ -303,11 +262,11 @@ function home_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = '9205a530-2050-4804-b56d-2bd6b5231ae0';
   $display->content['new-9205a530-2050-4804-b56d-2bd6b5231ae0'] = $pane;
-  $display->panels['one_fw_main'][8] = 'new-9205a530-2050-4804-b56d-2bd6b5231ae0';
+  $display->panels['one_fw_main'][7] = 'new-9205a530-2050-4804-b56d-2bd6b5231ae0';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

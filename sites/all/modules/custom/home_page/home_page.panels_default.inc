@@ -435,5 +435,62 @@ function home_page_default_panels_mini() {
   $mini->display = $display;
   $export['home_banner'] = $mini;
 
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
+  $mini->name = 'stories_on_the_hp';
+  $mini->category = '';
+  $mini->admin_title = 'Stories on the HP';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'one_fw';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'one_fw_main' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '3f404461-52e1-48b8-9db6-fd8f3e8da946';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'stories_on_the_hp';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-6fac0acd-c0de-42b0-a031-c189a819cd8b';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'articles_list-home_latest';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Latest Stories',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'latest-stories-homepage',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '6fac0acd-c0de-42b0-a031-c189a819cd8b';
+  $display->content['new-6fac0acd-c0de-42b0-a031-c189a819cd8b'] = $pane;
+  $display->panels['one_fw_main'][0] = 'new-6fac0acd-c0de-42b0-a031-c189a819cd8b';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-6fac0acd-c0de-42b0-a031-c189a819cd8b';
+  $mini->display = $display;
+  $export['stories_on_the_hp'] = $mini;
+
   return $export;
 }
