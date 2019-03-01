@@ -44,23 +44,22 @@
     });
   })
 
-})(jQuery);
 
-jQuery( document ).ready(function() {
+$( document ).ready(function() {
 
-  var block_height = jQuery('.data-insights-list-item .node-data-insights').height();
-  jQuery.each(jQuery('.data-insights-list-item'), function(index, value){
-      var title_height = jQuery(this).find('.node-data-insights .insight-title').outerHeight(true);
+  var block_height = $('.data-insights-list-item .node-data-insights').height();
+  $.each($('.data-insights-list-item'), function(index, value){
+      var title_height = $(this).find('.node-data-insights .insight-title').outerHeight(true);
       var preview_height = block_height - title_height;
-      var preview = jQuery(this).find('.node-data-insights .insights-list-preview');
-      if(jQuery(preview).find('iframe').parents('p').length > 0){
-          jQuery(jQuery(preview).find('iframe').parents('p')).height(preview_height);
+      var preview = $(this).find('.node-data-insights .insights-list-preview');
+      if($(preview).find('iframe').parents('p').length > 0){
+          $($(preview).find('iframe').parents('p')).height(preview_height);
 
       }
-      jQuery(preview).height(preview_height);
+      $(preview).height(preview_height);
   });
 
-  jQuery('.list-tweets').slick({
+  $('.list-tweets').slick({
     // dots: true,
     infinite: false,
     speed: 600,
@@ -103,8 +102,8 @@ jQuery( document ).ready(function() {
     ]
   });
 
-  // Count numbers by slick dots (and get active)
-  jQuery('.data-insights-promoted-group').slick({
+
+  $('.data-insights-promoted-group').slick({
     slidesToShow: 3,
     centerMode: true,
     variableWidth: true,
@@ -113,15 +112,24 @@ jQuery( document ).ready(function() {
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
-          centerMode: true,
-          slidesToShow: 1
+          arrows: false
         }
       }
     ]
   });
 
-  jQuery('.ckan-dataset-tab-container .carusel-of-items').slick({
+  var slides_num = $('.slick-dots li').length;
+  if ($('.data-insights-promoted-group').length > 0 && slides_num > 0) {
+    var slide = $('.slick-dots .slick-active button').text();
+    $('.data-insights-promoted-group').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num}</strong></div>`);
+    $('.slick-arrow').on('click', function(){
+      slide = $('.slick-dots .slick-active button').text();
+      $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num}</strong>`);
+    });
+  };
+
+  
+  $('.ckan-dataset-tab-container .carusel-of-items').slick({
     dots: false,
     infinite: true,
     speed: 600,
@@ -131,10 +139,12 @@ jQuery( document ).ready(function() {
     centerMode: true,
   });
 
-  jQuery('#nav-popular-datasets-tab').on('click', function(){
-    var slide_center = jQuery('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').find('.slick-center').first();
+  $('#nav-popular-datasets-tab').on('click', function(){
+    var slide_center = $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').find('.slick-center').first();
     if (slide_center.length == 1 && slide_center.width() < 0) {
-      jQuery('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
+      $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
     } 
   })
 });
+
+})(jQuery);

@@ -8584,7 +8584,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: 377px;
   width: 415px;
   border-radius: 13px;
-  box-shadow: 0px 2px 25px 0px rgba(0, 5, 160, 0.15);
+  box-shadow: 0px 2px 15px 0px rgba(0, 5, 160, 0.15);
   padding: 10px;
   margin: 0 15px;
   transition: height 0.55s ease;
@@ -8617,44 +8617,55 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   color: #000;
 }
 .data-insights-promoted-group.slick-slider .slick-arrow {
-  background-color: red;
+  display: inline-block;
+  bottom: 4px;
+  top: unset;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: solid #130E93;
+  border-width: 0 1px 1px 0;
+}
+.data-insights-promoted-group.slick-slider .slick-arrow:before {
+  content: none;
+}
+.data-insights-promoted-group.slick-slider .slick-arrow.slick-next {
+  right: 47%;
+  transform: rotate(-45deg);
+}
+.data-insights-promoted-group.slick-slider .slick-arrow.slick-prev {
+  left: 47%;
+  transform: rotate(135deg);
+}
+.data-insights-promoted-group.slick-slider .slick-dots {
+  visibility: hidden;
+}
+.data-insights-promoted-group.slick-slider .slide-number {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 #mini-panel-data_insights {
   background: url('../img/spc_new/insights_hp_bg.png') no-repeat 50% 50%;
   background-size: cover;
-  padding: 35px 50px 54px;
+  padding: 95px 50px;
 }
 #mini-panel-data_insights h2 {
-  color: #032f47;
-  font-size: 29px;
-  font-weight: 300;
+  color: #000;
+  font-size: 38px;
+  font-weight: 700;
   text-align: center;
-  margin: 0 0 60px 0;
+  margin: 0 0 11px;
 }
-#mini-panel-data_insights h2.pane-title {
-  text-align: left;
-}
-#mini-panel-data_insights .view-all-link {
-  color: #032f47;
+#mini-panel-data_insights .pane-data-insights-promoted h2 {
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 55px;
 }
 .view-all-link {
-  color: #032f47;
-  font-size: 22px;
-  display: block;
-  position: relative;
-}
-.view-all-link:hover {
-  color: #032f47;
-}
-.view-all-link:after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: auto;
-  padding-left: 30px;
-  width: 17px;
-  height: 35px;
-  background: url(../img/spc/view_all_arrow.png) 50% 50% no-repeat;
+  font-size: 15px;
+  color: #0091C7;
 }
 #mini-panel-blog_preview {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/spc/background_01.jpg);
@@ -9858,6 +9869,14 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   height: 100%;
   width: auto;
 }
+@media (max-width: 1439px) {
+  .data-insights-promoted-group.slick-slider {
+    max-width: 100%;
+  }
+  .data-insights-promoted-group.slick-slider .data-insights-promoted-item {
+    width: 390px;
+  }
+}
 @media (max-width: 1199px) {
   #header #main-menu ul li a {
     padding: 0 12px;
@@ -9884,6 +9903,12 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
   .banner-with-title .ckan-search-form-wrapper {
     width: 100%;
+  }
+  .data-insights-promoted-group.slick-slider .slick-arrow.slick-next {
+    right: 44%;
+  }
+  .data-insights-promoted-group.slick-slider .slick-arrow.slick-prev {
+    left: 44%;
   }
   .latest-stories-homepage .field-items .field-item .views-field-title a h3,
   .thematic-group-articles .field-items .field-item .views-field-title a h3 {
@@ -9959,6 +9984,22 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
   .container-on-banner .bean-banner-with-title + .container {
     margin: -200px 15px 0;
+  }
+  #mini-panel-data_insights {
+    padding: 75px 0 55px;
+  }
+  #mini-panel-data_insights h2 {
+    font-size: 25px;
+  }
+  #mini-panel-data_insights .pane-data-insights-promoted h2 {
+    display: none;
+  }
+  .data-insights-promoted-group.slick-slider {
+    max-width: 100%;
+  }
+  .data-insights-promoted-group.slick-slider .slide-number {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   .latest-stories-homepage .field-items .field-item,
   .thematic-group-articles .field-items .field-item {
@@ -10092,6 +10133,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
 }
 @media (max-width: 440px) {
+  .data-insights-promoted-group.slick-slider .data-insights-promoted-item {
+    width: 290px;
+  }
   #member-countries-block .btn.dropdown-toggle {
     font-size: 14px;
     width: 100%;
