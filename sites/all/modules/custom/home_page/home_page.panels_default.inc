@@ -94,13 +94,52 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-ca363cdb-2029-4a30-a17a-c551ac5d9568';
+  $pane->pid = 'new-a23eef4f-f927-4451-a429-3d70e150ebb2';
   $pane->panel = 'one_fw_main';
-  $pane->type = 'block';
-  $pane->subtype = 'views-data_insights_promoted-block';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<h2>Data Insights</h2>
+',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'a23eef4f-f927-4451-a429-3d70e150ebb2';
+  $display->content['new-a23eef4f-f927-4451-a429-3d70e150ebb2'] = $pane;
+  $display->panels['one_fw_main'][0] = 'new-a23eef4f-f927-4451-a429-3d70e150ebb2';
+  $pane = new stdClass();
+  $pane->pid = 'new-9c300bbf-2b3f-458b-8891-e92c45b3b333';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'views';
+  $pane->subtype = 'data_insights_promoted';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '5',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'block',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -111,11 +150,11 @@ function home_page_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'ca363cdb-2029-4a30-a17a-c551ac5d9568';
-  $display->content['new-ca363cdb-2029-4a30-a17a-c551ac5d9568'] = $pane;
-  $display->panels['one_fw_main'][0] = 'new-ca363cdb-2029-4a30-a17a-c551ac5d9568';
+  $pane->uuid = '9c300bbf-2b3f-458b-8891-e92c45b3b333';
+  $display->content['new-9c300bbf-2b3f-458b-8891-e92c45b3b333'] = $pane;
+  $display->panels['one_fw_main'][1] = 'new-9c300bbf-2b3f-458b-8891-e92c45b3b333';
   $pane = new stdClass();
   $pane->pid = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
   $pane->panel = 'one_fw_main';
@@ -127,7 +166,8 @@ function home_page_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<a href="/data-insights" class="view-all-link">View All</a>',
+    'body' => '<p class="rtecenter"><a class="view-all-link" href="/data-insights">View All</a></p>
+',
     'format' => 'full_html',
     'substitute' => TRUE,
   );
@@ -137,11 +177,11 @@ function home_page_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '633f1b3e-6783-402e-bda4-33e5e0e03e50';
   $display->content['new-633f1b3e-6783-402e-bda4-33e5e0e03e50'] = $pane;
-  $display->panels['one_fw_main'][1] = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
+  $display->panels['one_fw_main'][2] = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;

@@ -340,7 +340,21 @@
 #mini-panel-data_insights {
     background: url('../img/spc_new/insights_hp_bg.png') no-repeat 50% 50%;
     background-size: cover;
+    position: relative;
     padding: 95px 50px;
+        &:before {
+            content: ' ';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            background-color: #FFC72E;
+            border-top: 4px solid #FFC72E;
+            border-right: 5px solid #F9F9F9;
+            border-left: 5px solid #F9F9F9;
+    }
     h2 {
         color: #000;
         font-size: 38px;
