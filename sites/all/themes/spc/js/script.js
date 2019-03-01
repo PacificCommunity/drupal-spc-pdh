@@ -147,4 +147,9 @@ $( document ).ready(function() {
   })
 });
 
+$('.stories-list').slick({
+  slidesToShow: 3,
+  dots: true,
+});
+
 })(jQuery);
