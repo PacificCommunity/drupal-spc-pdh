@@ -131,7 +131,7 @@ $( document ).ready(function() {
   });
 
   $('#nav-popular-datasets-tab').on('click', function(){
-    var slide_center = jQuery('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').find('.slick-center').first();
+    var slide_center = $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').find('.slick-center').first();
     if (slide_center.length == 1 && slide_center.width() < 0) {
       $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
     } 
