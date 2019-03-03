@@ -278,7 +278,7 @@ function data_insights_content_type_default_page_manager_pages() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'container data-insights-list',
+    'css_class' => 'container-fluid data-insights-list',
   );
   $pane->extras = array();
   $pane->position = 2;

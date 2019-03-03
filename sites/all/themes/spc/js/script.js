@@ -47,17 +47,18 @@
 
 $( document ).ready(function() {
 
-  var block_height = $('.data-insights-list-item .node-data-insights').height();
-  $.each($('.data-insights-list-item'), function(index, value){
-      var title_height = $(this).find('.node-data-insights .insight-title').outerHeight(true);
-      var preview_height = block_height - title_height;
-      var preview = $(this).find('.node-data-insights .insights-list-preview');
-      if($(preview).find('iframe').parents('p').length > 0){
-          $($(preview).find('iframe').parents('p')).height(preview_height);
-
-      }
-      $(preview).height(preview_height);
-  });
+  var wrapper_loader ="<div class='loading-more-element'>" 
+  var the_loader = "<div class='lds-spinner'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>";
+  var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
+  $('.view-data-insights-list-page').append(full_loading)
+  $(window).on('scroll', function (){
+    var loader_btn = $('.loading-more-element').offset().top + 100
+    var scrolloffset = window.pageYOffset
+    var scouterHeight = window.outerHeight
+    if ((scrolloffset + scouterHeight) > loader_btn) {
+      $('.pager-show-more .pager-show-more-next a').click()
+    } 
+  })
 
   $('.list-tweets').slick({
     // dots: true,
