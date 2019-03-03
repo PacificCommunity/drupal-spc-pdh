@@ -46,6 +46,7 @@
 
 
 $( document ).ready(function() {
+
   var wrapper_loader ="<div class='loading-more-element'>" 
   var the_loader = "<div class='lds-spinner'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>";
   var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
@@ -102,7 +103,7 @@ $( document ).ready(function() {
     ]
   });
 
-  // Count numbers by slick dots (and get active)
+
   $('.data-insights-promoted-group').slick({
     slidesToShow: 3,
     centerMode: true,
@@ -112,14 +113,23 @@ $( document ).ready(function() {
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
-          centerMode: true,
-          slidesToShow: 1
+          arrows: false
         }
       }
     ]
   });
 
+  var slides_num = $('.slick-dots li').length;
+  if ($('.data-insights-promoted-group').length > 0 && slides_num > 0) {
+    var slide = $('.slick-dots .slick-active button').text();
+    $('.data-insights-promoted-group').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num}</strong></div>`);
+    $('.slick-arrow').on('click', function(){
+      slide = $('.slick-dots .slick-active button').text();
+      $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num}</strong>`);
+    });
+  };
+
+  
   $('.ckan-dataset-tab-container .carusel-of-items').slick({
     dots: false,
     infinite: true,
@@ -136,6 +146,11 @@ $( document ).ready(function() {
       $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
     } 
   })
+});
+
+$('.stories-list').slick({
+  slidesToShow: 3,
+  dots: true,
 });
 
 })(jQuery);
