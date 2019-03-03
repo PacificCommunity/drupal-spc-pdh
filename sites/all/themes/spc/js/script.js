@@ -44,23 +44,22 @@
     });
   })
 
-})(jQuery);
 
-jQuery( document ).ready(function() {
+$( document ).ready(function() {
   var wrapper_loader ="<div class='loading-more-element'>" 
   var the_loader = "<div class='lds-spinner'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>";
   var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
-  jQuery('.view-data-insights-list-page').append(full_loading)
-  jQuery(window).on('scroll', function (){
-    var loader_btn = jQuery('.loading-more-element').offset().top + 100
+  $('.view-data-insights-list-page').append(full_loading)
+  $(window).on('scroll', function (){
+    var loader_btn = $('.loading-more-element').offset().top + 100
     var scrolloffset = window.pageYOffset
     var scouterHeight = window.outerHeight
     if ((scrolloffset + scouterHeight) > loader_btn) {
-      jQuery('.pager-show-more .pager-show-more-next a').click()
+      $('.pager-show-more .pager-show-more-next a').click()
     } 
   })
 
-  jQuery('.list-tweets').slick({
+  $('.list-tweets').slick({
     // dots: true,
     infinite: false,
     speed: 600,
@@ -104,7 +103,7 @@ jQuery( document ).ready(function() {
   });
 
   // Count numbers by slick dots (and get active)
-  jQuery('.data-insights-promoted-group').slick({
+  $('.data-insights-promoted-group').slick({
     slidesToShow: 3,
     centerMode: true,
     variableWidth: true,
@@ -121,7 +120,7 @@ jQuery( document ).ready(function() {
     ]
   });
 
-  jQuery('.ckan-dataset-tab-container .carusel-of-items').slick({
+  $('.ckan-dataset-tab-container .carusel-of-items').slick({
     dots: false,
     infinite: true,
     speed: 600,
@@ -131,10 +130,12 @@ jQuery( document ).ready(function() {
     centerMode: true,
   });
 
-  jQuery('#nav-popular-datasets-tab').on('click', function(){
+  $('#nav-popular-datasets-tab').on('click', function(){
     var slide_center = jQuery('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').find('.slick-center').first();
     if (slide_center.length == 1 && slide_center.width() < 0) {
-      jQuery('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
+      $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
     } 
   })
 });
+
+})(jQuery);
