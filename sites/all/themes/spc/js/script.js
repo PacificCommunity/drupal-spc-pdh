@@ -47,18 +47,18 @@
 })(jQuery);
 
 jQuery( document ).ready(function() {
-
-  var block_height = jQuery('.data-insights-list-item .node-data-insights').height();
-  jQuery.each(jQuery('.data-insights-list-item'), function(index, value){
-      var title_height = jQuery(this).find('.node-data-insights .insight-title').outerHeight(true);
-      var preview_height = block_height - title_height;
-      var preview = jQuery(this).find('.node-data-insights .insights-list-preview');
-      if(jQuery(preview).find('iframe').parents('p').length > 0){
-          jQuery(jQuery(preview).find('iframe').parents('p')).height(preview_height);
-
-      }
-      jQuery(preview).height(preview_height);
-  });
+  var wrapper_loader ="<div class='loading-more-element'>" 
+  var the_loader = "<div class='lds-spinner'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>";
+  var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
+  jQuery('.view-data-insights-list-page').append(full_loading)
+  jQuery(window).on('scroll', function (){
+    var loader_btn = jQuery('.loading-more-element').offset().top + 100
+    var scrolloffset = window.pageYOffset
+    var scouterHeight = window.outerHeight
+    if ((scrolloffset + scouterHeight) > loader_btn) {
+      jQuery('.pager-show-more .pager-show-more-next a').click()
+    } 
+  })
 
   jQuery('.list-tweets').slick({
     // dots: true,

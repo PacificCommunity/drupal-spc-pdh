@@ -103,6 +103,10 @@
             }
         }
     }
+    .not-front .data-insights-list {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 
@@ -303,6 +307,11 @@
             }
         }
     }
+    .not-front .data-insights-list {
+        .data-insights-list-item {
+            width: 100%;
+        }
+    }
 }
 
 
@@ -346,6 +355,17 @@
     .node-article.view-mode-featured .node-content-container {
         padding-left: 18px;
         padding-right: 18px;
+    }
+    .not-front .data-insights-list {
+        .data-insights-list-item {
+            height: 340px;
+            .insights-list-preview {
+                height: 240px;
+                img, iframe {
+                    max-height: 240px;
+                }
+            }
+        }
     }
 }
 
