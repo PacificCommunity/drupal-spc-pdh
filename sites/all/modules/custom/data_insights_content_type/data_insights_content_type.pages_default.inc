@@ -132,7 +132,7 @@ function data_insights_content_type_default_page_manager_handlers() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'container',
+    'css_class' => 'container individual-data-insight-page',
   );
   $pane->extras = array();
   $pane->position = 2;
