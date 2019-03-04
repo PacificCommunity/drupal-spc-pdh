@@ -7849,6 +7849,10 @@ body {
 .not-front .node-data-insights .body-text p {
   margin-bottom: 25px;
 }
+.not-front .node-data-insights .body-text img,
+.not-front .node-data-insights .body-text iframe {
+  width: 100%;
+}
 .not-front .node-data-insights .body-text,
 .not-front .node-data-insights .preview {
   padding: 0 120px;
@@ -7857,10 +7861,9 @@ body {
   margin-top: 50px;
   margin-bottom: 30px;
 }
-.not-front .node-data-insights .preview img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+.not-front .node-data-insights .preview img,
+.not-front .node-data-insights .preview iframe {
+  width: 100%;
 }
 .not-front .data-insights-list {
   margin: 60px 45px;
