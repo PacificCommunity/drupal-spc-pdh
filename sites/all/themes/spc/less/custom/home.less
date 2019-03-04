@@ -665,60 +665,33 @@
 }
 
 .dashboards-home {
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 35px;
-    padding-bottom: 120px;
-    h2 {
+    padding-top: 20px;
+    padding-bottom: 70px;
+    text-align: center;
+    color: #000;
+    .pane-title {
         margin-top: 0px;
-        margin-bottom: 54px;
-        font-size: 29px;
-        font-weight: 300px;
+        margin-bottom: 14px;
+        font-size: 38px;
+        font-weight: 700;
     }
-    .jcarousel-skin-default {
-        max-width: 656px;
-        margin-left: auto;
-        margin-right: auto;
-        .jcarousel-container-horizontal {
-            padding: 0px;
-            .jcarousel-clip-horizontal {
-                .jcarousel-list {
-                    background: none;
-                    .jcarousel-item {
-                        background: none;
-                        margin-right: 39px;
-                        margin-left: 39px;
-                        width: 230px;
-                        padding: 10px;
-                        box-sizing: content-box;
-                        .field-type-image {
-                            background-color: #fff;
-                            height: 230px;
-                            line-height: 230px;
-                            max-width: 100%;
-                            box-shadow: 0px 0px 13px -1px rgba(116,131,138,0.35);
-                            img {
-                                width: 80%;
-                                height: auto;
-                                text-align: center;
-                            }
-                        }
-                        h4 {
-                            font-size: 19px;
-                            color:  #1d7bbc;
-                            margin-top: 17px;
-                            margin-bottom: 0px;
-                        }
-                    }
-                }
+    .pane-subtitle {
+        font-size: 13px;
+
+    }
+
+    @media (max-width: @screen-md) {
+        & {
+            .attachment-before {
+                padding-left: 62px;
             }
-            .jcarousel-next {
-                top: 50%;
-                right: 0px;
-            }
-            .jcarousel-prev {
-                top: 50%;
-                left: 0px;
+        }
+    }
+
+    @media (max-width: @screen-sm) {
+        & {
+            .attachment-before {
+                padding: 0px;
             }
         }
     }
