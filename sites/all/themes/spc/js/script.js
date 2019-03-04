@@ -119,13 +119,46 @@ $( document ).ready(function() {
     ]
   });
 
-  var slides_num = $('.slick-dots li').length;
-  if ($('.data-insights-promoted-group').length > 0 && slides_num > 0) {
-    var slide = $('.slick-dots .slick-active button').text();
-    $('.data-insights-promoted-group').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num}</strong></div>`);
+  var slides_num_di = $('.data-insights-promoted-group .slick-dots li').length;
+  if ($('.data-insights-promoted-group').length > 0 && slides_num_di > 0) {
+    var slide = $('.data-insights-promoted-group .slick-dots .slick-active button').text();
+    $('.data-insights-promoted-group').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_di}</strong></div>`);
     $('.slick-arrow').on('click', function(){
-      slide = $('.slick-dots .slick-active button').text();
-      $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num}</strong>`);
+      slide = $('.data-insights-promoted-group .slick-dots .slick-active button').text();
+      $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_di}</strong>`);
+    });
+  };
+
+  
+  $('.latest-stories-homepage .field-item').each(function(i) {
+    let title_block = $(this).find('.views-field-title');
+    if (title_block.length > 0) {
+      let num = i + 1;
+      title_block.prepend(`<div class="slide-num">${num <= 9 ? '0'+num : num}</div>`)
+    }
+  })
+
+  $('.stories-list').slick({
+    slidesToShow: 3,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            arrows: false
+          }
+        }
+      ]
+  });
+  
+  var slides_num_stories = $('.latest-stories-homepage .slick-dots li').length;
+  if ($('.latest-stories-homepage').length > 0 && slides_num_stories > 0) {
+    var slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
+    $('.latest-stories-homepage').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_stories}</strong></div>`);
+    $('.slick-arrow').on('click', function(){
+      slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
+      $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
     });
   };
 
@@ -146,11 +179,6 @@ $( document ).ready(function() {
       $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
     } 
   })
-});
-
-$('.stories-list').slick({
-  slidesToShow: 3,
-  dots: true,
 });
 
 })(jQuery);
