@@ -131,7 +131,7 @@ function home_page_default_page_manager_pages() {
   $display->content['new-cc3b4e93-95d2-4708-a164-4e516e8f451d'] = $pane;
   $display->panels['one_fw_main'][2] = 'new-cc3b4e93-95d2-4708-a164-4e516e8f451d';
   $pane = new stdClass();
-  $pane->pid = 'new-34ff7308-3e2b-4102-adb1-9dec7b8d3de4';
+  $pane->pid = 'new-6a6636a0-696f-45e3-b231-b36713175e93';
   $pane->panel = 'one_fw_main';
   $pane->type = 'views';
   $pane->subtype = 'dashboards_on_home_page';
@@ -142,22 +142,21 @@ function home_page_default_page_manager_pages() {
     'use_pager' => 0,
     'nodes_per_page' => '0',
     'pager_id' => '0',
-    'offset' => '0',
+    'offset' => '1',
     'more_link' => 0,
     'feed_icons' => 0,
     'panel_args' => 0,
     'link_to_view' => 0,
     'args' => '',
     'url' => '',
-    'display' => 'default',
+    'display' => 'block',
     'override_title' => 0,
-    'override_title_text' => 'Dashboards',
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
-    'style' => 'default',
   );
   $pane->css = array(
     'css_id' => '',
@@ -166,9 +165,9 @@ function home_page_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = '34ff7308-3e2b-4102-adb1-9dec7b8d3de4';
-  $display->content['new-34ff7308-3e2b-4102-adb1-9dec7b8d3de4'] = $pane;
-  $display->panels['one_fw_main'][3] = 'new-34ff7308-3e2b-4102-adb1-9dec7b8d3de4';
+  $pane->uuid = '6a6636a0-696f-45e3-b231-b36713175e93';
+  $display->content['new-6a6636a0-696f-45e3-b231-b36713175e93'] = $pane;
+  $display->panels['one_fw_main'][3] = 'new-6a6636a0-696f-45e3-b231-b36713175e93';
   $pane = new stdClass();
   $pane->pid = 'new-f26b1da5-ff16-4919-814c-54cb9bcd09f7';
   $pane->panel = 'one_fw_main';
