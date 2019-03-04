@@ -384,14 +384,17 @@
     padding-bottom: 134px;
 }
 .latest-stories-homepage {
-    padding: 0 25px;
+    position: relative;
+    max-width: 1440px;
+    padding: 0 40px;
+    margin: 0 auto;
     .stories-list {
         height: 384px;
         background: url('../img/spc_new/stories_slides_bg.png') no-repeat 100% 50%;
         background-size: contain;
         padding-top: 160px;
         .slick-list {
-            max-width: 1000px;
+            max-width: 1075px;
             .field-item {
                 margin: 0 14px;
                 a {
@@ -406,9 +409,95 @@
                     font-size: 13px;
                     font-weight: 400;
                     color: @spc-text-color;
+                    margin-top: 5px;
+                }
+                .slide-num {
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin-top: 10px;
                 }
             }
         }
+    }
+    .slick-dots {
+        visibility: hidden;
+        bottom: 0;
+        li {
+            width: auto;
+            height: auto;
+            button {
+                width: 5px;
+                height: 5px;
+                border: 1px solid #000;
+                border-radius: 50%;
+                background-color: transparent;
+                padding: 0;
+                &:before {
+                    content: none;
+                }
+            }
+            &.slick-active {
+                button {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+    .slide-number {
+        position: absolute;
+        right: 170px;
+        bottom: 115px;
+        font-size: 13px;
+        color: #fff;
+    }
+    .slick-arrow {
+        display: inline-block;
+        bottom: 60px;
+        top: unset;
+        width: 35px;
+        height: 35px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1;
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 13px;
+            left: 11px;
+            width: 8px;
+            height: 8px;
+            background: transparent;
+            border: solid #fff;
+            border-width: 0 1px 1px 0;
+        }
+        &.slick-next {
+            right: 80px;
+            &:before {
+                transform: rotate(-45deg);
+            }
+        }
+        &.slick-prev {
+            left: auto;
+            right: 185px;
+            &:before {
+                left: 14px;
+                transform: rotate(135deg);
+            }
+        }
+    }
+    h2.pane-title {
+        position: absolute;
+        top: 95px;
+        right: 60px;
+        max-width: 200px;
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #fff;
+        margin: 0;
+        z-index: 1;
     }
 }
 
