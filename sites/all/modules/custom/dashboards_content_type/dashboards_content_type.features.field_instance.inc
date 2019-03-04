@@ -18,6 +18,25 @@ function dashboards_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<strong>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
+        'weight' => 2,
+      ),
       'dashboards_preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -26,9 +45,8 @@ function dashboards_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'full' => array(
@@ -82,6 +100,12 @@ function dashboards_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'dashboards_preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -90,9 +114,8 @@ function dashboards_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'full' => array(
@@ -136,6 +159,12 @@ function dashboards_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'dashboards_preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -144,9 +173,8 @@ function dashboards_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 7,
       ),
       'full' => array(
@@ -189,6 +217,12 @@ function dashboards_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'dashboards_preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -197,9 +231,8 @@ function dashboards_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'full' => array(
@@ -241,6 +274,16 @@ function dashboards_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'scale_crop_230x230',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'dashboards_preview' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -313,6 +356,12 @@ function dashboards_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'dashboards_preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -321,12 +370,8 @@ function dashboards_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'full' => array(
@@ -370,6 +415,12 @@ function dashboards_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'dashboards_preview' => array(
         'label' => 'above',
         'settings' => array(),
@@ -378,9 +429,8 @@ function dashboards_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
+        'type' => 'hidden',
         'weight' => 6,
       ),
       'full' => array(
@@ -440,6 +490,12 @@ function dashboards_content_type_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'dashboards_preview' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -448,12 +504,8 @@ function dashboards_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'full' => array(
