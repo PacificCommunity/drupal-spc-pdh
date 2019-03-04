@@ -87,6 +87,6 @@ function _ckan_tweaks_search_page_by_topic($topic, $dataset_type=CKAN_SEARCH_CRI
   return _ckan_tweaks_get_ckan_url() . '/dataset?q=' . urlencode(sprintf(CKAN_SEARCH_CRIT_THEMATIC_AREA, $topic) . ' ' . $dataset_type);
 }
 
-function _ckan_tweaks_search_page($dataset_type='+!dataset_type:publications') {
+function _ckan_tweaks_search_page($dataset_type='!dataset_type:publications') {
   return _ckan_tweaks_get_ckan_url() . '/dataset?q=' . urlencode($dataset_type);
 }
