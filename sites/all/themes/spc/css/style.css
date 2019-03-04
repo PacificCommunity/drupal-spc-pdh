@@ -7667,12 +7667,12 @@ body {
 }
 .login-icon {
   background-image: url('../img/sprite/spc_new_sprite.png');
-  background-position: -1px -22px;
+  background-position: -7px -28px;
   background-repeat: no-repeat;
   width: 18px;
   height: 22px;
   display: inline-block;
-  background-size: 120%;
+  background-size: 310%;
   margin-right: 7px;
   vertical-align: middle;
 }
@@ -7727,6 +7727,11 @@ body {
   background-color: transparent;
   margin-top: 0;
 }
+.individual-data-insight-page {
+  box-shadow: 0px 0px 5px 1px #ebebeb;
+  margin-bottom: 60px;
+  padding: 15px 50px;
+}
 .node-type-page table {
   max-width: 800px;
 }
@@ -7775,50 +7780,82 @@ body {
 .not-front .node-data-insights h2 {
   color: #032f47;
   font-size: 2.3rem;
-  font-weight: 700;
+  font-weight: 600;
   text-align: left;
 }
 .not-front .node-data-insights .author {
-  margin-right: 6px;
+  margin-right: 20px;
   position: relative;
   display: inline-block;
 }
-.not-front .node-data-insights .author:after {
-  content: '';
-  position: absolute;
-  right: -7px;
-  top: 4px;
-  width: 1px;
-  height: 14px;
-  background-color: #191a1b;
-}
 .not-front .node-data-insights .author:before {
-  content: 'by';
-  margin-right: 2px;
+  content: ' ';
+  background-image: url('../img/sprite/spc_new_sprite.png');
+  background-position: -39px -28px;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 22px;
+  display: inline-block;
+  background-size: 340%;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
 }
 .not-front .node-data-insights .post-date {
-  margin-left: 6px;
+  margin-left: 5px;
+  margin-right: 20px;
   display: inline-block;
 }
+.not-front .node-data-insights .post-date:before {
+  content: ' ';
+  background-image: url('../img/sprite/spc_new_sprite.png');
+  background-position: -39px -1px;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 22px;
+  display: inline-block;
+  background-size: 340%;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
 .not-front .node-data-insights .author,
-.not-front .node-data-insights .post-date {
+.not-front .node-data-insights .post-date,
+.not-front .node-data-insights .insights-topic {
   color: #191a1b;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 300;
   margin-bottom: 10px;
 }
+.not-front .node-data-insights .insights-topic {
+  margin-left: 5px;
+  display: inline-block;
+  color: #0091C7;
+  font-weight: 600;
+}
+.not-front .node-data-insights .insights-topic p a {
+  font-size: 13px;
+}
+.not-front .node-data-insights .insights-topic .thematic-fa-link {
+  font-size: 10px;
+}
 .not-front .node-data-insights .body-text {
   font-weight: 300;
-  line-height: 31.25px;
+  line-height: 24px;
   color: #2a2c2d;
-  font-size: 18px;
+  font-size: 13px;
+  margin-bottom: 50px;
 }
 .not-front .node-data-insights .body-text p {
   margin-bottom: 25px;
 }
+.not-front .node-data-insights .body-text,
+.not-front .node-data-insights .preview {
+  padding: 0 120px;
+}
 .not-front .node-data-insights .preview {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .not-front .node-data-insights .preview img {
   display: block;
@@ -8533,12 +8570,12 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   top: 6px;
   right: 20px;
   background-image: url('../img/sprite/spc_new_sprite.png');
-  background-position: -3px 0;
+  background-position: -9px -6px;
   background-repeat: no-repeat;
   width: 22px;
   height: 30px;
   display: inline-block;
-  background-size: 130%;
+  background-size: 310%;
 }
 #ckan-search-form > div:first-child input {
   height: 40px;
@@ -10029,6 +10066,13 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
     margin-left: 0;
     margin-right: 0;
   }
+  .individual-data-insight-page {
+    padding: 15px 30px;
+  }
+  .individual-data-insight-page .node-data-insights .body-text,
+  .individual-data-insight-page .node-data-insights .preview {
+    padding: 0;
+  }
 }
 @media (max-width: 767px) {
   #ckan-search-form {
@@ -10073,6 +10117,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   }
   .container-on-banner .bean-banner-with-title + .container {
     margin: -200px 15px 0;
+  }
+  .container-on-banner .individual-data-insight-page.container {
+    margin-bottom: 30px;
   }
   #mini-panel-data_insights {
     padding: 75px 0 55px;
