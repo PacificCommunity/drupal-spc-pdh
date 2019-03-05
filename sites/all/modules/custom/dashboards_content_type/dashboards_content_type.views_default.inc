@@ -133,16 +133,8 @@ function dashboards_content_type_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'jcarousel';
-  $handler->display->display_options['style_options']['wrap'] = '0';
-  $handler->display->display_options['style_options']['visible'] = '';
-  $handler->display->display_options['style_options']['responsive'] = 1;
-  $handler->display->display_options['style_options']['scroll'] = '1';
-  $handler->display->display_options['style_options']['auto'] = '0';
-  $handler->display->display_options['style_options']['autoPause'] = 1;
-  $handler->display->display_options['style_options']['easing'] = '';
-  $handler->display->display_options['style_options']['vertical'] = 0;
+  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
   $handler->display->display_options['row_options']['view_mode'] = 'dashboards_preview';
   $handler->display->display_options['row_options']['load_comments'] = 0;
@@ -189,8 +181,35 @@ function dashboards_content_type_views_default_views() {
     'dashboards' => 'dashboards',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Home Dashboards */
+  $handler = $view->new_display('block', 'Home Dashboards', 'block');
+  $handler->display->display_options['display_description'] = 'Provides dashboards list for home page';
+
+  /* Display: Home Dashboard Hightlight */
+  $handler = $view->new_display('attachment', 'Home Dashboard Hightlight', 'attachment_1');
+  $handler->display->display_options['display_description'] = 'Provides dashboard highlight item for home page';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'dashboard_highlight';
+  $handler->display->display_options['row_options']['load_comments'] = 0;
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'nodequeue_nodes|position';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'dashboard_highlight';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['displays'] = array(
+    'block' => 'block',
+    'default' => 0,
+  );
+  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
   $export['dashboards_on_home_page'] = $view;
 
   return $export;
