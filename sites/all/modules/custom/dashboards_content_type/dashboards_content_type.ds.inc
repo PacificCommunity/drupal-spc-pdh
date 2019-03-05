@@ -24,15 +24,36 @@ function dashboards_content_type_ds_field_settings_info() {
       'format' => 'default',
     ),
     'node_link' => array(
-      'weight' => '3',
+      'weight' => '17',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Read more',
-        'link class' => '',
+        'link text' => 'View DASHBOARD',
+        'link class' => 'banner-button btn',
         'wrapper' => '',
         'class' => '',
         'ft' => array(),
+      ),
+    ),
+    'field_body_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'dashboard-description',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_banner_title_db' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-cl' => 'banner-title',
+        ),
       ),
     ),
   );
@@ -45,9 +66,28 @@ function dashboards_content_type_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'dashboards';
   $ds_fieldsetting->view_mode = 'dashboards_preview';
   $ds_fieldsetting->settings = array(
-    'field_icon_logo' => array(
+    'title' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
       'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'p',
+        'class' => 'dashboard-title',
         'ft' => array(),
+      ),
+    ),
+    'field_body_text' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'dashboard-description',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
       ),
     ),
   );
@@ -167,19 +207,23 @@ function dashboards_content_type_ds_layout_settings_info() {
         0 => 'field_icon_logo',
         1 => 'chart_static',
         2 => 'group_content',
-        3 => 'group_chart',
+        3 => 'field_dashboard_label',
         4 => 'field_banner_title_db',
-        5 => 'node_link',
-        6 => 'group_content_left',
-        7 => 'group_content_right',
+        5 => 'group_chart',
+        6 => 'field_body_text',
+        7 => 'node_link',
+        8 => 'group_content_left',
+        9 => 'group_content_right',
       ),
     ),
     'fields' => array(
       'field_icon_logo' => 'ds_content',
       'chart_static' => 'ds_content',
       'group_content' => 'ds_content',
-      'group_chart' => 'ds_content',
+      'field_dashboard_label' => 'ds_content',
       'field_banner_title_db' => 'ds_content',
+      'group_chart' => 'ds_content',
+      'field_body_text' => 'ds_content',
       'node_link' => 'ds_content',
       'group_content_left' => 'ds_content',
       'group_content_right' => 'ds_content',
@@ -207,11 +251,21 @@ function dashboards_content_type_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_icon_logo',
+        0 => 'group_content',
+        1 => 'field_icon_logo',
+        2 => 'title',
+        3 => 'field_body_text',
+        4 => 'group_content_left',
+        5 => 'group_content_right',
       ),
     ),
     'fields' => array(
+      'group_content' => 'ds_content',
       'field_icon_logo' => 'ds_content',
+      'title' => 'ds_content',
+      'field_body_text' => 'ds_content',
+      'group_content_left' => 'ds_content',
+      'group_content_right' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

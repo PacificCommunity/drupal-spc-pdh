@@ -83,7 +83,7 @@ function dashboards_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Chart settings',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_interactive_chart_source',
       1 => 'field_chart_help_text',
@@ -114,7 +114,8 @@ function dashboards_content_type_field_group_info() {
     'label' => 'Chart wrapper',
     'weight' => '2',
     'children' => array(
-      0 => 'chart_static',
+      0 => 'field_dashboard_label',
+      1 => 'chart_static',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -168,6 +169,38 @@ function dashboards_content_type_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_content_left|node|dashboards|dashboards_preview';
+  $field_group->group_name = 'group_content_left';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dashboards';
+  $field_group->mode = 'dashboards_preview';
+  $field_group->parent_name = 'group_content';
+  $field_group->data = array(
+    'label' => 'Content left',
+    'weight' => '18',
+    'children' => array(
+      0 => 'field_icon_logo',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Content left',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-content-left',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_content_left|node|dashboards|dashboards_preview'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_content_right|node|dashboards|dashboard_highlight';
   $field_group->group_name = 'group_content_right';
   $field_group->entity_type = 'node';
@@ -178,7 +211,8 @@ function dashboards_content_type_field_group_info() {
     'label' => 'Content right',
     'weight' => '23',
     'children' => array(
-      0 => 'node_link',
+      0 => 'field_body_text',
+      1 => 'node_link',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -196,6 +230,39 @@ function dashboards_content_type_field_group_info() {
     ),
   );
   $field_groups['group_content_right|node|dashboards|dashboard_highlight'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_content_right|node|dashboards|dashboards_preview';
+  $field_group->group_name = 'group_content_right';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dashboards';
+  $field_group->mode = 'dashboards_preview';
+  $field_group->parent_name = 'group_content';
+  $field_group->data = array(
+    'label' => 'Content right',
+    'weight' => '19',
+    'children' => array(
+      0 => 'field_body_text',
+      1 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Content right',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-content-right',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_content_right|node|dashboards|dashboards_preview'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -229,6 +296,39 @@ function dashboards_content_type_field_group_info() {
     ),
   );
   $field_groups['group_content|node|dashboards|dashboard_highlight'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_content|node|dashboards|dashboards_preview';
+  $field_group->group_name = 'group_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dashboards';
+  $field_group->mode = 'dashboards_preview';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_content_left',
+      1 => 'group_content_right',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Content',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-content',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_content|node|dashboards|dashboards_preview'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
