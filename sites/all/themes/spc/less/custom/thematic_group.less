@@ -10,143 +10,138 @@
     }
 }
 
-.node-type-thematic-group {
-	h2 {
-		font-size: 40px;
-		font-weight: 300;
-		color: #032f47;
-		text-align: center;
-		margin-top: 0;
-		margin-bottom: 60px;
-	}
-	.thematic-group-image {
-		float: left;
-		margin-right: 15px;
-		img {
-			max-height: 320px;
-			max-width: 410px;
-			height: auto;
-			width: auto;
-		}
-	}
-	.latest-tweets-block {
-		padding: 37px 0 98px;
-		h2 {
-			margin-bottom: 40px;
-		}
-	}
-}
-
-.panel-style-narrow {
-	padding: 35px 0px 50px 0px;
-	color: #2a2c2d;
-	h2 {
-		color: #032f47;
-		text-align: left;
-        font-size: 29px;
-        font-weight: 300;
-        color: #032f47;
-        margin: 0 0 58px 0px;
-        width: 100%;
-	}
-	.container {
-		padding: 0px 95px;
-	}
-}
-
-.thematic-group-articles {
-	font-size: 19px;
-	line-height: 1.5em;
-    color: #1d7bbc;
-    background-color: #f6f8fa;
-    padding-bottom: 60px;
-    .field-items {
-        overflow: hidden;
-        margin-left: -4px;
-        margin-right: -4px;
-        margin-bottom: 24px;
-        .field-item {
-            margin-bottom: 30px;
-            padding-left: 4px;
-            padding-right: 4px;
-            float: left;
-            width: 25%;
-        }
-    }
-    .views-field-title {
-        font-weight: 300;
-        a {
-            font-size: 19px;
-            font-weight: 300;
-            color: #1d7bbc;
-            h3 {
-                font-size: 19px;
-                margin-top: 15px;
-                margin-bottom: 0px;
-                line-height: 23px;
-                padding: 0px 7px;
+.banner-links {
+    display: flex;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    .link-block {
+        display: flex;
+        width: 175px;
+        height: 100px;
+        border-radius: 13px;
+        background-color: #fff;
+        box-shadow: 0px 2px 25px 0px rgba(0,18,181,0.1);
+        padding: 25px 20px;
+        margin-right: 22px;
+        .icon-wrapper {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 12px;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0 auto;
+            }
+            &.dataset-icon {
+                background-color: #173667;
+                &:after {
+                    background: url('../img/sprite/topics_page_icons.png') no-repeat 0 0;
+                    width: 32px;
+                    height: 36px;
+                }
+            }
+            &.story-icon {
+                background-color: #3DAF48;
+                &:after {
+                    background: url('../img/sprite/topics_page_icons.png') no-repeat -30px 0;
+                    width: 32px;
+                    height: 36px;
+                }
+            }
+            &.publication-icon {
+                background-color: #FDB613;
+                &:after {
+                    background: url('../img/sprite/topics_page_icons.png') no-repeat -61px 0;
+                    width: 30px;
+                    height: 30px;
+                }
             }
         }
-    }
-    .views-field-field-image {
-        img {
-            width: 100%;
-            height: 100%;
+        a {
+            font-size: 12px;
+            color: #000;
+            transition: color 0.5s ease;
+            .count {
+                font-size: 30px;
+                font-weight: 500;
+            }
+            &:hover {
+                text-decoration: none;
+                color: @spc-buttons-color;
+            }
+        }
+        &:last-child {
+            margin-right: 0;
         }
     }
 }
 
-.pane-browse-by-data-category {
-	position: absolute;
-}
-
-#node_content {
-	padding: 57px 0 74px;
-	color: #2a2c2d;
-	font-size: 17px;
-	font-weight: 300;
-	line-height: 1.5em;
-}
-
-#thematic-group-popular-datasets {
-	background-position: 50% 0%;
-	padding-bottom: 74px;
-	h2 {
-		margin-bottom: 43px;
-		margin-left: 15px;
-	}
-	.region-inner {
-		.make-row();
-		display: flex;
-		flex-wrap: wrap;
-
-	}
-  .dataset-preview {
-		.make-md-column(6);
-		.make-sm-column(6);
-		.make-xs-column(12);
-		padding-top: 0px;
-		padding-bottom: 15px;
-        height: auto;
-        border-bottom: none;
-        margin-bottom: 0px;
-        overflow: hidden;
-        .dataset-preview-inner {
-            background-color: rgba(255, 255, 255, 0.65);
-            padding: 17px 20px 17px 35px;
-            height: 100%;
+.node-type-thematic-group {
+    #node_content {
+        line-height: 2;
+        padding-top: 90px;
+    }
+    .pane-browse-by-data-category {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        font-size: 13px;
+        z-index: 1;
+        .dropdown {
+            button {
+                position: relative;
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    border: solid #000;
+                    border-width: 0 1px 1px 0;
+                    padding: 4px;
+                    transform: rotate(45deg);
+                }
+            }
+            &.open {
+                button {
+                    &:after {
+                        top: 24px;
+                        transform: rotate(-135deg);
+                    }
+                }
+            }
         }
-        label {
-        font-size: 15px;
-	  }
-	  .dataset-title {
-        margin-bottom: 10px;
-	  }
-	  .dataset-date {
-        margin-bottom: 6px;
-        span {
-            font-size: 15px;
+        .dropdown-menu {
+            margin-top: 5px;
+            margin-left: 5px;
+            min-width: 210px;
+            border-top-left-radius: 3px;
         }
-	  }
-  }
+    }
+}
+#thematic_dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 215px;
+    font-weight: 500;
+    background-color: #fff;
+    border: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: none;
+    padding-right: 20px;
+    .thematic-fa-icon {
+        font-size: 30px;
+    }
 }
