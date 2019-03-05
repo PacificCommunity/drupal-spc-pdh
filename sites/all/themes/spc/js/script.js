@@ -119,11 +119,11 @@ $( document ).ready(function() {
     ]
   });
 
-  var slides_num_di = $('.data-insights-promoted-group .slick-dots li').length;
-  if ($('.data-insights-promoted-group').length > 0 && slides_num_di > 0) {
-    var slide = $('.data-insights-promoted-group .slick-dots .slick-active button').text();
+  if ($('.data-insights-promoted-group').length > 0 && $('.data-insights-promoted-group .slick-dots li').length > 0) {
+    let slides_num_di = $('.data-insights-promoted-group .slick-dots li').length;
+    let slide = $('.data-insights-promoted-group .slick-dots .slick-active button').text();
     $('.data-insights-promoted-group').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_di}</strong></div>`);
-    $('.slick-arrow').on('click', function(){
+    $('.data-insights-promoted-group .slick-arrow').on('click', function(){
       slide = $('.data-insights-promoted-group .slick-dots .slick-active button').text();
       $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_di}</strong>`);
     });
@@ -152,11 +152,11 @@ $( document ).ready(function() {
       ]
   });
   
-  var slides_num_stories = $('.latest-stories-homepage .slick-dots li').length;
-  if ($('.latest-stories-homepage').length > 0 && slides_num_stories > 0) {
-    var slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
+  if ($('.latest-stories-homepage').length > 0 && $('.latest-stories-homepage .slick-dots li').length > 0) {
+    let slides_num_stories = $('.latest-stories-homepage .slick-dots li').length;
+    let slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
     $('.latest-stories-homepage').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_stories}</strong></div>`);
-    $('.slick-arrow').on('click', function(){
+    $('.latest-stories-homepage .slick-arrow').on('click', function(){
       slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
       $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
     });

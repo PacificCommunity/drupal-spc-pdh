@@ -69,12 +69,9 @@ function ckan_tweaks_block_view($delta = '') {
       // NOTE: Here we pull dataset count for thematic area
       $total = _ckan_tweaks_count_datasets_for_thematic_area($id);
 
-      foreach ($datasets as &$dataset) {
-        $dataset = theme('ckan_dataset_overview', ['dataset'=>$dataset]);
-      }
-
-      $block['subject'] = t('Recent CKAN updates [@total total]', ['@total' => $total]);
-      $block['content'] = implode('', $datasets);
+      $dataset = theme('ckan_dataset_overview', ['datasets'=>$datasets]);
+      
+      $block['content'] = $dataset;
 
       break;
 

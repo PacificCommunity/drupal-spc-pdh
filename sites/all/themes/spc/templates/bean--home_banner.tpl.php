@@ -90,30 +90,24 @@
       ?>
       <div class="banner-links hidden-xs">
         <div class="link-block">
-          <div class="icon-wrapper">
-            <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
-          </div>
+          <div class="icon-wrapper dataset-icon"></div>
           <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id) ?>">
-            <span class="count"><?= $datasets_count ?></span>
             <?php print t('Datasets'); ?>
+            <div class="count"><?= $datasets_count ?></div>
           </a>
         </div>
         <div class="link-block">
-          <div class="icon-wrapper">
-            <img src="/sites/all/themes/spc/img/spc/article_icon.png">
-          </div>
+          <div class="icon-wrapper story-icon"></div>
           <a href="/stories/by-topic/<?= $node->nid ?>">
-            <span class="count"><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></span>
-            <?php print t('Stories'); ?>
+          <?php print t('Stories'); ?>
+          <div class="count"><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></div>
           </a>
         </div>
         <div class="link-block">
-          <div class="icon-wrapper">
-            <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
-          </div>
+          <div class="icon-wrapper publication-icon"></div>
           <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id, CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE) ?>">
-            <span class="count"><?= $publications_count ?></span>
             <?php print t('Publications'); ?>
+            <div class="count"><?= $publications_count ?></div>
           </a>
         </div>
       </div>

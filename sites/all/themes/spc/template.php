@@ -156,9 +156,9 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
     );
     $form['search_type_container']['search_type'] = [
       '#type' => 'select',
-      '#default_value' => 'article',
+      '#default_value' => 'dataset',
       '#options' => [
-        'article' => t('Article'),
+        'article' => t('Story'),
         'dataset' => t('Dataset')
       ],
       '#required' => TRUE,

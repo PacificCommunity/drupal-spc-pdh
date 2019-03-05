@@ -183,32 +183,6 @@ function thematic_group_default_page_manager_handlers() {
   $display->content['new-4ce022c5-0b6a-422e-9df0-b82a44a5af38'] = $pane;
   $display->panels['one_fw_main'][3] = 'new-4ce022c5-0b6a-422e-9df0-b82a44a5af38';
   $pane = new stdClass();
-  $pane->pid = 'new-7bcf81d9-e00f-438d-bf0e-656b021b301e';
-  $pane->panel = 'one_fw_main';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'latest_datasets_and_insight';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => 'thematic-group-popular-datasets',
-    'css_class' => 'panel-style-narrow panel-style-background-image',
-  );
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = '7bcf81d9-e00f-438d-bf0e-656b021b301e';
-  $display->content['new-7bcf81d9-e00f-438d-bf0e-656b021b301e'] = $pane;
-  $display->panels['one_fw_main'][4] = 'new-7bcf81d9-e00f-438d-bf0e-656b021b301e';
-  $pane = new stdClass();
   $pane->pid = 'new-956cbdde-e6d7-456a-9998-72c0c9160ee2';
   $pane->panel = 'one_fw_main';
   $pane->type = 'views';
@@ -244,52 +218,11 @@ function thematic_group_default_page_manager_handlers() {
     'css_class' => 'panel-style-narrow',
   );
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '956cbdde-e6d7-456a-9998-72c0c9160ee2';
   $display->content['new-956cbdde-e6d7-456a-9998-72c0c9160ee2'] = $pane;
-  $display->panels['one_fw_main'][5] = 'new-956cbdde-e6d7-456a-9998-72c0c9160ee2';
-  $pane = new stdClass();
-  $pane->pid = 'new-6ac2635d-f456-48be-b754-d09687317c08';
-  $pane->panel = 'one_fw_main';
-  $pane->type = 'views';
-  $pane->subtype = 'latest_stories';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'block_1',
-    'context' => array(
-      0 => 'argument_entity_id:node_1.nid',
-    ),
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'thematic-group-articles panel-style-narrow',
-  );
-  $pane->extras = array();
-  $pane->position = 6;
-  $pane->locks = array();
-  $pane->uuid = '6ac2635d-f456-48be-b754-d09687317c08';
-  $display->content['new-6ac2635d-f456-48be-b754-d09687317c08'] = $pane;
-  $display->panels['one_fw_main'][6] = 'new-6ac2635d-f456-48be-b754-d09687317c08';
+  $display->panels['one_fw_main'][4] = 'new-956cbdde-e6d7-456a-9998-72c0c9160ee2';
   $pane = new stdClass();
   $pane->pid = 'new-dbb951a4-5c98-4608-a390-c518710e5ea3';
   $pane->panel = 'one_fw_main';
@@ -317,20 +250,20 @@ function thematic_group_default_page_manager_handlers() {
     'css_class' => 'thematic-group-articles panel-style-narrow',
   );
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'dbb951a4-5c98-4608-a390-c518710e5ea3';
   $display->content['new-dbb951a4-5c98-4608-a390-c518710e5ea3'] = $pane;
-  $display->panels['one_fw_main'][7] = 'new-dbb951a4-5c98-4608-a390-c518710e5ea3';
+  $display->panels['one_fw_main'][5] = 'new-dbb951a4-5c98-4608-a390-c518710e5ea3';
   $pane = new stdClass();
-  $pane->pid = 'new-fd88377d-2526-4207-a19c-644795a46ff0';
+  $pane->pid = 'new-344f9bba-a12c-4b63-aa26-41fbf940a447';
   $pane->panel = 'one_fw_main';
   $pane->type = 'block';
-  $pane->subtype = 'spc_twitter-spc_twitter_topic_tweets';
+  $pane->subtype = 'ckan_tweaks-ckan_tweaks-popular_datasets';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 0,
+    'override_title' => 1,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
@@ -338,16 +271,13 @@ function thematic_group_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'container latest-tweets-block panel-style-narrow',
-  );
+  $pane->css = array();
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 6;
   $pane->locks = array();
-  $pane->uuid = 'fd88377d-2526-4207-a19c-644795a46ff0';
-  $display->content['new-fd88377d-2526-4207-a19c-644795a46ff0'] = $pane;
-  $display->panels['one_fw_main'][8] = 'new-fd88377d-2526-4207-a19c-644795a46ff0';
+  $pane->uuid = '344f9bba-a12c-4b63-aa26-41fbf940a447';
+  $display->content['new-344f9bba-a12c-4b63-aa26-41fbf940a447'] = $pane;
+  $display->panels['one_fw_main'][6] = 'new-344f9bba-a12c-4b63-aa26-41fbf940a447';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-4ce022c5-0b6a-422e-9df0-b82a44a5af38';
   $handler->conf['display'] = $display;
