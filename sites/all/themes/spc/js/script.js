@@ -125,7 +125,7 @@ $( document ).ready(function() {
     $('.data-insights-promoted-group').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_di}</strong></div>`);
     $('.data-insights-promoted-group .slick-arrow').on('click', function(){
       slide = $('.data-insights-promoted-group .slick-dots .slick-active button').text();
-      $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_di}</strong>`);
+      $('.data-insights-promoted-group .slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_di}</strong>`);
     });
   };
 
@@ -158,7 +158,7 @@ $( document ).ready(function() {
     $('.latest-stories-homepage').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_stories}</strong></div>`);
     $('.latest-stories-homepage .slick-arrow').on('click', function(){
       slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
-      $('.slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
+      $('.latest-stories-homepage .slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
     });
   };
 
