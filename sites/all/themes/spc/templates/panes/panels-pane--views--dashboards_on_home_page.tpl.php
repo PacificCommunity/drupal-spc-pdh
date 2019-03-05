@@ -6,7 +6,7 @@
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>
-  <div class="container-fluid">
+  <div class="container">
     <?php if ($title): ?>
       <h2 class="pane-title"><?php print $title; ?></h2>
     <?php endif; ?>

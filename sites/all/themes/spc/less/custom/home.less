@@ -666,7 +666,7 @@
 
 .dashboards-home {
     padding-top: 20px;
-    padding-bottom: 70px;
+    padding-bottom: 55px;
     text-align: center;
     color: #000;
     .pane-title {
@@ -677,19 +677,17 @@
     }
     .pane-subtitle {
         font-size: 13px;
-
-    }
-
-    @media (max-width: @screen-md) {
-        & {
-            .attachment-before {
-                padding-left: 62px;
-            }
-        }
+        margin-bottom: 70px;
     }
 
     @media (max-width: @screen-sm) {
         & {
+            .pane-title {
+                margin-bottom: 33px;
+            }
+            .pane-subtitle {
+                display: none;
+            }
             .attachment-before {
                 padding: 0px;
             }
