@@ -123,14 +123,14 @@ function articles_content_type_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'title',
-      2 => 'group_meta',
+      2 => 'node_link',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Content',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'node-content-container',
+        'classes' => 'node-content-container col-md-8 col-sm-8',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -173,7 +173,7 @@ function articles_content_type_field_group_info() {
   $field_groups['group_meta|node|article|featured'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_meta|node|article|list';
   $field_group->group_name = 'group_meta';
@@ -201,6 +201,36 @@ function articles_content_type_field_group_info() {
     ),
   );
   $field_groups['group_meta|node|article|list'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_preview_section|node|article|list';
+  $field_group->group_name = 'group_preview_section';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'article';
+  $field_group->mode = 'list';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Preview Section',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Preview Section',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-preview-section field-group-fieldset col-md-4 col-sm-4',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_preview_section|node|article|list'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -304,6 +334,7 @@ function articles_content_type_field_group_info() {
   // Included for use with string extractors like potx.
   t('Content');
   t('Meta');
+  t('Preview Section');
   t('Title block');
 
   return $field_groups;
