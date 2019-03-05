@@ -45,42 +45,6 @@ function articles_content_type_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-b1bc570f-d658-491e-a630-47a124fd7528';
-  $pane->panel = 'middle';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'articles_list-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'query_string_exists',
-        'settings' => array(
-          'key' => 'page',
-        ),
-        'not' => TRUE,
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'container',
-  );
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'b1bc570f-d658-491e-a630-47a124fd7528';
-  $display->content['new-b1bc570f-d658-491e-a630-47a124fd7528'] = $pane;
-  $display->panels['middle'][0] = 'new-b1bc570f-d658-491e-a630-47a124fd7528';
-  $pane = new stdClass();
   $pane->pid = 'new-68d8209c-f1a4-4e02-9576-0695f4c11e24';
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
@@ -101,13 +65,13 @@ function articles_content_type_default_panels_mini() {
     'css_class' => 'container articles-list',
   );
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '68d8209c-f1a4-4e02-9576-0695f4c11e24';
   $display->content['new-68d8209c-f1a4-4e02-9576-0695f4c11e24'] = $pane;
-  $display->panels['middle'][1] = 'new-68d8209c-f1a4-4e02-9576-0695f4c11e24';
+  $display->panels['middle'][0] = 'new-68d8209c-f1a4-4e02-9576-0695f4c11e24';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-b1bc570f-d658-491e-a630-47a124fd7528';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['articles_page_content'] = $mini;
 
