@@ -70,11 +70,11 @@ function articles_content_type_image_default_styles() {
   $styles['list_page_article'] = array(
     'label' => 'List Page Article',
     'effects' => array(
-      2 => array(
+      1 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 350,
-          'height' => 192,
+          'height' => 210,
         ),
         'weight' => 1,
       ),

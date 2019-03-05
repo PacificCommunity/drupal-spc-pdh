@@ -57,7 +57,7 @@ function articles_content_type_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'trim',
-          'trim_length' => 20,
+          'trim_length' => 50,
           'trim_link' => 0,
           'trim_options' => array(
             'text' => 'text',
@@ -67,7 +67,7 @@ function articles_content_type_field_default_field_instances() {
           'trim_type' => 'words',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'related_articles_and_publication' => array(
         'label' => 'hidden',
@@ -167,7 +167,7 @@ function articles_content_type_field_default_field_instances() {
           'image_style' => 'list_page_article',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'related_articles_and_publication' => array(
         'label' => 'hidden',
@@ -275,7 +275,7 @@ function articles_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'related_articles_and_publication' => array(
         'label' => 'above',
@@ -347,7 +347,7 @@ function articles_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
       'related_articles_and_publication' => array(
         'label' => 'above',
@@ -417,7 +417,7 @@ function articles_content_type_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 10,
       ),
       'related_articles_and_publication' => array(
         'label' => 'above',
@@ -506,7 +506,7 @@ function articles_content_type_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'related_articles_and_publication' => array(
         'label' => 'above',

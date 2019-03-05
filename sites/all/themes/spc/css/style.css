@@ -7964,12 +7964,6 @@ body {
 .not-front .data-insights-list .pager-show-more-empty + .loading-more-element {
   display: none;
 }
-.not-front.articles-page .articles-list,
-.not-front.page-articles .articles-list,
-.not-front.page-search .articles-list {
-  margin-top: 30px;
-}
-.not-front.articles-page .articles-list .item-list-pager,
 .not-front.page-articles .articles-list .item-list-pager,
 .not-front.page-search .articles-list .item-list-pager {
   padding-top: 1px;
@@ -7977,13 +7971,11 @@ body {
   margin-bottom: 15px;
   clear: both;
 }
-.not-front.articles-page .articles-list .item-list-pager .pager,
 .not-front.page-articles .articles-list .item-list-pager .pager,
 .not-front.page-search .articles-list .item-list-pager .pager {
   margin-bottom: 86px;
   margin-top: 37px;
 }
-.not-front.articles-page .articles-list .item-list-pager .pager li a,
 .not-front.page-articles .articles-list .item-list-pager .pager li a,
 .not-front.page-search .articles-list .item-list-pager .pager li a {
   padding: 5px 12px;
@@ -7992,18 +7984,14 @@ body {
   background-color: #bcdfe5;
   color: #fff;
 }
-.not-front.articles-page .articles-list .item-list-pager .previous a,
 .not-front.page-articles .articles-list .item-list-pager .previous a,
 .not-front.page-search .articles-list .item-list-pager .previous a,
-.not-front.articles-page .articles-list .item-list-pager .next a,
 .not-front.page-articles .articles-list .item-list-pager .next a,
 .not-front.page-search .articles-list .item-list-pager .next a {
   float: none;
 }
-.not-front.articles-page .articles-list .item-list-pager .current a,
 .not-front.page-articles .articles-list .item-list-pager .current a,
 .not-front.page-search .articles-list .item-list-pager .current a,
-.not-front.articles-page .articles-list .item-list-pager .current,
 .not-front.page-articles .articles-list .item-list-pager .current,
 .not-front.page-search .articles-list .item-list-pager .current {
   padding: 7px 12px;
@@ -9770,59 +9758,101 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   line-height: 1.75em;
   margin-bottom: 25px;
 }
-.node-article.view-mode-list {
-  margin-bottom: 28px;
+.articles-list {
+  padding: 0px 50px;
+  margin-top: 60px;
+}
+.articles-list .story-item {
+  box-shadow: 0px 0px 5px 1px #ebebeb;
+  border: 1px solid #ebebeb;
+  margin-bottom: 25px;
+  padding: 10px;
+  border-radius: 15px;
+}
+.articles-list .story-item .node-content-container {
+  padding: 0 15px;
+  padding-left: 40px;
+}
+.articles-list .story-item .node-content-container .story-title {
+  margin-bottom: 15px;
+}
+.articles-list .story-item .node-content-container .story-title .title {
+  font-size: 15px;
+  font-weight: 600;
+}
+.articles-list .story-item .node-content-container .node-body {
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+.articles-list .story-item .group-preview-section {
+  padding: 0;
+}
+.articles-list .story-item .group-preview-section .preview-item img {
+  border-radius: 15px;
+}
+.articles-list .story-item .node-links-container {
+  margin-bottom: 25px;
+}
+.articles-list .story-item .node-links-container a {
+  font-size: 13px;
+  color: #0091C7;
+  font-weight: 500;
+}
+.articles-list .story-item .node-links-container a:before {
+  content: ' ';
+  background-image: url('../img/spc_new/read-more-link.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: contain;
   position: relative;
-  min-height: 424px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #bcdfe5;
+  top: 2px;
+  margin-right: 5px;
 }
-.node-article.view-mode-list .field-type-image {
-  border-bottom: 1px solid #bcdfe5;
+.articles-list .story-item .node-links-container a:hover {
+  text-decoration: none;
 }
-.node-article.view-mode-list .field-type-image img {
-  max-width: 100%;
+.articles-list .item-list-pager .pager {
+  margin-bottom: 40px;
+  text-align: right;
 }
-.node-article.view-mode-list .node-content-container {
-  padding: 18px;
-  min-height: 210px;
-  overflow: hidden;
+.articles-list .item-list-pager .pager li a {
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  color: #000;
 }
-.node-article.view-mode-list .node-content-container h2 {
+.articles-list .item-list-pager .pager li a:hover {
+  background-color: #003977;
+  color: #fff;
+}
+.articles-list .item-list-pager .pager .first,
+.articles-list .item-list-pager .pager .previous,
+.articles-list .item-list-pager .pager .next,
+.articles-list .item-list-pager .pager .last {
+  color: #003977;
+}
+.articles-list .item-list-pager .pager .first a,
+.articles-list .item-list-pager .pager .previous a,
+.articles-list .item-list-pager .pager .next a,
+.articles-list .item-list-pager .pager .last a {
   font-size: 14px;
-  font-weight: 700;
-  padding: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  line-height: 1.5em;
-  color: #032f47;
 }
-.node-article.view-mode-list .node-content-container .node-meta {
-  margin-top: 12px;
-  margin-bottom: 14px;
+.articles-list .item-list-pager .previous a,
+.articles-list .item-list-pager .next a {
+  float: none;
 }
-.node-article.view-mode-list .node-content-container .node-body {
-  margin-bottom: 14px;
-  font-size: 14px;
-  line-height: 1.75em;
-}
-.node-article.view-mode-list .node-links-container {
-  align-self: end;
-  width: 100%;
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-end;
-}
-.node-article.view-mode-list .node-links-container .node-links {
-  padding: 0px 32px;
-  border-top: 1px solid #bcdfe5;
-  height: 46px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  margin-top: 0px;
+.articles-list .item-list-pager .current a,
+.articles-list .item-list-pager .current,
+.articles-list .item-list-pager .current.first {
+  font-size: 13px;
+  padding: 7px 12px;
+  background-color: #003977;
+  color: #fff;
+  border-radius: 5px;
 }
 .group-title-block {
   margin-bottom: 30px;
@@ -10161,6 +10191,16 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   .thematic-group-articles .field-type-entityreference .field-items .field-item.even {
     margin-left: 20px;
     margin-bottom: 30px;
+  }
+  .articles-list {
+    padding: 0 15px;
+  }
+  .articles-list .story-item .node-content-container {
+    padding-left: 15px;
+  }
+  .articles-list .story-item .group-preview-section .preview-item img {
+    height: auto;
+    width: 100%;
   }
 }
 @media (max-width: 991px) {
