@@ -2,6 +2,7 @@ body {
     font-family: 'Montserrat';
     font-size: 14px;
     font-weight: 400;
+    color: #000;
 }
 
 
@@ -36,31 +37,6 @@ body {
                 }
             }
         }
-        .dropdown-menu {
-            background: #fff;
-            border: none;
-            border-radius: 18px;
-            padding: 15px;
-            li {
-                display: block;
-                padding: 0 12px;
-                a {
-                    display: block;
-                    color: #000;
-                    border-bottom: 1px dashed #D3D3D3;
-                    padding: 5px 0;
-                    &:hover {
-                        background-color: transparent;
-                        color: @spc-primary-color;
-                    }
-                }
-                &:last-child {
-                    a {
-                        border-bottom: none;
-                    }
-                }
-            }
-        }
     }
 }
 .login-icon {
@@ -68,6 +44,31 @@ body {
     background-size: 310%;
     margin-right: 7px;
     vertical-align: middle;
+}
+.dropdown-menu {
+    background: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 5px 15px;
+    li {
+        display: block;
+        padding: 0 12px;
+        a {
+            display: block;
+            color: #000;
+            border-bottom: 1px dashed #D3D3D3;
+            padding: 5px 0;
+            &:hover {
+                background-color: transparent;
+                color: @spc-primary-color;
+            }
+        }
+        &:last-child {
+            a {
+                border-bottom: none;
+            }
+        }
+    }
 }
 
 
