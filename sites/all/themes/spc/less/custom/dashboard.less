@@ -85,39 +85,47 @@
 	&.view-mode-dashboard_highlight {
 		position: relative;
 		margin: 70px auto 0px auto;
-		padding: 32px 110px 32px 62px;
-		max-width: 767px;
-		min-height: 202px;
-		border-radius: 13px;
-		background: linear-gradient(-76deg, #000366 0%, #00c6ec 100%);
+		max-width: 1034px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		.field-type-image {
-			position: absolute;
-			left: 0;
+			z-index: 1;
 			img {
 				height: auto;
 				max-width: 124px;
-				margin: 0 0 0 -62px;
+				margin: 0 -62px 0 0;
 				.border-right-radius(13px);
 			}
 		}
 		.group-content {
-			.field-type-text-long {
-				color: #fff;
-				font-size: 18px;
-				font-weight: 600;
-				strong {
-					color: #ffc72e;
+			padding: 32px 110px 32px 62px;
+			border-radius: 13px;
+			background: linear-gradient(-76deg, #000366 0%, #00c6ec 100%);
+			min-height: 202px;
+			flex-grow: 2;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			.group-content-left {
+				.field-type-text-long {
+					color: #fff;
+					font-size: 18px;
+					font-weight: 600;
+					strong {
+						color: #ffc72e;
+					}
 				}
+			}
+			.group-content-right {
+				color: #fff;
+				font-size: 12px;
+				font-weight: 300;
 			}
 		}
 		.group-chart {
-			position: absolute;
-			right: 0px;
 			.chart-static {
-				margin-right: -205px;
+				margin-left: -110px;
 				width: 315px;
 				height: 315px;
 				background: url(../img/spc_new/dashboard-chart.png) 50% 50% no-repeat;
@@ -127,17 +135,17 @@
 		@media (max-width: @screen-sm) {
 			& {
 				margin-bottom: 41px;
-				padding: 32px 20% 83px 20%;
+				flex-direction: column;
+				.group-content {
+					order: 1;
+				}
 				.field-type-image {
-					left: unset;
-					bottom: 0;
+					order: 2;
 					img {
-						margin: 0 0 -41px 0;
+						margin: -41px 0 0 0;
 						border-radius: 0px;
 						.border-top-radius(13px);
 					}
-				}
-				.group-content {
 				}
 				.group-chart {
 					display: none;

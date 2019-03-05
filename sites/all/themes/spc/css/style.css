@@ -757,71 +757,13 @@ pre code {
   margin-left: -15px;
   margin-right: -15px;
 }
-.col-xs-1,
-.col-sm-1,
-.col-md-1,
-.col-lg-1,
-.col-xs-2,
-.col-sm-2,
-.col-md-2,
-.col-lg-2,
-.col-xs-3,
-.col-sm-3,
-.col-md-3,
-.col-lg-3,
-.col-xs-4,
-.col-sm-4,
-.col-md-4,
-.col-lg-4,
-.col-xs-5,
-.col-sm-5,
-.col-md-5,
-.col-lg-5,
-.col-xs-6,
-.col-sm-6,
-.col-md-6,
-.col-lg-6,
-.col-xs-7,
-.col-sm-7,
-.col-md-7,
-.col-lg-7,
-.col-xs-8,
-.col-sm-8,
-.col-md-8,
-.col-lg-8,
-.col-xs-9,
-.col-sm-9,
-.col-md-9,
-.col-lg-9,
-.col-xs-10,
-.col-sm-10,
-.col-md-10,
-.col-lg-10,
-.col-xs-11,
-.col-sm-11,
-.col-md-11,
-.col-lg-11,
-.col-xs-12,
-.col-sm-12,
-.col-md-12,
-.col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-.col-xs-1,
-.col-xs-2,
-.col-xs-3,
-.col-xs-4,
-.col-xs-5,
-.col-xs-6,
-.col-xs-7,
-.col-xs-8,
-.col-xs-9,
-.col-xs-10,
-.col-xs-11,
-.col-xs-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }
 .col-xs-12 {
@@ -978,18 +920,7 @@ pre code {
   margin-left: 0%;
 }
 @media (min-width: 768px) {
-  .col-sm-1,
-  .col-sm-2,
-  .col-sm-3,
-  .col-sm-4,
-  .col-sm-5,
-  .col-sm-6,
-  .col-sm-7,
-  .col-sm-8,
-  .col-sm-9,
-  .col-sm-10,
-  .col-sm-11,
-  .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
   .col-sm-12 {
@@ -1147,18 +1078,7 @@ pre code {
   }
 }
 @media (min-width: 992px) {
-  .col-md-1,
-  .col-md-2,
-  .col-md-3,
-  .col-md-4,
-  .col-md-5,
-  .col-md-6,
-  .col-md-7,
-  .col-md-8,
-  .col-md-9,
-  .col-md-10,
-  .col-md-11,
-  .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
   .col-md-12 {
@@ -1316,18 +1236,7 @@ pre code {
   }
 }
 @media (min-width: 1200px) {
-  .col-lg-1,
-  .col-lg-2,
-  .col-lg-3,
-  .col-lg-4,
-  .col-lg-5,
-  .col-lg-6,
-  .col-lg-7,
-  .col-lg-8,
-  .col-lg-9,
-  .col-lg-10,
-  .col-lg-11,
-  .col-lg-12 {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
   }
   .col-lg-12 {
@@ -6076,7 +5985,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .label {
   display: inline;
-  padding: 0.2em 0.6em 0.3em;
+  padding: .2em .6em .3em;
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
@@ -6084,7 +5993,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 0.25em;
+  border-radius: .25em;
 }
 .label[href]:hover,
 .label[href]:focus {
@@ -9552,40 +9461,46 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .node-dashboards.view-mode-dashboard_highlight {
   position: relative;
   margin: 70px auto 0px auto;
-  padding: 32px 110px 32px 62px;
-  max-width: 767px;
-  min-height: 202px;
-  border-radius: 13px;
-  background: linear-gradient(-76deg, #000366 0%, #00c6ec 100%);
+  max-width: 1034px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .node-dashboards.view-mode-dashboard_highlight .field-type-image {
-  position: absolute;
-  left: 0;
+  z-index: 1;
 }
 .node-dashboards.view-mode-dashboard_highlight .field-type-image img {
   height: auto;
   max-width: 124px;
-  margin: 0 0 0 -62px;
+  margin: 0 -62px 0 0;
   border-bottom-right-radius: 13px;
   border-top-right-radius: 13px;
 }
-.node-dashboards.view-mode-dashboard_highlight .group-content .field-type-text-long {
+.node-dashboards.view-mode-dashboard_highlight .group-content {
+  padding: 32px 110px 32px 62px;
+  border-radius: 13px;
+  background: linear-gradient(-76deg, #000366 0%, #00c6ec 100%);
+  min-height: 202px;
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left .field-type-text-long {
   color: #fff;
   font-size: 18px;
   font-weight: 600;
 }
-.node-dashboards.view-mode-dashboard_highlight .group-content .field-type-text-long strong {
+.node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left .field-type-text-long strong {
   color: #ffc72e;
 }
-.node-dashboards.view-mode-dashboard_highlight .group-chart {
-  position: absolute;
-  right: 0px;
+.node-dashboards.view-mode-dashboard_highlight .group-content .group-content-right {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 300;
 }
 .node-dashboards.view-mode-dashboard_highlight .group-chart .chart-static {
-  margin-right: -205px;
+  margin-left: -110px;
   width: 315px;
   height: 315px;
   background: url(../img/spc_new/dashboard-chart.png) 50% 50% no-repeat;
@@ -9594,14 +9509,16 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 @media (max-width: 768px) {
   .node-dashboards.view-mode-dashboard_highlight {
     margin-bottom: 41px;
-    padding: 32px 20% 83px 20%;
+    flex-direction: column;
+  }
+  .node-dashboards.view-mode-dashboard_highlight .group-content {
+    order: 1;
   }
   .node-dashboards.view-mode-dashboard_highlight .field-type-image {
-    left: unset;
-    bottom: 0;
+    order: 2;
   }
   .node-dashboards.view-mode-dashboard_highlight .field-type-image img {
-    margin: 0 0 -41px 0;
+    margin: -41px 0 0 0;
     border-radius: 0px;
     border-top-right-radius: 13px;
     border-top-left-radius: 13px;
