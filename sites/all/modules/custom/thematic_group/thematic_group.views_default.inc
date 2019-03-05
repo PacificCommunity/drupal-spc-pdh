@@ -203,13 +203,11 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'data-insights-promoted-item';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['relationship'] = 'field_data_insight_thematic_target_id';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_data_insight_thematic_target_id']['id'] = 'field_data_insight_thematic_target_id';
   $handler->display->display_options['relationships']['field_data_insight_thematic_target_id']['table'] = 'field_data_field_data_insight_thematic';
@@ -256,25 +254,20 @@ function thematic_group_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_data_insight_thematic_target_id';
-  $handler->display->display_options['fields']['title_1']['label'] = '';
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   /* Field: Content: Preview */
   $handler->display->display_options['fields']['field_data_insights_preview']['id'] = 'field_data_insights_preview';
   $handler->display->display_options['fields']['field_data_insights_preview']['table'] = 'field_data_field_data_insights_preview';
   $handler->display->display_options['fields']['field_data_insights_preview']['field'] = 'field_data_insights_preview';
+  $handler->display->display_options['fields']['field_data_insights_preview']['relationship'] = 'field_data_insight_thematic_target_id';
+  $handler->display->display_options['fields']['field_data_insights_preview']['label'] = '';
+  $handler->display->display_options['fields']['field_data_insights_preview']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_data_insight_thematic_target_id';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $export['data_insight_thematic'] = $view;
 
   $view = new view();
