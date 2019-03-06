@@ -1,11 +1,11 @@
 <?php
 
 $plugin = array(
-  'title' => t('Two column 66/33'),
-  'icon' => 'two_66_33.png',
+  'title' => t('SPC Two column 66/33'),
+  'icon' => 'spc_two_66_33.png',
   'category' => t('SPC Panels'),
-  'theme' => 'two_66_33',
-  'css' => 'two_66_33.admin.css',
+  'theme' => 'spc_two_66_33',
+  'css' => 'spc_two_66_33.admin.css',
   'regions' => array(
     'two_66_33_top'    => t('Top (conditional)'),
     'two_66_33_first'  => t('Left'),

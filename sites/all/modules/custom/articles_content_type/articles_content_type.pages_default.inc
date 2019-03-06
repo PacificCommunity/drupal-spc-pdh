@@ -56,7 +56,7 @@ function articles_content_type_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'two_66_33';
+  $display->layout = 'spc_two_66_33';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
