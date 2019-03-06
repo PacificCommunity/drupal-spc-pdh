@@ -419,42 +419,21 @@
             }
         }
     }
-}
-
-.latest-stories-homepage {
-    padding: 35px 0px 50px 0px;
-    color: #2a2c2d;
-    h2 {
-        font-size: 29px;
-        font-weight: 300;
-        color: #032f47;
-        margin: 0 0 58px 0px;
-    }
-    .field-items {
-        overflow: hidden;
-        margin-left: -4px;
-        margin-right: -4px;
-        margin-bottom: 24px;
-        .field-item {
-            margin-bottom: 30px;
-            padding-left: 4px;
-            padding-right: 4px;
-            float: left;
-            width: 25%;
-            .views-field-title {
-
-                font-weight: 300;
-                a {
-                    font-size: 19px;
-                    font-weight: 300;
-                    color: #1d7bbc;
-                    h3 {
-                        font-size: 19px;
-                        margin-top: 15px;
-                        margin-bottom: 0px;
-                        line-height: 23px;
-                        padding: 0px 7px;
-                    }
+    .slick-dots {
+        visibility: hidden;
+        bottom: 0;
+        li {
+            width: auto;
+            height: auto;
+            button {
+                width: 5px;
+                height: 5px;
+                border: 1px solid #000;
+                border-radius: 50%;
+                background-color: transparent;
+                padding: 0;
+                &:before {
+                    content: none;
                 }
             }
             &.slick-active {
@@ -778,6 +757,136 @@
             height: 30px;
             position: absolute;
             top: 5px;
+        }
+    }
+}
+
+#ckan-dataset-tabs-block {
+    background-color: #F9F9F9;
+    &:before {
+        content: ' ';
+        width: 150px;
+        background-color: #FFC72E;
+        display: block;
+        margin: 0 auto;
+        border-top: 4px solid #FFC72E;
+        border-right: 5px solid #F9F9F9;
+        border-left: 5px solid #F9F9F9;
+    }
+    .ckan-dataset-tabs-content {
+        padding: 70px 0;
+        .ckan-dataset-tabs-heading {
+            text-align: center;
+            h2 {
+                font-weight: 700;
+                font-size: 36px;
+                color: #000;
+            }
+            .ckan-dataset-tabs-intro {
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+            .ckan-dataset-tabs-section {
+                margin-bottom: 60px;
+                .ckan-dataset-tabs-tab {
+                    display: inline-block;
+                    &.active a, & a:hover {
+                        background: @spc-buttons-color;
+                        color: #fff;
+                        border-radius: 20px;
+                    }
+                    a {
+                        padding: 6px 22px;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        color: #000
+                    }
+                }
+            }
+        }
+        .ckan-dataset-tabs-items {
+            .ckan-dataset-tabs-item {
+                .ckan-dataset-tab-container {
+                    margin-bottom: 10px;
+                    .list-of-items {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+                    .carusel-of-items {
+                        display: none;
+                        .tab-data {
+                            margin: 0 10px;
+                            margin-bottom: 25px;
+                            &:first-child {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+                .tab-data {
+                    color: #000;
+                    width: 32%;
+                    padding: 15px;
+                    background-color: #fff;
+                    border-radius: 15px;
+                    margin-bottom: 25px;
+                    box-shadow: 0px 0px 5px 2px rgb(235, 235, 235);
+                    .dataset-org {
+                        margin-bottom: 20px;
+                        .media-object {
+                            max-height: 70px;
+                        }
+                    }
+                    .dataset-title {
+                        margin-bottom: 10px;
+                        a {
+                            color: #000;
+                            font-size: 13px;
+                            font-weight: 600;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    .dataset-date {
+                        font-size: 13px;
+                        font-weight: 500;
+                        margin-bottom: 10px;
+                        .dataset-date-green {
+                            color: #00D471;
+                        }
+                    }
+                    .dataset-formats {
+                        font-size: 13px;
+                        font-weight: 500;
+                        margin: 10px 0;
+                        a {
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    .res-formats {
+                        display: inline-block;
+                        position: relative;
+                        top: 14px;
+                    }
+                    .dataset-date > span, .dataset-formats > span {
+                        margin-right: 30px;
+                    }
+                }
+            }   
+        }
+        .ckan-dataset-tabs-view-all {
+            text-align: center;
+            a {
+                color: @spc-text-color;
+                font-size: 15px;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
