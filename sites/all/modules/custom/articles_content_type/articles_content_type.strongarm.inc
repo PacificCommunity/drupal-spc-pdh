@@ -70,7 +70,7 @@ function articles_content_type_strongarm() {
     'group_article_first_column|node|article|article_view_on_homepage' => FALSE,
     'group_article_second_column|node|article|article_view_on_homepage' => FALSE,
     'group_title_block|node|article|default' => FALSE,
-    'group_thematic_groups|node|article|default' => FALSE,
+    'group_thematic_groups|node|article|default' => TRUE,
     'group_with_icon|node|thematic_group|group_with_icon' => FALSE,
     'group_countries_wrapper|node|page|default' => FALSE,
     'group_content|node|article|featured' => FALSE,
@@ -194,6 +194,12 @@ function articles_content_type_strongarm() {
         'custom_settings' => FALSE,
       ),
       'data_insights_on_topic_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'dashboards_preview' => array(
+        'custom_settings' => FALSE,
+      ),
+      'topic_preview' => array(
         'custom_settings' => FALSE,
       ),
     ),

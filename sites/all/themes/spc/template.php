@@ -168,3 +168,21 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
     $form['submit']['#weight'] = 10;
   }
 }
+
+
+/**
+ * Implements hook_theme().
+ */
+function spc_theme($existing, $type, $theme, $path)
+{
+  if($type == 'module')
+  {
+    return [
+      'spc_two_66_33' => [
+        'template' => 'spc-two-66-33',
+        'render element' => 'content',
+      ]
+    ];
+  }
+  return [];
+}

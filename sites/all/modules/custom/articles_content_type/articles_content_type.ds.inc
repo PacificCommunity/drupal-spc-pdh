@@ -57,11 +57,59 @@ function articles_content_type_ds_field_settings_info() {
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'author',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'author',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
     'post_date' => array(
       'weight' => '5',
       'label' => 'hidden',
       'format' => 'ds_post_date_insights_date_format',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'post-date',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'body-text',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_thematic_group' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'insights-topic',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
   );
   $export['node|article|default'] = $ds_fieldsetting;
@@ -364,8 +412,7 @@ function articles_content_type_ds_layout_settings_info() {
         3 => 'title',
         4 => 'author',
         5 => 'post_date',
-        6 => 'group_thematic_groups',
-        7 => 'field_thematic_group',
+        6 => 'field_thematic_group',
       ),
     ),
     'fields' => array(
@@ -375,7 +422,6 @@ function articles_content_type_ds_layout_settings_info() {
       'title' => 'middle',
       'author' => 'middle',
       'post_date' => 'middle',
-      'group_thematic_groups' => 'middle',
       'field_thematic_group' => 'middle',
     ),
     'classes' => array(),
