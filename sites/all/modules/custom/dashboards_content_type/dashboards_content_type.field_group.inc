@@ -56,6 +56,7 @@ function dashboards_content_type_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_body_text',
+      1 => 'field_dashboard_notes',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

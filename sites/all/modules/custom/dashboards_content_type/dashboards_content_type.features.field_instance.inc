@@ -89,7 +89,7 @@ function dashboards_content_type_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -174,7 +174,7 @@ function dashboards_content_type_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -207,7 +207,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -265,7 +265,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -291,6 +291,66 @@ function dashboards_content_type_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-dashboards-field_dashboard_notes'.
+  $field_instances['node-dashboards-field_dashboard_notes'] = array(
+    'bundle' => 'dashboards',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'dashboard_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'dashboards_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_dashboard_notes',
+    'label' => 'Notes',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 7,
     ),
   );
 
@@ -371,7 +431,7 @@ function dashboards_content_type_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -404,7 +464,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -463,7 +523,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -538,7 +598,7 @@ function dashboards_content_type_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -571,7 +631,7 @@ function dashboards_content_type_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -584,6 +644,7 @@ function dashboards_content_type_field_default_field_instances() {
   t('Interactive chart help text');
   t('Interactive chart source');
   t('Main image');
+  t('Notes');
   t('Secondary Dashboard pages');
 
   return $field_instances;

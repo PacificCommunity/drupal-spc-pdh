@@ -149,6 +149,20 @@ function dashboards_content_type_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_dashboard_notes' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'dashboard-notes',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
+        ),
+      ),
+    ),
   );
   $export['node|dashboards|full'] = $ds_fieldsetting;
 
@@ -292,21 +306,23 @@ function dashboards_content_type_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'group_logo',
         1 => 'group_banner',
-        2 => 'field_banner_title_db',
-        3 => 'field_icon_logo',
-        4 => 'group_body',
-        5 => 'ckan_search_form',
+        2 => 'field_icon_logo',
+        3 => 'field_banner_title_db',
+        4 => 'ckan_search_form',
+        5 => 'group_body',
         6 => 'field_body_text',
+        7 => 'field_dashboard_notes',
       ),
     ),
     'fields' => array(
       'group_logo' => 'ds_content',
       'group_banner' => 'ds_content',
-      'field_banner_title_db' => 'ds_content',
       'field_icon_logo' => 'ds_content',
-      'group_body' => 'ds_content',
+      'field_banner_title_db' => 'ds_content',
       'ckan_search_form' => 'ds_content',
+      'group_body' => 'ds_content',
       'field_body_text' => 'ds_content',
+      'field_dashboard_notes' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
