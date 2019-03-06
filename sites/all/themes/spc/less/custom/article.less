@@ -7,6 +7,7 @@
         font-size: 2.3rem;
         font-weight: 700;
         text-align: left;
+        line-height: 30px;
     }
     .field-type-text-with-summary {
         font-weight: 300;
@@ -60,31 +61,35 @@
         .insights-topic {
             margin-left: 5px;
             display: inline-block;
-            color: #0091C7;
             font-weight: 600;
             p a {
                 font-size: 13px;
+                color: @spc-text-color;
             }
             .thematic-fa-link {
                 font-size: 10px;
-            }
-        }
-        .body-text {
-            font-weight: 300;
-            line-height: 24px;
-            color: #2a2c2d;
-            font-size: 13px;
-            margin-bottom: 50px;
-            p {
-                margin-bottom: 25px;
-            }
-            img, iframe {
-                width: 100%;
+                color: @spc-text-color;
+                .field-name-field-fa-icon {
+                    color: @spc-text-color;
+                }
             }
         }
     }
-    .field-type-image {
+    .body-text {
+        font-weight: 300;
+        line-height: 24px;
+        color: #2a2c2d;
+        font-size: 13px;
         margin-bottom: 50px;
+        p {
+            margin-bottom: 25px;
+        }
+        img, iframe {
+            width: 100%;
+        }
+    }
+    .field-type-image {
+        margin-bottom: 25px;
     }
 }
 .group-with-icon {
@@ -225,7 +230,6 @@
     padding: 0px 50px;
     margin-top: 60px;
     .story-item {
-        box-shadow: 0px 0px 5px 1px #ebebeb;
         border: 1px solid #ebebeb;
         margin-bottom: 25px;
         padding: 10px;
@@ -243,6 +247,9 @@
             .node-body {
                 font-size: 13px;
                 margin-bottom: 25px;
+            }
+            .story-title h2, .node-body {
+                line-height: 24px;
             }
         }
         .group-preview-section {
@@ -287,15 +294,15 @@
                 border-radius: 5px;
                 border: none;
                 background-color: transparent;
-                color: #000;
+                color: #707070;
                 &:hover {
                     background-color: @spc-strong-blue;
                     color: #fff;                    
                 }
             }
             .first, .previous, .next, .last {
-                color: @spc-strong-blue;
                 a {
+                    color: @spc-strong-blue;
                     font-size: 14px;
                 }
             }

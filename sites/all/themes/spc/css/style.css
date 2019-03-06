@@ -7831,11 +7831,15 @@ body {
 .not-front .node-data-insights .insights-topic {
   margin-left: 5px;
   display: inline-block;
-  color: #0091C7;
   font-weight: 600;
 }
-.not-front .node-data-insights .insights-topic p a {
+.not-front .node-data-insights .insights-topic p a,
+.not-front .node-data-insights .insights-topic a {
   font-size: 13px;
+  color: #0091C7;
+}
+.not-front .node-data-insights .insights-topic .field-name-field-fa-icon {
+  color: #0091C7;
 }
 .not-front .node-data-insights .insights-topic .thematic-fa-link {
   font-size: 10px;
@@ -9528,6 +9532,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   font-size: 2.3rem;
   font-weight: 700;
   text-align: left;
+  line-height: 30px;
 }
 .article .field-type-text-with-summary {
   font-weight: 300;
@@ -9594,31 +9599,35 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .article .group-title-block .insights-topic {
   margin-left: 5px;
   display: inline-block;
-  color: #0091C7;
   font-weight: 600;
 }
 .article .group-title-block .insights-topic p a {
   font-size: 13px;
+  color: #0091C7;
 }
 .article .group-title-block .insights-topic .thematic-fa-link {
   font-size: 10px;
+  color: #0091C7;
 }
-.article .group-title-block .body-text {
+.article .group-title-block .insights-topic .thematic-fa-link .field-name-field-fa-icon {
+  color: #0091C7;
+}
+.article .body-text {
   font-weight: 300;
   line-height: 24px;
   color: #2a2c2d;
   font-size: 13px;
   margin-bottom: 50px;
 }
-.article .group-title-block .body-text p {
+.article .body-text p {
   margin-bottom: 25px;
 }
-.article .group-title-block .body-text img,
-.article .group-title-block .body-text iframe {
+.article .body-text img,
+.article .body-text iframe {
   width: 100%;
 }
 .article .field-type-image {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 .group-with-icon {
   margin-right: 12px;
@@ -9747,7 +9756,6 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   margin-top: 60px;
 }
 .articles-list .story-item {
-  box-shadow: 0px 0px 5px 1px #ebebeb;
   border: 1px solid #ebebeb;
   margin-bottom: 25px;
   padding: 10px;
@@ -9767,6 +9775,10 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .articles-list .story-item .node-content-container .node-body {
   font-size: 13px;
   margin-bottom: 25px;
+}
+.articles-list .story-item .node-content-container .story-title h2,
+.articles-list .story-item .node-content-container .node-body {
+  line-height: 24px;
 }
 .articles-list .story-item .group-preview-section {
   padding: 0;
@@ -9807,22 +9819,17 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   border-radius: 5px;
   border: none;
   background-color: transparent;
-  color: #000;
+  color: #707070;
 }
 .articles-list .item-list-pager .pager li a:hover {
   background-color: #003977;
   color: #fff;
 }
-.articles-list .item-list-pager .pager .first,
-.articles-list .item-list-pager .pager .previous,
-.articles-list .item-list-pager .pager .next,
-.articles-list .item-list-pager .pager .last {
-  color: #003977;
-}
 .articles-list .item-list-pager .pager .first a,
 .articles-list .item-list-pager .pager .previous a,
 .articles-list .item-list-pager .pager .next a,
 .articles-list .item-list-pager .pager .last a {
+  color: #003977;
   font-size: 14px;
 }
 .articles-list .item-list-pager .previous a,
