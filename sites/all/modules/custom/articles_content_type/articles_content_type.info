@@ -1,7 +1,7 @@
 name = Articles content type
 core = 7.x
 package = Features
-version = 7.x-1.21
+version = 7.x-1.22
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = entityreference

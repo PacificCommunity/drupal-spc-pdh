@@ -332,9 +332,8 @@ function articles_content_type_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 12,
       ),
       'featured' => array(
@@ -490,7 +489,7 @@ function articles_content_type_field_default_field_instances() {
           'view_mode' => 'group_with_icon',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'featured' => array(
         'label' => 'inline',
