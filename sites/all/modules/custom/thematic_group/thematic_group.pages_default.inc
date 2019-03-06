@@ -214,7 +214,7 @@ function thematic_group_default_page_manager_handlers() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'thematic_insight',
+    'css_id' => 'mini-panel-data_insights',
     'css_class' => 'panel-style-narrow',
   );
   $pane->extras = array();
@@ -232,7 +232,7 @@ function thematic_group_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Stories',
+    'override_title_text' => 'Our Stories',
     'override_title_heading' => 'h2',
     'arguments' => array(
       'nid' => '',
@@ -247,7 +247,7 @@ function thematic_group_default_page_manager_handlers() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'thematic-group-articles panel-style-narrow',
+    'css_class' => 'latest-stories-slider latest-stories-topics-page',
   );
   $pane->extras = array();
   $pane->position = 5;
