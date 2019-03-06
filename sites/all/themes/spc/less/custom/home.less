@@ -272,6 +272,7 @@
         align-self: center;
         height: 377px;
         width: 415px;
+        background-color: #fff;
         border-radius: 13px;
         box-shadow: 0px 2px 15px 0px rgba(0,5,160,.15);
         padding: 10px;
@@ -383,18 +384,17 @@
     background-size: cover;
     padding-bottom: 134px;
 }
-.latest-stories-homepage {
+.latest-stories-slider {
     position: relative;
     max-width: 1440px;
     padding: 25px 40px 0;
     margin: 0 auto;
     .stories-list {
-        height: 384px;
-        background: url('../img/spc_new/stories_slides_bg.png') no-repeat 100% 50%;
-        background-size: contain;
+        background: url('../img/spc_new/stories_slides_bg.png') no-repeat 100% 0;
+        background-size: auto 385px;
         padding-top: 160px;
         .slick-list {
-            max-width: 1075px;
+            max-width: 1072px;
             .field-item {
                 margin: 0 14px;
                 a {
@@ -446,13 +446,13 @@
     .slide-number {
         position: absolute;
         right: 170px;
-        bottom: 115px;
+        bottom: 205px;
         font-size: 13px;
         color: #fff;
     }
     .slick-arrow {
         display: inline-block;
-        bottom: 60px;
+        bottom: 150px;
         top: unset;
         width: 35px;
         height: 35px;
@@ -489,7 +489,7 @@
     }
     h2.pane-title {
         position: absolute;
-        top: 95px;
+        top: 110px;
         right: 60px;
         max-width: 200px;
         font-size: 38px;
@@ -845,6 +845,7 @@
                             font-size: 13px;
                             font-weight: 600;
                             &:hover {
+                                color: @spc-buttons-color;
                                 text-decoration: none;
                             }
                         }

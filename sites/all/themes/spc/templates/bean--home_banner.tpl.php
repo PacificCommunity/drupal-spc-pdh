@@ -88,7 +88,7 @@
           cache_set('publications_count'.$node->nid, $publications_count, 'cache', time() + 60*60*6);
         }
       ?>
-      <div class="banner-links hidden-xs">
+      <div class="banner-links">
         <div class="link-block">
           <div class="icon-wrapper dataset-icon"></div>
           <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id) ?>">

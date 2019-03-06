@@ -130,7 +130,7 @@ $( document ).ready(function() {
   };
 
   
-  $('.latest-stories-homepage .field-item').each(function(i) {
+  $('.latest-stories-slider .field-item').each(function(i) {
     let title_block = $(this).find('.views-field-title');
     if (title_block.length > 0) {
       let num = i + 1;
@@ -152,13 +152,13 @@ $( document ).ready(function() {
       ]
   });
   
-  if ($('.latest-stories-homepage').length > 0 && $('.latest-stories-homepage .slick-dots li').length > 0) {
-    let slides_num_stories = $('.latest-stories-homepage .slick-dots li').length;
-    let slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
-    $('.latest-stories-homepage').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_stories}</strong></div>`);
-    $('.latest-stories-homepage .slick-arrow').on('click', function(){
-      slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
-      $('.latest-stories-homepage .slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
+  if ($('.latest-stories-slider').length > 0 && $('.latest-stories-slider .slick-dots li').length > 0) {
+    let slides_num_stories = $('.latest-stories-slider .slick-dots li').length;
+    let slide = $('.latest-stories-slider .slick-dots .slick-active button').text();
+    $('.latest-stories-slider').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_stories}</strong></div>`);
+    $('.latest-stories-slider .slick-arrow').on('click', function(){
+      slide = $('.latest-stories-slider .slick-dots .slick-active button').text();
+      $('.latest-stories-slider .slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
     });
   };
 
