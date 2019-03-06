@@ -89,6 +89,7 @@
     #node_content {
         line-height: 2;
         padding-top: 90px;
+        padding-bottom: 70px;
     }
     .pane-browse-by-data-category {
         position: absolute;
@@ -143,5 +144,38 @@
     padding-right: 20px;
     .thematic-fa-icon {
         font-size: 30px;
+    }
+}
+
+.latest-stories-slider.pane-articles-list-topic-latest {
+    margin-bottom: 68px;
+    .stories-list {
+        background-position: 2px 0;
+    }
+    .slick-list {
+        margin-left: auto;
+        .field-item {
+            img {
+                margin-left: auto;
+            }
+        }
+    }
+    .slick-arrow {
+        &.slick-next {
+            right: unset;
+            left: 180px;
+        }
+        &.slick-prev {
+            right: unset;
+            left: 80px;
+        }
+    }
+    .slide-number {
+        right: unset;
+        left: 170px;
+    }
+    h2.pane-title {
+        right: unset;
+        left: 120px;
     }
 }

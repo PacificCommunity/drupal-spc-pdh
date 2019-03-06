@@ -479,7 +479,7 @@ function home_page_default_panels_mini() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'latest-stories-homepage',
+    'css_class' => 'latest-stories-slider',
   );
   $pane->extras = array();
   $pane->position = 0;
