@@ -264,7 +264,7 @@ function articles_content_type_field_group_info() {
   $field_groups['group_tg_article_items|node|article|thematic_group_artiacle'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_thematic_groups|node|article|default';
   $field_group->group_name = 'group_thematic_groups';
@@ -308,10 +308,10 @@ function articles_content_type_field_group_info() {
     'label' => 'Title block',
     'weight' => '0',
     'children' => array(
-      0 => 'title',
-      1 => 'author',
-      2 => 'post_date',
-      3 => 'group_thematic_groups',
+      0 => 'field_thematic_group',
+      1 => 'title',
+      2 => 'author',
+      3 => 'post_date',
     ),
     'format_type' => 'div',
     'format_settings' => array(

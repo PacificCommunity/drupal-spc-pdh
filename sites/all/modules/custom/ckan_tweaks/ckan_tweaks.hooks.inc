@@ -14,6 +14,10 @@ function ckan_tweaks_theme($existing, $type, $theme, $path)
       'ckan_dataset_tabs_block' => [
         'variables' => array('datasets'),
         'template' => 'ckan_dataset_tabs_block'
+      ],
+      'ckan_dataset_article_related' => [
+        'variables' => array('dataset'=>3),
+        'template' => 'ckan_dataset_article_related'
       ]
     ];
   }
