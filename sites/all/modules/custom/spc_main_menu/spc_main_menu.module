@@ -65,7 +65,7 @@ function loop_menu_mobile($menu, $menu_layout, $counter_li=False, $parent_name=F
 
 function create_mobile_menu() {
   $menu_array = menu_tree_output(menu_tree_all_data('main-menu'));
-  $menu_layout = '<div id="main-menu">
+  $menu_layout = '<div id="mobile-menu" class="pull-right">
   <button class="header-menu-btn ma5-toggle-menu" type="button">
     <span></span>
     <span></span>
