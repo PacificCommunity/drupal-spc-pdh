@@ -1,43 +1,73 @@
 .node-type-dashboards {
-	.banner-with-title {
-		height: 453px;
-		h1 {
-			font-size: 38px;
-		}
-	}
 	.node-dashboards {
 		&.view-mode-full {
-			.dashboard-logo {
-				display: flex;
-				align-items: center;
-				position: absolute;
-				top: 90px;
-				height: 90px;
-				vertical-align: middle;
-				padding: 0 15px;
-				margin: 0;
-				z-index: 1;
-				img {
-					max-width: 100%;
-					@media (max-width: 767px) {
-						margin-left: 0px;
+			.banner-with-title {
+				min-height: 453px;
+				height: auto;
+				justify-content: flex-start;
+
+				h1 {
+					font-size: 38px;
+					margin-top: 0px;
+					margin-bottom: 0px;
+				}
+				.group-banner-content {
+					margin-top: 80px;
+					margin-bottom: 50px;
+				}
+				.dashboard-logo-wrapper {
+					margin: 90px 0 0 0;
+					align-self: flex-start;
+					.dashboard-logo {
+						z-index: 1;
+						height: 51px;
+						width: 193px;
+						margin: 0;
+						display: flex;
+						align-items: center;
+						vertical-align: middle;
+						justify-content: center;
+						background: #fff;
+						.border-right-radius(50px);
+						img {
+							max-width: 100%;
+							height: 100%;
+							width: auto;
+							@media (max-width: 767px) {
+								margin-left: 0px;
+							}
+						}
+					}
+				}
+				@media (max-width: @screen-sm) {
+					& {
+						min-height: 330px;
+						padding: 0px;
+						overflow: hidden;
+						h1 {
+							font-size: 25px;
+						}
+						.group-banner-content {
+							margin-top: 40px;
+							padding: 0 25px;
+						}
 					}
 				}
 			}
 			.dashboard-body-container {
-				padding-top: 48px;
-				padding-bottom: 45px;
-				.container {
-					@media (min-width: 1400px) {
-						padding-left: 0px;
-						padding-right: 0px;
-					}
-					@media (min-width: 1060px) and (max-width: 1399px) {
-						padding-left: 0px;
-						padding-right: 0px;
-					}
+				padding-top: 68px;
+				padding-bottom: 37px;
+				// .container {
+				// 	@media (min-width: 1400px) {
+				// 		padding-left: 0px;
+				// 		padding-right: 0px;
+				// 	}
+				// 	@media (min-width: 1060px) and (max-width: 1399px) {
+				// 		padding-left: 0px;
+				// 		padding-right: 0px;
+				// 	}
 
-				}
+				// }
 				.dashboard-body {
 					color: #2a2c2d;
 					font-weight: 300;
