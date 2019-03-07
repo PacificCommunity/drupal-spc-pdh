@@ -14,6 +14,39 @@ function dashboards_content_type_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_banner_content|node|dashboards|full';
+  $field_group->group_name = 'group_banner_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dashboards';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_banner';
+  $field_group->data = array(
+    'label' => 'Banner content',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_banner_title_db',
+      1 => 'ckan_search_form',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Banner content',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-banner-content',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_banner_content|node|dashboards|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_banner|node|dashboards|full';
   $field_group->group_name = 'group_banner';
   $field_group->entity_type = 'node';
@@ -22,10 +55,10 @@ function dashboards_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Banner',
-    'weight' => '1',
+    'weight' => '0',
     'children' => array(
-      0 => 'field_banner_title_db',
-      1 => 'ckan_search_form',
+      0 => 'field_icon_logo',
+      1 => 'group_banner_content',
     ),
     'format_type' => 'div_background_image',
     'format_settings' => array(
@@ -53,7 +86,7 @@ function dashboards_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Body',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_body_text',
       1 => 'field_dashboard_notes',
@@ -332,36 +365,6 @@ function dashboards_content_type_field_group_info() {
   $field_groups['group_content|node|dashboards|dashboards_preview'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_logo|node|dashboards|full';
-  $field_group->group_name = 'group_logo';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'dashboards';
-  $field_group->mode = 'full';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Logo',
-    'weight' => '0',
-    'children' => array(
-      0 => 'field_icon_logo',
-    ),
-    'format_type' => 'html-element',
-    'format_settings' => array(
-      'label' => 'Logo',
-      'instance_settings' => array(
-        'id' => '',
-        'classes' => 'container-fluid',
-        'element' => 'div',
-        'show_label' => '0',
-        'label_element' => 'div',
-        'attributes' => '',
-      ),
-    ),
-  );
-  $field_groups['group_logo|node|dashboards|full'] = $field_group;
-
-  $field_group = new stdClass();
   $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_search|node|dashboards|full';
@@ -392,6 +395,7 @@ function dashboards_content_type_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Banner');
+  t('Banner content');
   t('Body');
   t('Chart settings');
   t('Chart wrapper');
@@ -399,7 +403,6 @@ function dashboards_content_type_field_group_info() {
   t('Content left');
   t('Content right');
   t('Find data');
-  t('Logo');
 
   return $field_groups;
 }
