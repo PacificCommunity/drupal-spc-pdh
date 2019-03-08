@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * home_page.panels_default.inc
@@ -76,7 +77,7 @@ function home_page_default_panels_mini() {
   $mini->contexts = array();
   $mini->relationships = array();
   $display = new panels_display();
-  $display->layout = 'one_mp_fw';
+  $display->layout = 'one_fw';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -93,13 +94,52 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-ca363cdb-2029-4a30-a17a-c551ac5d9568';
-  $pane->panel = 'minipanel_one_main_fw';
-  $pane->type = 'block';
-  $pane->subtype = 'views-data_insights_promoted-block';
+  $pane->pid = 'new-a23eef4f-f927-4451-a429-3d70e150ebb2';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<h2>Data Insights</h2>
+',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'a23eef4f-f927-4451-a429-3d70e150ebb2';
+  $display->content['new-a23eef4f-f927-4451-a429-3d70e150ebb2'] = $pane;
+  $display->panels['one_fw_main'][0] = 'new-a23eef4f-f927-4451-a429-3d70e150ebb2';
+  $pane = new stdClass();
+  $pane->pid = 'new-9c300bbf-2b3f-458b-8891-e92c45b3b333';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'views';
+  $pane->subtype = 'data_insights_promoted';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '5',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'block',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -110,14 +150,14 @@ function home_page_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'ca363cdb-2029-4a30-a17a-c551ac5d9568';
-  $display->content['new-ca363cdb-2029-4a30-a17a-c551ac5d9568'] = $pane;
-  $display->panels['minipanel_one_main_fw'][0] = 'new-ca363cdb-2029-4a30-a17a-c551ac5d9568';
+  $pane->uuid = '9c300bbf-2b3f-458b-8891-e92c45b3b333';
+  $display->content['new-9c300bbf-2b3f-458b-8891-e92c45b3b333'] = $pane;
+  $display->panels['one_fw_main'][1] = 'new-9c300bbf-2b3f-458b-8891-e92c45b3b333';
   $pane = new stdClass();
   $pane->pid = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
-  $pane->panel = 'minipanel_one_main_fw';
+  $pane->panel = 'one_fw_main';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
   $pane->shown = TRUE;
@@ -126,7 +166,8 @@ function home_page_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<a href="/data-insights" class="view-all-link">View All</a>',
+    'body' => '<p class="rtecenter"><a class="view-all-link" href="/data-insights">View All</a></p>
+',
     'format' => 'full_html',
     'substitute' => TRUE,
   );
@@ -136,11 +177,11 @@ function home_page_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '633f1b3e-6783-402e-bda4-33e5e0e03e50';
   $display->content['new-633f1b3e-6783-402e-bda4-33e5e0e03e50'] = $pane;
-  $display->panels['minipanel_one_main_fw'][1] = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
+  $display->panels['one_fw_main'][2] = 'new-633f1b3e-6783-402e-bda4-33e5e0e03e50';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;
@@ -351,10 +392,105 @@ function home_page_default_panels_mini() {
   $pane->uuid = '25512a04-102a-41fd-9b18-ed94e04ecbcf';
   $display->content['new-25512a04-102a-41fd-9b18-ed94e04ecbcf'] = $pane;
   $display->panels['one_fw_main'][1] = 'new-25512a04-102a-41fd-9b18-ed94e04ecbcf';
+  $pane = new stdClass();
+  $pane->pid = 'new-3cde4525-cc8c-461a-8a74-d726a8854ffc';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'views';
+  $pane->subtype = 'browse_by_data_category';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'block_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'topics-home',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '3cde4525-cc8c-461a-8a74-d726a8854ffc';
+  $display->content['new-3cde4525-cc8c-461a-8a74-d726a8854ffc'] = $pane;
+  $display->panels['one_fw_main'][2] = 'new-3cde4525-cc8c-461a-8a74-d726a8854ffc';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2b4efde0-2143-4d0f-b9e9-3da0bee7cbca';
   $mini->display = $display;
   $export['home_banner'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
+  $mini->name = 'stories_on_the_hp';
+  $mini->category = '';
+  $mini->admin_title = 'Stories on the HP';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'one_fw';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'one_fw_main' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '3f404461-52e1-48b8-9db6-fd8f3e8da946';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'stories_on_the_hp';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-6fac0acd-c0de-42b0-a031-c189a819cd8b';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'articles_list-home_latest';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Latest Stories',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'latest-stories-slider',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '6fac0acd-c0de-42b0-a031-c189a819cd8b';
+  $display->content['new-6fac0acd-c0de-42b0-a031-c189a819cd8b'] = $pane;
+  $display->panels['one_fw_main'][0] = 'new-6fac0acd-c0de-42b0-a031-c189a819cd8b';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-6fac0acd-c0de-42b0-a031-c189a819cd8b';
+  $mini->display = $display;
+  $export['stories_on_the_hp'] = $mini;
 
   return $export;
 }

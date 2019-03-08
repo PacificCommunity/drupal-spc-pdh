@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * home_page.features.field_instance.inc
@@ -179,7 +180,7 @@ function home_page_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_plain',
+        'type' => 'text_default',
         'weight' => 2,
       ),
     ),
@@ -189,7 +190,7 @@ function home_page_field_default_field_instances() {
     'label' => 'Banner Sub Title',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -214,7 +215,7 @@ function home_page_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_plain',
+        'type' => 'text_default',
         'weight' => 1,
       ),
     ),
@@ -224,7 +225,7 @@ function home_page_field_default_field_instances() {
     'label' => 'Banner Title',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(

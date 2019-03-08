@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * basic_page.field_group.inc
@@ -31,7 +32,7 @@ function basic_page_field_group_info() {
       'label' => '',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-countries-wrapper field-group-div article',
+        'classes' => 'group-countries-wrapper field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',

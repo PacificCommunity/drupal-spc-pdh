@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * home_page.strongarm.inc

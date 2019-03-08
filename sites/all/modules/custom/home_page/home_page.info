@@ -1,7 +1,7 @@
 name = Home Page
 core = 7.x
 package = Features
-version = 7.x-1.28
+version = 7.x-1.35
 dependencies[] = bean_admin_ui
 dependencies[] = data_insights_content_type
 dependencies[] = fe_block
@@ -65,6 +65,7 @@ features[panels_mini][] = data_category
 features[panels_mini][] = data_insights
 features[panels_mini][] = datasets_on_home_page
 features[panels_mini][] = home_banner
+features[panels_mini][] = stories_on_the_hp
 features[user_permission][] = create any homepage_backgrounds bean
 features[user_permission][] = create any members_countries bean
 features[user_permission][] = delete any homepage_backgrounds bean

@@ -15,5 +15,3 @@
 	</div>
 	<?php endforeach; ?>
 </div>
-
-

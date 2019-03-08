@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * thematic_group.field_group.inc

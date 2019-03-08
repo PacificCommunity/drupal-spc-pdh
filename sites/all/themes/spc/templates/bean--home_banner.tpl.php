@@ -33,44 +33,38 @@
     $thematic_landing_img = $content['field_banner_image'][0]['#item']['uri'];
     if ($thematic_landing_banner == 0):
       ?>
-      <div class="banner-image" style="background-image: url(<?php print file_create_url($thematic_landing_img); ?>)"></div>
-      <div class="content"<?php print $content_attributes; ?>>
-        <div class="spc-home-banner-block-main">
-          <div class="spc-home-banner-block">
-            <div class="banner-title">
-              <?php
-                print render($content['field_banner_title']);
-                print render($content['field_banner_sub_title']);
-              ?>
-            </div>
-            <div id="spc-home-banner-search">
-              <?php
-              if (!empty($content['search_block'])):
-                print render($content['search_block']);
-              endif; ?>
-            </div>
+      <div class="banner-image" style="background-image: linear-gradient(135deg, rgba(0,198,236,0.85) 0%, rgba(0,3,102,0.95) 80%), url(<?php print file_create_url($thematic_landing_img); ?>)">
+        <div class="spc-home-banner-block">
+          <div class="banner-title">
+            <?php
+              print render($content['field_banner_title']);
+              print render($content['field_banner_sub_title']);
+            ?>
+          </div>
+          <div id="spc-home-banner-search">
+            <?php
+            if (!empty($content['search_block'])):
+              print render($content['search_block']);
+            endif; ?>
           </div>
         </div>
       </div>
     <?php elseif ($thematic_landing_banner == 1):
       $node = menu_get_object();
       $banner_image = $node->field_banner_image_thematic[LANGUAGE_NONE][0]['uri'] ?? null; ?>
-      <div class="banner-image" style="background-image: url(<?php if ($banner_image): print(file_create_url($banner_image)); else: print(file_create_url($thematic_landing_img)); endif; ?>)"></div>
-      <div class="content"<?php print $content_attributes; ?>
-        <div class="spc-home-banner-block-main">
-          <div class="spc-home-banner-block">
-            <div class="banner-title">
-              <?php
-                print render($content['field_banner_title']);
-                print render($content['field_banner_sub_title']);
-              ?>
-            </div>
-            <div id="spc-home-banner-search">
-              <?php
-              if (!empty($content['search_block'])):
-                print render($content['search_block']);
-              endif; ?>
-            </div>
+      <div class="banner-image" style="background-image: linear-gradient(135deg, rgba(0,198,236,0.85) 0%, rgba(0,3,102,0.95) 80%), url(<?php if ($banner_image): print(file_create_url($banner_image)); else: print(file_create_url($thematic_landing_img)); endif; ?>)">
+        <div class="spc-home-banner-block">
+          <div class="banner-title">
+            <?php
+              print render($content['field_banner_title']);
+              print render($content['field_banner_sub_title']);
+            ?>
+          </div>
+          <div id="spc-home-banner-search">
+            <?php
+            if (!empty($content['search_block'])):
+              print render($content['search_block']);
+            endif; ?>
           </div>
         </div>
       </div>
@@ -94,32 +88,26 @@
           cache_set('publications_count'.$node->nid, $publications_count, 'cache', time() + 60*60*6);
         }
       ?>
-      <div class="banner-links hidden-xs">
+      <div class="banner-links">
         <div class="link-block">
-          <div class="icon-wrapper">
-            <img src="/sites/all/themes/spc/img/spc/dataset_icon.png">
-          </div>
+          <div class="icon-wrapper dataset-icon"></div>
           <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id) ?>">
-            <span class="count"><?= $datasets_count ?></span>
             <?php print t('Datasets'); ?>
+            <div class="count"><?= $datasets_count ?></div>
           </a>
         </div>
         <div class="link-block">
-          <div class="icon-wrapper">
-            <img src="/sites/all/themes/spc/img/spc/article_icon.png">
-          </div>
-          <a href="/articles/by-topic/<?= $node->nid ?>">
-            <span class="count"><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></span>
-            <?php print t('Articles'); ?>
+          <div class="icon-wrapper story-icon"></div>
+          <a href="/stories/by-topic/<?= $node->nid ?>">
+          <?php print t('Stories'); ?>
+          <div class="count"><?= views_embed_view('articles_by_topic','block_1', $node->nid, $node->title); ?></div>
           </a>
         </div>
         <div class="link-block">
-          <div class="icon-wrapper">
-            <img src="/sites/all/themes/spc/img/spc/publication_icon.png">
-          </div>
+          <div class="icon-wrapper publication-icon"></div>
           <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id, CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE) ?>">
-            <span class="count"><?= $publications_count ?></span>
             <?php print t('Publications'); ?>
+            <div class="count"><?= $publications_count ?></div>
           </a>
         </div>
       </div>

@@ -55,13 +55,37 @@ function check_access() {
 }
 
 
+function syndication_article_author() {
+  $author_uid = variable_get('syndicated_author_uid');
+  if (empty($author_uid)) {
+    $default_name = 'SPC';
+    $default_email = 'spcsyndication@linkdigital.com.au';
+    $author = user_load_by_name($default_name);
+    if ($author) {
+      $author_uid = $author->uid;
+    }
+    else {
+      $author_data = array(
+        'name' => $default_name,
+        'mail' => $default_email,
+        'pass' => user_password(),
+        'status' => 1,
+        'roles' => array(),
+      );
+      $author = user_save(NULL, $author_data);
+      $author_uid = $author->uid;
+    }
+    variable_set('syndicated_author_uid', $author_uid);
+  }
+  return $author_uid;
+}
+
 function syndication_article_create() {
   // Сhecks on required fields
   if (empty($_POST['title']) or empty($_POST['original_id'])) {
     watchdog('syndication_article', "Syndication failed. Required field is missing.");
     return drupal_json_output(array('code'=> 400, 'message' => "Syndication failed. Required field is missing."));
   }
-
   $user_uid = 1;
   $syndicated_id = $_POST['original_id'];
 
@@ -72,6 +96,10 @@ function syndication_article_create() {
   $values['body_summary'] = !empty($_POST['body_summary']) ? $_POST['body_summary'] : null;
   $values['image'] = !empty($_POST['image']) ? $_POST['image'] : null;
   $values['tags']= !empty($_POST['tags']) ?  explode(', ', $_POST['tags']) : null;
+
+
+  $values['uid'] = syndication_article_author();
+
 
   $node = new stdClass();
   $node->type = 'article';
@@ -112,6 +140,9 @@ function syndication_article_update($nid) {
   $values['image'] = !empty($_POST['image']) ? $_POST['image'] : null;
   $values['tags']= !empty($_POST['tags']) ?  explode(', ', $_POST['tags']) : null;
 
+
+  $values['uid'] = syndication_article_author();
+
   // Creates a node with received fields
   $node = node_set_fields($node, $values);
   
@@ -123,7 +154,9 @@ function syndication_article_update($nid) {
 
 function node_set_fields($node, $values) {
   $node->title = $values['title'];
-
+  if (!empty($values['uid'])) {
+    $node->uid = $values['uid'];
+  }
   if (!empty($values['body']) || !empty($values['body_summary'])) {
     $body_field = array();
     array_push($body_field, array(
@@ -175,4 +208,32 @@ function node_set_fields($node, $values) {
 
   node_save($node);
   return $node;
+}
+
+function articles_syndication_entity_info_alter(&$entity_info) {
+  if (isset($entity_info['node']['bundles']['article'])) {
+    $entity_info['node']['bundles']['article']['uri callback'] = 'articles_syndication_article_uri';
+  }
+}
+
+function articles_syndication_article_uri($node) {
+  if (isset($node->field_syndicated_id)) {
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $syndicated_id = $wrapper->field_syndicated_id->raw();
+    $syndicated_base_url = variable_get('syndicated_base_url');
+    if (!empty($syndicated_base_url) && !empty($syndicated_id)) {    
+      return array(
+        'path' => $syndicated_base_url . '/node/' . $syndicated_id,
+        'options' => array(
+          'attributes' => array(
+            'target' => '_blank'
+          ),
+          'absolute' => TRUE
+        )
+      );
+    }
+  }
+  return array(
+    'path' => 'node/' . $node->nid,
+  );
 }

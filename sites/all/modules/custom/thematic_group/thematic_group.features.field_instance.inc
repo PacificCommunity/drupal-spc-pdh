@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * thematic_group.features.field_instance.inc
@@ -193,7 +194,7 @@ function thematic_group_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_articles_and_publications',
-    'label' => 'Articles and Publications',
+    'label' => 'Stories and Publications',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -805,7 +806,6 @@ function thematic_group_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Articles and Publications');
   t('Banner Image');
   t('CKAN topic ID');
   t('Comment');
@@ -819,6 +819,7 @@ function thematic_group_field_default_field_instances() {
   t('Icon');
   t('Publications');
   t('Show tweets');
+  t('Stories and Publications');
   t('Twitter Account name should be provided without the "@" sign. For example "@spc_cps" will be "spc_cps".');
   t('Twitter Account names');
 

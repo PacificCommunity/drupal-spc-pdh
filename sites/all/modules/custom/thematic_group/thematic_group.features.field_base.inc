@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * thematic_group.features.field_base.inc
@@ -133,7 +134,7 @@ function thematic_group_field_default_field_bases() {
   // Exported field_base: 'field_data_insight_thematic'.
   $field_bases['field_data_insight_thematic'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 5,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_data_insight_thematic',

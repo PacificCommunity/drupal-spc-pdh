@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * data_insights_content_type.path_breadcrumbs.inc

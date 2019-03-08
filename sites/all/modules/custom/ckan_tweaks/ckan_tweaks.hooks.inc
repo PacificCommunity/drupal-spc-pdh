@@ -10,6 +10,14 @@ function ckan_tweaks_theme($existing, $type, $theme, $path)
       'ckan_dataset_overview' => [
         'variables' => array('dataset'=>3),
         'template' => 'ckan_dataset_overview'
+      ],
+      'ckan_dataset_tabs_block' => [
+        'variables' => array('datasets'),
+        'template' => 'ckan_dataset_tabs_block'
+      ],
+      'ckan_dataset_article_related' => [
+        'variables' => array('dataset'=>3),
+        'template' => 'ckan_dataset_article_related'
       ]
     ];
   }
@@ -25,6 +33,10 @@ function ckan_tweaks_block_info() {
   ];
   $blocks['ckan_tweaks-popular_datasets'] = [
     'info' => t('CKAN popular datasets')
+  ];
+
+  $blocks['ckan_dataset_tabs_block'] = [
+    'info' => t('CKAN Dataset Tabs Block')
   ];
 
   return $blocks;
@@ -61,14 +73,41 @@ function ckan_tweaks_block_view($delta = '') {
       // NOTE: Here we pull dataset count for thematic area
       $total = _ckan_tweaks_count_datasets_for_thematic_area($id);
 
-      foreach ($datasets as &$dataset) {
-        $dataset = theme('ckan_dataset_overview', ['dataset'=>$dataset]);
-      }
-
-      $block['subject'] = t('Recent CKAN updates [@total total]', ['@total' => $total]);
-      $block['content'] = implode('', $datasets);
+      $dataset = theme('ckan_dataset_overview', ['datasets'=>$datasets]);
+      
+      $block['content'] = $dataset;
 
       break;
+
+    case 'ckan_dataset_tabs_block':
+      $g_datasets = array();
+
+      // Recent Datasets
+      $g_datasets['recent_datasets'] = _ckan_dataset_tabs();     
+
+      // Popular Datasets
+      $g_datasets['popular_datasets'] = _ckan_dataset_tabs('MOST_VIEWED');
+
+      $dataset = theme('ckan_dataset_tabs_block', ['datasets'=>$g_datasets]);
+
+      $block['content'] = $dataset;
   }
   return $block;
+}
+
+function _ckan_dataset_tabs($sort='LATEST') {
+  $q_dict = [
+    'q' => '*:*',
+    'sort' => constant('CKAN_SEARCH_SORT_'. $sort .'_FIRST'),
+    'rows' => 6
+  ];
+
+  $q_result = _ckan_tweaks_search_datasets($q_dict);
+  $ck_url = _ckan_tweaks_get_ckan_url();
+  $datasets = array_map(
+    _ckan_tweaks_create_dataset_mapper($ck_url),
+    $q_result['results']
+  );
+
+  return $datasets;
 }
