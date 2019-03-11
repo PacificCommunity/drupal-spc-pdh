@@ -24,6 +24,11 @@
           byRow: true
         });
       });
+      $('.dashboard-goals').each(function() {
+        $(this).find('.column').matchHeight({
+          byRow: false
+        });
+      });
     }
   };
 
@@ -52,12 +57,15 @@ $( document ).ready(function() {
   var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
   $('.view-data-insights-list-page').append(full_loading)
   $(window).on('scroll', function (){
-    var loader_btn = $('.loading-more-element').offset().top + 100
-    var scrolloffset = window.pageYOffset
-    var scouterHeight = window.outerHeight
-    if ((scrolloffset + scouterHeight) > loader_btn) {
-      $('.pager-show-more .pager-show-more-next a').click()
-    } 
+    var loader_btn = $('.loading-more-element');
+    if (loader_btn.lenght) {
+      var loader_btn_position = loader_btn.offset().top + 100;
+      var scrolloffset = window.pageYOffset;
+      var scouterHeight = window.outerHeight;
+      if ((scrolloffset + scouterHeight) > loader_btn) {
+        $('.pager-show-more .pager-show-more-next a').click()
+      }
+    }
   })
 
   $('.list-tweets').slick({
