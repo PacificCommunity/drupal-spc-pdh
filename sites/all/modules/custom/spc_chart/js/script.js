@@ -84,7 +84,7 @@ jQuery(document).ready(function() {
         });
 
     jQuery('#sdgChartCountries').select2({
-      width: '250px'
+      width: '100%'
     });
 
     jQuery("#sdgChartCountries").on("select2:select", function(e) {
