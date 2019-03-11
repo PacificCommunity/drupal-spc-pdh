@@ -24,11 +24,10 @@ function dashboards_content_type_preprocess_node(&$variables) {
 					'class' => array('ckan-search-form-wrapper'),
 					'id' => 'ckan-search-form-wrapper'
 				),
-				'#weight' => 1
+				'#weight' => 100
 			);
 			$variables['content']['ckan_search_form']['form'] = $ckan_search_form;
 		}
-		
 		$variables['content']['chart_static'] = array(
 			'#markup' => "<div class='chart-static'></div>"
 		);
