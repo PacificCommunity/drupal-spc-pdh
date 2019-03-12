@@ -30,30 +30,40 @@
 
 <?php if ($show) : ?>
 	<div id="member-countries-block">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h2><?php print $title; ?></h2>
+		<div class="block-content">
+			<div class="left-column column">
+				<div class="column-inner">
+					<div class="column-header">
+						<h2><?php print $title; ?></h2>
+						<p><?php print t('View data and knowledge by Pacific Island country'); ?></p>					
+						<div class="dropdown">
+							<div 
+								class="btn btn-default dropdown-toggle" 
+								id="memberCountries" 
+								data-toggle="dropdown" 
+								aria-haspopup="true" 
+								aria-expanded="true"
+							>
+								<?php print t('Member Countries'); ?>
+							</div>
+							<?php if (!empty($variables['field_members_countries'])) : ?>
+								<ul class="dropdown-menu">
+									<?php foreach (element_children($variables['field_members_countries']) as $children_key) : ?>
+										<li><?php print drupal_render($content['field_members_countries'][$children_key]); ?></li>
+									<?php endforeach; ?>
+								</ul>
+							<?php endif; ?>
+						</div>
+					</div>
+					<div class="column-footer">
+						
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-5 col-sm-6 col-xs-12">
-					<h3><?php print t('View data and knowledge by Pacific Island country'); ?></h3>
-				</div>
-			<div class="col-md-7 col-sm-6 col-xs-12">
-				<div class="dropdown">
-				<div class="btn btn-default dropdown-toggle" id="memberCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					<?php print t('Member Countries'); ?>
-				</div>
-				<?php if (!empty($variables['field_members_countries'])) : ?>
-					<ul class="dropdown-menu">
-						<?php foreach (element_children($variables['field_members_countries']) as $children_key) : ?>
-							<li><?php print drupal_render($content['field_members_countries'][$children_key]); ?></li>
-						<?php endforeach; ?>
-					</ul>
-				<?php endif; ?>
-				</div>
-			</div>
+			<div class="right-column column">
+					<div class="column-inner">
+						<div class="map-container"></div>
+					</div>
 			</div>
 		</div>
 	</div>
