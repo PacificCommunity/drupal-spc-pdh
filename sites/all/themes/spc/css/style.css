@@ -7700,6 +7700,7 @@ body {
   line-height: 1;
   color: #fff;
   text-align: center;
+  text-transform: capitalize;
   z-index: 1;
 }
 .banner-with-title h1 strong {
@@ -7743,9 +7744,10 @@ body {
 }
 .node-type-page table {
   max-width: 800px;
+  margin: 0 auto;
 }
 .node-type-page table thead tr {
-  background-color: #032f47;
+  background-color: #031F79;
 }
 .node-type-page table thead tr th {
   font-weight: 400;
@@ -7758,11 +7760,11 @@ body {
   text-align: center;
 }
 .node-type-page table tr td a {
-  color: #2a2c2d;
+  color: #001E73;
 }
 .node-type-page table tr td a:hover,
 .node-type-page table tr td a:focus {
-  color: #2a2c2d;
+  color: #001E73;
 }
 .breadcrumb-box {
   position: absolute;
@@ -8094,6 +8096,9 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 .page-user-login form#user-login small {
   color: #2a2c2d;
+}
+.basic-page .field-type-text-with-summary {
+  padding: 100px 96px;
 }
 #mobile-menu {
   display: none;
@@ -11017,6 +11022,9 @@ button.header-menu-btn:focus {
   .spc-panels .spc-middle-section {
     padding: 15px 30px;
     margin: -200px 15px 0;
+  }
+  .basic-page .field-type-text-with-summary {
+    padding: 25px 15px;
   }
 }
 @media (max-width: 569px) {
