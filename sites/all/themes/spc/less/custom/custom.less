@@ -99,6 +99,7 @@ body {
         line-height: 1;
         color: #fff;
         text-align: center;
+        text-transform: capitalize;
         z-index: 1;
         strong {
             color: @spc-accent-color;
@@ -151,9 +152,10 @@ body {
 .node-type-page {
     table {
         max-width: 800px;
+        margin: 0 auto;
         thead {
             tr {
-                background-color: #032f47;
+                background-color: @spc-secondary-color;
                 th {
                     font-weight: 400;
                     color: #fff;
@@ -167,9 +169,9 @@ body {
                     text-align: center;
                 }
                 a {
-                    color: #2a2c2d;
+                    color: @spc-buttons-color;
                     &:hover, &:focus {
-                        color: #2a2c2d;
+                        color: @spc-buttons-color;
                     }
                 }
             }
@@ -504,6 +506,13 @@ body {
         small {
             color: #2a2c2d;
         }
+    }
+}
+
+
+.basic-page {
+    .field-type-text-with-summary {
+        padding: 100px 96px;
     }
 }
 

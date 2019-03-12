@@ -12,6 +12,12 @@
   }
 
   $('body>div.panel-display').addClass('ma5-page');
+
+  if ($('.basic-page .banner-with-title h1').length > 0) {
+    let titleArray = $('.basic-page .banner-with-title h1').text().split(' ');
+    titleArray[0] = '<strong>' + titleArray[0] + '</strong>';
+    $('.basic-page .banner-with-title h1').html(titleArray.join(' '));
+  }
         
   /**
    * Element equalheights
