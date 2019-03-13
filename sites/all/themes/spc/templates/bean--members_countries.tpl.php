@@ -56,7 +56,16 @@
 						</div>
 					</div>
 					<div class="column-footer">
-						
+						<div class="datasets-count">
+							<span class="datasets-icon"></span>
+							<div class="count">
+								<div class="amount">0</div>
+								<div class="description"><?php print t('Datasets'); ?></div>
+							</div>
+						</div>
+						<div class="datasets-link">
+							<a href="" target="_blank"><span class="arrow-right-icon"></span></a>
+						</div>
 					</div>
 				</div>
 			</div>

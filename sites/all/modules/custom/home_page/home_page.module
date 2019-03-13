@@ -18,6 +18,27 @@ function home_page_preprocess_entity(&$variables) {
 			if (isset($wrapper->field_show)) {
 				$variables['show'] = $wrapper->field_show->raw();
 			}
+			if (!empty($variables['content']['field_members_countries'])) {
+				foreach (element_children($variables['content']['field_members_countries']) as $index) {
+					$element = $variables['content']['field_members_countries'][$index]['#element'];
+					$data_title = $element['title'];
+					$data_request = '';
+					$data_code = '';
+					$link_url = $element['url'];
+					$params = drupal_parse_url($link_url);
+					$query = $params['query'];
+					if (!empty($query) && !empty($query['member_countries'])) {
+						$country_code = $query['member_countries'];
+						$data_code = $country_code;
+						$request_path = 'data/api/action/package_search';
+						$request_options = array('absolute' => TRUE, 'query' => array('fq' => 'member_countries:' . $country_code));
+						$data_request = url($request_path, $request_options);
+					}
+					$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-request'] = $data_request; 
+					$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-title'] = $data_title;
+					$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-code'] = $data_code;
+				}
+			}
 		}
 	}
 }
