@@ -39,6 +39,60 @@
   };
 
   /**
+   * Element equalheights
+   *
+   */
+  Drupal.behaviors.memberCountriesBlock = {
+    attach: function (context) {
+      var throbberElement = '<div class="throbber"></div>';
+      var selectBlock = $('#member-countries-block .left-column');
+      var selectContainer = $('#member-countries-block #memberCountries');
+      var selectItems = $('#member-countries-block .dropdown-menu a');
+      var countElement = $('#member-countries-block .datasets-count .amount');
+      var linkElement = $('#member-countries-block .datasets-link a');
+      if (selectItems.length !== 0) {
+        selectItems.each(function(index, item) {
+          $(this).click(function(e) {
+            var request_url = $(this).data('request');
+            var title = $(this).text();
+            var href = $(this).attr('href');
+            selectContainer.text(title);
+            if (request_url.length !== 0) {
+              $.ajax({
+                  url: request_url,
+                  type: 'GET',
+                  timeout: 5000,
+                  beforeSend: function() {
+                    selectBlock.append(throbberElement)
+                    countElement.html(0);
+                  },
+                  success: function(data) {
+                    var count = data.result.count;
+                    linkElement.attr('href', href).show();
+                    countElement.html(count);
+                    selectBlock.find('.throbber').remove();
+                  },
+                  error: function(error) {
+                    selectBlock.find('.throbber').remove();
+                    console.log('Error:');
+                    console.log(error);
+                  }
+              });
+            }
+            else {
+              linkElement.hide();
+              countElement.html(0);
+            }
+            $('body').click();
+            e.stopPropagation();
+            e.preventDefault();
+          });
+        });
+      }
+    }
+  };
+
+  /**
    * Element niceSelect
    *
    */
