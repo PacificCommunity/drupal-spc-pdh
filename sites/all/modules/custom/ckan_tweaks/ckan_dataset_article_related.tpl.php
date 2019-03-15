@@ -22,7 +22,7 @@
 		<?php } ?>
 		<?php foreach (array_unique($resources_formats) as $res) { ?>
 			<a href="<?= $dataset['ckan_url'] ?>">
-				<div class="res-formats res-format-<?= $res; ?>"></div>
+				<div class="res-formats res-format-<?= strtolower($res); ?>"></div>
 			</a>
 		<?php } ?>
 	</div>

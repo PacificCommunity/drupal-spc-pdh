@@ -165,10 +165,10 @@ function dashboards_content_type_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
         'redirect' => array(
-          'weight' => '4',
+          'weight' => '3',
         ),
       ),
       'display' => array(),

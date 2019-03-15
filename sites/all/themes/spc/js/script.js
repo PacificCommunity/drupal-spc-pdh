@@ -12,6 +12,12 @@
   }
 
   $('body>div.panel-display').addClass('ma5-page');
+
+  if ($('.basic-page .banner-with-title h1').length > 0) {
+    let titleArray = $('.basic-page .banner-with-title h1').text().split(' ');
+    titleArray[0] = '<strong>' + titleArray[0] + '</strong>';
+    $('.basic-page .banner-with-title h1').html(titleArray.join(' '));
+  }
         
   /**
    * Element equalheights
@@ -24,6 +30,65 @@
           byRow: true
         });
       });
+      $('.dashboard-goals').each(function() {
+        $(this).find('.column').matchHeight({
+          byRow: false
+        });
+      });
+    }
+  };
+
+  /**
+   * Element equalheights
+   *
+   */
+  Drupal.behaviors.memberCountriesBlock = {
+    attach: function (context) {
+      var throbberElement = '<div class="throbber"></div>';
+      var selectBlock = $('#member-countries-block .left-column');
+      var selectContainer = $('#member-countries-block #memberCountries');
+      var selectItems = $('#member-countries-block .dropdown-menu a');
+      var countElement = $('#member-countries-block .datasets-count .amount');
+      var linkElement = $('#member-countries-block .datasets-link a');
+      if (selectItems.length !== 0) {
+        selectItems.each(function(index, item) {
+          $(this).click(function(e) {
+            var request_url = $(this).data('request');
+            var title = $(this).text();
+            var href = $(this).attr('href');
+            selectContainer.text(title);
+            if (request_url.length !== 0) {
+              $.ajax({
+                  url: request_url,
+                  type: 'GET',
+                  timeout: 5000,
+                  beforeSend: function() {
+                    selectBlock.append(throbberElement)
+                    countElement.html(0);
+                  },
+                  success: function(data) {
+                    var count = data.result.count;
+                    linkElement.attr('href', href).show();
+                    countElement.html(count);
+                    selectBlock.find('.throbber').remove();
+                  },
+                  error: function(error) {
+                    selectBlock.find('.throbber').remove();
+                    console.log('Error:');
+                    console.log(error);
+                  }
+              });
+            }
+            else {
+              linkElement.hide();
+              countElement.html(0);
+            }
+            $('body').click();
+            e.stopPropagation();
+            e.preventDefault();
+          });
+        });
+      }
     }
   };
 
@@ -52,12 +117,15 @@ $( document ).ready(function() {
   var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
   $('.view-data-insights-list-page').append(full_loading)
   $(window).on('scroll', function (){
-    var loader_btn = $('.loading-more-element').offset().top + 100
-    var scrolloffset = window.pageYOffset
-    var scouterHeight = window.outerHeight
-    if ((scrolloffset + scouterHeight) > loader_btn) {
-      $('.pager-show-more .pager-show-more-next a').click()
-    } 
+    var loader_btn = $('.loading-more-element');
+    if (loader_btn.lenght) {
+      var loader_btn_position = loader_btn.offset().top + 100;
+      var scrolloffset = window.pageYOffset;
+      var scouterHeight = window.outerHeight;
+      if ((scrolloffset + scouterHeight) > loader_btn) {
+        $('.pager-show-more .pager-show-more-next a').click()
+      }
+    }
   })
 
   $('.list-tweets').slick({
@@ -130,7 +198,7 @@ $( document ).ready(function() {
   };
 
   
-  $('.latest-stories-homepage .field-item').each(function(i) {
+  $('.latest-stories-slider .field-item').each(function(i) {
     let title_block = $(this).find('.views-field-title');
     if (title_block.length > 0) {
       let num = i + 1;
@@ -152,13 +220,13 @@ $( document ).ready(function() {
       ]
   });
   
-  if ($('.latest-stories-homepage').length > 0 && $('.latest-stories-homepage .slick-dots li').length > 0) {
-    let slides_num_stories = $('.latest-stories-homepage .slick-dots li').length;
-    let slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
-    $('.latest-stories-homepage').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_stories}</strong></div>`);
-    $('.latest-stories-homepage .slick-arrow').on('click', function(){
-      slide = $('.latest-stories-homepage .slick-dots .slick-active button').text();
-      $('.latest-stories-homepage .slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
+  if ($('.latest-stories-slider').length > 0 && $('.latest-stories-slider .slick-dots li').length > 0) {
+    let slides_num_stories = $('.latest-stories-slider .slick-dots li').length;
+    let slide = $('.latest-stories-slider .slick-dots .slick-active button').text();
+    $('.latest-stories-slider').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_stories}</strong></div>`);
+    $('.latest-stories-slider .slick-arrow').on('click', function(){
+      slide = $('.latest-stories-slider .slick-dots .slick-active button').text();
+      $('.latest-stories-slider .slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
     });
   };
 

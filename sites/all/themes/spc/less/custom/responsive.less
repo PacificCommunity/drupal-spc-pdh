@@ -6,7 +6,7 @@
         }
     }
 
-    .latest-stories-homepage {
+    .latest-stories-slider, .latest-stories-slider.pane-articles-list-topic-latest {
         .stories-list {
             height: auto;
             background: transparent;
@@ -35,6 +35,7 @@
             }
             &.slick-next {
                 right: 45%;
+                left: unset;
             }
             &.slick-prev {
                 left: 45%;
@@ -67,7 +68,7 @@
         }
     }
 
-    .latest-stories-homepage {
+    .latest-stories-slider, .latest-stories-slider.pane-articles-list-topic-latest {
         .stories-list {
             .slick-list {
                 .field-item {
@@ -133,6 +134,9 @@
     #main-menu {
         display: none;
     }
+    #mobile-menu {
+        display: block;
+    }
 
     .banner-with-title {
         .ckan-search-form-wrapper {
@@ -151,7 +155,7 @@
         }
     }
 
-    .latest-stories-homepage {
+    .latest-stories-slider, .latest-stories-slider.pane-articles-list-topic-latest {
         .stories-list {
             .slick-list {
                 .field-item {
@@ -307,7 +311,7 @@
     #mini-panel-stories_on_the_hp {
         margin-bottom: 60px;
     }
-    .latest-stories-homepage {
+    .latest-stories-slider, .latest-stories-slider.pane-articles-list-topic-latest {
         padding: 0;
         .stories-list {
             background: url(../img/spc_new/stories_slides_bg.png) no-repeat 50% 0%;
@@ -341,6 +345,19 @@
         }
     }
 
+    .banner-links {
+        bottom: -35px;
+        .link-block {
+            width: 100px;
+            height: 70px;
+            padding: 15px;
+            margin-right: 10px;
+            .icon-wrapper {
+                display: none;
+            }
+        }
+    }
+
     .thematic-group-articles {
         .field-type-entityreference {
             .field-items {
@@ -348,19 +365,19 @@
             }
         }
     }
-    #member-countries-block {
-        height: auto;
-        padding: 25px 0px 50px 0px;
-        h2 {
-            margin-bottom: 30px;
-        }
-        .btn.dropdown-toggle {
-            margin-top: 15px;
-        }
-        .row  {
-            display: block;
-        }
-    }
+    // #member-countries-block {
+    //     height: auto;
+    //     padding: 25px 0px 50px 0px;
+    //     h2 {
+    //         margin-bottom: 30px;
+    //     }
+    //     .btn.dropdown-toggle {
+    //         margin-top: 15px;
+    //     }
+    //     .row  {
+    //         display: block;
+    //     }
+    // }
     .not-front .node-data-insights {
         .insights-topic {
             margin-bottom: 25px;
@@ -471,6 +488,12 @@
         .spc-middle-section {
             padding: 15px 30px;
             margin: -200px 15px 0;
+        }
+    }
+
+    .basic-page {
+        .field-type-text-with-summary {
+            padding: 25px 15px;
         }
     }
 }
