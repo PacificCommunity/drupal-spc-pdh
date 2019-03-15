@@ -8040,24 +8040,33 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 .thematic-fa-link:hover {
   text-decoration: none;
 }
-.page-user-login #block-system-main {
-  padding: 60px 0 80px;
+.page-user-login #block-system-main,
+.page-user #block-system-main {
+  padding: 145px 0 80px;
 }
-.page-user-login form#user-login {
+.page-user-login #header,
+.page-user #header {
+  background-image: linear-gradient(135deg, #007AD8 0%, #031F79 100%);
+}
+.page-user-login form#user-login,
+.page-user form#user-login {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 15px;
 }
-.page-user-login form#user-login label {
+.page-user-login form#user-login label,
+.page-user form#user-login label {
   font-size: 16px;
-  color: #036295;
+  color: #003977;
 }
-.page-user-login form#user-login label.required:after {
+.page-user-login form#user-login label.required:after,
+.page-user form#user-login label.required:after {
   content: '*';
   color: #f00;
   padding-left: 4px;
 }
-.page-user-login form#user-login input {
+.page-user-login form#user-login input,
+.page-user form#user-login input {
   display: block;
   height: 45px;
   width: 100%;
@@ -8069,32 +8078,40 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
   box-shadow: none;
   padding: 0 10px;
 }
-.page-user-login form#user-login input[type='submit'] {
-  background-color: #036295;
+.page-user-login form#user-login input[type='submit'],
+.page-user form#user-login input[type='submit'] {
+  background-color: #031F79;
   font-weight: 400;
   color: #fff;
   margin-top: 30px;
 }
-.page-user-login form#user-login input[type='submit']:hover {
-  background-color: #032f47;
+.page-user-login form#user-login input[type='submit']:hover,
+.page-user form#user-login input[type='submit']:hover {
+  background-color: #001E73;
 }
-.page-user-login form#user-login > div {
+.page-user-login form#user-login > div,
+.page-user form#user-login > div {
   margin-bottom: 20px;
 }
-.page-user-login form#user-login .saml_sp_drupal_login-links {
+.page-user-login form#user-login .saml_sp_drupal_login-links,
+.page-user form#user-login .saml_sp_drupal_login-links {
   padding-left: 0;
 }
-.page-user-login form#user-login .saml_sp_drupal_login-links li {
+.page-user-login form#user-login .saml_sp_drupal_login-links li,
+.page-user form#user-login .saml_sp_drupal_login-links li {
   list-style: none;
 }
-.page-user-login form#user-login .saml_sp_drupal_login-links li a {
+.page-user-login form#user-login .saml_sp_drupal_login-links li a,
+.page-user form#user-login .saml_sp_drupal_login-links li a {
   font-size: 16px;
-  color: #036295;
+  color: #031F79;
 }
-.page-user-login form#user-login .saml_sp_drupal_login-links li a:hover {
-  color: #032f47;
+.page-user-login form#user-login .saml_sp_drupal_login-links li a:hover,
+.page-user form#user-login .saml_sp_drupal_login-links li a:hover {
+  color: #001E73;
 }
-.page-user-login form#user-login small {
+.page-user-login form#user-login small,
+.page-user form#user-login small {
   color: #2a2c2d;
 }
 .basic-page .field-type-text-with-summary {
