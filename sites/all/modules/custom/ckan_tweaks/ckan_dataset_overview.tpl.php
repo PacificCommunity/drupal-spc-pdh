@@ -32,7 +32,7 @@
 									<?php } ?>
 									<?php foreach (array_slice(array_unique($resources_formats), 0, 3) as $res) { ?>
 										<a href="<?= $item['ckan_url'] ?>">
-											<div class="res-formats res-format-<?= $res; ?>"></div>
+											<div class="res-formats res-format-<?= strtolower($res); ?>"></div>
 										</a>
 									<?php } ?>
 								</div>
@@ -63,7 +63,7 @@
 									<?php } ?>
 									<?php foreach (array_slice(array_unique($resources_formats), 0, 3) as $res) { ?>
 										<a href="<?= $item['ckan_url'] ?>">
-											<div class="res-formats res-format-<?= $res; ?>"></div>
+											<div class="res-formats res-format-<?= strtolower($res); ?>"></div>
 										</a>
 									<?php } ?>
 								</div>

@@ -18,6 +18,13 @@ function basic_page_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'basic_page' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -51,12 +58,66 @@ function basic_page_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_banner_image_bp'.
+  $field_instances['node-page-field_banner_image_bp'] = array(
+    'bundle' => 'page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'basic_page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_banner_image_bp',
+    'label' => 'Banner image',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 470,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Banner image');
   t('Body');
 
   return $field_instances;

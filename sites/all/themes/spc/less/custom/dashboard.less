@@ -1,4 +1,5 @@
 .node-type-dashboards {
+	font-family: "Montserrat";
 	.node-dashboards {
 		&.view-mode-full {
 			.banner-with-title {
@@ -55,60 +56,259 @@
 				}
 			}
 			.dashboard-body-container {
+				max-width: 1270px;
+				margin: 0 auto;
 				padding-top: 68px;
 				padding-bottom: 37px;
-				// .container {
-				// 	@media (min-width: 1400px) {
-				// 		padding-left: 0px;
-				// 		padding-right: 0px;
-				// 	}
-				// 	@media (min-width: 1060px) and (max-width: 1399px) {
-				// 		padding-left: 0px;
-				// 		padding-right: 0px;
-				// 	}
-
-				// }
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				font-size: 12px;
+				font-weight: 400;
+				color: #000;
+				line-height: 20px;
+				& > div {
+					padding: 0 15px;
+				}
 				.dashboard-body {
-					color: #2a2c2d;
-					font-weight: 300;
-					font-size: 17px;
-					line-height: 1.75em;
-					padding-left: 15px;
-					padding-right: 15px;
-					@media (max-width: 767px) {
-						padding-left: 30px;
-						padding-right: 30px;
+					flex: 1 1 60%;
+					padding-right: 30px;
+					h1, h2, h3, h4 {
+						margin-top: 0px;
+					}
+				}
+				.dashboard-notes {
+					border-left: 1px dashed #acacac;
+					flex: 1 1 40%;
+					padding-left: 30px;
+					margin-top: 35px;
+					.label-above {
+						text-transform: uppercase;
+						font-size: 12px;
+						font-weight: 600;
+					}
+					ul, ol {
+						list-style: none;
+					  margin: 12px 0 0 0;
+					  padding: 0;
+					  padding-left: 14px;
+						li {
+							margin-bottom: 6px;
+							font-style: italic;
+							&:before {
+ 								content: "\2726";
+ 								color: #ff7439;
+ 								margin-left: -14px;
+ 								margin-right: 7px;
+							}
+							&:last-child {
+								margin-bottom: 0px;
+							}
+						}
+					}
+				}
+				@media (max-width: @screen-sm) {
+					padding: 30px 25px 20px 25px;
+					& {
+						.dashboard-body {
+							padding: 0px;
+						}
+						.dashboard-notes {
+							display: none;
+						}
 					}
 				}
 			}
 		}
 	}
 	.dashboard-goals {
-		padding-top: 45px;
-		padding-bottom: 90px;
+		padding-bottom: 150px;
+		display: flex;
+		justify-content: center;
 		.inner {
-			max-width: 840px;
-			margin: auto;
+			max-width: 1175px;
 			overflow: hidden;
-			@media (max-width: 991px) {
-				max-width: 560px
-			}
-			@media (max-width: 589px) {
-				max-width: 420px
-			}
-			@media (max-width: 449px) {
-				max-width: 280px
-			}
-			@media (max-width: 309px) {
-				max-width: 140px
-			}
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-wrap: wrap;
 			.column {
-				float: left;
-				img {
-					padding: 7px;
+				width: 175px;
+				min-height: 141px;
+				border-radius: 25px 25px 25px 0;
+				background-color: #f2f2f2;
+				padding: 23px 25px 23px 21px;
+				margin-right: 25px;
+				margin-bottom: 25px;
+				flex: 0 0 auto;
+				font-size: 12px;
+				font-weight: 500;
+				line-height: 16px;
+				text-transform: uppercase;
+
+				a {
+					display: block;
+					overflow: hidden;
+					color: #000;
+					text-decoration: none;
+					img {
+						width: 45px;
+						height: auto;
+						margin-bottom: 13px;
+					}
+				}
+			}
+			@media (min-width: 1225px) {
+				& {
+					.column:nth-child(6n) {
+						margin-right: 0px;
+					}
+				}
+			}
+			@media (min-width: 825px) and (max-width: 1224px) {
+				& {
+					max-width: 775px;
+					.column:nth-child(4n) {
+						margin-right: 0px;
+					}
+				}
+			}
+			@media (min-width: 425px) and (max-width: 824px) {
+				& {
+					max-width: 375px;
+					.column:nth-child(2n) {
+						margin-right: 0px;
+					}
+				}
+			}
+			@media (max-width: 424px) {
+				& {
+					max-width: 362px;
+					.column {
+						width: 177px;
+						height: 125px;
+						margin-right: 8px;
+						margin-bottom: 8px;
+						padding: 15px 20px;
+					}
+					.column:nth-child(2n) {
+						margin-right: 0px;
+					}
+				}
+			}
+			@media (max-width: 364px) {
+				& {
+					justify-content: center;
+					flex-direction: column;
+					.column {
+						margin-right: 0px;
+						font-size: 11px;
+					}
 				}
 			}
 		}
+		@media (max-width: @screen-sm) {
+			padding-bottom: 35px;
+		}
+	}
+	.chart-container {
+    background: url('../img/spc_new/insights_hp_bg.png') no-repeat 50% 50%, linear-gradient(3deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    padding-top: 65px;
+    padding-bottom: 45px;
+    &:before {
+      content: ' ';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      background-color: #FFC72E;
+      border-top: 4px solid #FFC72E;
+      border-right: 5px solid #F9F9F9;
+      border-left: 5px solid #F9F9F9;
+		}
+		h2 {
+			font-size: 38px;
+			font-weight: 700px;
+			margin-top: 0px;
+			margin-bottom: 28px;
+			font-family: inherit;
+		}
+		#chart {
+			h2 {
+				font-family: inherit;
+			}
+			.chart-select {
+				max-width: 304px;
+				margin: 0 auto 56px auto;
+				.select2-container {
+					.select2-selection {
+						max-width: 304px;
+						height: auto;
+						box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+						border-radius: 20px;
+						border: 1px solid #b5b5b5;
+						background-color: #ffffff;
+						font-size: 13px;
+						font-weight: 400;
+						padding: 13px 21px;
+						&:after {
+	            content: '';
+	            display: block;
+	            position: absolute;
+	            top: 15px;
+	            right: 20px;
+	            border: solid #000;
+	            border-width: 0 1px 1px 0;
+	            padding: 4px;
+	            transform: rotate(45deg);
+						}
+						.select2-selection__rendered {
+							line-height: 16px;
+							padding: 0px;
+							text-align: left;
+						}
+						.select2-selection__arrow {
+							display: none;
+						}
+					}
+					&.select2-container--open {
+						.select2-selection {
+            	&:after {
+	              top: 20px;
+	              transform: rotate(-135deg);
+            	}
+						}
+					}
+				}
+			}
+		}
+	}
+	.chart-help-text {
+		max-width: 790px;
+		margin: 0 auto;
+		font-size: 13px;
+		font-weight: 400;
+		text-align: justify;
+		padding: 0 15px;
+		padding-bottom: 45px;
+		font-family: inherit;
+	}
+	.select2-dropdown--below {
+		margin-top: 5px;
+		border-radius: 18px;
+		padding: 10px;
+		border-top: 1px solid #b5b5b5;
+	}
+	.select2-dropdown--above {
+		top: -5px;
+		border-radius: 18px;
+		padding: 10px;
+		border-bottom: 1px solid #b5b5b5;
 	}
 }
 .node-dashboards {
