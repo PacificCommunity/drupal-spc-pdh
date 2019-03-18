@@ -71,7 +71,9 @@
 			</div>
 			<div class="right-column column">
 					<div class="column-inner">
-						<div class="map-container"></div>
+						<div class="map-container">
+							<?php print drupal_render($content['field_mcountries_geojson']); ?>
+						</div>
 					</div>
 			</div>
 		</div>
