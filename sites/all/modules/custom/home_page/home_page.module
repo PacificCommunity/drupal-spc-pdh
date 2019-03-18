@@ -19,6 +19,25 @@ function home_page_preprocess_entity(&$variables) {
 				$variables['show'] = $wrapper->field_show->raw();
 			}
 			if (!empty($variables['content']['field_members_countries'])) {
+				// Getting geodata.
+				$points = array();
+				if ($wrapper->field_mcountries_geojson) {
+					$geojsondata = $wrapper->field_mcountries_geojson->value();
+					$geojson = drupal_json_decode($geojsondata);
+					if (isset($geojson['features']) && !empty($geojson['features'])) {
+						foreach ($geojson['features'] as $feature) {
+							if (!empty($feature['properties'])) {
+								$properties = $feature['properties'];
+								$name = drupal_strtolower($properties['GeoName']);
+								$points[$name] = array(
+									'lat' => $properties['x_1'],
+									'lng' => $properties['y_1']
+								);
+							}							
+						}
+					}
+				}
+				kpr($points);
 				foreach (element_children($variables['content']['field_members_countries']) as $index) {
 					$element = $variables['content']['field_members_countries'][$index]['#element'];
 					$data_title = $element['title'];
