@@ -108,14 +108,11 @@ function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instan
 	  if (empty($datasets)) {
 	  	continue;
 	  }
-	  $element[$delta]['container'] = array(
-	  	'#type' => 'container',
-	  	'#attributes' => array('class' => array('container', 'datasets-container'))
-	  );
+
 	  // Display section.
 	  foreach ($datasets as &$dataset) {
 	    $element[$delta]['container'][] = array(
-	    	'#markup' => theme('ckan_dataset_overview', array('dataset' => $dataset))
+	    	'#markup' => theme('ckan_dataset_article_related', array('dataset' => $dataset))
 	    );
 	  }
 	}

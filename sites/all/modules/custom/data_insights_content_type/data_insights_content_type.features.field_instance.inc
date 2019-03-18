@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * data_insights_content_type.features.field_instance.inc
@@ -89,7 +90,7 @@ function data_insights_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'data_insights_on_topic_page' => array(
         'label' => 'hidden',
@@ -157,7 +158,7 @@ function data_insights_content_type_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 9,
       ),
       'data_insights_on_topic_page' => array(
         'label' => 'above',

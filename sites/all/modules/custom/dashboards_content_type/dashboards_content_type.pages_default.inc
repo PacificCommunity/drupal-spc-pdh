@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboards_content_type.pages_default.inc
@@ -66,47 +67,6 @@ function dashboards_content_type_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-172702ea-7dd6-42fb-a26e-5173122929b0';
-  $pane->panel = 'one_fw_main';
-  $pane->type = 'page_tabs';
-  $pane->subtype = 'page_tabs';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'role',
-        'settings' => array(
-          'rids' => array(
-            0 => 3,
-          ),
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'type' => 'both',
-    'id' => 'tabs',
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'container',
-  );
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '172702ea-7dd6-42fb-a26e-5173122929b0';
-  $display->content['new-172702ea-7dd6-42fb-a26e-5173122929b0'] = $pane;
-  $display->panels['one_fw_main'][0] = 'new-172702ea-7dd6-42fb-a26e-5173122929b0';
-  $pane = new stdClass();
   $pane->pid = 'new-9faf1a7a-9023-403d-a605-48d28358d08e';
   $pane->panel = 'one_fw_main';
   $pane->type = 'entity_view';
@@ -126,11 +86,11 @@ function dashboards_content_type_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '9faf1a7a-9023-403d-a605-48d28358d08e';
   $display->content['new-9faf1a7a-9023-403d-a605-48d28358d08e'] = $pane;
-  $display->panels['one_fw_main'][1] = 'new-9faf1a7a-9023-403d-a605-48d28358d08e';
+  $display->panels['one_fw_main'][0] = 'new-9faf1a7a-9023-403d-a605-48d28358d08e';
   $pane = new stdClass();
   $pane->pid = 'new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b';
   $pane->panel = 'one_fw_main';
@@ -153,14 +113,14 @@ function dashboards_content_type_default_page_manager_handlers() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'container dashboard-goals',
+    'css_class' => 'dashboard-goals',
   );
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'd77fbd0e-fe3c-493b-ae43-489aacb1b58b';
   $display->content['new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b'] = $pane;
-  $display->panels['one_fw_main'][2] = 'new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b';
+  $display->panels['one_fw_main'][1] = 'new-d77fbd0e-fe3c-493b-ae43-489aacb1b58b';
   $pane = new stdClass();
   $pane->pid = 'new-179b9d45-cc36-4b03-81a3-f79c7458245d';
   $pane->panel = 'one_fw_main';
@@ -186,11 +146,11 @@ function dashboards_content_type_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '179b9d45-cc36-4b03-81a3-f79c7458245d';
   $display->content['new-179b9d45-cc36-4b03-81a3-f79c7458245d'] = $pane;
-  $display->panels['one_fw_main'][3] = 'new-179b9d45-cc36-4b03-81a3-f79c7458245d';
+  $display->panels['one_fw_main'][2] = 'new-179b9d45-cc36-4b03-81a3-f79c7458245d';
   $pane = new stdClass();
   $pane->pid = 'new-ee757a18-bc47-4feb-a6b1-b400f372f355';
   $pane->panel = 'one_fw_main';
@@ -227,14 +187,14 @@ function dashboards_content_type_default_page_manager_handlers() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'container chart-help-text',
+    'css_class' => 'chart-help-text',
   );
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'ee757a18-bc47-4feb-a6b1-b400f372f355';
   $display->content['new-ee757a18-bc47-4feb-a6b1-b400f372f355'] = $pane;
-  $display->panels['one_fw_main'][4] = 'new-ee757a18-bc47-4feb-a6b1-b400f372f355';
+  $display->panels['one_fw_main'][3] = 'new-ee757a18-bc47-4feb-a6b1-b400f372f355';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

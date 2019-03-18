@@ -156,9 +156,9 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
     );
     $form['search_type_container']['search_type'] = [
       '#type' => 'select',
-      '#default_value' => 'article',
+      '#default_value' => 'dataset',
       '#options' => [
-        'article' => t('Article'),
+        'article' => t('Story'),
         'dataset' => t('Dataset')
       ],
       '#required' => TRUE,
@@ -167,4 +167,22 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
     // Put submit after newly added fields
     $form['submit']['#weight'] = 10;
   }
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function spc_theme($existing, $type, $theme, $path)
+{
+  if($type == 'module')
+  {
+    return [
+      'spc_two_66_33' => [
+        'template' => 'spc-two-66-33',
+        'render element' => 'content',
+      ]
+    ];
+  }
+  return [];
 }

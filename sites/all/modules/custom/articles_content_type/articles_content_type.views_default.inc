@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * articles_content_type.views_default.inc
@@ -125,8 +126,8 @@ function articles_content_type_views_default_views() {
   $handler = $view->new_display('panel_pane', 'List', 'panel_pane_2');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
-  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '7';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['tags']['first'] = '‹‹';
@@ -135,7 +136,7 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = '››';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col eq-col col-xs-12 col-sm-6 col-md-4';
+  $handler->display->display_options['style_options']['row_class'] = 'story-item';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'ds';
@@ -165,7 +166,7 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['display_description'] = 'Provides latest articles list for home page';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -175,6 +176,14 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Syndicated ID */
+  $handler->display->display_options['fields']['field_syndicated_id']['id'] = 'field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['table'] = 'field_data_field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['field'] = 'field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['label'] = '';
+  $handler->display->display_options['fields']['field_syndicated_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_syndicated_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_syndicated_id']['type'] = 'text_plain';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -183,7 +192,7 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'scale_crop_230x230',
+    'image_style' => 'stories_slides',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
@@ -193,9 +202,11 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<h3>[title]</h3>';
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'test';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Promoted to front page */
   $handler->display->display_options['sorts']['promote']['id'] = 'promote';
@@ -224,7 +235,7 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['display_description'] = 'Provides latest articles list for topic page';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -241,6 +252,15 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['relationships']['field_articles_and_publications_target_id']['label'] = 'field_articles_and_publications';
   $handler->display->display_options['relationships']['field_articles_and_publications_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Syndicated ID */
+  $handler->display->display_options['fields']['field_syndicated_id']['id'] = 'field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['table'] = 'field_data_field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['field'] = 'field_syndicated_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['relationship'] = 'field_articles_and_publications_target_id';
+  $handler->display->display_options['fields']['field_syndicated_id']['label'] = '';
+  $handler->display->display_options['fields']['field_syndicated_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_syndicated_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_syndicated_id']['type'] = 'text_plain';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -250,7 +270,7 @@ function articles_content_type_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'scale_crop_230x230',
+    'image_style' => 'stories_slides',
     'image_link' => 'content',
   );
   /* Field: Content: Title */

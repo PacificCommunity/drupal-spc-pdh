@@ -1,7 +1,7 @@
 name = Thematic group
 core = 7.x
 package = Features
-version = 7.x-1.33
+version = 7.x-1.36
 dependencies[] = bean
 dependencies[] = ckan_tweaks
 dependencies[] = ctools
@@ -82,7 +82,6 @@ features[node][] = thematic_group
 features[page_manager_handlers][] = node_view__panel_context_1fc6b1ce-4cd3-48e1-bf44-c5f9d1f5bb8c
 features[page_manager_pages][] = articles_by_topic
 features[page_manager_pages][] = articles_search
-features[panels_mini][] = latest_datasets_and_insight
 features[path_breadcrumbs][] = articles_list_by_topic
 features[path_breadcrumbs][] = search_articles
 features[path_breadcrumbs][] = search_articles_default

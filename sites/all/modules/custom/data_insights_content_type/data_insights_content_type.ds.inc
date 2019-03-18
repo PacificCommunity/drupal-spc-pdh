@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * data_insights_content_type.ds.inc
@@ -104,7 +105,7 @@ function data_insights_content_type_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'data_insights_list_page';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -190,13 +191,13 @@ function data_insights_content_type_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'field_data_insights_preview',
+        0 => 'field_data_insights_preview',
+        1 => 'title',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
       'field_data_insights_preview' => 'ds_content',
+      'title' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

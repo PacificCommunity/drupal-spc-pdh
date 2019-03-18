@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * main_layout.features.user_permission.inc
@@ -9,6 +10,15 @@
  */
 function main_layout_user_default_permissions() {
   $permissions = array();
+
+  // Exported permission: 'create any banner_with_title bean'.
+  $permissions['create any banner_with_title bean'] = array(
+    'name' => 'create any banner_with_title bean',
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
+    'module' => 'bean',
+  );
 
   // Exported permission: 'create any partner_logos bean'.
   $permissions['create any partner_logos bean'] = array(
@@ -21,6 +31,15 @@ function main_layout_user_default_permissions() {
   $permissions['create any social_links bean'] = array(
     'name' => 'create any social_links bean',
     'roles' => array(),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'delete any banner_with_title bean'.
+  $permissions['delete any banner_with_title bean'] = array(
+    'name' => 'delete any banner_with_title bean',
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
     'module' => 'bean',
   );
 
@@ -38,6 +57,15 @@ function main_layout_user_default_permissions() {
     'module' => 'bean',
   );
 
+  // Exported permission: 'edit any banner_with_title bean'.
+  $permissions['edit any banner_with_title bean'] = array(
+    'name' => 'edit any banner_with_title bean',
+    'roles' => array(
+      'Site Admin' => 'Site Admin',
+    ),
+    'module' => 'bean',
+  );
+
   // Exported permission: 'edit any partner_logos bean'.
   $permissions['edit any partner_logos bean'] = array(
     'name' => 'edit any partner_logos bean',
@@ -49,6 +77,16 @@ function main_layout_user_default_permissions() {
   $permissions['edit any social_links bean'] = array(
     'name' => 'edit any social_links bean',
     'roles' => array(),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'view any banner_with_title bean'.
+  $permissions['view any banner_with_title bean'] = array(
+    'name' => 'view any banner_with_title bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'bean',
   );
 

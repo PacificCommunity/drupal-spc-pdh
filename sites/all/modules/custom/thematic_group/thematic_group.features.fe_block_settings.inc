@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * thematic_group.features.fe_block_settings.inc
