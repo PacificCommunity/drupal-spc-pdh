@@ -118,9 +118,6 @@
   }
 }
 @media (min-width: 992px) {
-  #mini-panel-footer {
-    height: 384px;
-  }
   #mini-panel-footer .container {
     padding: 0px 200px !important;
   }
