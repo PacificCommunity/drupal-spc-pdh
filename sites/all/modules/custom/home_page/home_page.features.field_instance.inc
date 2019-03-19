@@ -413,8 +413,8 @@ function home_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-members_countries-field_mcountries_geojson'.
-  $field_instances['bean-members_countries-field_mcountries_geojson'] = array(
+  // Exported field_instance: 'bean-members_countries-field_mcountries'.
+  $field_instances['bean-members_countries-field_mcountries'] = array(
     'bundle' => 'members_countries',
     'default_value' => NULL,
     'deleted' => 0,
@@ -422,29 +422,28 @@ function home_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_plain',
-        'weight' => 2,
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'bean',
-    'field_name' => 'field_mcountries_geojson',
-    'label' => 'Member Countries GeoJSON',
+    'field_name' => 'field_mcountries',
+    'label' => 'Countries',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 4,
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 5,
     ),
   );
 
@@ -538,19 +537,117 @@ function home_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'field_collection_item-field_mcountries-field_mcountries_coords'.
+  $field_instances['field_collection_item-field_mcountries-field_mcountries_coords'] = array(
+    'bundle' => 'field_mcountries',
+    'default_value' => array(
+      0 => array(
+        'name' => 'Default',
+        'lat' => 51.524295,
+        'lon' => -0.12798999999995,
+        'zoom' => 9,
+        'enter_defaults' => 'Defaults',
+        'clear_fields' => 'Clear Fields',
+        'open_map' => 'Set Map Marker',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mcountries_coords',
+    'label' => 'Coordinates',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'google_map_field',
+      'settings' => array(),
+      'type' => 'google_map_field_widget',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_mcountries-field_mcountries_link'.
+  $field_instances['field_collection_item-field_mcountries-field_mcountries_link'] = array(
+    'bundle' => 'field_mcountries',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mcountries_link',
+    'label' => 'Link',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_allowed_values' => '',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Article on Home Page');
   t('Banner Image');
   t('Banner Sub Title');
   t('Banner Title');
+  t('Coordinates');
+  t('Countries');
   t('Country Data Background');
   t('Dashboards background');
   t('Datasets background');
   t('Image dimensions must be 1000px x 400px or larger');
   t('Is it Thematic Landing Page?');
   t('Is it banner for Thematic Landing Page?');
-  t('Member Countries GeoJSON');
+  t('Link');
   t('Members Countries');
   t('Show');
   t('Thematic Groups Home');
