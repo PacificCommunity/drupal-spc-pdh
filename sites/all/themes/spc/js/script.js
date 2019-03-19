@@ -86,16 +86,12 @@
             $('body').click();
             // Updating map.
             var map = Drupal.gmap.getMap('members-countries-map').map;
-            var point_zoom = $(this).data('zoom');
             var point_lat = $(this).data('lat');
             var point_lon = $(this).data('lon');
+            var mapCenter = new google.maps.LatLng(point_lat, point_lon);
             if (point_lat && point_lon) {
-              map.setCenter(new google.maps.LatLng(point_lat, point_lon));
+              map.setCenter(mapCenter);
             }
-            if (point_zoom) {
-              map.setZoom(point_zoom);
-            }
-
             e.stopPropagation();
             e.preventDefault();
           });
