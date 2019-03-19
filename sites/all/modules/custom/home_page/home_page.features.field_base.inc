@@ -198,21 +198,6 @@ function home_page_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_mcountries_coords'.
-  $field_bases['field_mcountries_coords'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_mcountries_coords',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'google_map_field',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'google_map_field',
-  );
-
   // Exported field_base: 'field_mcountries_link'.
   $field_bases['field_mcountries_link'] = array(
     'active' => 1,
@@ -240,6 +225,90 @@ function home_page_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_mcountries_location'.
+  $field_bases['field_mcountries_location'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_mcountries_location',
+    'indexes' => array(
+      'lid' => array(
+        0 => 'lid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'location_cck',
+    'settings' => array(
+      'gmap_macro' => '[gmap ]',
+      'gmap_marker' => 'drupal',
+      'location_settings' => array(
+        'display' => array(
+          'hide' => array(
+            'additional' => 'additional',
+            'city' => 'city',
+            'coords' => 0,
+            'country' => 'country',
+            'country_name' => 'country_name',
+            'locpick' => 0,
+            'map_link' => 'map_link',
+            'name' => 'name',
+            'postal_code' => 'postal_code',
+            'province' => 'province',
+            'province_name' => 'province_name',
+            'street' => 'street',
+          ),
+        ),
+        'form' => array(
+          'fields' => array(
+            'additional' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => 6,
+            ),
+            'city' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => 8,
+            ),
+            'country' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => 14,
+            ),
+            'locpick' => array(
+              'collect' => 1,
+              'weight' => 20,
+            ),
+            'name' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => 2,
+            ),
+            'postal_code' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => 12,
+            ),
+            'province' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => 10,
+              'widget' => 'autocomplete',
+            ),
+            'street' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => 4,
+            ),
+          ),
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'location',
   );
 
   // Exported field_base: 'field_members_countries'.

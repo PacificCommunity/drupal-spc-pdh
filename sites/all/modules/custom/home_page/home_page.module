@@ -47,11 +47,10 @@ function home_page_preprocess_entity(&$variables) {
             }
             $link_attributes['data-request'] = $data_request;
             // Coordinates.
-            if (isset($country->field_mcountries_coords)) {
-              $coords = $country->field_mcountries_coords[LANGUAGE_NONE][0];
-              $link_attributes['data-lat'] = $coords['lat'];
-              $link_attributes['data-lon'] = $coords['lon'];
-              $link_attributes['data-zoom'] = $coords['zoom'];
+            if (isset($country->field_mcountries_location) && !empty($country->field_mcountries_location)) {
+              $location = $country->field_mcountries_location[LANGUAGE_NONE][0];
+            	$link_attributes['data-lat'] = $location['latitude'];
+            	$link_attributes['data-lon'] = $location['longitude'];
             }
             $variables['countries_list'][] = array(
               '#theme' => 'link',
@@ -62,41 +61,18 @@ function home_page_preprocess_entity(&$variables) {
           }
         }
       }
-			if (!empty($variables['content']['field_members_countries'])) {
-				// foreach (element_children($variables['content']['field_members_countries']) as $index) {
-				// 	$element = $variables['content']['field_members_countries'][$index]['#element'];
-				// 	$data_title = $element['title'];
-				// 	$data_request = '';
-				// 	$data_code = '';
-				// 	$link_url = $element['url'];
-				// 	$params = drupal_parse_url($link_url);
-				// 	$query = $params['query'];
-				// 	if (!empty($query) && !empty($query['member_countries'])) {
-				// 		$country_code = $query['member_countries'];
-				// 		$data_code = $country_code;
-				// 		$request_path = 'data/api/action/package_search';
-				// 		$request_options = array('absolute' => TRUE, 'query' => array('fq' => 'member_countries:' . $country_code));
-				// 		$data_request = url($request_path, $request_options);
-				// 	}
-				// 	$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-request'] = $data_request;
-				// 	$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-title'] = $data_title;
-				// 	$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-code'] = $data_code;
-				// }
-        $map_settings = array(
-          'id' => "members-countries-map",
-          'width' => "100%",
-          'height' => "100%",
-          'latitude' => 41.9023,
-          'longitude' => -87.5391,
-          'zoom' => 10,
-          'maptype' => "Map",
-          'controltype' => "Small"
-        );
-        $variables['members_countries_map'] = array(
-          '#type' => 'gmap',
-          '#gmap_settings' => $map_settings,
-        );
-			}
+      $map_settings = array(
+        'id' => "members-countries-map",
+        'width' => "100%",
+        'height' => "100%",
+        'maptype' => "Map",
+        'controltype' => "Small"
+      );
+      $variables['members_countries_map'] = array(
+        '#type' => 'gmap',
+        '#gmap_settings' => $map_settings,
+      );
+
 		}
 	}
 }
