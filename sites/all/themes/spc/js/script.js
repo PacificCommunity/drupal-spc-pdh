@@ -1,5 +1,5 @@
 (function ($) {
-  
+
   var titles = $('.thematic-group-articles .thematic-group-article-item h4 a')
   if (titles) {
       titles.each(function(){
@@ -18,7 +18,7 @@
     titleArray[0] = '<strong>' + titleArray[0] + '</strong>';
     $('.basic-page .banner-with-title h1').html(titleArray.join(' '));
   }
-        
+
   /**
    * Element equalheights
    *
@@ -84,11 +84,24 @@
               countElement.html(0);
             }
             $('body').click();
+            // Updating map.
+            var map = Drupal.gmap.getMap('members-countries-map').map;
+            var point_zoom = $(this).data('zoom');
+            var point_lat = $(this).data('lat');
+            var point_lon = $(this).data('lon');
+            if (point_lat && point_lon) {
+              map.setCenter(new google.maps.LatLng(point_lat, point_lon));
+            }
+            if (point_zoom) {
+              map.setZoom(point_zoom);
+            }
+
             e.stopPropagation();
             e.preventDefault();
           });
         });
       }
+
     }
   };
 
@@ -112,7 +125,7 @@
 
 $( document ).ready(function() {
 
-  var wrapper_loader ="<div class='loading-more-element'>" 
+  var wrapper_loader ="<div class='loading-more-element'>"
   var the_loader = "<div class='lds-spinner'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>";
   var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
   $('.view-data-insights-list-page').append(full_loading)
@@ -197,7 +210,7 @@ $( document ).ready(function() {
     });
   };
 
-  
+
   $('.latest-stories-slider .field-item').each(function(i) {
     let title_block = $(this).find('.views-field-title');
     if (title_block.length > 0) {
@@ -219,7 +232,7 @@ $( document ).ready(function() {
         }
       ]
   });
-  
+
   if ($('.latest-stories-slider').length > 0 && $('.latest-stories-slider .slick-dots li').length > 0) {
     let slides_num_stories = $('.latest-stories-slider .slick-dots li').length;
     let slide = $('.latest-stories-slider .slick-dots .slick-active button').text();
@@ -230,7 +243,7 @@ $( document ).ready(function() {
     });
   };
 
-  
+
   $('.ckan-dataset-tab-container .carusel-of-items').slick({
     dots: false,
     infinite: true,
@@ -245,7 +258,7 @@ $( document ).ready(function() {
     var slide_center = $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').find('.slick-center').first();
     if (slide_center.length == 1 && slide_center.width() < 0) {
       $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
-    } 
+    }
   })
 });
 
