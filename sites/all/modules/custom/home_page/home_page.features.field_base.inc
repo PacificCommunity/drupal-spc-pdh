@@ -198,6 +198,31 @@ function home_page_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
+  // Exported field_base: 'field_mcountries_geocode'.
+  $field_bases['field_mcountries_geocode'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_mcountries_geocode',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'field_mcountries_link'.
   $field_bases['field_mcountries_link'] = array(
     'active' => 1,
@@ -235,80 +260,46 @@ function home_page_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_mcountries_location',
     'indexes' => array(
-      'lid' => array(
-        0 => 'lid',
+      'bbox' => array(
+        0 => 'top',
+        1 => 'bottom',
+        2 => 'left',
+        3 => 'right',
+      ),
+      'bottom' => array(
+        0 => 'bottom',
+      ),
+      'centroid' => array(
+        0 => 'lat',
+        1 => 'lon',
+      ),
+      'geohash' => array(
+        0 => 'geohash',
+      ),
+      'lat' => array(
+        0 => 'lat',
+      ),
+      'left' => array(
+        0 => 'left',
+      ),
+      'lon' => array(
+        0 => 'lon',
+      ),
+      'right' => array(
+        0 => 'right',
+      ),
+      'top' => array(
+        0 => 'top',
       ),
     ),
     'locked' => 0,
-    'module' => 'location_cck',
+    'module' => 'geofield',
     'settings' => array(
-      'gmap_macro' => '[gmap ]',
-      'gmap_marker' => 'drupal',
-      'location_settings' => array(
-        'display' => array(
-          'hide' => array(
-            'additional' => 'additional',
-            'city' => 'city',
-            'coords' => 0,
-            'country' => 'country',
-            'country_name' => 'country_name',
-            'locpick' => 0,
-            'map_link' => 'map_link',
-            'name' => 'name',
-            'postal_code' => 'postal_code',
-            'province' => 'province',
-            'province_name' => 'province_name',
-            'street' => 'street',
-          ),
-        ),
-        'form' => array(
-          'fields' => array(
-            'additional' => array(
-              'collect' => 0,
-              'default' => '',
-              'weight' => 6,
-            ),
-            'city' => array(
-              'collect' => 0,
-              'default' => '',
-              'weight' => 8,
-            ),
-            'country' => array(
-              'collect' => 1,
-              'default' => '',
-              'weight' => 14,
-            ),
-            'locpick' => array(
-              'collect' => 1,
-              'weight' => 20,
-            ),
-            'name' => array(
-              'collect' => 0,
-              'default' => '',
-              'weight' => 2,
-            ),
-            'postal_code' => array(
-              'collect' => 0,
-              'default' => '',
-              'weight' => 12,
-            ),
-            'province' => array(
-              'collect' => 0,
-              'default' => '',
-              'weight' => 10,
-              'widget' => 'autocomplete',
-            ),
-            'street' => array(
-              'collect' => 0,
-              'default' => '',
-              'weight' => 4,
-            ),
-          ),
-        ),
-      ),
+      'backend' => 'default',
+      'srid' => 4326,
     ),
     'translatable' => 0,
-    'type' => 'location',
+    'type' => 'geofield',
   );
 
   // Exported field_base: 'field_members_countries'.

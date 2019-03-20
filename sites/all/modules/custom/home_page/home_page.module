@@ -49,8 +49,8 @@ function home_page_preprocess_entity(&$variables) {
             // Coordinates.
             if (isset($country->field_mcountries_location) && !empty($country->field_mcountries_location)) {
               $location = $country->field_mcountries_location[LANGUAGE_NONE][0];
-            	$link_attributes['data-lat'] = $location['latitude'];
-            	$link_attributes['data-lon'] = $location['longitude'];
+            	$link_attributes['data-lat'] = $location['lat'];
+            	$link_attributes['data-lon'] = $location['lon'];
             }
             $variables['countries_list'][] = array(
               '#theme' => 'link',
@@ -66,7 +66,9 @@ function home_page_preprocess_entity(&$variables) {
         'width' => "100%",
         'height' => "100%",
         'maptype' => "Map",
-        'controltype' => "Small"
+        'controltype' => "Small",
+        'zoom' => 8,
+        'align' => 'left'
       );
       $variables['members_countries_map'] = array(
         '#type' => 'gmap',
@@ -77,6 +79,36 @@ function home_page_preprocess_entity(&$variables) {
 	}
 }
 
+/**
+ * Implementation of hook_field_collection_item_presave().
+ */
+function home_page_field_collection_item_presave($field_collection_item) {
+  if (module_exists('geocoder')) {
+    $wrapper = entity_metadata_wrapper('field_collection_item', $field_collection_item);
+    $geocode = $wrapper->field_mcountries_geocode->value();
+    if ($geocode) {
+      $wrapper->field_mcountries_geocode = 0;
+      $link = $wrapper->field_mcountries_link->value();
+      if (!empty($link)) {
+        $link_title = $link['title'];
+        // Assume as we have only country.
+        $address = $link_title;
+        $point = geocoder('google', $address);
+        if (!empty($point) && !empty($point->coords)) {
+          list($lat, $lon) = $point->coords;
+          $loation = geofield_compute_values(
+            array(
+              'lat' => $lat,
+              'lon' => $lon,
+            ),
+            GEOFIELD_INPUT_LAT_LON
+          );
+          $wrapper->field_mcountries_location = $loation;
+        }
+      }
+    }
+  }
+}
 
 /**
  * Implements hook_theme().
