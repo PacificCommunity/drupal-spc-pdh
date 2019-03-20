@@ -413,6 +413,40 @@ function home_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-members_countries-field_mcountries'.
+  $field_instances['bean-members_countries-field_mcountries'] = array(
+    'bundle' => 'members_countries',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'bean',
+    'field_name' => 'field_mcountries',
+    'label' => 'Countries',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'bean-members_countries-field_members_countries'.
   $field_instances['bean-members_countries-field_members_countries'] = array(
     'bundle' => 'members_countries',
@@ -462,7 +496,7 @@ function home_page_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -499,7 +533,137 @@ function home_page_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 4,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_mcountries-field_mcountries_geocode'.
+  $field_instances['field_collection_item-field_mcountries-field_mcountries_geocode'] = array(
+    'bundle' => 'field_mcountries',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Do you need to re-geocode? Press it if you need.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mcountries_geocode',
+    'label' => 'Geocode',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_mcountries-field_mcountries_link'.
+  $field_instances['field_collection_item-field_mcountries-field_mcountries_link'] = array(
+    'bundle' => 'field_mcountries',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mcountries_link',
+    'label' => 'Link',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_allowed_values' => '',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_mcountries-field_mcountries_location'.
+  $field_instances['field_collection_item-field_mcountries-field_mcountries_location'] = array(
+    'bundle' => 'field_mcountries',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'geofield',
+        'settings' => array(
+          'data' => 'full',
+        ),
+        'type' => 'geofield_wkt',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mcountries_location',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geofield',
+      'settings' => array(
+        'html5_geolocation' => 0,
+      ),
+      'type' => 'geofield_latlon',
+      'weight' => 2,
     ),
   );
 
@@ -509,12 +673,17 @@ function home_page_field_default_field_instances() {
   t('Banner Image');
   t('Banner Sub Title');
   t('Banner Title');
+  t('Countries');
   t('Country Data Background');
   t('Dashboards background');
   t('Datasets background');
+  t('Do you need to re-geocode? Press it if you need.');
+  t('Geocode');
   t('Image dimensions must be 1000px x 400px or larger');
   t('Is it Thematic Landing Page?');
   t('Is it banner for Thematic Landing Page?');
+  t('Link');
+  t('Location');
   t('Members Countries');
   t('Show');
   t('Thematic Groups Home');
