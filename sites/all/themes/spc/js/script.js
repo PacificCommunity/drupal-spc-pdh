@@ -40,91 +40,96 @@
 
   var map_styles = [
     {
-        "featureType": "administrative",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#444444"
-            }
-        ]
+      "featureType": "administrative",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {color: "#000000"}
+      ]
     },
     {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#f2f2f2"
-            }
-        ]
+      "featureType": "landscape",
+      "elementType": "all",
+      "stylers": [
+        {color: "#ffffff"}
+      ]
     },
     {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+      featureType: 'landscape',
+      elementType: 'labels.text.fill',
+      stylers: [
+        {color: '#000000'},
+      ]
     },
     {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 45
-            }
-        ]
+      "featureType": "poi",
+      "elementType": "all",
+      "stylers": [
+        {visibility: "off"}
+      ]
     },
     {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
+      "featureType": "road",
+      "elementType": "all",
+      "stylers": [
+        {visibility: "off"}
+      ]
     },
     {
-        "featureType": "road.arterial",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+      "featureType": "road.highway",
+      "elementType": "all",
+      "stylers": [
+        {visibility: "off"}
+      ]
     },
     {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+      "featureType": "road.arterial",
+      "elementType": "labels.icon",
+      "stylers": [
+        {visibility: "off"}
+      ]
     },
     {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#46bcec"
-            },
-            {
-                "visibility": "on"
-            }
-        ]
+      "featureType": "transit",
+      "elementType": "all",
+      "stylers": [
+        {visibility: "off"}
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "all",
+      "stylers": [
+        {color: "#00c6ec"},
+        {visibility: "on"}
+      ]
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.fill',
+      stylers: [
+        {color: '#ffffff'}
+      ]
     }
-];
+  ];
+
+  Drupal.gmap.addHandler('gmap', function (elem) {
+      var obj = this;
+      obj.bind("init", function () {
+        var map = obj.map;
+        map.setOptions({
+          styles: map_styles,
+          disableDefaultUI: true,
+          zoomControl: false
+        });
+      });
+  });
 
   /**
    * Element equalheights
    *
    */
   Drupal.behaviors.memberCountriesBlock = {
-    attach: function (context) {
+    attach: function (context, settings) {
       var marker_icon = {
         url: '/sites/all/themes/spc/img/markers/spc-marker.png',
         size: new google.maps.Size(24, 33)
@@ -171,7 +176,7 @@
             }
             $('body').click();
             // Updating map.
-            map = Drupal.gmap.getMap('members-countries-map').map;
+            var map = Drupal.gmap.getMap('members-countries-map').map;
             var point_lat = $(this).data('lat');
             var point_lon = $(this).data('lon');
             var mapCenter = new google.maps.LatLng(point_lon, point_lat);
@@ -355,19 +360,6 @@ $( document ).ready(function() {
 
 
 });
-Drupal.gmap.addHandler('gmap', function (elem) {
-    var obj = this;
-    var _ib = {};
 
-    _ib.zoom = obj.bind("init", function () {
-      var map = obj.map;
-      map.setOptions({
-        styles: map_styles,
-        zoomControlOptions: {
-          position: google.maps.ControlPosition.RIGHT_TOP
-        }
-      });
-    });
-});
 
 })(jQuery);

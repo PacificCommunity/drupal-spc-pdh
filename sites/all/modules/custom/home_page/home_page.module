@@ -67,7 +67,7 @@ function home_page_preprocess_entity(&$variables) {
         'height' => "100%",
         'maptype' => "Map",
         'controltype' => "Small",
-        'zoom' => 8,
+        'zoom' => 3,
         'align' => 'left'
       );
       $variables['members_countries_map'] = array(
