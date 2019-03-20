@@ -302,6 +302,21 @@ function home_page_field_default_field_bases() {
     'type' => 'geofield',
   );
 
+  // Exported field_base: 'field_mcountries_zoom'.
+  $field_bases['field_mcountries_zoom'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_mcountries_zoom',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_members_countries'.
   $field_bases['field_members_countries'] = array(
     'active' => 1,
