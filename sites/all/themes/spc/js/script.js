@@ -38,12 +38,98 @@
     }
   };
 
+  var map_styles = [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#46bcec"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+];
+
   /**
    * Element equalheights
    *
    */
   Drupal.behaviors.memberCountriesBlock = {
     attach: function (context) {
+      var marker_icon = {
+        url: '/sites/all/themes/spc/img/markers/spc-marker.png',
+        size: new google.maps.Size(24, 33)
+      };
+      var gmarkers = [];
       var throbberElement = '<div class="throbber"></div>';
       var selectBlock = $('#member-countries-block .left-column');
       var selectContainer = $('#member-countries-block #memberCountries');
@@ -85,12 +171,22 @@
             }
             $('body').click();
             // Updating map.
-            var map = Drupal.gmap.getMap('members-countries-map').map;
+            map = Drupal.gmap.getMap('members-countries-map').map;
             var point_lat = $(this).data('lat');
             var point_lon = $(this).data('lon');
-            var mapCenter = new google.maps.LatLng(point_lat, point_lon);
+            var mapCenter = new google.maps.LatLng(point_lon, point_lat);
+            for(i=0; i<gmarkers.length; i++){
+                gmarkers[i].setMap(null);
+            }
             if (point_lat && point_lon) {
               map.setCenter(mapCenter);
+              var marker = new google.maps.Marker({
+                position: mapCenter,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: marker_icon,
+              });
+              gmarkers.push(marker);
             }
             e.stopPropagation();
             e.preventDefault();
@@ -256,6 +352,22 @@ $( document ).ready(function() {
       $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
     }
   })
+
+
+});
+Drupal.gmap.addHandler('gmap', function (elem) {
+    var obj = this;
+    var _ib = {};
+
+    _ib.zoom = obj.bind("init", function () {
+      var map = obj.map;
+      map.setOptions({
+        styles: map_styles,
+        zoomControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_TOP
+        }
+      });
+    });
 });
 
 })(jQuery);
