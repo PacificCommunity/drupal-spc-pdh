@@ -755,6 +755,32 @@
             border-radius: 0 25px 25px 0;
             background-color: #00c6ec;
             padding: 11px;
+            .gmap > div {
+                background: unset !important;
+                .zoom__controls {
+                    width: 32px;
+                    height: 74px;
+                    margin: 24px 24px 0 0;
+                    .controls--zoom-out,
+                    .controls--zoom-in {
+                        background-color: white;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid white;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        color: #000;
+                        font-size: 28px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .controls--zoom-in {
+                        margin-bottom: 10px;
+                        font-size: 18px;
+                    }
+                }
+            }
         }
     }
     .dropdown {
@@ -832,7 +858,7 @@
                 .right-column {
                     height: 436px;
                 }
-            }       
+            }
         }
     }
 }
@@ -1027,7 +1053,7 @@
                         margin-right: 30px;
                     }
                 }
-            }   
+            }
         }
         .ckan-dataset-tabs-view-all {
             text-align: center;

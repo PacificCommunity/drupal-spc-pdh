@@ -121,6 +121,35 @@
           disableDefaultUI: true,
           zoomControl: false
         });
+        var controlDiv, controlWrapper, zoomInButton, zoomOutButton;
+
+        controlDiv = document.createElement('div');
+        controlDiv.className = 'zoom__controls';
+
+        controlWrapper = document.createElement('div');
+        controlWrapper.className = 'controls__wrapper';
+
+        zoomInButton = document.createElement('div');
+        zoomInButton.className = 'controls--zoom-in';
+        zoomInButton.textContent = "+";
+
+        zoomOutButton = document.createElement('div');
+        zoomOutButton.className = 'controls--zoom-out';
+        zoomOutButton.textContent = "-";
+
+        controlDiv.appendChild(controlWrapper);
+        controlWrapper.appendChild(zoomInButton);
+        controlWrapper.appendChild(zoomOutButton);
+
+        google.maps.event.addDomListener(zoomInButton, 'click', function() {
+          map.setZoom(map.getZoom() + 1);
+        });
+
+        google.maps.event.addDomListener(zoomOutButton, 'click', function() {
+          map.setZoom(map.getZoom() - 1);
+        });
+
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
       });
   });
 
@@ -177,12 +206,16 @@
             $('body').click();
             // Updating map.
             var map = Drupal.gmap.getMap('members-countries-map').map;
+            var zoom = 9;
             var point_lat = $(this).data('lat');
             var point_lon = $(this).data('lon');
+            var point_zoom = $(this).data('zoom');
             var mapCenter = new google.maps.LatLng(point_lon, point_lat);
-            for(i=0; i<gmarkers.length; i++){
+            // Remove markers first.
+            for(i = 0; i < gmarkers.length; i++) {
                 gmarkers[i].setMap(null);
             }
+            // Setting new marker.
             if (point_lat && point_lon) {
               map.setCenter(mapCenter);
               var marker = new google.maps.Marker({
@@ -193,6 +226,11 @@
               });
               gmarkers.push(marker);
             }
+            // Setting zoom.
+            if (point_zoom) {
+              zoom = point_zoom;
+            }
+            map.setZoom(zoom);
             e.stopPropagation();
             e.preventDefault();
           });
