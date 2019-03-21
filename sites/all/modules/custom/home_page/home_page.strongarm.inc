@@ -45,7 +45,7 @@ function home_page_strongarm() {
     'width' => '300px',
     'height' => '200px',
     'latlong' => '-17.96955190314605,168.9433591067791',
-    'zoom' => '5',
+    'zoom' => '3',
     'maxzoom' => '14',
     'styles' => array(
       'line_default' => array(
@@ -82,7 +82,7 @@ function home_page_strongarm() {
       'nomousezoom' => 0,
       'nocontzoom' => 0,
       'autozoom' => 1,
-      'dynmarkers' => 0,
+      'dynmarkers' => 1,
       'overview' => 0,
       'collapsehack' => 0,
       'scale' => 0,
