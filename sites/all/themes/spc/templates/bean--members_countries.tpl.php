@@ -46,7 +46,7 @@
 							>
 								<?php print t('Member Countries'); ?>
 							</div>
-							<?php if (!empty($variables['field_members_countries'])) : ?>
+							<?php if (!empty($countries_list)) : ?>
 								<ul class="dropdown-menu">
 									<?php foreach (element_children($countries_list) as $children_key) : ?>
 										<li><?php print drupal_render($countries_list[$children_key]); ?></li>
