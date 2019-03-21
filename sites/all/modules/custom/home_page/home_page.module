@@ -35,7 +35,7 @@ function home_page_preprocess_entity(&$variables) {
             }
             $link_title = check_plain($link['title']);
             $link_url = $link['display_url'];
-            $link_attributes = $link['attributes'];
+            $link_attributes = array();
             $data_request = '';
             $params = drupal_parse_url($link_url);
             $query = $params['query'];
@@ -46,17 +46,22 @@ function home_page_preprocess_entity(&$variables) {
               $data_request = url($request_path, $request_options);
             }
             $link_attributes['data-request'] = $data_request;
-            // Coordinates.
+            // Setting coordinates.
             if (isset($country->field_mcountries_location) && !empty($country->field_mcountries_location)) {
               $location = $country->field_mcountries_location[LANGUAGE_NONE][0];
             	$link_attributes['data-lat'] = $location['lat'];
             	$link_attributes['data-lon'] = $location['lon'];
             }
+            // Setting zoom.
+            if (isset($country->field_mcountries_zoom)) {
+              $zoom = $country_wrapper->field_mcountries_zoom->value();
+              $link_attributes['data-zoom'] = $zoom;
+            }
             $variables['countries_list'][] = array(
               '#theme' => 'link',
               '#text' => $link_title,
               '#path' => $link_url,
-              '#options' => array('attributes' => $link_attributes)
+              '#options' => array('attributes' => $link_attributes, 'html' => TRUE)
             );
           }
         }
@@ -96,14 +101,14 @@ function home_page_field_collection_item_presave($field_collection_item) {
         $point = geocoder('google', $address);
         if (!empty($point) && !empty($point->coords)) {
           list($lat, $lon) = $point->coords;
-          $loation = geofield_compute_values(
+          $location = geofield_compute_values(
             array(
               'lat' => $lat,
-              'lon' => $lon,
+              'lon' => $lon
             ),
             GEOFIELD_INPUT_LAT_LON
           );
-          $wrapper->field_mcountries_location = $loation;
+          $wrapper->field_mcountries_location = $location;
         }
       }
     }
