@@ -163,7 +163,7 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
       ],
       '#required' => TRUE,
     ];
-    
+
     // Put submit after newly added fields
     $form['submit']['#weight'] = 10;
   }
