@@ -210,7 +210,7 @@
             var point_lat = $(this).data('lat');
             var point_lon = $(this).data('lon');
             var point_zoom = $(this).data('zoom');
-            var mapCenter = new google.maps.LatLng(point_lon, point_lat);
+            var mapCenter = new google.maps.LatLng(point_lat, point_lon);
             // Remove markers first.
             for(i = 0; i < gmarkers.length; i++) {
                 gmarkers[i].setMap(null);
