@@ -1,7 +1,7 @@
 name = Ckeditor config
 core = 7.x
 package = Site Configurations
-version = 7.x-1.04
+version = 7.x-1.05
 project = ckeditor_config
 dependencies[] = ckeditor
 dependencies[] = ctools
@@ -9,6 +9,7 @@ dependencies[] = features
 dependencies[] = filter
 dependencies[] = imce
 dependencies[] = strongarm
+dependencies[] = token_filter
 features[ckeditor_profile][] = Advanced
 features[ckeditor_profile][] = CKEditor Global Profile
 features[ckeditor_profile][] = Full

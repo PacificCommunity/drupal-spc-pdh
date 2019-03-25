@@ -1,3 +1,78 @@
 <?php
 
-require_once(__DIR__ . DIRECTORY_SEPARATOR . 'spc_advanced_search.hooks.inc');
+/**
+ *Implements hook_info().
+ */
+function spc_advanced_search_block_info() {    
+	$blocks['spc_advanced_search'] = array(
+	  'info' => t('SPC Advanced search'),
+	);
+	return $blocks;
+}
+
+/**
+ *Implements hook_block_view().
+ */
+function spc_advanced_search_block_view($delta = '') {
+
+	$module_path = drupal_get_path('module', 'spc_advanced_search');
+
+	switch ($delta) {
+		case 'spc_advanced_search':
+			//$block['subject'] = t('PDH Advanced Search');
+			$block['content'] = array(
+				'#markup' => '<div id="advanced-search-application"></div>',
+				'#attached' => array(
+					'js' => array(
+          		  		array('data' => 'window.advanced_search_conf_url="/'.$module_path.'"', 'type' => 'inline'),
+				  		$module_path . '/js/1.js',
+				  		$module_path . '/js/main.js',
+                  		$module_path . '/js/runtime.js',
+					),
+          		),
+			);
+			break;
+	}
+	return $block;
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function spc_advanced_search_token_info() {
+  return array(
+    'types' => array(
+      'advanced_search' => array(
+        'name' => t('Advanced Search'),
+        'description' => t('Embed advanced search on the page'),
+      )
+    ),
+    'tokens' => array(
+      'advanced_search' => array(
+        'pdh_advanced_search' => array(
+          'name' => t('Advanced Search'),
+          'description' => t('Embed advanced search on the page')
+        ),
+      )
+    )
+  );
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function spc_advanced_search_tokens($type, $tokens, array $data = array(), array $options = array()) {
+
+  if ($type !== 'advanced_search') return;
+  $replacements = array();
+
+  $block = block_load('spc_advanced_search', 'spc_advanced_search');
+  $block_element = _block_get_renderable_array(_block_render_blocks(array($block)));
+  $output = drupal_render($block_element);
+
+  foreach($tokens as $name => $origin){
+  	$replacements[$origin] = $output;
+  }
+
+  return $replacements;
+}
