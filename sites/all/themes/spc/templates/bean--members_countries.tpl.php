@@ -35,21 +35,21 @@
 				<div class="column-inner">
 					<div class="column-header">
 						<h2><?php print $title; ?></h2>
-						<p><?php print t('View data and knowledge by Pacific Island country'); ?></p>					
+						<p><?php print t('View data and knowledge by Pacific Island country'); ?></p>
 						<div class="dropdown">
-							<div 
-								class="btn btn-default dropdown-toggle" 
-								id="memberCountries" 
-								data-toggle="dropdown" 
-								aria-haspopup="true" 
+							<div
+								class="btn btn-default dropdown-toggle"
+								id="memberCountries"
+								data-toggle="dropdown"
+								aria-haspopup="true"
 								aria-expanded="true"
 							>
 								<?php print t('Member Countries'); ?>
 							</div>
-							<?php if (!empty($variables['field_members_countries'])) : ?>
+							<?php if (!empty($countries_list)) : ?>
 								<ul class="dropdown-menu">
-									<?php foreach (element_children($variables['field_members_countries']) as $children_key) : ?>
-										<li><?php print drupal_render($content['field_members_countries'][$children_key]); ?></li>
+									<?php foreach (element_children($countries_list) as $children_key) : ?>
+										<li><?php print drupal_render($countries_list[$children_key]); ?></li>
 									<?php endforeach; ?>
 								</ul>
 							<?php endif; ?>
@@ -71,7 +71,7 @@
 			</div>
 			<div class="right-column column">
 					<div class="column-inner">
-						<div class="map-container"></div>
+						<?php print drupal_render($members_countries_map); ?>
 					</div>
 			</div>
 		</div>

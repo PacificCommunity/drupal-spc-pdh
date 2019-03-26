@@ -1,5 +1,5 @@
 name = SPC Advanced search
 core = 7.x
-version = 7.x-1.0.0
+version = 7.x-1.01
 
-stylesheets[all][] = css/main.css
+dependencies[] = token

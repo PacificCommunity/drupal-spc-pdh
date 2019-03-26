@@ -18,31 +18,102 @@ function home_page_preprocess_entity(&$variables) {
 			if (isset($wrapper->field_show)) {
 				$variables['show'] = $wrapper->field_show->raw();
 			}
-			if (!empty($variables['content']['field_members_countries'])) {
-				foreach (element_children($variables['content']['field_members_countries']) as $index) {
-					$element = $variables['content']['field_members_countries'][$index]['#element'];
-					$data_title = $element['title'];
-					$data_request = '';
-					$data_code = '';
-					$link_url = $element['url'];
-					$params = drupal_parse_url($link_url);
-					$query = $params['query'];
-					if (!empty($query) && !empty($query['member_countries'])) {
-						$country_code = $query['member_countries'];
-						$data_code = $country_code;
-						$request_path = 'data/api/action/package_search';
-						$request_options = array('absolute' => TRUE, 'query' => array('fq' => 'member_countries:' . $country_code));
-						$data_request = url($request_path, $request_options);
-					}
-					$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-request'] = $data_request; 
-					$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-title'] = $data_title;
-					$variables['content']['field_members_countries'][$index]['#element']['attributes']['data-code'] = $data_code;
-				}
-			}
+      $variables['countries_list'] = array(
+        '#type' => 'container'
+      );
+      if (isset($wrapper->field_mcountries)) {
+        $countries = $wrapper->field_mcountries->value();
+        if (!empty($countries)) {
+          foreach ($countries as $country) {
+            if (empty($country)) {
+              continue;
+            }
+            $country_wrapper = entity_metadata_wrapper('field_collection_item', $country);
+            $link = $country_wrapper->field_mcountries_link->value();
+            if (empty($link)) {
+              continue;
+            }
+            $link_title = check_plain($link['title']);
+            $link_url = $link['display_url'];
+            $link_attributes = array();
+            $data_request = '';
+            $params = drupal_parse_url($link_url);
+            $query = $params['query'];
+            if (!empty($query) && !empty($query['member_countries'])) {
+              $country_code = $query['member_countries'];
+              $request_path = 'data/api/action/package_search';
+              $request_options = array('absolute' => TRUE, 'query' => array('fq' => 'member_countries:' . $country_code));
+              $data_request = url($request_path, $request_options);
+            }
+            $link_attributes['data-request'] = $data_request;
+            // Setting coordinates.
+            if (isset($country->field_mcountries_location) && !empty($country->field_mcountries_location)) {
+              $location = $country->field_mcountries_location[LANGUAGE_NONE][0];
+            	$link_attributes['data-lat'] = $location['lat'];
+            	$link_attributes['data-lon'] = $location['lon'];
+            }
+            // Setting zoom.
+            if (isset($country->field_mcountries_zoom)) {
+              $zoom = $country_wrapper->field_mcountries_zoom->value();
+              $link_attributes['data-zoom'] = $zoom;
+            }
+            $variables['countries_list'][] = array(
+              '#theme' => 'link',
+              '#text' => $link_title,
+              '#path' => $link_url,
+              '#options' => array('attributes' => $link_attributes, 'html' => TRUE)
+            );
+          }
+        }
+      }
+      $map_settings = array(
+        'id' => "members-countries-map",
+        'width' => "100%",
+        'height' => "100%",
+        'maptype' => "Map",
+        'controltype' => "Small",
+        'zoom' => 3,
+        'align' => 'left'
+      );
+      $variables['members_countries_map'] = array(
+        '#type' => 'gmap',
+        '#gmap_settings' => $map_settings,
+      );
+
 		}
 	}
 }
 
+/**
+ * Implementation of hook_field_collection_item_presave().
+ */
+function home_page_field_collection_item_presave($field_collection_item) {
+  if (module_exists('geocoder')) {
+    $wrapper = entity_metadata_wrapper('field_collection_item', $field_collection_item);
+    $geocode = $wrapper->field_mcountries_geocode->value();
+    if ($geocode) {
+      $wrapper->field_mcountries_geocode = 0;
+      $link = $wrapper->field_mcountries_link->value();
+      if (!empty($link)) {
+        $link_title = $link['title'];
+        // Assume as we have only country.
+        $address = $link_title;
+        $point = geocoder('google', $address);
+        if (!empty($point) && !empty($point->coords)) {
+          list($lat, $lon) = $point->coords;
+          $location = geofield_compute_values(
+            array(
+              'lat' => $lat,
+              'lon' => $lon
+            ),
+            GEOFIELD_INPUT_LAT_LON
+          );
+          $wrapper->field_mcountries_location = $location;
+        }
+      }
+    }
+  }
+}
 
 /**
  * Implements hook_theme().

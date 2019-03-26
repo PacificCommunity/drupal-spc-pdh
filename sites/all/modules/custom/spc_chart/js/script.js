@@ -40,7 +40,7 @@ jQuery(document).ready(function() {
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 
-  d3.json(modulePath+"/data/domains.json").then(function(data) {
+  d3.json(modulePath+"/data/domains.json", function(data) {
 
     var path = svg.selectAll("path.domain")
         .data(pie(data))
@@ -67,7 +67,7 @@ jQuery(document).ready(function() {
   });
 
 
-  d3.json(modulePath+"/data/goals.json").then(function(data) {
+  d3.json(modulePath+"/data/goals.json", function(data) {
 
     var select = d3.select("#sdgChartCountries");
 
@@ -89,9 +89,9 @@ jQuery(document).ready(function() {
 
     jQuery("#sdgChartCountries").on("select2:select", function(e) {
       selectValue = d3.select("select").property("value");
-      let i = 0;
-      data.forEach(element => {
-        element.barsData.forEach((item) => {
+      var i = 0;
+      data.forEach(function(element) {
+        element.barsData.forEach(function(item) {
           item["value"] = countriesData[selectValue][i];
           i += 1;
         })
@@ -155,8 +155,8 @@ jQuery(document).ready(function() {
 
     var barsNames = [];
     var i = 0;
-    data.forEach(element => {
-      element.barsData.forEach(item => {
+    data.forEach(function(element) {
+      element.barsData.forEach(function(item) {
         barsNames.push(item.name);
         item["color"] = element.color;
         item["value"] = countriesData["Pacific Regional excl Aust and NZ"][i];
