@@ -112,133 +112,136 @@
     }
   ];
 
-  Drupal.gmap.addHandler('gmap', function (elem) {
-      var obj = this;
-      obj.bind("init", function () {
-        var map = obj.map;
-        map.setOptions({
-          styles: map_styles,
-          disableDefaultUI: true,
-          zoomControl: false
-        });
-        var controlDiv, controlWrapper, zoomInButton, zoomOutButton;
-
-        controlDiv = document.createElement('div');
-        controlDiv.className = 'zoom__controls';
-
-        controlWrapper = document.createElement('div');
-        controlWrapper.className = 'controls__wrapper';
-
-        zoomInButton = document.createElement('div');
-        zoomInButton.className = 'controls--zoom-in';
-        zoomInButton.textContent = "+";
-
-        zoomOutButton = document.createElement('div');
-        zoomOutButton.className = 'controls--zoom-out';
-        zoomOutButton.textContent = "-";
-
-        controlDiv.appendChild(controlWrapper);
-        controlWrapper.appendChild(zoomInButton);
-        controlWrapper.appendChild(zoomOutButton);
-
-        google.maps.event.addDomListener(zoomInButton, 'click', function() {
-          map.setZoom(map.getZoom() + 1);
-        });
-
-        google.maps.event.addDomListener(zoomOutButton, 'click', function() {
-          map.setZoom(map.getZoom() - 1);
-        });
-
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
-      });
-  });
-
-  /**
-   * Element equalheights
-   *
-   */
-  Drupal.behaviors.memberCountriesBlock = {
-    attach: function (context, settings) {
-      var marker_icon = {
-        url: '/sites/all/themes/spc/img/markers/spc-marker.png',
-        size: new google.maps.Size(24, 33)
-      };
-      var gmarkers = [];
-      var throbberElement = '<div class="throbber"></div>';
-      var selectBlock = $('#member-countries-block .left-column');
-      var selectContainer = $('#member-countries-block #memberCountries');
-      var selectItems = $('#member-countries-block .dropdown-menu a');
-      var countElement = $('#member-countries-block .datasets-count .amount');
-      var linkElement = $('#member-countries-block .datasets-link a');
-      if (selectItems.length !== 0) {
-        selectItems.each(function(index, item) {
-          $(this).click(function(e) {
-            var request_url = $(this).data('request');
-            var title = $(this).text();
-            var href = $(this).attr('href');
-            selectContainer.text(title);
-            if (request_url.length !== 0) {
-              $.ajax({
-                  url: request_url,
-                  type: 'GET',
-                  timeout: 5000,
-                  beforeSend: function() {
-                    selectBlock.append(throbberElement)
-                    countElement.html(0);
-                  },
-                  success: function(data) {
-                    var count = data.result.count;
-                    linkElement.attr('href', href).show();
-                    countElement.html(count);
-                    selectBlock.find('.throbber').remove();
-                  },
-                  error: function(error) {
-                    selectBlock.find('.throbber').remove();
-                    console.log('Error:');
-                    console.log(error);
-                  }
-              });
-            }
-            else {
-              linkElement.hide();
-              countElement.html(0);
-            }
-            $('body').click();
-            // Updating map.
-            var map = Drupal.gmap.getMap('members-countries-map').map;
-            var zoom = 9;
-            var point_lat = $(this).data('lat');
-            var point_lon = $(this).data('lon');
-            var point_zoom = $(this).data('zoom');
-            var mapCenter = new google.maps.LatLng(point_lat, point_lon);
-            // Remove markers first.
-            for(i = 0; i < gmarkers.length; i++) {
-                gmarkers[i].setMap(null);
-            }
-            // Setting new marker.
-            if (point_lat && point_lon) {
-              map.setCenter(mapCenter);
-              var marker = new google.maps.Marker({
-                position: mapCenter,
-                map: map,
-                animation: google.maps.Animation.DROP,
-                icon: marker_icon,
-              });
-              gmarkers.push(marker);
-            }
-            // Setting zoom.
-            if (point_zoom) {
-              zoom = point_zoom;
-            }
-            map.setZoom(zoom);
-            e.stopPropagation();
-            e.preventDefault();
+  if (Drupal.gmap){
+    Drupal.gmap.addHandler('gmap', function (elem) {
+        var obj = this;
+        obj.bind("init", function () {
+          var map = obj.map;
+          map.setOptions({
+            styles: map_styles,
+            disableDefaultUI: true,
+            zoomControl: false
           });
-        });
-      }
+          var controlDiv, controlWrapper, zoomInButton, zoomOutButton;
 
-    }
-  };
+          controlDiv = document.createElement('div');
+          controlDiv.className = 'zoom__controls';
+
+          controlWrapper = document.createElement('div');
+          controlWrapper.className = 'controls__wrapper';
+
+          zoomInButton = document.createElement('div');
+          zoomInButton.className = 'controls--zoom-in';
+          zoomInButton.textContent = "+";
+
+          zoomOutButton = document.createElement('div');
+          zoomOutButton.className = 'controls--zoom-out';
+          zoomOutButton.textContent = "-";
+
+          controlDiv.appendChild(controlWrapper);
+          controlWrapper.appendChild(zoomInButton);
+          controlWrapper.appendChild(zoomOutButton);
+
+          google.maps.event.addDomListener(zoomInButton, 'click', function() {
+            map.setZoom(map.getZoom() + 1);
+          });
+
+          google.maps.event.addDomListener(zoomOutButton, 'click', function() {
+            map.setZoom(map.getZoom() - 1);
+          });
+
+          map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
+        });
+    });
+
+    /**
+     * Element equalheights
+     *
+     */
+    Drupal.behaviors.memberCountriesBlock = {
+      attach: function (context, settings) {
+        var marker_icon = {
+          url: '/sites/all/themes/spc/img/markers/spc-marker.png',
+          size: new google.maps.Size(24, 33)
+        };
+        var gmarkers = [];
+        var throbberElement = '<div class="throbber"></div>';
+        var selectBlock = $('#member-countries-block .left-column');
+        var selectContainer = $('#member-countries-block #memberCountries');
+        var selectItems = $('#member-countries-block .dropdown-menu a');
+        var countElement = $('#member-countries-block .datasets-count .amount');
+        var linkElement = $('#member-countries-block .datasets-link a');
+        if (selectItems.length !== 0) {
+          selectItems.each(function(index, item) {
+            $(this).click(function(e) {
+              var request_url = $(this).data('request');
+              var title = $(this).text();
+              var href = $(this).attr('href');
+              selectContainer.text(title);
+              if (request_url.length !== 0) {
+                $.ajax({
+                    url: request_url,
+                    type: 'GET',
+                    timeout: 5000,
+                    beforeSend: function() {
+                      selectBlock.append(throbberElement)
+                      countElement.html(0);
+                    },
+                    success: function(data) {
+                      var count = data.result.count;
+                      linkElement.attr('href', href).show();
+                      countElement.html(count);
+                      selectBlock.find('.throbber').remove();
+                    },
+                    error: function(error) {
+                      selectBlock.find('.throbber').remove();
+                      console.log('Error:');
+                      console.log(error);
+                    }
+                });
+              }
+              else {
+                linkElement.hide();
+                countElement.html(0);
+              }
+              $('body').click();
+              // Updating map.
+              var map = Drupal.gmap.getMap('members-countries-map').map;
+              var zoom = 9;
+              var point_lat = $(this).data('lat');
+              var point_lon = $(this).data('lon');
+              var point_zoom = $(this).data('zoom');
+              var mapCenter = new google.maps.LatLng(point_lat, point_lon);
+              // Remove markers first.
+              for(i = 0; i < gmarkers.length; i++) {
+                  gmarkers[i].setMap(null);
+              }
+              // Setting new marker.
+              if (point_lat && point_lon) {
+                map.setCenter(mapCenter);
+                var marker = new google.maps.Marker({
+                  position: mapCenter,
+                  map: map,
+                  animation: google.maps.Animation.DROP,
+                  icon: marker_icon,
+                });
+                gmarkers.push(marker);
+              }
+              // Setting zoom.
+              if (point_zoom) {
+                zoom = point_zoom;
+              }
+              map.setZoom(zoom);
+              e.stopPropagation();
+              e.preventDefault();
+            });
+          });
+        }
+
+      }
+    };
+
+  }
 
   /**
    * Element niceSelect
@@ -260,21 +263,23 @@
 
 $( document ).ready(function() {
 
-  var wrapper_loader ="<div class='loading-more-element'>"
-  var the_loader = "<div class='lds-spinner'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>";
-  var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
-  $('.view-data-insights-list-page').append(full_loading)
-  $(window).on('scroll', function (){
+  if($('.view-data-insights-list-page').length > 0) {
+    var wrapper_loader ="<div class='loading-more-element'>"
+    var the_loader = "<div class='lds-spinner'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>";
+    var full_loading = wrapper_loader + the_loader + "<div class='load-more'> Load more</div></div>"
+    $('.view-data-insights-list-page').append(full_loading)
     var loader_btn = $('.loading-more-element');
-    if (loader_btn.lenght) {
-      var loader_btn_position = loader_btn.offset().top + 100;
-      var scrolloffset = window.pageYOffset;
-      var scouterHeight = window.outerHeight;
-      if ((scrolloffset + scouterHeight) > loader_btn) {
-        $('.pager-show-more .pager-show-more-next a').click()
+    $(window).on('scroll', function (){
+      if (loader_btn.length) {
+        var loader_btn_position = loader_btn.offset().top + 100;
+        var scrolloffset = window.pageYOffset;
+        var scouterHeight = window.outerHeight;
+        if ((scrolloffset + scouterHeight) > loader_btn_position) {
+          $('.pager-show-more .pager-show-more-next a').click();
+        }
       }
-    }
-  })
+    })
+  }
 
   $('.list-tweets').slick({
     // dots: true,
