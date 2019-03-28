@@ -7,8 +7,8 @@
 
 define('FONTAWESOME_ICONPICKER_LIBRARY', 'fontawesome-iconpicker');
 define('FONTAWESOME_ICONPICKER_NAME', 'Font Awesome Iconpicker');
-define('FONTAWESOME_ICONPICKER_URL', 'http://mjolnic.com/fontawesome-iconpicker/');
-define('FONTAWESOME_ICONPICKER_DOWNLOAD_URL', 'https://github.com/mjolnic/fontawesome-iconpicker/archive/1.0.0.zip');
+define('FONTAWESOME_ICONPICKER_URL', 'https://github.com/farbelous/fontawesome-iconpicker');
+define('FONTAWESOME_ICONPICKER_DOWNLOAD_URL', 'https://github.com/farbelous/fontawesome-iconpicker/archive/1.4.1.zip');
 
 define('FONTAWESOME_ICONPICKER_ICON_PREFIX', 'fa-');
 define('FONTAWESOME_ICONPICKER_JQUERY_MIN_VER', '1.10');
@@ -23,7 +23,7 @@ function fontawesome_iconpicker_libraries_info() {
     'download url' => FONTAWESOME_ICONPICKER_DOWNLOAD_URL,
     'version callback' => 'fontawesome_iconpicker_get_version',
     'version arguments' => array(
-      'file' => 'bower.json',
+      'file' => 'package.json',
     ),
     'files' => array(
       'css' => array(
@@ -34,7 +34,7 @@ function fontawesome_iconpicker_libraries_info() {
       ),
     ),
     'dependencies' => array(
-      'fontawesome',
+      'fontawesome-iconpicker',
     ),
     'variants' => array(
       'minified' => array(
