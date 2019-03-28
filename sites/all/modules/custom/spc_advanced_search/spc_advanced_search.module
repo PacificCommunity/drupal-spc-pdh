@@ -24,12 +24,13 @@ function spc_advanced_search_block_view($delta = '') {
 				'#markup' => '<div id="advanced-search-application"></div>',
 				'#attached' => array(
 					'js' => array(
-          		  		array('data' => 'window.advanced_search_conf_url="/'.$module_path.'"', 'type' => 'inline'),
+          		array('data' => 'window.advanced_search_conf_url="/'.$module_path.'"', 'type' => 'inline'),
 				  		$module_path . '/js/1.js',
 				  		$module_path . '/js/main.js',
-                  		$module_path . '/js/runtime.js',
+              $module_path . '/js/runtime.js',
 					),
-          		),
+          'css' => array($module_path . '/css/main.css'),
+        ),
 			);
 			break;
 	}

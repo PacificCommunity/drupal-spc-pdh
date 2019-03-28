@@ -3,5 +3,3 @@ core = 7.x
 version = 7.x-1.01
 
 dependencies[] = token
-
-stylesheets[all][] = css/main.css
