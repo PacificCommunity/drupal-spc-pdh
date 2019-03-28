@@ -34,7 +34,7 @@ function fontawesome_iconpicker_libraries_info() {
       ),
     ),
     'dependencies' => array(
-      'fontawesome-iconpicker',
+      //'fontawesome-iconpicker',
     ),
     'variants' => array(
       'minified' => array(
