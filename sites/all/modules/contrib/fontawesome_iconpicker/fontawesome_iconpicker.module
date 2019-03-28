@@ -33,6 +33,9 @@ function fontawesome_iconpicker_libraries_info() {
         'dist/js/fontawesome-iconpicker.js',
       ),
     ),
+    'dependencies' => array(
+      'fontawesome',
+    ),
     'variants' => array(
       'minified' => array(
         'files' => array(
