@@ -1,11 +1,11 @@
-{	
-	"portals": [
+{
+    "portals": [
         {
             "url": "https://pacificdata.org/data",
             "endpoint": "/api/action/package_search",
             "portal": "ckan"
         },
-	{
+        {
             "url": "https://pacificdata.org",
             "endpoint": "/api/action/articles_list",
             "portal": "drupal"
@@ -43,12 +43,12 @@
             "region": "Region",
             "other": "Other"
         },
-		"type": {
+        "type": {
             "publications": "Publications",
             "geographic_data": "Geographic data",
             "dataset": "Dataset",
-            "biodiversity_data": "Biodiversity data"
+            "biodiversity_data": "Biodiversity data",
+            "article": "Stories"
         }
     }
 }
-

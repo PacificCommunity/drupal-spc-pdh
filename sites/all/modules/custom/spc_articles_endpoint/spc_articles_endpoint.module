@@ -49,7 +49,7 @@ function spc_articles_endpoint_list_callback() {
 				}
 			};
 			$query->fieldCondition('field_thematic_group', 'target_id', $topic_id, '=');
-		};
+		}
 	};
 
 	if(!empty($params) && !empty($params['disabled']) && $params['disabled'] == 'true') {
@@ -65,14 +65,26 @@ function spc_articles_endpoint_list_callback() {
 
 	$updated_nodes = array();
 	$topics_ids = array();
+
 	foreach ($nodes as $key => $value) {
 		if (!empty($value->field_thematic_group)) {
 			array_push($topics_ids, $value->field_thematic_group['und']['0']['target_id']);
 		}
 	};
 	$topics = node_load_multiple(array_unique($topics_ids));
-	$topic_facet = array('topic'=> array('items'=> []));
+	$facets = array(
+		'topic'=> array('items'=> []),
+		'type'=> array('items'=> [])
+	);
 	$topic_array = [];
+
+	$type_arr = array(
+		'count'=> count($nodes),
+		'display_name'=> 'article',
+		'name'=> 'article'
+	);
+	array_push($facets['type']['items'], $type_arr);
+
 	foreach ($nodes as $key => $value) {
 		if(!empty($value->field_thematic_group)) {
 			$topic_id = $value->field_thematic_group['und']['0']['target_id'];
@@ -99,7 +111,7 @@ function spc_articles_endpoint_list_callback() {
 				'display_name'=> $key,
 				'name'=> $key
 			);
-			array_push($topic_facet['topic']['items'], $arr);
+			array_push($facets['topic']['items'], $arr);
 		}
 	}
 	$count = count($updated_nodes);
@@ -107,7 +119,7 @@ function spc_articles_endpoint_list_callback() {
 		'result' => array(
 			'count'=> $count,
 			'results'=> array_slice($updated_nodes, 0),
-			'search_facets'=> $topic_facet)
+			'search_facets'=> $facets)
 	);
 	return drupal_json_output($result);
 }
