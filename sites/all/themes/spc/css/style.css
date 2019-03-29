@@ -10321,6 +10321,9 @@ button.header-menu-btn:focus {
   margin-bottom: 60px;
   padding: 15px 50px;
 }
+.node-type-article .region-inner {
+  position: relative;
+}
 .node-type-dashboards {
   font-family: "Montserrat";
 }
