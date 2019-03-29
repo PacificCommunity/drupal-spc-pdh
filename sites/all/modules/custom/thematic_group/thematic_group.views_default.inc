@@ -291,7 +291,7 @@ function thematic_group_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col eq-col col-xs-12 col-sm-6 col-md-4';
+  $handler->display->display_options['style_options']['row_class'] = 'story-item';
   $handler->display->display_options['row_plugin'] = 'ds';
   $handler->display->display_options['row_options']['view_mode'] = 'list';
   $handler->display->display_options['row_options']['load_comments'] = 0;

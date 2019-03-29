@@ -549,6 +549,29 @@ function thematic_group_default_page_manager_pages() {
   $display->content['new-b29d238a-a968-4340-85c0-7e616a431dad'] = $pane;
   $display->panels['middle'][0] = 'new-b29d238a-a968-4340-85c0-7e616a431dad';
   $pane = new stdClass();
+  $pane->pid = 'new-e07a501b-bb78-4f27-bbe3-96c005059a41';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'bean-all-stories';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'e07a501b-bb78-4f27-bbe3-96c005059a41';
+  $display->content['new-e07a501b-bb78-4f27-bbe3-96c005059a41'] = $pane;
+  $display->panels['middle'][1] = 'new-e07a501b-bb78-4f27-bbe3-96c005059a41';
+  $pane = new stdClass();
   $pane->pid = 'new-4f5428cb-7bac-499b-b0d7-84f3984f1597';
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
@@ -577,11 +600,11 @@ function thematic_group_default_page_manager_pages() {
     'css_class' => 'container articles-list',
   );
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '4f5428cb-7bac-499b-b0d7-84f3984f1597';
   $display->content['new-4f5428cb-7bac-499b-b0d7-84f3984f1597'] = $pane;
-  $display->panels['middle'][1] = 'new-4f5428cb-7bac-499b-b0d7-84f3984f1597';
+  $display->panels['middle'][2] = 'new-4f5428cb-7bac-499b-b0d7-84f3984f1597';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-4f5428cb-7bac-499b-b0d7-84f3984f1597';
   $handler->conf['display'] = $display;
