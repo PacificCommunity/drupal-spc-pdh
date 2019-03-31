@@ -186,3 +186,32 @@ function spc_theme($existing, $type, $theme, $path)
   }
   return [];
 }
+
+function spc_preprocess_entity(&$variables) {
+  if (isset($variables['entity_type'])) {
+    $entity_type = $variables['entity_type'];
+    if (in_array($entity_type, array('bean'))) {
+      $entity = $variables['bean'];
+      $path = current_path();
+      $patterns = array(
+        'search/articles',
+        'search/arcticles/*',
+        'search/articles/*/*'
+      );
+      if (drupal_match_path($path, implode("\n", $patterns))) {
+        $term = arg(2);
+        $thematic_area = arg(3);
+        $search_title = '<strong>' . t('Search articles') . '</strong>';
+        if (!empty($term)) {
+          $search_title .= ' by ' . check_plain($term);
+        }
+        if (!empty($thematic_area)) {
+          $search_title .= ' & ' . check_plain($thematic_area);
+        }
+        if (isset($variables['content']['field_title_bg'][0]['#markup'])) {
+          $variables['content']['field_title_bg'][0]['#markup'] = '<h1>' . $search_title . '</h1>';
+        }
+      }
+    }
+  }
+}
