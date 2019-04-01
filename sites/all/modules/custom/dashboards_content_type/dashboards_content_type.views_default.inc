@@ -80,25 +80,25 @@ function dashboards_content_type_views_default_views() {
   /* Display: Goals */
   $handler = $view->new_display('panel_pane', 'Goals', 'panel_pane_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Icon/Logo */
-  $handler->display->display_options['fields']['field_dsp_icon']['id'] = 'field_dsp_icon';
-  $handler->display->display_options['fields']['field_dsp_icon']['table'] = 'field_data_field_dsp_icon';
-  $handler->display->display_options['fields']['field_dsp_icon']['field'] = 'field_dsp_icon';
-  $handler->display->display_options['fields']['field_dsp_icon']['relationship'] = 'field_indicators_target_id';
-  $handler->display->display_options['fields']['field_dsp_icon']['label'] = '';
-  $handler->display->display_options['fields']['field_dsp_icon']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_dsp_icon']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_dsp_icon']['settings'] = array(
+  /* Field: Content: Small icon */
+  $handler->display->display_options['fields']['field_small_icon']['id'] = 'field_small_icon';
+  $handler->display->display_options['fields']['field_small_icon']['table'] = 'field_data_field_small_icon';
+  $handler->display->display_options['fields']['field_small_icon']['field'] = 'field_small_icon';
+  $handler->display->display_options['fields']['field_small_icon']['relationship'] = 'field_indicators_target_id';
+  $handler->display->display_options['fields']['field_small_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_small_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_small_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_small_icon']['settings'] = array(
     'image_style' => 'dashboard_goal__140x140',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_indicators_target_id';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_indicators_target_id';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;

@@ -90,25 +90,27 @@ function home_page_preprocess_entity(&$variables) {
 function home_page_field_collection_item_presave($field_collection_item) {
   if (module_exists('geocoder')) {
     $wrapper = entity_metadata_wrapper('field_collection_item', $field_collection_item);
-    $geocode = $wrapper->field_mcountries_geocode->value();
-    if ($geocode) {
-      $wrapper->field_mcountries_geocode = 0;
-      $link = $wrapper->field_mcountries_link->value();
-      if (!empty($link)) {
-        $link_title = $link['title'];
-        // Assume as we have only country.
-        $address = $link_title;
-        $point = geocoder('google', $address);
-        if (!empty($point) && !empty($point->coords)) {
-          list($lat, $lon) = $point->coords;
-          $location = geofield_compute_values(
-            array(
-              'lat' => $lat,
-              'lon' => $lon
-            ),
-            GEOFIELD_INPUT_LAT_LON
-          );
-          $wrapper->field_mcountries_location = $location;
+    if (!empty($wrapper->field_mcountries_geocode)) {
+      $geocode = $wrapper->field_mcountries_geocode->value();
+      if ($geocode) {
+        $wrapper->field_mcountries_geocode = 0;
+        $link = $wrapper->field_mcountries_link->value();
+        if (!empty($link)) {
+          $link_title = $link['title'];
+          // Assume as we have only country.
+          $address = $link_title;
+          $point = geocoder('google', $address);
+          if (!empty($point) && !empty($point->coords)) {
+            list($lat, $lon) = $point->coords;
+            $location = geofield_compute_values(
+              array(
+                'lat' => $lat,
+                'lon' => $lon
+              ),
+              GEOFIELD_INPUT_LAT_LON
+            );
+            $wrapper->field_mcountries_location = $location;
+          }
         }
       }
     }

@@ -9,8 +9,6 @@
 ?>
 <button type="button" id="goals-navigation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <img class="goals-logo" src="<?php !empty($icon_uri) ? print(file_create_url($icon_uri)) : '/sites/all/themes/spc/img/spc/SDG_logo.png'; ?>">
-    <i class="fa fa-caret-down" aria-hidden="true"></i>
-    <i class="fa fa-caret-up" aria-hidden="true"></i>
 </button>
 <ul class="dropdown-menu" aria-labelledby="goals-navigation">
   <?php
