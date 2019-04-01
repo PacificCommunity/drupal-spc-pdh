@@ -10255,6 +10255,14 @@ button.header-menu-btn:focus {
   color: #fff;
   border-radius: 5px;
 }
+.articles-list .view-empty {
+  padding: 20px 0 100px;
+}
+.articles-list .view-empty p {
+  font-size: 24px;
+  color: #031F79;
+  text-align: center;
+}
 .article-related-ds h2.pane-title {
   font-size: 18px;
   font-weight: 600;
