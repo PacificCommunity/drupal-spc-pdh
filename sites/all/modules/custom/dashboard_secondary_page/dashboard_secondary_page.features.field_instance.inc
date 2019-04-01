@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboard_secondary_page.features.field_instance.inc
@@ -220,7 +221,7 @@ function dashboard_secondary_page_field_default_field_instances() {
       'module' => 'jquery_colorpicker',
       'settings' => array(),
       'type' => 'jquery_colorpicker',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -330,6 +331,7 @@ function dashboard_secondary_page_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
+          'translate' => 'Translate',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -355,7 +357,54 @@ function dashboard_secondary_page_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-dsp-field_small_icon'.
+  $field_instances['node-dsp-field_small_icon'] = array(
+    'bundle' => 'dsp',
+    'deleted' => 0,
+    'description' => 'This icon will display on the tile on the Dashboard landing page',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_small_icon',
+    'label' => 'Small icon',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 5,
     ),
   );
 
@@ -366,7 +415,9 @@ function dashboard_secondary_page_field_default_field_instances() {
   t('Datasets');
   t('Definition');
   t('Icon/Logo');
+  t('Small icon');
   t('Targets');
+  t('This icon will display on the tile on the Dashboard landing page');
   t('Title');
 
   return $field_instances;
