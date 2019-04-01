@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboard_secondary_page.features.user_permission.inc
