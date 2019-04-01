@@ -198,15 +198,26 @@ function spc_preprocess_entity(&$variables) {
         'search/arcticles/*',
         'search/articles/*/*'
       );
+      $search_title = '<strong>' . t('Search stories') . '</strong>';
       if (drupal_match_path($path, implode("\n", $patterns))) {
         $term = arg(2);
         $thematic_area = arg(3);
-        $search_title = '<strong>' . t('Search articles') . '</strong>';
         if (!empty($term)) {
           $search_title .= ' by ' . check_plain($term);
         }
         if (!empty($thematic_area)) {
           $search_title .= ' & ' . check_plain($thematic_area);
+        }
+        if (isset($variables['content']['field_title_bg'][0]['#markup'])) {
+          $variables['content']['field_title_bg'][0]['#markup'] = '<h1>' . $search_title . '</h1>';
+        }
+      }
+
+      if (drupal_match_path($path, 'stories/by-topic/*')) {
+        $thematic_area_nid = arg(2);
+        if (!empty($thematic_area_nid)) {
+          $thematic_area_node = node_load(arg(2));
+          $search_title .= ' by ' . check_plain($thematic_area_node->title);
         }
         if (isset($variables['content']['field_title_bg'][0]['#markup'])) {
           $variables['content']['field_title_bg'][0]['#markup'] = '<h1>' . $search_title . '</h1>';
