@@ -85,19 +85,16 @@
     }
 }
 
-.node-type-thematic-group {
-    #node_content {
-        line-height: 2;
-        padding-top: 90px;
-        padding-bottom: 70px;
-    }
-    .pane-browse-by-data-category {
+.not-front {
+    .pane-browse-by-data-category,
+    .pane-dashboard-for-sdp {
         position: absolute;
         top: 90px;
         left: 0;
         font-size: 13px;
         z-index: 1;
         .dropdown {
+            width: 100%;
             button {
                 position: relative;
                 &:after {
@@ -127,6 +124,14 @@
             min-width: 210px;
             border-top-left-radius: 3px;
         }
+    }
+}
+
+.node-type-thematic-group {
+    #node_content {
+        line-height: 2;
+        padding-top: 90px;
+        padding-bottom: 70px;
     }
 }
 #thematic_dropdown {

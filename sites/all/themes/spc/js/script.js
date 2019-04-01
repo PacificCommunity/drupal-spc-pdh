@@ -19,6 +19,13 @@
     $('.basic-page .banner-with-title h1').html(titleArray.join(' '));
   }
 
+  if ($('.overridden-title .pane-title').length > 0) {
+    let titleArray = $('.overridden-title .pane-title').text().split(' ');
+    titleArray[0] = '<strong>' + titleArray[0] + '</strong>';
+    titleArray[1] = '<strong>' + titleArray[1] + '</strong>';
+    $('.overridden-title .pane-title').html(titleArray.join(' '));
+  }
+
   /**
    * Element equalheights
    *
