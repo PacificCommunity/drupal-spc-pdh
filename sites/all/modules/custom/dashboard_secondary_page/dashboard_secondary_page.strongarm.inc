@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dashboard_secondary_page.strongarm.inc
@@ -163,6 +164,15 @@ function dashboard_secondary_page_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'basic_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'dashboard_highlight' => array(
+        'custom_settings' => FALSE,
+      ),
+      'topic_preview' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -171,6 +181,9 @@ function dashboard_secondary_page_strongarm() {
         ),
         'path' => array(
           'weight' => '1',
+        ),
+        'redirect' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(),
