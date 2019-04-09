@@ -84,7 +84,8 @@ function _ckan_tweaks_get_thematic_area_from_node($node) {
 }
 
 function _ckan_tweaks_search_page_by_topic($topic, $dataset_type=CKAN_SEARCH_CRIT_UNSPECIFIED_DATASET_TYPE) {
-  return _ckan_tweaks_get_ckan_url() . '/dataset?topic=' . urlencode($topic) . '&type=' . $dataset_type;
+  $type_query = $dataset_type ? 'type=' . urlencode($dataset_type) : 'q=!dataset_type:publications';
+  return _ckan_tweaks_get_ckan_url() . '/dataset?topic=' . urlencode($topic) . '&' . $type_query;
 }
 
 function _ckan_tweaks_search_page($dataset_type=null) {
