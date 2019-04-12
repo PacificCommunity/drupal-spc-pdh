@@ -3,7 +3,7 @@
 	<div class="container ckan-dataset-tabs-content">
 		<div class="ckan-dataset-tabs-heading">
 			<h2>Popular Datasets</h2>
-			<div class="ckan-dataset-tabs-intro">Check out our dashboard on the following</div>
+			<div class="ckan-dataset-tabs-intro"><?php print t('Discover our popular datasets'); ?></div>
 		</div>
 		<div class="ckan-dataset-tabs-items" id="pills-tabContent">
 			<div class="ckan-dataset-tabs-item">
