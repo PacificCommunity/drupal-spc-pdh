@@ -3,7 +3,7 @@
 	<div class="container ckan-dataset-tabs-content">
 		<div class="ckan-dataset-tabs-heading">
 			<h2>Datasets</h2>
-			<div class="ckan-dataset-tabs-intro">Check out our dashboard on the following</div>
+			<div class="ckan-dataset-tabs-intro"><?php print t('Discover our latest and popular datasets'); ?></div>
 			<div class="ckan-dataset-tabs-section">
 				<ul class="nav">
 					<li class="ckan-dataset-tabs-tab nav-item active">

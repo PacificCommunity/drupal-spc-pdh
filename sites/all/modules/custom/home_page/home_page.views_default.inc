@@ -253,7 +253,7 @@ function home_page_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Check out our dashboard on the following';
+  $handler->display->display_options['title'] = 'Explore our data stories and insights';
   $handler->display->display_options['css_class'] = 'data-insights-promoted-group';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
