@@ -35,16 +35,16 @@
 					<div class="homepage-stat-count"><?= views_embed_view('articles_by_topic','block_1'); ?></div>
 					<div class="homepage-stat-type"><?php print t('Stories'); ?></div>
 				</div>
-			</a>			
+			</a>
 		</div>
 		<div class="homepage-stat-item">
-			<a href="<?= _ckan_tweaks_search_page(CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE) ?>">
+			<a href="<?= _ckan_tweaks_search_page('publications') ?>">
 				<img class="homepage-stat-icon" src="/sites/all/themes/spc/img/spc_new/publications_icon.png" alt="">
 				<div class="homepage-stat-info">
 					<div class="homepage-stat-count"><?= $publications_count ?></div>
 					<div class="homepage-stat-type"><?php print t('Publications'); ?></div>
 				</div>
-			</a>			
+			</a>
 		</div>
 	</div>
 </div>

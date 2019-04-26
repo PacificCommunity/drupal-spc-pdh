@@ -105,7 +105,7 @@
         </div>
         <div class="link-block">
           <div class="icon-wrapper publication-icon"></div>
-          <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id, CKAN_SEARCH_CRIT_PUBLICATION_DATASET_TYPE) ?>">
+          <a href="<?= _ckan_tweaks_search_page_by_topic($thematic_id, 'publications') ?>">
             <?php print t('Publications'); ?>
             <div class="count"><?= $publications_count ?></div>
           </a>
