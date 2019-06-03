@@ -17,7 +17,7 @@ class DotStatRenderer {
   }
 
   private function getData() {
-    [$q, $parser] = $this->fieldValue(
+    list($q, $parser) = $this->fieldValue(
       'field_dotstat_chart_query', 'field_dotstat_chart_parser'
     );
 
@@ -43,7 +43,7 @@ class DotStatRenderer {
     drupal_add_css($path . '/css/style.css');
 
     $data = $this->getData();
-    [$parser, $conf, $link] = $this->fieldValue(
+    list($parser, $conf, $link) = $this->fieldValue(
       'field_dotstat_chart_parser',
       'field_dotstat_chart_conf',
       'field_dotstat_chart_link'
