@@ -36,7 +36,7 @@ function dotstat_charts_tokens($type, $tokens, array $data = array(), array $opt
     foreach ($tokens as $name => $original) {
       switch (true) {
         case strpos($name, 'chart') === 0:
-          [, $chart] = explode(':', $name) + [1 => null];
+          list(, $chart) = explode(':', $name) + [1 => null];
           if (!$chart) {
             break;
           }
