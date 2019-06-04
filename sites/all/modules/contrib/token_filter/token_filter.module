@@ -24,7 +24,7 @@ function _token_filter_filter_tokens($text, $filter, $format, $langcode, $cache,
   $options = array();
 
   // Attempt to fetch the entity that is being viewed via a backtrace to the
-  // field_attach_view($entity_type, $entity) function and parameters §if found.
+  // field_attach_view($entity_type, $entity) function and parameters Â§if found.
   $backtrace = debug_backtrace();
   foreach ($backtrace as $caller) {
     if ($caller['function'] == 'field_attach_view') {
@@ -33,7 +33,7 @@ function _token_filter_filter_tokens($text, $filter, $format, $langcode, $cache,
       $token_type = token_get_entity_mapping('entity', $entity_type);
       $data[$token_type] = $entity;
       // Use the proper language code that field_attach_view was called with.
-      if ($langcode = $caller['args'][3]) {
+      if ($langcode = $caller['args'][3] ?? null) {
         $language_list = language_list();
         if (!empty($language_list[$langcode])) {
           $options['language'] = $language_list[$langcode];
