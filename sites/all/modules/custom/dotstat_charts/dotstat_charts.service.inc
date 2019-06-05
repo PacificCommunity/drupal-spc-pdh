@@ -51,7 +51,7 @@ class DotStatRenderer {
     $dtitle = $this->bean->title;
 
     // generate unique DIV ID attribute
-    $did = 'dotstat-'.md5($dtitle . rand());
+    $did = 'dotstat-'.md5($dtitle);
 
     // JS variable unique name (DotStatChart object)
     $xid = str_replace('-','_', $did);
