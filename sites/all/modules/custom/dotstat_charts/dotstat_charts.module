@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Code for the DotStat Charts feature.
+ */
+
+include_once 'dotstat_charts.service.inc';
+include_once 'dotstat_charts.features.inc';
+
+ /**
+ * Implements hook_token_info().
+ */
+function dotstat_charts_token_info() {
+
+  // Add tokens.
+  $dotstat['chart'] = array(
+    'name' => t('.Stat Chart'),
+    'description' => t('Insert .Stat chart'),
+  );
+
+  return array(
+    'tokens' => array(
+      'dotstat' => $dotstat,
+    ),
+  );
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function dotstat_charts_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+
+ if ($type == 'dotstat') {
+    foreach ($tokens as $name => $original) {
+      switch (true) {
+        case strpos($name, 'chart') === 0:
+          list(, $chart) = explode(':', $name) + [1 => null];
+          if (!$chart) {
+            break;
+          }
+          $renderer = new DotStatRenderer($chart);
+          $replacements[$original] = $renderer->render();
+          break;
+      }
+    }
+  }
+
+  // Return the replacements.
+  return $replacements;
+}
