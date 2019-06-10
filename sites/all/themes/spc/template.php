@@ -226,3 +226,52 @@ function spc_preprocess_entity(&$variables) {
     }
   }
 }
+
+/**
+ * Implements template_preprocess_views_view_fields
+ * Defines header and content for accordion items
+ */
+function spc_preprocess_views_view_fields(&$vars) {
+  if ($vars['view']->name == 'master_results_framework') {
+    $fields_to_print = 5;
+    $vars['row_header'] = '';
+    $vars['row_content'] = '';
+    $vars['row_label'] = '';
+    foreach ($vars['fields'] as $field) {
+      // Select 5 first fields for row header according to design.
+      if ($fields_to_print > 0) {
+        $vars['row_label'] .= $field->label_html;
+        $vars['row_header'] .= $field->content;
+      }
+      else {
+        $vars['row_content'] .= '<div class="field">' . $field->label_html;
+        $vars['row_content'] .= $field->content . '</div>';
+      }
+      $fields_to_print--;
+    }
+    $vars['row_header'] .= '<div class="field-content arrow"><span class="icon"></span></div>';
+    $vars['row_label'] .= '<span class="header-empty"></span>';
+  }
+}
+
+/**
+ * Implements hook_form_alter
+ * Sets labels instead default values for Master results filters.
+ */
+function spc_form_alter(&$form, &$form_state, $form_id) {
+  // Define all needed forms.
+  $ids = [
+    'views-exposed-form-master-results-framework-accordion-block',
+    'views-exposed-form-master-results-framework-page',
+  ];
+  if (in_array($form['#id'], $ids)) {
+    foreach ($form["#info"] as $key => $item) {
+      $form[$item['value']]['#options']['All'] = $form["#info"][$key]["label"];
+      $form["#info"][$key]["label"] = '';
+    }
+  }
+}
+
+
+$block = module_invoke('views', 'block_view', 'sidebar-article_ad');
+print render($block);
