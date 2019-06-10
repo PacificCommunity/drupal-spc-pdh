@@ -260,6 +260,22 @@
     }
   };
 
+  /**
+   * Master results accordion
+   */
+  Drupal.behaviors.masterResultsAccordion = {
+    attach: function (context) {
+      $( ".master-results-accordion" ).accordion({
+        header: "div.master-results-accordion-header:not(.ignore)",
+        collapsible : true,
+        active : 'none',
+        animate: false,
+      });
+      // Lets define exposed forms for styled selectboxes
+      $( '.master-results-accordion-view select' ).chosen();
+    }
+  };
+
   var dataset_titles = $('.dataset-preview .dataset-title a');
   dataset_titles.each((ind, tiitle) => {
     $(tiitle).dotdotdot({
