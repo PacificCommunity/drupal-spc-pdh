@@ -255,6 +255,7 @@ function master_results_content_type_importer_view_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['label'] = 'List intro';
+  $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['header']['area_text_custom']['content'] = '<div class="upper-text">
 This database contains the results achieved by SPC with our 26 Member countries and territories, and development partners in 2018. Our performance is described against the nine development objectives and five organisational objectives set out in the Pacific Community Strategic Plan 2016-2020. These form part of our results report, and are based on a collaborative, organisation-wide process at SPC. <br><br>
 For more information, see the 2018 results report:
