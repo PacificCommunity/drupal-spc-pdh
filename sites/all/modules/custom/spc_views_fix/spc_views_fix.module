@@ -38,7 +38,7 @@ function spc_views_fix_form_feeds_import_form_alter(&$form, &$form_state, $form_
     $form['feeds']['year_link'] = [
       '#markup' => l(
         t('Change default year'),
-        '/admin/structure/feeds/csv_to_master_results/tamper/csv_to_master_results-14-default_value/edit',
+        '/admin/structure/feeds/csv_to_master_results/tamper/csv_to_master_results-9-default_value/edit',
         ['attributes' => ['target' => '_blank']]
       ),
       '#weight' => '-19',

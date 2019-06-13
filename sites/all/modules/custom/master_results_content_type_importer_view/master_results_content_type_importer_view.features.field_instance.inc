@@ -35,7 +35,7 @@ function master_results_content_type_importer_view_field_default_field_instances
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_master_result_country',
-    'label' => 'Which PICTs benefited from the result? (region\\country)',
+    'label' => 'PICTs benefitting from the result',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -193,7 +193,7 @@ function master_results_content_type_importer_view_field_default_field_instances
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_master_results_contribut',
-    'label' => 'What was SPC\'s contribution to the result?',
+    'label' => 'What was SPC\'s contribution to the result (End 2018)?',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -232,14 +232,16 @@ function master_results_content_type_importer_view_field_default_field_instances
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_master_results_dev_obj',
-    'label' => 'Development objective',
-    'required' => FALSE,
+    'label' => 'SPC Development Objective',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
@@ -272,7 +274,7 @@ function master_results_content_type_importer_view_field_default_field_instances
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_master_results_division',
-    'label' => 'Division',
+    'label' => 'SPC Division',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -310,7 +312,7 @@ function master_results_content_type_importer_view_field_default_field_instances
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_master_results_kpi',
-    'label' => 'Divisional Business Plan Key Performance Information',
+    'label' => 'Result Information',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -361,6 +363,89 @@ function master_results_content_type_importer_view_field_default_field_instances
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-master_results-field_master_results_link'.
+  $field_instances['node-master_results-field_master_results_link'] = array(
+    'bundle' => 'master_results',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_master_results_link',
+    'label' => 'Link to results report chapter (English)',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-master_results-field_master_results_link_fr'.
+  $field_instances['node-master_results-field_master_results_link_fr'] = array(
+    'bundle' => 'master_results',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 29,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_master_results_link_fr',
+    'label' => 'Link to results report chapter (French)',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 20,
     ),
   );
 
@@ -430,7 +515,7 @@ function master_results_content_type_importer_view_field_default_field_instances
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_master_results_plan_area',
-    'label' => 'Divisional business plan Result area',
+    'label' => 'Divisional Business Plan Result Area (KRA)',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -492,7 +577,7 @@ function master_results_content_type_importer_view_field_default_field_instances
   // Exported field_instance: 'node-master_results-field_master_results_sdg'.
   $field_instances['node-master_results-field_master_results_sdg'] = array(
     'bundle' => 'master_results',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -513,13 +598,13 @@ function master_results_content_type_importer_view_field_default_field_instances
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_master_results_sdg',
-    'label' => 'Which Sustainable Development Goals (SDG) does this result most contribute to?',
+    'label' => 'Contribution to SDGs',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
+      'active' => 0,
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
@@ -610,19 +695,21 @@ function master_results_content_type_importer_view_field_default_field_instances
   // Translatables
   // Included for use with string extractors like potx.
   t('Complete or in progress? Does the result relate to a body of work that is completed or in progress? ');
-  t('Development objective');
-  t('Division');
-  t('Divisional Business Plan Key Performance Information');
-  t('Divisional business plan Result area');
+  t('Contribution to SDGs');
+  t('Divisional Business Plan Result Area (KRA)');
   t('Divisional business plan objective');
   t('KPI type');
+  t('Link to results report chapter (English)');
+  t('Link to results report chapter (French)');
+  t('PICTs benefitting from the result');
+  t('Result Information');
   t('Result achieved or not achieved');
+  t('SPC Development Objective');
+  t('SPC Division');
   t('Strategy / Grouping ');
   t('Sub-result area');
   t('Type of Result');
-  t('What was SPC\'s contribution to the result?');
-  t('Which PICTs benefited from the result? (region\\country)');
-  t('Which Sustainable Development Goals (SDG) does this result most contribute to?');
+  t('What was SPC\'s contribution to the result (End 2018)?');
   t('Year');
 
   return $field_instances;

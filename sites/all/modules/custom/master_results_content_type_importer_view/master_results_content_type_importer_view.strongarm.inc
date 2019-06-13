@@ -229,5 +229,12 @@ function master_results_content_type_importer_view_strongarm() {
   $strongarm->value = 'Save and add fields';
   $export['save_continue_master_results'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'uuid_features_entity_bean_banner_with_title';
+  $strongarm->value = 'banner_with_title';
+  $export['uuid_features_entity_bean_banner_with_title'] = $strongarm;
+
   return $export;
 }

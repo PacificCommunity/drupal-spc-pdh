@@ -233,7 +233,7 @@ function spc_preprocess_entity(&$variables) {
  */
 function spc_preprocess_views_view_fields(&$vars) {
   if ($vars['view']->name == 'master_results_framework') {
-    $fields_to_print = 5;
+    $fields_to_print = 4;
     $vars['row_header'] = '';
     $vars['row_content'] = '';
     $vars['row_label'] = '';
