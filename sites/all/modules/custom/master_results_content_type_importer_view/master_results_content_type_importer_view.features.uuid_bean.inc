@@ -25,13 +25,13 @@ function master_results_content_type_importer_view_uuid_features_default_beans()
     'log' => '',
     'default_revision' => 1,
     'revisions' => array(),
-    'vuuid' => 'c7ed0a5a-3f6a-42bb-a7a6-ddd6debb7af0',
+    'vuuid' => 'fe1d1e7b-ea03-4b2c-960d-84727d1cad5f',
     'uuid' => '514590dc-2d20-433a-be58-7030d9257892',
     'field_background' => array(),
     'field_title_bg' => array(
       'und' => array(
         0 => array(
-          'value' => '<h1><strong>Master</strong> results framework</h1>',
+          'value' => '<h1><strong>Pacific Community</strong> Results Database</h1>',
           'format' => 'full_html',
         ),
       ),
