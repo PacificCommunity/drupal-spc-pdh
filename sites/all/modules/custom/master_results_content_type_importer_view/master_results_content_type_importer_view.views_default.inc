@@ -125,6 +125,7 @@ function master_results_content_type_importer_view_views_default_views() {
   $handler->display->display_options['fields']['field_master_results_link_fr']['id'] = 'field_master_results_link_fr';
   $handler->display->display_options['fields']['field_master_results_link_fr']['table'] = 'field_data_field_master_results_link_fr';
   $handler->display->display_options['fields']['field_master_results_link_fr']['field'] = 'field_master_results_link_fr';
+  $handler->display->display_options['fields']['field_master_results_link_fr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_master_results_link_fr']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_master_results_link_fr']['alter']['text'] = '<a href="[field_master_results_link_fr-value]" target="_blank">[field_master_results_link_fr-value]</a>';
   $handler->display->display_options['fields']['field_master_results_link_fr']['type'] = 'text_plain';
@@ -228,7 +229,7 @@ function master_results_content_type_importer_view_views_default_views() {
   $handler->display->display_options['filters']['field_master_results_year_tid']['table'] = 'field_data_field_master_results_year';
   $handler->display->display_options['filters']['field_master_results_year_tid']['field'] = 'field_master_results_year_tid';
   $handler->display->display_options['filters']['field_master_results_year_tid']['value'] = array(
-    462 => '462',
+    154 => '154',
   );
   $handler->display->display_options['filters']['field_master_results_year_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_master_results_year_tid']['expose']['operator_id'] = 'field_master_results_year_tid_op';
@@ -261,11 +262,11 @@ This database contains the results achieved by SPC with our 26 Member countries 
 For more information, see the 2018 results report:
 </div>
 <div class="master-result-images">
-<div class="master-result-img1"><a href="https://spccfpstore1.blob.core.windows.net/digitallibrary-docs/files/cc/cc6f8540645d3f3a6343f5081e6bf337.pdf?sv=2015-12-11&sr=b&sig=AHBqnCAmDt%2BeMqpxnmJ6IXvjUH9HD7o1uTMWUlsn6co%3D&se=2019-12-10T15%3A06%3A35Z&sp=r&rscc=public%2C%20max-age%3D864000%2C%20max-stale%3D86400&rsct=application%2Fpdf&rscd=inline%3B%20filename%3D%22Pacific_Community_Results_Report_2018_E.pdf%22" title="English"><img src="/sites/all/themes/spc/img/Cover_ENG.jpg"></a></div> 
-<div class="master-result-img2"><a href="https://spccfpstore1.blob.core.windows.net/digitallibrary-docs/files/4f/4ffb8cb83b44bd840720922fdd97f72a.pdf?sv=2015-12-11&sr=b&sig=TF9aeylkEcyGGFgeuqBlvNNM%2Bk0byEe92InRDe84Dag%3D&se=2019-12-10T15%3A06%3A32Z&sp=r&rscc=public%2C%20max-age%3D864000%2C%20max-stale%3D86400&rsct=application%2Fpdf&rscd=inline%3B%20filename%3D%22Rapport_de_resultats_2018_de_la_Communaute_du_Pacifique_.pdf%22" title="English"><img src="/sites/all/themes/spc/img/Cover_FR.jpg"></a></div> 
+<div class="master-result-img1"><a href="https://www.spc.int/DigitalLibrary/Doc/SPC/Annual_Reports/Pacific_Community_Results_Report_2018_E.html" target="_blank" title="English"><img src="/sites/all/themes/spc/img/Cover_ENG.jpg"></a></div> 
+<div class="master-result-img2"><a href="https://www.spc.int/DigitalLibrary/Doc/SPC/Annual_Reports/Rapport_de_resultats_2018_de_la_Communaute_du_Pacifique_.html" target="_blank" title="French"><img src="/sites/all/themes/spc/img/Cover_FR.jpg"></a></div> 
 </div>
 <div class="bottom-text">
-This is a beta version for use by our members. For queries and feedback, please contact spl@spc.int.
+This is a beta version for use by our members. For queries and feedback, please contact <a  target="_blank"href="mailto:spl@spc.int">spl@spc.int</a>.
 </div>';
   $handler->display->display_options['path'] = 'master-results-framework';
 
