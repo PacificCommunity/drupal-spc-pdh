@@ -13,10 +13,10 @@ function master_results_content_type_importer_view_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['bean-pacific-community-results-explor'] = array(
+  $export['bean-pacific-community-results-block'] = array(
     'cache' => 1,
     'custom' => 0,
-    'delta' => 'pacific-community-results-explor',
+    'delta' => 'pacific-community-results-block',
     'module' => 'bean',
     'node_types' => array(),
     'pages' => '',

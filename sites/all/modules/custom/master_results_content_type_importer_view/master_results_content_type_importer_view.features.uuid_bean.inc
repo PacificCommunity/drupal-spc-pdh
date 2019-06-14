@@ -12,21 +12,21 @@ function master_results_content_type_importer_view_uuid_features_default_beans()
   $beans = array();
 
   $beans[] = array(
-    'label' => 'Pacific Community Results Explorer',
+    'label' => 'Pacific Community Results Block',
     'description' => NULL,
     'title' => '',
     'type' => 'banner_with_title',
     'data' => array(
       'view_mode' => 'default',
     ),
-    'delta' => 'pacific-community-results-explor',
+    'delta' => 'pacific-community-results-block',
     'view_mode' => 'default',
-    'created' => 1560526264,
+    'created' => 1560528230,
     'log' => '',
     'default_revision' => 1,
     'revisions' => array(),
-    'vuuid' => '06e30c10-11cd-43d7-912b-1e186c25894e',
-    'uuid' => 'a25a9f71-a673-4833-ad64-41fd07768dcc',
+    'vuuid' => '36dfb698-e6f2-4f3f-8416-eabf052494f1',
+    'uuid' => '7728c00d-7bb3-4992-8387-52e210aaf7d9',
     'field_background' => array(),
     'field_title_bg' => array(
       'und' => array(
