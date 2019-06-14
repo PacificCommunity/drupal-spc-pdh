@@ -98,29 +98,6 @@ function master_results_content_type_importer_view_default_page_manager_pages() 
   $pane->uuid = '35876f04-eda4-4dbb-aefd-b58180858491';
   $display->content['new-35876f04-eda4-4dbb-aefd-b58180858491'] = $pane;
   $display->panels['middle'][0] = 'new-35876f04-eda4-4dbb-aefd-b58180858491';
-  $pane = new stdClass();
-  $pane->pid = 'new-aa7ac6ca-1a83-4735-8b64-c060e6c50cae';
-  $pane->panel = 'top';
-  $pane->type = 'block';
-  $pane->subtype = 'bean-pacific-community-results-explor';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'aa7ac6ca-1a83-4735-8b64-c060e6c50cae';
-  $display->content['new-aa7ac6ca-1a83-4735-8b64-c060e6c50cae'] = $pane;
-  $display->panels['top'][0] = 'new-aa7ac6ca-1a83-4735-8b64-c060e6c50cae';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
