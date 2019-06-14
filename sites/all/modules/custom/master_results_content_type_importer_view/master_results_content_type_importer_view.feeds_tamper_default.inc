@@ -98,7 +98,7 @@ function master_results_content_type_importer_view_feeds_tamper_default() {
     'limit' => '',
     'real_separator' => ',',
   );
-  $feeds_tamper->weight = 2;
+  $feeds_tamper->weight = 5;
   $feeds_tamper->description = 'Explode';
   $export['csv_to_master_results-3-explode'] = $feeds_tamper;
 
@@ -113,9 +113,39 @@ function master_results_content_type_importer_view_feeds_tamper_default() {
     'mask' => '',
     'side' => 'trim',
   );
-  $feeds_tamper->weight = 3;
-  $feeds_tamper->description = 'Trim';
+  $feeds_tamper->weight = 6;
+  $feeds_tamper->description = 'Trim Second';
   $export['csv_to_master_results-3-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'csv_to_master_results-3-trim_dot2';
+  $feeds_tamper->importer = 'csv_to_master_results';
+  $feeds_tamper->source = '3';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '.',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 7;
+  $feeds_tamper->description = 'Trim dot';
+  $export['csv_to_master_results-3-trim_dot2'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'csv_to_master_results-3-trim_pre';
+  $feeds_tamper->importer = 'csv_to_master_results';
+  $feeds_tamper->source = '3';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 4;
+  $feeds_tamper->description = 'Trim First';
+  $export['csv_to_master_results-3-trim_pre'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -147,6 +177,36 @@ function master_results_content_type_importer_view_feeds_tamper_default() {
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Trim';
   $export['csv_to_master_results-4-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'csv_to_master_results-4-trim_comma';
+  $feeds_tamper->importer = 'csv_to_master_results';
+  $feeds_tamper->source = '4';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => ',',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Trim comma';
+  $export['csv_to_master_results-4-trim_comma'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'csv_to_master_results-4-trim_dot_comma';
+  $feeds_tamper->importer = 'csv_to_master_results';
+  $feeds_tamper->source = '4';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => ';',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Trim dot and comma';
+  $export['csv_to_master_results-4-trim_dot_comma'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
