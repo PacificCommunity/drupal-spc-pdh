@@ -692,6 +692,44 @@ function master_results_content_type_importer_view_field_default_field_instances
     ),
   );
 
+  // Exported field_instance: 'node-master_results-field_master_results_year2'.
+  $field_instances['node-master_results-field_master_results_year2'] = array(
+    'bundle' => 'master_results',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 30,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_master_results_year2',
+    'label' => 'Select Year',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 21,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Complete or in progress? Does the result relate to a body of work that is completed or in progress? ');
@@ -706,6 +744,7 @@ function master_results_content_type_importer_view_field_default_field_instances
   t('Result achieved or not achieved');
   t('SPC Development Objective');
   t('SPC Division');
+  t('Select Year');
   t('Strategy / Grouping ');
   t('Sub-result area');
   t('Type of Result');
