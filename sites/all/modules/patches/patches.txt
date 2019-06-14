@@ -1,0 +1,2 @@
+check_if_exposed_input_exists-2481401-14_0.patch - Patch to avoid Notice if exposed input is empty
+views-ajax_view_error-2907263-2-7.x-3.x.patch - Patch to avoid JS error, if the dom_id_# class in the view wrapper will be empty

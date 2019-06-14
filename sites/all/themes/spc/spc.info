@@ -42,7 +42,9 @@ stylesheets[all][] = css/slick.css
 stylesheets[all][] = css/slick-theme.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/footer_css/footer.css
-
+stylesheets[all][] = css/jquery-ui.min.css
+stylesheets[all][] = css/accordion.css
+stylesheets[all][] = css/chosen.min.css
 
 ;-------------- CSS FOAD -------------
 ;stylesheets[all][] = donteverloadmeagain.css
@@ -81,6 +83,9 @@ scripts[] = js/jquery.nice-select.min.js
 scripts[] = js/slick.min.js
 scripts[] = js/jquery.dotdotdot.js
 scripts[] = js/script.js
+; jQuery-ui 1.11.4 include accordion plugin only
+scripts[] = js/jquery-ui.min.js
+scripts[] = js/chosen.jquery.min.js
 
 ;-------------- Panel layouts --------------
 plugins[panels][styles] = plugins/styles

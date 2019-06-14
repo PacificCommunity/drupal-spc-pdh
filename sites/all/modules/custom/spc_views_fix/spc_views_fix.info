@@ -1,0 +1,5 @@
+name = SPC Views fix for Master results and Feeds Importer settings
+description = Just a little fix for Views AJAX. And additional settings to set Year using Feeds Importer form
+version = VERSION
+core = 7.x
+files[] = spc_views_fix.module
