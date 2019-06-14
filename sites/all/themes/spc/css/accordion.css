@@ -13,8 +13,12 @@
 
 .master-results-accordion-header div {
     display: table-cell;
-    width: 25%;
+    width: 20%;
     padding: 20px;
+}
+
+.master-results-accordion-header div:nth-child(3) {
+    width: 39%;
 }
 
 .ui-accordion .master-results-accordion-header.ui-state-active,
@@ -163,8 +167,12 @@
 
 .master-results-accordion-header.ignore span {
     display: table-cell;
-    width: 25%;
+    width: 20%;
     padding: 20px;
+}
+
+.master-results-accordion-header.ignore span:nth-child(2) {
+    width: 39%;
 }
 
 .master-results-accordion .ui-accordion-header-icon {
@@ -257,7 +265,7 @@
 }
 
 .master-result-images img {
-    width: 50%;
+    width: 200px;
 }
 
 .master-result-img2 {
@@ -267,11 +275,26 @@
 .master-result-images {
     margin: 30px auto;
     overflow: hidden;
+    width: 49%;
+    float: left;
+}
+
+.master-result-chapters {
+    width: 49%;
+    float: left;
 }
 
 .master-results-accordion-view .view-header .bottom-text {
     font-style: italic;
+    float: left;
+    clear: both;
+    margin-top: 20px;
 }
+
+.master-results-accordion-view a {
+    color: #428bca;
+}
+
 
 @media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min-resolution:144dpi), only screen and (min-resolution:1.5dppx) {
     .master-results-accordion-view .chosen-container-single .chosen-single div b {
@@ -292,6 +315,13 @@
     .master-result-img1,
     .master-result-img2 {
         min-width: 150px;
+        margin: 0px 10px 0 0;
+    }
+    .master-result-chapters,
+    .master-result-images {
+        width: 100%;
+        float: left;
+        clear: both;
     }
 }
 

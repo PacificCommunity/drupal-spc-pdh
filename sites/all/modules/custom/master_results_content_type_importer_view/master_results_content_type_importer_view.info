@@ -17,6 +17,7 @@ dependencies[] = page_manager
 dependencies[] = spc_views_fix
 dependencies[] = strongarm
 dependencies[] = taxonomy
+dependencies[] = taxonomy_manager
 dependencies[] = text
 dependencies[] = uuid
 dependencies[] = uuid_features

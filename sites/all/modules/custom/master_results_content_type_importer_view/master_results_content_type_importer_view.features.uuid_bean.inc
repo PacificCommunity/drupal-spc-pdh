@@ -25,18 +25,18 @@ function master_results_content_type_importer_view_uuid_features_default_beans()
     'log' => '',
     'default_revision' => 1,
     'revisions' => array(),
-    'vuuid' => 'fe1d1e7b-ea03-4b2c-960d-84727d1cad5f',
+    'vuuid' => '979832fb-6006-41d2-929e-11c4703e9b6f',
     'uuid' => '514590dc-2d20-433a-be58-7030d9257892',
     'field_background' => array(),
     'field_title_bg' => array(
       'und' => array(
         0 => array(
-          'value' => '<h1><strong>Pacific Community</strong> Results Database</h1>',
+          'value' => '<h1><strong>Pacific Community</strong> Results Explorer</h1>',
           'format' => 'full_html',
         ),
       ),
     ),
-    'user_uuid' => '4d93f5b4-b6b7-405a-b448-70bf84507cf9',
+    'user_uuid' => '5af01c98-d9e4-4a28-bc13-e4aab6ef425e',
   );
   return $beans;
 }
