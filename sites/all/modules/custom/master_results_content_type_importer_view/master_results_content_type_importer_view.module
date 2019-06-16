@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Master results content type, importer, view feature.
+ */
+
+include_once 'master_results_content_type_importer_view.features.inc';
