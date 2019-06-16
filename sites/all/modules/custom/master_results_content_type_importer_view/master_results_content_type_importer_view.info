@@ -1,7 +1,7 @@
 name = Master results content type, importer, view
 core = 7.x
 package = SPC
-version = 7.x-1.02
+version = 7.x-1.03
 dependencies[] = bean_admin_ui
 dependencies[] = bean_uuid
 dependencies[] = ctools
