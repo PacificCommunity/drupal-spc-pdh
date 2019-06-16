@@ -121,6 +121,12 @@ function master_results_content_type_importer_view_feeds_importer_default() {
             'source' => '7',
             'target' => 'title',
             'unique' => FALSE,
+            'language' => 'und',
+          ),
+          12 => array(
+            'source' => '10',
+            'target' => 'field_master_results_year2',
+            'unique' => FALSE,
           ),
         ),
         'insert_new' => '1',
