@@ -6,3 +6,14 @@
  */
 
 include_once 'master_results_content_type_importer_view.features.inc';
+
+// remove scrollToTop effect for Master Results ajax filters
+function master_results_content_type_importer_view_views_ajax_data_alter(&$commands, $view) {
+  // Remove scroll to top behaviour from views ajax
+  foreach ($commands as $key => $command) {
+    if ($view->name == 'master_results_framework' && $command['command'] == 'viewsScrollTop') {
+      unset($commands[$key]);
+      break;
+    }
+  }
+}
