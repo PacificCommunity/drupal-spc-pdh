@@ -16,7 +16,7 @@ function master_results_content_type_importer_view_default_page_manager_pages() 
   $page->task = 'page';
   $page->admin_title = 'Master results';
   $page->admin_description = '';
-  $page->path = 'master-results';
+  $page->path = 'results-explorer';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();
@@ -57,7 +57,7 @@ function master_results_content_type_importer_view_default_page_manager_pages() 
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Pacific Community Results Expolorer';
   $display->uuid = 'efba16d5-dfe8-480a-9b0b-b891307f50fb';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_master_results__panel';
