@@ -16,7 +16,7 @@ function master_results_content_type_importer_view_default_page_manager_pages() 
   $page->task = 'page';
   $page->admin_title = 'Master results';
   $page->admin_description = '';
-  $page->path = 'master-results';
+  $page->path = 'results-explorer';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();
