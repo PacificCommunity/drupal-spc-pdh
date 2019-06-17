@@ -37,7 +37,7 @@ function master_results_content_type_importer_view_uuid_features_default_beans()
         ),
       ),
     ),
-    'user_uuid' => '21a8bb9d-7d32-4a73-aebd-9a4031d27d90',
+    'user_uuid' => '312ee441-88b6-49e8-bb0f-c1883c2cc8a9',
   );
   return $beans;
 }
