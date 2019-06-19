@@ -51,8 +51,10 @@ function spc_education_dashboard_menu(){
  */
 function spc_education_dashboard_form(){
   $form = array();
-
-  $form['dashboard_json'] = array(
+  
+  $education_chart_1 = (!empty(variable_get('education_chart_1')))? variable_get('education_chart_1'): '' ;
+  
+  $form['dashboard_chart_1'] = array(
     '#type' => 'managed_file',
     '#title' => t('Education Dashboard JSON'),
     '#description' => t("Upload a file, allowed extensions: json"),
@@ -60,7 +62,22 @@ function spc_education_dashboard_form(){
       'file_validate_extensions' => ['json']
     ],
     '#process' => array('process_json_file'),
-    '#upload_location' => 'public://dashboard_json/',
+    '#upload_location' => 'public://charts/',
+    '#default_value' => $education_chart_1,
+    '#required' => TRUE,
+  );
+  
+  $education_chart_2 = (!empty(variable_get('education_chart_2')))? variable_get('education_chart_2'): '' ;
+  $form['dashboard_chart_2'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Education Dashboard JSON'),
+    '#description' => t("Upload a file, allowed extensions: json"),
+    '#upload_validators' => [
+      'file_validate_extensions' => ['json']
+    ],
+    '#process' => array('process_json_file'),
+    '#upload_location' => 'public://charts/',
+    '#default_value' => $education_chart_2,
     '#required' => TRUE,
   );
   
@@ -84,11 +101,19 @@ function process_json_file($element, &$form_state, $form) {
  */
 function spc_education_dashboard_form_validate($form, &$form_state) {
   $validators = array();
-  if ($file = file_save_upload('dashboard_json', $validators)) {
-    $form_state['values']['dashboard_json'] = $file; 
+  if ($file_1 = file_save_upload('dashboard_chart_1', $validators)) {
+    $form_state['values']['dashboard_chart_1'] = $file_1;
+    variable_set('education_chart_1', $form_state['values']['dashboard_chart_1']->fid);
   }
   else {
-    form_set_error('file', 'Файл не был загружен');
+    //form_set_error('file', 'No chart 1 file was uploaded.');
+  }
+  if ($file = file_save_upload('dashboard_chart_2', $validators)) {
+    $form_state['values']['dashboard_chart_2'] = $file;
+    variable_set('education_chart_2', $form_state['values']['dashboard_chart_2']->fid);
+  }
+  else {
+    //form_set_error('file', 'No chart 2 file was uploaded.');
   }
 }
 
@@ -96,10 +121,13 @@ function spc_education_dashboard_form_validate($form, &$form_state) {
  * Form submit callback.
  */
 function spc_education_dashboard_form_submit($form, &$form_state) {
-  $file = $form_state['values']['dashboard_json'];
-  $file->status = FILE_STATUS_PERMANENT; 
-  file_save($file); 
-  drupal_set_message('Картинка загружена');
+  $file_1 = $form_state['values']['dashboard_chart_1'];
+  $file_1->status = FILE_STATUS_PERMANENT; 
+  file_save($file_1); 
+  
+  $file_2 = $form_state['values']['dashboard_chart_2'];
+  $file_2->status = FILE_STATUS_PERMANENT; 
+  file_save($file_2); 
 }
 
 
@@ -123,14 +151,44 @@ function spc_education_dashboard_block_view($delta = '') {
   switch ($delta) {
     case 'education_dashboard_block':
       if (user_access('access content')) {
+        $data = get_charts_data();
         $block['subject'] = t('Education dashboard block');
         $block['content'] = array(
-          '#markup' => theme('education_dashboard_block_theme', array('items' => 13))
+          '#markup' => theme('education_dashboard_block_theme', array('items' => $data))
         );
       }
     break;
   }
   return $block;
+}
+
+function get_charts_data(){
+  
+  $charts = [
+    'gpd_expenditure',
+    'school_hildren',
+    'over_age_students',
+    'learning_outcomes',
+    'net_enrolment_rate',
+    'gross_enrolment_rate',
+    'primary_completion_rate',
+    'progression_secondary_school',
+    'primary_secondary_education',
+    'secondary_completion_rate',
+    'pupil_teacher_ratio',
+    'safe_drinking_water',
+    'trained_teachers',
+    'qualified_teachers'
+  ];
+  
+  $data = [];
+  foreach ($charts as $chart){
+    if ($gpd_expenditure = file_get_contents(drupal_get_path('module', 'spc_education_dashboard') . '/charts/' . $chart . '.json')){
+      $data[] = json_decode($gpd_expenditure, true);
+    }
+  }
+
+  return $data;
 }
 
 /**

@@ -1,0 +1,23 @@
+{
+    "id": "9",
+    "name": "Transition Rates between primary and secondary education",
+    "title": " Transition rates between primary and secondary education",
+    "definition": "Number of students admitted to the first grade of a higher level of education in a given year, expressed as a percentage of the number of students enrolled in the final grade of the lower level of education in the previous year.",
+    "threshold": 
+        {
+            "value": "",
+            "description":"",
+            "link": ""
+        },
+    "rationale":"High transition rates indicate a high level of access or transition from one level of education to the next. They also reflect the intake capacity of the next level of education. Inversely, low transition rates can signal problems in the bridging between two cycles or levels of education, due to either deficiencies in the examination system, or inadequate admission capacity in the higher cycle or level of education, or both.",
+    "charts":[
+        {
+            "name": "",
+            "data": [{
+                        "": "",
+                        "": "",
+                        "": ""
+                    }]
+        }
+    ]
+}

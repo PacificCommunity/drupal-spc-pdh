@@ -1,0 +1,23 @@
+{
+    "id": "7",
+    "name": "Primary completion rate",
+    "title": "Primary completion rate",
+    "definition": "Primary completion rate",
+    "threshold": 
+        {
+            "value": "",
+            "description":"",
+            "link": ""
+        },
+    "rationale":"",
+    "charts":[
+        {
+            "name": "",
+            "data": [{
+                        "": "",
+                        "": "",
+                        "": ""
+                    }]
+        }
+    ]
+}

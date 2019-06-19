@@ -24,50 +24,35 @@
   </div>
 </div>
 
-<?php         
-    $items_data = array(
-      [
-        'title' => 'Title One',
-        'id'    => 1
-      ],
-      [
-        'title' => 'Title Two',
-        'id'    => 2
-      ],
-      [
-        'title' => 'Title Three',
-        'id'    => 3
-      ],
-      [
-        'title' => 'Title Four',
-        'id'    => 4
-      ],
-      [
-        'title' => 'Title Five',
-        'id'    => 5
-      ],
-    ); 
-?>
-
 <section class="education-block-content"> 
-   <?php //for ($i = 1; $i <= $items; $i++ ): ?>
-    <?php foreach ($items_data as $item): ?>
-    <div class="panel-pane education-block-pane">
+    <?php foreach ($items as $item): ?>
+    <div class="panel-pane education-block-pane" data-id="<?php print $item['id']; ?>">
       <div class="title">  
-        <h4 id="<?php print $item['id']; ?>" class="title-text"><?php print $item['title']; ?></h4>
-        <p><?php print t('Percentage of GDP spent on education. Range is from 3.8% to 18%. 7 of 10 countries spent more than 6%'); ?></p>
+        <h4 id="<?php print $item['id']; ?>" class="title-text"><?php print $item['name']; ?></h4>
+        <p><?php print $item['title']; ?></p>
       </div>
       <div class="info clearfix">
           <div class="chart col-sm-6">
 
           </div>
           <div class="description col-sm-6">
-            <p><?php print t('Total general (local, regional and central) government expenditure on education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government'); ?></p>
+            <div class="definition">
+              <h5><?php print t('Definition'); ?></h5>  
+              <p><?php print $item['definition']; ?></p>
+            </div>
+            <div class="rationale">
+              <h5><?php print t('Threshold'); ?></h5>  
+              <p><?php print $item['threshold']['value']; ?></p>
+              <p><?php print $item['threshold']['description']; ?></p>
+            </div> 
+            <div class="rationale">
+              <h5><?php print t('Rationale'); ?></h5>  
+              <p><?php print $item['rationale']; ?></p>
+            </div>              
           </div>
       </div>
       <a href="#" class="education-pdf"><?php print t('Export PDF'); ?></a>  
     </div>
     <?php endforeach; ?>
-    <?php //endfor; ?>
     
 </section>
