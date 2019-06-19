@@ -45,12 +45,13 @@ function education_dashboard_page_default_page_manager_pages() {
     'name' => 'panel',
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'one_fw';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'one_fw_main' => NULL,
     ),
   );
   $display->cache = array();
@@ -60,6 +61,29 @@ function education_dashboard_page_default_page_manager_pages() {
   $display->storage_id = 'page_education_dashboard__panel';
   $display->content = array();
   $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-0edbbbbc-549e-43a9-bc72-0b1e3750f75f';
+  $pane->panel = 'one_fw_main';
+  $pane->type = 'block';
+  $pane->subtype = 'spc_education_dashboard-education_dashboard_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '0edbbbbc-549e-43a9-bc72-0b1e3750f75f';
+  $display->content['new-0edbbbbc-549e-43a9-bc72-0b1e3750f75f'] = $pane;
+  $display->panels['one_fw_main'][0] = 'new-0edbbbbc-549e-43a9-bc72-0b1e3750f75f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
