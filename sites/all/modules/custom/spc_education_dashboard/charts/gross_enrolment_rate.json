@@ -1,0 +1,23 @@
+{
+    "id": "6",
+    "name": "Gross enrolment ratio",
+    "title": "Gross enrolment ratio",
+    "definition": "Number of students enrolled in a given level of education, regardless of age, expressed as a percentage of the official school-age population corresponding to the same level of education. For the tertiary level, the population used is the 5-year age group starting from the official secondary school graduation age.",
+    "threshold": 
+        {
+            "value": "",
+            "description":"",
+            "link": ""
+        },
+    "rationale":"A high GER generally indicates a high degree of participation, whether the pupils belong to the official age group or not. A GER value approaching or exceeding 100% indicates that a country is, in principle, able to accommodate all of its school-age population, but it does not indicate the proportion already enrolled. The achievement of a GER of 100% is therefore a necessary but not sufficient condition for enrolling all eligible children in school. When the GER exceeds 90% for a particular level of education, the aggregate number of places for students is approaching the number required for universal access of the official age group. However, this is a meaningful interpretation only if one can expect the under-aged and over-aged enrolment to decline in the future to free places for pupils from the expected age group.",
+    "charts":[
+        {
+            "name": "",
+            "data": [{
+                        "": "",
+                        "": "",
+                        "": ""
+                    }]
+        }
+    ]
+}

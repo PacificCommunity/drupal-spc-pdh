@@ -1,0 +1,20 @@
+html {
+  scroll-behavior: smooth;
+}
+.education-block-content {
+    margin: 60px 45px;
+}
+.panel-pane.education-block-pane {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+    border-radius: 25px;
+    padding: 20px;
+    margin: 30px 10px;
+}
+.education-pdf {
+    position: absolute;
+    right: 35px;
+    bottom: 20px;
+}
+

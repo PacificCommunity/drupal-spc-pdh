@@ -1,0 +1,23 @@
+{
+    "id": "4",
+    "name": "Learning outcomes",
+    "title": "Expected learning outcomes",
+    "definition": "Increase or decrease, Y4 and Y6, literacy numeracy levels from 2012 to 2015  (in future for 2018)",
+    "threshold": 
+        {
+            "value": "",
+            "description":"",
+            "link": ""
+        },
+    "rationale":"",
+    "charts":[
+        {
+            "name": "",
+            "data": [{
+                        "": "",
+                        "": "",
+                        "": ""
+                    }]
+        }
+    ]
+}

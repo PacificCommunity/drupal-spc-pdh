@@ -1,0 +1,209 @@
+<?php
+
+/**
+ * @file
+ * Code for the Education Dashboard page content.
+ */
+
+/**
+ * Implementation of hook_init().
+ */
+function spc_education_dashboard_init(){
+  $path = current_path();
+  if($path == 'education-dashboard'){
+    drupal_add_css(
+      drupal_get_path('module', 'spc_education_dashboard') . '/css/education_dashboard.css',
+      array('group' => CSS_DEFAULT, 'every_page' => TRUE)
+    );
+    drupal_add_js(
+      drupal_get_path('module', 'spc_education_dashboard') . '/js/education_dashboard.js',
+      'file'
+    );
+    drupal_add_css(
+      drupal_get_path('module', 'spc_education_dashboard') . '/lib/jquery-autocomplete/jquery-autocomplete.css',
+      array('group' => CSS_DEFAULT, 'every_page' => TRUE)
+    );
+    drupal_add_js(
+      drupal_get_path('module', 'spc_education_dashboard') . '/lib/jquery-autocomplete/jquery-autocomplete.js',
+      'file'
+    );    
+  }
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function spc_education_dashboard_menu(){
+    $items['admin/education-dashboard'] = array(
+    'title' => 'Education Dashboard',
+    'description' => 'Settings related to formatting and authoring content.',
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array('access administration pages'),
+    'page arguments' => array('spc_education_dashboard_form'),  
+    'page callback' => 'drupal_get_form',
+  );
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_form().
+ */
+function spc_education_dashboard_form(){
+  $form = array();
+  
+  $education_chart_1 = (!empty(variable_get('education_chart_1')))? variable_get('education_chart_1'): '' ;
+  
+  $form['dashboard_chart_1'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Education Dashboard JSON'),
+    '#description' => t("Upload a file, allowed extensions: json"),
+    '#upload_validators' => [
+      'file_validate_extensions' => ['json']
+    ],
+    '#process' => array('process_json_file'),
+    '#upload_location' => 'public://charts/',
+    '#default_value' => $education_chart_1,
+    '#required' => TRUE,
+  );
+  
+  $education_chart_2 = (!empty(variable_get('education_chart_2')))? variable_get('education_chart_2'): '' ;
+  $form['dashboard_chart_2'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Education Dashboard JSON'),
+    '#description' => t("Upload a file, allowed extensions: json"),
+    '#upload_validators' => [
+      'file_validate_extensions' => ['json']
+    ],
+    '#process' => array('process_json_file'),
+    '#upload_location' => 'public://charts/',
+    '#default_value' => $education_chart_2,
+    '#required' => TRUE,
+  );
+  
+  $form['#validate'][] = 'spc_education_dashboard_form_validate';
+  $form['#submit'][] = 'spc_education_dashboard_form_submit';
+
+  return system_settings_form($form);
+}
+
+/**
+ * Form json process.
+ */
+function process_json_file($element, &$form_state, $form) {
+  $element = file_managed_file_process($element, $form_state, $form);
+  $element['upload_button']['#access'] = FALSE;
+  return $element;
+}
+
+/**
+ * Form validate callback.
+ */
+function spc_education_dashboard_form_validate($form, &$form_state) {
+  $validators = array();
+  if ($file_1 = file_save_upload('dashboard_chart_1', $validators)) {
+    $form_state['values']['dashboard_chart_1'] = $file_1;
+    variable_set('education_chart_1', $form_state['values']['dashboard_chart_1']->fid);
+  }
+  else {
+    //form_set_error('file', 'No chart 1 file was uploaded.');
+  }
+  if ($file = file_save_upload('dashboard_chart_2', $validators)) {
+    $form_state['values']['dashboard_chart_2'] = $file;
+    variable_set('education_chart_2', $form_state['values']['dashboard_chart_2']->fid);
+  }
+  else {
+    //form_set_error('file', 'No chart 2 file was uploaded.');
+  }
+}
+
+/**
+ * Form submit callback.
+ */
+function spc_education_dashboard_form_submit($form, &$form_state) {
+  $file_1 = $form_state['values']['dashboard_chart_1'];
+  $file_1->status = FILE_STATUS_PERMANENT; 
+  file_save($file_1); 
+  
+  $file_2 = $form_state['values']['dashboard_chart_2'];
+  $file_2->status = FILE_STATUS_PERMANENT; 
+  file_save($file_2); 
+}
+
+
+/**
+* Implements hook_block_info().
+*/
+function spc_education_dashboard_block_info() {    
+  $blocks['education_dashboard_block'] = array(
+    'info' => t('Education dashboard block'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  return $blocks;
+}
+
+/**
+* Implements hook_block_view().
+*/
+function spc_education_dashboard_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'education_dashboard_block':
+      if (user_access('access content')) {
+        $data = get_charts_data();
+        $block['subject'] = t('Education dashboard block');
+        $block['content'] = array(
+          '#markup' => theme('education_dashboard_block_theme', array('items' => $data))
+        );
+      }
+    break;
+  }
+  return $block;
+}
+
+function get_charts_data(){
+  
+  $charts = [
+    'gpd_expenditure',
+    'school_hildren',
+    'over_age_students',
+    'learning_outcomes',
+    'net_enrolment_rate',
+    'gross_enrolment_rate',
+    'primary_completion_rate',
+    'progression_secondary_school',
+    'primary_secondary_education',
+    'secondary_completion_rate',
+    'pupil_teacher_ratio',
+    'safe_drinking_water',
+    'trained_teachers',
+    'qualified_teachers'
+  ];
+  
+  $data = [];
+  foreach ($charts as $chart){
+    if ($gpd_expenditure = file_get_contents(drupal_get_path('module', 'spc_education_dashboard') . '/charts/' . $chart . '.json')){
+      $data[] = json_decode($gpd_expenditure, true);
+    }
+  }
+
+  return $data;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function spc_education_dashboard_theme($existing, $type, $theme, $path) {
+
+  $themes['education_dashboard_block_theme'] = [
+    'variables'     => array(
+      'items' => NULL,
+      ),
+    'template'      => 'block--education_dashboard',
+    'original hook' => 'block',
+    'path'          => drupal_get_path('module', 'spc_education_dashboard') . '/templates',
+  ];
+
+  return $themes;
+}
