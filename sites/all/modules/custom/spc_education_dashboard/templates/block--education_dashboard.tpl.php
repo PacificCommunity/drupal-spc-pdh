@@ -32,10 +32,12 @@
         <p><?php print $item['title']; ?></p>
       </div>
       <div class="info clearfix">
-          <div class="chart col-sm-6">
-
+          
+          <div class="chart col-sm-5">
+              <div class="chart-<?php print $item['id']; ?>"></div>
           </div>
-          <div class="description col-sm-6">
+          
+          <div class="description col-sm-7">
             <div class="definition">
               <h5><?php print t('Definition'); ?></h5>  
               <p><?php print $item['definition']; ?></p>
@@ -50,6 +52,7 @@
               <p><?php print $item['rationale']; ?></p>
             </div>              
           </div>
+          
       </div>
       <a href="#" class="education-pdf"><?php print t('Export PDF'); ?></a>  
     </div>

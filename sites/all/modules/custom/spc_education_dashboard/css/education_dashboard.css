@@ -17,4 +17,6 @@ html {
     right: 35px;
     bottom: 20px;
 }
-
+.chart-item {
+    border-radius: 5px;
+}

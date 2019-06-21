@@ -13,47 +13,69 @@
     "charts":[
         {
             "name": "GDP ercentage",
-            "data": [{
-                        "country": "Cook Islands",
-                        "percentage": "13.7",
-                        "year": "2016"
-                    }, {
-                        "country": "Fiji",
-                        "percentage": "4.4",
-                        "year": "2016"
-                    }, {
-                        "country": "Kiribati",
-                        "percentage": "13.5",
-                        "year": "2016"
-                    }, {
-                        "country": "Nauru",
-                        "percentage": "18",
-                        "year": "2016"
-                    }, {
-                        "country": "Palau",
-                        "percentage": "5",
-                        "year": "2016"
-                    }, {
-                        "country": "Samoa",
-                        "percentage": "4",
-                        "year": "2016"
-                    }, {
-                        "country": "Solomon Islands",
-                        "percentage": "12",
-                        "year": "2016"
-                    }, {
-                        "country": "Tonga",
-                        "percentage": "4.4",
-                        "year": "2014"
-                    }, {
-                        "country": "Tuvalu",
-                        "percentage": "18",
-                        "year": "2016"
-                    }, {
+            "data": 
+                [
+                    {
                         "country": "Vanuatu",
-                        "percentage": "3.8",
-                        "year": "2016"
-                    }]
+                        "percentage": 3.8,
+                        "year": "2016",
+                        "color": "#D84774"
+                    }, 
+                    {
+                        "country": "Samoa",
+                        "percentage": 4,
+                        "year": "2016",
+                        "color": "#D84774"
+                    },
+                    {
+                        "country": "Tonga",
+                        "percentage": 4.4,
+                        "year": "2014",
+                        "color": "#D84774"
+                    }, 
+                    {
+                        "country": "Fiji",
+                        "percentage": 4.4,
+                        "year": "2016",
+                        "color": "#D84774"
+                    },  
+                    {
+                        "country": "Palau",
+                        "percentage": 5,
+                        "year": "2016",
+                        "color": "#D84774"
+                    },
+                    {
+                        "country": "Solomon Islands",
+                        "percentage": 12,
+                        "year": "2016",
+                        "color": "#F79663"
+                    },
+                    {
+                        "country": "Kiribati",
+                        "percentage": 13.5,
+                        "year": "2016",
+                        "color": "#F79663"
+                    },
+                    {
+                        "country": "cuba",
+                        "percentage": 14.5,
+                        "year": "2016",
+                        "color": "#F79663"
+                    },                    
+                    {
+                        "country": "Nauru",
+                        "percentage": 18,
+                        "year": "2016",
+                        "color": "#00ACB3"
+                    },
+                    {
+                        "country": "Tuvalu",
+                        "percentage": 18,
+                        "year": "2016",
+                        "color": "#00ACB3"
+                    }
+                ]
         }
     ]
 }
