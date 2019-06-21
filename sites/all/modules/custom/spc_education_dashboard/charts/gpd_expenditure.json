@@ -38,7 +38,8 @@
                         "percentage": 4.4,
                         "year": "2016",
                         "color": "#D84774"
-                    },  {
+                    },  
+                    {
                         "country": "Palau",
                         "percentage": 5,
                         "year": "2016",
@@ -56,6 +57,12 @@
                         "year": "2016",
                         "color": "#F79663"
                     },
+                    {
+                        "country": "cuba",
+                        "percentage": 14.5,
+                        "year": "2016",
+                        "color": "#F79663"
+                    },                    
                     {
                         "country": "Nauru",
                         "percentage": 18,

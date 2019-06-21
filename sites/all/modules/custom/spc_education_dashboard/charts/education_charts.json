@@ -15,47 +15,68 @@
             "charts":[
                 {
                     "name": "GDP ercentage",
-                    "data": [{
-                                "country": "Cook Islands",
-                                "percentage": "13.7",
-                                "year": "2016"
-                            }, {
-                                "country": "Fiji",
-                                "percentage": "4.4",
-                                "year": "2016"
-                            }, {
-                                "country": "Kiribati",
-                                "percentage": "13.5",
-                                "year": "2016"
-                            }, {
-                                "country": "Nauru",
-                                "percentage": "18",
-                                "year": "2016"
-                            }, {
-                                "country": "Palau",
-                                "percentage": "5",
-                                "year": "2016"
-                            }, {
-                                "country": "Samoa",
-                                "percentage": "4",
-                                "year": "2016"
-                            }, {
-                                "country": "Solomon Islands",
-                                "percentage": "12",
-                                "year": "2016"
-                            }, {
-                                "country": "Tonga",
-                                "percentage": "4.4",
-                                "year": "2014"
-                            }, {
-                                "country": "Tuvalu",
-                                "percentage": "18",
-                                "year": "2016"
-                            }, {
-                                "country": "Vanuatu",
-                                "percentage": "3.8",
-                                "year": "2016"
-                            }]
+                    "data": [
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 3.8,
+                            "year": "2016",
+                            "color": "#D84774"
+                        }, 
+                        {
+                            "country": "Samoa",
+                            "percentage": 4,
+                            "year": "2016",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Tonga",
+                            "percentage": 4.4,
+                            "year": "2014",
+                            "color": "#D84774"
+                        }, 
+                        {
+                            "country": "Fiji",
+                            "percentage": 4.4,
+                            "year": "2016",
+                            "color": "#D84774"
+                        },  
+                        {
+                            "country": "Palau",
+                            "percentage": 5,
+                            "year": "2016",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 12,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Kiribati",
+                            "percentage": 13.5,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "cuba",
+                            "percentage": 14.5,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },                    
+                        {
+                            "country": "Nauru",
+                            "percentage": 18,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 18,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        }
+                    ]
                 }
             ]
         },
@@ -68,12 +89,93 @@
             "rationale":"Rate of out-of-school children is a useful measure for comparison across countries with different population sizes. It combines the number of children of official primary age who never attended school or dropped out, and the population of official primary school age that is nationally and internationally considered as the target population. The higher the rate, the greater the need for interventions to target out-of-school children to achieve the goal of universal primary education. When disaggregated by geographical location and gender, this indicator can identify areas or groups needing the greatest efforts.",
             "charts":[
                 {
-                    "name": "",
-                    "data": [{
-                                "": "",
-                                "": "",
-                                "": ""
-                            }]
+                    "name": "Out of School",
+                    "data": [
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 30.4736,
+                            "year": "2017",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Papua New Guinea",
+                            "percentage": 22.29396,
+                            "year": "2016",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Marshall Islands",
+                            "percentage": 21.46632,
+                            "year": "2016",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Micronesia",
+                            "percentage": 15.99083,
+                            "year": "2015",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Nauru",
+                            "percentage": 15.57134,
+                            "year": "2016",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 13.29909,
+                            "year": "2015",
+                            "color": "#D84774"
+                        }, 
+                        {
+                            "country": "Tokelau",
+                            "percentage": 8.17021,
+                            "year": "2016",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Cook Islands",
+                            "percentage": 4.18972,
+                            "year": "2015",
+                            "color": "#D84774"
+                        }, 
+                        {
+                            "country": "Samoa",
+                            "percentage": 3.80646,
+                            "year": "2017",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Kiribati",
+                            "percentage": 3.4555,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 2.51522,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 0.59259,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Fiji",
+                            "percentage": 0.0681,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Tonga",
+                            "percentage": 0.06204,
+                            "year": "2014",
+                            "color": "#00ACB3"
+                        }
+                    ]
                 }
             ]
         },
@@ -86,12 +188,87 @@
             "rationale":"",
             "charts":[
                 {
-                    "name": "",
-                    "data": [{
-                                "": "",
-                                "": "",
-                                "": ""
-                            }]
+                    "name": "Over age students",
+                    "data": [
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 74.47692,
+                            "year": "2017",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Papua New Guinea",
+                            "percentage": 46.67156,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 13.60586,
+                            "year": "2014",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Marshall Islands",
+                            "percentage": 10.70394,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Micronesia",
+                            "percentage": 10.43545,
+                            "year": "2014",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Samoa",
+                            "percentage": 7.22003,
+                            "year": "2017",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Fiji",
+                            "percentage": 2.19746,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Kiribati",
+                            "percentage": 1.82689,
+                            "year": "2017",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Tokelau",
+                            "percentage": 1.68539,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Nauru",
+                            "percentage": 0.33186,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Cook Islands",
+                            "percentage": 0.26911,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        }, 
+                        {
+                            "country": "Tonga",
+                            "percentage": 0.21199,
+                            "year": "2015",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 0.15106,
+                            "year": "2016",
+                            "color": "#00ACB3"
+                        }
+                    ]
                 }
             ]
         },        
@@ -109,12 +286,111 @@
             "rationale":"",
             "charts":[
                 {
-                    "name": "",
-                    "data": [{
-                                "": "",
-                                "": "",
-                                "": ""
-                            }]
+                    "name": "Year Four - Literacy",
+                    "data": [
+                        {
+                            "country": "Tokelau",
+                            "percentage": 28,
+                            "base": 0,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Samoa",
+                            "percentage": 19,
+                            "base": 0,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Cook Islands",
+                            "percentage": 16,
+                            "base": 0,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "FSM",
+                            "percentage": 14,
+                            "base": 0,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 8,
+                            "base": 0,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Niue",
+                            "percentage": 5,
+                            "base": 0,
+                            "year": "",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 5,
+                            "base": 0,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 0.5,
+                            "base": 0,
+                            "year": "",
+                            "color": "#F79663"
+                        }, 
+                        {
+                            "country": "Tonga",
+                            "percentage": 0.5,
+                            "base": 0,
+                            "year": "2015",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "RMI",
+                            "percentage": 0.5,
+                            "base": 0,
+                            "year": "",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 5,
+                            "base": 1,
+                            "year": "",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Kiribati",
+                            "percentage": 44,
+                            "base": 1,
+                            "year": "",
+                            "color": "#00ACB3"
+                        }
+                    ]
+                },
+                {
+                    "name": "Over age students",
+                    "data": [
+
+                    ]
+                },
+                {
+                    "name": "Over age students",
+                    "data": [
+
+                    ]
+                },
+                {
+                    "name": "Over age students",
+                    "data": [
+          
+                    ]
                 }
             ]
         },        

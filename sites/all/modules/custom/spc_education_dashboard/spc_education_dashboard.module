@@ -138,7 +138,6 @@ function spc_education_dashboard_block_view($delta = '') {
         if(!empty($data)){
           foreach ($data as $chart_data){
             $charts =  $chart_data['charts'];
-            //print_r($charts);
             drupal_add_js(array('spc_education_dashboard' => array('chart'. $chart_data['id'] => $charts)), array('type' => 'setting'));
           }
         }
@@ -166,9 +165,11 @@ function get_charts_data(){
       $data = $data['educationChartsData'];
     } else {
       $data = get_charts_default_data();
+      $data = $data['educationChartsData'];
     }
   } else {
     $data = get_charts_default_data();
+    $data = $data['educationChartsData'];
   }
   
   return $data;
@@ -195,10 +196,14 @@ function get_charts_default_data(){
 
   $data = [];
 
-  foreach ($charts as $chart){
-    if ($gpd_expenditure = file_get_contents(drupal_get_path('module', 'spc_education_dashboard') . '/charts/' . $chart . '.json')){
-      $data[] = json_decode($gpd_expenditure, true);
-    }
+//  foreach ($charts as $chart){
+//    if ($gpd_expenditure = file_get_contents(drupal_get_path('module', 'spc_education_dashboard') . '/charts/' . $chart . '.json')){
+//      $data[] = json_decode($gpd_expenditure, true);
+//    }
+//  }
+  
+  if ($gpd_expenditure = file_get_contents(drupal_get_path('module', 'spc_education_dashboard') . '/charts/education_charts.json')){
+    $data = json_decode($gpd_expenditure, true);
   }
 
   return $data;
