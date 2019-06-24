@@ -29,7 +29,7 @@
     <div class="panel-pane education-block-pane" data-id="<?php print $item['id']; ?>">
       <div class="title">  
         <h4 id="<?php print $item['id']; ?>" class="title-text"><?php print $item['name']; ?></h4>
-        <p><?php print $item['title']; ?></p>
+        <p class="subtitle"><?php print $item['title']; ?></p>
       </div>
       <div class="info clearfix">
           
@@ -38,17 +38,52 @@
           </div>
           
           <div class="description col-sm-7">
-            <div class="definition">
-              <h5><?php print t('Definition'); ?></h5>  
+              
+            <?php if ($item['id'] == 4 ): ?>  
+            <div class="switchers clearfix">
+                <div class="switch-wrapper horizontal">
+                    <div class="switcher">
+                        <a href="" class="checked"><?php print t('Literacy'); ?></a>
+                    </div>
+                    
+                </div>
+                <div class="switch-wrapper horizontal">
+                    <div class="switcher">
+                        <a href="" class="" ><?php print t('Numeracy'); ?></a>
+                    </div>
+                </div> 
+                <div class="switch-wrapper vertical">
+                  <div class="labels">  
+                      <p class="checked"><?php print t('Year four students'); ?></p>
+                      <p><?php print t('Year six students'); ?></p>
+                  </div>    
+                  <div class="switcher">
+                    <input class="form-check-input slider" type="checkbox" id="years" value="four">
+                  </div>
+                </div>
+            </div> 
+            <?php endif; ?> 
+              
+            <div class="definition ">
+              <h5><?php print t('Definition'); ?></h5>
+                  <div class="toggle">
+                      <span class="arrow down"></span>
+                  </div>
               <p><?php print $item['definition']; ?></p>
             </div>
             <div class="rationale">
-              <h5><?php print t('Threshold'); ?></h5>  
+              <h5><?php print t('Threshold'); ?></h5>
+                  <div class="toggle">
+                      <span class="arrow down"></span>
+                  </div>
               <p><?php print $item['threshold']['value']; ?></p>
               <p><?php print $item['threshold']['description']; ?></p>
             </div> 
             <div class="rationale">
-              <h5><?php print t('Rationale'); ?></h5>  
+              <h5><?php print t('Rationale'); ?></h5>
+              <div class="toggle">
+                  <span class="arrow down"></span>
+              </div>
               <p><?php print $item['rationale']; ?></p>
             </div>              
           </div>
