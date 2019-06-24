@@ -29,6 +29,22 @@
               }
             });
             
+            $('.toggle').on('click', function(){
+               $(this).siblings('p').toggle();
+               $(this).find('.arrow').toggleClass('down');
+            });
+            
+            $.switcher('input.slider');
+            $('.ui-switcher').on('click', function(){
+                $(this).closest('.switch-wrapper').find('.labels p').toggleClass('checked');
+            });
+            
+            $('.switcher a').on('click', function(e){
+                e.preventDefault();
+                $(this).closest('.switchers').find('.switcher a').removeClass('checked');
+                $(this).toggleClass('checked');
+            });
+
             const red = '#D84774';
             const orange = '#F79663';
             const green = '#00ACB3';
@@ -255,7 +271,7 @@
             if ($('.chart-4').length){
                 const chart4data = settings.spc_education_dashboard.chart4[0].data;
                 
-                console.log(chart4data);
+                //console.log(chart4data);
                 
                 let height = 400;
                 let width = 600;
