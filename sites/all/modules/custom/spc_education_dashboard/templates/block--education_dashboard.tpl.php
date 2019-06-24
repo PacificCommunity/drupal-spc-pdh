@@ -43,13 +43,13 @@
             <div class="switchers clearfix">
                 <div class="switch-wrapper horizontal">
                     <div class="switcher">
-                        <a href="" class="checked"><?php print t('Literacy'); ?></a>
+                        <a href="" id="literacy" class="checked"><?php print t('Literacy'); ?></a>
                     </div>
                     
                 </div>
                 <div class="switch-wrapper horizontal">
                     <div class="switcher">
-                        <a href="" class="" ><?php print t('Numeracy'); ?></a>
+                        <a href="" id="numeracy" class="" ><?php print t('Numeracy'); ?></a>
                     </div>
                 </div> 
                 <div class="switch-wrapper vertical">

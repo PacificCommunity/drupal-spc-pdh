@@ -34,17 +34,6 @@
                $(this).find('.arrow').toggleClass('down');
             });
             
-            $.switcher('input.slider');
-            $('.ui-switcher').on('click', function(){
-                $(this).closest('.switch-wrapper').find('.labels p').toggleClass('checked');
-            });
-            
-            $('.switcher a').on('click', function(e){
-                e.preventDefault();
-                $(this).closest('.switchers').find('.switcher a').removeClass('checked');
-                $(this).toggleClass('checked');
-            });
-
             const red = '#D84774';
             const orange = '#F79663';
             const green = '#00ACB3';
@@ -79,17 +68,19 @@
                 //svg.append("g").call(yAxis);
 
                 svg.append("g")
-                    .attr("fill", "steelblue")
                     .selectAll("rect")
                     .data(data)
                     .join("rect")
+                    .transition()
+                    .duration(500)
                     .attr("x", data => x(data.country))
                     .attr("y", data => y(data.percentage))
                     .attr("height", d => y(0) - y(d.percentage))
                     .attr("width", 20)
                     .attr("rx", 10)
                     .attr("ry", 10)
-                    .attr("fill", data => data.color);
+                    .attr("fill", data => data.color)
+                    .delay(function(data,i){ return(i*100)});
             
                 svg.append("line")
                     .attr("x1", 40)
@@ -165,17 +156,19 @@
                 //svg.append("g").call(yAxis);
 
                 svg.append("g")
-                    .attr("fill", "steelblue")
                     .selectAll("rect")
                     .data(chart2data)
                     .join("rect")
+                    .transition()
+                    .duration(500)
                     .attr("x", chart2data => x(chart2data.country))
                     .attr("y", chart2data => y(chart2data.percentage))
                     .attr("height", d => y(0) - y(d.percentage))
                     .attr("width", 20)
                     .attr("rx", 10)
                     .attr("ry", 10)
-                    .attr("fill", chart2data => chart2data.color);
+                    .attr("fill", chart2data => chart2data.color)
+                    .delay(function(data,i){ return(i*100)});
             
                 svg.append("line")
                     .attr("x1", 40)
@@ -239,17 +232,19 @@
                 //svg.append("g").call(yAxis);
                 
                 svg.append("g")
-                    .attr("fill", "steelblue")
                     .selectAll("rect")
                     .data(chart3data)
                     .join("rect")
+                    .transition()
+                    .duration(500)
                     .attr("x", chart3data => x(chart3data.country))
                     .attr("y", chart3data => y(chart3data.percentage))
                     .attr("height", d => y(0) - y(d.percentage))
                     .attr("width", 20)
                     .attr("rx", 10)
                     .attr("ry", 10)
-                    .attr("fill", chart3data => chart3data.color);
+                    .attr("fill", chart3data => chart3data.color)
+                    .delay(function(data,i){ return(i*100)});
             
                 svg.append("line")
                     .attr("x1", 40)
@@ -269,9 +264,80 @@
             
             //Over age students chart
             if ($('.chart-4').length){
+
                 const chart4data = settings.spc_education_dashboard.chart4[0].data;
+                const chart4yearNumeracy = settings.spc_education_dashboard.chart4[1].data;
+                const chart6yearLiteracy = settings.spc_education_dashboard.chart4[2].data;
+                const chart6yearNumeracy = settings.spc_education_dashboard.chart4[3].data;
                 
-                //console.log(chart4data);
+                $.switcher('input.slider');
+                $('.ui-switcher').on('click', function(){
+                    
+                    var newData = [];                    
+                    
+                    $(this).closest('.switch-wrapper').find('.labels p').toggleClass('checked');
+                    svg.selectAll("rect").remove();
+                    
+                    if ($(this).attr('aria-checked') == 'true' ){
+                        newData = chart4yearNumeracy;
+                    } else {
+                        newData = chart4data;
+                    }
+
+                    svg.append("g")
+                        .selectAll("rect")
+                        .data(newData)
+                        .join("rect")
+                        .attr("x", newData => x(newData.country))
+                        .attr("y", function(newData){
+                            let pos = 200;
+                            if (newData.base == 1){
+                                pos = y(newData.percentage)/2;
+                            }
+                            return pos;
+                        })
+                        .attr("height", d => (y(0) - y(d.percentage))/2)
+                        .attr("width", 20)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .attr("fill", newData => newData.color);
+
+                });
+
+                $('.switcher a').on('click', function(e){
+                    e.preventDefault();
+                    $(this).closest('.switchers').find('.switcher a').removeClass('checked');
+                    $(this).toggleClass('checked');
+                    
+                    var newData = [];
+                    
+                    if ($(this).attr('id') == 'numeracy'){
+                        newData = chart6yearNumeracy;
+                    } else {
+                        newData = chart6yearLiteracy;
+                    }
+                    
+                    svg.selectAll("rect").remove();
+                    
+                    svg.append("g")
+                        .selectAll("rect")
+                        .data(newData)
+                        .join("rect")
+                        .attr("x", newData => x(newData.country))
+                        .attr("y", function(newData){
+                            let pos = 200;
+                            if (newData.base == 1){
+                                pos = y(newData.percentage)/2;
+                            }
+                            return pos;
+                        })
+                        .attr("height", d => (y(0) - y(d.percentage))/2)
+                        .attr("width", 20)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .attr("fill", newData => newData.color);
+                    
+                });
                 
                 let height = 400;
                 let width = 600;
@@ -299,7 +365,6 @@
                // svg.append("g").call(yAxis);
 
                 svg.append("g")
-                    .attr("fill", "steelblue")
                     .selectAll("rect")
                     .data(chart4data)
                     .join("rect")

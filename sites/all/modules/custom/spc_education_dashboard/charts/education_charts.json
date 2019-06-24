@@ -377,19 +377,277 @@
                 {
                     "name": "Over age students",
                     "data": [
+                        {
+                            "country": "Kiribati",
+                            "percentage": 27,
+                            "base": 1,
+                            "year": "",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Samoa",
+                            "percentage": 21,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 17,
+                            "base": 1,
+                            "year": "",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "RMI",
+                            "percentage": 10,
+                            "base": 1,
+                            "year": "",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 6,
+                            "base": 1,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 5,
+                            "base": 1,
+                            "year": "",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Tokelau",
+                            "percentage": 5,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
 
+                        {
+                            "country": "FSM",
+                            "percentage": 4,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 0.5,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+ 
+                        {
+                            "country": "Tonga",
+                            "percentage": 0.5,
+                            "base": 1,
+                            "year": "2015",
+                            "color": "#F79663"
+                        },
+
+                        {
+                            "country": "Cook Islands",
+                            "percentage": 2,
+                            "base": 0,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Niue",
+                            "percentage": 11,
+                            "base": 0,
+                            "year": "",
+                            "color": "#F79663"
+                        }
                     ]
                 },
                 {
                     "name": "Over age students",
                     "data": [
+                        {
+                            "country": "Kiribati",
+                            "percentage": 16,
+                            "base": 1,
+                            "year": "",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Samoa",
+                            "percentage": 6,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 14,
+                            "base": 1,
+                            "year": "",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "RMI",
+                            "percentage": 4,
+                            "base": 1,
+                            "year": "",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 2,
+                            "base": 1,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 0.5,
+                            "base": 1,
+                            "year": "",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Tokelau",
+                            "percentage": 0,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
 
+                        {
+                            "country": "FSM",
+                            "percentage": 6,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 2,
+                            "base": 0,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+ 
+                        {
+                            "country": "Tonga",
+                            "percentage": 11,
+                            "base": 0,
+                            "year": "2015",
+                            "color": "#F79663"
+                        },
+
+                        {
+                            "country": "Cook Islands",
+                            "percentage": 11,
+                            "base": 0,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Niue",
+                            "percentage": 13,
+                            "base": 0,
+                            "year": "",
+                            "color": "#F79663"
+                        }
                     ]
                 },
                 {
                     "name": "Over age students",
                     "data": [
-          
+                        {
+                            "country": "Kiribati",
+                            "percentage": 29,
+                            "base": 1,
+                            "year": "",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "Samoa",
+                            "percentage": 10,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 16,
+                            "base": 1,
+                            "year": "",
+                            "color": "#00ACB3"
+                        },
+                        {
+                            "country": "RMI",
+                            "percentage": 3,
+                            "base": 0,
+                            "year": "",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 17,
+                            "base": 1,
+                            "year": "2016",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 11,
+                            "base": 1,
+                            "year": "",
+                            "color": "#F79663"
+                        },
+                        {
+                            "country": "Tokelau",
+                            "percentage": 4,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+
+                        {
+                            "country": "FSM",
+                            "percentage": 14,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 1,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+ 
+                        {
+                            "country": "Tonga",
+                            "percentage": 37,
+                            "base": 1,
+                            "year": "2015",
+                            "color": "#F79663"
+                        },
+
+                        {
+                            "country": "Cook Islands",
+                            "percentage": 4,
+                            "base": 1,
+                            "year": "",
+                            "color": "#D84774"
+                        },
+                        {
+                            "country": "Niue",
+                            "percentage": 4,
+                            "base": 0,
+                            "year": "",
+                            "color": "#F79663"
+                        }
                     ]
                 }
             ]
