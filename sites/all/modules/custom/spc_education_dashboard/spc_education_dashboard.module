@@ -11,14 +11,6 @@
 function spc_education_dashboard_init(){
   $path = current_path();
   if($path == 'education-dashboard'){
-    drupal_add_css(
-      drupal_get_path('module', 'spc_education_dashboard') . '/css/education_dashboard.css',
-      array('group' => CSS_DEFAULT, 'every_page' => TRUE)
-    );
-    drupal_add_js(
-      drupal_get_path('module', 'spc_education_dashboard') . '/js/education_dashboard.js',
-      'file'
-    );
     //including jquery-autocomplete library
     drupal_add_css(
       drupal_get_path('module', 'spc_education_dashboard') . '/lib/jquery-autocomplete/jquery-autocomplete.css',
@@ -28,15 +20,6 @@ function spc_education_dashboard_init(){
       drupal_get_path('module', 'spc_education_dashboard') . '/lib/jquery-autocomplete/jquery-autocomplete.js',
       'file'
     );
-    //including D3 library
-    drupal_add_js(
-      drupal_get_path('module', 'spc_education_dashboard') . '/lib/d3/d3.js',
-      'file'
-    );
-    drupal_add_js(
-      drupal_get_path('module', 'spc_education_dashboard') . '/lib/d3/d3.tip.js',
-      'file'
-    );
     //including iphone-style-checkboxes library
     drupal_add_css(
       drupal_get_path('module', 'spc_education_dashboard') . '/lib/toggle-switcher/css/switcher.css',
@@ -44,6 +27,23 @@ function spc_education_dashboard_init(){
     );   
     drupal_add_js(
       drupal_get_path('module', 'spc_education_dashboard') . '/lib/toggle-switcher/js/jquery.switcher.js',
+      'file'
+    );
+    drupal_add_css(
+      drupal_get_path('module', 'spc_education_dashboard') . '/css/education_dashboard.css',
+      array('group' => CSS_DEFAULT, 'every_page' => TRUE)
+    );
+    drupal_add_js(
+      drupal_get_path('module', 'spc_education_dashboard') . '/js/education_dashboard.js',
+      'file'
+    );
+    //including D3 library
+    drupal_add_js(
+      drupal_get_path('module', 'spc_education_dashboard') . '/lib/d3/d3.v3.js',
+      'file'
+    );
+    drupal_add_js(
+      drupal_get_path('module', 'spc_education_dashboard') . '/lib/d3/d3.tip.js',
       'file'
     );
   }
