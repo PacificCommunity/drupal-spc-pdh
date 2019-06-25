@@ -1,6 +1,37 @@
 html {
   scroll-behavior: smooth;
 }
+.banner-with-title h1 {
+    margin-top: 90px;
+    text-transform: none !important;
+}
+.ed-lable {
+    position: absolute;
+    display: block;
+    text-align: left;
+    left: 0;
+    top: 20%;
+    background: #fff;
+    padding: 11px;
+    font-size: 24px;
+    line-height: 29px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.ui-autocomplete {
+    display: block;
+    border-radius: 25px;
+    padding: 20px;
+}
+.ui-menu .ui-menu-item-wrapper {
+    padding: 5px;
+}
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+    border:1px solid #ccc !important;
+    border-radius: 25px;
+    background:#ccc !important;
+}
 .education-block-content {
     margin: 60px 45px;
 }
@@ -20,6 +51,15 @@ html {
 .rationale {
     position: relative;
     margin-bottom: 30px;
+}
+.d3-tip>div {
+    background: red;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
 }
 .toggle {
     position: absolute;
@@ -146,3 +186,29 @@ html {
     top: 1px;
     z-index: 1;
 }
+
+@media (max-width: 767px) {
+    .banner-with-title {
+        height: 280px !important;
+    }
+    #spc-home-banner-search {
+        margin-top: 0 !important;
+        padding: 0 10px;
+    }
+    .ed-lable {
+        font-size: 14px;
+        padding: 0 10px;
+        top: 25%;
+    }
+    .ui-widget-content {
+        width: 382px !important;
+    }
+    .education-block-content {
+        margin: 10px;
+    }
+    .chart,
+    .description {
+        padding: 0 !important;
+    }
+}
+
