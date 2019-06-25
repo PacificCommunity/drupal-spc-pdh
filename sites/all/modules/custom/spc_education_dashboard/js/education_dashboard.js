@@ -29,9 +29,17 @@
               }
             });
             
+            //chart block description toggle
             $('.toggle').on('click', function(){
-               $(this).siblings('p').toggle();
-               $(this).find('.arrow').toggleClass('down');
+               var active = $(this).siblings('p').hasClass('hidden');
+                
+               $(this).closest('.description').find('p').addClass('hidden'); 
+               $(this).closest('.description').find('.arrow').removeClass('down'); 
+
+                if (active){
+                    $(this).siblings('p').removeClass('hidden');
+                    $(this).find('.arrow').toggleClass('down');
+                }
             });
             
             const red = '#D84774';
@@ -42,46 +50,69 @@
             if ($('.chart-1').length){
                 const data = settings.spc_education_dashboard.chart1[0].data;
                 
-                let height = 300;
-                let width = 600;
-                let margin = ({top: 20, right: 0, bottom: 30, left: 40});
+                const height = 300;
+                const width = 600;
+                const margin = ({top: 20, right: 0, bottom: 30, left: 40});
 
-                let x = d3.scaleBand()
-                    .domain(data.map(d => d.country))
-                    .range([margin.left, width - margin.right])
-                    .padding(0.1);
-                    
-                let y = d3.scaleLinear()
-                    .domain([0, d3.max(data, d => d.percentage)]).nice()
-                    .range([height - margin.bottom, margin.top]);
-            
-                let yAxis = g => g
-                    .attr("transform", `translate(${margin.left},0)`)
-                    .call(d3.axisLeft(y))
-                    .call(g => g.select(".domain").remove());
-            
-                const svg = d3                    
-                    .select(".chart-1")
-                    .append("svg")
-                    .attr("viewBox", [0, 0, width, height]);
-            
-                //svg.append("g").call(yAxis);
+                const x = d3.scale.ordinal()
+                    .rangeRoundBands([0, width], .1);
 
-                svg.append("g")
-                    .selectAll("rect")
-                    .data(data)
-                    .join("rect")
-                    .transition()
-                    .duration(500)
-                    .attr("x", data => x(data.country))
-                    .attr("y", data => y(data.percentage))
-                    .attr("height", d => y(0) - y(d.percentage))
-                    .attr("width", 20)
-                    .attr("rx", 10)
-                    .attr("ry", 10)
-                    .attr("fill", data => data.color)
-                    .delay(function(data,i){ return(i*100)});
-            
+                const y = d3.scale.linear()
+                    .range([height, 0]);
+
+                const tip = d3.tip()
+                    .attr('class', 'd3-tip')
+                    .offset([-margin.top, 0])
+                    .html(function(d) {
+                      return "<div style='background:" + d.color + "'>" + d.percentage + "</div>";
+                    });
+
+                const svg = d3.select(".chart-1").append("svg")
+                    .attr("viewBox", [0, 0, width, height])
+                    .append("g");
+
+                svg.call(tip);
+
+                x.domain(data.map(function(d) { return d.country; }));
+                y.domain([0, d3.max(data, function(d) { return d.percentage; })]);
+
+                svg.selectAll(".bar")
+                        .data(data)
+                        .enter()
+                        .append("rect")
+                        .transition()
+                        .duration(500)
+                        .attr("x", function(d) { return x(d.country); })
+                        .attr("y", function(d) { return y(d.percentage); })
+                        .attr("height", function(d) { return height - y(d.percentage); })
+                        .attr("width", 20)
+                        .attr("class", "bar")
+                        .attr("fill", data => data.color)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .delay(function(data,i){ return(i*100)})
+              
+                if ($(".chart-1 svg").length){
+                    setTimeout(function(){
+                        svg.selectAll(".bar").remove();
+
+                        svg.selectAll(".bar")
+                            .data(data)
+                            .enter().append("rect")
+                            .attr("class", "bar")
+                            .attr("x", function(d) { return x(d.country); })
+                            .attr("width", x.rangeBand())
+                            .attr("y", function(d) { return y(d.percentage); })
+                            .attr("height", function(d) { return height - y(d.percentage); })
+                            .attr("fill", data => data.color)
+                            .attr("width", 20)
+                            .attr("rx", 10)
+                            .attr("ry", 10)
+                            .on('mouseover', tip.show)
+                            .on('mouseout', tip.hide) 
+                    }, 2000)
+                }  
+                
                 svg.append("line")
                     .attr("x1", 40)
                     .attr("y1", 59)
@@ -124,6 +155,12 @@
                     .text("3.8%")
                     .attr("fill", red);
             
+                svg.append("text")
+                    .attr("x", 0)
+                    .attr("y", height)
+                    .text("0")
+                    .attr("fill", "#ccc");
+            
             }
             
             //Out of School Children chart
@@ -134,41 +171,62 @@
                 let width = 600;
                 let margin = ({top: 20, right: 0, bottom: 30, left: 40});
 
-                let x = d3.scaleBand()
-                    .domain(chart2data.map(d => d.country))
-                    .range([margin.left, width - margin.right])
-                    .padding(0.1);
-                    
-                let y = d3.scaleLinear()
-                    .domain([0, d3.max(chart2data, d => d.percentage)]).nice()
-                    .range([height - margin.bottom, margin.top]);
-            
-                let yAxis = g => g
-                    .attr("transform", `translate(${margin.left},0)`)
-                    .call(d3.axisLeft(y))
-                    .call(g => g.select(".domain").remove());
+                let x = d3.scale.ordinal()
+                    .rangeRoundBands([0, width], .1);
 
-                const svg = d3                    
-                    .select(".chart-2")
-                    .append("svg")
-                    .attr("viewBox", [0, 0, width, height]);
-            
-                //svg.append("g").call(yAxis);
+                let y = d3.scale.linear()
+                    .range([height, 0]);
 
-                svg.append("g")
-                    .selectAll("rect")
-                    .data(chart2data)
-                    .join("rect")
-                    .transition()
-                    .duration(500)
-                    .attr("x", chart2data => x(chart2data.country))
-                    .attr("y", chart2data => y(chart2data.percentage))
-                    .attr("height", d => y(0) - y(d.percentage))
-                    .attr("width", 20)
-                    .attr("rx", 10)
-                    .attr("ry", 10)
-                    .attr("fill", chart2data => chart2data.color)
-                    .delay(function(data,i){ return(i*100)});
+                let tip = d3.tip()
+                    .attr('class', 'd3-tip')
+                    .offset([-100, 0])
+                    .html(function(d) {
+                      return "<div style='background:" + d.color + "'>" + d.percentage + "</div>";
+                    });
+
+                let svg = d3.select(".chart-2").append("svg")
+                    .attr("viewBox", [0, 0, width, height])
+                    .append("g");
+
+                svg.call(tip);
+
+                x.domain(chart2data.map(function(d) { return d.country; }));
+                y.domain([0, d3.max(chart2data, function(d) { return d.percentage; })]);
+
+                svg.selectAll(".bar")
+                        .data(chart2data)
+                        .enter()
+                        .append("rect")
+                        .transition()
+                        .duration(500)
+                        .attr("x", function(d) { return x(d.country); })
+                        .attr("y", function(d) { return y(d.percentage); })
+                        .attr("height", function(d) { return height - y(d.percentage); })
+                        .attr("width", 20)
+                        .attr("class", "bar")
+                        .attr("fill", chart2data => chart2data.color)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .delay(function(chart2data,i){ return(i*100)})
+              
+                setTimeout(function(){
+                    svg.selectAll(".bar").remove();
+
+                    svg.selectAll(".bar")
+                        .data(chart2data)
+                        .enter().append("rect")
+                        .attr("class", "bar")
+                        .attr("x", function(d) { return x(d.country); })
+                        .attr("width", x.rangeBand())
+                        .attr("y", function(d) { return y(d.percentage); })
+                        .attr("height", function(d) { return height - y(d.percentage); })
+                        .attr("fill", chart2data => chart2data.color)
+                        .attr("width", 20)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .on('mouseover', tip.show)
+                        .on('mouseout', tip.hide) 
+                }, 2000)
             
                 svg.append("line")
                     .attr("x1", 40)
@@ -199,6 +257,12 @@
                     .attr("y", 403)
                     .text("2%")
                     .attr("fill", green);
+            
+                svg.append("text")
+                    .attr("x", 0)
+                    .attr("y", height)
+                    .text("0")
+                    .attr("fill", "#ccc");
 
             }
             
@@ -209,43 +273,64 @@
                 let height = 450;
                 let width = 600;
                 let margin = ({top: 20, right: 0, bottom: 30, left: 40});
-
-                let x = d3.scaleBand()
-                    .domain(chart3data.map(d => d.country))
-                    .range([margin.left, width - margin.right])
-                    .padding(0.1);
-                    
-                let y = d3.scaleLinear()
-                    .domain([0, d3.max(chart3data, d => d.percentage)]).nice()
-                    .range([height - margin.bottom, margin.top]);
-            
-                let yAxis = g => g
-                    .attr("transform", `translate(${margin.left},0)`)
-                    .call(d3.axisLeft(y))
-                    .call(g => g.select(".domain").remove());
-
-                const svg = d3                    
-                    .select(".chart-3")
-                    .append("svg")
-                    .attr("viewBox", [0, 0, width, height]);
-            
-                //svg.append("g").call(yAxis);
                 
-                svg.append("g")
-                    .selectAll("rect")
-                    .data(chart3data)
-                    .join("rect")
-                    .transition()
-                    .duration(500)
-                    .attr("x", chart3data => x(chart3data.country))
-                    .attr("y", chart3data => y(chart3data.percentage))
-                    .attr("height", d => y(0) - y(d.percentage))
-                    .attr("width", 20)
-                    .attr("rx", 10)
-                    .attr("ry", 10)
-                    .attr("fill", chart3data => chart3data.color)
-                    .delay(function(data,i){ return(i*100)});
-            
+                let x = d3.scale.ordinal()
+                    .rangeRoundBands([0, width], .1);
+
+                let y = d3.scale.linear()
+                    .range([height, 0]);
+
+                let tip = d3.tip()
+                    .attr('class', 'd3-tip')
+                    .offset([-180, 0])
+                    .html(function(d) {
+                      return "<div style='background:" + d.color + "'>" + d.percentage + "</div>";
+                    });
+
+                let svg = d3.select(".chart-3").append("svg")
+                    .attr("viewBox", [0, 0, width, height])
+                    .append("g");
+
+                svg.call(tip);
+
+                x.domain(chart3data.map(function(d) { return d.country; }));
+                y.domain([0, d3.max(chart3data, function(d) { return d.percentage; })]);
+
+                svg.selectAll(".bar")
+                        .data(chart3data)
+                        .enter()
+                        .append("rect")
+                        .transition()
+                        .duration(500)
+                        .attr("x", function(d) { return x(d.country); })
+                        .attr("y", function(d) { return y(d.percentage); })
+                        .attr("height", function(d) { return height - y(d.percentage); })
+                        .attr("width", 20)
+                        .attr("class", "bar")
+                        .attr("fill", chart3data => chart3data.color)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .delay(function(chart3data,i){ return(i*100)})
+              
+                setTimeout(function(){
+                    svg.selectAll(".bar").remove();
+
+                    svg.selectAll(".bar")
+                        .data(chart3data)
+                        .enter().append("rect")
+                        .attr("class", "bar")
+                        .attr("x", function(d) { return x(d.country); })
+                        .attr("width", x.rangeBand())
+                        .attr("y", function(d) { return y(d.percentage); })
+                        .attr("height", function(d) { return height - y(d.percentage); })
+                        .attr("fill", chart3data => chart3data.color)
+                        .attr("width", 20)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .on('mouseover', tip.show)
+                        .on('mouseout', tip.hide) 
+                }, 2000)
+                
                 svg.append("line")
                     .attr("x1", 40)
                     .attr("y1", 400)
@@ -260,128 +345,97 @@
                     .attr("y", 403)
                     .text("4%")
                     .attr("fill", green);
-            }
             
+                svg.append("text")
+                    .attr("x", 0)
+                    .attr("y", height)
+                    .text("0")
+                    .attr("fill", "#ccc");
+            }
+       
             //Over age students chart
             if ($('.chart-4').length){
 
-                const chart4data = settings.spc_education_dashboard.chart4[0].data;
+                const chart4yearLiteracy = settings.spc_education_dashboard.chart4[0].data;
                 const chart4yearNumeracy = settings.spc_education_dashboard.chart4[1].data;
                 const chart6yearLiteracy = settings.spc_education_dashboard.chart4[2].data;
                 const chart6yearNumeracy = settings.spc_education_dashboard.chart4[3].data;
-                
-                $.switcher('input.slider');
-                $('.ui-switcher').on('click', function(){
-                    
-                    var newData = [];                    
-                    
-                    $(this).closest('.switch-wrapper').find('.labels p').toggleClass('checked');
-                    svg.selectAll("rect").remove();
-                    
-                    if ($(this).attr('aria-checked') == 'true' ){
-                        newData = chart4yearNumeracy;
-                    } else {
-                        newData = chart4data;
-                    }
 
-                    svg.append("g")
-                        .selectAll("rect")
-                        .data(newData)
-                        .join("rect")
-                        .attr("x", newData => x(newData.country))
-                        .attr("y", function(newData){
-                            let pos = 200;
-                            if (newData.base == 1){
-                                pos = y(newData.percentage)/2;
-                            }
-                            return pos;
-                        })
-                        .attr("height", d => (y(0) - y(d.percentage))/2)
-                        .attr("width", 20)
-                        .attr("rx", 10)
-                        .attr("ry", 10)
-                        .attr("fill", newData => newData.color);
-
-                });
-
-                $('.switcher a').on('click', function(e){
-                    e.preventDefault();
-                    $(this).closest('.switchers').find('.switcher a').removeClass('checked');
-                    $(this).toggleClass('checked');
-                    
-                    var newData = [];
-                    
-                    if ($(this).attr('id') == 'numeracy'){
-                        newData = chart6yearNumeracy;
-                    } else {
-                        newData = chart6yearLiteracy;
-                    }
-                    
-                    svg.selectAll("rect").remove();
-                    
-                    svg.append("g")
-                        .selectAll("rect")
-                        .data(newData)
-                        .join("rect")
-                        .attr("x", newData => x(newData.country))
-                        .attr("y", function(newData){
-                            let pos = 200;
-                            if (newData.base == 1){
-                                pos = y(newData.percentage)/2;
-                            }
-                            return pos;
-                        })
-                        .attr("height", d => (y(0) - y(d.percentage))/2)
-                        .attr("width", 20)
-                        .attr("rx", 10)
-                        .attr("ry", 10)
-                        .attr("fill", newData => newData.color);
-                    
-                });
-                
                 let height = 400;
                 let width = 600;
                 let margin = ({top: 20, right: 0, bottom: 30, left: 40});
+                
+                let x = d3.scale.ordinal()
+                    .rangeRoundBands([0, width], .1);
 
-                let x = d3.scaleBand()
-                    .domain(chart4data.map(d => d.country))
-                    .range([margin.left, width - margin.right])
-                    .padding(0.1);
-                    
-                let y = d3.scaleLinear()
-                    .domain([0, d3.max(chart4data, d => d.percentage)]).nice()
-                    .range([height - margin.bottom, margin.top]);
-            
-                let yAxis = g => g
-                    .attr("transform", `translate(${margin.left},0)`)
-                    .call(d3.axisLeft(y))
-                    .call(g => g.select(".domain").remove());
+                let y = d3.scale.linear()
+                    .range([height, 0]);
 
-                const svg = d3                    
-                    .select(".chart-4")
-                    .append("svg")
-                    .attr("viewBox", [0, 0, width, height]);
-            
-               // svg.append("g").call(yAxis);
+                let tip = d3.tip()
+                    .attr('class', 'd3-tip')
+                    .offset([-230, 0])
+                    .html(function(d) {
+                      return "<div style='background:" + d.color + "'>" + d.percentage + "</div>";
+                    });
 
-                svg.append("g")
-                    .selectAll("rect")
-                    .data(chart4data)
-                    .join("rect")
-                    .attr("x", chart4data => x(chart4data.country))
-                    .attr("y", function(chart4data){
-                        let pos = 200;
-                        if (chart4data.base == 1){
-                            pos = y(chart4data.percentage)/2;
-                        }
-                        return pos;
-                    })
-                    .attr("height", d => (y(0) - y(d.percentage))/2)
-                    .attr("width", 20)
-                    .attr("rx", 10)
-                    .attr("ry", 10)
-                    .attr("fill", chart4data => chart4data.color);
-            
+                let svg = d3.select(".chart-4").append("svg")
+                    .attr("viewBox", [0, 0, width, height])
+                    .append("g")
+
+                svg.call(tip);
+
+                x.domain(chart4yearLiteracy.map(function(d) { return d.country; }));
+                y.domain([0, d3.max(chart4yearLiteracy, function(d) { return d.percentage; })]);
+
+                svg.selectAll(".bar")
+                        .data(chart4yearLiteracy)
+                        .enter()
+                        .append("rect")
+                        .transition()
+                        .duration(500)
+                        .attr("x", function(d) { return x(d.country); })
+                        .attr("y", function(chart4yearLiteracy){
+                                let pos = 200;
+                                if (chart4yearLiteracy.base == 1){
+                                    pos = y(chart4yearLiteracy.percentage)/2;
+                                }
+                                return pos;
+                            })
+                        .attr("height", d => (y(0) - y(d.percentage))/2)
+                        .attr("width", 20)
+                        .attr("class", "bar")
+                        .attr("fill", chart4yearLiteracy => chart4yearLiteracy.color)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .delay(function(chart4yearLiteracy,i){ return(i*100)})
+              
+
+                setTimeout(function(){
+                    svg.selectAll(".bar").remove();
+
+                    svg.selectAll(".bar")
+                        .data(chart4yearLiteracy)
+                        .enter().append("rect")
+                        .attr("class", "bar")
+                        .attr("x", function(d) { return x(d.country); })
+                        .attr("width", x.rangeBand())
+                        .attr("y", function(chart4yearLiteracy){
+                            let pos = 200;
+                            if (chart4yearLiteracy.base == 1){
+                                pos = y(chart4yearLiteracy.percentage)/2;
+                            }
+                            return pos;
+                        })
+                        .attr("height", d => (y(0) - y(d.percentage))/2)
+                        .attr("fill", chart4yearLiteracy => chart4yearLiteracy.color)
+                        .attr("width", 20)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .on('mouseover', tip.show)
+                        .on('mouseout', tip.hide) 
+                }, 2000)
+               
+           
                 svg.append("line")
                     .attr("x1", 40)
                     .attr("y1", 194)
@@ -426,6 +480,134 @@
                     .attr("y", 224)
                     .text("-1%")
                     .attr("fill", orange);
+                    
+                //enable switcher    
+                $.switcher('input.slider');
+                
+                $('.ui-switcher').on('click', function(){
+                    
+                    var newData = [];                    
+                    
+                    $(this).closest('.switch-wrapper').find('.labels p').toggleClass('checked');
+                    svg.selectAll("rect").remove();
+                    
+                    if ($(this).attr('aria-checked') == 'true' ){
+                        newData = chart4yearNumeracy;
+                    } else {
+                        newData = chart4yearLiteracy;
+                    }
+
+                    svg.selectAll(".bar")
+                            .data(newData)
+                            .enter()
+                            .append("rect")
+                            .transition()
+                            .duration(500)
+                            .attr("x", function(d) { return x(d.country); })
+                            .attr("y", function(newData){
+                                    let pos = 200;
+                                    if (newData.base == 1){
+                                        pos = y(newData.percentage)/2;
+                                    }
+                                    return pos;
+                                })
+                            .attr("height", d => (y(0) - y(d.percentage))/2)
+                            .attr("width", 20)
+                            .attr("class", "bar")
+                            .attr("fill", newData => newData.color)
+                            .attr("rx", 10)
+                            .attr("ry", 10)
+                            .delay(function(newData,i){ return(i*100)})
+
+                    setTimeout(function(){
+                        svg.selectAll(".bar").remove();
+
+                        svg.selectAll(".bar")
+                            .data(newData)
+                            .enter().append("rect")
+                            .attr("class", "bar")
+                            .attr("x", function(d) { return x(d.country); })
+                            .attr("width", x.rangeBand())
+                            .attr("y", function(newData){
+                                let pos = 200;
+                                if (newData.base == 1){
+                                    pos = y(newData.percentage)/2;
+                                }
+                                return pos;
+                            })
+                            .attr("height", d => (y(0) - y(d.percentage))/2)
+                            .attr("fill", newData => newData.color)
+                            .attr("width", 20)
+                            .attr("rx", 10)
+                            .attr("ry", 10)
+                            .on('mouseover', tip.show)
+                            .on('mouseout', tip.hide) 
+                    }, 2000)
+                });
+
+                $('.switcher a').on('click', function(e){
+                    e.preventDefault();
+                    $(this).closest('.switchers').find('.switcher a').removeClass('checked');
+                    $(this).toggleClass('checked');
+                    
+                    var newData = [];
+                    
+                    if ($(this).attr('id') == 'numeracy'){
+                        newData = chart6yearNumeracy;
+                    } else {
+                        newData = chart6yearLiteracy;
+                    }
+                    
+                    svg.selectAll("rect").remove();
+                    
+                    svg.selectAll(".bar")
+                            .data(newData)
+                            .enter()
+                            .append("rect")
+                            .transition()
+                            .duration(500)
+                            .attr("x", function(d) { return x(d.country); })
+                            .attr("y", function(newData){
+                                    let pos = 200;
+                                    if (newData.base == 1){
+                                        pos = y(newData.percentage)/2;
+                                    }
+                                    return pos;
+                                })
+                            .attr("height", d => (y(0) - y(d.percentage))/2)
+                            .attr("width", 20)
+                            .attr("class", "bar")
+                            .attr("fill", newData => newData.color)
+                            .attr("rx", 10)
+                            .attr("ry", 10)
+                            .delay(function(newData,i){ return(i*100)})
+
+                    setTimeout(function(){
+                        svg.selectAll(".bar").remove();
+
+                        svg.selectAll(".bar")
+                            .data(newData)
+                            .enter().append("rect")
+                            .attr("class", "bar")
+                            .attr("x", function(d) { return x(d.country); })
+                            .attr("width", x.rangeBand())
+                            .attr("y", function(newData){
+                                let pos = 200;
+                                if (newData.base == 1){
+                                    pos = y(newData.percentage)/2;
+                                }
+                                return pos;
+                            })
+                            .attr("height", d => (y(0) - y(d.percentage))/2)
+                            .attr("fill", newData => newData.color)
+                            .attr("width", 20)
+                            .attr("rx", 10)
+                            .attr("ry", 10)
+                            .on('mouseover', tip.show)
+                            .on('mouseout', tip.hide) 
+                    }, 2000)
+                    
+                });            
             
             }
             

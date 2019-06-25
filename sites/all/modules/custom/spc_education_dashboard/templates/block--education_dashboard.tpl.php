@@ -10,8 +10,11 @@
 <div class="bean-banner-with-title contextual-links-region clearfix">
   <div class="content">
     <div style="background-image: url('/sites/default/files/styles/dashboard_banner/public/all_stories_bg_0.png');" class="banner-with-title">
+        <div class="ed-lable">
+            <span><b><?php print t('Pacific'); ?></b>&nbsp;<?php print t('education'); ?></span>
+        </div>  
       <div class="field field-type-text-long">
-          <h1><?php print t('The status of education</br>in the '); ?>&nbsp;<strong><?php print t('Pacific region'); ?></strong></h1>
+          <h1><?php print t('The status of education</br>in the'); ?>&nbsp;<strong><?php print t('Pacific region'); ?></strong></h1>
       </div>
       <div id="spc-home-banner-search">
         <form action="/" method="post" id="ckan-search-form" accept-charset="UTF-8">
@@ -69,22 +72,22 @@
                   <div class="toggle">
                       <span class="arrow down"></span>
                   </div>
-              <p><?php print $item['definition']; ?></p>
+              <p class="active"><?php print $item['definition']; ?></p>
             </div>
             <div class="rationale">
               <h5><?php print t('Threshold'); ?></h5>
                   <div class="toggle">
-                      <span class="arrow down"></span>
+                      <span class="arrow"></span>
                   </div>
-              <p><?php print $item['threshold']['value']; ?></p>
-              <p><?php print $item['threshold']['description']; ?></p>
+              <p class="hidden"><?php print $item['threshold']['value']; ?></p>
+              <p class="hidden"><?php print $item['threshold']['description']; ?></p>
             </div> 
             <div class="rationale">
               <h5><?php print t('Rationale'); ?></h5>
               <div class="toggle">
-                  <span class="arrow down"></span>
+                  <span class="arrow"></span>
               </div>
-              <p><?php print $item['rationale']; ?></p>
+              <p class="hidden"><?php print $item['rationale']; ?></p>
             </div>              
           </div>
           
