@@ -5,6 +5,13 @@ html {
     margin-top: 90px;
     text-transform: none !important;
 }
+.clearfix {
+    margin-bottom: 15px;
+}
+.chart svg:not(:root) {
+    padding-top: 30px;
+    overflow: visible !important; 
+}
 .ed-lable {
     position: absolute;
     display: block;
@@ -201,7 +208,7 @@ html {
         top: 25%;
     }
     .ui-widget-content {
-        width: 382px !important;
+        margin: 10px;
     }
     .education-block-content {
         margin: 10px;
