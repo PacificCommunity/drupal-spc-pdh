@@ -290,85 +290,73 @@
                     "data": [
                         {
                             "country": "Tokelau",
-                            "percentage": 28,
-                            "base": 0,
+                            "percentage": -28,
                             "year": "",
                             "color": "#D84774"
                         },
                         {
                             "country": "Samoa",
-                            "percentage": 19,
-                            "base": 0,
+                            "percentage": -19,
                             "year": "",
                             "color": "#D84774"
                         },
                         {
                             "country": "Cook Islands",
-                            "percentage": 16,
-                            "base": 0,
+                            "percentage": -16,
                             "year": "",
                             "color": "#D84774"
                         },
                         {
                             "country": "FSM",
-                            "percentage": 14,
-                            "base": 0,
+                            "percentage": -14,
                             "year": "",
                             "color": "#D84774"
                         },
                         {
                             "country": "Palau",
-                            "percentage": 8,
-                            "base": 0,
+                            "percentage": -8,
                             "year": "",
                             "color": "#D84774"
                         },
                         {
                             "country": "Niue",
-                            "percentage": 5,
-                            "base": 0,
+                            "percentage": -5,
                             "year": "",
                             "color": "#F79663"
                         },
                         {
                             "country": "Tuvalu",
-                            "percentage": 5,
-                            "base": 0,
+                            "percentage": -5,
                             "year": "2016",
                             "color": "#F79663"
                         },
                         {
                             "country": "Solomon Islands",
                             "percentage": 0.5,
-                            "base": 0,
                             "year": "",
                             "color": "#F79663"
                         }, 
                         {
                             "country": "Tonga",
                             "percentage": 0.5,
-                            "base": 0,
                             "year": "2015",
                             "color": "#F79663"
                         },
                         {
                             "country": "RMI",
                             "percentage": 0.5,
-                            "base": 0,
                             "year": "",
                             "color": "#F79663"
                         },
                         {
                             "country": "Vanuatu",
                             "percentage": 5,
-                            "base": 1,
                             "year": "",
                             "color": "#00ACB3"
                         },
                         {
                             "country": "Kiribati",
                             "percentage": 44,
-                            "base": 1,
                             "year": "",
                             "color": "#00ACB3"
                         }
@@ -452,14 +440,14 @@
 
                         {
                             "country": "Cook Islands",
-                            "percentage": 2,
+                            "percentage": -2,
                             "base": 0,
                             "year": "",
                             "color": "#D84774"
                         },
                         {
                             "country": "Niue",
-                            "percentage": 11,
+                            "percentage": -11,
                             "base": 0,
                             "year": "",
                             "color": "#F79663"

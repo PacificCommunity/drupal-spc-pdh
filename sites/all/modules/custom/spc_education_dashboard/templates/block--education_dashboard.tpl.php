@@ -38,6 +38,9 @@
           
           <div class="chart col-sm-5">
               <div class="chart-<?php print $item['id']; ?>"></div>
+              <?php if ($item['id'] == 4 ): ?>
+              <div id="chart4yearNumeracy"></div>
+              <?php endif; ?>
           </div>
           
           <div class="description col-sm-7">
