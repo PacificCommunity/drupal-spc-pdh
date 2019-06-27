@@ -38,26 +38,25 @@
           
           <div class="chart col-sm-5">
               <div class="chart-<?php print $item['id']; ?>"></div>
-              <?php if ($item['id'] == 4 ): ?>
-              <div id="chart4yearNumeracy"></div>
-              <?php endif; ?>
           </div>
           
           <div class="description col-sm-7">
               
-            <?php if ($item['id'] == 4 ): ?>  
+            <?php if (!empty($item['switchers'])): ?> 
             <div class="switchers clearfix">
-                <div class="switch-wrapper horizontal">
-                    <div class="switcher">
-                        <a href="" id="literacy" class="checked"><?php print t('Literacy'); ?></a>
+                
+                <?php if (!empty($item['switchers']['horizontal'])): ?> 
+                  <?php foreach ($item['switchers']['horizontal'] as $key => $switcher): ?>
+                    <div class="switch-wrapper horizontal">
+                        <div class="switcher sw-<?php print $item['id']; ?>">
+                            <?php if ($key == 1) $class = 'checked'; ?>
+                            <a href="" id="<?php print $switcher['id']; ?>" class="<?php print $class; ?>"><?php print $switcher['name']; ?></a>
+                        </div>
                     </div>
-                    
-                </div>
-                <div class="switch-wrapper horizontal">
-                    <div class="switcher">
-                        <a href="" id="numeracy" class="" ><?php print t('Numeracy'); ?></a>
-                    </div>
-                </div> 
+                  <?php endforeach; ?>
+                <?php endif?>
+                
+                <?php if (!empty($item['switchers']['vertical'])): ?> 
                 <div class="switch-wrapper vertical">
                   <div class="labels">  
                       <span class="checked"><?php print t('Year four students'); ?></span>
@@ -67,6 +66,8 @@
                     <input class="form-check-input slider" type="checkbox" id="years" value="four">
                   </div>
                 </div>
+                <?php endif; ?>
+
             </div> 
             <?php endif; ?> 
               
@@ -80,7 +81,7 @@
             </div>
             <?php endif; ?>  
               
-            <?php if (!empty($item['threshold']['description'])): ?>  
+            <?php if (!empty($item['threshold']['description']) || !empty($item['threshold']['value'])): ?>  
             <div class="rationale">
               <h5><?php print t('Threshold'); ?></h5>
                   <div class="toggle">
