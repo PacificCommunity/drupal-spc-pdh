@@ -151,8 +151,12 @@ html {
     font-weight: 800;
     text-align: right;
 }
-.switchers .labels p {
+.switchers .labels {
     text-align: right;
+}
+.switchers .labels span {
+    display: block;
+    margin-bottom: 10px;
 }
 .switch-wrapper.horizontal {
     margin-top: 10px;
