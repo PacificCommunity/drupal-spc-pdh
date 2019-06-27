@@ -443,7 +443,7 @@
                     svgSetText(svg, 0, 219, '-1%', orange);
                 });
 
-                $('.switcher a').on('click', function(e){
+                $('.sw-4 a').on('click', function(e){
                     e.preventDefault();
                     
                     let newData = [];
@@ -490,7 +490,97 @@
                     svgSetText(svg, 0, 219, '-1%', orange);
                     
                 });            
+            }
             
+            //Net enrolment rate
+            if ($('.chart-5').length){
+                const chart5ece = settings.spc_education_dashboard.chart5[0].data;
+                const chart5primary = settings.spc_education_dashboard.chart5[1].data;
+                const chart5secondary = settings.spc_education_dashboard.chart5[2].data;
+                
+                chart5ece.sort(barSort);
+                chart5primary.sort(barSort);
+                chart5secondary.sort(barSort);
+                
+                const id = '5';
+                
+                let height = 450;
+                let width = 600;
+
+                let x = setX(width);
+                let y = setY(height);
+                
+                let svg = setChartSvg('.chart-' + id, width, height);
+
+                setSvgDomains(chart5ece, x, y);
+                
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                let tooltip = setToolBox(svg);
+                
+                appendTolltip(id);
+            
+                const attrX = function(d) { 
+                    return x(d.country)+20; 
+                }
+                
+                const attrY = function(d) { 
+                    return y(d.percentage); 
+                }
+                
+                const attrH = function(d){
+                    return y(0) - y(d.percentage);
+                }
+                
+                const tipY = function(d){
+                    return y(d.percentage)-30; 
+                }
+                
+                setCartBars(svg, chart5ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                
+                svgSetLine(svg, 40, 0, 580, 1, green);
+                svgSetText(svg, 0, 0, '100%', green);
+                
+                svgSetText(svg, 0, height, '0', grey);
+                
+                $('.sw-5 a').on('click', function(e){
+                    e.preventDefault();
+                    
+                    let newData = [];
+
+                    $(this).closest('.switchers').find('.switcher a').removeClass('checked');
+                    $(this).toggleClass('checked');
+                    
+                    
+                    if($(this).attr('id') == 'secondary'){
+                        newData = chart5secondary;
+                    }
+                    else if ($(this).attr('id') == 'primary'){
+                        newData = chart5primary;
+                    }
+                    else if ($(this).attr('id') == 'ece'){
+                        newData = chart5ece;
+                    }
+                    
+                    d3.select(".chart-" + id + " svg").remove();
+
+                    svg = setChartSvg('.chart-' + id, width, height);
+                    setSvgDomains(newData, x, y);
+
+                    tooltext = setToolText(svg, "tooltip-" + id);
+                    tooltip = setToolBox(svg);
+
+                    appendTolltip(id);
+                    
+                    setCartBars(svg, chart5ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+
+                    svgSetLine(svg, 40, 0, 580, 1, green);
+                    svgSetText(svg, 0, 0, '100%', green);
+
+                    svgSetText(svg, 0, height, '0', grey);                    
+                    
+                    
+                    
+                });    
             }
             
             
