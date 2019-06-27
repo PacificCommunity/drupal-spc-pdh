@@ -60,8 +60,8 @@
                 </div> 
                 <div class="switch-wrapper vertical">
                   <div class="labels">  
-                      <p class="checked"><?php print t('Year four students'); ?></p>
-                      <p><?php print t('Year six students'); ?></p>
+                      <span class="checked"><?php print t('Year four students'); ?></span>
+                      <span><?php print t('Year six students'); ?></span>
                   </div>    
                   <div class="switcher">
                     <input class="form-check-input slider" type="checkbox" id="years" value="four">
@@ -70,6 +70,7 @@
             </div> 
             <?php endif; ?> 
               
+            <?php if (!empty($item['definition'])): ?>  
             <div class="definition ">
               <h5><?php print t('Definition'); ?></h5>
                   <div class="toggle">
@@ -77,6 +78,9 @@
                   </div>
               <p class="active"><?php print $item['definition']; ?></p>
             </div>
+            <?php endif; ?>  
+              
+            <?php if (!empty($item['threshold']['description'])): ?>  
             <div class="rationale">
               <h5><?php print t('Threshold'); ?></h5>
                   <div class="toggle">
@@ -85,13 +89,18 @@
               <p class="hidden"><?php print $item['threshold']['value']; ?></p>
               <p class="hidden"><?php print $item['threshold']['description']; ?></p>
             </div> 
+            <?php endif; ?>  
+              
+            <?php if (!empty($item['rationale'])): ?>  
             <div class="rationale">
               <h5><?php print t('Rationale'); ?></h5>
               <div class="toggle">
                   <span class="arrow"></span>
               </div>
               <p class="hidden"><?php print $item['rationale']; ?></p>
-            </div>              
+            </div>
+            <?php endif; ?>  
+              
           </div>
           
       </div>
