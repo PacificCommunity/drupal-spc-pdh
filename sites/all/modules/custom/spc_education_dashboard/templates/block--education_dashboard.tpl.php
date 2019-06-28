@@ -49,8 +49,8 @@
                   <?php foreach ($item['switchers']['horizontal'] as $key => $switcher): ?>
                     <div class="switch-wrapper horizontal">
                         <div class="switcher sw-<?php print $item['id']; ?>">
-                            <?php if ($key == 1) $class = 'checked'; ?>
-                            <a href="" id="<?php print $switcher['id']; ?>" class="<?php print $class; ?>"><?php print $switcher['name']; ?></a>
+                            <?php $class = ($switcher['default'])? 'checked': ''; ?>
+                            <a href="" key="<?php print $key; ?>" id="<?php print $switcher['id']; ?>" class="<?php print $class; ?>"><?php print $switcher['name']; ?></a>
                         </div>
                     </div>
                   <?php endforeach; ?>

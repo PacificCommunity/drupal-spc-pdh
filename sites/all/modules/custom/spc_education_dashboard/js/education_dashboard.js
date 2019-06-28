@@ -83,6 +83,12 @@
                     .ordinal()
                     .rangeRoundBands([0, width], .1);
             }
+            
+            function setXg(){
+                 return d3
+                    .scale
+                    .ordinal();
+            }
 
             function setY(height){
                 return d3
@@ -91,10 +97,11 @@
                     .range([height, 0]);
             }
             
-            function setChartSvg(chart, width, height){
+            function setChartSvg(chart, width, height, className){
                 return d3
                     .select(chart)
                     .append("svg")
+                    .attr('class', className)
                     .attr("viewBox", [0, 0, width, height])
                     .append("g");
             }
@@ -325,7 +332,7 @@
                 svgSetText(svg, 0, height, '0', grey);
             }
        
-            //Over age students chart
+            //Learning outcomes
             if ($('.chart-4').length){
                 const id = '4';
                 
@@ -571,17 +578,229 @@
 
                     appendTolltip(id);
                     
-                    setCartBars(svg, chart5ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+
+                    svgSetLine(svg, 40, 0, 580, 1, green);
+                    svgSetText(svg, 0, 0, '100%', green);
+
+                    svgSetText(svg, 0, height, '0', grey);                     
+                });    
+            }
+            
+            //Gross enrolment ratio
+            if ($('.chart-6').length){
+                const chart6ece = settings.spc_education_dashboard.chart6[0].data;
+                const chart6primary = settings.spc_education_dashboard.chart6[1].data;
+                const chart6secondary = settings.spc_education_dashboard.chart6[2].data;
+                
+                chart6ece.sort(barSort);
+                chart6primary.sort(barSort);
+                chart6secondary.sort(barSort);
+                
+                const id = '6';
+                
+                let height = 450;
+                let width = 600;
+                
+                let x = setX(width);
+                let y = setY(height);
+                
+                let svg = setChartSvg('.chart-' + id, width, height);
+
+                setSvgDomains(chart6ece, x, y);
+                
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                let tooltip = setToolBox(svg);
+                
+                appendTolltip(id);
+            
+                const attrX = function(d) { 
+                    return x(d.country)+20; 
+                }
+                
+                const attrY = function(d) { 
+                    return y(d.percentage); 
+                }
+                
+                const attrH = function(d){
+                    return y(0) - y(d.percentage);
+                }
+                
+                const tipY = function(d){
+                    return y(d.percentage)-30; 
+                }
+                
+                setCartBars(svg, chart6ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                
+                svgSetLine(svg, 40, 20, 580, 21, green);
+                svgSetText(svg, 0, 20, '100%', green);
+                
+                svgSetText(svg, 0, height, '0', grey);
+                
+                $('.sw-6 a').on('click', function(e){
+                    e.preventDefault();
+                    
+                    let newData = [];
+                    
+                    $(this).closest('.switchers').find('.switcher a').removeClass('checked');
+                    $(this).toggleClass('checked');
+                    
+                    
+                    if($(this).attr('id') == 'secondary'){
+                        newData = chart6secondary;
+                    }
+                    else if ($(this).attr('id') == 'primary'){
+                        newData = chart6primary;
+                    }
+                    else if ($(this).attr('id') == 'ece'){
+                        newData = chart6ece;
+                    }
+                    
+                    d3.select(".chart-" + id + " svg").remove();
+
+                    svg = setChartSvg('.chart-' + id, width, height);
+                    setSvgDomains(newData, x, y);
+
+                    tooltext = setToolText(svg, "tooltip-" + id);
+                    tooltip = setToolBox(svg);
+
+                    appendTolltip(id);
+                    
+                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
 
                     svgSetLine(svg, 40, 0, 580, 1, green);
                     svgSetText(svg, 0, 0, '100%', green);
 
                     svgSetText(svg, 0, height, '0', grey);                    
                     
-                    
-                    
                 });    
-            }
+            } 
+            
+            //Gross enrolment ratio
+            if ($('.chart-7').length){
+                const data = settings.spc_education_dashboard.chart7[0].data;
+                
+                const id = '7';
+                
+                                
+                const threshold = {
+                    "green": 85,
+                    "orange": 70,
+                    "red": 70
+                }
+                
+                let height = 450;
+                let width = 650;
+                
+                const margin = {
+                    top: 20, 
+                    right: 20, 
+                    bottom: 30, 
+                    left: 40
+                };
+                
+                let x0 = setX(width);
+                let x1 = setXg();
+                let y = setY(height);
+            
+                var svg = d3.select('.chart-' + id)
+                     .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");    
+            
+                var categoriesNames = data.map(function(d) { return d.country; });
+                var rateNames = data[0].values.map(function(d) { return d.rate; });
+                
+                x0.domain(categoriesNames);
+                x1.domain(rateNames).rangeRoundBands([0, x0.rangeBand()]);
+                y.domain([0, d3.max(data, function(country) { return d3.max(country.values, function(d) { return d.value; }); })]);
+                
+                svg.select('.y').transition().duration(500).delay(1300).style('opacity','1');
+                
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                let tooltip = setToolBox(svg);
+                
+                appendTolltip(id);
+                
+                function setFill(proc) {
+                    let fill = green;
+                    if(proc < threshold.green){
+                        fill = orange;
+                    } else if (proc < threshold.orange){
+                        fill = red;
+                    }
+                    return fill;
+                }
+                
+                function setTipX(rate){
+                    console.log(x1(rate));
+                    return x1(rate); 
+                }
+                
+                var slice = svg.selectAll(".slice")
+                    .data(data)
+                    .enter()
+                    .append("g")
+                    .attr("class", "group")
+                    .attr("width", 100)
+                    .attr("x", function(d){return x0(d.country)})
+                    .attr("transform",function(d) {return "translate(" + x0(d.country) + ",0)"; });
+
+                slice.selectAll("rect")
+                    .data(function(d) { return d.values; })
+                    .enter()
+                    .append("rect")
+                    .attr("width", 20)
+                    .attr("x", function(d) { return x1(d.rate); })
+                    .style("fill", function(d) {if (d.rate == 'M'){return setFill(d.value);}return '#fff';})
+                    .style("stroke-width", 3)
+                    .style("stroke",function(d) {return setFill(d.value);})
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .attr("y", function(d) { return y(0); })
+                    .attr("height", function(d) { return height - y(0); })
+                    
+                    .on("mouseover", function(d) {
+//                        let xGroup = 0;
+//                        d3.select(this)
+//                            .style("opacity", 1)
+//                            .attr("class", "tipbox")
+//                            .attr("x", function(data){
+//                                xGroup = $(this).closest('.group').attr('x');
+//                                return xGroup;
+//                            })
+//                            .attr("y", y(d.value)-30)
+//                            .attr("width", 40)
+//                            .attr("height", 40)
+//                            .attr("rx", 10)
+//                            .attr("ry", 10)
+//                            .attr("fill", setFill(d.value));
+                    
+                        let xGroup = 0;
+                        d3.select(this)
+                            .attr("Xgroup", function(){
+                                xGroup = $(this).closest('.group').attr('x');
+                                return xGroup;
+                            })
+                    
+                        tooltip.style("opacity", 1)
+                               .attr("x", xGroup)
+                               .attr("y", y(d.value)-30)
+                               .attr("fill", setFill(d.value));
+                    
+                    })
+                    .on("mouseout", function(d) {
+                    });
+
+                slice.selectAll("rect")
+                    .transition()
+                    .delay(function (d) {return Math.random()*1000;})
+                    .duration(1000)
+                    .attr("y", function(d) { return y(d.value); })
+                    .attr("height", function(d) { return height - y(d.value); });
+            }    
             
             
         //end context
