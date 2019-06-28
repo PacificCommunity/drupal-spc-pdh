@@ -185,8 +185,8 @@
                     "type": "revers",
                     "dots":{
                         "green": 4,
-                        "orange": 4,
-                        "red": 50
+                        "orange": 6,
+                        "red": 6
                     }
                 },
             "rationale":"",
@@ -289,11 +289,13 @@
                 "horizontal": [
                     {
                         "id":"numeracy",
-                        "name":"Numeracy"
+                        "name":"Numeracy",
+                        "default": true
                     },
                     {
                         "id":"literacy",
-                        "name":"Literacy"
+                        "name":"Literacy",
+                        "default": false
                     }                                        
                 ],
                 "round": []                
@@ -581,9 +583,9 @@
                     "link": "",
                     "type": "normal",
                     "dots":{
-                        "green": 50,
-                        "orange": 30,
-                        "red": 30
+                        "green": 20,
+                        "orange": 15,
+                        "red": 15
                     }
                 },    
             "rationale":"A high NER denotes a high degree of coverage for the official school-age population. The theoretical maximum value is 100%. Increasing trends can be considered as reflecting improving coverage at the specified level of education. When the NER is compared with the GER, the difference between the two highlights the incidence of under-aged and over-aged enrolment. If the NER is below 100%, then the complement, i.e. the difference with 100%, provides a measure of the proportion of children not enrolled at the specified level of education. However, since some of these children/youth could be enrolled at other levels of education, this difference should in no way be considered as indicating the percentage of students not enrolled. To measure universal primary education, for example, adjusted primary NER is calculated on the basis of the percentage of children in the official primary school age range who are enrolled in either primary or secondary education. A more precise complementary indicator is the Age-specific enrolment ratio (ASER) which shows the participation in education of the population of each particular age, regardless of the level of education.",
@@ -591,16 +593,19 @@
                 "vertical":[],
                 "horizontal": [
                     {
-                        "id":"ece",
-                        "name":"ECE"
+                        "id":"secondary",
+                        "name":"Secondary",
+                        "default": false
                     },
                     {
                         "id":"primary",
-                        "name":"Primary"
+                        "name":"Primary",
+                        "default": false
                     },
                     {
-                        "id":"secondary",
-                        "name":"Secondary"
+                        "id":"ece",
+                        "name":"Early",
+                        "default": true
                     }
                 ],
                 "round": []                
@@ -836,19 +841,268 @@
             "definition": "Number of students enrolled in a given level of education, regardless of age, expressed as a percentage of the official school-age population corresponding to the same level of education. For the tertiary level, the population used is the 5-year age group starting from the official secondary school graduation age.",
             "threshold": 
                 {
-                    "value": "",
+                    "value": "90% to 100%",
                     "description":"",
-                    "link": ""
+                    "link": "",
+                    "type": "normal",
+                    "dots":{
+                        "green": 100,
+                        "orange": 90,
+                        "red": 90
+                    }
                 },
             "rationale":"A high GER generally indicates a high degree of participation, whether the pupils belong to the official age group or not. A GER value approaching or exceeding 100% indicates that a country is, in principle, able to accommodate all of its school-age population, but it does not indicate the proportion already enrolled. The achievement of a GER of 100% is therefore a necessary but not sufficient condition for enrolling all eligible children in school. When the GER exceeds 90% for a particular level of education, the aggregate number of places for students is approaching the number required for universal access of the official age group. However, this is a meaningful interpretation only if one can expect the under-aged and over-aged enrolment to decline in the future to free places for pupils from the expected age group.",
+            "switchers":{
+                "vertical":[],
+                "horizontal": [
+                    {
+                        "id":"secondary",
+                        "name":"Secondary",
+                        "default": false
+                    },
+                    {
+                        "id":"primary",
+                        "name":"Primary",
+                        "default": false
+                    },
+                    {
+                        "id":"ece",
+                        "name":"Early",
+                        "default": true
+                    }
+                ],
+                "round": []                
+            },            
             "charts":[
                 {
-                    "name": "",
-                    "data": [{
-                                "": "",
-                                "": "",
-                                "": ""
-                            }]
+                    "name": "ECE",
+                    "data": [
+                        {
+                            "country": "Cook Islands",
+                            "percentage": 98,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Fiji",
+                            "percentage": 94.9,
+                            "year": "2015"
+                        },
+                        {
+                            "country": "FSM",
+                            "percentage": 92,
+                            "year": "2018"
+                        },
+                        {
+                            "country": "Nauru",
+                            "percentage": 71.2,
+                            "year": "2015"
+                        },
+                        {
+                            "country": "Niue",
+                            "percentage": 55.7,
+                            "year": "2015"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 90.8,
+                            "year": "2014"
+                        },
+                        {
+                            "country": "RMI",
+                            "percentage": 47,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Samoa",
+                            "percentage": 56,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 56,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "Tokelau",
+                            "percentage": 120.9,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Tonga",
+                            "percentage": 109,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 96.5,
+                            "year": "2015"
+                        },                        
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 98,
+                            "year": "2015"
+                        }
+                    ]
+                },
+                {
+                    "name": "Primary",
+                    "data": [
+                        {
+                            "country": "Cook Islands",
+                            "percentage": 107,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Fiji",
+                            "percentage": 111,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "FSM",
+                            "percentage": 99,
+                            "year": "2018"
+                        },
+                        {
+                            "country": "Kiribati",
+                            "percentage": 113.8,
+                            "year": "2014"
+                        },                        
+                        {
+                            "country": "Nauru",
+                            "percentage": 99.6,
+                            "year": "2015"
+                        },
+                        {
+                            "country": "Niue",
+                            "percentage": 132.7,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 109,
+                            "year": "2014"
+                        },
+                        {
+                            "country": "PNG",
+                            "percentage": 85,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "RMI",
+                            "percentage": 86,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Samoa",
+                            "percentage": 107,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 117,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "Tokelau",
+                            "percentage": 101.7,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Tonga",
+                            "percentage": 110,
+                            "year": "2014"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 111,
+                            "year": "2017"
+                        },                        
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 118,
+                            "year": "2015"
+                        }
+                    ]
+                },
+                {
+                    "name": "Secondary",
+                    "data": [
+                                                {
+                            "country": "Cook Islands",
+                            "percentage": 100,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Fiji",
+                            "percentage": 88,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "FSM",
+                            "percentage": 69,
+                            "year": "2018"
+                        },
+                        {
+                            "country": "Kiribati",
+                            "percentage": 96.5,
+                            "year": "2014"
+                        },                        
+                        {
+                            "country": "Nauru",
+                            "percentage": 47.3,
+                            "year": "2015"
+                        },
+                        {
+                            "country": "Niue",
+                            "percentage": 109.6,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "Palau",
+                            "percentage": 114,
+                            "year": "2014"
+                        },
+                        {
+                            "country": "PNG",
+                            "percentage": 28,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "RMI",
+                            "percentage": 48,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Samoa",
+                            "percentage": 75,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Solomon Islands",
+                            "percentage": 36,
+                            "year": "2016"
+                        },
+                        {
+                            "country": "Tokelau",
+                            "percentage": 70.1,
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Tonga",
+                            "percentage": 93,
+                            "year": "2014"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "percentage": 71.5,
+                            "year": "2017"
+                        },                        
+                        {
+                            "country": "Vanuatu",
+                            "percentage": 51,
+                            "year": "2015"
+                        }
+                    ]
                 }
             ]
         },
@@ -859,19 +1113,198 @@
             "definition": "Primary completion rate",
             "threshold": 
                 {
-                    "value": "",
+                    "value": "85% to 100%",
                     "description":"",
-                    "link": ""
+                    "link": "",
+                    "type": "normal",
+                    "dots":{
+                        "green": 85,
+                        "orange": 70,
+                        "red": 70
+                    }
                 },
             "rationale":"",
             "charts":[
                 {
                     "name": "",
-                    "data": [{
-                                "": "",
-                                "": "",
-                                "": ""
-                            }]
+                    "data": [
+                        {
+                            "country": "Fiji",
+                            "gender": "M",
+                            "percentage": 103,
+                            "values": [
+                                {
+                                    "value": 103, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 103, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Kiribati",
+                            "gender": "M",
+                            "percentage": 96,
+                            "values": [
+                                {
+                                    "value": 96, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 103, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Nauru",
+                            "gender": "M",
+                            "percentage": 120,
+                            "values": [
+                                {
+                                    "value": 120, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 121, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Palau",
+                            "gender": "M",
+                            "percentage": 97,
+                            "values": [
+                                {
+                                    "value": 97, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 95, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2017"
+                        },
+                        {
+                            "country": "PNG",
+                            "gender": "M",
+                            "percentage": 85,
+                            "values": [
+                                {
+                                    "value": 85, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 73, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2016"
+                        },
+                        {
+                            "country": "RMI",
+                            "gender": "M",
+                            "percentage": 74,
+                            "values": [
+                                {
+                                    "value": 74, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 80, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2017"
+                        },                        
+                        {
+                            "country": "Samoa",
+                            "gender": "M",
+                            "percentage": 99,
+                            "values": [
+                                {
+                                    "value": 99, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 103, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2016"
+                        },          
+                        {
+                            "country": "Solomon Islands",
+                            "gender": "M",
+                            "percentage": 85,
+                            "values": [
+                                {
+                                    "value": 85, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 89, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2016"
+                        },
+                        {
+                            "country": "Tonga",
+                            "gender": "M",
+                            "percentage": 104,
+                            "values": [
+                                {
+                                    "value": 104, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 107, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2000"
+                        },
+                        {
+                            "country": "Tuvalu",
+                            "gender": "M",
+                            "percentage": 109,
+                            "values": [
+                                {
+                                    "value": 109, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 99, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2017"
+                        },
+                        {
+                            "country": "Vanuatu",
+                            "gender": "M",
+                            "percentage": 90,
+                            "values": [
+                                {
+                                    "value": 90, 
+                                    "rate": "M"
+                                }, 
+                                {
+                                    "value": 94, 
+                                    "rate": "F"
+                                }
+                            ],
+                            "year": "2017"
+                        }
+                    ]
                 }
             ]
         },

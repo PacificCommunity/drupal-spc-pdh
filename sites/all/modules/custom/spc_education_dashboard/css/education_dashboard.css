@@ -197,6 +197,18 @@ html {
     top: 1px;
     z-index: 1;
 }
+.chart {
+    position: relative;
+}
+svg.male-bar,
+svg.female-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+svg.male-bar{
+    left: 25px;
+}
 
 @media (max-width: 767px) {
     .banner-with-title {
