@@ -35,7 +35,7 @@
         <p class="subtitle"><?php print $item['title']; ?></p>
       </div>
       <div class="info clearfix">
-          <?php $ch_cols = ($item['type'] == "gender")? 7 : 5; ?>
+          <?php $ch_cols = (count($item['charts'][0]['data']) >= 10 && $item['type'] == "gender")? 7 : 5; ?>
           <div class="chart col-sm-<?php print $ch_cols; ?>">
               <?php if ($item['type'] == "gender"): ?>
               <div class="gender-wrapp">
@@ -46,7 +46,7 @@
               <div class="chart-<?php print $item['id']; ?>"></div>
           </div>
           
-          <?php $ds_cols =  ($item['type'] == "gender")? 5 : 7; ?>
+          <?php $ds_cols =  (count($item['charts'][0]['data']) >= 10 && $item['type'] == "gender")? 5 : 7; ?>
           <div class="description col-sm-<?php print $ds_cols; ?>">
               
             <?php if (!empty($item['switchers'])): ?> 
