@@ -763,7 +763,7 @@
                 });    
             } 
             
-            //Gross enrolment ratio
+            //Primary completion rate
             if ($('.chart-7').length){
                 const data = settings.spc_education_dashboard.chart7[0].data;
                 const id = '7';
@@ -894,12 +894,469 @@
                 svgSetText(svg, -30, 120, '100%', green);
                 
                 svgSetLine(svg, 0, 180, 780, 181, orange);
+                svgSetText(svg, -30, 183, '85%', orange);
+                
+                svgSetText(svg, -20, height, '0', grey);
+            }
+            
+            //Progression to secondary school
+            if ($('.chart-8').length){
+                const data = settings.spc_education_dashboard.chart8[0].data;
+                const id = '8';
+                
+                const threshold = {
+                    "green": 85,
+                    "orange": 70,
+                    "red": 70
+                }
+                
+                let height = 300;
+                let width = 500;
+                
+                const margin = {
+                    top: 20, 
+                    right: 20, 
+                    bottom: 30, 
+                    left: 40
+                };
+                
+                let x0 = setX(width);
+                let x1 = setXg();
+                let y = setY(height);
+                
+                let svg = setGenderChartSvg(id, width, height, margin);
+
+                var categoriesNames = data.map(function(d) { return d.country; });
+                var rateNames = data[0].values.map(function(d) { return d.rate; });
+                
+                setGenderChartDomains(data, categoriesNames, rateNames, x0, x1, y); 
+                
+                svg.select('.y').transition().duration(500).delay(1300).style('opacity','1');
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                
+                let tooltip = svg
+                    .append("rect")   
+                    .attr("class", "tipbox-" + id)
+                    .attr("width", 40)
+                    .attr("height", 40)
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .style("opacity", 0);
+                
+                document
+                    .querySelector(".chart-" + id + " svg")
+                    .appendChild(document.querySelector(".tipbox-" + id));
+                
+                let boyWrap = svg.append("image")
+                    .style("opacity", 0)
+                    .attr("class", "gimage-" + id)
+                    .attr("width", 12)
+                    .attr("height", 16);
+            
+                document
+                    .querySelector(".chart-" + id + " svg")
+                    .appendChild(document.querySelector(".gimage-" + id));
+            
+                function setFill(proc) {
+                    let fill = green;
+                    if(proc < threshold.green){
+                        fill = orange;
+                    } else if (proc < threshold.orange){
+                        fill = red;
+                    }
+                    return fill;
+                }
+                
+                function setTipFill(data) {
+                    let fill = "#fff";
+                    if (data.rate == "M"){
+                        if(data.value < threshold.green){
+                            fill = orange;
+                        } else if (data.value < threshold.orange){
+                            fill = red;
+                        } else {
+                            fill = green
+                        } 
+                    }
+
+                    return fill;
+                }
+                
+                function setTipTextFill(data) {
+                    let fill = "#fff";
+                    if (data.rate == "F"){
+                        if(data.value < threshold.green){
+                            fill = orange;
+                        } else if (data.value < threshold.orange){
+                            fill = red;
+                        } else {
+                            fill = green
+                        } 
+                    }
+
+                    return fill;
+                }                
+                
+                function setXdelta(xGroup, rate){
+                    if (rate == "M"){
+                        return xGroup -9;
+                    } else {
+                        return parseInt(xGroup, 10) +23;
+                    }
+                }
+
+                function showGender(data){
+                    let path = "sites/all/modules/custom/spc_education_dashboard/img/";
+                     if (data.rate == "M"){
+                         path =  path + "boys.png";
+                     } else {
+                        if(data.value < threshold.green){
+                            path =  path + "girls_orange.png";
+                        } else if (data.value < threshold.orange){
+                            path =  path + "girls_red.png";
+                        } else {
+                            path =  path + "girls_green.png";
+                        }
+                     }
+                    return path; 
+                }
+
+                appendTolltip(id);
+                
+                setSvgGenderBarData(svg, data, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
+
+                svgSetLine(svg, 0, 120, 480, 121, green);
+                svgSetText(svg, -30, 120, '100%', green);
+                
+                svgSetLine(svg, 0, 180, 480, 181, orange);
                 svgSetText(svg, -30, 183, '80%', orange);
                 
                 svgSetText(svg, -20, height, '0', grey);
-                
-            }    
+            }
             
+            //Transition rate
+            if ($('.chart-9').length){
+                const data = settings.spc_education_dashboard.chart9[0].data;
+                data.sort(barSort);
+                const id = '9';
+                
+                let height = 300;
+                let width = 600;
+
+                let x = setX(width);
+                let y = setY(height);
+                
+                let svg = setChartSvg('.chart-' + id, width, height);
+
+                setSvgDomains(data, x, y);
+                
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                let tooltip = setToolBox(svg);
+                
+                appendTolltip(id);
+
+                const attrX = function(d) { 
+                    return x(d.country)+20; 
+                }
+                
+                const attrY = function(d) { 
+                    return y(d.percentage); 
+                }
+                
+                const attrH = function(d){
+                    return y(0) - y(d.percentage);
+                }
+                
+                const tipY = function(d){
+                    return y(d.percentage)-30; 
+                }
+                
+                setCartBars(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                
+                svgSetLine(svg, 40, 69, 580, 70, green);
+                svgSetText(svg, 0, 73, '85%', green);
+                
+                svgSetLine(svg, 40, 100, 580, 101, orange);
+                svgSetText(svg, 0, 103, '70%', orange);
+                
+                svgSetText(svg, 0, height, '0', grey);
+            }
+            
+            // Lower secondary completion rate
+            if ($('.chart-10').length){
+                const data = settings.spc_education_dashboard.chart10[0].data;
+                const id = '10';
+                
+                const threshold = {
+                    "green": 85,
+                    "orange": 70,
+                    "red": 70
+                }
+                
+                let height = 400;
+                let width = 800;
+                
+                const margin = {
+                    top: 20, 
+                    right: 20, 
+                    bottom: 30, 
+                    left: 40
+                };
+                
+                let x0 = setX(width);
+                let x1 = setXg();
+                let y = setY(height);
+                
+                let svg = setGenderChartSvg(id, width, height, margin);
+
+                var categoriesNames = data.map(function(d) { return d.country; });
+                var rateNames = data[0].values.map(function(d) { return d.rate; });
+                
+                setGenderChartDomains(data, categoriesNames, rateNames, x0, x1, y); 
+                
+                svg.select('.y').transition().duration(500).delay(1300).style('opacity','1');
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                
+                let tooltip = svg
+                    .append("rect")   
+                    .attr("class", "tipbox-" + id)
+                    .attr("width", 40)
+                    .attr("height", 40)
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .style("opacity", 0);
+                
+                document
+                    .querySelector(".chart-" + id + " svg")
+                    .appendChild(document.querySelector(".tipbox-" + id));
+                
+                let boyWrap = svg.append("image")
+                    .style("opacity", 0)
+                    .attr("class", "gimage-" + id)
+                    .attr("width", 12)
+                    .attr("height", 16);
+            
+                document
+                    .querySelector(".chart-" + id + " svg")
+                    .appendChild(document.querySelector(".gimage-" + id));
+            
+                function setFill(proc) {
+                    let fill = green;
+                    if(proc < threshold.green){
+                        fill = orange;
+                    } else if (proc < threshold.orange){
+                        fill = red;
+                    }
+                    return fill;
+                }
+                
+                function setTipFill(data) {
+                    let fill = "#fff";
+                    if (data.rate == "M"){
+                        if(data.value < threshold.green){
+                            fill = orange;
+                        } else if (data.value < threshold.orange){
+                            fill = red;
+                        } else {
+                            fill = green
+                        } 
+                    }
+
+                    return fill;
+                }
+                
+                function setTipTextFill(data) {
+                    let fill = "#fff";
+                    if (data.rate == "F"){
+                        if(data.value < threshold.green){
+                            fill = orange;
+                        } else if (data.value < threshold.orange){
+                            fill = red;
+                        } else {
+                            fill = green
+                        } 
+                    }
+
+                    return fill;
+                }                
+                
+                function setXdelta(xGroup, rate){
+                    if (rate == "M"){
+                        return xGroup -9;
+                    } else {
+                        return parseInt(xGroup, 10) +23;
+                    }
+                }
+
+                function showGender(data){
+                    let path = "sites/all/modules/custom/spc_education_dashboard/img/";
+                     if (data.rate == "M"){
+                         path =  path + "boys.png";
+                     } else {
+                        if(data.value < threshold.green){
+                            path =  path + "girls_orange.png";
+                        } else if (data.value < threshold.orange){
+                            path =  path + "girls_red.png";
+                        } else {
+                            path =  path + "girls_green.png";
+                        }
+                     }
+                    return path; 
+                }
+
+                appendTolltip(id);
+                
+                setSvgGenderBarData(svg, data, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
+
+                svgSetLine(svg, 0, 110, 780, 111, green);
+                svgSetText(svg, -30, 114, '85%', green);
+                
+                svgSetLine(svg, 0, 180, 780, 181, orange);
+                svgSetText(svg, -30, 183, '70%', orange);
+                
+                svgSetText(svg, -20, height, '0', grey);
+                
+            }
+            
+            //Gross enrolment ratio
+            if ($('.chart-11').length){
+                const chart11ece = settings.spc_education_dashboard.chart11[0].data;
+                const chart11primary = settings.spc_education_dashboard.chart11[1].data;
+                const chart11secondary = settings.spc_education_dashboard.chart11[2].data;
+                
+                chart11ece.sort(barSort);
+                chart11primary.sort(barSort);
+                chart11secondary.sort(barSort);
+                
+                const id = '11';
+                
+                let height = 450;
+                let width = 600;
+                
+                let x = setX(width);
+                let y = setY(height);
+                
+                let svg = setChartSvg('.chart-' + id, width, height);
+
+                setSvgDomains(chart11ece, x, y);
+                
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                let tooltip = setToolBox(svg);
+                
+                appendTolltip(id);
+            
+                const attrX = function(d) { 
+                    return x(d.country)+20; 
+                }
+                
+                const attrY = function(d) { 
+                    return y(d.percentage); 
+                }
+                
+                const attrH = function(d){
+                    return y(0) - y(d.percentage);
+                }
+                
+                const tipY = function(d){
+                    return y(d.percentage)-30; 
+                }
+                
+                setCartBars(svg, chart11ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                
+                svgSetLine(svg, 40, 80, 580, 81, green);
+                svgSetText(svg, 0, 80, '100%', green);
+                
+                svgSetLine(svg, 40, 180, 580, 181, orange);
+                svgSetText(svg, 0, 183, '90%', orange);
+                
+                svgSetText(svg, 0, height, '0', grey);
+                
+                $('.sw-11 a').on('click', function(e){
+                    e.preventDefault();
+                    
+                    let newData = [];
+                    
+                    $(this).closest('.switchers').find('.switcher a').removeClass('checked');
+                    $(this).toggleClass('checked');
+                    
+                    
+                    if($(this).attr('id') == 'secondary'){
+                        newData = chart11secondary;
+                    }
+                    else if ($(this).attr('id') == 'primary'){
+                        newData = chart11primary;
+                    }
+                    else if ($(this).attr('id') == 'ece'){
+                        newData = chart11ece;
+                    }
+                    
+                    d3.select(".chart-" + id + " svg").remove();
+
+                    svg = setChartSvg('.chart-' + id, width, height);
+                    setSvgDomains(newData, x, y);
+
+                    tooltext = setToolText(svg, "tooltip-" + id);
+                    tooltip = setToolBox(svg);
+
+                    appendTolltip(id);
+                    
+                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+
+                    svgSetLine(svg, 40, 0, 580, 1, green);
+                    svgSetText(svg, 0, 0, '100%', green);
+
+                    svgSetText(svg, 0, height, '0', grey);                    
+                    
+                });    
+            }            
+            
+            //Safe drinking water
+            if ($('.chart-12').length){
+                const data = settings.spc_education_dashboard.chart12[0].data;
+                data.sort(barSort);
+                const id = '12';
+                
+                let height = 300;
+                let width = 600;
+
+                let x = setX(width);
+                let y = setY(height);
+                
+                let svg = setChartSvg('.chart-' + id, width, height);
+
+                setSvgDomains(data, x, y);
+                
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                let tooltip = setToolBox(svg);
+                
+                appendTolltip(id);
+
+                const attrX = function(d) { 
+                    return x(d.country)+20; 
+                }
+                
+                const attrY = function(d) { 
+                    return y(d.percentage); 
+                }
+                
+                const attrH = function(d){
+                    return y(0) - y(d.percentage);
+                }
+                
+                const tipY = function(d){
+                    return y(d.percentage)-30; 
+                }
+                
+                setCartBars(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                
+                svgSetLine(svg, 40, 69, 580, 70, green);
+                svgSetText(svg, 0, 73, '85%', green);
+                
+                svgSetLine(svg, 40, 100, 580, 101, orange);
+                svgSetText(svg, 0, 103, '70%', orange);
+                
+                svgSetText(svg, 0, height, '0', grey);
+            }
             
         //end context
         }
