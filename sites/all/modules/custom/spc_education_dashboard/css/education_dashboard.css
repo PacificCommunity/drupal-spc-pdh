@@ -209,6 +209,33 @@ svg.female-bar {
 svg.male-bar{
     left: 25px;
 }
+.gender-wrapp > div {
+    float: left;
+    position: relative;
+    margin: 10px 20px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+}
+.gender-wrapp {
+    margin-left: 60px;
+}
+.male:before,
+.female:before {
+    display: block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin: 10px;
+    position: absolute;
+    left: -35px;
+    top: -10px;
+}
+.male:before {
+    background: #ccc;
+}
 
 @media (max-width: 767px) {
     .banner-with-title {

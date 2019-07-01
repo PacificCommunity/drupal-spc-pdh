@@ -1124,6 +1124,7 @@
                     }
                 },
             "rationale":"",
+            "type":"gender",
             "charts":[
                 {
                     "name": "",

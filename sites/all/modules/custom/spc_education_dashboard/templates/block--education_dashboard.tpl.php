@@ -35,12 +35,19 @@
         <p class="subtitle"><?php print $item['title']; ?></p>
       </div>
       <div class="info clearfix">
-          
-          <div class="chart col-sm-5">
+          <?php $ch_cols = ($item['type'] == "gender")? 7 : 5; ?>
+          <div class="chart col-sm-<?php print $ch_cols; ?>">
+              <?php if ($item['type'] == "gender"): ?>
+              <div class="gender-wrapp">
+                <div class="male"><?php print t('Boys'); ?></div>
+                <div class="female"><?php print t('Girls'); ?></div>
+              </div>
+              <?php endif; ?>
               <div class="chart-<?php print $item['id']; ?>"></div>
           </div>
           
-          <div class="description col-sm-7">
+          <?php $ds_cols =  ($item['type'] == "gender")? 5 : 7; ?>
+          <div class="description col-sm-<?php print $ds_cols; ?>">
               
             <?php if (!empty($item['switchers'])): ?> 
             <div class="switchers clearfix">
