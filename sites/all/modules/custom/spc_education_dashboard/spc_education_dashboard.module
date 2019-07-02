@@ -150,44 +150,11 @@ function spc_education_dashboard_block_view($delta = '') {
           foreach ($data as $chart_data){
             $thresholds = $chart_data['threshold']['dots'];
             
-            if (!empty($thresholds)){
-              if($chart_data['threshold']['type'] == 'normal'){
-                foreach ($chart_data['charts'] as $chart_key => $chart){
-                  foreach ($chart['data'] as $item_data_key => $item_data){
-
-                    if ($item_data['percentage'] > $thresholds['green']){
-                     $chart_data['charts'][$chart_key]['data'][$item_data_key]['color'] = '#00ACB3';
-                    }
-                    elseif ($item_data['percentage'] >= $thresholds['orange'] && $item_data['percentage'] <= $thresholds['green']){
-                      $chart_data['charts'][$chart_key]['data'][$item_data_key]['color'] = '#F79663';
-                    }
-                    elseif($item_data['percentage'] < $thresholds['red']) {
-                      $chart_data['charts'][$chart_key]['data'][$item_data_key]['color'] = '#D84774';
-                    }
-
-                  }
-                }                
-              }else{
-                foreach ($chart_data['charts'] as $chart_key => $chart){
-                  foreach ($chart['data'] as $item_data_key => $item_data){
-                    
-                    if($item_data['percentage'] > $thresholds['red']) {
-                      $chart_data['charts'][$chart_key]['data'][$item_data_key]['color'] = '#D84774';
-                    }
-                    elseif ($item_data['percentage'] >= $thresholds['orange'] && $item_data['percentage'] <= $thresholds['red']){
-                      $chart_data['charts'][$chart_key]['data'][$item_data_key]['color'] = '#F79663';
-                    }
-                    elseif($item_data['percentage'] < $thresholds['green']) {
-                      $chart_data['charts'][$chart_key]['data'][$item_data_key]['color'] = '#00ACB3';
-                    }
-                    
-                  }
-                }
-              }
-            }
-            
             $charts =  $chart_data['charts'];
             drupal_add_js(array('spc_education_dashboard' => array('chart'. $chart_data['id'] => $charts)), array('type' => 'setting'));
+            
+            $threshold = $chart_data['threshold'];
+            drupal_add_js(array('spc_education_dashboard' => array('threshold'. $chart_data['id'] => $threshold)), array('type' => 'setting'));
           }
         }
         
