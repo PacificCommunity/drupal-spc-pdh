@@ -49,6 +49,81 @@
             const green = '#00ACB3';
             const grey = '#ccc';
             
+            function addColorsToData(data, threshold){
+                const thdGreen = threshold.dots.green;
+                const thdOrange = threshold.dots.orange;
+                const thdRed = threshold.dots.red;
+
+                switch (threshold.type){
+                    case 'normal':
+                        data.map(function(item, i, arr){
+                            if (item.percentage >= thdGreen){
+                                item.color = green;
+                            } else if (item.percentage < thdGreen && item.percentage >= thdOrange){
+                                item.color = orange;
+                            } else if (item.percentage < thdOrange){
+                                item.color = red;
+                            }
+                        }); 
+                    break;
+                    case 'revers':
+                        data.map(function(item, i, arr){
+                            if (item.percentage <= thdGreen){
+                                item.color = green;
+                            } else if (item.percentage > thdGreen && item.percentage <= thdOrange){
+                                item.color = orange;
+                            } else if (item.percentage > thdOrange){
+                                item.color = red;
+                            }
+                        }); 
+                    break;
+                    case 'advanced':
+                        const overlap = threshold.dots.overlap
+                        data.map(function(item, i, arr){
+                            if (item.percentage >= thdGreen && item.percentage <= overlap){
+                                item.color = green;
+                            } else if ((item.percentage < thdGreen && item.percentage >= thdOrange) || item.percentage > overlap ){
+                                item.color = orange;
+                            } else if (item.percentage < thdOrange){
+                                item.color = red;
+                            }
+                        });
+                    break; 
+                }
+                
+                return data;
+            }
+            
+            function setThreshold(svg, threshold, x, y, width, height, symbol){
+                
+                const thdGreen = threshold.dots.green;
+                const thdOrange = threshold.dots.orange;
+                const thdRed = threshold.dots.red;
+                
+                svgSetLine(svg, 30, y(thdGreen), width, y(thdGreen)+1, green);
+                svgSetText(svg, -5, y(thdGreen)+4, thdGreen+symbol, green);
+
+                svgSetLine(svg, 30, y(thdOrange), width, y(thdOrange)+1, orange);
+                svgSetText(svg, -5, y(thdOrange)+4, thdOrange+symbol, orange);
+                
+                svgSetText(svg, 0, height, '0', grey);                
+            }
+            
+            function setNegativeThreshold(svg, threshold, x, y, width, height, symbol){
+                svgSetLine(svg, 30, 185, 580, 186, green);
+                svgSetText(svg, -5, 189, '1%', green);
+                
+                svgSetLine(svg, 30, 200, 580, 201, grey);
+                svgSetText(svg, -5, 204, '0', grey);
+                
+                svgSetLine(svg, 30, 215, 580, 216, orange);
+                svgSetText(svg, -5, 219, '-1%', orange);
+            }
+            
+            function setCartExtremum(svg, data, threshold, x, y, width, height){
+                //todo set cart extremum function
+            }
+            
             function setToolText(svg, className){
                 return svg
                     .append("text")
@@ -135,7 +210,8 @@
                     svg.selectAll(".bar").remove();
                     svg.selectAll(".bar")
                         .data(data)
-                        .enter().append("rect")
+                        .enter()
+                        .append("rect")
                         .attr("class", "bar")
                         .attr("country", data => data.country)
                         .attr("percentage", data => data.percentage)
@@ -149,14 +225,14 @@
                         .style("opacity", 1)
                         .on('mouseover', function(d){
                             tooltip.style("opacity", 1)
-                                    .attr("x", x(d.country)+10)
-                                    .attr("y", typY(d))
-                                    .attr("fill", d.color);
+                                .attr("x", x(d.country)+10)
+                                .attr("y", typY(d))
+                                .attr("fill", d.color);
 
                             tooltext.style("opacity", 1)      
-                                    .text(Number((d.percentage).toFixed(1)))  
-                                    .attr("x", x(d.country)+30)
-                                    .attr("y", typY(d)+25);
+                                .text(Number((d.percentage).toFixed(1)))  
+                                .attr("x", x(d.country)+30)
+                                .attr("y", typY(d)+25);
 
                         })
                         .on('mouseout', function(d){
@@ -182,6 +258,7 @@
                     .attr("x", x)
                     .attr("y", y)
                     .text(text)
+                    .attr("font-size", "12px")
                     .attr("fill", fill);
             }
             
@@ -274,7 +351,10 @@
             //GPD expenditure chart
             if ($('.chart-1').length){
                 const id = '1';
-                const data = settings.spc_education_dashboard.chart1[0].data;
+                const chart1Thd = settings.spc_education_dashboard.threshold1;
+                let chart1data = settings.spc_education_dashboard.chart1[0].data;
+
+                chart1data = addColorsToData(chart1data, chart1Thd);
                 
                 let height = 300;
                 let width = 600;
@@ -284,45 +364,32 @@
                 
                 let svg = setChartSvg('.chart-' + id, width, height);
 
-                setSvgDomains(data, x, y);
+                setSvgDomains(chart1data, x, y);
+                setThreshold(svg, chart1Thd, x, y, width, height, '%');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
                 
                 appendTolltip(id);
 
-                const attrX = function(d) { 
-                    return x(d.country)+20; 
-                }
+                const attrX = function(d) { return x(d.country)+20; }
+                const attrY = function(d) { return y(d.percentage); }
+                const attrH = function(d){return y(0) - y(d.percentage); }
+                const tipY = function(d){ return y(d.percentage)-30; }
                 
-                const attrY = function(d) { 
-                    return y(d.percentage); 
-                }
-                
-                const attrH = function(d){
-                    return y(0) - y(d.percentage);
-                }
-                
-                const tipY = function(d){
-                    return y(d.percentage)-30; 
-                }
-                
-                setCartBars(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                
-                svgSetLine(svg, 40, 59, 580, 60, green);
-                svgSetLine(svg, 40, 189, 580, 190, orange);
-                
-                svgSetText(svg, 0, 20, '18%', green);
-                svgSetText(svg, 0, 63, '15%', green);
-                svgSetText(svg, 0, 193, '6%', orange);
-                svgSetText(svg, 0, 230, '3.8%', red);
-                svgSetText(svg, 0, height, '0', grey);
+                setCartBars(svg, chart1data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+
+                svgSetText(svg, -10, 20, '18%', green);
+                svgSetText(svg, -10, 230, '3.8%', red);
             }
             
             //Out of School Children chart
             if ($('.chart-2').length){
                 const id = '2';
-                const chart2data = settings.spc_education_dashboard.chart2[0].data;
+                const chart2Thd = settings.spc_education_dashboard.threshold2;
+                let chart2data = settings.spc_education_dashboard.chart2[0].data;
+
+                chart2data = addColorsToData(chart2data, chart2Thd);
                 
                 let height = 450;
                 let width = 600;
@@ -333,43 +400,28 @@
                 let svg = setChartSvg('.chart-' + id, width, height);
 
                 setSvgDomains(chart2data, x, y);
+                setThreshold(svg, chart2Thd, x, y, width, height, '%');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
                 
                 appendTolltip(id);
             
-                const attrX = function(d) { 
-                    return x(d.country)+20; 
-                }
-                
-                const attrY = function(d) { 
-                    return y(d.percentage); 
-                }
-                
-                const attrH = function(d){
-                    return y(0) - y(d.percentage);
-                }
-                
-                const tipY = function(d){
-                    return y(d.percentage)-30; 
-                }
+                const attrX = function(d) { return x(d.country)+20; }
+                const attrY = function(d) { return y(d.percentage); }
+                const attrH = function(d){ return y(0) - y(d.percentage); }
+                const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart2data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                
-                svgSetLine(svg, 40, 395, 580, 396, orange);
-                svgSetText(svg, 0, 398, '4%', orange);
-                
-                svgSetLine(svg, 40, 420, 580, 421, green);
-                svgSetText(svg, 0, 423, '2%', green);
-                
-                svgSetText(svg, 0, height, '0', grey);
             }
             
             //Over age students chart
             if ($('.chart-3').length){
                 const id = '3';
-                const chart3data = settings.spc_education_dashboard.chart3[0].data;
+                let chart3data = settings.spc_education_dashboard.chart3[0].data;
+                const chart3Thd = settings.spc_education_dashboard.threshold3;
+                
+                chart3data = addColorsToData(chart3data, chart3Thd);
                 
                 let height = 450;
                 let width = 600;
@@ -380,55 +432,43 @@
                 let svg = setChartSvg('.chart-' + id, width, height);
 
                 setSvgDomains(chart3data, x, y);
+                setThreshold(svg, chart3Thd, x, y, width, height, '%');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
                 
                 appendTolltip(id);
             
-                const attrX = function(d) { 
-                    return x(d.country)+20; 
-                }
-                
-                const attrY = function(d) { 
-                    return y(d.percentage); 
-                }
-                
-                const attrH = function(d){
-                    return y(0) - y(d.percentage);
-                }
-                
-                const tipY = function(d){
-                    return y(d.percentage)-30; 
-                }
+                const attrX = function(d) { return x(d.country)+20; }
+                const attrY = function(d) { return y(d.percentage); }
+                const attrH = function(d){ return y(0) - y(d.percentage); }
+                const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart3data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                
-                svgSetLine(svg, 40, 430, 580, 431, green);
-                svgSetText(svg, 0, 433, '4%', green);
-                
-                svgSetLine(svg, 40, 410, 580, 411, orange);
-                svgSetText(svg, 0, 413, '6%', orange);
-                
-                svgSetText(svg, 0, height, '0', grey);
             }
        
             //Learning outcomes
             if ($('.chart-4').length){
                 const id = '4';
-                
                 let year = 4;
                 let option = 'literacy';
 
-                const chart4yearLiteracy = settings.spc_education_dashboard.chart4[0].data;
-                const chart4yearNumeracy = settings.spc_education_dashboard.chart4[1].data;
-                const chart6yearLiteracy = settings.spc_education_dashboard.chart4[2].data;
-                const chart6yearNumeracy = settings.spc_education_dashboard.chart4[3].data;
+                let chart4yearLiteracy = settings.spc_education_dashboard.chart4[0].data;
+                let chart4yearNumeracy = settings.spc_education_dashboard.chart4[1].data;
+                let chart6yearLiteracy = settings.spc_education_dashboard.chart4[2].data;
+                let chart6yearNumeracy = settings.spc_education_dashboard.chart4[3].data;
 
                 chart4yearLiteracy.sort(barSort);
                 chart4yearNumeracy.sort(barSort);
                 chart6yearLiteracy.sort(barSort);
                 chart6yearNumeracy.sort(barSort);
+                
+                const chart4Thd = settings.spc_education_dashboard.threshold4;
+                
+                chart4yearLiteracy = addColorsToData(chart4yearLiteracy, chart4Thd);
+                chart4yearNumeracy = addColorsToData(chart4yearNumeracy, chart4Thd);
+                chart6yearLiteracy = addColorsToData(chart6yearLiteracy, chart4Thd);
+                chart6yearNumeracy = addColorsToData(chart6yearNumeracy, chart4Thd);
                 
                 let height = 400;
                 let width = 600;
@@ -437,12 +477,11 @@
                 let y = setY(height);
 
                 let svg = setChartSvg('.chart-' + id, width, height);
-
                 setSvgDomains(chart4yearLiteracy, x, y);
+                setNegativeThreshold(svg, chart4Thd, x, y, width, height, '%');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
-                
                 appendTolltip(id);
                 
                 let attrX = function(chart4yearLiteracy) { 
@@ -473,15 +512,6 @@
                 }
                 
                 setCartBars(svg, chart4yearLiteracy,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                
-                svgSetLine(svg, 40, 185, 580, 186, green);
-                svgSetText(svg, 0, 189, '1%', green);
-                
-                svgSetLine(svg, 40, 200, 580, 201, grey);
-                svgSetText(svg, 0, 204, '0', grey);
-                
-                svgSetLine(svg, 40, 215, 580, 216, orange);
-                svgSetText(svg, 0, 219, '-1%', orange);
 
                 //enable switcher    
                 $.switcher('input.slider');
@@ -507,33 +537,21 @@
                             newData = chart4yearNumeracy;
                         }
                     }
-
                     
                     d3.select(".chart-" + id + " svg").remove();
-
                     svg = setChartSvg('.chart-' + id, width, height);
                     setSvgDomains(newData, x, y);
+                    setNegativeThreshold(svg, chart4Thd, x, y, width, height, '%');
 
                     tooltext = setToolText(svg, "tooltip-" + id);
                     tooltip = setToolBox(svg);
-
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    
-                    svgSetLine(svg, 40, 185, 580, 186, green);
-                    svgSetText(svg, 0, 189, '1%', green);
-
-                    svgSetLine(svg, 40, 200, 580, 201, grey);
-                    svgSetText(svg, 0, 204, '0', grey);
-
-                    svgSetLine(svg, 40, 215, 580, 216, orange);
-                    svgSetText(svg, 0, 219, '-1%', orange);
                 });
 
                 $('.sw-4 a').on('click', function(e){
                     e.preventDefault();
-                    
                     let newData = [];
 
                     $(this).closest('.switchers').find('.switcher a').removeClass('checked');
@@ -541,7 +559,6 @@
                     
                     if ($(this).attr('id') == 'numeracy'){
                         option = 'numeracy';
-                        
                         if(year == 6){
                             newData = chart6yearNumeracy;;
                         } else {
@@ -557,41 +574,34 @@
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
-
                     svg = setChartSvg('.chart-' + id, width, height);
                     setSvgDomains(newData, x, y);
+                    setNegativeThreshold(svg, chart4Thd, x, y, width, height, '%');
 
                     tooltext = setToolText(svg, "tooltip-" + id);
                     tooltip = setToolBox(svg);
-
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    
-                    svgSetLine(svg, 40, 185, 580, 186, green);
-                    svgSetText(svg, 0, 189, '1%', green);
-
-                    svgSetLine(svg, 40, 200, 580, 201, grey);
-                    svgSetText(svg, 0, 204, '0', grey);
-
-                    svgSetLine(svg, 40, 215, 580, 216, orange);
-                    svgSetText(svg, 0, 219, '-1%', orange);
-                    
                 });            
             }
             
             //Net enrolment rate
             if ($('.chart-5').length){
-                const chart5ece = settings.spc_education_dashboard.chart5[0].data;
-                const chart5primary = settings.spc_education_dashboard.chart5[1].data;
-                const chart5secondary = settings.spc_education_dashboard.chart5[2].data;
+                const id = '5';
+                let chart5ece = settings.spc_education_dashboard.chart5[0].data;
+                let chart5primary = settings.spc_education_dashboard.chart5[1].data;
+                let chart5secondary = settings.spc_education_dashboard.chart5[2].data;
+                const chart5Thd = settings.spc_education_dashboard.threshold5;
                 
                 chart5ece.sort(barSort);
                 chart5primary.sort(barSort);
                 chart5secondary.sort(barSort);
-                
-                const id = '5';
-                
+
+                chart5ece = addColorsToData(chart5ece, chart5Thd);
+                chart5primary = addColorsToData(chart5primary, chart5Thd);
+                chart5secondary = addColorsToData(chart5secondary, chart5Thd);
+
                 let height = 450;
                 let width = 600;
 
@@ -599,49 +609,27 @@
                 let y = setY(height);
                 
                 let svg = setChartSvg('.chart-' + id, width, height);
-
                 setSvgDomains(chart5ece, x, y);
+                setThreshold(svg, chart5Thd, x, y, width, height, '%');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
-                
                 appendTolltip(id);
             
-                const attrX = function(d) { 
-                    return x(d.country)+20; 
-                }
-                
-                const attrY = function(d) { 
-                    return y(d.percentage); 
-                }
-                
-                const attrH = function(d){
-                    return y(0) - y(d.percentage);
-                }
-                
-                const tipY = function(d){
-                    return y(d.percentage)-30; 
-                }
+                const attrX = function(d) { return x(d.country)+20; }
+                const attrY = function(d) { return y(d.percentage); }
+                const attrH = function(d){ return y(0) - y(d.percentage); }
+                const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart5ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                
-                svgSetLine(svg, 40, 0, 580, 1, green);
-                svgSetText(svg, 0, 0, '100%', green);
-                
-                svgSetLine(svg, 40, 350, 580, 351, orange);
-                svgSetText(svg, 0, 353, '20%', orange);
-                
-                svgSetText(svg, 0, height, '0', grey);
-                
+
                 $('.sw-5 a').on('click', function(e){
                     e.preventDefault();
-                    
                     let newData = [];
 
                     $(this).closest('.switchers').find('.switcher a').removeClass('checked');
                     $(this).toggleClass('checked');
-                    
-                    
+
                     if($(this).attr('id') == 'secondary'){
                         newData = chart5secondary;
                     }
@@ -653,36 +641,34 @@
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
-
                     svg = setChartSvg('.chart-' + id, width, height);
                     setSvgDomains(newData, x, y);
+                    setThreshold(svg, chart5Thd, x, y, width, height, '%');
 
                     tooltext = setToolText(svg, "tooltip-" + id);
                     tooltip = setToolBox(svg);
-
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-
-                    svgSetLine(svg, 40, 0, 580, 1, green);
-                    svgSetText(svg, 0, 0, '100%', green);
-
-                    svgSetText(svg, 0, height, '0', grey);                     
                 });    
             }
             
             //Gross enrolment ratio
             if ($('.chart-6').length){
-                const chart6ece = settings.spc_education_dashboard.chart6[0].data;
-                const chart6primary = settings.spc_education_dashboard.chart6[1].data;
-                const chart6secondary = settings.spc_education_dashboard.chart6[2].data;
+                const id = '6';
+                let chart6ece = settings.spc_education_dashboard.chart6[0].data;
+                let chart6primary = settings.spc_education_dashboard.chart6[1].data;
+                let chart6secondary = settings.spc_education_dashboard.chart6[2].data;
+                let chart6Thd = settings.spc_education_dashboard.threshold6;
                 
                 chart6ece.sort(barSort);
                 chart6primary.sort(barSort);
                 chart6secondary.sort(barSort);
-                
-                const id = '6';
-                
+
+                chart6ece = addColorsToData(chart6ece, chart6Thd);
+                chart6primary = addColorsToData(chart6primary, chart6Thd);
+                chart6secondary = addColorsToData(chart6secondary, chart6Thd);
+
                 let height = 450;
                 let width = 600;
                 
@@ -690,48 +676,26 @@
                 let y = setY(height);
                 
                 let svg = setChartSvg('.chart-' + id, width, height);
-
                 setSvgDomains(chart6ece, x, y);
+                setThreshold(svg, chart6Thd, x, y, width, height, '%');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
-                
                 appendTolltip(id);
             
-                const attrX = function(d) { 
-                    return x(d.country)+20; 
-                }
-                
-                const attrY = function(d) { 
-                    return y(d.percentage); 
-                }
-                
-                const attrH = function(d){
-                    return y(0) - y(d.percentage);
-                }
-                
-                const tipY = function(d){
-                    return y(d.percentage)-30; 
-                }
+                const attrX = function(d) { return x(d.country)+20; }
+                const attrY = function(d) { return y(d.percentage); }
+                const attrH = function(d){ return y(0) - y(d.percentage); }
+                const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart6ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
                 
-                svgSetLine(svg, 40, 80, 580, 81, green);
-                svgSetText(svg, 0, 80, '100%', green);
-                
-                svgSetLine(svg, 40, 180, 580, 181, orange);
-                svgSetText(svg, 0, 183, '90%', orange);
-                
-                svgSetText(svg, 0, height, '0', grey);
-                
                 $('.sw-6 a').on('click', function(e){
                     e.preventDefault();
-                    
                     let newData = [];
                     
                     $(this).closest('.switchers').find('.switcher a').removeClass('checked');
                     $(this).toggleClass('checked');
-                    
                     
                     if($(this).attr('id') == 'secondary'){
                         newData = chart6secondary;
@@ -744,22 +708,15 @@
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
-
                     svg = setChartSvg('.chart-' + id, width, height);
                     setSvgDomains(newData, x, y);
+                    setThreshold(svg, chart6Thd, x, y, width, height, '%'); 
 
                     tooltext = setToolText(svg, "tooltip-" + id);
                     tooltip = setToolBox(svg);
-
                     appendTolltip(id);
                     
-                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-
-                    svgSetLine(svg, 40, 0, 580, 1, green);
-                    svgSetText(svg, 0, 0, '100%', green);
-
-                    svgSetText(svg, 0, height, '0', grey);                    
-                    
+                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);                 
                 });    
             } 
             
@@ -1036,9 +993,12 @@
             
             //Transition rate
             if ($('.chart-9').length){
-                const data = settings.spc_education_dashboard.chart9[0].data;
-                data.sort(barSort);
                 const id = '9';
+                let chart9data = settings.spc_education_dashboard.chart9[0].data;
+                const chart9Thd = settings.spc_education_dashboard.threshold9;
+                
+                chart9data.sort(barSort);
+                chart9data = addColorsToData(chart9data, chart9Thd);
                 
                 let height = 300;
                 let width = 600;
@@ -1047,39 +1007,19 @@
                 let y = setY(height);
                 
                 let svg = setChartSvg('.chart-' + id, width, height);
-
-                setSvgDomains(data, x, y);
+                setSvgDomains(chart9data, x, y);
+                setThreshold(svg, chart9Thd, x, y, width, height, '%');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
-                
                 appendTolltip(id);
 
-                const attrX = function(d) { 
-                    return x(d.country)+20; 
-                }
+                const attrX = function(d) { return x(d.country)+20; }
+                const attrY = function(d) { return y(d.percentage); }
+                const attrH = function(d){ return y(0) - y(d.percentage); }
+                const tipY = function(d){ return y(d.percentage)-30; }
                 
-                const attrY = function(d) { 
-                    return y(d.percentage); 
-                }
-                
-                const attrH = function(d){
-                    return y(0) - y(d.percentage);
-                }
-                
-                const tipY = function(d){
-                    return y(d.percentage)-30; 
-                }
-                
-                setCartBars(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                
-                svgSetLine(svg, 40, 69, 580, 70, green);
-                svgSetText(svg, 0, 73, '85%', green);
-                
-                svgSetLine(svg, 40, 100, 580, 101, orange);
-                svgSetText(svg, 0, 103, '70%', orange);
-                
-                svgSetText(svg, 0, height, '0', grey);
+                setCartBars(svg, chart9data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
             }
             
             // Lower secondary completion rate
@@ -1215,21 +1155,27 @@
                 svgSetText(svg, -30, 183, '70%', orange);
                 
                 svgSetText(svg, -20, height, '0', grey);
-                
             }
-            
-            //Gross enrolment ratio
+
+            //Pupil-teacher ratio (PTR)
             if ($('.chart-11').length){
-                const chart11ece = settings.spc_education_dashboard.chart11[0].data;
-                const chart11primary = settings.spc_education_dashboard.chart11[1].data;
-                const chart11secondary = settings.spc_education_dashboard.chart11[2].data;
+                const id = '11';
+                let chart11ece = settings.spc_education_dashboard.chart11[0].data;
+                let chart11primary = settings.spc_education_dashboard.chart11[1].data;
+                let chart11secondary = settings.spc_education_dashboard.chart11[2].data;
                 
                 chart11ece.sort(barSort);
                 chart11primary.sort(barSort);
                 chart11secondary.sort(barSort);
                 
-                const id = '11';
-                
+                const threshold11Ece = settings.spc_education_dashboard.threshold11.ece;
+                const threshold11Primary = settings.spc_education_dashboard.threshold11.primary;
+                const threshold11Secondary = settings.spc_education_dashboard.threshold11.secondary;
+
+                chart11ece = addColorsToData(chart11ece, threshold11Ece);
+                chart11primary = addColorsToData(chart11primary, threshold11Primary);
+                chart11secondary = addColorsToData(chart11secondary, threshold11Secondary);
+
                 let height = 450;
                 let width = 600;
                 
@@ -1237,84 +1183,62 @@
                 let y = setY(height);
                 
                 let svg = setChartSvg('.chart-' + id, width, height);
-
                 setSvgDomains(chart11ece, x, y);
+                setThreshold(svg, threshold11Ece, x, y, width, height, '');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
-                
                 appendTolltip(id);
             
-                const attrX = function(d) { 
-                    return x(d.country)+20; 
-                }
-                
-                const attrY = function(d) { 
-                    return y(d.percentage); 
-                }
-                
-                const attrH = function(d){
-                    return y(0) - y(d.percentage);
-                }
-                
-                const tipY = function(d){
-                    return y(d.percentage)-30; 
-                }
+                const attrX = function(d) { return x(d.country)+20; }
+                const attrY = function(d) { return y(d.percentage); }
+                const attrH = function(d){ return y(0) - y(d.percentage); }
+                const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart11ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
                 
-                svgSetLine(svg, 40, 80, 580, 81, green);
-                svgSetText(svg, 0, 80, '100%', green);
-                
-                svgSetLine(svg, 40, 180, 580, 181, orange);
-                svgSetText(svg, 0, 183, '90%', orange);
-                
-                svgSetText(svg, 0, height, '0', grey);
-                
                 $('.sw-11 a').on('click', function(e){
                     e.preventDefault();
-                    
                     let newData = [];
+                    let newThreshold = [];
                     
                     $(this).closest('.switchers').find('.switcher a').removeClass('checked');
                     $(this).toggleClass('checked');
-                    
-                    
+
                     if($(this).attr('id') == 'secondary'){
                         newData = chart11secondary;
+                        newThreshold = threshold11Secondary;
                     }
                     else if ($(this).attr('id') == 'primary'){
                         newData = chart11primary;
+                        newThreshold = threshold11Primary;
                     }
                     else if ($(this).attr('id') == 'ece'){
                         newData = chart11ece;
+                        newThreshold = threshold11Ece;
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
-
                     svg = setChartSvg('.chart-' + id, width, height);
                     setSvgDomains(newData, x, y);
+                    setThreshold(svg, newThreshold, x, y, width, height, '');
 
                     tooltext = setToolText(svg, "tooltip-" + id);
                     tooltip = setToolBox(svg);
-
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-
-                    svgSetLine(svg, 40, 0, 580, 1, green);
-                    svgSetText(svg, 0, 0, '100%', green);
-
-                    svgSetText(svg, 0, height, '0', grey);                    
-                    
                 });    
             }            
             
             //Safe drinking water
             if ($('.chart-12').length){
-                const data = settings.spc_education_dashboard.chart12[0].data;
-                data.sort(barSort);
                 const id = '12';
+                let chart12data = settings.spc_education_dashboard.chart12[0].data;
+                const threshold12 = settings.spc_education_dashboard.threshold12;
+                
+                chart12data.sort(barSort);
+                chart12data = addColorsToData(chart12data, threshold12);
                 
                 let height = 300;
                 let width = 600;
@@ -1323,39 +1247,19 @@
                 let y = setY(height);
                 
                 let svg = setChartSvg('.chart-' + id, width, height);
-
-                setSvgDomains(data, x, y);
+                setSvgDomains(chart12data, x, y);
+                setThreshold(svg, threshold12, x, y, width, height, '%');
                 
                 let tooltext = setToolText(svg, "tooltip-" + id);
                 let tooltip = setToolBox(svg);
-                
                 appendTolltip(id);
 
-                const attrX = function(d) { 
-                    return x(d.country)+20; 
-                }
+                const attrX = function(d) { return x(d.country)+20; }
+                const attrY = function(d) { return y(d.percentage); }
+                const attrH = function(d){ return y(0) - y(d.percentage);}
+                const tipY = function(d){ return y(d.percentage)-30;}
                 
-                const attrY = function(d) { 
-                    return y(d.percentage); 
-                }
-                
-                const attrH = function(d){
-                    return y(0) - y(d.percentage);
-                }
-                
-                const tipY = function(d){
-                    return y(d.percentage)-30; 
-                }
-                
-                setCartBars(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                
-                svgSetLine(svg, 40, 69, 580, 70, green);
-                svgSetText(svg, 0, 73, '85%', green);
-                
-                svgSetLine(svg, 40, 100, 580, 101, orange);
-                svgSetText(svg, 0, 103, '70%', orange);
-                
-                svgSetText(svg, 0, height, '0', grey);
+                setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
             }
             
         //end context

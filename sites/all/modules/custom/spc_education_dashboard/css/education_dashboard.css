@@ -76,8 +76,11 @@ html {
     width: 26px;
     height: 26px;
     border-radius: 50%;
+    cursor: pointer;
 }
-
+rect.bar:hover {
+    cursor: pointer;
+}
 .arrow {
     width: 10px;
     height: 10px;
