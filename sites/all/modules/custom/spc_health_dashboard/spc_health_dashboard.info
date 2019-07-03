@@ -1,0 +1,9 @@
+name = SPC Health Dashboard
+description = Service features for SPC Health Dashboard
+package = SPC service modules
+version = VERSION
+core = 7.x
+configure = admin/config/health-dashboard
+files[] = spc_health_dashboard.module
+files[] = spc_health_dashboard.install
+files[] = default.json
