@@ -64,10 +64,10 @@
                 <?php endif?>
                 
                 <?php if (!empty($item['switchers']['vertical'])): ?> 
-                <div class="switch-wrapper vertical">
+                <div class="switch-wrapper vertical swch-<?php print $item['id']; ?>">
                   <div class="labels">  
-                      <span class="checked"><?php print t('Year four students'); ?></span>
-                      <span><?php print t('Year six students'); ?></span>
+                      <span class="checked"><?php print $item['switchers']['vertical'][0]['name']; ?></span>
+                      <span><?php print $item['switchers']['vertical'][1]['name']; ?></span>
                   </div>    
                   <div class="switcher">
                     <input class="form-check-input slider" type="checkbox" id="years" value="four">
