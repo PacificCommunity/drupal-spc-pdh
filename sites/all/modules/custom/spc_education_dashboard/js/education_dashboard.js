@@ -1538,14 +1538,14 @@
                 function showGender(data){
                     let path = "sites/all/modules/custom/spc_education_dashboard/img/";
                      if (data.rate == "T"){
-                         path =  path + "boys.png";
+                         path =  path + "qualified.png";
                      } else {
                         if(data.value >= threshold.green && data.value <= threshold.overlap){
-                            path =  path + "girls_green.png";
+                            path =  path + "trained_green.png";
                         } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
-                            path =  path + "girls_orange.png";
+                            path =  path + "trained_orange.png";
                         } else if (data.value < threshold.orange){
-                            path =  path + "girls_red.png";
+                            path =  path + "trained_red.png";
                         }                        
                         
                      }
