@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * Implements hook_install().
+ * Defines default json-file path, categories and countries list.
+ */
+function spc_health_dashboard_install () {
+
+  $category_list = [
+    'leadership-and-governance' => [
+      '#title' => t('Leadership and governance'),
+      '#wrapper' => false,
+      '#weight' => 0,
+      '#indicators' => [
+        'multi-sectoral-ncd-taskforce' => t('Multi-sectoral NCD taskforce'),
+        'national-strategy-addressing-ncds-and-risk-factors' => t('National strategy addressing NCDs and risk factors'),
+        'explicit-ncd-indicators-and-targets' => t('Explicit NCD indicators and targets')
+      ],
+    ],
+    'tobacco' => [
+      '#title' => t('Tobacco'),
+      '#wrapper' => t('Preventive policies'),
+      '#weight' => 1,
+      '#indicators' => [
+        'tobacco-excise-taxes' => t('Tobacco excise taxes'),
+        'smoke-free-environments' => t('Smoke-free environments'),
+      ],
+    ],
+    'alcohol' => [
+      '#title' => t('Alcohol'),
+      '#wrapper' => t('Preventive policies'),
+      '#weight' => 2,
+      '#indicators' => [
+        'alcohol-licencing-to-restrict-sales' => t('Alcohol licencing to restrict sales'),
+        'alcohol-advertising' => t('Alcohol advertising'),
+      ],
+    ],
+    'monitoring' => [
+      '#title' => t('Monitoring'),
+      '#wrapper' => false,
+      '#weight' => 10,
+      '#indicators' => [
+        'population-risk-factor-prevalence-surveys-adults' => t('Population risk factor prevalence surveys - adults'),
+        'population-risk-factor-prevalence-surveys-youth' => t('Population risk factor prevalence surveys - youth'),
+        'child-growth-monitoring' => t('Child growth monitoring'),
+        'routine-cause-specific-mortality' => t('Routine cause-specific mortality')
+      ],
+    ]
+  ];
+
+  $countries = [
+    'american-samoa' => 'American Samoa',
+    'commonwealth-of-the-northern-mariana-islands' => 'Commonwealth of the Northern Mariana Islands',
+    'cook-islands' => 'Cook Islands',
+    'federated-states-of-micronesia' => 'Federated States of Micronesia',
+    'fiji' => 'Fiji',
+    'french-polynesia' => 'French Polynesia',
+    'guam' => 'Guam',
+    'kiribati' => 'Kiribati',
+    'nauru' => 'Nauru',
+    'niue' => 'Niue',
+    'new-caledonia' => 'New Caledonia',
+    'palau' => 'Palau',
+    'papua-new-guinea' => 'Papua New Guinea',
+    'republic-of-the-marshall-islands' => 'Republic of the Marshall Islands',
+    'tokelau' => 'Tokelau',
+    'tonga' => 'Tonga',
+    'samoa' => 'Samoa',
+    'solomon-islands' => 'Solomon Islands',
+    'tuvalu' => 'Tuvalu',
+    'vanuatu' => 'Vanuatu',
+    'wallis-and-futuna' => 'Wallis and Futuna',
+  ];
+
+  $json_path = base_path() . drupal_get_path('module', 'spc_health_dashboard') . '/default.json';
+
+  variable_set('health_dashboard_countries', $countries);
+  variable_set('health_dashboard_categories_list', $category_list);
+  variable_set('health_dashboard_json', $json_path);
+}
