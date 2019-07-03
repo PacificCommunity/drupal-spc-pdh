@@ -261,10 +261,6 @@ svg.male-bar{
     .education-block-content {
         margin: 10px;
     }
-    .chart,
-    .description {
-        padding: 0 !important;
-    }
     .description.col-sm-7 {
         margin-top: 60px;
     }
