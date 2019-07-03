@@ -1134,14 +1134,16 @@
                 }, 
             "rationale":"",
             "type":"gender",
+            "marker":[
+                "Boys",
+                "Girls"
+            ],            
             "charts":[
                 {
                     "name": "",
                     "data": [
                         {
                             "country": "Fiji",
-                            "gender": "M",
-                            "percentage": 103,
                             "values": [
                                 {
                                     "value": 103, 
@@ -1156,8 +1158,6 @@
                         },
                         {
                             "country": "Kiribati",
-                            "gender": "M",
-                            "percentage": 96,
                             "values": [
                                 {
                                     "value": 96, 
@@ -1172,8 +1172,6 @@
                         },
                         {
                             "country": "Nauru",
-                            "gender": "M",
-                            "percentage": 120,
                             "values": [
                                 {
                                     "value": 120, 
@@ -1188,8 +1186,6 @@
                         },
                         {
                             "country": "Palau",
-                            "gender": "M",
-                            "percentage": 97,
                             "values": [
                                 {
                                     "value": 97, 
@@ -1204,8 +1200,6 @@
                         },
                         {
                             "country": "PNG",
-                            "gender": "M",
-                            "percentage": 85,
                             "values": [
                                 {
                                     "value": 85, 
@@ -1220,8 +1214,6 @@
                         },
                         {
                             "country": "RMI",
-                            "gender": "M",
-                            "percentage": 74,
                             "values": [
                                 {
                                     "value": 74, 
@@ -1236,8 +1228,6 @@
                         },                        
                         {
                             "country": "Samoa",
-                            "gender": "M",
-                            "percentage": 99,
                             "values": [
                                 {
                                     "value": 99, 
@@ -1252,8 +1242,6 @@
                         },          
                         {
                             "country": "Solomon Islands",
-                            "gender": "M",
-                            "percentage": 85,
                             "values": [
                                 {
                                     "value": 85, 
@@ -1268,8 +1256,6 @@
                         },
                         {
                             "country": "Tonga",
-                            "gender": "M",
-                            "percentage": 104,
                             "values": [
                                 {
                                     "value": 104, 
@@ -1284,8 +1270,6 @@
                         },
                         {
                             "country": "Tuvalu",
-                            "gender": "M",
-                            "percentage": 109,
                             "values": [
                                 {
                                     "value": 109, 
@@ -1300,8 +1284,6 @@
                         },
                         {
                             "country": "Vanuatu",
-                            "gender": "M",
-                            "percentage": 90,
                             "values": [
                                 {
                                     "value": 90, 
@@ -1328,22 +1310,26 @@
                     "value": "85-100  is green, 70-85 is orange, below 70 is red",
                     "description":"",
                     "link": "",
-                    "type": "normal",
+                    "type": "advanced",
                     "dots":{
                         "green": 85,
                         "orange": 70,
-                        "red": 70
+                        "red": 70,
+                        "overlap": 1000
                     }
                 }, 
             "rationale":"",
             "type":"gender",
+            "marker":[
+                "Boys",
+                "Girls"
+            ],            
             "charts":[
                 {
                     "name": "",
                     "data": [
                         {
                             "country": "Fiji",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 98, 
@@ -1358,7 +1344,6 @@
                         },
                         {
                             "country": "Kiribati",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 96, 
@@ -1373,7 +1358,6 @@
                         },
                         {
                             "country": "RMI",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 87, 
@@ -1388,7 +1372,6 @@
                         },                        
                         {
                             "country": "Samoa",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 96, 
@@ -1403,7 +1386,6 @@
                         },          
                         {
                             "country": "Solomon Islands",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 89, 
@@ -1418,8 +1400,6 @@
                         },
                         {
                             "country": "Tuvalu",
-                            "gender": "M",
-                            "percentage": 109,
                             "values": [
                                 {
                                     "value": 95, 
@@ -1434,8 +1414,6 @@
                         },
                         {
                             "country": "Vanuatu",
-                            "gender": "M",
-                            "percentage": 90,
                             "values": [
                                 {
                                     "value": 44, 
@@ -1573,13 +1551,16 @@
                 }, 
             "rationale":"",
             "type":"gender",
+            "marker":[
+                "Boys",
+                "Girls"
+            ],
             "charts":[
                 {
                     "name": "",
                     "data": [
                         {
                             "country": "Fiji",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 101, 
@@ -1594,7 +1575,6 @@
                         },
                         {
                             "country": "Kiribati",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 87, 
@@ -1609,7 +1589,6 @@
                         },
                         {
                             "country": "Nauru",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 35, 
@@ -1624,7 +1603,6 @@
                         }, 
                         {
                             "country": "Palau",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 103, 
@@ -1639,7 +1617,6 @@
                         },
                         {
                             "country": "PNG",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 71, 
@@ -1654,7 +1631,6 @@
                         },
                         {
                             "country": "RMI",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 96, 
@@ -1669,7 +1645,6 @@
                         },                        
                         {
                             "country": "Samoa",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 98, 
@@ -1684,7 +1659,6 @@
                         },          
                         {
                             "country": "Solomon Islands",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 70, 
@@ -1699,7 +1673,6 @@
                         },
                         {
                             "country": "Tonga",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 84, 
@@ -1714,7 +1687,6 @@
                         },                        
                         {
                             "country": "Tuvalu",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 61, 
@@ -1729,7 +1701,6 @@
                         },
                         {
                             "country": "Vanuatu",
-                            "gender": "M",
                             "values": [
                                 {
                                     "value": 33, 
@@ -2111,15 +2082,15 @@
             "definition": "Percentage of teachers by level of education taught who have received at least the minimum organized pedagogical teacher training pre-service and in-service required for teaching at the relevant level in a given country.",
             "threshold": 
                 {
-                    "value": "",
+                    "value": "Value between 85-100 is green, 70-85 is orange, below 70 is red",
                     "description":"",
                     "link": "",
-                    "type": "normal",
+                    "type": "advansed",
                     "dots":{
                         "green": 85,
                         "orange": 70,
-                        "red": 70
-                        
+                        "red": 70,
+                        "overlap": 1000
                     }
                 },
             "rationale":"A high value indicates that students are being taught by teachers who have appropriate and relevant pedagogical training.",
@@ -2135,154 +2106,411 @@
                     }  
                 ]               
             },
+            "type":"gender",
+            "marker":[
+                "Qualified",
+                "Trained"
+            ],
             "charts":[
-                {
+                   {
                     "name": "Primary",
                     "data": [
                         {
                             "country": "Cook Islands",
-                            "percentage": 99.1,
+                            "values": [
+                                {
+                                    "value": 99.1, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 43.6, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2017"
+                        },                        
+                        {
+                            "country": "Fiji",
+                            "values": [
+                                {
+                                    "value": 90.1, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 100, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
                         },
                         {
-                            "country": "Fiji",
-                            "percentage": 90.1,
-                            "year": "2016"
-                        },
-                        {
                             "country": "FSM",
-                            "percentage": 94,
-                            "year": "2018"
-                        },
-                        {
-                            "country": "Kiribati",
-                            "percentage": 91,
-                            "year": "2014"
+                            "values": [
+                                {
+                                    "value": 94, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 77, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2017"
                         },                        
                         {
+                            "country": "Kiribati",
+                            "values": [
+                                {
+                                    "value": 91, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 96.9, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2014"
+                        },
+                        {
                             "country": "Nauru",
-                            "percentage": 74,
+                            "values": [
+                                {
+                                    "value": 74, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 93, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2015"
                         },
                         {
                             "country": "Niue",
-                            "percentage": 100,
+                            "values": [
+                                {
+                                    "value": 100, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 100, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2015"
+                        },                        
+                        {
+                            "country": "Palau",
+                            "values": [
+                                {
+                                    "value": 33.7, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 49, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2016"
                         },
                         {
-                            "country": "Palau",
-                            "percentage": 33.7,
-                            "year": "2014"
-                        },
-                        {
                             "country": "RMI",
-                            "percentage": 55,
+                            "values": [
+                                {
+                                    "value": 55, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 0, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
-                        },
+                        },                        
                         {
                             "country": "Samoa",
-                            "percentage": 88,
+                            "values": [
+                                {
+                                    "value": 88, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 67, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
-                        },
+                        },          
                         {
                             "country": "Solomon Islands",
-                            "percentage": 57,
+                            "values": [
+                                {
+                                    "value": 57, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 95.9, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2016"
                         },
                         {
                             "country": "Tokelau",
-                            "percentage": 92,
-                            "year": "2017"
-                        },
+                            "values": [
+                                {
+                                    "value": 92, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 100, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2000"
+                        },                        
                         {
                             "country": "Tonga",
-                            "percentage": 97.1,
-                            "year": "2014"
+                            "values": [
+                                {
+                                    "value": 97.1, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 98, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2000"
                         },
                         {
                             "country": "Tuvalu",
-                            "percentage": 72,
+                            "values": [
+                                {
+                                    "value": 72, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 93, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
-                        },                        
+                        },
                         {
                             "country": "Vanuatu",
-                            "percentage": 63,
-                            "year": "2015"
+                            "values": [
+                                {
+                                    "value": 63, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 37, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2017"
                         }
                     ]
                 },
                 {
                     "name": "Secondary",
                     "data": [
-                                                {
+                        {
                             "country": "Cook Islands",
-                            "percentage": 95.9,
+                            "values": [
+                                {
+                                    "value": 95.9, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 64.2, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2017"
+                        },                        
+                        {
+                            "country": "Fiji",
+                            "values": [
+                                {
+                                    "value": 85.7, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 100, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
                         },
                         {
-                            "country": "Fiji",
-                            "percentage": 85.7,
-                            "year": "2016"
-                        },
-                        {
                             "country": "FSM",
-                            "percentage": 64,
-                            "year": "2018"
-                        },
-                        {
-                            "country": "Kiribati",
-                            "percentage": 69,
-                            "year": "2014"
+                            "values": [
+                                {
+                                    "value": 64, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 92, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2017"
                         },                        
                         {
+                            "country": "Kiribati",
+                            "values": [
+                                {
+                                    "value": 69, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 74, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2014"
+                        },
+                        {
                             "country": "Nauru",
-                            "percentage": 36,
+                            "values": [
+                                {
+                                    "value": 36, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 84, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2015"
                         },
                         {
                             "country": "Niue",
-                            "percentage": 100,
+                            "values": [
+                                {
+                                    "value": 100, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 100, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2015"
+                        },                        
+                        {
+                            "country": "Palau",
+                            "values": [
+                                {
+                                    "value": 94.4, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 100, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2016"
                         },
                         {
-                            "country": "Palau",
-                            "percentage": 94.4,
-                            "year": "2014"
-                        },
-                        {
                             "country": "RMI",
-                            "percentage": 50,
+                            "values": [
+                                {
+                                    "value": 50, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 71, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
-                        },
+                        },                        
                         {
                             "country": "Samoa",
-                            "percentage": 68,
+                            "values": [
+                                {
+                                    "value": 68, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 95, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
-                        },
+                        },          
                         {
                             "country": "Solomon Islands",
-                            "percentage": 76.5,
+                            "values": [
+                                {
+                                    "value": 76.5, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 0, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2016"
                         },
                         {
                             "country": "Tokelau",
-                            "percentage": 96,
+                            "values": [
+                                {
+                                    "value": 96, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 100, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
                         },                        
                         {
                             "country": "Tonga",
-                            "percentage": 72,
-                            "year": "2014"
+                            "values": [
+                                {
+                                    "value": 72, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 28, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2000"
                         },
                         {
                             "country": "Tuvalu",
-                            "percentage": 97,
+                            "values": [
+                                {
+                                    "value": 97, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 84, 
+                                    "rate": "Q"
+                                }
+                            ],
                             "year": "2017"
-                        },                        
+                        },
                         {
                             "country": "Vanuatu",
-                            "percentage": 69.4,
-                            "year": "2015"
+                            "values": [
+                                {
+                                    "value": 69.4, 
+                                    "rate": "T"
+                                }, 
+                                {
+                                    "value": 31, 
+                                    "rate": "Q"
+                                }
+                            ],
+                            "year": "2017"
                         }
                     ]
                 }

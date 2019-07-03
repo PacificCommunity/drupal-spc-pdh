@@ -99,6 +99,7 @@ rect.bar:hover {
 .education-block-content h4 {
     font-weight: 800;
     font-size: 18px;
+    margin-bottom: 20px;
 }
 .education-block-content h5 {
     font-weight: 500;
@@ -114,7 +115,7 @@ rect.bar:hover {
 .education-pdf:focus {
     position: absolute;
     right: 35px;
-    bottom: 20px;
+    bottom: 30px;
     color: #000;
     font-weight: 300;
     font-size: 14px;
@@ -131,7 +132,6 @@ rect.bar:hover {
     float: right;
     margin-top: 5px;
     margin-left: 10px;
-    
 }
 .switchers {
     margin-bottom: 50px;
@@ -241,6 +241,17 @@ svg.male-bar{
 .male:before {
     background: #ccc;
 }
+.title {
+    margin-left: 10px;
+}
+.description.col-sm-7,
+.description.col-sm-5 {
+    padding-right: 0;
+}
+.definition > p,
+.rationale > p {
+    padding-right: 30px;
+}
 
 @media (max-width: 767px) {
     .banner-with-title {
@@ -267,6 +278,9 @@ svg.male-bar{
     .description.col-sm-7 {
         margin-top: 60px;
     }
+    .switch-wrapper.vertical {
+        margin-top: 60px;
+    }
 }
 
 @media (max-width: 850px) {
@@ -282,4 +296,14 @@ svg.male-bar{
     .switch-wrapper.horizontal .switcher a {
         margin: 5px 2px;
     }
+    .gender-wrapp > div {
+        margin: 10px 12px;
+        font-size: 10px;
+    }
+    .male:before, .female:before {
+        width: 15px;
+        height: 15px;
+        margin: 13px;
+        left: -30px;
+    }    
 }

@@ -39,8 +39,8 @@
           <div class="chart col-sm-<?php print $ch_cols; ?>">
               <?php if ($item['type'] == "gender"): ?>
               <div class="gender-wrapp">
-                <div class="male"><?php print t('Boys'); ?></div>
-                <div class="female"><?php print t('Girls'); ?></div>
+                <div class="male"><?php print $item['marker'][0]; ?></div>
+                <div class="female"><?php print $item['marker'][1]; ?></div>
               </div>
               <?php endif; ?>
               <div class="chart-<?php print $item['id']; ?>"></div>
