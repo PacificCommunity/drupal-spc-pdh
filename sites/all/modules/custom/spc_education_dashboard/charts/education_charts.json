@@ -7,7 +7,7 @@
             "definition": "Total general (local, regional and central) government expenditure on education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government.",
             "threshold": 
                 {
-                    "value": "15% to 20%",
+                    "value": "values under 6% are red, 6-15% orange, above 15% is green",
                     "description":"“…To successfully achieve Sustainable Development Goal 4, governments committed to progressively allocate at least 4 to 6 percent of their gross domestic product (GDP) or at least 15 to 20 percent of their total public expenditure to education, with a focus on basic education. These commitments are well reflected in the Incheon Declaration and Education 2030 Framework for Action endorsed by the UNESCO member states in 2015...”",
                     "link": "http://uis.unesco.org/sites/default/files/documents/education-2030-incheon-framework-for-action-implementation-of-sdg4-2016-en_2.pdf",
                     "type": "normal",
@@ -83,7 +83,7 @@
             "definition": "Number of children of official primary school age who are not enrolled in primary or secondary school, expressed as a percentage of the population of official primary school age. Children enrolled in pre-primary education are excluded and considered out of school.",
             "threshold": 
                 {
-                    "value": "",
+                    "value": "Values under 2% green, 2-4% orange, above 4% red",
                     "description":"",
                     "link": "",
                     "type": "revers",
@@ -179,7 +179,7 @@
             "definition": "Students who are older than the official school-age range for the educational programme they are enrolled in.",
             "threshold": 
                 {
-                    "value": "",
+                    "value": "Values between 0-4% green, 4-6% orange, above 6% red",
                     "description":"",
                     "link": "",
                     "type": "revers",
@@ -270,8 +270,8 @@
             "definition": "Increase or decrease, Y4 and Y6, literacy numeracy levels from 2012 to 2015  (in future for 2018)",
             "threshold": 
                 {
-                    "value": "",
-                    "description":"-1% to -1%",
+                    "value": "Everything that is more than 0 is green, from 0 to -1% is orange, below -1% is red",
+                    "description":"",
                     "link": "",
                     "type": "normal",
                     "dots":{
@@ -584,7 +584,7 @@
             "definition": "Total number of students in the theoretical age group for a given level of education enrolled in that level, expressed as a percentage of the total population in that age group.",
             "threshold": 
                 {
-                    "value": "70% to 85%",
+                    "value": "Everything that is between 85 an 100% is green, 70-85 is orange, below 70% is red, 100-115% is orange, 115+ is red",
                     "description":"",
                     "link": "",
                     "type": "advanced",
@@ -848,7 +848,7 @@
             "definition": "Number of students enrolled in a given level of education, regardless of age, expressed as a percentage of the official school-age population corresponding to the same level of education. For the tertiary level, the population used is the 5-year age group starting from the official secondary school graduation age.",
             "threshold": 
                 {
-                    "value": "100% to 110%",
+                    "value": "Values between 100-110% green, 90-100% orange, belo 90 red, more than 110 orange",
                     "description":"",
                     "link": "",
                     "type": "advanced",
@@ -1121,15 +1121,15 @@
             "definition": "Primary completion rate",
             "threshold": 
                 {
-                    "value": "70% to 85%",
+                    "value": "Values between 100-110% green, 90-100% orange, belo 90 red, more than 110 orange",
                     "description":"",
                     "link": "",
                     "type": "advanced",
                     "dots":{
-                        "green": 85,
-                        "orange": 70,
-                        "red": 70,
-                        "overlap": 100
+                        "green": 100,
+                        "orange": 90,
+                        "red": 90,
+                        "overlap": 110
                     }
                 }, 
             "rationale":"",
@@ -1325,15 +1325,14 @@
             "definition": "Progression to Secondary School",
             "threshold": 
                 {
-                    "value": "70% to 85%",
+                    "value": "85-100  is green, 70-85 is orange, below 70 is red",
                     "description":"",
                     "link": "",
-                    "type": "advanced",
+                    "type": "normal",
                     "dots":{
                         "green": 85,
                         "orange": 70,
-                        "red": 70,
-                        "overlap": 100
+                        "red": 70
                     }
                 }, 
             "rationale":"",
@@ -1460,7 +1459,7 @@
             "definition": "Number of students admitted to the first grade of a higher level of education in a given year, expressed as a percentage of the number of students enrolled in the final grade of the lower level of education in the previous year.",
             "threshold": 
                 {
-                    "value": "",
+                    "value": "Values between 85-100 is green, 70-85 is orange, below 70 is red",
                     "description":"",
                     "link": "",
                     "type": "normal",
@@ -1561,7 +1560,7 @@
             "definition": "Lower secondary completion rate",
             "threshold": 
                 {
-                    "value": "70% to 85%",
+                    "value": "values between 85-100 is green, 100+ is green, 70-85 is orange, below 70 is red",
                     "description":"",
                     "link": "",
                     "type": "advanced",
@@ -1569,7 +1568,7 @@
                         "green": 85,
                         "orange": 70,
                         "red": 70,
-                        "overlap": 100
+                        "overlap": 1000
                     }
                 }, 
             "rationale":"",
@@ -1753,6 +1752,7 @@
             "title": "Pupil-teacher ratio (PTR)",
             "definition": "Average number of pupils per teacher at a given level of education, based on headcounts of both pupils and teachers.",
             "threshold":{
+                "value": "<b>Primary:</b> 40:1 and below - green, 41-50:1 - orange, above 50 red </br><b>Secondary:</b>, 25:1 and below - green, 26-30:1 - orange, above 30:1 - red</br><b>Early:</b> 6:1 and blow - green, 7-8:1 - orange",
                 "description":"",
                 "link": "",
                 "ece": {
@@ -2024,14 +2024,14 @@
             "definition": "Percentage of Schools with safe drinking water.",
             "threshold": 
                 {
-                    "value": "",
+                    "value": "Values abowe 100 is green, below 100 is red",
                     "description":"",
                     "link": "",
                     "type": "normal",
                     "dots":{
-                        "green": 85,
-                        "orange": 70,
-                        "red": 70
+                        "green": 100,
+                        "orange": 100,
+                        "red": 100
                         
                     }
                 },

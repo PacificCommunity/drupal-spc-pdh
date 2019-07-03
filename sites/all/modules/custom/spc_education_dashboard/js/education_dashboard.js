@@ -107,9 +107,16 @@
                 
                 svgSetLine(svg, 30, y(thdGreen), width, y(thdGreen)+1, green);
                 svgSetText(svg, textX, y(thdGreen)+4, thdGreen+symbol, green);
-
-                svgSetLine(svg, 30, y(thdOrange), width, y(thdOrange)+1, orange);
-                svgSetText(svg, textX, y(thdOrange)+4, thdOrange+symbol, orange);
+                
+                if (thdGreen !== thdOrange){
+                    svgSetLine(svg, 30, y(thdOrange), width, y(thdOrange)+1, orange);
+                    svgSetText(svg, textX, y(thdOrange)+4, thdOrange+symbol, orange);
+                }
+                
+                if (threshold.dots.overlap){
+                    svgSetLine(svg, 30, y(threshold.dots.overlap), width, y(threshold.dots.overlap)+1, orange);
+                    svgSetText(svg, textX, y(threshold.dots.overlap)+4, threshold.dots.overlap+symbol, orange);
+                }
                 
                 svgSetText(svg, textX, height, '0', grey);                
             }
@@ -384,8 +391,8 @@
                 
                 setCartBars(svg, chart1data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
 
-                svgSetText(svg, -10, 20, '18%', green);
-                svgSetText(svg, -10, 230, '3.8%', red);
+                svgSetText(svg, -5, 20, '18%', green);
+                svgSetText(svg, -5, 230, '3.8%', red);
             }
             
             //Out of School Children chart
@@ -781,11 +788,13 @@
                     .querySelector(".chart-" + id + " svg")
                     .appendChild(document.querySelector(".gimage-" + id));
             
-                function setFill(proc) {
-                    let fill = green;
-                    if(proc < threshold.green){
+                function setFill(percentage) {
+                    let fill = '';
+                    if(percentage >= threshold.green && percentage <= threshold.overlap){
+                        fill = green;
+                    } else if ((percentage < threshold.green && percentage >= threshold.orange) || percentage > threshold.overlap){
                         fill = orange;
-                    } else if (proc < threshold.orange){
+                    } else if (percentage < threshold.orange){
                         fill = red;
                     }
                     return fill;
@@ -794,30 +803,28 @@
                 function setTipFill(data) {
                     let fill = "#fff";
                     if (data.rate == "M"){
-                        if(data.value < threshold.green){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            fill = green;
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
                             fill = orange;
                         } else if (data.value < threshold.orange){
                             fill = red;
-                        } else {
-                            fill = green
-                        } 
+                        }
                     }
-
                     return fill;
                 }
                 
                 function setTipTextFill(data) {
                     let fill = "#fff";
                     if (data.rate == "F"){
-                        if(data.value < threshold.green){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            fill = green;
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
                             fill = orange;
                         } else if (data.value < threshold.orange){
                             fill = red;
-                        } else {
-                            fill = green
-                        } 
+                        }
                     }
-
                     return fill;
                 }                
                 
@@ -834,13 +841,14 @@
                      if (data.rate == "M"){
                          path =  path + "boys.png";
                      } else {
-                        if(data.value < threshold.green){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            path =  path + "girls_green.png";
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
                             path =  path + "girls_orange.png";
                         } else if (data.value < threshold.orange){
                             path =  path + "girls_red.png";
-                        } else {
-                            path =  path + "girls_green.png";
-                        }
+                        }                        
+                        
                      }
                     return path; 
                 }
@@ -848,7 +856,67 @@
                 appendTolltip(id);
                 
                 setThreshold(svg, chart7Thd, x0, y, width, height, '%', 'gender');
-                setSvgGenderBarData(svg, data, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
+                
+                var slice = svg.selectAll(".slice")
+                    .data(data)
+                    .enter()
+                    .append("g")
+                    .attr("class", "group")
+                    .attr("x", function(d){return x0(d.country)})
+                    .attr("transform",function(d) {return "translate(" + x0(d.country) + ",0)"; });
+
+                slice.selectAll("rect")
+                    .data(function(d) { return d.values; })
+                    .enter()
+                    .append("rect")
+                    .attr("width", 20)
+                    .attr("x", function(d) { return x1(d.rate); })
+                    .style("fill", function(d) {if (d.rate == 'M'){return setFill(d.value);}return '#fff';})
+                    .style("stroke-width", 3)
+                    .style("stroke",function(d) {return setFill(d.value);})
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .attr("y", function(d) { return y(0); })
+                    .attr("height", function(d) { return height - y(0); })
+                    .on("mouseover", function(d) {
+                        let xGroup = 0;
+                        d3.select(this)
+                            .attr("Xgroup", function(){
+                                xGroup = $(this).closest('.group').attr('x');
+                                return xGroup;
+                            });
+                            
+                        tooltip.style("opacity", 1)
+                            .attr("x", setXdelta(xGroup, d.rate)+40)
+                            .attr("y", y(d.value)-10)
+                            .style("stroke-width", 3)
+                            .style("stroke", setFill(d.value))
+                            .attr("fill", setTipFill(d));
+                       
+                        tooltext.style("opacity", 1)
+                            .text(Number((d.value).toFixed(1)))  
+                            .attr("x", setXdelta(xGroup, d.rate)+60)
+                            .attr("y", y(d.value)+25)
+                            .attr("fill", setTipTextFill(d));
+                    
+                        boyWrap.style("opacity", 1)
+                            .attr("x", setXdelta(xGroup, d.rate)+55)
+                            .attr("y", y(d.value)-5)
+                            .attr("xlink:href", showGender(d))
+                    
+                    })
+                    .on("mouseout", function(d) {
+                        tooltip.style("opacity", 0);
+                        tooltext.style("opacity", 0);
+                        boyWrap.style("opacity", 0);
+                    });
+
+                slice.selectAll("rect")
+                    .transition()
+                    .delay(function (d) {return Math.random()*1000;})
+                    .duration(1000)
+                    .attr("y", function(d) { return y(d.value); })
+                    .attr("height", function(d) { return height - y(d.value); });
             }
             
             //Progression to secondary school
@@ -905,11 +973,13 @@
                     .querySelector(".chart-" + id + " svg")
                     .appendChild(document.querySelector(".gimage-" + id));
             
-                function setFill(proc) {
+                function setFill(percentage) {
                     let fill = green;
-                    if(proc < threshold.green){
+                    if(percentage >= threshold.green && percentage <= threshold.overlap){
+                        fill = green;
+                    } else if ((percentage < threshold.green && percentage >= threshold.orange) || percentage > threshold.overlap){
                         fill = orange;
-                    } else if (proc < threshold.orange){
+                    } else if (percentage < threshold.orange){
                         fill = red;
                     }
                     return fill;
@@ -918,30 +988,28 @@
                 function setTipFill(data) {
                     let fill = "#fff";
                     if (data.rate == "M"){
-                        if(data.value < threshold.green){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            fill = green;
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
                             fill = orange;
                         } else if (data.value < threshold.orange){
                             fill = red;
-                        } else {
-                            fill = green
-                        } 
+                        }
                     }
-
                     return fill;
                 }
                 
                 function setTipTextFill(data) {
                     let fill = "#fff";
                     if (data.rate == "F"){
-                        if(data.value < threshold.green){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            fill = green;
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
                             fill = orange;
                         } else if (data.value < threshold.orange){
                             fill = red;
-                        } else {
-                            fill = green
-                        } 
+                        }
                     }
-
                     return fill;
                 }                
                 
@@ -958,13 +1026,14 @@
                      if (data.rate == "M"){
                          path =  path + "boys.png";
                      } else {
-                        if(data.value < threshold.green){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            path =  path + "girls_green.png";
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
                             path =  path + "girls_orange.png";
                         } else if (data.value < threshold.orange){
                             path =  path + "girls_red.png";
-                        } else {
-                            path =  path + "girls_green.png";
-                        }
+                        }                        
+                        
                      }
                     return path; 
                 }
@@ -1057,15 +1126,7 @@
             
                 document
                     .querySelector(".chart-" + id + " svg")
-                    .appendChild(document.querySelector(".gimage-" + id));
-            
-//                if (item.percentage >= thdGreen && item.percentage <= overlap){
-//                    item.color = green;
-//                } else if ((item.percentage < thdGreen && item.percentage >= thdOrange) || item.percentage > overlap ){
-//                    item.color = orange;
-//                } else if (item.percentage < thdOrange){
-//                    item.color = red;
-//                }            
+                    .appendChild(document.querySelector(".gimage-" + id));          
             
                 function setFill(percentage) {
                     let fill = green;
@@ -1090,22 +1151,20 @@
                             fill = red;
                         }
                     }
-
                     return fill;
                 }
                 
                 function setTipTextFill(data) {
                     let fill = "#fff";
                     if (data.rate == "F"){
-                        if(data.value < threshold.green){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            fill = green;
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
                             fill = orange;
                         } else if (data.value < threshold.orange){
                             fill = red;
-                        } else {
-                            fill = green
-                        } 
+                        }
                     }
-
                     return fill;
                 }                
                 
@@ -1122,13 +1181,14 @@
                      if (data.rate == "M"){
                          path =  path + "boys.png";
                      } else {
-                        if(data.value < threshold.green){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            path =  path + "girls_green.png";
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
                             path =  path + "girls_orange.png";
                         } else if (data.value < threshold.orange){
                             path =  path + "girls_red.png";
-                        } else {
-                            path =  path + "girls_green.png";
-                        }
+                        }                        
+                        
                      }
                     return path; 
                 }
