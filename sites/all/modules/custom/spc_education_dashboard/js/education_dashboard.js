@@ -312,7 +312,7 @@
                     .append("rect")
                     .attr("width", 20)
                     .attr("x", function(d) { return x1(d.rate); })
-                    .style("fill", function(d) {if (d.rate == 'M'){return setFill(d.value);}return '#fff';})
+                    .style("fill", function(d) {if (d.rate == 'M' || d.rate == 'T'){return setFill(d.value);}return '#fff';})
                     .style("stroke-width", 3)
                     .style("stroke",function(d) {return setFill(d.value);})
                     .attr("rx", 10)
@@ -1040,7 +1040,67 @@
 
                 appendTolltip(id);
                 setThreshold(svg, chart8Thd, x0, y, width, height, '%', 'gender');
-                setSvgGenderBarData(svg, data, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
+                
+                var slice = svg.selectAll(".slice")
+                    .data(data)
+                    .enter()
+                    .append("g")
+                    .attr("class", "group")
+                    .attr("x", function(d){return x0(d.country)})
+                    .attr("transform",function(d) {return "translate(" + x0(d.country) + ",0)"; });
+
+                slice.selectAll("rect")
+                    .data(function(d) { return d.values; })
+                    .enter()
+                    .append("rect")
+                    .attr("width", 20)
+                    .attr("x", function(d) { return x1(d.rate); })
+                    .style("fill", function(d) {if (d.rate == 'M' || d.rate == 'T'){return setFill(d.value);}return '#fff';})
+                    .style("stroke-width", 3)
+                    .style("stroke",function(d) {return setFill(d.value);})
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .attr("y", function(d) { return y(0); })
+                    .attr("height", function(d) { return height - y(0); })
+                    .on("mouseover", function(d) {
+                        let xGroup = 0;
+                        d3.select(this)
+                            .attr("Xgroup", function(){
+                                xGroup = $(this).closest('.group').attr('x');
+                                return xGroup;
+                            });
+                            
+                        tooltip.style("opacity", 1)
+                            .attr("x", setXdelta(xGroup, d.rate)+40)
+                            .attr("y", y(d.value)-10)
+                            .style("stroke-width", 3)
+                            .style("stroke", setFill(d.value))
+                            .attr("fill", setTipFill(d));
+                       
+                        tooltext.style("opacity", 1)
+                            .text(Number((d.value).toFixed(1)))  
+                            .attr("x", setXdelta(xGroup, d.rate)+60)
+                            .attr("y", y(d.value)+25)
+                            .attr("fill", setTipTextFill(d));
+                    
+                        boyWrap.style("opacity", 1)
+                            .attr("x", setXdelta(xGroup, d.rate)+55)
+                            .attr("y", y(d.value)-5)
+                            .attr("xlink:href", showGender(d))
+                    
+                    })
+                    .on("mouseout", function(d) {
+                        tooltip.style("opacity", 0);
+                        tooltext.style("opacity", 0);
+                        boyWrap.style("opacity", 0);
+                    });
+
+                slice.selectAll("rect")
+                    .transition()
+                    .delay(function (d) {return Math.random()*1000;})
+                    .duration(1000)
+                    .attr("y", function(d) { return y(d.value); })
+                    .attr("height", function(d) { return height - y(d.value); });
             }
             
             //Transition rate
@@ -1195,7 +1255,68 @@
 
                 appendTolltip(id);
                 setThreshold(svg, chart10Thd, x0, y, width, height, '%', 'gender');
-                setSvgGenderBarData(svg, data, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
+                
+                var slice = svg.selectAll(".slice")
+                    .data(data)
+                    .enter()
+                    .append("g")
+                    .attr("class", "group")
+                    .attr("x", function(d){return x0(d.country)})
+                    .attr("transform",function(d) {return "translate(" + x0(d.country) + ",0)"; });
+
+                slice.selectAll("rect")
+                    .data(function(d) { return d.values; })
+                    .enter()
+                    .append("rect")
+                    .attr("width", 20)
+                    .attr("x", function(d) { return x1(d.rate); })
+                    .style("fill", function(d) {if (d.rate == 'M' || d.rate == 'T'){return setFill(d.value);}return '#fff';})
+                    .style("stroke-width", 3)
+                    .style("stroke",function(d) {return setFill(d.value);})
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .attr("y", function(d) { return y(0); })
+                    .attr("height", function(d) { return height - y(0); })
+                    .on("mouseover", function(d) {
+                        let xGroup = 0;
+                        d3.select(this)
+                            .attr("Xgroup", function(){
+                                xGroup = $(this).closest('.group').attr('x');
+                                return xGroup;
+                            });
+                            
+                        tooltip.style("opacity", 1)
+                            .attr("x", setXdelta(xGroup, d.rate)+40)
+                            .attr("y", y(d.value)-10)
+                            .style("stroke-width", 3)
+                            .style("stroke", setFill(d.value))
+                            .attr("fill", setTipFill(d));
+                       
+                        tooltext.style("opacity", 1)
+                            .text(Number((d.value).toFixed(1)))  
+                            .attr("x", setXdelta(xGroup, d.rate)+60)
+                            .attr("y", y(d.value)+25)
+                            .attr("fill", setTipTextFill(d));
+                    
+                        boyWrap.style("opacity", 1)
+                            .attr("x", setXdelta(xGroup, d.rate)+55)
+                            .attr("y", y(d.value)-5)
+                            .attr("xlink:href", showGender(d))
+                    
+                    })
+                    .on("mouseout", function(d) {
+                        tooltip.style("opacity", 0);
+                        tooltext.style("opacity", 0);
+                        boyWrap.style("opacity", 0);
+                    });
+
+                slice.selectAll("rect")
+                    .transition()
+                    .delay(function (d) {return Math.random()*1000;})
+                    .duration(1000)
+                    .attr("y", function(d) { return y(d.value); })
+                    .attr("height", function(d) { return height - y(d.value); });
+                
             }
 
             //Pupil-teacher ratio (PTR)
@@ -1309,6 +1430,7 @@
                 let chart13primary = settings.spc_education_dashboard.chart13[0].data;
                 let chart13secondary = settings.spc_education_dashboard.chart13[1].data;
                 const threshold13 = settings.spc_education_dashboard.threshold13;
+                const threshold = threshold13.dots;
                 
                 chart13primary.sort(barSort);
                 chart13secondary.sort(barSort);
@@ -1317,29 +1439,124 @@
                 chart13secondary = addColorsToData(chart13secondary, threshold13);
                 
                 let height = 300;
-                let width = 600;
+                let width = 1050;
 
-                let x = setX(width);
+                const margin = {
+                    top: 20, 
+                    right: 20, 
+                    bottom: 30, 
+                    left: 40
+                };
+                
+                let x0 = setX(width);
+                let x1 = setXg();
                 let y = setY(height);
                 
-                let svg = setChartSvg('.chart-' + id, width, height);
-                setSvgDomains(chart13primary, x, y);
-                setThreshold(svg, threshold13, x, y, width, height, '%');
-                
-                let tooltext = setToolText(svg, "tooltip-" + id);
-                let tooltip = setToolBox(svg);
-                appendTolltip(id);
+                let svg = setGenderChartSvg(id, width, height, margin);
 
-                const attrX = function(d) { return x(d.country)+20; }
-                const attrY = function(d) { return y(d.percentage); }
-                const attrH = function(d){ return y(0) - y(d.percentage);}
-                const tipY = function(d){ return y(d.percentage)-30;}
+                var categoriesNames = chart13primary.map(function(d) { return d.country; });
+                var rateNames = chart13primary[0].values.map(function(d) { return d.rate; });
                 
-                setCartBars(svg, chart13primary,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                setGenderChartDomains(chart13primary, categoriesNames, rateNames, x0, x1, y); 
+                
+                svg.select('.y').transition().duration(500).delay(1300).style('opacity','1');
+                let tooltext = setToolText(svg, "tooltip-" + id);
+                
+                let tooltip = svg
+                    .append("rect")   
+                    .attr("class", "tipbox-" + id)
+                    .attr("width", 40)
+                    .attr("height", 40)
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .style("opacity", 0);
+                
+                document
+                    .querySelector(".chart-" + id + " svg")
+                    .appendChild(document.querySelector(".tipbox-" + id));
+                
+                let boyWrap = svg.append("image")
+                    .style("opacity", 0)
+                    .attr("class", "gimage-" + id)
+                    .attr("width", 12)
+                    .attr("height", 16);
+            
+                document
+                    .querySelector(".chart-" + id + " svg")
+                    .appendChild(document.querySelector(".gimage-" + id));          
+            
+                function setFill(percentage) {
+                    let fill = green;
+                    if(percentage >= threshold.green && percentage <= threshold.overlap){
+                        fill = green;
+                    } else if ((percentage < threshold.green && percentage >= threshold.orange) || percentage > threshold.overlap){
+                        fill = orange;
+                    } else if (percentage < threshold.orange){
+                        fill = red;
+                    }
+                    return fill;
+                }
+                
+                function setTipFill(data) {
+                    let fill = "#fff";
+                    if (data.rate == "T"){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            fill = green;
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
+                            fill = orange;
+                        } else if (data.value < threshold.orange){
+                            fill = red;
+                        }
+                    }
+                    return fill;
+                }
+                
+                function setTipTextFill(data) {
+                    let fill = "#fff";
+                    if (data.rate == "Q"){
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            fill = green;
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
+                            fill = orange;
+                        } else if (data.value < threshold.orange){
+                            fill = red;
+                        }
+                    }
+                    return fill;
+                }                
+                
+                function setXdelta(xGroup, rate){
+                    if (rate == "T"){
+                        return xGroup -9;
+                    } else {
+                        return parseInt(xGroup, 10) +23;
+                    }
+                }
+
+                function showGender(data){
+                    let path = "sites/all/modules/custom/spc_education_dashboard/img/";
+                     if (data.rate == "T"){
+                         path =  path + "boys.png";
+                     } else {
+                        if(data.value >= threshold.green && data.value <= threshold.overlap){
+                            path =  path + "girls_green.png";
+                        } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
+                            path =  path + "girls_orange.png";
+                        } else if (data.value < threshold.orange){
+                            path =  path + "girls_red.png";
+                        }                        
+                        
+                     }
+                    return path; 
+                }
+
+                appendTolltip(id);
+                setThreshold(svg, threshold13, x0, y, width, height, '%', 'gender');
+                setSvgGenderBarData(svg, chart13primary, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
                 
                 $('.swch-13 .ui-switcher').on('click', function(e){
                     e.preventDefault();
-                    let newData = [];                    
+                    let newData = [];
                     
                     $(this).closest('.switch-wrapper').find('.labels span').toggleClass('checked');
 
@@ -1350,15 +1567,107 @@
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
-                    svg = setChartSvg('.chart-' + id, width, height);
-                    setSvgDomains(newData, x, y);
-                    setThreshold(svg, threshold13, x, y, width, height, '%');
+                    svg = setGenderChartSvg(id, width, height, margin);
 
-                    tooltext = setToolText(svg, "tooltip-" + id);
-                    tooltip = setToolBox(svg);
+                    var categoriesNames = chart13primary.map(function(d) { return d.country; });
+                    var rateNames = chart13primary[0].values.map(function(d) { return d.rate; });
+
+                    setGenderChartDomains(chart13primary, categoriesNames, rateNames, x0, x1, y); 
+
+                    svg.select('.y').transition().duration(500).delay(1300).style('opacity','1');
+                    let tooltext = setToolText(svg, "tooltip-" + id);
+
+                    let tooltip = svg
+                        .append("rect")   
+                        .attr("class", "tipbox-" + id)
+                        .attr("width", 40)
+                        .attr("height", 40)
+                        .attr("rx", 10)
+                        .attr("ry", 10)
+                        .style("opacity", 0);
+
+                    document
+                        .querySelector(".chart-" + id + " svg")
+                        .appendChild(document.querySelector(".tipbox-" + id));
+
+                    let boyWrap = svg.append("image")
+                        .style("opacity", 0)
+                        .attr("class", "gimage-" + id)
+                        .attr("width", 12)
+                        .attr("height", 16);
+
+                    document
+                        .querySelector(".chart-" + id + " svg")
+                        .appendChild(document.querySelector(".gimage-" + id));          
+
+                    function setFill(percentage) {
+                        let fill = green;
+                        if(percentage >= threshold.green && percentage <= threshold.overlap){
+                            fill = green;
+                        } else if ((percentage < threshold.green && percentage >= threshold.orange) || percentage > threshold.overlap){
+                            fill = orange;
+                        } else if (percentage < threshold.orange){
+                            fill = red;
+                        }
+                        return fill;
+                    }
+
+                    function setTipFill(data) {
+                        let fill = "#fff";
+                        if (data.rate == "T"){
+                            if(data.value >= threshold.green && data.value <= threshold.overlap){
+                                fill = green;
+                            } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
+                                fill = orange;
+                            } else if (data.value < threshold.orange){
+                                fill = red;
+                            }
+                        }
+                        return fill;
+                    }
+
+                    function setTipTextFill(data) {
+                        let fill = "#fff";
+                        if (data.rate == "Q"){
+                            if(data.value >= threshold.green && data.value <= threshold.overlap){
+                                fill = green;
+                            } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
+                                fill = orange;
+                            } else if (data.value < threshold.orange){
+                                fill = red;
+                            }
+                        }
+                        return fill;
+                    }                
+
+                    function setXdelta(xGroup, rate){
+                        if (rate == "T"){
+                            return xGroup -9;
+                        } else {
+                            return parseInt(xGroup, 10) +23;
+                        }
+                    }
+
+                    function showGender(data){
+                        let path = "sites/all/modules/custom/spc_education_dashboard/img/";
+                         if (data.rate == "T"){
+                             path =  path + "boys.png";
+                         } else {
+                            if(data.value >= threshold.green && data.value <= threshold.overlap){
+                                path =  path + "girls_green.png";
+                            } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
+                                path =  path + "girls_orange.png";
+                            } else if (data.value < threshold.orange){
+                                path =  path + "girls_red.png";
+                            }                        
+
+                         }
+                        return path; 
+                    }                    
+
                     appendTolltip(id);
-                    
-                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                    setThreshold(svg, threshold13, x0, y, width, height, '%', 'gender');
+                    setSvgGenderBarData(svg, newData, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
                 });
             }
             
