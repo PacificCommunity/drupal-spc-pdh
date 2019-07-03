@@ -122,14 +122,14 @@
             }
             
             function setNegativeThreshold(svg, threshold, x, y, width, height, symbol){
-                svgSetLine(svg, 30, 185, 580, 186, green);
-                svgSetText(svg, -5, 189, '1%', green);
+                svgSetLine(svg, 30, 190, 580, 191, green);
+                svgSetText(svg, -5, 194, '1%', green);
                 
                 svgSetLine(svg, 30, 200, 580, 201, grey);
                 svgSetText(svg, -5, 204, '0', grey);
                 
-                svgSetLine(svg, 30, 215, 580, 216, orange);
-                svgSetText(svg, -5, 219, '-1%', orange);
+                svgSetLine(svg, 30, 210, 580, 211, orange);
+                svgSetText(svg, -5, 214, '-1%', orange);
             }
             
             function setCartExtremum(svg, data, threshold, x, y, width, height){
@@ -516,11 +516,13 @@
                 }
                 
                 let tipY = function(chart4yearLiteracy){
-                    let pos = 200;
+                    let pos = 0;
                     if (chart4yearLiteracy.percentage > 0){
-                        pos = y(chart4yearLiteracy.percentage)/2;
+                        pos = y(chart4yearLiteracy.percentage)/2 -30;
+                    } else {
+                        pos = y(chart4yearLiteracy.percentage)/2 - 10;
                     }
-                    return pos-30; 
+                    return pos;
                 }
                 
                 setCartBars(svg, chart4yearLiteracy,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
@@ -1536,14 +1538,14 @@
                 function showGender(data){
                     let path = "sites/all/modules/custom/spc_education_dashboard/img/";
                      if (data.rate == "T"){
-                         path =  path + "boys.png";
+                         path =  path + "qualified.png";
                      } else {
                         if(data.value >= threshold.green && data.value <= threshold.overlap){
-                            path =  path + "girls_green.png";
+                            path =  path + "trained_green.png";
                         } else if ((data.value < threshold.green && data.value >= threshold.orange) || data.value > threshold.overlap){
-                            path =  path + "girls_orange.png";
+                            path =  path + "trained_orange.png";
                         } else if (data.value < threshold.orange){
-                            path =  path + "girls_red.png";
+                            path =  path + "trained_red.png";
                         }                        
                         
                      }
