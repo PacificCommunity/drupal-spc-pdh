@@ -152,6 +152,14 @@ function spc_education_dashboard_block_view($delta = '') {
             $thresholds = $chart_data['threshold']['dots'];
             
             $charts =  $chart_data['charts'];
+            
+            //hiding chart countries name.
+            foreach ($charts as $chart_id => $chart){
+                foreach($chart['data'] as $key => $value){
+                    $charts[$chart_id]['data'][$key]['country'] = $key;
+                }
+            }
+            
             drupal_add_js(array('spc_education_dashboard' => array('chart'. $chart_data['id'] => $charts)), array('type' => 'setting'));
             
             $threshold = $chart_data['threshold'];
