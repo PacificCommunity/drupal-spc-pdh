@@ -28,7 +28,7 @@
               }
             });
             
-            //chart block description toggle
+            //chart block description toggle.
             $('.toggle').on('click', function(){
                let active = $(this).siblings('p').hasClass('hidden');
                 
@@ -40,6 +40,85 @@
                     $(this).find('.arrow').toggleClass('down');
                 }
             });
+            
+            //Exporting chart to PDF.
+            $('.education-pdf').on('click', function(e){
+                e.preventDefault();
+                let chartId = $(this).attr('data-chart-id');
+                
+                let svg = document.querySelector(".chart-" + chartId + " svg")
+                let svg_xml = (new XMLSerializer()).serializeToString(svg);
+                
+                var img = new Image();
+                img.src = "data:image/svg+xml;base64," + btoa(svg_xml);
+
+                //creating PDF
+                let pdf = new jsPDF('p', 'pt', 'letter');
+                
+                toDataUrl(img.src, function(base64Img){
+                    let title = $('#pdf-' + chartId + ' .title-text').text();
+                    pdf.text(60, 60, title);
+                    
+                    let subTitle = $('#pdf-' + chartId + ' .subtitle').text();
+                    pdf.setFontSize(10);
+                    pdf.text(60, 80, subTitle);
+                    
+                    pdf.addImage(base64Img, 'PNG', 60, 120, 200, 100);
+
+                    let source = $('#pdf-' + chartId + ' .description').clone();
+                    source.find('.switchers').html('');
+
+                    let specialElementHandlers = {
+                        '#bypassme': function(element, renderer){
+                            return true;
+                        }
+                    }
+
+                    let margins = {
+                        top: 250,
+                        left: 60,
+                        width: 500
+                      };
+
+                    pdf.fromHTML(
+                        source[0], 
+                        margins.left,
+                        margins.top,
+                        {
+                            'width': margins.width,
+                            'elementHandlers': specialElementHandlers,
+                        },
+                    );
+                    
+                    pdf.save('chart-'+ chartId +'.pdf');
+                }); 
+            });
+            
+            function toDataUrl(src, callback, outputFormat) {
+                var img = new Image();
+
+                img.crossOrigin = 'Anonymous';
+                img.onload = function() {
+                  var canvas = document.createElement('CANVAS');
+                  var ctx = canvas.getContext('2d');
+                  var dataURL;
+
+                  canvas.height = this.naturalHeight;
+                  canvas.width = this.naturalWidth;
+                  ctx.drawImage(this, 0, 0);
+
+                  dataURL = canvas.toDataURL(outputFormat);
+                  callback(dataURL);
+                  
+                  canvas = null;
+                };
+                
+                img.src = src;
+                if (img.complete || img.complete === undefined) {
+                  img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+                  img.src = src;
+                }
+            }
             
             /*
              * Charts configurations and global functions
@@ -225,7 +304,7 @@
                         .enter()
                         .append("rect")
                         .attr("class", "bar")
-                        .attr("country", data => data.country)
+                        //.attr("country", data => data.country)
                         .attr("percentage", data => data.percentage)
                         .attr("x", attrX)
                         .attr("y", attrY)

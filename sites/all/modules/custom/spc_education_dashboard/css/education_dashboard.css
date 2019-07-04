@@ -283,6 +283,15 @@ svg.male-bar{
     }
 }
 
+@media (max-width: 956px) {
+    .switch-wrapper.vertical.swch-4 {
+        margin-top: 15px;
+    }
+    .switch-wrapper.vertical.swch-4 span {
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 850px) {
     .switch-wrapper.horizontal .switcher a {
         font-size: 11px;
