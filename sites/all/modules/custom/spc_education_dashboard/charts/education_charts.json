@@ -2,13 +2,13 @@
     "educationChartsData":[
         {
             "id": "1",
-            "name": "GPD expenditure Default!",
+            "name": "GPD expenditure",
             "title": "Government expenditure on education as % of GDP",
             "definition": "Total general (local, regional and central) government expenditure on education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government.",
             "threshold": 
                 {
                     "value": "values under 6% are red, 6-15% orange, above 15% is green",
-                    "description":"“…To successfully achieve Sustainable Development Goal 4, governments committed to progressively allocate at least 4 to 6 percent of their gross domestic product (GDP) or at least 15 to 20 percent of their total public expenditure to education, with a focus on basic education. These commitments are well reflected in the Incheon Declaration and Education 2030 Framework for Action endorsed by the UNESCO member states in 2015...”",
+                    "description":"To successfully achieve Sustainable Development Goal 4, governments committed to progressively allocate at least 4 to 6 percent of their gross domestic product (GDP) or at least 15 to 20 percent of their total public expenditure to education, with a focus on basic education. These commitments are well reflected in the Incheon Declaration and Education 2030 Framework for Action endorsed by the UNESCO member states in 2015",
                     "link": "http://uis.unesco.org/sites/default/files/documents/education-2030-incheon-framework-for-action-implementation-of-sdg4-2016-en_2.pdf",
                     "type": "normal",
                     "dots":{
