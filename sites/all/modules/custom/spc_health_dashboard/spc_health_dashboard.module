@@ -3,7 +3,7 @@
 /**
  * Implements hook_menu().
  */
-function spc_health_dashboard_menu () {
+function spc_health_dashboard_menu() {
   $items = [];
 
   $items['health-dashboard'] = [
@@ -11,6 +11,7 @@ function spc_health_dashboard_menu () {
     'description' => t('Health dashboard home page'),
     'page callback' => 'spc_health_dashboard_home_page',
     'access callback' => TRUE,
+    'file' => 'inc/dashboard-home.inc',
     'type' => MENU_CALLBACK,
   ];
 
@@ -20,6 +21,7 @@ function spc_health_dashboard_menu () {
     'page callback' => 'spc_health_dashboard_pages',
     'page arguments' => [1],
     'access callback' => TRUE,
+    'file' => 'inc/dashboard-categories.inc',
     'type' => MENU_CALLBACK,
   ];
 
@@ -27,8 +29,9 @@ function spc_health_dashboard_menu () {
     'title' => t('Health dashboard'),
     'description' => t('Health dashboard'),
     'page callback' => 'spc_health_dashboard_pages',
-    'page arguments' => [1,2],
+    'page arguments' => [1, 2],
     'access callback' => TRUE,
+    'file' => 'inc/dashboard-categories.inc',
     'type' => MENU_CALLBACK,
   ];
 
@@ -38,6 +41,7 @@ function spc_health_dashboard_menu () {
     'page callback' => 'spc_health_dashboard_country',
     'page arguments' => [2],
     'access callback' => TRUE,
+    'file' => 'inc/dashboard-countries.inc',
     'type' => MENU_CALLBACK,
   ];
 
@@ -54,34 +58,10 @@ function spc_health_dashboard_menu () {
 }
 
 /**
- * Returns Health dashboard indicators pages.
- */
-function spc_health_dashboard_pages ($category, $indicator = null) {
-  if ($category == 'null') {
-    drupal_not_found();
-  }
-  return "$category $indicator";
-}
-
-/**
- * Returns Health dashboard home page.
- */
-function spc_health_dashboard_home_page () {
-  return "Health Dashboard Home";
-}
-
-/**
- * Returns Health dashboard country pages.
- */
-function spc_health_dashboard_country ($country = null) {
-  return "$country";
-}
-
-/**
  * Implements hook_form()
  * Settings form for Health Dashboard.
  */
-function spc_health_dashboard_form () {
+function spc_health_dashboard_form() {
   $form['json_file'] = [
     '#type' => 'file',
     '#title' => t('Upload JSON File'),
@@ -100,15 +80,35 @@ function spc_health_dashboard_form () {
     '#default_value' => FALSE,
     '#required' => FALSE,
   ];
+  $form['update_indicators'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Update indicators list'),
+    '#default_value' => FALSE,
+    '#required' => FALSE,
+  ];
   $form['update_default_json'] = [
     '#type' => 'checkbox',
     '#title' => t('Use default JSON file'),
     '#default_value' => FALSE,
     '#required' => FALSE,
   ];
-  dpm(variable_get('health_dashboard_categories_list'));
-  dpm(variable_get('health_dashboard_countries'));
-  dpm(variable_get('health_dashboard_json'));
+  $form['markup1'] = [
+    '#markup' => _array_print_helper(variable_get('health_dashboard_categories_list', []), 'Categories array'),
+    '#weight' => 20
+  ];
+  $form['markup2'] = [
+    '#markup' => _array_print_helper(variable_get('health_dashboard_countries', []), 'Countries array'),
+    '#weight' => 20
+  ];
+  $form['markup5'] = [
+    '#markup' => _array_print_helper(variable_get('health_dashboard_indicators', []), 'Indicators array'),
+    '#weight' => 20
+  ];
+  $form['markup4'] = [
+    '#markup' => _array_print_helper(variable_get('health_dashboard_json', ''), 'Path to JSON'),
+    '#weight' => 20
+  ];
+
   $form['#submit'][] = 'spc_health_dashboard_form_submit';
   return system_settings_form($form);
 }
@@ -124,6 +124,10 @@ function spc_health_dashboard_form_submit($form, &$form_state) {
   // On country list change.
   if (!empty($form_state['values']['update_countries'])) {
     spc_health_dashboard_update_countries();
+  }
+  // On indicators list change.
+  if (!empty($form_state['values']['update_indicators'])) {
+    spc_health_dashboard_update_indicators();
   }
   // On default JSON.
   if (!empty($form_state['values']['update_default_json'])) {
@@ -144,17 +148,17 @@ function spc_health_dashboard_form_submit($form, &$form_state) {
 /**
  * Updates the category list.
  */
-function spc_health_dashboard_update_categories () {
+function spc_health_dashboard_update_categories() {
 
   $category_list = [
     'leadership-and-governance' => [
       '#title' => t('Leadership and governance'),
-      '#wrapper' => false,
+      '#wrapper' => FALSE,
       '#weight' => 0,
       '#indicators' => [
         'multi-sectoral-ncd-taskforce' => t('Multi-sectoral NCD taskforce'),
         'national-strategy-addressing-ncds-and-risk-factors' => t('National strategy addressing NCDs and risk factors'),
-        'explicit-ncd-indicators-and-targets' => t('Explicit NCD indicators and targets')
+        'explicit-ncd-indicators-and-targets' => t('Explicit NCD indicators and targets'),
       ],
     ],
     'tobacco' => [
@@ -177,15 +181,15 @@ function spc_health_dashboard_update_categories () {
     ],
     'monitoring' => [
       '#title' => t('Monitoring'),
-      '#wrapper' => false,
+      '#wrapper' => FALSE,
       '#weight' => 10,
       '#indicators' => [
         'population-risk-factor-prevalence-surveys-adults' => t('Population risk factor prevalence surveys - adults'),
         'population-risk-factor-prevalence-surveys-youth' => t('Population risk factor prevalence surveys - youth'),
         'child-growth-monitoring' => t('Child growth monitoring'),
-        'routine-cause-specific-mortality' => t('Routine cause-specific mortality')
+        'routine-cause-specific-mortality' => t('Routine cause-specific mortality'),
       ],
-    ]
+    ],
   ];
 
   variable_set('health_dashboard_categories_list', $category_list);
@@ -195,32 +199,193 @@ function spc_health_dashboard_update_categories () {
 /**
  * Updates the country list.
  */
-function spc_health_dashboard_update_countries () {
+function spc_health_dashboard_update_countries() {
 
   $countries = [
-    'american-samoa' => 'American Samoa',
-    'commonwealth-of-the-northern-mariana-islands' => 'Commonwealth of the Northern Mariana Islands',
-    'cook-islands' => 'Cook Islands',
-    'federated-states-of-micronesia' => 'Federated States of Micronesia',
-    'fiji' => 'Fiji',
-    'french-polynesia' => 'French Polynesia',
-    'guam' => 'Guam',
-    'kiribati' => 'Kiribati',
-    'nauru' => 'Nauru',
-    'niue' => 'Niue',
-    'new-caledonia' => 'New Caledonia',
-    'palau' => 'Palau',
-    'papua-new-guinea' => 'Papua New Guinea',
-    'republic-of-the-marshall-islands' => 'Republic of the Marshall Islands',
-    'tokelau' => 'Tokelau',
-    'tonga' => 'Tonga',
-    'samoa' => 'Samoa',
-    'solomon-islands' => 'Solomon Islands',
-    'tuvalu' => 'Tuvalu',
-    'vanuatu' => 'Vanuatu',
-    'wallis-and-futuna' => 'Wallis and Futuna',
+    'american-samoa' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'American Samoa',
+      '#abbr' => 'AS',
+    ],
+    'commonwealth-of-the-northern-mariana-islands' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Commonwealth of the Northern Mariana Islands',
+      '#abbr' => 'CNMI',
+    ],
+    'cook-islands' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Cook Islands',
+      '#abbr' => 'CI',
+    ],
+    'federated-states-of-micronesia' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Federated States of Micronesia',
+      '#abbr' => 'FSM',
+    ],
+    'fiji' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Fiji',
+      '#abbr' => NULL,
+    ],
+    'french-polynesia' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'French Polynesia',
+      '#abbr' => 'FP',
+    ],
+    'guam' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Guam',
+      '#abbr' => NULL,
+    ],
+    'kiribati' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Kiribati',
+      '#abbr' => NULL,
+    ],
+    'nauru' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Nauru',
+      '#abbr' => NULL,
+    ],
+    'niue' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Niue',
+      '#abbr' => NULL,
+    ],
+    'new-caledonia' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'New Caledonia',
+      '#abbr' => 'NC',
+    ],
+    'palau' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Palau',
+      '#abbr' => NULL,
+    ],
+    'papua-new-guinea' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Papua New Guinea',
+      '#abbr' => 'PNG',
+    ],
+    'republic-of-the-marshall-islands' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Republic of the Marshall Islands',
+      '#abbr' => 'RMI',
+    ],
+    'tokelau' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Tokelau',
+      '#abbr' => NULL,
+    ],
+    'tonga' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Tonga',
+      '#abbr' => NULL,
+    ],
+    'samoa' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Samoa',
+      '#abbr' => NULL,
+    ],
+    'solomon-islands' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Solomon Islands',
+      '#abbr' => 'SI',
+    ],
+    'tuvalu' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Tuvalu',
+      '#abbr' => NULL,
+    ],
+    'vanuatu' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Vanuatu',
+      '#abbr' => NULL,
+    ],
+    'wallis-and-futuna' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Wallis and Futuna',
+      '#abbr' => 'WF',
+    ],
   ];
 
   variable_set('health_dashboard_countries', $countries);
   drupal_set_message('Countries were updated.');
+}
+
+/**
+ * Updates the indicators list.
+ */
+function spc_health_dashboard_update_indicators() {
+  $indicators = [
+    'not-applicable' => 'Not applicable',
+    'not-present' => 'Not present',
+    'under-development' => 'Under development',
+    'present' => 'Present',
+    'low' => 'Low',
+    'medium' => 'Medium',
+    'high' => 'High'
+  ];
+
+  variable_set('health_dashboard_indicators', $indicators);
+  drupal_set_message('Indicators were updated.');
+}
+
+/**
+ * Returns HTML output to print arrays.
+ *
+ * @param $arr array
+ * Any array.
+ * @param $summary string
+ * summary string (optional).
+ *
+ * @return string
+ * Formatted output.
+ */
+function _array_print_helper($arr, $summary = '') {
+  $output = '<details>';
+  $output .= '<summary>' . $summary . '</summary>';
+  $output .= '<pre>';
+  $output .= print_r($arr, TRUE);
+  $output .= '</pre></details>';
+  return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function spc_health_dashboard_theme() {
+  return array(
+    'spc_health_dashboard_page' => array(
+      'variables' => [
+        'title' => NULL,
+        'breadcrumbs' => NULL,
+        'search' => NULL,
+        'content' => NULL,
+        'subtitle' => null
+      ],
+      'template' => 'templates/spc_health_dashboard_page',
+    ),
+  );
 }
