@@ -62,10 +62,20 @@ function spc_health_dashboard_menu() {
  * Settings form for Health Dashboard.
  */
 function spc_health_dashboard_form() {
-  $form['json_file'] = [
-    '#type' => 'file',
-    '#title' => t('Upload JSON File'),
+  $form = array();
+  
+  $health_json_fid = (!empty(variable_get('health_json_fid')))? variable_get('health_json_fid'): '' ;
+  
+  $form['health_json_file'] = [
+    '#type' => 'managed_file',
+    '#title' => t('Upload Health JSON File'),
     '#description' => t('Upload a new JSON File her.'),
+    '#upload_validators' => [
+      'file_validate_extensions' => ['json']
+    ],
+    '#process' => array('process_health_json_file'),
+    '#upload_location' => 'public://charts/',
+    '#default_value' => $health_json_fid,    
     '#required' => FALSE,
   ];
   $form['update_categories'] = [
@@ -109,8 +119,33 @@ function spc_health_dashboard_form() {
     '#weight' => 20
   ];
 
+  $form['#validate'][] = 'spc_health_dashboard_form_validate';
   $form['#submit'][] = 'spc_health_dashboard_form_submit';
   return system_settings_form($form);
+}
+
+
+/**
+ * Form json process.
+ */
+function process_health_json_file($element, &$form_state, $form) {
+  $element = file_managed_file_process($element, $form_state, $form);
+  $element['upload_button']['#access'] = FALSE;
+  return $element;
+}
+
+/**
+ * Validate handler for the custom form.
+ */
+function spc_health_dashboard_form_validate($form, &$form_state){
+  $validators = array();
+  if ($file_health_json = file_save_upload('health_json_file', $validators)) {
+    $form_state['values']['health_json_file'] = $file_health_json;
+    variable_set('health_json_fid', $form_state['values']['health_json_file']->fid);
+  }
+  else {
+    form_set_error('file', 'No file was uploaded.');
+  }
 }
 
 /**
@@ -137,10 +172,10 @@ function spc_health_dashboard_form_submit($form, &$form_state) {
   }
   // On file upload.
   if (!empty($form_state['values']['json_file'])) {
-    // Do something.
-    // Change the path.
-    //$new_path = base_path() . drupal_get_path('module', 'spc_health_dashboard') . '/default.json';
-    //variable_set('health_dashboard_json', $new_path);
+    $file_health_json = $form_state['values']['health_json_file'];
+    $file_health_json->status = FILE_STATUS_PERMANENT; 
+    file_save($file_health_json);
+    
     drupal_set_message('New file was uploaded. (Not really for now)');
   }
 }
