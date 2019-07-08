@@ -1,66 +1,79 @@
 {
-  "american-samoa": {
-    "title": "American Samoa",
-    "icon_big": null,
-    "icon_small": null,
-    "map_image": null,
-    "indicators": {
-      "multi-sectoral-ncd-taskforce": {
-        "title": "Multi-sectoral NCD taskforce",
-        "value": "under-development",
-        "indicator-title": "Under development",
-        "indicator-category": "leadership-and-governance",
-        "indicator-category-title": "Leadership and governance",
-        "indicator-description": "A multi-sectoral NCD taskforce covering the 4 main NCD rick factors (tobaco, alcohol, nutrition, physical activity) has not been established, or is inactive (less than 2 meetings in last 2 months)."
-      },
-      "national-strategy-addressing-ncds-and-risk-factors": {
-        "title": "Multi-sectoral NCD taskforce",
-        "value": "not-present",
-        "indicator-title": "Not present",
-        "indicator-category": "leadership-and-governance",
-        "indicator-category-title": "Leadership and governance",
-        "indicator-description": "There is evidence that a multi-sectoral NCD taskforce is being established, or a taskforce exists and has had at least two meetings in the last 12 months but no public reports are available"
-      },
-      "tobacco-excise-taxes": {
-        "title": "Multi-sectoral NCD taskforce",
-        "value": "present",
-        "indicator-title": "Present",
-        "indicator-category": "tobacco",
-        "indicator-category-title": "Tobacco",
-        "indicator-description": "A multi-sectoral NCD taskforce has had at least two meetings in the last 12 months, and an annual report (or equivalent) is available"
-      }
-    }
-  },
-  "commonwealth-of-the-northern-mariana-islands": {
-    "title": "CNMI",
-    "icon_big": null,
-    "icon_small": null,
-    "map_image": null,
-    "indicators": {
-      "multi-sectoral-ncd-taskforce": {
-        "title": "Multi-sectoral NCD taskforce",
-        "value": "under-development",
-        "indicator-title": "Under development",
-        "indicator-category": "leadership-and-governance",
-        "indicator-category-title": "Leadership and governance",
-        "indicator-description": "A multi-sectoral NCD taskforce covering the 4 main NCD rick factors (tobaco, alcohol, nutrition, physical activity) has not been established, or is inactive (less than 2 meetings in last 2 months)."
-      },
-      "national-strategy-addressing-ncds-and-risk-factors": {
-        "title": "Multi-sectoral NCD taskforce",
-        "value": "not-present",
-        "indicator-title": "Not present",
-        "indicator-category": "leadership-and-governance",
-        "indicator-category-title": "Leadership and governance",
-        "indicator-description": "There is evidence that a multi-sectoral NCD taskforce is being established, or a taskforce exists and has had at least two meetings in the last 12 months but no public reports are available"
-      },
-      "tobacco-excise-taxes": {
-        "title": "Multi-sectoral NCD taskforce",
-        "value": "present",
-        "indicator-title": "Present",
-        "indicator-category": "tobacco",
-        "indicator-category-title": "Tobacco",
-        "indicator-description": "A multi-sectoral NCD taskforce has had at least two meetings in the last 12 months, and an annual report (or equivalent) is available"
-      }
-    }
-  }
+  "home-page" : {
+    "title" : "Status of NCD policy and legislation in Pacific Island countries and territories",
+    "background" : "The Pacific region has some of the highest rates of non-communicable diseases (NCDs) and associated risk factors in the world. At the Joint Forum Economic and Pacific Health Ministers Meeting held in 2014, the ministers endorsed the Pacific NCD Roadmap, which provides specific policy, regulatory and tax measures that can be implemented by Pacific Island countries and territories (PICTs) to address NCDs. The ministers also agreed to report on progress against the roadmap at every Pacific health ministers’ meeting." ,
+    "methods": "To assist PICTs to monitor progress on implementing the roadmap, the Pacific Monitoring Alliance for NCD Action (MANA) developed the Pacific NCD Dashboard. The dashboard uses a ‘traffic light’ rating scheme to track PICTs’ progress on policies and legislation aimed at preventing NCDs. It comprises 31 indicators across the areas of leadership and governance, preventative policies, health system response programmes, and routine monitoring. In 2017–2018, the Pacific MANA Coordination Team collaborated with national NCD focal points to complete dashboards for all PICTs. To complete the dashboards, a member of the MANA coordination team first pre-filled the dashboard using publicly available information. The draft dashboard was then reviewed and verified by a national NCD focal point, and endorsed by the minister for health or other appropriate signatory. Dashboards were completed and endorsed for all 21 PICTs in 2017–2018: American Samoa (AS), Commonwealth of the Northern Mariana Islands (CNMI), Cook Islands (CI), Federated States of Micronesia (FSM), Fiji, French Polynesia (FP), Guam, Kiribati, Nauru, Niue, New Caledonia (NC), Palau, Papua New Guinea (PNG), Republic of the Marshall Islands (RMI), Tokelau, Tonga, Samoa, Solomon Islands (SI), Tuvalu, Vanuatu, and Wallis and Futuna (WF). This report presents the results for these dashboards.",
+    "chart" : {
+            "name": "Summary of NCD response measures in place (%) across 21 PICTs, by category"
+        }
+    },
+  "countries-data" : [
+    {
+        "american-samoa": {
+          "title": "American Samoa",
+          "icon_big": null,
+          "icon_small": null,
+          "map_image": null,
+          "indicators": {
+            "multi-sectoral-ncd-taskforce": {
+              "title": "Multi-sectoral NCD taskforce",
+              "value": "under-development",
+              "indicator-title": "Under development",
+              "indicator-category": "leadership-and-governance",
+              "indicator-category-title": "Leadership and governance",
+              "indicator-description": "A multi-sectoral NCD taskforce covering the 4 main NCD rick factors (tobaco, alcohol, nutrition, physical activity) has not been established, or is inactive (less than 2 meetings in last 2 months)."
+            },
+            "national-strategy-addressing-ncds-and-risk-factors": {
+              "title": "Multi-sectoral NCD taskforce",
+              "value": "not-present",
+              "indicator-title": "Not present",
+              "indicator-category": "leadership-and-governance",
+              "indicator-category-title": "Leadership and governance",
+              "indicator-description": "There is evidence that a multi-sectoral NCD taskforce is being established, or a taskforce exists and has had at least two meetings in the last 12 months but no public reports are available"
+            },
+            "tobacco-excise-taxes": {
+              "title": "Multi-sectoral NCD taskforce",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": "A multi-sectoral NCD taskforce has had at least two meetings in the last 12 months, and an annual report (or equivalent) is available"
+            }
+          }
+        },
+        "commonwealth-of-the-northern-mariana-islands": {
+          "title": "CNMI",
+          "icon_big": null,
+          "icon_small": null,
+          "map_image": null,
+          "indicators": {
+            "multi-sectoral-ncd-taskforce": {
+              "title": "Multi-sectoral NCD taskforce",
+              "value": "under-development",
+              "indicator-title": "Under development",
+              "indicator-category": "leadership-and-governance",
+              "indicator-category-title": "Leadership and governance",
+              "indicator-description": "A multi-sectoral NCD taskforce covering the 4 main NCD rick factors (tobaco, alcohol, nutrition, physical activity) has not been established, or is inactive (less than 2 meetings in last 2 months)."
+            },
+            "national-strategy-addressing-ncds-and-risk-factors": {
+              "title": "Multi-sectoral NCD taskforce",
+              "value": "not-present",
+              "indicator-title": "Not present",
+              "indicator-category": "leadership-and-governance",
+              "indicator-category-title": "Leadership and governance",
+              "indicator-description": "There is evidence that a multi-sectoral NCD taskforce is being established, or a taskforce exists and has had at least two meetings in the last 12 months but no public reports are available"
+            },
+            "tobacco-excise-taxes": {
+              "title": "Multi-sectoral NCD taskforce",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": "A multi-sectoral NCD taskforce has had at least two meetings in the last 12 months, and an annual report (or equivalent) is available"
+            }
+          }
+        } 
+    } 
+  ]
+
 }
