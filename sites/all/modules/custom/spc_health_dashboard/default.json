@@ -1,0 +1,66 @@
+{
+  "american-samoa": {
+    "title": "American Samoa",
+    "icon_big": null,
+    "icon_small": null,
+    "map_image": null,
+    "indicators": {
+      "multi-sectoral-ncd-taskforce": {
+        "title": "Multi-sectoral NCD taskforce",
+        "value": "under-development",
+        "indicator-title": "Under development",
+        "indicator-category": "leadership-and-governance",
+        "indicator-category-title": "Leadership and governance",
+        "indicator-description": "A multi-sectoral NCD taskforce covering the 4 main NCD rick factors (tobaco, alcohol, nutrition, physical activity) has not been established, or is inactive (less than 2 meetings in last 2 months)."
+      },
+      "national-strategy-addressing-ncds-and-risk-factors": {
+        "title": "Multi-sectoral NCD taskforce",
+        "value": "not-present",
+        "indicator-title": "Not present",
+        "indicator-category": "leadership-and-governance",
+        "indicator-category-title": "Leadership and governance",
+        "indicator-description": "There is evidence that a multi-sectoral NCD taskforce is being established, or a taskforce exists and has had at least two meetings in the last 12 months but no public reports are available"
+      },
+      "tobacco-excise-taxes": {
+        "title": "Multi-sectoral NCD taskforce",
+        "value": "present",
+        "indicator-title": "Present",
+        "indicator-category": "tobacco",
+        "indicator-category-title": "Tobacco",
+        "indicator-description": "A multi-sectoral NCD taskforce has had at least two meetings in the last 12 months, and an annual report (or equivalent) is available"
+      }
+    }
+  },
+  "commonwealth-of-the-northern-mariana-islands": {
+    "title": "CNMI",
+    "icon_big": null,
+    "icon_small": null,
+    "map_image": null,
+    "indicators": {
+      "multi-sectoral-ncd-taskforce": {
+        "title": "Multi-sectoral NCD taskforce",
+        "value": "under-development",
+        "indicator-title": "Under development",
+        "indicator-category": "leadership-and-governance",
+        "indicator-category-title": "Leadership and governance",
+        "indicator-description": "A multi-sectoral NCD taskforce covering the 4 main NCD rick factors (tobaco, alcohol, nutrition, physical activity) has not been established, or is inactive (less than 2 meetings in last 2 months)."
+      },
+      "national-strategy-addressing-ncds-and-risk-factors": {
+        "title": "Multi-sectoral NCD taskforce",
+        "value": "not-present",
+        "indicator-title": "Not present",
+        "indicator-category": "leadership-and-governance",
+        "indicator-category-title": "Leadership and governance",
+        "indicator-description": "There is evidence that a multi-sectoral NCD taskforce is being established, or a taskforce exists and has had at least two meetings in the last 12 months but no public reports are available"
+      },
+      "tobacco-excise-taxes": {
+        "title": "Multi-sectoral NCD taskforce",
+        "value": "present",
+        "indicator-title": "Present",
+        "indicator-category": "tobacco",
+        "indicator-category-title": "Tobacco",
+        "indicator-description": "A multi-sectoral NCD taskforce has had at least two meetings in the last 12 months, and an annual report (or equivalent) is available"
+      }
+    }
+  }
+}

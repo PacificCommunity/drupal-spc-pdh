@@ -1,0 +1,196 @@
+<?php
+
+/**
+ * Implements hook_install().
+ * Defines default json-file path, categories and countries list.
+ */
+function spc_health_dashboard_install () {
+
+  $category_list = [
+    'leadership-and-governance' => [
+      '#title' => t('Leadership and governance'),
+      '#wrapper' => false,
+      '#weight' => 0,
+      '#indicators' => [
+        'multi-sectoral-ncd-taskforce' => t('Multi-sectoral NCD taskforce'),
+        'national-strategy-addressing-ncds-and-risk-factors' => t('National strategy addressing NCDs and risk factors'),
+        'explicit-ncd-indicators-and-targets' => t('Explicit NCD indicators and targets')
+      ],
+    ],
+    'tobacco' => [
+      '#title' => t('Tobacco'),
+      '#wrapper' => t('Preventive policies'),
+      '#weight' => 1,
+      '#indicators' => [
+        'tobacco-excise-taxes' => t('Tobacco excise taxes'),
+        'smoke-free-environments' => t('Smoke-free environments'),
+      ],
+    ],
+    'alcohol' => [
+      '#title' => t('Alcohol'),
+      '#wrapper' => t('Preventive policies'),
+      '#weight' => 2,
+      '#indicators' => [
+        'alcohol-licencing-to-restrict-sales' => t('Alcohol licencing to restrict sales'),
+        'alcohol-advertising' => t('Alcohol advertising'),
+      ],
+    ],
+    'monitoring' => [
+      '#title' => t('Monitoring'),
+      '#wrapper' => false,
+      '#weight' => 10,
+      '#indicators' => [
+        'population-risk-factor-prevalence-surveys-adults' => t('Population risk factor prevalence surveys - adults'),
+        'population-risk-factor-prevalence-surveys-youth' => t('Population risk factor prevalence surveys - youth'),
+        'child-growth-monitoring' => t('Child growth monitoring'),
+        'routine-cause-specific-mortality' => t('Routine cause-specific mortality')
+      ],
+    ]
+  ];
+
+  $countries = [
+    'american-samoa' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'American Samoa',
+      '#abbr' => 'AS',
+    ],
+    'commonwealth-of-the-northern-mariana-islands' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Commonwealth of the Northern Mariana Islands',
+      '#abbr' => 'CNMI',
+    ],
+    'cook-islands' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Cook Islands',
+      '#abbr' => 'CI',
+    ],
+    'federated-states-of-micronesia' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Federated States of Micronesia',
+      '#abbr' => 'FSM',
+    ],
+    'fiji' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Fiji',
+      '#abbr' => NULL,
+    ],
+    'french-polynesia' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'French Polynesia',
+      '#abbr' => 'FP',
+    ],
+    'guam' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Guam',
+      '#abbr' => NULL,
+    ],
+    'kiribati' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Kiribati',
+      '#abbr' => NULL,
+    ],
+    'nauru' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Nauru',
+      '#abbr' => NULL,
+    ],
+    'niue' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Niue',
+      '#abbr' => NULL,
+    ],
+    'new-caledonia' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'New Caledonia',
+      '#abbr' => 'NC',
+    ],
+    'palau' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Palau',
+      '#abbr' => NULL,
+    ],
+    'papua-new-guinea' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Papua New Guinea',
+      '#abbr' => 'PNG',
+    ],
+    'republic-of-the-marshall-islands' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Republic of the Marshall Islands',
+      '#abbr' => 'RMI',
+    ],
+    'tokelau' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Tokelau',
+      '#abbr' => NULL,
+    ],
+    'tonga' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Tonga',
+      '#abbr' => NULL,
+    ],
+    'samoa' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Samoa',
+      '#abbr' => NULL,
+    ],
+    'solomon-islands' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Solomon Islands',
+      '#abbr' => 'SI',
+    ],
+    'tuvalu' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Tuvalu',
+      '#abbr' => NULL,
+    ],
+    'vanuatu' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Vanuatu',
+      '#abbr' => NULL,
+    ],
+    'wallis-and-futuna' => [
+      '#icon_big' => NULL,
+      '#icon_small' => NULL,
+      '#title' => 'Wallis and Futuna',
+      '#abbr' => 'WF',
+    ],
+  ];
+
+  $indicators = [
+    'not-applicable' => 'Not applicable',
+    'not-present' => 'Not present',
+    'under-development' => 'Under development',
+    'present' => 'Present',
+    'low' => 'Low',
+    'medium' => 'Medium',
+    'high' => 'High'
+  ];
+
+  $json_path = base_path() . drupal_get_path('module', 'spc_health_dashboard') . '/default.json';
+
+  variable_set('health_dashboard_countries', $countries);
+  variable_set('health_dashboard_categories_list', $category_list);
+  variable_set('health_dashboard_indicators', $indicators);
+  variable_set('health_dashboard_json', $json_path);
+}
