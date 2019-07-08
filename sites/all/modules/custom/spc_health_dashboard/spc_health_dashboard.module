@@ -197,7 +197,7 @@ function spc_health_dashboard_form_submit($form, &$form_state) {
     $file_health_json->status = FILE_STATUS_PERMANENT; 
     file_save($file_health_json);
     
-    $json_path = $file_health_json->uri;
+    $json_path = file_create_url($file_health_json->uri);
     variable_set('health_dashboard_json', $json_path);
     
     drupal_set_message('New file was uploaded.');
