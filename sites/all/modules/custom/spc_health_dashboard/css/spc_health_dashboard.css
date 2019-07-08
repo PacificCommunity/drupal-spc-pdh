@@ -1,0 +1,11 @@
+.health-home-chart {
+    margin-top: 50px;
+}
+.stacked-chart-global {
+    box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+    border-radius: 25px;
+    padding: 40px;
+}
+.stacked-chart-global svg {
+    overflow: visible !important;
+}
