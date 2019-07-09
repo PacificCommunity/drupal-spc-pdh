@@ -7,11 +7,13 @@
             </a>
             <?php if (count($item['submenu']) > 0 ): ?>
                 <div class="breadcrumb-subitems">
-                <?php foreach ($item['submenu'] as $subitem): ?>
-                    <a href="<?php echo $subitem['url'] ?>">
-                        <?php echo $subitem['title'] ?>
-                    </a>
-                <?php endforeach; ?>
+                    <div class="subitems-wrapper">
+                    <?php foreach ($item['submenu'] as $subitem): ?>
+                        <a href="<?php echo $subitem['url'] ?>">
+                            <?php echo $subitem['title'] ?>
+                        </a>
+                    <?php endforeach; ?>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>
