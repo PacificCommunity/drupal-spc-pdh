@@ -1,5 +1,7 @@
 <?php
 
+include_once drupal_get_path('module', 'spc_health_dashboard') . '/inc/dashboard-breadcrumbs.inc';
+
 /**
  * Returns Health dashboard home page.
  *
@@ -12,22 +14,14 @@ function spc_health_dashboard_home_page() {
     'spc_health_dashboard_page',
     [
       'title' => t('Status of NCD policy and legislation in <br><strong>Pacific Island countries</strong> and territories'),
-      'breadcrumbs' => spc_health_home_breadcrumbs(),
+      'breadcrumbs' => _home_breadcrumbs(),
       'search' => spc_health_home_search(),
       'content' => spc_health_home_content(),
     ]
   );
 }
 
-function spc_health_home_breadcrumbs(){
-  $data = array();
-  
-  $content = theme('spc_health_home_breadcrumbs', array('breadcrumbs' => $data));
-  
-  return $content;
-}
-
-function spc_health_home_search(){
+function spc_health_home_search() {
   $data = array();
   
   $content = theme('spc_health_home_search', array('search' => $data));
