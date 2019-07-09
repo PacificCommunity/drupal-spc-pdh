@@ -48,7 +48,7 @@
 
         const colors = ["#cfff6fb3", "#ffc00080", "#ff000080" ];
         const border = ['#CFFF6F',  '#FFC000', '#FF0000' ];
-        const range = ["present", "under-development", "not-present"];
+        const range = ["Present", "Under Development", "Not Present"];
         const rangeWidth = [95, 170, 120];
         
         let svg = d3.select(".stacked-chart-global")

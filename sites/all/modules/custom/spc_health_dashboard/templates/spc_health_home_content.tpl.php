@@ -18,7 +18,7 @@
     <div class="col-sm-3">
         <div class="chart-global-legend">
           <div class="legend present"><span><?php print t('Present'); ?></span></div>
-          <div class="legend development"><span><?php print t('Development'); ?></span></div>
+          <div class="legend development"><span><?php print t('Under Development'); ?></span></div>
           <div class="legend not-present"><span><?php print t('Not Present'); ?></span></div>
         </div>
     </div>    
