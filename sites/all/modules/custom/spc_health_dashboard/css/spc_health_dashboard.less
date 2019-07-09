@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.banner-with-title.health-dashboard {
+  background-image: url('../img/Fishes-background.png');
+}
+
+.banner-with-title.health-dashboard-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+  color: #FFFFFF;
+  text-transform: none;
+}
+
+.health-dashboard-header {
+  .left-label {
+    background: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    overflow: hidden;
+    height: 50px;
+    padding: 11px 40px 11px 30px;
+    border-radius: 0px 30px 30px 0px;
+    width: 272px;
+    align-self: flex-start;
+    margin-top: 70px;
+  }
+
+  .breadcrumbs {
+    align-self: flex-start;
+    margin: 30px 30px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 16px;
+    color: #FFFFFF;
+  }
+
+  .search {
+    margin-top: 36px;
+    margin-bottom: 70px;
+    color: #FFFFFF;
+  }
+}
+
+.health-dashboard-content {
+  margin: 40px auto;
+}
+
+@media (max-width: 767px) {
+  .health-dashboard-header {
+    &.banner-with-title {
+      height: 330px;
+      justify-content: flex-end;
+      padding-bottom: 0px;
+    }
+    .search {
+      margin: 20px 0 40px;
+    }
+    .breadcrumbs {
+      margin: 20px 30px 10px;
+    }
+    .left-label {
+      font-size: 16px;
+      line-height: 20px;
+      height: 40px;
+      padding: 11px 40px 11px 30px;
+      width: 210px;
+    }
+  }
+  .banner-with-title.health-dashboard-header h1 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .banner-with-title.health-dashboard-header h1 {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 95%;
+    margin-left: 2%;
+  }
+  .health-dashboard-header.banner-with-title {
+    height: 365px;
+  }
+}
+
+.health-home-chart {
+  margin-top: 50px;
+}
+.stacked-chart-global {
+  box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+  border-radius: 25px;
+  padding: 40px;
+}
+.stacked-chart-global svg {
+  overflow: visible !important;
+}
