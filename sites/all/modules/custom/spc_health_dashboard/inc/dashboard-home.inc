@@ -40,9 +40,8 @@ function spc_health_home_content(){
   
   $health_dashboard_data = get_health_dashboard_data();
   
-  $spc_health_chart = $health_dashboard_data['countries-data'];
-  
-  drupal_add_js(array('spc_health_chart' => array('chart' => $spc_health_chart)), array('type' => 'setting'));
+  $spc_health_chart = health_dashboard_chart_summary($health_dashboard_data['countries-data']);
+  drupal_add_js(array('spc_health_chart' => array('summary_chart' => $spc_health_chart)), array('type' => 'setting'));
   
   $data['background'] = $health_dashboard_data['home-page']['background'];
   $data['methods'] = $health_dashboard_data['home-page']['methods'];
@@ -51,4 +50,43 @@ function spc_health_home_content(){
   $content = theme('spc_health_home_content', array('data' => $data));
   
   return $content;
+}
+
+function health_dashboard_chart_summary($countries_data){
+  $summary = array();
+  
+  foreach($countries_data as $country => $data){
+    foreach($data['indicators'] as $key => $indicator){
+      
+      switch ($indicator['value']){
+        case 'present':
+        case 'low':
+        case 'medium':
+        case 'high':  
+            $summary[$indicator['indicator-category']]['present'] += 1;
+          break;  
+        case 'under-development':
+            $summary[$indicator['indicator-category']]['under-development'] += 1;
+          break;
+        case 'not-present':
+            $summary[$indicator['indicator-category']]['not-present'] += 1;
+          break;
+      }
+    }
+  }
+  
+  $summary_filtred = [];
+  foreach($summary as $key => $detales){
+    $count = 0;
+    $count = $detales['present'] + $detales['under-development'] + $detales['not-present'];
+
+    $summary_filtred[] = [
+      'indicator' => ucfirst(str_replace('-', ' ', $key)),
+      'present' => ($detales['present']/$count) * 100,
+      'under-development' => ($detales['under-development']/$count) * 100,
+      'not-present' => ($detales['not-present']/$count) * 100
+      ] ;
+  }
+  
+  return $summary_filtred;
 }
