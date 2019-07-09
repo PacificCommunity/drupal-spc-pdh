@@ -69,11 +69,15 @@
   background: #FFFFFF;
   color: #383838;
   max-height: 189px;
-  overflow-y: auto;
+  overflow: hidden;
   left: -1px;
   right: -1px;
-  padding: 0px 20px 10px;
+  padding: 0px 15px 10px 20px;
   border-radius: 0px 0px 30px 30px;
+}
+.health-dashboard-header .breadcrumb .dropdown:hover .breadcrumb-subitems .subitems-wrapper {
+  overflow: auto;
+  max-height: 189px;
 }
 .health-dashboard-header .breadcrumb .dropdown:hover .breadcrumb-subitems a {
   color: #383838;
