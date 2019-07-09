@@ -7,73 +7,556 @@
             "name": "Summary of NCD response measures in place (%) across 21 PICTs, by category"
         }
     },
-  "countries-data" : [
-    {
-        "american-samoa": {
+  "countries-data" : 
+    [
+        {
           "title": "American Samoa",
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
           "indicators": {
+                
+                
+                
             "multi-sectoral-ncd-taskforce": {
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership-and-governance",
+              "indicator-category": "leadership",
               "indicator-category-title": "Leadership and governance",
-              "indicator-description": "A multi-sectoral NCD taskforce covering the 4 main NCD rick factors (tobaco, alcohol, nutrition, physical activity) has not been established, or is inactive (less than 2 meetings in last 2 months)."
+              "indicator-description": ""
             },
             "national-strategy-addressing-ncds-and-risk-factors": {
               "title": "Multi-sectoral NCD taskforce",
               "value": "not-present",
               "indicator-title": "Not present",
-              "indicator-category": "leadership-and-governance",
+              "indicator-category": "leadership",
               "indicator-category-title": "Leadership and governance",
-              "indicator-description": "There is evidence that a multi-sectoral NCD taskforce is being established, or a taskforce exists and has had at least two meetings in the last 12 months but no public reports are available"
+              "indicator-description": ""
             },
+            "explicit-ncd-indicators-and-targets": {
+              "title": "Explicit NCD indicators and targets",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "leadership",
+              "indicator-category-title": "Leadership and governance",
+              "indicator-description": ""
+            },
+            
+            
+            
+            
             "tobacco-excise-taxes": {
               "title": "Multi-sectoral NCD taskforce",
+              "value": "medium",
+              "indicator-title": "medium",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "smoke-free-environments": {
+              "title": "Smoke-free environments",
+              "value": "high",
+              "indicator-title": "high",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "tobacco-health-warnings": {
+              "title": "Tobacco health warnings",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "tobacco-advertising-promotion-sponsorship": {
+              "title": "Tobacco advertising, promotion and sponsorship",
               "value": "present",
               "indicator-title": "Present",
               "indicator-category": "tobacco",
               "indicator-category-title": "Tobacco",
-              "indicator-description": "A multi-sectoral NCD taskforce has had at least two meetings in the last 12 months, and an annual report (or equivalent) is available"
+              "indicator-description": ""
+            },
+            "tobacco-sales-and-licencing": {
+              "title": "Tobacco sales and licencing",
+              "value": "high",
+              "indicator-title": "high",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "tobacco-industry-interference": {
+              "title": "Tobacco industry interference",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            
+            
+            
+            
+            "alcohol-licencing-to-restrict-sales": {
+              "title": "Alcohol licencing to restrict sales",
+              "value": "high",
+              "indicator-title": "high",
+              "indicator-category": "alcohol",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "alcohol-advertising": {
+              "title": "Alcohol advertising",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "alcohol",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "alcohol-taxation": {
+              "title": "Alcohol taxation",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "alcohol",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "drink-driving": {
+              "title": "Drink driving",
+              "value": "low",
+              "indicator-title": "low",
+              "indicator-category": "alcohol",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            
+            
+            
+            
+            "reducing-salt-consumption": {
+              "title": "Reducing salt consumption",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "food",
+              "indicator-category-title": "Food",
+              "indicator-description": ""
+            },
+            "trans-fats": {
+              "title": "Trans-fats",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            "unhealthy-food-marketing-to-children": {
+              "title": "Unhealthy food marketing to children",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            "food-fiscal-policies": {
+              "title": "Food fiscal policies",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            "healthy-food-policies-in-schools": {
+              "title": "Healthy food policies in schools",
+              "value": "medium",
+              "indicator-title": "medium",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            "food-based-dietary-guidelines": {
+              "title": "Food-based dietary guidelines",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            
+            
+            
+            
+            "compulsory-physical-education-in-school-curriculum": {
+              "title": "Compulsory physical education in school curriculum",
+              "value": "high",
+              "indicator-title": "high",
+              "indicator-category": "physical-activity",
+              "indicator-category-title": "Physical Activity",
+              "indicator-description": ""
+            },
+            
+            
+            
+            
+            "enforcement-of-laws-and-regulations-related-to-ncd-risk-factors": {
+              "title": "Enforcement of laws and regulations related to NCD risk factors",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "enforcement",
+              "indicator-category-title": "Enforcement",
+              "indicator-description": ""
+            },
+            
+            
+            
+            "national-guidelines-for-care-of-main-ncds": {
+              "title": "National guidelines for care of main NCDs",
+              "value": "medium",
+              "indicator-title": "medium",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "essential-drugs": {
+              "title": "Essential drugs",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "smoking-cessation": {
+              "title": "Smoking cessation",
+              "value": "low",
+              "indicator-title": "low",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "marketing-of-breast-milk-substitutes": {
+              "title": "Marketing of breast milk substitutes",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "baby-friendly-hospitals": {
+              "title": "Baby friendly hospitals",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "maternity-leave-and-breastfeeding": {
+              "title": "Maternity leave and breastfeeding",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            
+            
+            "population-risk-factor-prevalence-surveys-adults": {
+              "title": "Population risk factor prevalence surveys - adults",
+              "value": "medium",
+              "indicator-title": "medium",
+              "indicator-category": "monitoring",
+              "indicator-category-title": "Monitoring",
+              "indicator-description": ""
+            },
+            "population-risk-factor-prevalence-surveys-youth": {
+              "title": "Population risk factor prevalence surveys - youth",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "monitoring",
+              "indicator-category-title": "Monitoring",
+              "indicator-description": ""
+            },
+            "child-growth-monitoring": {
+              "title": "Child growth monitoring",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "monitoring",
+              "indicator-category-title": "Monitoring",
+              "indicator-description": ""
+            },
+            "routine-cause-specific-mortality": {
+              "title": "Routine cause-specific mortality",
+              "value": "high",
+              "indicator-title": "High",
+              "indicator-category": "monitoring",
+              "indicator-category-title": "Monitoring",
+              "indicator-description": ""
             }
           }
         },
-        "commonwealth-of-the-northern-mariana-islands": {
+{
           "title": "CNMI",
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
           "indicators": {
+                
             "multi-sectoral-ncd-taskforce": {
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership-and-governance",
+              "indicator-category": "leadership",
               "indicator-category-title": "Leadership and governance",
-              "indicator-description": "A multi-sectoral NCD taskforce covering the 4 main NCD rick factors (tobaco, alcohol, nutrition, physical activity) has not been established, or is inactive (less than 2 meetings in last 2 months)."
+              "indicator-description": ""
             },
             "national-strategy-addressing-ncds-and-risk-factors": {
               "title": "Multi-sectoral NCD taskforce",
-              "value": "not-present",
+              "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership-and-governance",
+              "indicator-category": "leadership",
               "indicator-category-title": "Leadership and governance",
-              "indicator-description": "There is evidence that a multi-sectoral NCD taskforce is being established, or a taskforce exists and has had at least two meetings in the last 12 months but no public reports are available"
+              "indicator-description": ""
             },
+            "explicit-ncd-indicators-and-targets": {
+              "title": "Explicit NCD indicators and targets",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "leadership",
+              "indicator-category-title": "Leadership and governance",
+              "indicator-description": ""
+            },
+
             "tobacco-excise-taxes": {
               "title": "Multi-sectoral NCD taskforce",
-              "value": "present",
-              "indicator-title": "Present",
+              "value": "medium",
+              "indicator-title": "medium",
               "indicator-category": "tobacco",
               "indicator-category-title": "Tobacco",
-              "indicator-description": "A multi-sectoral NCD taskforce has had at least two meetings in the last 12 months, and an annual report (or equivalent) is available"
+              "indicator-description": ""
+            },
+            "smoke-free-environments": {
+              "title": "Smoke-free environments",
+              "value": "medium",
+              "indicator-title": "medium",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "tobacco-health-warnings": {
+              "title": "Tobacco health warnings",
+              "value": "present",
+              "indicator-title": "present",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "tobacco-advertising-promotion-sponsorship": {
+              "title": "Tobacco advertising, promotion and sponsorship",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "tobacco-sales-and-licencing": {
+              "title": "Tobacco sales and licencing",
+              "value": "high",
+              "indicator-title": "high",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "tobacco-industry-interference": {
+              "title": "Tobacco industry interference",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "tobacco",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+
+            "alcohol-licencing-to-restrict-sales": {
+              "title": "Alcohol licencing to restrict sales",
+              "value": "high",
+              "indicator-title": "high",
+              "indicator-category": "alcohol",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "alcohol-advertising": {
+              "title": "Alcohol advertising",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "alcohol",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "alcohol-taxation": {
+              "title": "Alcohol taxation",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "alcohol",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+            "drink-driving": {
+              "title": "Drink driving",
+              "value": "low",
+              "indicator-title": "low",
+              "indicator-category": "alcohol",
+              "indicator-category-title": "Tobacco",
+              "indicator-description": ""
+            },
+
+            "reducing-salt-consumption": {
+              "title": "Reducing salt consumption",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "food",
+              "indicator-category-title": "Food",
+              "indicator-description": ""
+            },
+            "trans-fats": {
+              "title": "Trans-fats",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            "unhealthy-food-marketing-to-children": {
+              "title": "Unhealthy food marketing to children",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            "food-fiscal-policies": {
+              "title": "Food fiscal policies",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            "healthy-food-policies-in-schools": {
+              "title": "Healthy food policies in schools",
+              "value": "medium",
+              "indicator-title": "medium",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+            "food-based-dietary-guidelines": {
+              "title": "Food-based dietary guidelines",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "food",
+              "indicator-category-title": "food",
+              "indicator-description": ""
+            },
+
+            "compulsory-physical-education-in-school-curriculum": {
+              "title": "Compulsory physical education in school curriculum",
+              "value": "high",
+              "indicator-title": "high",
+              "indicator-category": "physical-activity",
+              "indicator-category-title": "Physical Activity",
+              "indicator-description": ""
+            },
+
+            "enforcement-of-laws-and-regulations-related-to-ncd-risk-factors": {
+              "title": "Enforcement of laws and regulations related to NCD risk factors",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "enforcement",
+              "indicator-category-title": "Enforcement",
+              "indicator-description": ""
+            },
+
+            "national-guidelines-for-care-of-main-ncds": {
+              "title": "National guidelines for care of main NCDs",
+              "value": "medium",
+              "indicator-title": "medium",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "essential-drugs": {
+              "title": "Essential drugs",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "smoking-cessation": {
+              "title": "Smoking cessation",
+              "value": "low",
+              "indicator-title": "low",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "marketing-of-breast-milk-substitutes": {
+              "title": "Marketing of breast milk substitutes",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "baby-friendly-hospitals": {
+              "title": "Baby friendly hospitals",
+              "value": "present",
+              "indicator-title": "Present",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+            "maternity-leave-and-breastfeeding": {
+              "title": "Maternity leave and breastfeeding",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "health-system",
+              "indicator-category-title": "Health system response programmes",
+              "indicator-description": ""
+            },
+
+            "population-risk-factor-prevalence-surveys-adults": {
+              "title": "Population risk factor prevalence surveys - adults",
+              "value": "medium",
+              "indicator-title": "medium",
+              "indicator-category": "monitoring",
+              "indicator-category-title": "Monitoring",
+              "indicator-description": ""
+            },
+            "population-risk-factor-prevalence-surveys-youth": {
+              "title": "Population risk factor prevalence surveys - youth",
+              "value": "not-present",
+              "indicator-title": "not-present",
+              "indicator-category": "monitoring",
+              "indicator-category-title": "Monitoring",
+              "indicator-description": ""
+            },
+            "child-growth-monitoring": {
+              "title": "Child growth monitoring",
+              "value": "under-development",
+              "indicator-title": "under-development",
+              "indicator-category": "monitoring",
+              "indicator-category-title": "Monitoring",
+              "indicator-description": ""
+            },
+            "routine-cause-specific-mortality": {
+              "title": "Routine cause-specific mortality",
+              "value": "high",
+              "indicator-title": "High",
+              "indicator-category": "monitoring",
+              "indicator-category-title": "Monitoring",
+              "indicator-description": ""
             }
           }
-        } 
-    } 
-  ]
+        }          
+    ]
 
 }
