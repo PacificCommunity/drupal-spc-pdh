@@ -1,5 +1,7 @@
 <?php
 
+define('HEALTH_DASHBOARD_URL', '/health-dashboard');
+
 /**
  * Implementation of hook_init().
  */
@@ -7,7 +9,7 @@ function spc_health_dashboard_init(){
   if (arg(0) == 'health-dashboard'){
     drupal_add_css(
       drupal_get_path('module', 'spc_health_dashboard') . '/css/spc_health_dashboard.css',
-      array('group' => CSS_DEFAULT, 'every_page' => TRUE)
+      ['group' => CSS_DEFAULT, 'every_page' => TRUE]
     );
     drupal_add_js(
       drupal_get_path('module', 'spc_health_dashboard') . '/js/spc_health_dashboard.js',
@@ -83,7 +85,7 @@ function spc_health_dashboard_menu() {
  * Settings form for Health Dashboard.
  */
 function spc_health_dashboard_form() {
-  $form = array();
+  $form = [];
   
   $health_json_fid = (!empty(variable_get('health_json_fid')))? variable_get('health_json_fid'): '' ;
   
@@ -94,7 +96,7 @@ function spc_health_dashboard_form() {
     '#upload_validators' => [
       'file_validate_extensions' => ['json']
     ],
-    '#process' => array('process_health_json_file'),
+    '#process' => ['process_health_json_file'],
     '#upload_location' => 'public://charts/',
     '#default_value' => $health_json_fid,    
     '#required' => FALSE,
@@ -159,7 +161,7 @@ function process_health_json_file($element, &$form_state, $form) {
  * Validate handler for the custom form.
  */
 function spc_health_dashboard_form_validate($form, &$form_state){
-  $validators = array();
+  $validators = [];
   if ($file_health_json = file_save_upload('health_json_file', $validators)) {
     $form_state['values']['health_json_file'] = $file_health_json;
     variable_set('health_json_fid', $form_state['values']['health_json_file']->fid);
@@ -435,8 +437,8 @@ function _array_print_helper($arr, $summary = '') {
  * Implements hook_theme().
  */
 function spc_health_dashboard_theme() {
-  return array(
-    'spc_health_dashboard_page' => array(
+  return [
+    'spc_health_dashboard_page' => [
       'variables' => [
         'title' => NULL,
         'breadcrumbs' => NULL,
@@ -445,29 +447,35 @@ function spc_health_dashboard_theme() {
         'subtitle' => null
       ],
       'template' => 'templates/spc_health_dashboard_page',
-    ),
-    'spc_health_home_breadcrumbs' => array(
+    ],
+    'spc_health_dashboard_breadcrumbs' => [
       'variables' => [
         'breadcrumbs' => NULL
       ],
-      'template' => 'templates/spc_health_home_breadcrumbs',
-    ),
-    'spc_health_home_search' => array(
+      'template' => 'templates/spc_health_dashboard_breadcrumbs',
+    ],
+    'spc_health_home_search' => [
       'variables' => [
         'search' => NULL
       ],
       'template' => 'templates/spc_health_home_search',
-    ),
-    'spc_health_home_content' => array(
+    ],
+    'spc_health_home_content' => [
       'variables' => [
         'data' => NULL
       ],
       'template' => 'templates/spc_health_home_content',
-    ),    
-  );
+    ],
+  ];
 }
 
-function get_health_dashboard_data(){
+/**
+ * Returns dashboard data from uploaded file.
+ *
+ * @return array
+ * Dashboard data array.
+ */
+function get_health_dashboard_data() {
   
   $health_json_fid = (!empty(variable_get('health_json_fid')))? variable_get('health_json_fid'): '' ;
   
@@ -487,7 +495,13 @@ function get_health_dashboard_data(){
   return $data;
 }
 
-function get_health_dashboard_default_data(){
+/**
+ * Returns dashboard demo data from default file.
+ *
+ * @return array
+ * Dashboard data array.
+ */
+function get_health_dashboard_default_data() {
 
   $data = [];
   
