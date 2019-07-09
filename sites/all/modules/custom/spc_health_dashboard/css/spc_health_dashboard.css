@@ -55,6 +55,9 @@
   max-height: 50px;
   margin-top: 5px;
 }
+.health-dashboard-header .breadcrumb .dropdown > a {
+  pointer-events: none;
+}
 .health-dashboard-header .breadcrumb .dropdown .breadcrumb-subitems {
   display: none;
 }
