@@ -190,13 +190,14 @@
     }
     .legend:before {
        content: '';
-       width: 110px;
+       width: 40%;
+       max-width: 110px;
        height: 20px;
        border: 1px solid;
        display: block;
        float: left;
        border-radius: 5px;
-       margin: 0 20px;
+       margin-right: 20px;
     }
     .present:before {
         background: #cfff6fb3;
@@ -212,3 +213,14 @@
     }    
 }
 
+@media (max-width: 1000px) {
+    .health-dashboard-content {
+        .chart-global-legend {
+            margin-top: 50px;
+        }
+        .legend {
+            margin-bottom: 20px;
+        }
+    }
+
+}

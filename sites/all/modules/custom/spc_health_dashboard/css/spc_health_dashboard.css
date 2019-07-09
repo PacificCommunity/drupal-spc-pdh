@@ -181,13 +181,14 @@
 }
 .health-dashboard-content .legend:before {
   content: '';
-  width: 110px;
+  width: 40%;
+  max-width: 110px;
   height: 20px;
   border: 1px solid;
   display: block;
   float: left;
   border-radius: 5px;
-  margin: 0 20px;
+  margin-right: 20px;
 }
 .health-dashboard-content .present:before {
   background: #cfff6fb3;
@@ -200,5 +201,13 @@
 .health-dashboard-content .not-present:before {
   background: #ff000080;
   border-color: #FF0000;
+}
+@media (max-width: 1000px) {
+  .health-dashboard-content .chart-global-legend {
+    margin-top: 50px;
+  }
+  .health-dashboard-content .legend {
+    margin-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=spc_health_dashboard.css.map */
