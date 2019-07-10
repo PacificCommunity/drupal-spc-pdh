@@ -127,9 +127,6 @@
 .health-dashboard-header .search {
   color: #FFFFFF;
 }
-.health-dashboard-content {
-  margin: 40px auto;
-}
 @media (max-width: 767px) {
   .health-dashboard-header.banner-with-title {
     height: 430px;
@@ -179,3 +176,45 @@
 .stacked-chart-global svg {
   overflow: visible !important;
 }
+.health-dashboard-content {
+  margin: 40px auto;
+}
+.health-dashboard-content .chart-global-legend {
+  margin-top: 100px;
+}
+.health-dashboard-content .legend {
+  margin-bottom: 60px;
+  font-size: 10px;
+}
+.health-dashboard-content .legend:before {
+  content: '';
+  width: 40%;
+  max-width: 110px;
+  height: 20px;
+  border: 1px solid;
+  display: block;
+  float: left;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.health-dashboard-content .present:before {
+  background: #cfff6fb3;
+  border-color: #CFFF6F;
+}
+.health-dashboard-content .development:before {
+  background: #ffc00080;
+  border-color: #FFC000;
+}
+.health-dashboard-content .not-present:before {
+  background: #ff000080;
+  border-color: #FF0000;
+}
+@media (max-width: 1000px) {
+  .health-dashboard-content .chart-global-legend {
+    margin-top: 50px;
+  }
+  .health-dashboard-content .legend {
+    margin-bottom: 20px;
+  }
+}
+/*# sourceMappingURL=spc_health_dashboard.css.map */

@@ -48,7 +48,7 @@
 
         const colors = ["#cfff6fb3", "#ffc00080", "#ff000080" ];
         const border = ['#CFFF6F',  '#FFC000', '#FF0000' ];
-        const range = ["present", "under-development", "not-present"];
+        const range = ["Present", "Under Development", "Not Present"];
         const rangeWidth = [95, 170, 120];
         
         let svg = d3.select(".stacked-chart-global")
@@ -123,6 +123,7 @@
             .attr('range', function(d, i) { return range[i]; })
             .attr('range-width', function(d, i) { return rangeWidth[i]; })
             .attr('stroke', function(d, i) { return border[i]; })
+            .attr('def-fill', function(d, i) { return colors[i]; })
             .style("stroke-width", 1)
             .style("fill", function(d, i) { return colors[i]; });
 
@@ -138,18 +139,16 @@
             .attr("height", function(d) { return (y(d.y0) - y(d.y0 + d.y))-5 ; })
             .attr("width", 30)
             .on('mouseover', function(d){
-                
-                d3.select(this).style("opacity", 0.5);
                 let hovRange = d3.select(this.parentNode).attr('range');
                 let hovRangeWidth = d3.select(this.parentNode).attr('range-width');
+                let hovFill = d3.select(this.parentNode).attr('stroke');
+                d3.select(this).attr('fill', hovFill);
 
                 tooltip.style("opacity", 1)
                     .attr("x", x(d.x)+75)
                     .attr("y", y(d.y0 + d.y))
                     .attr("width", hovRangeWidth);
-              
-       
-
+             
                 tooltext.style("opacity", 1)      
                     .text(hovRange + ' ' + Math.round(d.y) + '%')  
                     .attr("x", x(d.x)+85)
@@ -157,7 +156,9 @@
 
             })
             .on('mouseout', function(d){
-                d3.select(this).style("opacity", 1)
+                let defFill = d3.select(this.parentNode).attr('def-fill');
+                d3.select(this).attr('fill', defFill);
+                
                 tooltip.style("opacity", 0)
                 tooltext.style("opacity", 0)
             });
