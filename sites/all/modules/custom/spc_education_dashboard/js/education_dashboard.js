@@ -282,55 +282,83 @@
                     .data(data)
                     .enter()
                     .append("rect")
-                    .transition()
-                    .duration(500)
-                    .attr("x", attrX)
-                    .attr("y", attrY)
-                    .attr("height", attrH)
                     .attr("width", 20)
                     .attr("class", "bar")
                     .attr("country", data => data.country)
                     .attr("percentage", data => data.percentage)
+                    .style("fill", data => data.color)
                     .attr("rx", 10)
                     .attr("ry", 10)
-                    .attr("fill", data => data.color)
-                    .style("opacity", 1)
-                    .delay(function(data,i){ return(i*100)});
-        
-                setTimeout(function(){
-                    svg.selectAll(".bar").remove();
-                    svg.selectAll(".bar")
-                        .data(data)
-                        .enter()
-                        .append("rect")
-                        .attr("class", "bar")
-                        //.attr("country", data => data.country)
-                        .attr("percentage", data => data.percentage)
-                        .attr("x", attrX)
-                        .attr("y", attrY)
-                        .attr("height", attrH)
-                        .attr("width", 20)
-                        .attr("rx", 10)
-                        .attr("ry", 10)
-                        .attr("fill", data => data.color)
-                        .style("opacity", 1)
-                        .on('mouseover', function(d){
+                    .attr("x", attrX)            
+                    .attr("y", function(data) { return y(0); })
+                    .attr("height", function(data) { return height - y(0); })
+                    .on('mouseover', function(data){
                             tooltip.style("opacity", 1)
-                                .attr("x", x(d.country)+10)
-                                .attr("y", typY(d))
-                                .attr("fill", d.color);
+                                .attr("width", 40)
+                                .attr("height", 40)
+                                .attr("x", x(data.country)+10)
+                                .attr("y", typY(data))
+                                .attr("fill", data.color);
 
                             tooltext.style("opacity", 1)      
-                                .text(Number((d.percentage).toFixed(1)))  
-                                .attr("x", x(d.country)+30)
-                                .attr("y", typY(d)+25);
+                                .text(Number((data.percentage).toFixed(1)))  
+                                .attr("x", x(data.country)+30)
+                                .attr("y", typY(data)+25);
 
                         })
                         .on('mouseout', function(d){
                             tooltip.style("opacity", 0);
                             tooltext.style("opacity", 0);
-                        });                    
-                }, 2000) 
+                        });
+
+                svg.selectAll(".bar")
+                    .transition()
+                    .delay(function () {return Math.random()*1000;})
+                    .duration(1000)
+                    .attr("y", function(data) { return y(data.percentage); })
+                    .attr("height", function(data) { return height - y(data.percentage); });
+            }
+            
+            function setCartBarsReverse(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, typY) {
+                svg.selectAll(".bar")
+                    .data(data)
+                    .enter()
+                    .append("rect")
+                    .attr("width", 20)
+                    .attr("class", "bar")
+                    .attr("country", data => data.country)
+                    .attr("percentage", data => data.percentage)
+                    .style("fill", data => data.color)
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .attr("x", attrX)            
+                    .attr("y", 200)
+                    .attr("height", 0)
+                    .on('mouseover', function(data){
+                            tooltip.style("opacity", 1)
+                                .attr("width", 40)
+                                .attr("height", 40)
+                                .attr("x", x(data.country)+10)
+                                .attr("y", typY(data))
+                                .attr("fill", data.color);
+
+                            tooltext.style("opacity", 1)      
+                                .text(Number((data.percentage).toFixed(1)))  
+                                .attr("x", x(data.country)+30)
+                                .attr("y", typY(data)+25);
+
+                        })
+                        .on('mouseout', function(d){
+                            tooltip.style("opacity", 0);
+                            tooltext.style("opacity", 0);
+                        });
+
+                svg.selectAll(".bar")
+                    .transition()
+                    .delay(function () {return Math.random()*1000;})
+                    .duration(1000)
+                    .attr("y", attrY)
+                    .attr("height", attrH);
             }
             
             function svgSetLine(svg, x1, y1, x2, y2, stroke){
@@ -358,6 +386,14 @@
                     return 0;
                 } else {
                     return (data.percentage < delta.percentage) ? -1 : 1;
+                }
+            }
+            
+            function barSortGroup(data, delta){
+                if (data.values[0].value === delta.values[0].value) {
+                    return 0;
+                } else {
+                    return (data.values[0].value < delta.values[0].value) ? -1 : 1;
                 }
             }
             
@@ -469,7 +505,7 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart1data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-
+                
                 svgSetText(svg, -5, 20, '18%', green);
                 svgSetText(svg, -5, 230, '3.8%', red);
             }
@@ -590,6 +626,8 @@
                 let attrH = function(chart4yearLiteracy){
                     if (chart4yearLiteracy.percentage < 0){
                         return (y(0) - y((chart4yearLiteracy.percentage)*-1))/2;
+                    } else if (chart4yearLiteracy.percentage == 0){
+                        return 3;
                     }
                     return (y(0) - y(chart4yearLiteracy.percentage))/2;
                 }
@@ -604,7 +642,7 @@
                     return pos;
                 }
                 
-                setCartBars(svg, chart4yearLiteracy,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                setCartBarsReverse(svg, chart4yearLiteracy,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
 
                 //enable switcher    
                 $.switcher('input.slider');
@@ -640,7 +678,7 @@
                     tooltip = setToolBox(svg);
                     appendTolltip(id);
                     
-                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                    setCartBarsReverse(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
                 });
 
                 $('.sw-4 a').on('click', function(e){
@@ -675,7 +713,7 @@
                     tooltip = setToolBox(svg);
                     appendTolltip(id);
                     
-                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                    setCartBarsReverse(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
                 });            
             }
             
@@ -816,9 +854,11 @@
             //Primary completion rate
             if ($('.chart-7').length){
                 const id = '7';
+                
                 let data = settings.spc_education_dashboard.chart7[0].data;
+                data.sort(barSortGroup);
+                
                 const chart7Thd = settings.spc_education_dashboard.threshold7;
-
                 const threshold = chart7Thd.dots;
                 
                 let height = 400;
@@ -1003,7 +1043,10 @@
             //Progression to secondary school
             if ($('.chart-8').length){
                 const id = '8';
+                
                 let data = settings.spc_education_dashboard.chart8[0].data;
+                data.sort(barSortGroup);
+                
                 const chart8Thd = settings.spc_education_dashboard.threshold8;
                 const threshold = chart8Thd.dots;
                 
@@ -1218,7 +1261,10 @@
             // Lower secondary completion rate
             if ($('.chart-10').length){
                 const id = '10';
+                
                 let data = settings.spc_education_dashboard.chart10[0].data;
+                data.sort(barSortGroup);
+                
                 const chart10Thd = settings.spc_education_dashboard.threshold10;
                 const threshold = chart10Thd.dots;
                 
@@ -1407,9 +1453,9 @@
                 let chart11primary = settings.spc_education_dashboard.chart11[1].data;
                 let chart11secondary = settings.spc_education_dashboard.chart11[2].data;
                 
-                chart11ece.sort(barSort);
-                chart11primary.sort(barSort);
-                chart11secondary.sort(barSort);
+                chart11ece.sort(barSort).reverse();
+                chart11primary.sort(barSort).reverse();
+                chart11secondary.sort(barSort).reverse();
                 
                 const threshold11Ece = settings.spc_education_dashboard.threshold11.ece;
                 const threshold11Primary = settings.spc_education_dashboard.threshold11.primary;
@@ -1505,7 +1551,7 @@
                 setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
             }
             
-            //Pupil-teacher ratio (PTR)
+            //Trained teachers
             if ($('.chart-13').length){
                 const id = '13';
                 let chart13primary = settings.spc_education_dashboard.chart13[0].data;
@@ -1513,8 +1559,8 @@
                 const threshold13 = settings.spc_education_dashboard.threshold13;
                 const threshold = threshold13.dots;
                 
-                chart13primary.sort(barSort);
-                chart13secondary.sort(barSort);
+                chart13primary.sort(barSortGroup);
+                chart13secondary.sort(barSortGroup);
                 
                 chart13primary = addColorsToData(chart13primary, threshold13);
                 chart13secondary = addColorsToData(chart13secondary, threshold13);
