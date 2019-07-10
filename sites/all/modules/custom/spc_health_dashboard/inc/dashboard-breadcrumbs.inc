@@ -9,7 +9,7 @@
  * @throws \Exception
  */
 function _home_breadcrumbs() {
-  $content = theme('spc_health_home_breadcrumbs', ['breadcrumbs' => []]);
+  $content = theme('spc_health_dashboard_home_breadcrumbs', ['breadcrumbs' => []]);
   return $content;
 }
 

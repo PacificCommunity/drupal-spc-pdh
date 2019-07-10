@@ -217,4 +217,83 @@
     margin-bottom: 20px;
   }
 }
-/*# sourceMappingURL=spc_health_dashboard.css.map */
+/**
+ * Health Dashboard Category menu.
+ */
+.health-dashboard-categories {
+  float: left;
+  width: 49%;
+}
+.health-dashboard-categories li {
+  list-style: none;
+}
+.health-dashboard-categories a,
+.health-dashboard-categories label {
+  display: block;
+  padding: 0.85rem;
+  color: black;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+.health-dashboard-categories a:focus,
+.health-dashboard-categories label:focus,
+.health-dashboard-categories a:hover,
+.health-dashboard-categories label:hover {
+  color: gray;
+}
+.health-dashboard-categories label {
+  cursor: pointer;
+}
+.health-dashboard-categories .group-list a,
+.health-dashboard-categories .group-list label {
+  padding-left: 2rem;
+}
+.health-dashboard-categories .group-list a:focus,
+.health-dashboard-categories .group-list label:focus,
+.health-dashboard-categories .group-list a:hover,
+.health-dashboard-categories .group-list label:hover {
+  color: gray;
+}
+.health-dashboard-categories .sub-group-list a,
+.health-dashboard-categories .sub-group-list label {
+  padding-left: 4rem;
+}
+.health-dashboard-categories .sub-group-list a:focus,
+.health-dashboard-categories .sub-group-list label:focus,
+.health-dashboard-categories .sub-group-list a:hover,
+.health-dashboard-categories .sub-group-list label:hover {
+  color: gray;
+}
+.health-dashboard-categories .sub-sub-group-list a,
+.health-dashboard-categories .sub-sub-group-list label {
+  padding-left: 6rem;
+}
+.health-dashboard-categories .sub-sub-group-list a:focus,
+.health-dashboard-categories .sub-sub-group-list label:focus,
+.health-dashboard-categories .sub-sub-group-list a:hover,
+.health-dashboard-categories .sub-sub-group-list label:hover {
+  color: gray;
+}
+.health-dashboard-categories .group-list,
+.health-dashboard-categories .sub-group-list,
+.health-dashboard-categories .sub-sub-group-list {
+  height: 100%;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+}
+.health-dashboard-categories .nav__list input[type=checkbox]:checked + label + ul {
+  /* reset the height when checkbox is checked */
+  max-height: 1000px;
+}
+.health-dashboard-categories label > span {
+  float: right;
+  -webkit-transition: -webkit-transform 0.65s ease;
+  transition: transform 0.65s ease;
+}
+.health-dashboard-categories .nav__list input[type=checkbox]:checked + label > span {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}

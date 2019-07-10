@@ -5,8 +5,8 @@ define('HEALTH_DASHBOARD_URL', '/health-dashboard');
 /**
  * Implementation of hook_init().
  */
-function spc_health_dashboard_init(){
-  if (arg(0) == 'health-dashboard'){
+function spc_health_dashboard_init() {
+  if (arg(0) == 'health-dashboard') {
     drupal_add_css(
       drupal_get_path('module', 'spc_health_dashboard') . '/css/spc_health_dashboard.css',
       ['group' => CSS_DEFAULT, 'every_page' => TRUE]
@@ -17,9 +17,9 @@ function spc_health_dashboard_init(){
     );
     //including D3 library
     drupal_add_js(
-      drupal_get_path('module', 'spc_education_dashboard') . '/lib/d3/d3.v3.js',
+      drupal_get_path('module', 'spc_health_dashboard') . '/js/d3.v3.js',
       'file'
-    );    
+    );
   }
 }
 
@@ -86,19 +86,19 @@ function spc_health_dashboard_menu() {
  */
 function spc_health_dashboard_form() {
   $form = [];
-  
-  $health_json_fid = (!empty(variable_get('health_json_fid')))? variable_get('health_json_fid'): '' ;
-  
+
+  $health_json_fid = (!empty(variable_get('health_json_fid'))) ? variable_get('health_json_fid') : '';
+
   $form['health_json_file'] = [
     '#type' => 'managed_file',
     '#title' => t('Upload Health JSON File'),
     '#description' => t('Upload a new JSON File her.'),
     '#upload_validators' => [
-      'file_validate_extensions' => ['json']
+      'file_validate_extensions' => ['json'],
     ],
     '#process' => ['process_health_json_file'],
     '#upload_location' => 'public://charts/',
-    '#default_value' => $health_json_fid,    
+    '#default_value' => $health_json_fid,
     '#required' => FALSE,
   ];
   $form['update_categories'] = [
@@ -127,19 +127,19 @@ function spc_health_dashboard_form() {
   ];
   $form['markup1'] = [
     '#markup' => _array_print_helper(variable_get('health_dashboard_categories_list', []), 'Categories array'),
-    '#weight' => 20
+    '#weight' => 20,
   ];
   $form['markup2'] = [
     '#markup' => _array_print_helper(variable_get('health_dashboard_countries', []), 'Countries array'),
-    '#weight' => 20
+    '#weight' => 20,
   ];
   $form['markup5'] = [
     '#markup' => _array_print_helper(variable_get('health_dashboard_indicators', []), 'Indicators array'),
-    '#weight' => 20
+    '#weight' => 20,
   ];
   $form['markup4'] = [
     '#markup' => _array_print_helper(variable_get('health_dashboard_json', ''), 'Path to JSON'),
-    '#weight' => 20
+    '#weight' => 20,
   ];
 
   $form['#validate'][] = 'spc_health_dashboard_form_validate';
@@ -160,7 +160,7 @@ function process_health_json_file($element, &$form_state, $form) {
 /**
  * Validate handler for the custom form.
  */
-function spc_health_dashboard_form_validate($form, &$form_state){
+function spc_health_dashboard_form_validate($form, &$form_state) {
   $validators = [];
   if ($file_health_json = file_save_upload('health_json_file', $validators)) {
     $form_state['values']['health_json_file'] = $file_health_json;
@@ -196,12 +196,12 @@ function spc_health_dashboard_form_submit($form, &$form_state) {
   // On file upload.
   if (!empty($form_state['values']['health_json_file'])) {
     $file_health_json = $form_state['values']['health_json_file'];
-    $file_health_json->status = FILE_STATUS_PERMANENT; 
+    $file_health_json->status = FILE_STATUS_PERMANENT;
     file_save($file_health_json);
-    
+
     $json_path = file_create_url($file_health_json->uri);
     variable_set('health_dashboard_json', $json_path);
-    
+
     drupal_set_message('New file was uploaded.');
   }
 }
@@ -406,7 +406,7 @@ function spc_health_dashboard_update_indicators() {
     'present' => 'Present',
     'low' => 'Low',
     'medium' => 'Medium',
-    'high' => 'High'
+    'high' => 'High',
   ];
 
   variable_set('health_dashboard_indicators', $indicators);
@@ -444,27 +444,27 @@ function spc_health_dashboard_theme() {
         'breadcrumbs' => NULL,
         'search' => NULL,
         'content' => NULL,
-        'subtitle' => null
+        'subtitle' => NULL,
       ],
       'template' => 'templates/spc_health_dashboard_page',
     ],
     'spc_health_dashboard_breadcrumbs' => [
       'variables' => [
-        'breadcrumbs' => NULL
+        'breadcrumbs' => NULL,
       ],
       'template' => 'templates/spc_health_dashboard_breadcrumbs',
     ],
-    'spc_health_home_search' => [
+    'spc_health_dashboard_home_search' => [
       'variables' => [
-        'search' => NULL
+        'search' => NULL,
       ],
-      'template' => 'templates/spc_health_home_search',
+      'template' => 'templates/spc_health_dashboard_home_search',
     ],
-    'spc_health_home_content' => [
+    'spc_health_dashboard_home_content' => [
       'variables' => [
-        'data' => NULL
+        'data' => NULL,
       ],
-      'template' => 'templates/spc_health_home_content',
+      'template' => 'templates/spc_health_dashboard_home_content',
     ],
   ];
 }
@@ -476,22 +476,24 @@ function spc_health_dashboard_theme() {
  * Dashboard data array.
  */
 function get_health_dashboard_data() {
-  
-  $health_json_fid = (!empty(variable_get('health_json_fid')))? variable_get('health_json_fid'): '' ;
-  
-  if (!empty($health_json_fid)){
+
+  $health_json_fid = (!empty(variable_get('health_json_fid'))) ? variable_get('health_json_fid') : '';
+
+  if (!empty($health_json_fid)) {
     $file = file_load($health_json_fid);
     $uri = $file->uri;
-    
-    if($health_dashboard_data = file_get_contents($uri)){
-      $data = json_decode($health_dashboard_data, true);
-    } else {
+
+    if ($health_dashboard_data = file_get_contents($uri)) {
+      $data = json_decode($health_dashboard_data, TRUE);
+    }
+    else {
       $data = get_health_dashboard_default_data();
     }
-  } else {
+  }
+  else {
     $data = get_health_dashboard_default_data();
   }
-  
+
   return $data;
 }
 
@@ -504,9 +506,9 @@ function get_health_dashboard_data() {
 function get_health_dashboard_default_data() {
 
   $data = [];
-  
-  if ($spc_health_dashboard = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/default.json')){
-    $data = json_decode($spc_health_dashboard, true);
+
+  if ($spc_health_dashboard = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/default.json')) {
+    $data = json_decode($spc_health_dashboard, TRUE);
   }
 
   return $data;
