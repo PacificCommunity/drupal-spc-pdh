@@ -15,21 +15,21 @@ function spc_health_dashboard_home_page() {
     [
       'title' => t('Status of NCD policy and legislation in <br><strong>Pacific Island countries</strong> and territories'),
       'breadcrumbs' => _home_breadcrumbs(),
-      'search' => spc_health_home_search(),
-      'content' => spc_health_home_content(),
+      'search' => spc_health_dashboard_home_search(),
+      'content' => spc_health_dashboard_home_content(),
     ]
   );
 }
 
-function spc_health_home_search() {
+function spc_health_dashboard_home_search() {
   $data = array();
   
-  $content = theme('spc_health_home_search', array('search' => $data));
+  $content = theme('spc_health_dashboard_home_search', array('search' => $data));
   
   return $content;
 }
 
-function spc_health_home_content(){
+function spc_health_dashboard_home_content(){
   $data = array();
   
   $health_dashboard_data = get_health_dashboard_data();
@@ -41,7 +41,7 @@ function spc_health_home_content(){
   $data['methods'] = $health_dashboard_data['home-page']['methods'];
   $data['chart']  = $health_dashboard_data['home-page']['chart'];
   
-  $content = theme('spc_health_home_content', array('data' => $data));
+  $content = theme('spc_health_dashboard_home_content', array('data' => $data));
   
   return $content;
 }
@@ -57,13 +57,13 @@ function health_dashboard_chart_summary($countries_data){
         case 'low':
         case 'medium':
         case 'high':  
-            $summary[$indicator['indicator-category']]['present'] += 1;
+            @$summary[$indicator['indicator-category']]['present'] += 1;
           break;  
         case 'under-development':
-            $summary[$indicator['indicator-category']]['under-development'] += 1;
+            @$summary[$indicator['indicator-category']]['under-development'] += 1;
           break;
         case 'not-present':
-            $summary[$indicator['indicator-category']]['not-present'] += 1;
+            @$summary[$indicator['indicator-category']]['not-present'] += 1;
           break;
       }
     }
