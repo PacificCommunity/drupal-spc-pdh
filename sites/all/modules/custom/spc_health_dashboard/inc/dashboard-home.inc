@@ -21,14 +21,12 @@ function spc_health_dashboard_home_page() {
   );
 }
 
-function spc_health_dashboard_home_search() {
-  $data = array();
-  
-  $content = theme('spc_health_dashboard_home_search', array('search' => $data));
-  
-  return $content;
-}
-
+/**
+ * Returns dashboard home content template.
+ *
+ * @return array
+ * Content data array.
+ */
 function spc_health_dashboard_home_content(){
   $data = array();
   
@@ -46,6 +44,12 @@ function spc_health_dashboard_home_content(){
   return $content;
 }
 
+/**
+ * Returns dashboard chart data for counties summary array.
+ *
+ * @return array
+ * Summary data array.
+ */
 function health_dashboard_chart_summary($countries_data){
   $summary = array();
   

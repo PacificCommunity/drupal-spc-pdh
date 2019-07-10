@@ -297,3 +297,17 @@
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+/**
+ * Health Dashboard Country page.
+ */
+.health-country-chart h4 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/*# sourceMappingURL=spc_health_dashboard.css.map */
