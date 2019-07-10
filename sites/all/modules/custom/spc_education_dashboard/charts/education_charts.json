@@ -347,17 +347,17 @@
                         },
                         {
                             "country": "Solomon Islands",
-                            "percentage": 0.5,
+                            "percentage": 0,
                             "year": ""
                         }, 
                         {
                             "country": "Tonga",
-                            "percentage": 0.5,
+                            "percentage": 0,
                             "year": "2015"
                         },
                         {
                             "country": "RMI",
-                            "percentage": 0.5,
+                            "percentage": 0,
                             "year": ""
                         },
                         {
@@ -418,12 +418,12 @@
                         },
                         {
                             "country": "Palau",
-                            "percentage": 0.5,
+                            "percentage": 0,
                             "year": ""
                         },
                         {
                             "country": "Tonga",
-                            "percentage": 0.5,
+                            "percentage": 0,
                             "year": ""
                         },
 
@@ -469,12 +469,12 @@
                         },
                         {
                             "country": "Solomon Islands",
-                            "percentage": 0.5,
+                            "percentage": 0,
                             "year": ""
                         },
                         {
                             "country": "Tokelau",
-                            "percentage": 0.5,
+                            "percentage": 0,
                             "year": ""
                         },
 
