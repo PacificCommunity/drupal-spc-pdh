@@ -6,3 +6,6 @@ sites/*/files
 sites/*/private
 
 .DS_Store
+
+nbproject/
+*.map

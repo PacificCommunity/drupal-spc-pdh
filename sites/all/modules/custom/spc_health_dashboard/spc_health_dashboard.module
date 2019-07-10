@@ -263,127 +263,127 @@ function spc_health_dashboard_update_categories() {
 function spc_health_dashboard_update_countries() {
 
   $countries = [
-    'american-samoa' => [
+    'american-samoa' => [  //in JSON with real data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
-      '#title' => 'American Samoa',
+      '#title' => 'American Samoa', 
       '#abbr' => 'AS',
     ],
-    'commonwealth-of-the-northern-mariana-islands' => [
+    'commonwealth-of-the-northern-mariana-islands' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Commonwealth of the Northern Mariana Islands',
       '#abbr' => 'CNMI',
     ],
-    'cook-islands' => [
+    'cook-islands' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Cook Islands',
       '#abbr' => 'CI',
     ],
-    'federated-states-of-micronesia' => [
+    'federated-states-of-micronesia' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Federated States of Micronesia',
       '#abbr' => 'FSM',
     ],
-    'fiji' => [
+    'fiji' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Fiji',
       '#abbr' => NULL,
     ],
-    'french-polynesia' => [
+    'french-polynesia' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'French Polynesia',
       '#abbr' => 'FP',
     ],
-    'guam' => [
+    'guam' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Guam',
       '#abbr' => NULL,
     ],
-    'kiribati' => [
+    'kiribati' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Kiribati',
       '#abbr' => NULL,
     ],
-    'nauru' => [
+    'nauru' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Nauru',
       '#abbr' => NULL,
     ],
-    'niue' => [
+    'niue' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Niue',
       '#abbr' => NULL,
     ],
-    'new-caledonia' => [
+    'new-caledonia' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'New Caledonia',
       '#abbr' => 'NC',
     ],
-    'palau' => [
+    'palau' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Palau',
       '#abbr' => NULL,
     ],
-    'papua-new-guinea' => [
+    'papua-new-guinea' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Papua New Guinea',
       '#abbr' => 'PNG',
     ],
-    'republic-of-the-marshall-islands' => [
+    'republic-of-the-marshall-islands' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Republic of the Marshall Islands',
       '#abbr' => 'RMI',
     ],
-    'tokelau' => [
+    'tokelau' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Tokelau',
       '#abbr' => NULL,
     ],
-    'tonga' => [
+    'tonga' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Tonga',
       '#abbr' => NULL,
     ],
-    'samoa' => [
+    'samoa' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Samoa',
       '#abbr' => NULL,
     ],
-    'solomon-islands' => [
+    'solomon-islands' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Solomon Islands',
       '#abbr' => 'SI',
     ],
-    'tuvalu' => [
+    'tuvalu' => [ //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Tuvalu',
       '#abbr' => NULL,
     ],
-    'vanuatu' => [
+    'vanuatu' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Vanuatu',
       '#abbr' => NULL,
     ],
-    'wallis-and-futuna' => [
+    'wallis-and-futuna' => [  //in JSON with default data.
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Wallis and Futuna',
@@ -466,6 +466,12 @@ function spc_health_dashboard_theme() {
       ],
       'template' => 'templates/spc_health_dashboard_home_content',
     ],
+    'spc_health_dashboard_country_content' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+      'template' => 'templates/spc_health_dashboard_country_content',
+    ],    
   ];
 }
 
@@ -481,7 +487,7 @@ function get_health_dashboard_data() {
 
   if (!empty($health_json_fid)) {
     $file = file_load($health_json_fid);
-    $uri = $file->uri;
+    //$uri = $file->uri;
 
     if ($health_dashboard_data = file_get_contents($uri)) {
       $data = json_decode($health_dashboard_data, TRUE);
@@ -512,4 +518,18 @@ function get_health_dashboard_default_data() {
   }
 
   return $data;
+}
+
+/**
+ * Returns dashboard home search template.
+ *
+ * @return array
+ * Content data array.
+ */
+function spc_health_dashboard_home_search() {
+  $data = array();
+  
+  $content = theme('spc_health_dashboard_home_search', array('search' => $data));
+  
+  return $content;
 }
