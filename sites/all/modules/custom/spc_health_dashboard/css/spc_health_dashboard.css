@@ -300,7 +300,11 @@
 /**
  * Health Dashboard Country page.
  */
-.health-country-chart h4 {
+.health-country-chart {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.block-title {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -309,5 +313,25 @@
   margin-bottom: 30px;
   padding-left: 15px;
   padding-right: 15px;
+}
+.block-indicator-group {
+  position: relative;
+  box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+  border-radius: 25px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.helth-indicators {
+  display: none;
+}
+.toggle {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border: 1px solid #00C6EC;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 /*# sourceMappingURL=spc_health_dashboard.css.map */
