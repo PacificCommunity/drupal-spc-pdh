@@ -40,10 +40,14 @@ function spc_health_dashboard_country_content($country){
   $health_dashboard_data = get_health_dashboard_data();
   
   foreach($health_dashboard_data['countries-data'] as $country_data){
+    
     if ($country_data['id'] == $country){
       $data['title'] = $country_data['title'] . t(' - summary of status of indicators across the categories&nbsp(%)');
+      $data['indicators'] = $country_data['indicators'];
+      $data['categories'] = variable_get('health_dashboard_categories_list', []);
       $country_chart = _health_dashboard_country_chart($country_data['indicators']);
     }
+    
   }
 
   drupal_add_js(array('spc_health_chart' => array('summary_chart' => $country_chart)), array('type' => 'setting'));
