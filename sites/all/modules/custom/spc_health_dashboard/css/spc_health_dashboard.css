@@ -334,4 +334,126 @@
   border-radius: 50%;
   cursor: pointer;
 }
+.arrow {
+  width: 10px;
+  height: 10px;
+  background-image: url(../img/arrow-down.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: block;
+  margin-top: 10px;
+  margin-left: 7px;
+  cursor: pointer;
+}
+.arrow.down {
+  margin-top: 8px;
+  background-image: url(../img/arrow-up.svg);
+}
+.block-indicator-group .category-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+}
+.block-indicator-group .category-title:before {
+  content: '';
+  display: block;
+  float: left;
+  margin-top: -5px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #001E73;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+.block-indicator-group .leadership-and-governance:before {
+  background-image: url(../img/leadership-and-governance.svg);
+  background-size: 60%;
+}
+.block-indicator-group .tobacco:before {
+  background-image: url(../img/tobacco.svg);
+  background-size: 60%;
+}
+.block-indicator-group .alcohol:before {
+  background-image: url(../img/alcohol.svg);
+  background-size: 60%;
+}
+.block-indicator-group .food:before {
+  background-image: url(../img/food.svg);
+  background-size: 60%;
+}
+.block-indicator-group .physical-activity:before {
+  background-image: url(../img/physical-activity.svg);
+  background-size: 60%;
+}
+.block-indicator-group .enforcement:before {
+  background-image: url(../img/enforcement.svg);
+  background-size: 60%;
+}
+.block-indicator-group .health-system:before {
+  background-image: url(../img/health-system.svg);
+  background-size: 60%;
+}
+.block-indicator-group .monitoring:before {
+  background-image: url(../img/monitoring.svg);
+  background-size: 60%;
+}
+.helth-indicators h6 {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+.helth-indicators p {
+  font-size: 10px;
+  line-height: 22px;
+}
+.helth-indicators .status-strength {
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 110px;
+  height: 20px;
+  cursor: pointer;
+}
+.helth-indicators .not-present {
+  background: rgba(255, 0, 0, 0.5);
+  border: 1px solid #FF0000;
+}
+.helth-indicators .under-development {
+  background: rgba(255, 192, 0, 0.5);
+  border: 1px solid #FFC000;
+}
+.helth-indicators .present {
+  background: rgba(207, 255, 111, 0.7);
+  border: 1px solid #CFFF6F;
+}
+.helth-indicators .low {
+  background: rgba(121, 255, 112, 0.7);
+  border: 1px solid #79FF70;
+  background-image: url(../img/low.svg);
+  background-size: 15%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+.helth-indicators .medium {
+  background: rgba(61, 203, 45, 0.7);
+  border: 1px solid #3DCB2D;
+  background-image: url(../img/medium.svg);
+  background-size: 35%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+.helth-indicators .high {
+  background: rgba(31, 102, 23, 0.7);
+  border: 1px solid #1F6617;
+  background-image: url(../img/high.svg);
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
 /*# sourceMappingURL=spc_health_dashboard.css.map */

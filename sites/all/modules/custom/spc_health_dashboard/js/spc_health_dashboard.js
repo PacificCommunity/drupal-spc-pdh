@@ -167,9 +167,8 @@
         
         $('.toggle').on('click', function(e){
             e.preventDefault();
-            
-            $(this).siblings('.helth-indicators').toggle('slow'); 
-            
+            $(this).siblings('.helth-indicators').toggle(); 
+            $(this).find('.arrow').toggleClass('down');
         });
             
             
