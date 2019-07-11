@@ -20,6 +20,15 @@ function spc_health_dashboard_init() {
       drupal_get_path('module', 'spc_health_dashboard') . '/js/d3.v3.js',
       'file'
     );
+    //including Jquery Dialog library
+    drupal_add_css(
+      drupal_get_path('module', 'spc_health_dashboard') . '/lib/jquery-dialog/jquery-dialog.css',
+      ['group' => CSS_DEFAULT, 'every_page' => TRUE]
+    );
+    drupal_add_js(
+      drupal_get_path('module', 'spc_health_dashboard') . '/lib/jquery-dialog/jquery-dialog.js',
+      'file'
+    );    
   }
 }
 
@@ -450,7 +459,7 @@ function spc_health_dashboard_update_indicators() {
     'medium' => 'Medium',
     'high' => 'High',
   ];
-
+  
   variable_set('health_dashboard_indicators', $indicators);
   drupal_set_message('Indicators were updated.');
 }

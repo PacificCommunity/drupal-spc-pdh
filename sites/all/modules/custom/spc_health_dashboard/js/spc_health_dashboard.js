@@ -170,9 +170,103 @@
             $(this).siblings('.helth-indicators').toggle(); 
             $(this).find('.arrow').toggleClass('down');
         });
+        
+        if ($('.indicator-popup').length){
+                    
+            const indicatorDetales = settings.spc_health_chart.indicator_detales;
+            let Width = $(window).width(); 
+
+            $('.indicator-popup').dialog({
+                autoOpen : false,
+                modal : true,
+                width: Width/100 * 85,
+                resizable: false,
+                draggable: false,
+                show : "blind",
+                hide : "blind",
+                open: function(event, ui) {
+                    $(this)
+                        .parent()
+                        .children()
+                        .children('.ui-dialog-titlebar-close')
+                        .css({
+                        "margin-right":"15px",
+                        "margin-top": "0"
+                    });
+                }
+            });
+
+            $('.status-strength').on('click', function(){
+                const dataCategory = $(this).attr('data-category');
+                const dataIndicator = $(this).attr('data-indicator');
+                const dataValue = $(this).attr('data-value');
+                
+                let CurrentIndicator = {};
+                for (var key in indicatorDetales){
+                    if(key == dataIndicator){
+                        CurrentIndicator = indicatorDetales[key]
+                    }
+                }
+                
+                let CurrentValue = '';
+                for (var key in CurrentIndicator.values){
+                    if (key == dataValue){
+                        CurrentValue = CurrentIndicator.values[key]
+                    }
+                }
+ 
+                const popup = $('.indicator-popup');
             
+                popup.parent()
+                    .find('.indicator-title')
+                    .html(CurrentIndicator.title);
+                popup.parent()
+                    .find('#indicator-value')
+                    .attr('class', '')
+                    .addClass('status-strength')
+                    .addClass(dataValue)
+                popup.parent()
+                    .find('#indicator-text')
+                    .html(CurrentValue);
+                popup.parent()
+                    .find('#not-present .text')
+                    .html(CurrentIndicator.values.not_present);
+                popup.parent()
+                    .find('#under-development .text')
+                    .html(CurrentIndicator.values.under_development);
+                popup.parent()
+                    .find('#present .text')
+                    .html(CurrentIndicator.values.present);
+                popup.parent()
+                    .find('#low .text')
+                    .html(CurrentIndicator.values.low);
+                popup.parent()
+                    .find('#medium .text')
+                    .html(CurrentIndicator.values.medium);
+                popup.parent()
+                    .find('#high .text')
+                    .html(CurrentIndicator.values.high);
+                popup.parent()
+                    .find('#not-applicable .text')
+                    .html(CurrentIndicator.values.not_applicable);
             
-       
+                popup.parent()
+                    .css({
+                        "max-width": "1100px",
+                        "position":"fixed",
+                        "border-color": "#fff",
+                        "box-shadow": "0px 2px 50px rgba(0, 5, 160, 0.102)",
+                        "border-radius": "25px"
+                    })
+                    .end()
+                    .dialog('open')
+            
+                popup.find('.country-detales').height(popup.height());
+            
+            });
+        
+        }
+                        
         //end context
         }
     };
