@@ -212,7 +212,7 @@ function spc_health_dashboard_form_submit($form, &$form_state) {
 function spc_health_dashboard_update_categories() {
 
   $category_list = [
-    'leadership' => [
+    'leadership-and-governance' => [
       '#title' => t('Leadership and governance'),
       '#wrapper' => FALSE,
       '#weight' => 0,
@@ -240,6 +240,48 @@ function spc_health_dashboard_update_categories() {
         'alcohol-advertising' => t('Alcohol advertising'),
       ],
     ],
+    'food' => [
+      '#title' => t('Food'),
+      '#wrapper' => t('Preventive policies'),
+      '#weight' => 3,
+      '#indicators' => [
+        'reducing-salt-consumption' => t('Reducing salt consumption'),
+        'trans-fats' => t('Trans-fats'),
+        'unhealthy-food-marketing-to-children' => t('Unhealthy food marketing to children'),
+        'food-fiscal-policies' => t('Food fiscal policies'),
+        'healthy-food-policies-in-schools' => t('Healthy food policies in schools'),
+        'food-based-dietary-guidelines' => t('Food-based dietary guidelines'),        
+      ],
+    ], 
+    'physical-activity' => [
+      '#title' => t('Physical activity'),
+      '#wrapper' => t('Preventive policies'),
+      '#weight' => 4,
+      '#indicators' => [
+        'compulsory-physical-education-in-school-curriculum' => t('Compulsory physical education in school curriculum'),       
+      ],
+    ], 
+    'enforcement' => [
+      '#title' => t('Enforcement'),
+      '#wrapper' => t('Preventive policies'),
+      '#weight' => 5,
+      '#indicators' => [
+        'enforcement-of-laws-and-regulations-related-to-ncd-risk-factors' => t('Enforcement of laws and regulations related to NCD risk factors'),       
+      ],
+    ],
+    'health-system' => [
+      '#title' => t('Health system response programmes'),
+      '#wrapper' => FALSE,
+      '#weight' => 5,
+      '#indicators' => [
+        'national-guidelines-for-care-of-main-ncds' => t('National guidelines for care of main NCDs'),
+        'essential-drugs' => t('Essential drugs'),
+        'smoking-cessation' => t('Smoking cessation'),
+        'marketing-of-breast-milk-substitutes' => t('Marketing of breast milk substitutes'),
+        'baby-friendly-hospitals' => t('Baby friendly hospitals'),
+        'maternity-leave-and-breastfeeding' => t('Maternity leave and breastfeeding'),
+      ],
+    ],    
     'monitoring' => [
       '#title' => t('Monitoring'),
       '#wrapper' => FALSE,
