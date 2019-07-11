@@ -18,73 +18,91 @@
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
+              "code": "61a",   
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
+              "who": "No Equlvolent",      
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
             "national-strategy-addressing-ncds-and-risk-factors": {
-              "title": "Multi-sectoral NCD taskforce",
+              "code": "61b",      
+              "title": "National strategy addressing NCDs and risk factors",
               "value": "not-present",
+              "who": "4",   
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
             "explicit-ncd-indicators-and-targets": {
+              "code": "61c",      
               "title": "Explicit NCD indicators and targets",
               "value": "present",
+              "who": "1(part)",      
               "indicator-title": "Present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
 
             "tobacco-excise-taxes": {
+              "code": "61a",
               "title": "Multi-sectoral NCD taskforce",
               "value": "medium",
+              "who": "1(part)",
               "indicator-title": "medium",
               "indicator-category": "tobacco",
               "indicator-category-title": "Tobacco",
               "indicator-description": ""
             },
             "smoke-free-environments": {
+              "code": "61a",
               "title": "Smoke-free environments",
               "value": "high",
+              "who": "1(part)",
               "indicator-title": "high",
               "indicator-category": "tobacco",
               "indicator-category-title": "Tobacco",
               "indicator-description": ""
             },
             "tobacco-health-warnings": {
+              "code": "61a",
               "title": "Tobacco health warnings",
               "value": "not-present",
+              "who": "1(part)",
               "indicator-title": "not-present",
               "indicator-category": "tobacco",
               "indicator-category-title": "Tobacco",
               "indicator-description": ""
             },
             "tobacco-advertising-promotion-sponsorship": {
+              "code": "61a",
               "title": "Tobacco advertising, promotion and sponsorship",
               "value": "present",
+              "who": "1(part)",
               "indicator-title": "Present",
               "indicator-category": "tobacco",
               "indicator-category-title": "Tobacco",
               "indicator-description": ""
             },
             "tobacco-sales-and-licencing": {
+              "code": "61a",
               "title": "Tobacco sales and licencing",
               "value": "high",
+              "who": "1(part)",
               "indicator-title": "high",
               "indicator-category": "tobacco",
               "indicator-category-title": "Tobacco",
               "indicator-description": ""
             },
             "tobacco-industry-interference": {
+              "code": "61a",
               "title": "Tobacco industry interference",
               "value": "not-present",
+              "who": "1(part)",  
               "indicator-title": "not-present",
               "indicator-category": "tobacco",
               "indicator-category-title": "Tobacco",
@@ -92,32 +110,40 @@
             },
 
             "alcohol-licencing-to-restrict-sales": {
+              "code": "61a",
               "title": "Alcohol licencing to restrict sales",
               "value": "high",
+              "who": "1(part)",
               "indicator-title": "high",
               "indicator-category": "alcohol",
               "indicator-category-title": "Tobacco",
               "indicator-description": ""
             },
             "alcohol-advertising": {
+              "code": "61a",
               "title": "Alcohol advertising",
               "value": "not-present",
+              "who": "1(part)",
               "indicator-title": "not-present",
               "indicator-category": "alcohol",
               "indicator-category-title": "Tobacco",
               "indicator-description": ""
             },
             "alcohol-taxation": {
+              "code": "61a",
               "title": "Alcohol taxation",
               "value": "present",
+              "who": "1(part)",
               "indicator-title": "Present",
               "indicator-category": "alcohol",
               "indicator-category-title": "Tobacco",
               "indicator-description": ""
             },
             "drink-driving": {
+              "code": "61a",
               "title": "Drink driving",
               "value": "low",
+              "who": "1(part)",
               "indicator-title": "low",
               "indicator-category": "alcohol",
               "indicator-category-title": "Tobacco",
@@ -125,48 +151,60 @@
             },
 
             "reducing-salt-consumption": {
+              "code": "61a",
               "title": "Reducing salt consumption",
               "value": "not-present",
+              "who": "1(part)",
               "indicator-title": "not-present",
               "indicator-category": "food",
               "indicator-category-title": "Food",
               "indicator-description": ""
             },
             "trans-fats": {
+              "code": "61a",
               "title": "Trans-fats",
               "value": "under-development",
+              "who": "1(part)",
               "indicator-title": "under-development",
               "indicator-category": "food",
               "indicator-category-title": "food",
               "indicator-description": ""
             },
             "unhealthy-food-marketing-to-children": {
+              "code": "61a",
               "title": "Unhealthy food marketing to children",
               "value": "under-development",
+              "who": "1(part)",
               "indicator-title": "under-development",
               "indicator-category": "food",
               "indicator-category-title": "food",
               "indicator-description": ""
             },
             "food-fiscal-policies": {
+              "code": "61a", 
               "title": "Food fiscal policies",
               "value": "not-present",
+              "who": "1(part)",
               "indicator-title": "not-present",
               "indicator-category": "food",
               "indicator-category-title": "food",
               "indicator-description": ""
             },
             "healthy-food-policies-in-schools": {
+              "code": "61a",
               "title": "Healthy food policies in schools",
               "value": "medium",
+              "who": "1(part)",
               "indicator-title": "medium",
               "indicator-category": "food",
               "indicator-category-title": "food",
               "indicator-description": ""
             },
             "food-based-dietary-guidelines": {
+              "code": "61a",
               "title": "Food-based dietary guidelines",
               "value": "under-development",
+              "who": "1(part)",
               "indicator-title": "under-development",
               "indicator-category": "food",
               "indicator-category-title": "food",
@@ -174,8 +212,10 @@
             },
 
             "compulsory-physical-education-in-school-curriculum": {
+              "code": "61a",
               "title": "Compulsory physical education in school curriculum",
               "value": "high",
+              "who": "1(part)",
               "indicator-title": "high",
               "indicator-category": "physical-activity",
               "indicator-category-title": "Physical Activity",
@@ -183,8 +223,10 @@
             },
 
             "enforcement-of-laws-and-regulations-related-to-ncd-risk-factors": {
+              "code": "61a",
               "title": "Enforcement of laws and regulations related to NCD risk factors",
               "value": "under-development",
+              "who": "1(part)",
               "indicator-title": "under-development",
               "indicator-category": "enforcement",
               "indicator-category-title": "Enforcement",
@@ -192,48 +234,60 @@
             },
 
             "national-guidelines-for-care-of-main-ncds": {
+              "code": "61a",
               "title": "National guidelines for care of main NCDs",
               "value": "medium",
+              "who": "1(part)",
               "indicator-title": "medium",
               "indicator-category": "health-system",
               "indicator-category-title": "Health system response programmes",
               "indicator-description": ""
             },
             "essential-drugs": {
+              "code": "61a",
               "title": "Essential drugs",
               "value": "present",
+              "who": "1(part)",
               "indicator-title": "Present",
               "indicator-category": "health-system",
               "indicator-category-title": "Health system response programmes",
               "indicator-description": ""
             },
             "smoking-cessation": {
+              "code": "61a",
               "title": "Smoking cessation",
               "value": "low",
+              "who": "1(part)",
               "indicator-title": "low",
               "indicator-category": "health-system",
               "indicator-category-title": "Health system response programmes",
               "indicator-description": ""
             },
             "marketing-of-breast-milk-substitutes": {
+              "code": "61a",
               "title": "Marketing of breast milk substitutes",
               "value": "not-present",
+              "who": "1(part)",
               "indicator-title": "not-present",
               "indicator-category": "health-system",
               "indicator-category-title": "Health system response programmes",
               "indicator-description": ""
             },
             "baby-friendly-hospitals": {
+              "code": "61a",
               "title": "Baby friendly hospitals",
               "value": "present",
+              "who": "1(part)",
               "indicator-title": "Present",
               "indicator-category": "health-system",
               "indicator-category-title": "Health system response programmes",
               "indicator-description": ""
             },
             "maternity-leave-and-breastfeeding": {
+              "code": "61a",
               "title": "Maternity leave and breastfeeding",
               "value": "not-present",
+              "who": "1(part)",
               "indicator-title": "not-present",
               "indicator-category": "health-system",
               "indicator-category-title": "Health system response programmes",
@@ -241,32 +295,40 @@
             },
 
             "population-risk-factor-prevalence-surveys-adults": {
+              "code": "61a",
               "title": "Population risk factor prevalence surveys - adults",
               "value": "medium",
+              "who": "1(part)",
               "indicator-title": "medium",
               "indicator-category": "monitoring",
               "indicator-category-title": "Monitoring",
               "indicator-description": ""
             },
             "population-risk-factor-prevalence-surveys-youth": {
+              "code": "61a",
               "title": "Population risk factor prevalence surveys - youth",
               "value": "not-present",
+              "who": "1(part)",
               "indicator-title": "not-present",
               "indicator-category": "monitoring",
               "indicator-category-title": "Monitoring",
               "indicator-description": ""
             },
             "child-growth-monitoring": {
+              "code": "61a",
               "title": "Child growth monitoring",
               "value": "under-development",
+              "who": "1(part)",
               "indicator-title": "under-development",
               "indicator-category": "monitoring",
               "indicator-category-title": "Monitoring",
               "indicator-description": ""
             },
             "routine-cause-specific-mortality": {
+              "code": "61a",
               "title": "Routine cause-specific mortality",
               "value": "high",
+              "who": "1(part)",
               "indicator-title": "High",
               "indicator-category": "monitoring",
               "indicator-category-title": "Monitoring",
@@ -286,7 +348,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -294,7 +356,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -302,7 +364,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -551,7 +613,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -559,7 +621,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -567,7 +629,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -816,7 +878,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -824,7 +886,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -832,7 +894,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1081,7 +1143,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1089,7 +1151,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1097,7 +1159,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1346,7 +1408,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1354,7 +1416,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1362,7 +1424,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1611,7 +1673,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1619,7 +1681,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1627,7 +1689,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1876,7 +1938,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1884,7 +1946,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -1892,7 +1954,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2141,7 +2203,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2149,7 +2211,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2157,7 +2219,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2406,7 +2468,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2414,7 +2476,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2422,7 +2484,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2671,7 +2733,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2679,7 +2741,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2687,7 +2749,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2936,7 +2998,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2944,7 +3006,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -2952,7 +3014,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3201,7 +3263,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3209,7 +3271,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3217,7 +3279,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3466,7 +3528,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3474,7 +3536,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3482,7 +3544,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3731,7 +3793,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3739,7 +3801,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3747,7 +3809,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -3996,7 +4058,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4004,7 +4066,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4012,7 +4074,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4261,7 +4323,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4269,7 +4331,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4277,7 +4339,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4526,7 +4588,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4534,7 +4596,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4542,7 +4604,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4791,7 +4853,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4799,7 +4861,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -4807,7 +4869,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -5056,7 +5118,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -5064,7 +5126,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -5072,7 +5134,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -5321,7 +5383,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Under development",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -5329,7 +5391,7 @@
               "title": "Multi-sectoral NCD taskforce",
               "value": "under-development",
               "indicator-title": "Not present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
@@ -5337,7 +5399,7 @@
               "title": "Explicit NCD indicators and targets",
               "value": "not-present",
               "indicator-title": "not-present",
-              "indicator-category": "leadership",
+              "indicator-category": "leadership-and-governance",
               "indicator-category-title": "Leadership and governance",
               "indicator-description": ""
             },
