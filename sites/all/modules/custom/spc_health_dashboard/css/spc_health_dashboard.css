@@ -5,7 +5,7 @@
   font-display: swap;
   src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
 }
-.banner-with-title.health-dashboard {
+.banner-with-title.health-dashboard-header {
   background-image: url('../img/Fishes-background.png');
 }
 .banner-with-title.health-dashboard-header h1 {
@@ -220,6 +220,15 @@
 /**
  * Health Dashboard Category menu.
  */
+.health-dashboard-content h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.health-dashboard-content p {
+  font-size: 16px;
+  line-height: 24px;
+}
 .health-dashboard-categories {
   float: left;
   width: 48%;
@@ -233,6 +242,63 @@
 .health-dashboard-categories li {
   list-style: none;
 }
+.health-dashboard-categories h4 {
+  margin-bottom: 25px;
+}
+.health-dashboard-categories .nav__list {
+  margin-right: 30px;
+  padding-left: 0px;
+}
+.health-dashboard-categories .nav__list > li:before {
+  content: '';
+  display: block;
+  float: left;
+  margin-top: 12px;
+  margin-right: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #001E73;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+.health-dashboard-categories .nav__list .leadership-and-governance:before {
+  background-image: url(../img/leadership-and-governance.svg);
+  background-size: 60%;
+}
+.health-dashboard-categories .nav__list .tobacco:before {
+  background-image: url(../img/tobacco.svg);
+  background-size: 60%;
+}
+.health-dashboard-categories .nav__list .wrapper:before {
+  background-image: url(../img/tobacco.svg);
+  background-size: 60%;
+}
+.health-dashboard-categories .nav__list .alcohol:before {
+  background-image: url(../img/alcohol.svg);
+  background-size: 60%;
+}
+.health-dashboard-categories .nav__list .food:before {
+  background-image: url(../img/food.svg);
+  background-size: 60%;
+}
+.health-dashboard-categories .nav__list .physical-activity:before {
+  background-image: url(../img/physical-activity.svg);
+  background-size: 60%;
+}
+.health-dashboard-categories .nav__list .enforcement:before {
+  background-image: url(../img/enforcement.svg);
+  background-size: 60%;
+}
+.health-dashboard-categories .nav__list .health-system:before {
+  background-image: url(../img/health-system.svg);
+  background-size: 60%;
+}
+.health-dashboard-categories .nav__list .monitoring:before {
+  background-image: url(../img/monitoring.svg);
+  background-size: 60%;
+}
 .health-dashboard-categories a,
 .health-dashboard-categories label {
   display: block;
@@ -240,7 +306,6 @@
   color: black;
   -webkit-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
-  margin-bottom: 10px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -250,21 +315,38 @@
   align-items: center;
   color: #3B3B3B;
 }
-.health-dashboard-categories a:first-child,
-.health-dashboard-categories label:first-child {
-  margin-top: 20px;
+.health-dashboard-categories a .wrapper-label,
+.health-dashboard-categories label .wrapper-label {
+  margin-top: 10px;
 }
 .health-dashboard-categories a:focus,
 .health-dashboard-categories label:focus,
 .health-dashboard-categories a:hover,
 .health-dashboard-categories label:hover {
   color: rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+}
+.health-dashboard-categories label.first-level {
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.health-dashboard-categories label.first-level a {
+  padding-top: 2px;
+}
+.health-dashboard-categories label.first-level span {
+  border: 1px solid #00C6EC;
+  width: 26px;
+  border-radius: 100%;
+  padding: 2px 6px 0px;
+}
+.health-dashboard-categories label.first-level svg {
+  color: #00C6EC;
 }
 .health-dashboard-categories label {
   cursor: pointer;
 }
 .health-dashboard-categories .group-list {
-  padding-left: 0px;
+  padding-left: 45px;
 }
 .health-dashboard-categories .group-list svg {
   margin-left: 7px;
@@ -276,7 +358,7 @@
 .health-dashboard-categories .group-list a,
 .health-dashboard-categories .group-list label {
   margin: 0px;
-  padding: 0px 0px 0px 2rem;
+  padding: 0px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 300;
@@ -288,11 +370,29 @@
 .health-dashboard-categories .group-list label.indicator {
   font-family: Montserrat;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 18px;
   line-height: 36px;
   color: #3B3B3B;
   padding-left: 0px;
+}
+@media (max-width: 767px) {
+  .health-dashboard-categories .group-list a.indicator,
+  .health-dashboard-categories .group-list label.indicator {
+    justify-content: space-between;
+  }
+  .health-dashboard-categories .group-list a.indicator svg,
+  .health-dashboard-categories .group-list label.indicator svg {
+    margin-right: 16px;
+  }
+}
+.health-dashboard-categories .group-list a.subcategory,
+.health-dashboard-categories .group-list label.subcategory {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
 }
 .health-dashboard-categories .group-list a:focus,
 .health-dashboard-categories .group-list label:focus,
@@ -352,6 +452,11 @@
   transition: transform 0.65s ease;
 }
 .health-dashboard-categories .nav__list input[type=checkbox]:checked + label > svg {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.health-dashboard-categories .nav__list input[type=checkbox]:checked + label > span svg {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -662,7 +767,7 @@
   color: #000000;
 }
 .health-dashboard-countries h4 {
-  margin-bottom: -10px;
+  margin-bottom: 0px;
 }
 @media (max-width: 767px) {
   .health-dashboard-countries h4 {

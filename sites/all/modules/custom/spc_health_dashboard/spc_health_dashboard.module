@@ -318,7 +318,7 @@ function spc_health_dashboard_update_countries() {
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'American Samoa', 
-      '#abbr' => 'AS',
+      '#abbr' => NULL,
     ],
     'commonwealth-of-the-northern-mariana-islands' => [ //in JSON with default data.
       '#icon_big' => NULL,
@@ -330,7 +330,7 @@ function spc_health_dashboard_update_countries() {
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Cook Islands',
-      '#abbr' => 'CI',
+      '#abbr' => NULL,
     ],
     'federated-states-of-micronesia' => [ //in JSON with default data.
       '#icon_big' => NULL,
@@ -348,7 +348,7 @@ function spc_health_dashboard_update_countries() {
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'French Polynesia',
-      '#abbr' => 'FP',
+      '#abbr' => NULL,
     ],
     'guam' => [ //in JSON with default data.
       '#icon_big' => NULL,
@@ -378,7 +378,7 @@ function spc_health_dashboard_update_countries() {
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'New Caledonia',
-      '#abbr' => 'NC',
+      '#abbr' => NULL,
     ],
     'palau' => [  //in JSON with default data.
       '#icon_big' => NULL,
@@ -420,7 +420,7 @@ function spc_health_dashboard_update_countries() {
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Solomon Islands',
-      '#abbr' => 'SI',
+      '#abbr' => NULL,
     ],
     'tuvalu' => [ //in JSON with default data.
       '#icon_big' => NULL,
@@ -438,7 +438,7 @@ function spc_health_dashboard_update_countries() {
       '#icon_big' => NULL,
       '#icon_small' => NULL,
       '#title' => 'Wallis and Futuna',
-      '#abbr' => 'WF',
+      '#abbr' => NULL,
     ],
   ];
 

@@ -70,7 +70,7 @@ function spc_health_dashboard_home_content() {
  * Summary data array.
  */
 function health_dashboard_chart_summary($countries_data){
-  $summary = array();
+  $summary = [];
   
   foreach($countries_data as $country => $data){
     foreach($data['indicators'] as $key => $indicator){
@@ -95,9 +95,9 @@ function health_dashboard_chart_summary($countries_data){
   $summary_filtred = [];
   foreach($summary as $key => $detales){
     $count = 0;
-    $count = $detales['present'] + $detales['under-development'] + $detales['not-present'];
+    @$count = $detales['present'] + $detales['under-development'] + $detales['not-present'];
 
-    $summary_filtred[] = [
+    @$summary_filtred[] = [
       'indicator' => ucfirst(str_replace('-', ' ', $key)),
       'present' => ($detales['present']/$count) * 100,
       'under-development' => ($detales['under-development']/$count) * 100,
