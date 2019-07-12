@@ -525,6 +525,111 @@
     }
 }
 
+.ui-widget,
+.ui-dialog-content {
+    padding: 0 !important;
+    border-color: #fff;
+    border-radius: 20px;
+}
+.ui-dialog {
+    .ui-dialog-titlebar {
+        background: none;
+        border: none;
+        width: 20px;
+        height: 20px;
+        position: absolute !important;
+        right: 0;
+        top: 10px;
+        z-index: 10;
+    }
+    .ui-dialog-titlebar-close {
+        background-image: url(../img/close.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-color: #fff;
+        margin-right: 15px;
+        margin-top: 0px;
+        border: none;
+    }
+    .ui-dialog-titlebar-close:focus{
+        border: none;
+    }
+    .country-detales {
+        background: #F8F8F8;
+        height: 100%;
+    }
+    h4{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        margin: 20px 0px;
+    }
+    .status-strength {
+        border: 1px solid;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 110px;
+        height: 20px;
+    } 
+    .not-present{
+        background: rgba(255, 0, 0, 0.5);
+        border: 1px solid #FF0000;
+    }
+    .under-development{
+        background: rgba(255, 192, 0, 0.5);
+        border: 1px solid #FFC000;
+    }
+    .present {
+        background: rgba(207, 255, 111, 0.7);
+        border: 1px solid #CFFF6F;
+    }
+    .low{
+        background: rgba(121, 255, 112, 0.7);
+        border: 1px solid #79FF70;
+        background-image: url(../img/low.svg);
+        background-repeat: no-repeat;
+        background-size: 15%;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 50%;
+    }
+    .medium{
+        background: rgba(61, 203, 45, 0.7);
+        border: 1px solid #3DCB2D;
+        background-image: url(../img/medium.svg);
+        background-repeat: no-repeat;
+        background-size: 35%;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 50%;        
+    }
+    .high{
+        background: rgba(31, 102, 23, 0.7);
+        border: 1px solid #1F6617;
+        background-image: url(../img/high.svg);
+        background-repeat: no-repeat;
+        background-size: 55%;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 50%;        
+    }
+    p.indicator-title {
+        margin-top: -15px;
+    }
+    .map{
+        background-image: url(../img/map/palau.svg);
+        background-size: 40%;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        width: auto;
+        height: 80%;
+    }
+}
+
 .health-dashboard-countries {
   float: left;
   width: 50%;
