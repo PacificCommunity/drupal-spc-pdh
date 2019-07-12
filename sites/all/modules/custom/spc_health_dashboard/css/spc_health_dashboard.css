@@ -754,7 +754,7 @@
 }
 @media (max-width: 767px) {
   .health-dashboard-countries a img {
-    margin-bottom: 7px;
+    margin-bottom: 3px;
   }
 }
 .health-dashboard-countries a span {
@@ -765,6 +765,12 @@
   line-height: 22px;
   text-align: center;
   color: #000000;
+}
+@media (max-width: 767px) {
+  .health-dashboard-countries a span {
+    font-size: 13px;
+    line-height: 13px;
+  }
 }
 .health-dashboard-countries h4 {
   margin-bottom: 0px;
