@@ -81,7 +81,8 @@
                 <p id="indicator-text" class="text"></p>
               </div>
           </div>
-          <div id="map" class="map <?php print $data['country_id']; ?>"></div>
+          <?php $map = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/maps/' . $data['country_id'] . '.svg';?>
+          <div id="map" class="map <?php print $data['country_id']; ?>" style="background-image: url(<?php print $map; ?>)"></div>
       </div>
       <div class="description-detales col-sm-7">
         <h4><?php print t('Description'); ?></h4>
