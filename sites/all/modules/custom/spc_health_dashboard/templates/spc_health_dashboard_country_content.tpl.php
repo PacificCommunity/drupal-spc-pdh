@@ -11,10 +11,10 @@
         </div>
     </div>    
 </div>
+
 <div class="health-country-categories">
   <h4 class="block-title"><?php print t('NCD Response Measures');?></h4>
-  
-  
+
   <?php foreach ($data['categories'] as $key => $category): ?>
   <div class="block-indicator-group">
     <?php if ($category['#wrapper']) $category['#title'] .= ' - ' . $category['#wrapper']; ?>
@@ -44,9 +44,12 @@
           </div>
           <div class="col-sm-3">
             <h6><?php print t('Status and strength'); ?></h6>    
-            <?php foreach($data['indicators'] as $indicator): ?>
+            <?php foreach($data['indicators'] as $id => $indicator): ?>
                 <?php if ($key == $indicator['indicator-category']): ?>
-                  <p class="status-strength <?php print $indicator['value'] ?>"></p>
+                  <p class="status-strength <?php print $indicator['value'] ?>"
+                     data-value="<?php print $indicator['value']; ?>"
+                     data-category="<?php print $indicator['indicator-category']; ?>"
+                     data-indicator="<?php print $id; ?>"></p>
                 <?php endif; ?> 
             <?php endforeach;?>
           </div>
@@ -63,5 +66,88 @@
     
   </div>
   <?php endforeach; ?>
+  
+  <div class="indicator-popup">
+      <div class="country-detales col-sm-5">
+          <h4><?php print $data['country']; ?></h4>
+          <div class="content clearfix">
+              <p class="indicator-title"></p>
+              <div class="col-sm-4">
+                <p id="indicator-value"></p>
+              </div>
+              <div class="col-sm-8">
+                <p id="indicator-text"></p>
+              </div>
+          </div>
+          <div id="map" class="map <?php print $data['country_id']; ?>"></div>
+      </div>
+      <div class="description-detales col-sm-7">
+        <h4><?php print t('Description'); ?></h4>
+          <div class="content detales">
+              
+              <div id="not-present" class="clearfix">
+                  <div class="col-sm-3">
+                    <p class="status-strength not-present"></p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text"></p>
+                  </div>
+              </div>
+              
+              <div id="under-development" class="clearfix">
+                  <div class="col-sm-3">
+                    <p class="status-strength under-development"></p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text"></p>
+                  </div>
+              </div>
+              
+              <div id="present" class="clearfix">
+                  <div class="col-sm-3">
+                    <p class="status-strength present"></p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text"></p>
+                  </div>
+              </div>
+              
+              <div id="low" class="clearfix">
+                  <div class="col-sm-3">
+                    <p class="status-strength low"></p>
+                  </div>  
+                  <div class="col-sm-9">
+                    <p class="text"></p>
+                  </div>
+              </div>
+              
+              <div id="medium" class="clearfix">
+                  <div class="col-sm-3">
+                    <p class="status-strength medium"></p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text"></p>
+                  </div>
+              </div>
+              
+              <div id="high" class="clearfix">
+                  <div class="col-sm-3">
+                    <p class="status-strength high"></p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text"></p>
+                  </div>
+              </div>
+              <div id="not-applicable" class="clearfix">
+                  <div class="col-sm-3">
+                    <p class="status-strength not-applicable"></p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text"></p>
+                  </div>
+              </div>
+          </div>        
+      </div>
+  </div>
   
 </div>

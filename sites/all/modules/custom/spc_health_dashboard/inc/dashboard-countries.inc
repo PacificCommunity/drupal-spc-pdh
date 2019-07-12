@@ -43,11 +43,20 @@ function spc_health_dashboard_country_content($country){
     
     if ($country_data['id'] == $country){
       $data['title'] = $country_data['title'] . t(' - summary of status of indicators across the categories&nbsp(%)');
+      $data['country'] = $country_data['title'];
+      $data['country_id'] = $country_data['id'];
       $data['indicators'] = $country_data['indicators'];
       $data['categories'] = variable_get('health_dashboard_categories_list', []);
       $country_chart = _health_dashboard_country_chart($country_data['indicators']);
     }
     
+  }
+  
+  $indicator_detales = [];
+  
+  if ($indicator_detales = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/indicators.json')) {
+    $indicator_detales = json_decode($indicator_detales, TRUE);
+    drupal_add_js(array('spc_health_chart' => array('indicator_detales' => $indicator_detales)), array('type' => 'setting'));
   }
 
   drupal_add_js(array('spc_health_chart' => array('summary_chart' => $country_chart)), array('type' => 'setting'));

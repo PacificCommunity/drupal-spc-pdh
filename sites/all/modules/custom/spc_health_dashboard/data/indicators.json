@@ -1,0 +1,758 @@
+{
+    
+    "multi-sectoral-ncd-taskforce": {
+      "title": "Multi-sectoral NCD taskforce",
+      "code": "G1a",
+      "who": "No Equlvolent",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      },  
+      "indicator-category": "leadership-and-governance",
+      "indicator-category-title": "Leadership and governance",
+      "indicator-description": "A multi-sectoral taskforce is operating, reports regularly,is inclusive of all relevant stakeholders, and is catalysing and monitoring actions on NCDs"
+    },
+    
+    "national-strategy-addressing-ncds-and-risk-factors": {
+      "code": "G1b",      
+      "title": "National strategy addressing NCDs and risk factors",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "4",   
+      "indicator-title": "Not present",
+      "indicator-category": "leadership-and-governance",
+      "indicator-category-title": "Leadership and governance",
+      "indicator-description": ""
+    },
+    
+    "explicit-ncd-indicators-and-targets": {
+      "code": "G1c",      
+      "title": "Explicit NCD indicators and targets",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",      
+      "indicator-title": "Present",
+      "indicator-category": "leadership-and-governance",
+      "indicator-category-title": "Leadership and governance",
+      "indicator-description": ""
+    },
+
+    "tobacco-excise-taxes": {
+      "code": "61a",
+      "title": "Multi-sectoral NCD taskforce",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "medium",
+      "indicator-category": "tobacco",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+    
+    "smoke-free-environments": {
+      "code": "61a",
+      "title": "Smoke-free environments",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "high",
+      "indicator-category": "tobacco",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+    
+    "tobacco-health-warnings": {
+      "code": "61a",
+      "title": "Tobacco health warnings",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "not-present",
+      "indicator-category": "tobacco",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+    
+    "tobacco-advertising-promotion-sponsorship": {
+      "code": "61a",
+      "title": "Tobacco advertising, promotion and sponsorship",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "Present",
+      "indicator-category": "tobacco",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+    "tobacco-sales-and-licencing": {
+      "code": "61a",
+      "title": "Tobacco sales and licencing",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "high",
+      "indicator-category": "tobacco",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+    "tobacco-industry-interference": {
+      "code": "61a",
+      "title": "Tobacco industry interference",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",  
+      "indicator-title": "not-present",
+      "indicator-category": "tobacco",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+
+    "alcohol-licencing-to-restrict-sales": {
+      "code": "61a",
+      "title": "Alcohol licencing to restrict sales",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "high",
+      "indicator-category": "alcohol",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+    "alcohol-advertising": {
+      "code": "61a",
+      "title": "Alcohol advertising",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "not-present",
+      "indicator-category": "alcohol",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+    "alcohol-taxation": {
+      "code": "61a",
+      "title": "Alcohol taxation",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "Present",
+      "indicator-category": "alcohol",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+    "drink-driving": {
+      "code": "61a",
+      "title": "Drink driving",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "low",
+      "indicator-category": "alcohol",
+      "indicator-category-title": "Tobacco",
+      "indicator-description": ""
+    },
+
+    "reducing-salt-consumption": {
+      "code": "61a",
+      "title": "Reducing salt consumption",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "not-present",
+      "indicator-category": "food",
+      "indicator-category-title": "Food",
+      "indicator-description": ""
+    },
+    "trans-fats": {
+      "code": "61a",
+      "title": "Trans-fats",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "under-development",
+      "indicator-category": "food",
+      "indicator-category-title": "food",
+      "indicator-description": ""
+    },
+    "unhealthy-food-marketing-to-children": {
+      "code": "61a",
+      "title": "Unhealthy food marketing to children",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "under-development",
+      "indicator-category": "food",
+      "indicator-category-title": "food",
+      "indicator-description": ""
+    },
+    "food-fiscal-policies": {
+      "code": "61a", 
+      "title": "Food fiscal policies",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "not-present",
+      "indicator-category": "food",
+      "indicator-category-title": "food",
+      "indicator-description": ""
+    },
+    "healthy-food-policies-in-schools": {
+      "code": "61a",
+      "title": "Healthy food policies in schools",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "medium",
+      "indicator-category": "food",
+      "indicator-category-title": "food",
+      "indicator-description": ""
+    },
+    "food-based-dietary-guidelines": {
+      "code": "61a",
+      "title": "Food-based dietary guidelines",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "under-development",
+      "indicator-category": "food",
+      "indicator-category-title": "food",
+      "indicator-description": ""
+    },
+
+    "compulsory-physical-education-in-school-curriculum": {
+      "code": "61a",
+      "title": "Compulsory physical education in school curriculum",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "high",
+      "indicator-category": "physical-activity",
+      "indicator-category-title": "Physical Activity",
+      "indicator-description": ""
+    },
+
+    "enforcement-of-laws-and-regulations-related-to-ncd-risk-factors": {
+      "code": "61a",
+      "title": "Enforcement of laws and regulations related to NCD risk factors",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "under-development",
+      "indicator-category": "enforcement",
+      "indicator-category-title": "Enforcement",
+      "indicator-description": ""
+    },
+
+    "national-guidelines-for-care-of-main-ncds": {
+      "code": "61a",
+      "title": "National guidelines for care of main NCDs",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "medium",
+      "indicator-category": "health-system",
+      "indicator-category-title": "Health system response programmes",
+      "indicator-description": ""
+    },
+    "essential-drugs": {
+      "code": "61a",
+      "title": "Essential drugs",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "Present",
+      "indicator-category": "health-system",
+      "indicator-category-title": "Health system response programmes",
+      "indicator-description": ""
+    },
+    "smoking-cessation": {
+      "code": "61a",
+      "title": "Smoking cessation",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "low",
+      "indicator-category": "health-system",
+      "indicator-category-title": "Health system response programmes",
+      "indicator-description": ""
+    },
+    "marketing-of-breast-milk-substitutes": {
+      "code": "61a",
+      "title": "Marketing of breast milk substitutes",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "not-present",
+      "indicator-category": "health-system",
+      "indicator-category-title": "Health system response programmes",
+      "indicator-description": ""
+    },
+    "baby-friendly-hospitals": {
+      "code": "61a",
+      "title": "Baby friendly hospitals",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "Present",
+      "indicator-category": "health-system",
+      "indicator-category-title": "Health system response programmes",
+      "indicator-description": ""
+    },
+    "maternity-leave-and-breastfeeding": {
+      "code": "61a",
+      "title": "Maternity leave and breastfeeding",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "not-present",
+      "indicator-category": "health-system",
+      "indicator-category-title": "Health system response programmes",
+      "indicator-description": ""
+    },
+
+    "population-risk-factor-prevalence-surveys-adults": {
+      "code": "61a",
+      "title": "Population risk factor prevalence surveys - adults",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "medium",
+      "indicator-category": "monitoring",
+      "indicator-category-title": "Monitoring",
+      "indicator-description": ""
+    },
+    "population-risk-factor-prevalence-surveys-youth": {
+      "code": "61a",
+      "title": "Population risk factor prevalence surveys - youth",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "not-present",
+      "indicator-category": "monitoring",
+      "indicator-category-title": "Monitoring",
+      "indicator-description": ""
+    },
+    "child-growth-monitoring": {
+      "code": "61a",
+      "title": "Child growth monitoring",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "under-development",
+      "indicator-category": "monitoring",
+      "indicator-category-title": "Monitoring",
+      "indicator-description": ""
+    },
+    "routine-cause-specific-mortality": {
+      "code": "61a",
+      "title": "Routine cause-specific mortality",
+      "values":{
+        "not_present" : "A multi-sectoral NCD taskforcecovering the 4 main NCD risk factors (tobacco, alcohol, nutrition, physical activity)has not been established, or is inactive (less than 2 meetingsin last 12 months).",
+        "under_development" : "There is evidence that a multi-sectoral NCD Taskforce is being established, ora taskforce exists and has had at least 2 meetings in the last 12 months but no public reports are available",
+        "present" : "Multi-sectoral NCD taskforce has had at least 2 meetings in last 12 months, and annual report (or equivalent) is available",
+        "low" : "As for <span class='green'></span>, and 1 of the items listed below",
+        "medium" : "As for <span class='green'></span>, and 2 of the items listed below",
+        "high" : "As for <span class='green'></span>, and 3 of the items listed below",
+        "not_applicable": [
+                "The taskforce is led by a Government Minister or Prime Minister",
+                "NCD taskforce demonstrates decision making, and monitors implementation and publicly documents its actions",
+                "Taskforce includes senior representation from Government sectors such as: Attorney General, and ministries of Agriculture, Communications, Customs and Excise, Education, Finance and Economic Planning, Health, Labour & Industry, Sport, National Statistics, Trade, Police, Urban Planning and National Statistics Office (at least 5).",
+                "Taskforce includes Civil Society and Non-Government Organisations",
+                "Platform has established mechanisms for engagement with the private sector (with conflicts of interest managed), EXCLUDINGthe tobacco industry. Private sector engagement can be through the taskforce or at national level."
+            ]   
+      }, 
+      "who": "1(part)",
+      "indicator-title": "High",
+      "indicator-category": "monitoring",
+      "indicator-category-title": "Monitoring",
+      "indicator-description": ""
+    }
+}
