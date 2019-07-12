@@ -630,8 +630,7 @@
   margin-top: 10px;
 }
 .ui-dialog .map {
-  background-image: url(../img/map/palau.svg);
-  background-size: 40%;
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 50%;
