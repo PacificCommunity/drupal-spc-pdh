@@ -24,97 +24,52 @@
     </div>    
 </div>
 
-
 <div class="health-dashboard-categories" style="display: none;">
+    <h4><?php echo t('NCD Response Measures') ?> </h4>
     <ul class="nav__list">
-        <li>
-            <input id="group-1" type="checkbox" hidden />
-            <label for="group-1"> First level</label><span class="fa fa-angle-down"></span>
+        <?php foreach ($data['categories'] as $key => $item): ?>
+        <li class="<?php echo $key ?>">
+            <input id="group-<?php echo $key ?>" type="checkbox" hidden />
+            <label for="group-<?php echo $key ?>"><?php echo $item['#title'] ?></label>
             <ul class="group-list">
-                <li><a href="#">1st level item</a></li>
-                <li>
-                    <input id="sub-group-1" type="checkbox" hidden />
-                    <label for="sub-group-1"><span class="fa fa-angle-right"></span> Second level</label>
-                    <ul class="sub-group-list">
-                        <li><a href="#">2nd level nav item</a></li>
-                        <li><a href="#">2nd level nav item</a></li>
-                        <li><a href="#">2nd level nav item</a></li>
-                        <li>
-                            <input id="sub-sub-group-1" type="checkbox" hidden />
-                            <label for="sub-sub-group-1"><span class="fa fa-angle-right"></span> Third level</label>
-                            <ul class="sub-sub-group-list">
-                                <li><a href="#">3rd level nav item</a></li>
-                                <li><a href="#">3rd level nav item</a></li>
-                                <li><a href="#">3rd level nav item</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+              <?php foreach ($item['#indicators'] as $key2 => $item2): ?>
+                <?php if (isset($item2['#indicators'])): ?>
+                  <li>
+                      <input id="sub-group-<?php echo $key2 ?>" type="checkbox" hidden />
+                      <label for="sub-group-<?php echo $key2 ?>" class="indicator"><?php echo $item2['#title'] ?><span class="fa fa-angle-down"></span></label>
+                        <ul class="sub-group-list">
+                        <?php foreach ($item2['#indicators'] as $key3 => $item3): ?>
+                            <li><a href="#"><?php echo $item3 ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                      </ul>
+                  </li>
+                <?php else: ?>
+                  <li>
+                      <input id="sub-group-<?php echo $key2 ?>" type="checkbox" hidden />
+                      <label for="sub-group-<?php echo $key2 ?>"><?php echo $item2 ?></label>
+                  </li>
+                <?php endif; ?>
+              <?php endforeach; ?>
             </ul>
         </li>
-        <li>
-            <input id="group-2" type="checkbox" hidden />
-            <label for="group-2">First level</label><span class="fa fa-angle-down"></span>
-            <ul class="group-list">
-                <li>
-                <li><a href="#">1st level item</a></li>
-                <li><a href="#">1st level item</a></li>
-                <input id="sub-group-2" type="checkbox" hidden />
-                <label for="sub-group-2"><span class="fa fa-angle-right"></span> Second level</label>
-                <ul class="sub-group-list">
-                    <li><a href="#">2nd level nav item</a></li>
-                    <li><a href="#">2nd level nav item</a></li>
-                    <li>
-                        <input id="sub-sub-group-2" type="checkbox" hidden />
-                        <label for="sub-sub-group-2"><span class="fa fa-angle-right"></span> Third level</label>
-                        <ul class="sub-sub-group-list">
-                            <li><a href="#">3rd level nav item</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <input id="group-3" type="checkbox" hidden />
-            <label for="group-3"><span class="fa fa-angle-right"></span> First level</label>
-            <ul class="group-list">
-                <li>
-                <li><a href="#">1st level item</a></li>
-                <li><a href="#">1st level item</a></li>
-                <input id="sub-group-3" type="checkbox" hidden />
-                <label for="sub-group-3"><span class="fa fa-angle-right"></span> Second level</label>
-                <ul class="sub-group-list">
-                    <li><a href="#">2nd level nav item</a></li>
-                    <li><a href="#">2nd level nav item</a></li>
-                    <li><a href="#">2nd level nav item</a></li>
-                    <li>
-                        <input id="sub-sub-group-3" type="checkbox" hidden />
-                        <label for="sub-sub-group-3"><span class="fa fa-angle-right"></span> Third level</label>
-                        <ul class="sub-sub-group-list">
-                            <li><a href="#">3rd level nav item</a></li>
-                            <li><a href="#">3rd level nav item</a></li>
-                            <li><a href="#">3rd level nav item</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <input id="group-4" type="checkbox" hidden />
-            <label for="group-4"><span class="fa fa-angle-right"></span> First level</label>
-            <ul class="group-list">
-                <li>
-                <li><a href="#">1st level item</a></li>
-                <input id="sub-group-4" type="checkbox" hidden />
-                <label for="sub-group-4"><span class="fa fa-angle-right"></span> Second level</label>
-                <ul class="sub-group-list">
-                    <li><a href="#">2nd level nav item</a></li>
-                    <li><a href="#">2nd level nav item</a></li>
-                </ul>
-                </li>
-            </ul>
-        </li>
+        <?php endforeach; ?>
     </ul>
+</div>
+
+<div class="health-dashboard-countries">
+    <h4><?php echo t('Pacific island countries') ?></h4>
+  <?php foreach ($data['countries'] as $key => $item): ?>
+    <?php echo $key == 0 ? '' : '<div class="delimiter">&gt;</div>' ?>
+      <a class="one-country <?php echo $key ?>" href="<?php echo HEALTH_DASHBOARD_URL . '/country/' . $key ?>" title="<?php echo $item['#title'] ?>">
+          <img src="/<?php echo $data['flag_base_path'] . '/' . $key . '.svg' ?>" alt="<?php echo $item['#title'] ?>"><br>
+          <span>
+              <?php if ($item['#abbr']): ?>
+                <?php echo $item['#abbr'] ?>
+              <?php else: ?>
+                <?php echo $item['#title'] ?>
+              <?php endif ?>
+          </span>
+      </a>
+  <?php endforeach; ?>
 </div>

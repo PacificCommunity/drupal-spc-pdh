@@ -24,23 +24,42 @@ function spc_health_dashboard_home_page() {
 /**
  * Returns dashboard home content template.
  *
- * @return array
+ * @return string
  * Content data array.
+ * @throws \Exception
  */
-function spc_health_dashboard_home_content(){
-  $data = array();
-  
+function spc_health_dashboard_home_content() {
+  $data = [];
+
   $health_dashboard_data = get_health_dashboard_data();
-  
+
   $spc_health_chart = health_dashboard_chart_summary($health_dashboard_data['countries-data']);
-  drupal_add_js(array('spc_health_chart' => array('summary_chart' => $spc_health_chart)), array('type' => 'setting'));
-  
+  drupal_add_js(['spc_health_chart' => ['summary_chart' => $spc_health_chart]], ['type' => 'setting']);
+
   $data['background'] = $health_dashboard_data['home-page']['background'];
   $data['methods'] = $health_dashboard_data['home-page']['methods'];
-  $data['chart']  = $health_dashboard_data['home-page']['chart'];
-  
-  $content = theme('spc_health_dashboard_home_content', array('data' => $data));
-  
+  $data['chart'] = $health_dashboard_data['home-page']['chart'];
+  $data['countries'] = variable_get('health_dashboard_countries', []);
+  $data['flag_base_path'] = drupal_get_path('module', 'spc_health_dashboard') . '/img/flags';
+  $categories = variable_get('health_dashboard_categories_list', []);
+  $category_menu = [];
+  foreach ($categories as $key => $value) {
+    if ($value['#wrapper']) {
+      $categories[$key]['#wrapper'] = FALSE;
+      $indicators[$key] = $value;
+      $category_menu['wrapper'] = [
+        '#title' => $value['#wrapper'],
+        '#indicators' => $indicators,
+      ];
+    }
+    else {
+      $category_menu[$key] = $categories[$key];
+    }
+  }
+  $data['categories'] = $category_menu;
+
+  $content = theme('spc_health_dashboard_home_content', ['data' => $data]);
+
   return $content;
 }
 
