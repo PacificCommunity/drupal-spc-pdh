@@ -24,22 +24,38 @@
     </div>    
 </div>
 
-<div class="health-dashboard-categories" style="display: none;">
+<div class="health-dashboard-categories">
     <h4><?php echo t('NCD Response Measures') ?> </h4>
     <ul class="nav__list">
         <?php foreach ($data['categories'] as $key => $item): ?>
         <li class="<?php echo $key ?>">
             <input id="group-<?php echo $key ?>" type="checkbox" hidden />
-            <label for="group-<?php echo $key ?>"><?php echo $item['#title'] ?></label>
+            <label for="group-<?php echo $key ?>" class="first-level">
+                <?php if ($key != 'wrapper'): ?>
+                <a href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key ?>">
+                  <?php echo $item['#title'] ?>
+                </a>
+                <?php else: ?>
+                    <?php echo $item['#title'] ?>
+                <?php endif; ?>
+                <span class="category-toggle">
+                    <span class="fa fa-angle-down"></span>
+                </span>
+            </label>
             <ul class="group-list">
               <?php foreach ($item['#indicators'] as $key2 => $item2): ?>
                 <?php if (isset($item2['#indicators'])): ?>
                   <li>
                       <input id="sub-group-<?php echo $key2 ?>" type="checkbox" hidden />
-                      <label for="sub-group-<?php echo $key2 ?>" class="indicator"><?php echo $item2['#title'] ?><span class="fa fa-angle-down"></span></label>
+                      <label for="sub-group-<?php echo $key2 ?>" class="indicator">
+                        <a class="subcategory" href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key2 ?>">
+                            <?php echo $item2['#title'] ?>
+                        </a>
+                        <span class="fa fa-angle-down"></span>
+                      </label>
                         <ul class="sub-group-list">
                         <?php foreach ($item2['#indicators'] as $key3 => $item3): ?>
-                            <li><a href="#"><?php echo $item3 ?></a>
+                            <li><a href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key2 . '/' . $key3 ?>"><?php echo $item3 ?></a>
                             </li>
                         <?php endforeach; ?>
                       </ul>
@@ -47,7 +63,11 @@
                 <?php else: ?>
                   <li>
                       <input id="sub-group-<?php echo $key2 ?>" type="checkbox" hidden />
-                      <label for="sub-group-<?php echo $key2 ?>"><?php echo $item2 ?></label>
+                      <label for="sub-group-<?php echo $key2 ?>">
+                        <a href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key . '/' . $key2 ?>">
+                            <?php echo $item2 ?>
+                        </a>
+                      </label>
                   </li>
                 <?php endif; ?>
               <?php endforeach; ?>
