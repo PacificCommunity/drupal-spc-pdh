@@ -524,6 +524,7 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
+  cursor: pointer;
 }
 .block-indicator-group .category-title:before {
   content: '';
