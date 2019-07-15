@@ -2,45 +2,46 @@
     Drupal.behaviors.spcHealthDashboard = {
         attach: function (context, settings) {
         //start context
- 
-        const data = settings.spc_health_chart.summary_chart;
-
-        if(data[0].indicator == 'Leadership and governance'){
-            data[0].indicator = 'Leadership';
-        }
-
-        let dataset = d3.layout.stack()(["present", "under-development", "not-present"].map(function(item) {
-          return data.map(function(d) {
-            return {x: d.indicator, y: +d[item]};
-          });
-        }));
-        
-        function setToolText(svg, className){
-            return svg
-                .append("text")
-                .attr("class", className)
-                .attr("width", 30)
-                .attr("height", 30)
-                .attr("fill", "#000")
-                .attr("text-anchor", "start")
-                .style("opacity", 0);
-        }
-
-        function setToolBox(svg){
-            return svg
-                .append("rect")   
-                .attr("class", "tipbox")
-                .attr("height", 40)
-                .attr("rx", 10)
-                .attr("ry", 10)
-                .attr("fill", "#fff")
-                .attr("filter", "url(#dropshadow)")
-                .style("opacity", 0);
-        }
         
         if ($('.stacked-chart-global').length){
+ 
+            const data = settings.spc_health_chart.summary_chart;
+
+            if(data[0].indicator == 'Leadership and governance'){
+                data[0].indicator = 'Leadership';
+            }
+
+            let dataset = d3.layout.stack()(["present", "under-development", "not-present"].map(function(item) {
+              return data.map(function(d) {
+                return {x: d.indicator, y: +d[item]};
+              });
+            }));
+
+            function setToolText(svg, className){
+                return svg
+                    .append("text")
+                    .attr("class", className)
+                    .attr("width", 30)
+                    .attr("height", 30)
+                    .attr("fill", "#000")
+                    .attr("text-anchor", "start")
+                    .style("opacity", 0);
+            }
+
+            function setToolBox(svg){
+                return svg
+                    .append("rect")   
+                    .attr("class", "tipbox")
+                    .attr("height", 40)
+                    .attr("rx", 10)
+                    .attr("ry", 10)
+                    .attr("fill", "#fff")
+                    .attr("filter", "url(#dropshadow)")
+                    .style("opacity", 0);
+            }
+        
             const width = 900,
-                height = 400;
+                  height = 400;
 
             // Set x, y and colors
             let x = d3.scale.ordinal()
@@ -294,6 +295,30 @@
                 popup.find('.country-detales').height(popup.height());
             });            
         }
+        
+        $('.categories-switcher p.next ').on('click', function(){
+            let cat = $('.category-item');
+            let index = 0;
+            cat.each(function(i){
+                if($(this).hasClass('current')){;
+                    index = i;
+                }
+            });
+            let next = $(cat[index+1]).find('a');
+            window.location.href = next.attr('href');
+        });
+        
+        $('.categories-switcher p.prev ').on('click', function(){
+            let cat = $('.category-item');
+            let index = 0;
+            cat.each(function(i){
+                if($(this).hasClass('current')){;
+                    index = i;
+                }
+            });
+            let next = $(cat[index-1]).find('a');
+            window.location.href = next.attr('href');
+        });        
                         
         //end context
         }

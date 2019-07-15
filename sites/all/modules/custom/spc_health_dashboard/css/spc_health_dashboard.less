@@ -833,3 +833,107 @@
   }
 }
 
+.category-countries {
+    .country-indicators{
+        display: block;
+    }
+    .country-item {
+        margin-bottom: 5px;
+    }
+    .country-flag,
+    .country-name,
+    .status-strength {
+        float: left;
+        margin-right: 10px;
+    }
+    .country-flag {
+        width: 20px;
+    }
+    .country-name {
+        width: 100px;
+    }
+    .country-name a{
+        font-size: 10px;
+        line-height: 22px;
+        color: #000000;
+    }
+    .countries-names,
+    .country-indicators{
+        float: left;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 14px;
+    }
+    .countries-names {
+        width: 140px;
+    }
+    .indicator-title {
+        float: left;
+        width: 110px;
+        text-align: center;
+        margin-right: 10px;
+    }
+    .indicator-title a{
+        color: #000000;
+    }    
+}
+.category-countries h4,
+.category-detales h4{
+    font-size: 16px;
+    line-height: 24px;
+}
+.categories-switcher {
+    margin: 20px auto;
+    max-width: 950px;
+}
+.categories-switcher {
+    .category-item {
+        display: inline-block;
+        margin-right: 20px;
+        max-width: 150px;
+        text-align: center;
+    }
+    .category-item a{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
+    } 
+    .current {
+        border-bottom: 2px solid #001E73;
+        padding-bottom: 5px;
+    }
+    .current a{
+        font-weight: 600;
+        color: #001E73;
+    }
+    p.prev,
+    p.next {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+
+        margin: 0px;
+    }
+        p.prev:before,
+        p.next:before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 200%;
+            position: absolute;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        p.prev:before{
+            background-image: url(../img/prev.svg);
+        }
+        p.next:before{
+            background-image: url(../img/next.svg);
+        }
+}
+

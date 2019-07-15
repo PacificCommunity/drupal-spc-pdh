@@ -819,4 +819,102 @@
     margin-bottom: 10px;
   }
 }
+.category-countries .country-indicators {
+  display: block;
+}
+.category-countries .country-item {
+  margin-bottom: 5px;
+}
+.category-countries .country-flag,
+.category-countries .country-name,
+.category-countries .status-strength {
+  float: left;
+  margin-right: 10px;
+}
+.category-countries .country-flag {
+  width: 20px;
+}
+.category-countries .country-name {
+  width: 100px;
+}
+.category-countries .country-name a {
+  font-size: 10px;
+  line-height: 22px;
+  color: #000000;
+}
+.category-countries .countries-names,
+.category-countries .country-indicators {
+  float: left;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+.category-countries .countries-names {
+  width: 140px;
+}
+.category-countries .indicator-title {
+  float: left;
+  width: 110px;
+  text-align: center;
+  margin-right: 10px;
+}
+.category-countries .indicator-title a {
+  color: #000000;
+}
+.category-countries h4,
+.category-detales h4 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.categories-switcher {
+  margin: 20px auto;
+  max-width: 950px;
+}
+.categories-switcher .category-item {
+  display: inline-block;
+  margin-right: 20px;
+  max-width: 150px;
+  text-align: center;
+}
+.categories-switcher .category-item a {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+.categories-switcher .current {
+  border-bottom: 2px solid #001E73;
+  padding-bottom: 5px;
+}
+.categories-switcher .current a {
+  font-weight: 600;
+  color: #001E73;
+}
+.categories-switcher p.prev,
+.categories-switcher p.next {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 0px;
+}
+.categories-switcher p.prev:before,
+.categories-switcher p.next:before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200%;
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.categories-switcher p.prev:before {
+  background-image: url(../img/prev.svg);
+}
+.categories-switcher p.next:before {
+  background-image: url(../img/next.svg);
+}
 /*# sourceMappingURL=spc_health_dashboard.css.map */
