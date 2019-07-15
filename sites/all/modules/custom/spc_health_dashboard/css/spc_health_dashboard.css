@@ -150,6 +150,13 @@
   .health-dashboard-header .breadcrumbs {
     margin: 0px;
   }
+  .x.axis text {
+    transform: rotate(90deg);
+    text-anchor: start !important;
+  }
+  .stacked-chart-global {
+    padding-bottom: 60px !important;
+  }
 }
 @media (max-width: 550px) {
   .health-dashboard-header .breadcrumbs {
@@ -653,6 +660,7 @@
 .ui-dialog .country-detales {
   background: #F8F8F8;
   height: 100%;
+  overflow: hidden;
 }
 .ui-dialog h4 {
   font-weight: bold;
@@ -666,6 +674,14 @@
   border-radius: 10px;
   width: 110px;
   height: 20px;
+  margin: 10px 0;
+}
+.ui-dialog .not-applicable {
+  background: #FFFFFF;
+  border: 1px solid #C1C1C1;
+  box-sizing: border-box;
+  text-align: center;
+  color: #C1C1C1;
 }
 .ui-dialog .not-present {
   background: rgba(255, 0, 0, 0.5);
@@ -706,17 +722,39 @@
   background-position-x: 50%;
   background-position-y: 50%;
 }
-.ui-dialog p.indicator-title {
+.ui-dialog .indicator-title {
   margin-top: -15px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+.ui-dialog .text {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 10px;
 }
 .ui-dialog .map {
-  background-image: url(../img/map/palau.svg);
-  background-size: 40%;
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 50%;
   width: auto;
   height: 80%;
+}
+.ui-dialog span.green {
+  display: inline-block;
+  background: #CFFF6F;
+  border-radius: 2px;
+  width: 10px;
+  height: 10px;
+}
+.ui-dialog .country-flag {
+  float: left;
+  display: block;
+  margin-top: 23px;
+  margin-right: 10px;
+  width: 30px;
 }
 .health-dashboard-countries {
   float: left;
@@ -780,3 +818,4 @@
     margin-bottom: 10px;
   }
 }
+/*# sourceMappingURL=spc_health_dashboard.css.map */

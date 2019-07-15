@@ -69,6 +69,8 @@
   
   <div class="indicator-popup">
       <div class="country-detales col-sm-5">
+          <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/flags/' . $data['country_id'] . '.svg'?>
+          <img class="country-flag" src="<?php print $src; ?>" alt="<?php print $data['country']; ?>">
           <h4><?php print $data['country']; ?></h4>
           <div class="content clearfix">
               <p class="indicator-title"></p>
@@ -76,10 +78,11 @@
                 <p id="indicator-value"></p>
               </div>
               <div class="col-sm-8">
-                <p id="indicator-text"></p>
+                <p id="indicator-text" class="text"></p>
               </div>
           </div>
-          <div id="map" class="map <?php print $data['country_id']; ?>"></div>
+          <?php $map = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/maps/' . $data['country_id'] . '.svg';?>
+          <div id="map" class="map <?php print $data['country_id']; ?>" style="background-image: url(<?php print $map; ?>)"></div>
       </div>
       <div class="description-detales col-sm-7">
         <h4><?php print t('Description'); ?></h4>
@@ -140,7 +143,7 @@
               </div>
               <div id="not-applicable" class="clearfix">
                   <div class="col-sm-3">
-                    <p class="status-strength not-applicable"></p>
+                    <p class="status-strength not-applicable"><?php print t('N/A'); ?></p>
                   </div>
                   <div class="col-sm-9">
                     <p class="text"></p>

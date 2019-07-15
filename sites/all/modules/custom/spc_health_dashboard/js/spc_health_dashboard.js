@@ -5,6 +5,10 @@
  
         const data = settings.spc_health_chart.summary_chart;
 
+        if(data[0].indicator == 'Leadership and governance'){
+            data[0].indicator = 'Leadership';
+        }
+
         let dataset = d3.layout.stack()(["present", "under-development", "not-present"].map(function(item) {
           return data.map(function(d) {
             return {x: d.indicator, y: +d[item]};
@@ -193,6 +197,10 @@
                         "margin-right":"15px",
                         "margin-top": "0"
                     });
+                    $('.ui-widget-overlay').css({
+                        background: '#000',
+                        opacity: '0.5',
+                    });                    
                 }
             });
 
@@ -208,15 +216,24 @@
                     }
                 }
                 
+                let indicatorsArray = [];
                 let CurrentValue = '';
                 for (var key in CurrentIndicator.values){
+                    indicatorsArray[key] = CurrentIndicator.values[key]
                     if (key == dataValue){
                         CurrentValue = CurrentIndicator.values[key]
                     }
                 }
+                
+                let notApplicable = indicatorsArray['not-applicable'];
+                if (indicatorsArray['not-applicable'].length > 1){
+                    notApplicable = '';
+                    for (var item in indicatorsArray['not-applicable']){
+                        notApplicable += '<p>' + indicatorsArray['not-applicable'][item] + '</p>';
+                    }
+                } 
  
                 const popup = $('.indicator-popup');
-            
                 popup.parent()
                     .find('.indicator-title')
                     .html(CurrentIndicator.title);
@@ -230,10 +247,10 @@
                     .html(CurrentValue);
                 popup.parent()
                     .find('#not-present .text')
-                    .html(CurrentIndicator.values.not_present);
+                    .html(indicatorsArray['not-present']);
                 popup.parent()
                     .find('#under-development .text')
-                    .html(CurrentIndicator.values.under_development);
+                    .html(indicatorsArray['under-development']);
                 popup.parent()
                     .find('#present .text')
                     .html(CurrentIndicator.values.present);
@@ -248,8 +265,7 @@
                     .html(CurrentIndicator.values.high);
                 popup.parent()
                     .find('#not-applicable .text')
-                    .html(CurrentIndicator.values.not_applicable);
-            
+                    .html(notApplicable);
                 popup.parent()
                     .css({
                         "max-width": "1100px",
@@ -260,11 +276,18 @@
                     })
                     .end()
                     .dialog('open')
-            
                 popup.find('.country-detales').height(popup.height());
-            
             });
-        
+            
+            // on window resize run function
+            $(window).resize(function () {
+                const popup = $('.indicator-popup');
+                let Width = $(window).width(); 
+                $('.indicator-popup').dialog({
+                    width: Width/100 * 85,
+                });
+                popup.find('.country-detales').height(popup.height());
+            });            
         }
                         
         //end context
