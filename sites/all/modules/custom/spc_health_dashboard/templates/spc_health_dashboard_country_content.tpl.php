@@ -18,7 +18,7 @@
   <?php foreach ($data['categories'] as $key => $category): ?>
   <div class="block-indicator-group">
     <?php if ($category['#wrapper']) $category['#title'] .= ' - ' . $category['#wrapper']; ?>
-    <h4 class="category-title <?php print $key; ?>"><?php print $category['#title']; ?></h4>
+    <h4 class="toggle-lbl category-title <?php print $key; ?>"><?php print $category['#title']; ?></h4>
     
     <div class="toggle">
       <span class="arrow"></span>

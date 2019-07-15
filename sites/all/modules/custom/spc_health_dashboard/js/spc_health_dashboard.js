@@ -169,10 +169,15 @@
                 });            
         }
         
-        $('.toggle').on('click', function(e){
+        $('.toggle').add('.toggle-lbl').on('click', function(e){
             e.preventDefault();
             $(this).siblings('.helth-indicators').toggle(); 
-            $(this).find('.arrow').toggleClass('down');
+            if ($(this).hasClass('toggle')){
+                $(this).find('.arrow').toggleClass('down');                
+            } else if($(this).hasClass('toggle-lbl')) {
+                $(this).siblings('.toggle').find('.arrow').toggleClass('down');        
+            }
+
         });
         
         if ($('.indicator-popup').length){
