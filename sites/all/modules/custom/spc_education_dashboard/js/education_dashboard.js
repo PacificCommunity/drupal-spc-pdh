@@ -472,7 +472,12 @@
                     .delay(function (d) {return Math.random()*1000;})
                     .duration(1000)
                     .attr("y", function(d) { return y(d.value); })
-                    .attr("height", function(d) { return height - y(d.value); });
+                    .attr("height", function(d) {
+                        if (d.value == 0) {
+                            return height - y(1); 
+                        } 
+                        return height - y(d.value); 
+                    });
             }
 
             //GPD expenditure chart
@@ -617,7 +622,7 @@
                 
                 let attrY = function(chart4yearLiteracy) { 
                     let pos = 200;
-                    if (chart4yearLiteracy.percentage > 0){
+                    if (chart4yearLiteracy.percentage >= 0){
                         pos = y(chart4yearLiteracy.percentage)/2;
                     }
                     return pos; 
@@ -634,7 +639,7 @@
                 
                 let tipY = function(chart4yearLiteracy){
                     let pos = 0;
-                    if (chart4yearLiteracy.percentage > 0){
+                    if (chart4yearLiteracy.percentage >= 0){
                         pos = y(chart4yearLiteracy.percentage)/2 -30;
                     } else {
                         pos = y(chart4yearLiteracy.percentage)/2 - 10;
@@ -1696,10 +1701,10 @@
                     d3.select(".chart-" + id + " svg").remove();
                     svg = setGenderChartSvg(id, width, height, margin);
 
-                    var categoriesNames = chart13primary.map(function(d) { return d.country; });
-                    var rateNames = chart13primary[0].values.map(function(d) { return d.rate; });
+                    var categoriesNames = newData.map(function(d) { return d.country; });
+                    var rateNames = newData[0].values.map(function(d) { return d.rate; });
 
-                    setGenderChartDomains(chart13primary, categoriesNames, rateNames, x0, x1, y); 
+                    setGenderChartDomains(newData, categoriesNames, rateNames, x0, x1, y); 
 
                     svg.select('.y').transition().duration(500).delay(1300).style('opacity','1');
                     let tooltext = setToolText(svg, "tooltip-" + id);
