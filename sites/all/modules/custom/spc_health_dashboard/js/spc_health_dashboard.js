@@ -330,12 +330,16 @@
         $(window).on('load resize', function(){
             let Width = $(window).width(); 
             if (Width <= 550){
+                $('.category-content>h4').show();
+                $('.category-countries>h4').hide();
                 $('.category-countries.col-sm-6')
                     .width($('.container').width())
                     .css({
                         "overflow-x": "scroll"
                     });                
             } else {
+               $('.category-content>h4').hide();
+               $('.category-countries>h4').show(); 
                $('.category-countries.col-sm-6')
                     .width(500)
                     .css({
@@ -343,12 +347,16 @@
                     });
             }
             if (Width <= 980){
+                $('.category-content>h4').show();
+                $('.category-countries>h4').hide();
                 $('.category-countries.col-sm-12')
                     .width($('.container').width())
                     .css({
                         "overflow-x": "scroll"
                     });  
             } else {
+                $('.category-content>h4').hide();
+                $('.category-countries>h4').show();
                 $('.category-countries.col-sm-12')
                     .width(900)
                     .css({
