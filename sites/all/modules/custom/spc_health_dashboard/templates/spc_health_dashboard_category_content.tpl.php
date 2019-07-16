@@ -13,6 +13,7 @@
    ?> 
   <h4><?php print t('PICT ratings for Pacific NCD Dashboard '. $data['current_category']['#title'] . ' indicators'); ?></h4>
   <div class="category-countries <?php print $category_countries_class; ?>">
+      <h4><?php print t('PICT ratings for Pacific NCD Dashboard '. $data['current_category']['#title'] . ' indicators'); ?></h4>
 
       <div class="category-header clearfix">
           <div class="countries-names">
