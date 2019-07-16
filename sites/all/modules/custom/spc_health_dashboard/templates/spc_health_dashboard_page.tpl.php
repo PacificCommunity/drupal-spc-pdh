@@ -12,8 +12,6 @@
 </div>
 <div role="main" id="main-content" class="health-dashboard-content">
     <div class="container">
-      <?php print $subtitle; ?>
-      <br>
       <?php print $content; ?>
     </div>
 </div>

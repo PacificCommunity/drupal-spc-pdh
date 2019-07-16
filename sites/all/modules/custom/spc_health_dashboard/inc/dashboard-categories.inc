@@ -17,21 +17,80 @@ function spc_health_dashboard_pages($category, $indicator = NULL) {
   if (!isset($categories, $categories[$category])) {
     drupal_not_found();
   }
-  if ($indicator && !isset($categories[$category]['#indicators'][$indicator])) {
+  if ($indicator && !isset($categories[$category]['#indicators'][$indicator])) {     
     drupal_not_found();
   }
 
-  $indicator_name = '<h2>' . $category . '</h2>'; // Should be changed.
   if ($indicator) {
-    $indicator_name = '<h2>' . $indicator . '</h2>'; // Should be changed.
+     $content = spc_health_dashboard_indicator_content($indicator);
+  } else {
+    $content = spc_health_dashboard_category_content($category);
   }
+  
   return theme(
     'spc_health_dashboard_page',
     [
       'title' => t('Status of NCD policy and legislation in <br><strong>Pacific Island countries</strong> and territories'),
-      'content' => 'Hello Home dashboard',
+      'content' => $content,
       'breadcrumbs' => _category_breadcrumbs($category, $indicator),
-      'search' => 'Search',
-      'subtitle' => $indicator_name,
+      'search' => spc_health_dashboard_home_search(),
+      'subtitle' => '',
     ]);
+}
+
+
+/*
+ * 
+ */
+function spc_health_dashboard_category_content($category){
+  $data = [];
+  
+  $health_dashboard_data = get_health_dashboard_data();
+  
+  $indicator_detales = [];
+  
+  if ($indicator_detales = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/indicators.json')) {
+    $indicator_detales = json_decode($indicator_detales, TRUE);
+    $data['indicator_detales'] = $indicator_detales;
+    drupal_add_js(array('spc_health_chart' => array('indicator_detales' => $indicator_detales)), array('type' => 'setting'));
+  }
+  
+  if ($category_data = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/categories.json')) {
+    $category_data = json_decode($category_data, TRUE);
+    $data['category_data'] = $category_data[$category];
+    drupal_add_js(array('spc_health_chart' => array('category_data' => $category_data)), array('type' => 'setting'));
+  }
+  
+  $categories_list = variable_get('health_dashboard_categories_list');
+  
+  $current_category = $categories_list[$category];
+  $current_category['id'] = $category;
+  
+  $data['current_category'] = $current_category;
+  $data['categories_list'] = $categories_list;
+  $data['countries-data'] = $health_dashboard_data['countries-data'];
+  
+  $content = theme('spc_health_dashboard_category_content', array('data' => $data));
+  return $content;
+}
+
+/*
+ * 
+ */
+function spc_health_dashboard_indicator_content($indicator){
+  $data = [];
+  
+  $health_dashboard_data = get_health_dashboard_data();
+  
+  $indicator_detales = [];
+  
+  if ($indicator_detales = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/indicators.json')) {
+    $indicator_detales = json_decode($indicator_detales, TRUE);
+    drupal_add_js(array('spc_health_chart' => array('indicator_detales' => $indicator_detales)), array('type' => 'setting'));
+  }
+  
+  $data['current_indicator'] = $indicator;
+  
+  $content = theme('spc_health_dashboard_indicator_content', array('data' => $data));
+  return $content;
 }
