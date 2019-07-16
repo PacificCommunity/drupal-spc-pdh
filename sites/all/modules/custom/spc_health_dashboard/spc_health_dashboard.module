@@ -170,6 +170,7 @@ function process_health_json_file($element, &$form_state, $form) {
  * Validate handler for the custom form.
  */
 function spc_health_dashboard_form_validate($form, &$form_state) {
+  if ($form_state['values']['health_json_file']){
   $validators = [];
   if ($file_health_json = file_save_upload('health_json_file', $validators)) {
     $form_state['values']['health_json_file'] = $file_health_json;
@@ -177,6 +178,7 @@ function spc_health_dashboard_form_validate($form, &$form_state) {
   }
   else {
     form_set_error('file', 'No file was uploaded.');
+  }
   }
 }
 
@@ -238,6 +240,10 @@ function spc_health_dashboard_update_categories() {
       '#indicators' => [
         'tobacco-excise-taxes' => t('Tobacco excise taxes'),
         'smoke-free-environments' => t('Smoke-free environments'),
+        'tobacco-health-warnings' => t('Tobacco health warnings'),
+        'tobacco-advertising-promotion-sponsorship' => t('Tobacco advertising, promotion and sponsorship'),
+        'tobacco-sales-and-licencing' => t('Tobacco sales and licencing'),
+        'tobacco-industry-interference' => t('Tobacco industry interference'),        
       ],
     ],
     'alcohol' => [
@@ -522,7 +528,19 @@ function spc_health_dashboard_theme() {
         'data' => NULL,
       ],
       'template' => 'templates/spc_health_dashboard_country_content',
-    ],    
+    ],
+    'spc_health_dashboard_category_content' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+      'template' => 'templates/spc_health_dashboard_category_content',
+    ], 
+    'spc_health_dashboard_indicator_content' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+      'template' => 'templates/spc_health_dashboard_indicator_content',
+    ],     
   ];
 }
 
