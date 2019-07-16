@@ -253,6 +253,8 @@ function spc_health_dashboard_update_categories() {
       '#indicators' => [
         'alcohol-licencing-to-restrict-sales' => t('Alcohol licencing to restrict sales'),
         'alcohol-advertising' => t('Alcohol advertising'),
+        'alcohol-taxation' => t('Alcohol taxation'),
+        'drink-driving' => t('Drink driving'),
       ],
     ],
     'food' => [

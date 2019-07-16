@@ -51,7 +51,14 @@ function spc_health_dashboard_category_content($category){
   
   if ($indicator_detales = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/indicators.json')) {
     $indicator_detales = json_decode($indicator_detales, TRUE);
+    $data['indicator_detales'] = $indicator_detales;
     drupal_add_js(array('spc_health_chart' => array('indicator_detales' => $indicator_detales)), array('type' => 'setting'));
+  }
+  
+  if ($category_data = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/categories.json')) {
+    $category_data = json_decode($category_data, TRUE);
+    $data['category_data'] = $category_data[$category];
+    drupal_add_js(array('spc_health_chart' => array('category_data' => $category_data)), array('type' => 'setting'));
   }
   
   $categories_list = variable_get('health_dashboard_categories_list');
@@ -62,7 +69,6 @@ function spc_health_dashboard_category_content($category){
   $data['current_category'] = $current_category;
   $data['categories_list'] = $categories_list;
   $data['countries-data'] = $health_dashboard_data['countries-data'];
-  $data['indicator_detales'] = $indicator_detales;
   
   $content = theme('spc_health_dashboard_category_content', array('data' => $data));
   return $content;

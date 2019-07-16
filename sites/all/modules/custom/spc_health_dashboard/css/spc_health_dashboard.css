@@ -861,20 +861,36 @@
 .category-countries .indicator-title a {
   color: #000000;
 }
+.category-content > h4,
 .category-countries h4,
 .category-detales h4 {
   font-size: 16px;
   line-height: 24px;
 }
+.category-content > h4 {
+  padding: 10px;
+}
+.indicator-popup {
+  display: none;
+}
 .categories-switcher {
+  position: relative;
   margin: 20px auto;
-  max-width: 950px;
+  max-width: 90%;
+  padding: 0 50px;
+  overflow: hidden;
+}
+.categories-switcher .list {
+  display: block;
+  width: 850px;
+  margin: 0 auto;
 }
 .categories-switcher .category-item {
   display: inline-block;
   margin-right: 20px;
   max-width: 150px;
   text-align: center;
+  vertical-align: middle;
 }
 .categories-switcher .category-item a {
   font-weight: 300;
@@ -892,10 +908,11 @@
 }
 .categories-switcher p.prev,
 .categories-switcher p.next {
-  position: relative;
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
   display: inline-block;
+  background: linear-gradient(270deg, #FFFFFF 80%, rgba(255, 255, 255, 0) 102.54%);
   margin: 0px;
 }
 .categories-switcher p.prev:before,
@@ -910,11 +927,127 @@
   position: absolute;
   border-radius: 50%;
   cursor: pointer;
+  top: 10px;
+}
+.categories-switcher p.prev {
+  left: 0;
+  top: 0;
+}
+.categories-switcher p.next {
+  right: 0;
+  top: 0;
 }
 .categories-switcher p.prev:before {
   background-image: url(../img/prev.svg);
+  left: 10px;
 }
 .categories-switcher p.next:before {
   background-image: url(../img/next.svg);
+  right: 10px;
 }
-/*# sourceMappingURL=spc_health_dashboard.css.map */
+.category-countries {
+  margin-bottom: 30px;
+}
+.category-detales .category-data {
+  display: inline-block;
+}
+.category-detales .summary-indicators {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20px;
+}
+.category-detales .summary-indicators .indicator-name {
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 14px;
+}
+.category-detales .summary-indicators .indicator-title {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  margin: 13px 0;
+  max-width: 120px;
+  min-height: 31px;
+}
+.category-detales .summary-indicators .indicator-title a {
+  color: #000;
+}
+.category-detales .category-data h4 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+.category-detales .category-data .values {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 5px;
+  width: 120px;
+}
+.category-detales .category-data .not-present {
+  background: #ff00001a;
+  border-color: #ff0000;
+}
+.category-detales .category-data .under-development {
+  background: #ffc0001a;
+  border-color: #ffc000;
+}
+.category-detales .category-data .present {
+  background: #cfff6f1a;
+  border-color: #CFFF6F;
+}
+.category-detales .category-data p.value {
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 35px;
+}
+.category-detales .category-data .indicator {
+  width: 100px;
+}
+@media (max-width: 1200px) {
+  .category-countries.col-sm-12 > div {
+    width: 930px;
+  }
+  .category-countries.col-sm-6 > div {
+    width: 530px;
+  }
+  .category-detales.col-sm-6 {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .category-detales .category-data .values {
+    width: 90px;
+    margin-right: 5px;
+  }
+  .category-detales .category-data p.value {
+    width: 30px;
+  }
+  .category-detales .category-data h4 {
+    font-size: 7px;
+  }
+}
+@media (max-width: 460px) {
+  .category-detales .summary-indicators .indicator-title {
+    max-width: 100px;
+  }
+  .category-detales .category-data .values {
+    width: 60px;
+  }
+  .category-detales .category-data p.value {
+    width: 20px;
+  }
+}
+@media (max-width: 450px) {
+  .category-detales .summary-indicators .indicator-title {
+    max-width: 80px;
+  }
+  .category-detales .category-data p.value {
+    line-height: 50px;
+  }
+}

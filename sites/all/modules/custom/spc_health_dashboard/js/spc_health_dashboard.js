@@ -283,6 +283,13 @@
                     .end()
                     .dialog('open')
                 popup.find('.country-detales').height(popup.height());
+                
+                if ($(this).attr('data-country').length){
+                    popup.find('.map').css({
+                        "background-image": "url(/sites/all/modules/custom/spc_health_dashboard/img/maps/"+ $(this).attr('data-country') +".svg)"
+                    });
+                }
+                
             });
             
             // on window resize run function
@@ -318,7 +325,38 @@
             });
             let next = $(cat[index-1]).find('a');
             window.location.href = next.attr('href');
-        });        
+        });
+        
+        $(window).on('load resize', function(){
+            let Width = $(window).width(); 
+            if (Width <= 550){
+                $('.category-countries.col-sm-6')
+                    .width($('.container').width())
+                    .css({
+                        "overflow-x": "scroll"
+                    });                
+            } else {
+               $('.category-countries.col-sm-6')
+                    .width(500)
+                    .css({
+                        "overflow-x": "visible"
+                    });
+            }
+            if (Width <= 980){
+                $('.category-countries.col-sm-12')
+                    .width($('.container').width())
+                    .css({
+                        "overflow-x": "scroll"
+                    });  
+            } else {
+                $('.category-countries.col-sm-12')
+                    .width(900)
+                    .css({
+                        "overflow-x": "visible"
+                    });
+            }
+
+        })
                         
         //end context
         }

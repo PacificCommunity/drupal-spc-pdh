@@ -1,0 +1,671 @@
+{
+    
+    "leadership-and-governance": {
+        "name": "Leadership and governance",
+        "indicators": {
+            "multi-sectoral-ncd-taskforce": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "national-strategy-addressing-ncds-and-risk-factors": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "explicit-ncd-indicators-and-targets": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            }            
+        }
+    },
+    
+    "tobacco": {
+        "name": "Tobacco",
+        "indicators": {
+            "tobacco-excise-taxes": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "smoke-free-environments": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "tobacco-health-warnings": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            },
+            "tobacco-advertising-promotion-sponsorship": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "tobacco-sales-and-licencing": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "tobacco-industry-interference": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            }            
+        }
+    },
+    
+    "alcohol": {
+        "name": "Alcohol",
+        "indicators": {
+            "alcohol-licencing-to-restrict-sales": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "alcohol-advertising": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "alcohol-taxation": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            },
+            "drink-driving": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            }
+        }
+    },  
+    
+    "food": {
+        "name": "Food",
+        "indicators": {
+            "reducing-salt-consumption": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "trans-fats": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "unhealthy-food-marketing-to-children": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            },
+            "food-fiscal-policies": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "healthy-food-policies-in-schools": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "food-based-dietary-guidelines": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            }            
+        }
+    },
+    
+    "physical-activity": {
+        "name": "Physical Activity",
+        "indicators": {
+            "compulsory-physical-education-in-school-curriculum": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            }
+        }
+    },
+    
+    "enforcement": {
+        "name": "Enforcement",
+        "indicators": {
+            "enforcement-of-laws-and-regulations-related-to-ncd-risk-factors": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            }
+        }
+    },
+    
+    "health-system": {
+        "name": "Health system response programmes",
+        "indicators": {
+            "national-guidelines-for-care-of-main-ncds": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "essential-drugs": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "smoking-cessation": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            },
+            "marketing-of-breast-milk-substitutes": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "baby-friendly-hospitals": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "maternity-leave-and-breastfeeding": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            }            
+        }
+    },
+    
+    "monitoring": {
+        "name": "Monitoring",
+        "indicators": {
+            "population-risk-factor-prevalence-surveys-adults": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "population-risk-factor-prevalence-surveys-youth": {
+                "not-present": {
+                    "number" : 2,
+                    "percentage": 10
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 29
+                },
+                "present": {
+                    "number" : 13,
+                    "percentage": 62,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "FSM",
+                        "Tuvalu"
+                    ]
+                }                
+            },
+            "child-growth-monitoring": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 14
+                },
+                "under-development": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 67,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Tuvalu",
+                        "Vanuatu"
+                    ]
+                }                
+            },
+            "routine-cause-specific-mortality": {
+                "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
+                    "number" : 13,
+                    "percentage": 62
+                },
+                "present": {
+                    "number" : 4,
+                    "percentage": 19,
+                    "countries": [
+                        "Guam",
+                        "Palau",
+                        "Tonga",
+                        "Tuvalu"
+                    ]
+                }                
+            }
+        }
+    }    
+    
+}
