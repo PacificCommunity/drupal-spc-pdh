@@ -348,11 +348,13 @@
         if ($('.categories-switcher').length && $(window).width() < 1200){
             let cat = $('.category-item');
             let left = 0;
-            cat.each(function(i){
+            let fixer = 0;
+            cat.each(function(){
                 if($(this).hasClass('current')){
                     return false;
-                } else{
-                   left +=  $(this).width();
+                } else {
+                    fixer++;
+                    left +=  $(this).width() + 10 * (fixer * 0.2);
                 }
             });
             $('.categories-switcher .list').css({
