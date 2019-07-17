@@ -4,7 +4,7 @@
     
     <div class="category-description">
         <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/categories/' . $data['current_category']['id'] . '.png'?>
-        <img class="category-img" src="<?php print $src; ?>" alt="<?php print $data['country']; ?>">
+        <img class="category-img" src="<?php print $src; ?>" alt="<?php print $data['country']; ?>" onerror="this.style.display = 'none'">
         
         <div class="text">
           <?php $description = $data['category_data']['description']; ?>  
@@ -21,15 +21,14 @@
     </div>
     
    <?php 
-    $indicators_count = count($data['current_category']['#indicators']); 
-    if ($indicators_count <= 3){
-      $category_countries_class = 'col-sm-6';
-      $category_detales_class = 'col-sm-6';
-    } else {
-      $category_countries_class = 'col-sm-12';
-      $category_detales_class = 'col-sm-12';
-    }
-   
+      $indicators_count = count($data['current_category']['#indicators']); 
+      if ($indicators_count <= 3){
+        $category_countries_class = 'col-sm-6';
+        $category_detales_class = 'col-sm-6';
+      } else {
+        $category_countries_class = 'col-sm-12';
+        $category_detales_class = 'col-sm-12';
+      }
    ?> 
   <h4><?php print t('PICT ratings for Pacific NCD Dashboard '. $data['current_category']['#title'] . ' indicators'); ?></h4>
   <div class="category-countries <?php print $category_countries_class; ?>">
