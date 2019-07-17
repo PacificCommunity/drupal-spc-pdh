@@ -1,5 +1,25 @@
 <div class="row category-content">
     
+    <h2><?php print $data['category_data']['name'];?></h2>
+    
+    <div class="category-description">
+        <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/categories/' . $data['current_category']['id'] . '.png'?>
+        <img class="category-img" src="<?php print $src; ?>" alt="<?php print $data['country']; ?>">
+        
+        <div class="text">
+          <?php $description = $data['category_data']['description']; ?>  
+          <?php $limit = 300; ?>
+          <span class="less"><?php print substr($description, 0, $limit); ?></span>
+          <?php if (strlen($description) > $limit): ?>
+            <span class="dots"><?php print t('...'); ?></span>
+          <?php endif; ?>
+          <span class="more"><?php print substr($description, $limit+1, strlen($description)); ?></span>
+          <?php if (strlen($description) > $limit): ?>
+            <p class="more-less show-more"><?php print t('Read more'); ?></p>
+          <?php endif; ?>
+        </div>
+    </div>
+    
    <?php 
     $indicators_count = count($data['current_category']['#indicators']); 
     if ($indicators_count <= 3){
@@ -51,6 +71,7 @@
                      data-value="<?php print $indicator['value']?>"
                      data-category="<?php print $data['current_category']['id']; ?>"
                      data-indicator="<?php print $ind_key; ?>"
+                     data-country-title="<?php print $country['title']; ?>"
                      data-country="<?php print $country['id']; ?>"></div>
               <?php endif; ?>
             <?php endforeach; ?>
@@ -125,7 +146,7 @@
 </div>
 
 <div class="categories-switcher">
-    <p class="prev"></p>
+    <p class="prev"><span><?php print t('Previous category'); ?></span></p>
     <div class="list">
     <?php foreach ($data['categories_list'] as $category_key => $category): ?>
       <?php $current = ''?>
@@ -137,14 +158,13 @@
       </div>    
     <?php endforeach; ?>
     </div>    
-    <p class="next"></p>
+    <p class="next"><span><?php print t('Next category'); ?></span></p>
 </div>
 
 <div class="indicator-popup">
     <div class="country-detales col-sm-5">
-        <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/flags/' . $data['country_id'] . '.svg'?>
-        <img class="country-flag" src="<?php print $src; ?>" alt="<?php print $data['country']; ?>">
-        <h4><?php print $data['country']; ?></h4>
+        <img class="country-flag" src="" alt="">
+        <h4></h4>
         <div class="content clearfix">
             <p class="indicator-title"></p>
             <div class="col-sm-4">
@@ -154,7 +174,6 @@
               <p id="indicator-text" class="text"></p>
             </div>
         </div>
-        <?php $map = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/maps/' . $data['country_id'] . '.svg';?>
         <div id="map" class="map"></div>
     </div>
     <div class="description-detales col-sm-7">

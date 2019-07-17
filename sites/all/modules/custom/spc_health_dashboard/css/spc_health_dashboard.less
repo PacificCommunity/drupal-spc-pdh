@@ -887,6 +887,13 @@
     display: none;
     padding: 10px;
 }
+.category-content>h2 {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    margin-bottom: 30px;
+}
 .indicator-popup {
     display: none;
 }
@@ -894,12 +901,12 @@
     position: relative;
     margin: 20px auto;
     max-width: 90%;
-    padding: 0 50px;
+    padding: 10px 50px;
     overflow: hidden;
     
     .list {
         display: block;
-        width: 850px;
+        width: 860px;
         margin: 0 auto;
     }
     .category-item {
@@ -926,11 +933,25 @@
     p.prev,
     p.next {
         position: absolute;
-        width: 50px;
+        width: 70px;
         height: 50px;
         display: inline-block;
-        background: linear-gradient(270deg, #FFFFFF 80%, rgba(255, 255, 255, 0) 102.54%);
+        background: #FFFFFF;
+        border: 1px solid #E3E3E3;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
         margin: 0px;
+        cursor: pointer;
+        top: 10px;
+        
+        span{
+            font-size: 10px;
+            line-height: 12px;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+        }
     }
     p.prev:before,
     p.next:before {
@@ -940,28 +961,34 @@
         height: 30px;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 200%;
+        background-size: 50%;
         position: absolute;
         border-radius: 50%;
-        cursor: pointer;
-        top: 10px;
+        top: -3px;
     }
     p.prev{
         left: 0;
-        top: 0;
     }
     p.next {
         right: 0;
-        top: 0;
     }
-    p.prev:before{
-        background-image: url(../img/prev.svg);
-        left: 10px;
+    p.prev:before {
+        background-image: url(../img/prev-arrow.svg);
+        left: 20px;
     }
-    p.next:before{
-        background-image: url(../img/next.svg);
-        right: 10px;
+    p.next:before {
+        background-image: url(../img/next-arrow.svg);
+        right: 20px;
     }
+}
+.categories-switcher:before {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 50px;
+    background: linear-gradient(270deg, #FFFFFF 50%, rgba(255, 255, 255, 0) 102.54%);
+    position: absolute;
+    right: 0px;
 }
 .category-countries {
     margin-bottom: 30px;
@@ -1075,3 +1102,46 @@
         line-height: 50px;
     }    
 }
+.category-description {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+    border-radius: 25px;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+    
+    .category-img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+.category-description, 
+.health-home-description {
+    .more-less {
+        display: none;
+        font-weight: 600;
+        color: #021e73;
+        margin: 10px 0;
+        cursor: pointer;
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
+    .dots {
+        display: none;
+        @media (max-width: 767px) {
+            display: inline;
+        }
+    }
+    .more {
+        display: inline;
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }    
+}
+
