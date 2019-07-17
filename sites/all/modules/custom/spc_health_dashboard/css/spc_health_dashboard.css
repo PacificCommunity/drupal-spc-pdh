@@ -884,7 +884,7 @@
 .categories-switcher {
   position: relative;
   margin: 20px auto;
-  max-width: 90%;
+  max-width: 98%;
   padding: 10px 50px;
   overflow: hidden;
 }
@@ -899,6 +899,11 @@
   max-width: 150px;
   text-align: center;
   vertical-align: middle;
+}
+@media (max-width: 450px) {
+  .categories-switcher .category-item {
+    margin-right: 10px;
+  }
 }
 .categories-switcher .category-item a {
   font-weight: 300;
@@ -923,7 +928,6 @@
   background: #FFFFFF;
   border: 1px solid #E3E3E3;
   box-sizing: border-box;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin: 0px;
   cursor: pointer;
@@ -972,6 +976,26 @@
   background: linear-gradient(270deg, #FFFFFF 50%, rgba(255, 255, 255, 0) 102.54%);
   position: absolute;
   right: 0px;
+}
+.categories-switcher::before {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 50px;
+  background: linear-gradient(270deg, #FFFFFF 50%, rgba(255, 255, 255, 0) 102.54%);
+  position: absolute;
+  right: 0px;
+}
+.categories-switcher .prev::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 50px;
+  background: linear-gradient(90deg, #FFFFFF 5%, rgba(255, 255, 255, 0) 102.54%);
+  position: absolute;
+  left: 69px;
+  top: -5px;
+  z-index: 0;
 }
 .category-countries {
   margin-bottom: 30px;
@@ -1129,4 +1153,3 @@
     display: none;
   }
 }
-/*# sourceMappingURL=spc_health_dashboard.css.map */
