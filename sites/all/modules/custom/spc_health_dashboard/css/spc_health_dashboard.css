@@ -871,6 +871,13 @@
   display: none;
   padding: 10px;
 }
+.category-content > h2 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  margin-bottom: 30px;
+}
 .indicator-popup {
   display: none;
 }
@@ -1050,6 +1057,50 @@
   }
   .category-detales .category-data p.value {
     line-height: 50px;
+  }
+}
+.category-description {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+  border-radius: 25px;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.category-description .category-img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.category-description .text {
+  font-size: 16px;
+  line-height: 24px;
+}
+.category-description .more-less {
+  display: none;
+  font-weight: 600;
+  color: #021e73;
+  margin: 10px 0;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .category-description .more-less {
+    display: block;
+  }
+}
+.category-description .dots {
+  display: none;
+}
+@media (max-width: 767px) {
+  .category-description .dots {
+    display: inline;
+  }
+}
+.category-description .more {
+  display: inline;
+}
+@media (max-width: 767px) {
+  .category-description .more {
+    display: none;
   }
 }
 /*# sourceMappingURL=spc_health_dashboard.css.map */

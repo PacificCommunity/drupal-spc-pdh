@@ -1,5 +1,20 @@
 <div class="row category-content">
     
+    <h2><?php print $data['category_data']['name'];?></h2>
+    
+    <div class="category-description">
+        <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/categories/' . $data['current_category']['id'] . '.png'?>
+        <img class="category-img" src="<?php print $src; ?>" alt="<?php print $data['country']; ?>">
+        
+        <div class="text">
+          <?php $description = $data['category_data']['description']; ?>  
+          <span class="less"><?php print substr($description, 0, 300); ?></span>
+          <span class="dots"><?php print t('...'); ?></span>
+          <span class="more"><?php print substr($description, 301, strlen($description)); ?></span>
+          <p class="more-less show-more"><?php print t('Read more'); ?></p>
+        </div>
+    </div>
+    
    <?php 
     $indicators_count = count($data['current_category']['#indicators']); 
     if ($indicators_count <= 3){
@@ -51,6 +66,7 @@
                      data-value="<?php print $indicator['value']?>"
                      data-category="<?php print $data['current_category']['id']; ?>"
                      data-indicator="<?php print $ind_key; ?>"
+                     data-country-title="<?php print $country['title']; ?>"
                      data-country="<?php print $country['id']; ?>"></div>
               <?php endif; ?>
             <?php endforeach; ?>
@@ -142,9 +158,8 @@
 
 <div class="indicator-popup">
     <div class="country-detales col-sm-5">
-        <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/flags/' . $data['country_id'] . '.svg'?>
-        <img class="country-flag" src="<?php print $src; ?>" alt="<?php print $data['country']; ?>">
-        <h4><?php print $data['country']; ?></h4>
+        <img class="country-flag" src="" alt="">
+        <h4></h4>
         <div class="content clearfix">
             <p class="indicator-title"></p>
             <div class="col-sm-4">
@@ -154,7 +169,6 @@
               <p id="indicator-text" class="text"></p>
             </div>
         </div>
-        <?php $map = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/maps/' . $data['country_id'] . '.svg';?>
         <div id="map" class="map"></div>
     </div>
     <div class="description-detales col-sm-7">
