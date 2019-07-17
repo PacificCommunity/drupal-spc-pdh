@@ -285,6 +285,8 @@
                 popup.find('.country-detales').height(popup.height());
                 
                 if ($(this).attr('data-country').length){
+                    popup.find('.country-detales h4').text($(this).attr('data-country-title'));
+                    popup.find('.country-flag').attr('src', '/sites/all/modules/custom/spc_health_dashboard/img/flags/'+ $(this).attr('data-country') +'.svg');
                     popup.find('.map').css({
                         "background-image": "url(/sites/all/modules/custom/spc_health_dashboard/img/maps/"+ $(this).attr('data-country') +".svg)"
                     });
@@ -364,7 +366,20 @@
                     });
             }
 
-        })
+        });
+        
+        $('.more-less').on('click', function(){
+            if ($(this).hasClass('show-more')){
+                $(this).siblings('.dots').hide(); 
+                $(this).siblings('.more').show();
+                $(this).removeClass('show-more').addClass('show-less').text('Read less');                
+            } else {
+                $(this).siblings('.dots').show(); 
+                $(this).siblings('.more').hide();
+                $(this).removeClass('show-less').addClass('show-more').text('Read more');                
+            }
+
+        });
                         
         //end context
         }
