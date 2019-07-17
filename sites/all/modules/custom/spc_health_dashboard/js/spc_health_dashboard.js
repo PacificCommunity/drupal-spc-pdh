@@ -311,26 +311,54 @@
         $('.categories-switcher p.next ').on('click', function(){
             let cat = $('.category-item');
             let index = 0;
+            let next = '';
+            
             cat.each(function(i){
                 if($(this).hasClass('current')){;
                     index = i;
                 }
             });
-            let next = $(cat[index+1]).find('a');
+            
+            if (index >= cat.length-1){
+                next = $(cat[0]).find('a');
+            }else{
+                next = $(cat[index+1]).find('a');   
+            }
             window.location.href = next.attr('href');
         });
         
         $('.categories-switcher p.prev ').on('click', function(){
             let cat = $('.category-item');
             let index = 0;
+            let next = '';
+            
             cat.each(function(i){
                 if($(this).hasClass('current')){;
                     index = i;
                 }
             });
-            let next = $(cat[index-1]).find('a');
+            if (index == 0){
+                next = $(cat[cat.length-1]).find('a');
+            } else {
+                next = $(cat[index-1]).find('a');
+            }
             window.location.href = next.attr('href');
         });
+        
+        if ($('.categories-switcher').length && $(window).width() < 1200){
+            let cat = $('.category-item');
+            let left = 0;
+            cat.each(function(i){
+                if($(this).hasClass('current')){
+                    return false;
+                } else{
+                   left +=  $(this).width();
+                }
+            });
+            $('.categories-switcher .list').css({
+                "margin-left": '-' + left + 'px'
+            });
+        }
         
         $(window).on('load resize', function(){
             let Width = $(window).width(); 
