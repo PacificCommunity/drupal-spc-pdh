@@ -206,7 +206,10 @@
                     $('.ui-widget-overlay').css({
                         background: '#000',
                         opacity: '0.5',
-                    });                    
+                    });
+                    $('.ui-widget-overlay').on('click', function(){
+                       $('.indicator-popup').dialog( "close" );
+                    });
                 }
             });
 

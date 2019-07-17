@@ -8,10 +8,15 @@
         
         <div class="text">
           <?php $description = $data['category_data']['description']; ?>  
-          <span class="less"><?php print substr($description, 0, 300); ?></span>
-          <span class="dots"><?php print t('...'); ?></span>
-          <span class="more"><?php print substr($description, 301, strlen($description)); ?></span>
-          <p class="more-less show-more"><?php print t('Read more'); ?></p>
+          <?php $limit = 300; ?>
+          <span class="less"><?php print substr($description, 0, $limit); ?></span>
+          <?php if (strlen($description) > $limit): ?>
+            <span class="dots"><?php print t('...'); ?></span>
+          <?php endif; ?>
+          <span class="more"><?php print substr($description, $limit+1, strlen($description)); ?></span>
+          <?php if (strlen($description) > $limit): ?>
+            <p class="more-less show-more"><?php print t('Read more'); ?></p>
+          <?php endif; ?>
         </div>
     </div>
     
@@ -141,7 +146,7 @@
 </div>
 
 <div class="categories-switcher">
-    <p class="prev"></p>
+    <p class="prev"><span><?php print t('Previous category'); ?></span></p>
     <div class="list">
     <?php foreach ($data['categories_list'] as $category_key => $category): ?>
       <?php $current = ''?>
@@ -153,7 +158,7 @@
       </div>    
     <?php endforeach; ?>
     </div>    
-    <p class="next"></p>
+    <p class="next"><span><?php print t('Next category'); ?></span></p>
 </div>
 
 <div class="indicator-popup">
