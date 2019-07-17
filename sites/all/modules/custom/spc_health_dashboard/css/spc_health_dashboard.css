@@ -1129,4 +1129,10 @@
     display: none;
   }
 }
-/*# sourceMappingURL=spc_health_dashboard.css.map */
+.indicator-content > h4 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.indicator-content .category-detales {
+  margin-bottom: 50px;
+}
