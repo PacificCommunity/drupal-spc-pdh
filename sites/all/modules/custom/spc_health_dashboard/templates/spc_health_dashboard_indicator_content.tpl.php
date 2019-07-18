@@ -4,7 +4,7 @@
   <h4><?php print $data['indicator_detales']['code'] . '. ' . $data['indicator_detales']['title']; ?></h4>
     
   <div class="category-detales <?php print $category_detales_class; ?>">
-    <h4><?php print t('Summary of findings '. $data['indicator_data']['title']); ?></h4>
+    <h4><?php print t('Summary of findings '. $data['indicator_detales']['title']); ?></h4>
     
     <div class="wrapper">
       <div class="summary-indicators ">
@@ -71,7 +71,11 @@
         </div>
 
         <div class="country-name">
-            <a href="/health-dashboard/country/<?php print $country['id']; ?>"><?php print $country['title']; ?></a>
+            <a data-country-id="<?php print $country['id']; ?>" 
+               href="/health-dashboard/country/<?php print $country['id']; ?>"
+               class="country-on-map">
+                <?php print $country['title']; ?>
+            </a>
         </div>
 
         <div class="country-indicators helth-indicators">
@@ -91,7 +95,95 @@
   </div>
     
   <div class="pacific-map col-sm-9">
-    <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/pacific-map.png'?>
-      <img src="<?php print $src; ?>" alt="pacific-map">
+      <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/pacific-map.svg'?>
+      <div data-src="<?php print $src; ?>" 
+           data-current-category="<?php print $data['current_category']; ?>"
+           data-current-indicator="<?php print $data['current_indicator']; ?>"
+           class="map-svg">
+      </div>
   </div>
+</div>
+
+<div class="indicator-popup">
+    <div class="country-detales col-sm-5">
+        <img class="country-flag" src="" alt="">
+        <h4></h4>
+        <div class="content clearfix">
+            <p class="indicator-title"></p>
+            <div class="col-sm-4">
+              <p id="indicator-value"></p>
+            </div>
+            <div class="col-sm-8">
+              <p id="indicator-text" class="text"></p>
+            </div>
+        </div>
+        <div id="map" class="map"></div>
+    </div>
+    <div class="description-detales col-sm-7">
+      <h4><?php print t('Description'); ?></h4>
+        <div class="content detales">
+
+            <div id="not-present" class="clearfix">
+                <div class="col-sm-3">
+                  <p class="status-strength not-present"></p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text"></p>
+                </div>
+            </div>
+
+            <div id="under-development" class="clearfix">
+                <div class="col-sm-3">
+                  <p class="status-strength under-development"></p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text"></p>
+                </div>
+            </div>
+
+            <div id="present" class="clearfix">
+                <div class="col-sm-3">
+                  <p class="status-strength present"></p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text"></p>
+                </div>
+            </div>
+
+            <div id="low" class="clearfix">
+                <div class="col-sm-3">
+                  <p class="status-strength low"></p>
+                </div>  
+                <div class="col-sm-9">
+                  <p class="text"></p>
+                </div>
+            </div>
+
+            <div id="medium" class="clearfix">
+                <div class="col-sm-3">
+                  <p class="status-strength medium"></p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text"></p>
+                </div>
+            </div>
+
+            <div id="high" class="clearfix">
+                <div class="col-sm-3">
+                  <p class="status-strength high"></p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text"></p>
+                </div>
+            </div>
+            <div id="not-applicable" class="clearfix">
+                <div class="col-sm-3">
+                  <p class="status-strength not-applicable"><?php print t('N/A'); ?></p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text"></p>
+                </div>
+            </div>
+        </div>        
+    </div>
 </div>

@@ -15,6 +15,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 540,
+            "cy": 315
+          },
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -342,6 +346,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 60,
+            "cy": 35
+          },            
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -607,6 +615,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 700,
+            "cy": 300
+          },
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -872,6 +884,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 155,
+            "cy": 50
+          },            
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -1137,6 +1153,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 395,
+            "cy": 360
+          }, 
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -1402,6 +1422,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 705,
+            "cy": 370
+          }, 
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -1667,6 +1691,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 220,
+            "cy": 35
+          }, 
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -1932,6 +1960,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 700,
+            "cy": 110
+          },            
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -2197,6 +2229,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 260,
+            "cy": 135
+          }, 
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -2462,6 +2498,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 550,
+            "cy": 380
+          },  
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -2727,6 +2767,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 240,
+            "cy": 400
+          },  
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -2992,6 +3036,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 55,
+            "cy": 100
+          },            
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -3257,6 +3305,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 55,
+            "cy": 250
+          },            
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -3517,11 +3569,15 @@
           }
         },
         {
-          "title": "Republic of the Marshall Islands",
+          "title": "RMI",
           "id": "republic-of-the-marshall-islands",
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 285,
+            "cy": 50
+          },            
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -3787,6 +3843,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 520,
+            "cy": 250
+          },   
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -4052,6 +4112,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 480,
+            "cy": 400
+          }, 
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -4317,6 +4381,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 510,
+            "cy": 300
+          }, 
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -4582,6 +4650,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 180,
+            "cy": 250
+          }, 
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -4847,6 +4919,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 410,
+            "cy": 240
+          }, 
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -5112,6 +5188,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 260,
+            "cy": 320
+          },  
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
@@ -5377,6 +5457,10 @@
           "icon_big": null,
           "icon_small": null,
           "map_image": null,
+          "map-coordinates": {
+            "cx": 445,
+            "cy": 310
+          },  
           "indicators": {
                 
             "multi-sectoral-ncd-taskforce": {
