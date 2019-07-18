@@ -22,7 +22,7 @@ function spc_health_dashboard_pages($category, $indicator = NULL) {
   }
 
   if ($indicator) {
-     $content = spc_health_dashboard_indicator_content($indicator);
+     $content = spc_health_dashboard_indicator_content($category, $indicator);
   } else {
     $content = spc_health_dashboard_category_content($category);
   }
@@ -58,7 +58,6 @@ function spc_health_dashboard_category_content($category){
   if ($category_data = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/categories.json')) {
     $category_data = json_decode($category_data, TRUE);
     $data['category_data'] = $category_data[$category];
-    drupal_add_js(array('spc_health_chart' => array('category_data' => $category_data)), array('type' => 'setting'));
   }
   
   $categories_list = variable_get('health_dashboard_categories_list');
@@ -77,7 +76,7 @@ function spc_health_dashboard_category_content($category){
 /*
  * 
  */
-function spc_health_dashboard_indicator_content($indicator){
+function spc_health_dashboard_indicator_content($category, $indicator){
   $data = [];
   
   $health_dashboard_data = get_health_dashboard_data();
@@ -86,10 +85,19 @@ function spc_health_dashboard_indicator_content($indicator){
   
   if ($indicator_detales = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/indicators.json')) {
     $indicator_detales = json_decode($indicator_detales, TRUE);
+    $data['indicator_detales'] = $indicator_detales[$indicator];
     drupal_add_js(array('spc_health_chart' => array('indicator_detales' => $indicator_detales)), array('type' => 'setting'));
   }
   
+  if ($category_data = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/categories.json')) {
+    $category_data = json_decode($category_data, TRUE);
+    $data['category_data'] = $category_data[$category];
+    drupal_add_js(array('spc_health_chart' => array('category_data' => $category_data)), array('type' => 'setting'));
+  }
+  
   $data['current_indicator'] = $indicator;
+  $data['current_category'] = $category;
+  $data['countries-data'] = $health_dashboard_data['countries-data'];
   
   $content = theme('spc_health_dashboard_indicator_content', array('data' => $data));
   return $content;
