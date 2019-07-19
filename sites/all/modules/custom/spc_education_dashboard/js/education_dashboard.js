@@ -79,16 +79,44 @@
                         left: 60,
                         width: 500
                       };
+                      
+                    let descriptionTitle = $('#pdf-' + chartId + ' .definition h5').text();   
+                    let descriptionBody = $('#pdf-' + chartId + ' .definition p').text(); 
+                    
+                    if (descriptionBody.length > 0){
+                        let descriptionBodyTosize = pdf.splitTextToSize(descriptionBody, 500);
+                        pdf.setFontSize(14);
+                        pdf.text(60, 280, descriptionTitle);
+                        pdf.setFontSize(10);
+                        pdf.setFontType("normal");
+                        pdf.text(60, 300, descriptionBodyTosize);                       
+                    }
 
-                    pdf.fromHTML(
-                        source[0], 
-                        margins.left,
-                        margins.top,
-                        {
-                            'width': margins.width,
-                            'elementHandlers': specialElementHandlers,
-                        },
-                    );
+                    let thresholdTitle = $('#pdf-' + chartId + ' .threshold h5').text(); 
+                    let thresholdValue = $('#pdf-' + chartId + ' .threshold .values').text();
+                    let thresholdBody = $('#pdf-' + chartId + ' .threshold .description').text();
+                    
+                    if (thresholdValue.length > 0 || thresholdBody.length > 0){
+                        let thresholdBodyTosize = pdf.splitTextToSize(thresholdBody, 500);
+                        pdf.setFontSize(14);
+                        pdf.text(60, 380, thresholdTitle);
+                        pdf.setFontSize(10);
+                        pdf.setFontType("normal");
+                        pdf.text(60, 400, thresholdValue);
+                        pdf.text(60, 420, thresholdBodyTosize);
+                    }
+                    
+                    let rationaleTitle = $('#pdf-' + chartId + ' .rationale h5').text();   
+                    let rationaleBody = $('#pdf-' + chartId + ' .rationale p').text(); 
+                    
+                    if (rationaleBody.length > 0){
+                        let rationaleBodyTosize = pdf.splitTextToSize(rationaleBody, 500);
+                        pdf.setFontSize(14);
+                        pdf.text(60, 480, rationaleTitle);
+                        pdf.setFontSize(10);
+                        pdf.setFontType("normal");
+                        pdf.text(60, 500, rationaleBodyTosize);
+                    }
                     
                     pdf.save('chart-'+ chartId +'.pdf');
                 }); 

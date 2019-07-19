@@ -54,7 +54,7 @@ html {
     border-radius: 5px;
 }
 .definition,
-.rationale,
+.threshold,
 .rationale {
     position: relative;
     margin-bottom: 30px;
