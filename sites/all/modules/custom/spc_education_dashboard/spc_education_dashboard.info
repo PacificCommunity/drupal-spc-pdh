@@ -1,0 +1,11 @@
+name = SPC Education Dashboard content
+description = Education Dashboard page content
+
+core = 7.x
+package = SPC
+version = 7.x-1.0
+
+dependencies[] = ctools
+dependencies[] = page_manager
+
+files[] = spc_education_dashboard.module
