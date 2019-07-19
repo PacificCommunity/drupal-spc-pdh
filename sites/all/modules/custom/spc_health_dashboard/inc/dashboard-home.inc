@@ -31,7 +31,7 @@ function spc_health_dashboard_home_page() {
 function spc_health_dashboard_home_content() {
   $data = [];
 
-  $health_dashboard_data = get_health_dashboard_data();
+  $health_dashboard_data = get_health_dashboard_data('health_json_fid', 'default');
 
   $spc_health_chart = health_dashboard_chart_summary($health_dashboard_data['countries-data']);
   drupal_add_js(['spc_health_chart' => ['summary_chart' => $spc_health_chart]], ['type' => 'setting']);
