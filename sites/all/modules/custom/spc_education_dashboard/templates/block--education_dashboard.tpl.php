@@ -90,13 +90,13 @@
               <?php endif; ?>  
 
               <?php if (!empty($item['threshold']['description']) || !empty($item['threshold']['value'])): ?>  
-              <div class="rationale">
+              <div class="threshold">
                 <h5><?php print t('Threshold'); ?></h5>
                     <div class="toggle">
                         <span class="arrow"></span>
                     </div>
-                <p class="hidden"><?php print $item['threshold']['value']; ?></p>
-                <p class="hidden"><?php print $item['threshold']['description']; ?></p>
+                <p class="hidden values"><?php print $item['threshold']['value']; ?></p>
+                <p class="hidden description"><?php print $item['threshold']['description']; ?></p>
               </div> 
               <?php endif; ?>  
 
