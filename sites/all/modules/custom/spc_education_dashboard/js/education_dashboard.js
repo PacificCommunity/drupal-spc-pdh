@@ -513,6 +513,8 @@
                 
                 svgSetText(svg, -5, 20, '18%', green);
                 svgSetText(svg, -5, 230, '3.8%', red);
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
+                
             }
             
             //Out of School Children chart
