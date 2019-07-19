@@ -277,7 +277,7 @@
                 y.domain([0, d3.max(data, function(d) { return d.percentage; })]);
             }
             
-            function setCartBars(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, typY){
+            function setCartBars(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, typY, id ){
                 svg.selectAll(".bar")
                     .data(data)
                     .enter()
@@ -315,8 +315,26 @@
                     .transition()
                     .delay(function () {return Math.random()*1000;})
                     .duration(1000)
-                    .attr("y", function(data) { return y(data.percentage); })
-                    .attr("height", function(data) { return height - y(data.percentage); });
+                    .attr("y", function(data) { 
+                        if (data.percentage < 0.5 ){
+                            if (id == 3) {
+                                return y(1);
+                            }
+                            return y(0.5);
+                        }
+                        return y(data.percentage); 
+                    })
+                    .attr("height", function(data) { 
+                        if (data.percentage < 0.5 ){
+                            if (id == 3) {
+                                return height - y(1);
+                            }
+                            return height - y(0.5);
+                        } else {
+                            return height - y(data.percentage);                             
+                        }
+
+                    });
             }
             
             function setCartBarsReverse(svg, data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, typY) {
@@ -471,10 +489,15 @@
                     .transition()
                     .delay(function (d) {return Math.random()*1000;})
                     .duration(1000)
-                    .attr("y", function(d) { return y(d.value); })
+                    .attr("y", function(d) { 
+                        if (d.value == 0) {
+                            return y(2); 
+                        } 
+                        return y(d.value); 
+                    })
                     .attr("height", function(d) {
                         if (d.value == 0) {
-                            return height - y(1); 
+                            return height - y(2); 
                         } 
                         return height - y(d.value); 
                     });
@@ -547,6 +570,7 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart2data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
             }
             
             //Over age students chart
@@ -578,7 +602,8 @@
                 const attrH = function(d){ return y(0) - y(d.percentage); }
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
-                setCartBars(svg, chart3data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                setCartBars(svg, chart3data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY, id);
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
             }
        
             //Learning outcomes
@@ -634,7 +659,7 @@
                     if (chart4yearLiteracy.percentage < 0){
                         return (y(0) - y((chart4yearLiteracy.percentage)*-1))/2;
                     } else if (chart4yearLiteracy.percentage == 0){
-                        return 3;
+                        return 6;
                     }
                     return (y(0) - y(chart4yearLiteracy.percentage))/2;
                 }
@@ -650,6 +675,7 @@
                 }
                 
                 setCartBarsReverse(svg, chart4yearLiteracy,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
 
                 //enable switcher    
                 $.switcher('input.slider');
@@ -686,6 +712,7 @@
                     appendTolltip(id);
                     
                     setCartBarsReverse(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });
 
                 $('.sw-4 a').on('click', function(e){
@@ -721,6 +748,7 @@
                     appendTolltip(id);
                     
                     setCartBarsReverse(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });            
             }
             
@@ -760,7 +788,8 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart5ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
+                
                 $('.sw-5 a').on('click', function(e){
                     e.preventDefault();
                     let newData = [];
@@ -788,6 +817,7 @@
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });    
             }
             
@@ -827,6 +857,7 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart6ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 
                 $('.sw-6 a').on('click', function(e){
                     e.preventDefault();
@@ -854,7 +885,8 @@
                     tooltip = setToolBox(svg);
                     appendTolltip(id);
                     
-                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);                 
+                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);   
+                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });    
             } 
             
@@ -1263,6 +1295,7 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart9data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
             }
             
             // Lower secondary completion rate
@@ -1492,6 +1525,7 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart11ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 
                 $('.sw-11 a').on('click', function(e){
                     e.preventDefault();
@@ -1524,6 +1558,7 @@
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });    
             }            
             
@@ -1556,6 +1591,7 @@
                 const tipY = function(d){ return y(d.percentage)-30;}
                 
                 setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
             }
             
             //Trained teachers
