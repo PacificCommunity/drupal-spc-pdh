@@ -187,7 +187,7 @@ function spc_health_dashboard_install () {
     'high' => 'High'
   ];
 
-  $json_path = base_path() . drupal_get_path('module', 'spc_health_dashboard') . '/default.json';
+  $json_path = base_path() . drupal_get_path('module', 'spc_health_dashboard') . '/data/default.json';
 
   variable_set('health_dashboard_countries', $countries);
   variable_set('health_dashboard_categories_list', $category_list);

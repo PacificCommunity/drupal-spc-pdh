@@ -45,18 +45,16 @@ function spc_health_dashboard_pages($category, $indicator = NULL) {
 function spc_health_dashboard_category_content($category){
   $data = [];
   
-  $health_dashboard_data = get_health_dashboard_data();
+  $health_dashboard_data = get_health_dashboard_data('health_json_fid', 'default');
   
   $indicator_detales = [];
   
-  if ($indicator_detales = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/indicators.json')) {
-    $indicator_detales = json_decode($indicator_detales, TRUE);
+  if ($indicator_detales = get_health_dashboard_data('health_indicators_fid', 'indicators')) {
     $data['indicator_detales'] = $indicator_detales;
     drupal_add_js(array('spc_health_chart' => array('indicator_detales' => $indicator_detales)), array('type' => 'setting'));
   }
   
-  if ($category_data = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/categories.json')) {
-    $category_data = json_decode($category_data, TRUE);
+  if ($category_data = get_health_dashboard_data('health_categories_fid', 'categories')) {
     $data['category_data'] = $category_data[$category];
   }
   
@@ -79,20 +77,18 @@ function spc_health_dashboard_category_content($category){
 function spc_health_dashboard_indicator_content($category, $indicator){
   $data = [];
   
-  $health_dashboard_data = get_health_dashboard_data();
+  $health_dashboard_data = get_health_dashboard_data('health_json_fid', 'default');
   $data['countries-data'] = $health_dashboard_data['countries-data'];
   drupal_add_js(array('spc_health_chart' => array('countries_detales' => $health_dashboard_data['countries-data'])), array('type' => 'setting'));
   
   $indicator_detales = [];
   
-  if ($indicator_detales = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/indicators.json')) {
-    $indicator_detales = json_decode($indicator_detales, TRUE);
+  if ($indicator_detales = $indicator_detales = get_health_dashboard_data('health_indicators_fid', 'indicators')) {
     $data['indicator_detales'] = $indicator_detales[$indicator];
     drupal_add_js(array('spc_health_chart' => array('indicator_detales' => $indicator_detales)), array('type' => 'setting'));
   }
   
-  if ($category_data = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/categories.json')) {
-    $category_data = json_decode($category_data, TRUE);
+  if ($category_data = get_health_dashboard_data('health_categories_fid', 'categories')) {
     $data['category_data'] = $category_data[$category];
   }
   
