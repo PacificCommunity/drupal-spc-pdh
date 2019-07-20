@@ -54,7 +54,7 @@ html {
     border-radius: 5px;
 }
 .definition,
-.rationale,
+.threshold,
 .rationale {
     position: relative;
     margin-bottom: 30px;
@@ -202,7 +202,7 @@ rect.bar:hover {
 }
 .chart {
     position: relative;
-    padding: 10px;
+    padding: 10px 10px 30px 10px;
     overflow: hidden;
 }
 svg.male-bar,
