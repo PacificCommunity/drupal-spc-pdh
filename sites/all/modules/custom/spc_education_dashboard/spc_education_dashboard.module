@@ -134,6 +134,10 @@ function spc_education_dashboard_block_info() {
     'cache' => DRUPAL_NO_CACHE
   );
 
+  $blocks['education_dashboard_home_link'] = array(
+    'info' => t('Education dashboard link for home page'),
+    'cache' => DRUPAL_NO_CACHE
+  );
   return $blocks;
 }
 
@@ -172,6 +176,13 @@ function spc_education_dashboard_block_view($delta = '') {
           '#markup' => theme('education_dashboard_block_theme', array('items' => $data))
         );
       }
+    break;
+    case 'education_dashboard_home_link':
+        $data = [];
+        $block['subject'] = t('Education dashboard link for home page');
+        $block['content'] = array(
+          '#markup' => theme('education_dashboard_home_link_theme', array('items' => $data))
+        );
     break;
   }
   return $block;
@@ -221,6 +232,15 @@ function spc_education_dashboard_theme($existing, $type, $theme, $path) {
       'items' => NULL,
       ),
     'template'      => 'block--education_dashboard',
+    'original hook' => 'block',
+    'path'          => drupal_get_path('module', 'spc_education_dashboard') . '/templates',
+  ];
+  
+  $themes['education_dashboard_home_link_theme'] = [
+    'variables'     => array(
+      'items' => NULL,
+      ),
+    'template'      => 'block--education_dashboard_home_link',
     'original hook' => 'block',
     'path'          => drupal_get_path('module', 'spc_education_dashboard') . '/templates',
   ];
