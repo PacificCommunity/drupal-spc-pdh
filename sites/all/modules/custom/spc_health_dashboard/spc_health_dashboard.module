@@ -609,7 +609,15 @@ function spc_health_dashboard_theme() {
         'data' => NULL,
       ],
       'template' => 'templates/spc_health_dashboard_indicator_content',
-    ],     
+    ], 
+    'health_dashboard_home_link_theme' => [
+        'variables'     => array(
+          'items' => NULL,
+          ),
+        'template'      => 'block--health_dashboard_home_link',
+        'original hook' => 'block',
+        'path'          => drupal_get_path('module', 'spc_health_dashboard') . '/templates',
+    ]
   ];
 }
 
@@ -670,4 +678,33 @@ function spc_health_dashboard_home_search() {
   $content = theme('spc_health_dashboard_home_search', array('search' => $data));
   
   return $content;
+}
+
+/**
+* Implements hook_block_info().
+*/
+function spc_health_dashboard_block_info() {    
+
+  $blocks['health_dashboard_home_link'] = array(
+    'info' => t('Health dashboard link for home page'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+  return $blocks;
+}
+
+/**
+* Implements hook_block_view().
+*/
+function spc_health_dashboard_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'health_dashboard_home_link':
+        $data = [];
+        $block['subject'] = t('Health dashboard link for home page');
+        $block['content'] = array(
+          '#markup' => theme('health_dashboard_home_link_theme', array('items' => $data))
+        );
+    break;
+  }
+  return $block;
 }
