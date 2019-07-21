@@ -429,10 +429,13 @@
                 const height = 600;
 
                 const colors = {
+                    'not-applicable': "FF0000",
                     "not-present": "#FF0000",
                     "under-development":"#FFC000",
                     "present":"#CFFF6F",
-
+                    "low":"#CFFF6F",
+                    "medium":"#CFFF6F",
+                    "high": "CFFF6F"
                 } 
 
                 let svg = d3
@@ -465,7 +468,7 @@
                                 for (let indicator in indicators){
                                     if (indicator == curIndicator){
                                         let value = indicators[curIndicator]['value'];
-
+                                        
                                         // country circle internal indicator     
                                         svg.append("circle")
                                            .attr("class", cId + "-center")

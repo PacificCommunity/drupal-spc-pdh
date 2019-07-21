@@ -37,7 +37,7 @@ function spc_health_dashboard_country($country = NULL) {
 function spc_health_dashboard_country_content($country){
   $data = array();
   
-  $health_dashboard_data = get_health_dashboard_data();
+  $health_dashboard_data = get_health_dashboard_data('health_json_fid', 'default');
   
   foreach($health_dashboard_data['countries-data'] as $country_data){
     
@@ -54,8 +54,7 @@ function spc_health_dashboard_country_content($country){
   
   $indicator_detales = [];
   
-  if ($indicator_detales = file_get_contents(drupal_get_path('module', 'spc_health_dashboard') . '/data/indicators.json')) {
-    $indicator_detales = json_decode($indicator_detales, TRUE);
+  if ($indicator_detales = get_health_dashboard_data('health_indicators_fid', 'indicators')) {
     drupal_add_js(array('spc_health_chart' => array('indicator_detales' => $indicator_detales)), array('type' => 'setting'));
   }
 
