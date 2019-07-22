@@ -94,6 +94,7 @@ function spc_health_dashboard_indicator_content($category, $indicator){
   
   $data['current_indicator'] = $indicator;
   $data['current_category'] = $category;
+  $data['indicators_list'] = $indicator_detales;
   
   $content = theme('spc_health_dashboard_indicator_content', array('data' => $data));
   return $content;
