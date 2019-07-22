@@ -9,11 +9,7 @@
 
 <div class="ed-dashboard-link-container" style="margin-bottom: 50px;" >
     <div about="/content/17-goals-transform-pacific" typeof="sioc:Item foaf:Document" class="ds-1col node node-dashboards node-promoted contextual-links-region view-mode-dashboard_highlight clearfix">
-
-        <div class="contextual-links-wrapper contextual-links-processed">
-            <a class="contextual-links-trigger" href="#">Configure</a>
-        </div>  
-
+ 
         <div class="group-content">
             <div class="group-content-left">
                 <?php print t('The <strong> status of education </strong> in the Pacific region'); ?>

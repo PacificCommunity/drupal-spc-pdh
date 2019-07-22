@@ -1128,6 +1128,7 @@
                     .attr("height", function(d) { return height - y(d.value); });
 
 		svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
+
             }
             
             //Progression to secondary school
