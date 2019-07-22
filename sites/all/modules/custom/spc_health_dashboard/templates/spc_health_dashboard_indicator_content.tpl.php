@@ -104,6 +104,26 @@
   </div>
 </div>
 
+<div class="categories-switcher indicator">
+    <p class="prev"><span><?php print t('Previous indicator'); ?></span></p>
+    <div class="list">
+    <?php foreach ($data['indicators_list'] as $indicator_key => $indicator): ?>
+      <?php $current = ''?>
+      <?php if($indicator['indicator-category'] == $data['current_category']): ?>
+        <?php if ($indicator_key == $data['current_indicator']): ?>
+          <?php $current = 'current'; ?>
+        <?php endif; ?>
+          <div class="category-item <?php print $current ?>">
+              <a href="/health-dashboard/<?php print $data['current_category']; ?>/<?php print $indicator_key; ?>">
+                <?php print $indicator['code'] ?>
+              </a>
+          </div>   
+      <?php endif; ?>
+    <?php endforeach; ?>
+    </div>    
+    <p class="next"><span><?php print t('Next indicator'); ?></span></p>
+</div>
+
 <div class="indicator-popup">
     <div class="country-detales col-sm-5">
         <img class="country-flag" src="" alt="">
