@@ -44,13 +44,23 @@
             //Exporting chart to PDF.
             $('.education-pdf').on('click', function(e){
                 e.preventDefault();
+                
                 let chartId = $(this).attr('data-chart-id');
                 
-                let svg = document.querySelector(".chart-" + chartId + " svg")
-                let svg_xml = (new XMLSerializer()).serializeToString(svg);
+                let chartMode = '';
+                if ($(this).attr('data-chart-mode')){
+                    chartMode = '-' + $(this).attr('data-chart-mode');
+                } 
                 
                 var img = new Image();
-                img.src = "data:image/svg+xml;base64," + btoa(svg_xml);
+                
+                //converting from csv - low quality.
+                //let svg = document.querySelector(".chart-" + chartId + " svg");
+                //let svg_xml = (new XMLSerializer()).serializeToString(svg);
+                //img.src = "data:image/svg+xml;base64," + btoa(svg_xml);
+                
+                img.src = "/sites/all/modules/custom/spc_education_dashboard/img/charts/chart-"+ chartId + chartMode + ".png";
+                //console.log(img.src);
 
                 //creating PDF
                 let pdf = new jsPDF('p', 'pt', 'letter');
@@ -63,33 +73,21 @@
                     pdf.setFontSize(10);
                     pdf.text(60, 80, subTitle);
                     
-                    pdf.addImage(base64Img, 'PNG', 60, 120, 200, 100);
+                    pdf.addImage(base64Img, 'PNG', 60, 100, 500, 250);
 
                     let source = $('#pdf-' + chartId + ' .description').clone();
                     source.find('.switchers').html('');
-
-                    let specialElementHandlers = {
-                        '#bypassme': function(element, renderer){
-                            return true;
-                        }
-                    }
-
-                    let margins = {
-                        top: 250,
-                        left: 60,
-                        width: 500
-                      };
-                      
+ 
                     let descriptionTitle = $('#pdf-' + chartId + ' .definition h5').text();   
                     let descriptionBody = $('#pdf-' + chartId + ' .definition p').text(); 
                     
                     if (descriptionBody.length > 0){
                         let descriptionBodyTosize = pdf.splitTextToSize(descriptionBody, 500);
                         pdf.setFontSize(14);
-                        pdf.text(60, 280, descriptionTitle);
+                        pdf.text(60, 380, descriptionTitle);
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 300, descriptionBodyTosize);                       
+                        pdf.text(60, 400, descriptionBodyTosize);                       
                     }
 
                     let thresholdTitle = $('#pdf-' + chartId + ' .threshold h5').text(); 
@@ -99,11 +97,11 @@
                     if (thresholdValue.length > 0 || thresholdBody.length > 0){
                         let thresholdBodyTosize = pdf.splitTextToSize(thresholdBody, 500);
                         pdf.setFontSize(14);
-                        pdf.text(60, 380, thresholdTitle);
+                        pdf.text(60, 480, thresholdTitle);
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 400, thresholdValue);
-                        pdf.text(60, 420, thresholdBodyTosize);
+                        pdf.text(60, 500, thresholdValue);
+                        pdf.text(60, 520, thresholdBodyTosize);
                     }
                     
                     let rationaleTitle = $('#pdf-' + chartId + ' .rationale h5').text();   
@@ -112,10 +110,10 @@
                     if (rationaleBody.length > 0){
                         let rationaleBodyTosize = pdf.splitTextToSize(rationaleBody, 500);
                         pdf.setFontSize(14);
-                        pdf.text(60, 480, rationaleTitle);
+                        pdf.text(60, 600, rationaleTitle);
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 500, rationaleBodyTosize);
+                        pdf.text(60, 620, rationaleBodyTosize);
                     }
                     
                     pdf.save('chart-'+ chartId +'.pdf');
@@ -140,9 +138,9 @@
                   
                   canvas = null;
                 };
-                
+
                 img.src = src;
-                if (img.complete || img.complete === undefined) {
+                if (img.complete || img.complete === undefined) { 
                   img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
                   img.src = src;
                 }
@@ -155,9 +153,9 @@
             const orange = '#F79663';
             const green = '#00ACB3';
             const grey = '#ccc';
-			const black = '#000';
-			const xAxisText = "*Sample of countries from the pacific region.";
-            const xAxisTextColor = black;
+            const black = '#000';
+            const xAxisText = "*Sample of countries from the pacific region.";
+            const xAxisTextColor = grey;
             
             function addColorsToData(data, threshold){
                 const thdGreen = threshold.dots.green;
@@ -642,6 +640,8 @@
                 const id = '4';
                 let year = 4;
                 let option = 'literacy';
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-four');
 
                 let chart4yearLiteracy = settings.spc_education_dashboard.chart4[0].data;
                 let chart4yearNumeracy = settings.spc_education_dashboard.chart4[1].data;
@@ -713,7 +713,7 @@
                 
                 $('.swch-4 .ui-switcher').on('click', function(e){
                     e.preventDefault();
-                    let newData = [];                    
+                    let newData = [];
                     
                     $(this).closest('.switch-wrapper').find('.labels span').toggleClass('checked');
 
@@ -721,15 +721,19 @@
                         year = 6;
                         if(option == 'literacy'){
                             newData = chart6yearLiteracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'literacy-six');
                         } else {
                             newData = chart6yearNumeracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-six');
                         }                       
                     } else {
                         year = 4;
                         if(option == 'literacy'){
                             newData = chart4yearLiteracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'literacy-four');
                         } else {
                             newData = chart4yearNumeracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-four');
                         }
                     }
                     
@@ -756,16 +760,20 @@
                     if ($(this).attr('id') == 'numeracy'){
                         option = 'numeracy';
                         if(year == 6){
-                            newData = chart6yearNumeracy;;
+                            newData = chart6yearNumeracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-six');
                         } else {
                             newData = chart4yearNumeracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-four');
                         }                       
                     } else {
                         option = 'literacy';
                         if(year == 4){
                             newData = chart4yearLiteracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'literacy-four');
                         } else {
                             newData = chart6yearLiteracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'literacy-six');
                         }
                     }
                     
@@ -790,6 +798,8 @@
                 let chart5primary = settings.spc_education_dashboard.chart5[1].data;
                 let chart5secondary = settings.spc_education_dashboard.chart5[2].data;
                 const chart5Thd = settings.spc_education_dashboard.threshold5;
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                 
                 chart5ece.sort(barSort);
                 chart5primary.sort(barSort);
@@ -830,12 +840,15 @@
 
                     if($(this).attr('id') == 'secondary'){
                         newData = chart5secondary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'secondary');
                     }
                     else if ($(this).attr('id') == 'primary'){
                         newData = chart5primary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                     }
                     else if ($(this).attr('id') == 'ece'){
                         newData = chart5ece;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
@@ -859,6 +872,8 @@
                 let chart6primary = settings.spc_education_dashboard.chart6[1].data;
                 let chart6secondary = settings.spc_education_dashboard.chart6[2].data;
                 const chart6Thd = settings.spc_education_dashboard.threshold6;
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                 
                 chart6ece.sort(barSort);
                 chart6primary.sort(barSort);
@@ -899,12 +914,15 @@
                     
                     if($(this).attr('id') == 'secondary'){
                         newData = chart6secondary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'secondary');
                     }
                     else if ($(this).attr('id') == 'primary'){
                         newData = chart6primary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                     }
                     else if ($(this).attr('id') == 'ece'){
                         newData = chart6ece;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
@@ -1109,7 +1127,8 @@
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
 
-				svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
+		svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
+
             }
             
             //Progression to secondary school
@@ -1298,7 +1317,7 @@
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
 
-				svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
+		svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
             }
             
             //Transition rate
@@ -1519,7 +1538,7 @@
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
 
-				svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
+                svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
             }
 
             //Pupil-teacher ratio (PTR)
@@ -1528,6 +1547,8 @@
                 let chart11ece = settings.spc_education_dashboard.chart11[0].data;
                 let chart11primary = settings.spc_education_dashboard.chart11[1].data;
                 let chart11secondary = settings.spc_education_dashboard.chart11[2].data;
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                 
                 chart11ece.sort(barSort).reverse();
                 chart11primary.sort(barSort).reverse();
@@ -1574,14 +1595,17 @@
                     if($(this).attr('id') == 'secondary'){
                         newData = chart11secondary;
                         newThreshold = threshold11Secondary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'secondary');
                     }
                     else if ($(this).attr('id') == 'primary'){
                         newData = chart11primary;
                         newThreshold = threshold11Primary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                     }
                     else if ($(this).attr('id') == 'ece'){
                         newData = chart11ece;
                         newThreshold = threshold11Ece;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
@@ -1637,6 +1661,8 @@
                 let chart13secondary = settings.spc_education_dashboard.chart13[1].data;
                 const threshold13 = settings.spc_education_dashboard.threshold13;
                 const threshold = threshold13.dots;
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                 
                 chart13primary.sort(barSortGroup);
                 chart13secondary.sort(barSortGroup);
@@ -1768,8 +1794,10 @@
 
                     if($(this).attr('aria-checked') == 'true'){
                         newData = chart13secondary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'secondary');
                     } else {
                         newData = chart13primary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
@@ -1876,7 +1904,7 @@
                     setSvgGenderBarData(svg, newData, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
                 });
 
-				svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
+		svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
             }
             
         //end context
