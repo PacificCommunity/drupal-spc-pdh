@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="ed-dashboard-link-container">
+<div class="ed-dashboard-link-container" style="margin-bottom: 50px;" >
     <div about="/content/17-goals-transform-pacific" typeof="sioc:Item foaf:Document" class="ds-1col node node-dashboards node-promoted contextual-links-region view-mode-dashboard_highlight clearfix">
  
         <div class="group-content">
@@ -16,10 +16,10 @@
             </div>
             <div class="group-content-right">
                 <div class="dashboard-description">
-                    <?php print t('This Dashboard will enable monitoring of progress against the 2030 agenda for sustainable development'); ?>
+                    <?php print t('An overview, based on available comparable data, of the current status on education in the Pacific to provide an evidence base around key education indicators.'); ?>
                 </div>
                 <div class="field field-type-ds">
-                    <a href="/education-dashboard" class="banner-button btn">View DASHBOARD</a>        
+                    <a href="/education-dashboard" class="banner-button btn"><?php print t('View DASHBOARD'); ?></a>        
                 </div>
             </div>
 
