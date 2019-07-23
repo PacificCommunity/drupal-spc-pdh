@@ -43,8 +43,9 @@
             
             // Download solution
             function updateDownloadURL(id) {
-
-              let d3svg = d3.select(".chart-" + id + " svg");
+                
+              let d3svgClone = $('.chart-' + id + ' svg').clone().appendTo('#chart-clone-'+ id ).hide();
+              let d3svg = d3.select("#chart-clone-" + id + " svg");
 
               let viewBox = d3svg.attr("viewBox").split(',');
               let width = viewBox[2];
@@ -54,7 +55,7 @@
                    .attr("height", height)
                    .attr("viewBox", null);
 
-              let svg = document.querySelector(".chart-" + id + " svg");
+              let svg = document.querySelector("#chart-clone-" + id + " svg");
               let source = svg.parentNode.innerHTML;
               
               let canvas;
@@ -83,6 +84,8 @@
                 d3svg.attr("width", null)
                    .attr("height", null)
                    .attr("viewBox", [0, 0, width, height])
+           
+                d3svgClone.remove();
               };
 
               image.src = 'data:image/svg+xml,' + encodeURIComponent(source);

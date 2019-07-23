@@ -114,7 +114,8 @@
 
         </div>
       </div>
-        <a href="#" id="export-chart-<?php print $item['id']; ?>" data-chart-id="<?php print $item['id']; ?>" data-chart-mode="<?php print $chart_mode; ?>" class="education-pdf"><?php print t('Export PDF'); ?></a>  
+        <a href="#" id="export-chart-<?php print $item['id']; ?>" data-chart-id="<?php print $item['id']; ?>" data-chart-mode="<?php print $chart_mode; ?>" class="education-pdf"><?php print t('Export PDF'); ?></a> 
+        <div id="chart-clone-<?php print $item['id']; ?>"></div>
     </div> 
     <?php endforeach; ?>
     
