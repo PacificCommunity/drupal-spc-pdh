@@ -41,26 +41,63 @@
                 }
             });
             
+            // Download solution
+            function updateDownloadURL(id) {
+
+              let d3svg = d3.select(".chart-" + id + " svg");
+
+              let viewBox = d3svg.attr("viewBox").split(',');
+              let width = viewBox[2];
+              let height = viewBox[3];
+              
+              d3svg.attr("width", width)
+                   .attr("height", height)
+                   .attr("viewBox", null);
+
+              let svg = document.querySelector(".chart-" + id + " svg");
+              let source = svg.parentNode.innerHTML;
+              
+              let canvas;
+              let image = d3.select('body')
+                .append('img')
+                .style('display', 'none')
+                .attr('width', width)
+                .attr('height', height)
+                .node();    
+
+              image.onload = function() {
+                canvas = d3.select('body')
+                    .append('canvas')
+                    .style('display', 'none')
+                    .attr('width', width)
+                    .attr('height', height)
+                    .node();
+
+                let ctx = canvas.getContext('2d');
+                ctx.drawImage(image, 0, 0);
+
+                let url = canvas.toDataURL('image/png');
+                
+                d3.selectAll([ canvas, image ]).remove();
+                
+                d3svg.attr("width", null)
+                   .attr("height", null)
+                   .attr("viewBox", [0, 0, width, height])
+              };
+
+              image.src = 'data:image/svg+xml,' + encodeURIComponent(source);
+
+              return image.src;
+            }
+           
             //Exporting chart to PDF.
             $('.education-pdf').on('click', function(e){
                 e.preventDefault();
                 
                 let chartId = $(this).attr('data-chart-id');
-                
-                let chartMode = '';
-                if ($(this).attr('data-chart-mode')){
-                    chartMode = '-' + $(this).attr('data-chart-mode');
-                } 
-                
+
                 var img = new Image();
-                
-                //converting from csv - low quality.
-                //let svg = document.querySelector(".chart-" + chartId + " svg");
-                //let svg_xml = (new XMLSerializer()).serializeToString(svg);
-                //img.src = "data:image/svg+xml;base64," + btoa(svg_xml);
-                
-                img.src = "/sites/all/modules/custom/spc_education_dashboard/img/charts/chart-"+ chartId + chartMode + ".png";
-                //console.log(img.src);
+                img.src = updateDownloadURL(chartId);
 
                 //creating PDF
                 let pdf = new jsPDF('p', 'pt', 'letter');
@@ -72,11 +109,10 @@
                     let subTitle = $('#pdf-' + chartId + ' .subtitle').text();
                     pdf.setFontSize(10);
                     pdf.text(60, 80, subTitle);
-                    
-                    pdf.addImage(base64Img, 'PNG', 60, 100, 500, 250);
 
-                    let source = $('#pdf-' + chartId + ' .description').clone();
-                    source.find('.switchers').html('');
+                    pdf.addImage(base64Img, 'PNG', 60, 100, 500, 250);
+                    pdf.setFontSize(8);
+                    pdf.text(60, 360, '*Sample of countries from the pacific region.');
  
                     let descriptionTitle = $('#pdf-' + chartId + ' .definition h5').text();   
                     let descriptionBody = $('#pdf-' + chartId + ' .definition p').text(); 
@@ -96,11 +132,12 @@
                     
                     if (thresholdValue.length > 0 || thresholdBody.length > 0){
                         let thresholdBodyTosize = pdf.splitTextToSize(thresholdBody, 500);
+                        let thresholdValueTosize = pdf.splitTextToSize(thresholdValue, 500);
                         pdf.setFontSize(14);
                         pdf.text(60, 480, thresholdTitle);
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 500, thresholdValue);
+                        pdf.text(60, 500, thresholdValueTosize);
                         pdf.text(60, 520, thresholdBodyTosize);
                     }
                     
@@ -141,7 +178,6 @@
 
                 img.src = src;
                 if (img.complete || img.complete === undefined) { 
-                  img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
                   img.src = src;
                 }
             }
@@ -208,7 +244,7 @@
                 const thdOrange = threshold.dots.orange;
                 const thdRed = threshold.dots.red;
                 
-                let textX = -5
+                let textX = 0
                 if (type == 'gender'){
                     textX = -25
                 }
@@ -231,13 +267,13 @@
             
             function setNegativeThreshold(svg, threshold, x, y, width, height, symbol){
                 svgSetLine(svg, 30, 190, 580, 191, green);
-                svgSetText(svg, -5, 194, '1%', green);
+                svgSetText(svg, 0, 194, '1%', green);
                 
                 svgSetLine(svg, 30, 200, 580, 201, grey);
-                svgSetText(svg, -5, 204, '0', grey);
+                svgSetText(svg, 0, 204, '0', grey);
                 
                 svgSetLine(svg, 30, 210, 580, 211, orange);
-                svgSetText(svg, -5, 214, '-1%', orange);
+                svgSetText(svg, 0, 214, '-1%', orange);
             }
             
             function setCartExtremum(svg, data, threshold, x, y, width, height){
@@ -296,6 +332,8 @@
                 return d3
                     .select(chart)
                     .append("svg")
+                    .attr('version', 1.1)
+                    .attr('xmlns', 'http://www.w3.org/2000/svg')
                     .attr('class', className)
                     .attr("viewBox", [0, 0, width, height])
                     .append("g");
@@ -454,6 +492,8 @@
                 return d3
                     .select('.chart-' + id)
                     .append("svg")
+                    .attr('version', 1.1)
+                    .attr('xmlns', 'http://www.w3.org/2000/svg')
                     .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
                     .append("g")
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");   
@@ -563,10 +603,9 @@
                 
                 setCartBars(svg, chart1data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
                 
-                svgSetText(svg, -5, 20, '18%', green);
-                svgSetText(svg, -5, 230, '3.8%', red);
-                svgSetText(svg, -5, height+30, xAxisText, xAxisTextColor);
-                
+                svgSetText(svg, 0, 20, '18%', green);
+                svgSetText(svg, 0, 230, '3.8%', red);
+                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor);
             }
             
             //Out of School Children chart
@@ -706,7 +745,7 @@
                 }
                 
                 setCartBarsReverse(svg, chart4yearLiteracy,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, xAxisText, xAxisTextColor);
+                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor);
 
                 //enable switcher    
                 $.switcher('input.slider');
