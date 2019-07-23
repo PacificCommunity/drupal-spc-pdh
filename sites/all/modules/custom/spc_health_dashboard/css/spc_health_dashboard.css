@@ -673,7 +673,8 @@
   border: 1px solid;
   box-sizing: border-box;
   border-radius: 10px;
-  width: 110px;
+  max-width: 110px;
+  width: 100%;
   height: 20px;
   margin: 10px 0;
 }
@@ -756,6 +757,29 @@
   margin-top: 23px;
   margin-right: 10px;
   width: 30px;
+}
+@media (max-width: 767px) {
+  .ui-dialog .country-detales {
+    display: none;
+  }
+  .ui-dialog .description-detales {
+    width: 100%;
+  }
+  .ui-dialog .description-detales .col-sm-3 {
+    width: 25%;
+    float: left;
+    padding: 0;
+  }
+  .ui-dialog .description-detales .col-sm-9 {
+    width: 75%;
+    float: left;
+    padding: 0, 5px;
+  }
+}
+@media (max-width: 767px) {
+  .ui-dialog {
+    position: absolute !important;
+  }
 }
 .health-dashboard-countries {
   float: left;
