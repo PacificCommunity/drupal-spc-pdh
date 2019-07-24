@@ -31,52 +31,64 @@
       }
    ?> 
   <h4><?php print t('PICT ratings for Pacific NCD Dashboard '. $data['current_category']['#title'] . ' indicators'); ?></h4>
-  <div class="category-countries <?php print $category_countries_class; ?>">
+  <div class="category-countries <?php print $category_countries_class; ?> clearfix">
       <h4><?php print t('PICT ratings for Pacific NCD Dashboard '. $data['current_category']['#title'] . ' indicators'); ?></h4>
 
-      <div class="category-header clearfix">
-          <div class="countries-names">
-              <?php print t('indicator'); ?>
+      <div class="country-id">
+       
+        <div class="category-header clearfix">
+            <div class="countries-names">
+                <?php print t('indicator'); ?>
+            </div>  
+        </div>
+          
+        <?php foreach ($data['countries-data'] as $country): ?>
+        <div class="country-item  clearfix">
+          <div class="country-flag">
+                <?php $map = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/flags/' . $country['id'] . '.svg';?>
+              <img id="<?php print $country['id']; ?>" src="<?php print $map; ?>">       
           </div>
 
-          <div class="country-indicators">
-          <?php foreach ($data['indicator_detales'] as $indicator_key => $indicator): ?>
-            <?php if ($indicator['indicator-category'] == $data['current_category']['id']): ?>
-              <div class="indicator-title">
-                  <a data-name="<?php print $indicator_key; ?>" href="/health-dashboard/<?php print $indicator['indicator-category']; ?>/<?php print $indicator_key; ?>">
-                  <?php print $indicator['code'] .'. '. $indicator['title']; ?>
-                </a>
-              </div>
-            <?php endif; ?>
-          <?php endforeach; ?>
-          </div>    
+          <div class="country-name">
+              <a href="/health-dashboard/country/<?php print $country['id']; ?>"><?php print $country['title']; ?></a>
+          </div>
+        </div>   
+        <?php endforeach;?>  
       </div>
-
-      <?php foreach ($data['countries-data'] as $country): ?>
-      <div class="country-item clearfix">
-        <div class="country-flag">
-              <?php $map = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/flags/' . $country['id'] . '.svg';?>
-            <img id="<?php print $country['id']; ?>" src="<?php print $map; ?>">       
-        </div>
-
-        <div class="country-name">
-            <a href="/health-dashboard/country/<?php print $country['id']; ?>"><?php print $country['title']; ?></a>
-        </div>
-
-        <div class="country-indicators helth-indicators">
-            <?php foreach ($country['indicators'] as $ind_key => $indicator): ?>
+          
+      <div class="country-indicators helth-indicators">
+        <div class="country-indicators-scroll">
+          <div class="category-header clearfix">  
+            <div class="country-indicators">
+            <?php foreach ($data['indicator_detales'] as $indicator_key => $indicator): ?>
               <?php if ($indicator['indicator-category'] == $data['current_category']['id']): ?>
-                <div class="status-strength <?php print $indicator['value']?>" 
-                     data-value="<?php print $indicator['value']?>"
-                     data-category="<?php print $data['current_category']['id']; ?>"
-                     data-indicator="<?php print $ind_key; ?>"
-                     data-country-title="<?php print $country['title']; ?>"
-                     data-country="<?php print $country['id']; ?>"></div>
+                <div class="indicator-title">
+                    <a data-name="<?php print $indicator_key; ?>" href="/health-dashboard/<?php print $indicator['indicator-category']; ?>/<?php print $indicator_key; ?>">
+                    <?php print $indicator['code'] .'. '. $indicator['title']; ?>
+                  </a>
+                </div>
               <?php endif; ?>
             <?php endforeach; ?>
-        </div>   
-      </div>        
-      <?php endforeach;?>
+            </div>
+          </div>    
+         
+          <?php foreach ($data['countries-data'] as $country): ?>
+            <div class="country-item ">
+                <?php foreach ($country['indicators'] as $ind_key => $indicator): ?>
+                  <?php if ($indicator['indicator-category'] == $data['current_category']['id']): ?>
+                    <div class="status-strength <?php print $indicator['value']?>" 
+                         data-value="<?php print $indicator['value']?>"
+                         data-category="<?php print $data['current_category']['id']; ?>"
+                         data-indicator="<?php print $ind_key; ?>"
+                         data-country-title="<?php print $country['title']; ?>"
+                         data-country="<?php print $country['id']; ?>"></div>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+            </div>          
+          <?php endforeach;?>
+        </div>    
+      </div>  
+      
   </div>
 
   <div class="category-detales <?php print $category_detales_class; ?>">
