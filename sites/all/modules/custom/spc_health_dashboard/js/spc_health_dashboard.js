@@ -178,7 +178,7 @@
                 } else if($(this).hasClass('toggle-lbl')) {
                     $(this).siblings('.toggle').find('.arrow').toggleClass('down');        
                 }
-
+               
             });
 
             if ($('.indicator-popup').length){

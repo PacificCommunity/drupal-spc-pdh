@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
 }
 .banner-with-title.health-dashboard-header {
   background-image: url('../img/Fishes-background.png');
@@ -71,7 +71,7 @@
   min-width: 265px;
   background: #FFFFFF;
   color: #383838;
-  max-height: 189px;
+  max-height: 200px;
   overflow: hidden;
   left: -1px;
   right: -1px;
@@ -127,51 +127,6 @@
 .health-dashboard-header .search {
   color: #FFFFFF;
 }
-@media (max-width: 767px) {
-  .health-dashboard-header.banner-with-title {
-    height: 430px;
-    justify-content: flex-end;
-    padding-bottom: 0px;
-  }
-  .health-dashboard-header .search {
-    margin: 20px 0 40px;
-  }
-  .health-dashboard-header .left-label {
-    font-size: 16px;
-    line-height: 20px;
-    height: 40px;
-    padding: 11px 40px 11px 30px;
-    width: 210px;
-  }
-  .banner-with-title.health-dashboard-header h1 {
-    font-size: 20px;
-    line-height: 30px;
-  }
-  .health-dashboard-header .breadcrumbs {
-    margin: 0px;
-  }
-  .x.axis text {
-    transform: rotate(90deg);
-    text-anchor: start !important;
-  }
-  .stacked-chart-global {
-    padding-bottom: 60px !important;
-  }
-}
-@media (max-width: 550px) {
-  .health-dashboard-header .breadcrumbs {
-    display: none;
-  }
-  .health-dashboard-header.banner-with-title {
-    height: 365px;
-  }
-  .banner-with-title.health-dashboard-header h1 {
-    font-size: 20px;
-    line-height: 24px;
-    max-width: 95%;
-    margin-left: 2%;
-  }
-}
 .health-home-chart {
   margin-top: 50px;
 }
@@ -192,6 +147,9 @@
 .health-dashboard-content .legend {
   margin-bottom: 60px;
   font-size: 10px;
+}
+.health-dashboard-content .legend span {
+  vertical-align: sub;
 }
 .health-dashboard-content .legend:before {
   content: '';
@@ -525,6 +483,7 @@
   font-size: 18px;
   line-height: 22px;
   cursor: pointer;
+  max-width: 90%;
 }
 .block-indicator-group .category-title:before {
   content: '';
@@ -627,6 +586,9 @@
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 50%;
+}
+.helth-indicators .who {
+  text-align: center;
 }
 .ui-widget,
 .ui-dialog-content {
@@ -835,6 +797,10 @@
     line-height: 13px;
   }
 }
+.health-dashboard-countries a:hover {
+  background: #fff;
+  box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+}
 .health-dashboard-countries h4 {
   margin-bottom: 0px;
 }
@@ -843,11 +809,14 @@
     margin-bottom: 10px;
   }
 }
+.category-countries {
+  min-width: 290px;
+}
 .category-countries .country-indicators {
   display: block;
 }
-.category-countries .country-item {
-  /*margin-bottom: 5px;*/
+.category-countries .country-id {
+  float: left;
 }
 .category-countries .country-flag,
 .category-countries .country-name,
@@ -873,6 +842,10 @@
   font-size: 10px;
   line-height: 14px;
 }
+.category-countries .countries-names .country-item,
+.category-countries .country-indicators .country-item {
+  height: 23px;
+}
 .category-countries .countries-names {
   width: 140px;
 }
@@ -884,10 +857,6 @@
 }
 .category-countries .indicator-title a {
   color: #000000;
-}
-.category-countries {
-  min-width: 290px;
-  margin-top: 30px;
 }
 .category-content > h4,
 .category-countries h4,
@@ -1046,6 +1015,9 @@
 .category-countries {
   margin-bottom: 30px;
 }
+.category-countries .category-header {
+  height: 60px;
+}
 .category-detales .category-data {
   display: inline-block;
 }
@@ -1082,7 +1054,7 @@
   border-radius: 20px;
   margin-right: 10px;
   padding: 5px;
-  width: 120px;
+  width: 125px;
 }
 .category-detales .category-data .not-present {
   background: #ff00001a;
@@ -1104,52 +1076,41 @@
   font-size: 10px;
   line-height: 35px;
 }
-.category-detales .category-data .indicator {
-  width: 100px;
-}
 @media (max-width: 1200px) {
   .category-countries.col-sm-12 > div {
     width: 930px;
   }
-  .category-countries.col-sm-6 > div {
-    width: 530px;
-  }
   .category-detales.col-sm-6 {
     width: 100%;
+    padding: 0 10px;
   }
 }
 @media (max-width: 600px) {
+  .category-detales .summary-indicators {
+    width: 28%;
+  }
+  .category-detales .category-data {
+    width: 70%;
+  }
   .category-detales .category-data .values {
-    width: 90px;
+    width: 30%;
     margin-right: 5px;
   }
   .category-detales .category-data p.value {
-    width: 30px;
+    width: 45%;
   }
   .category-detales .category-data h4 {
-    font-size: 6px;
+    font-size: 7px;
+    height: 15px;
   }
 }
-@media (max-width: 460px) {
-  .category-detales .summary-indicators .indicator-title {
-    max-width: 100px;
+@media (max-width: 400px) {
+  .category-detales .summary-indicators .indicator-title a {
+    font-size: 8px;
   }
   .category-detales .category-data .values {
-    width: 75px;
-  }
-  .category-detales .category-data p.value {
-    width: 20px;
-  }
-  .category-detales .category-data h4 {
-    font-weight: 100;
-  }
-}
-@media (max-width: 450px) {
-  .category-detales .summary-indicators .indicator-title {
-    max-width: 80px;
-  }
-  .category-detales .category-data p.value {
-    line-height: 50px;
+    width: 32%;
+    margin-right: 0;
   }
 }
 .category-description {
@@ -1209,5 +1170,139 @@
 .indicator-content .category-detales {
   margin: 50px 0;
   padding: 0 20px;
+}
+@media (max-width: 767px) {
+  .health-dashboard-header.banner-with-title {
+    height: 430px;
+    justify-content: flex-end;
+    padding-bottom: 0px;
+  }
+  .health-dashboard-header .search {
+    margin: 20px 0 40px;
+  }
+  .health-dashboard-header .left-label {
+    font-size: 16px;
+    line-height: 20px;
+    height: 40px;
+    padding: 11px 40px 11px 30px;
+    width: 210px;
+  }
+  .health-dashboard-content {
+    margin: 10px auto;
+  }
+  .banner-with-title.health-dashboard-header h1 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .health-dashboard-header .breadcrumbs {
+    margin: 0px;
+  }
+  .x.axis text {
+    transform: rotate(90deg);
+    text-anchor: start !important;
+  }
+  .stacked-chart-global {
+    border-radius: 10px;
+    padding: 20px 25px;
+    padding-bottom: 60px;
+  }
+  .health-dashboard-content h4 {
+    font-size: 18px;
+  }
+  .health-home-chart > div,
+  .health-country-chart > div {
+    padding: 0;
+  }
+  .health-dashboard-content .chart-global-legend {
+    display: flex;
+  }
+  .health-dashboard-content .legend {
+    margin-right: 5px;
+  }
+  .health-dashboard-content .legend:before {
+    width: 20px;
+    margin-right: 10px;
+  }
+  .helth-indicators .title {
+    width: 60%;
+    float: left;
+  }
+  .helth-indicators .title p {
+    line-height: 14px;
+  }
+  .helth-indicators .scroll-wrapp {
+    width: 40%;
+    float: left;
+    overflow-x: scroll;
+  }
+  .helth-indicators .scroll-wrapp .scroll-row {
+    width: 400px;
+  }
+  .helth-indicators .scroll-wrapp .strength {
+    width: 200px;
+    float: left;
+  }
+  .helth-indicators .scroll-wrapp .who {
+    width: 200px;
+    float: left;
+  }
+  .helth-indicators .code {
+    display: none;
+  }
+  .category-countries .country-id {
+    width: 30%;
+  }
+  .category-countries .country-indicators.helth-indicators {
+    width: 70%;
+    overflow-x: scroll;
+  }
+  .category-countries .country-indicators-scroll {
+    width: 380px;
+  }
+}
+@media (max-width: 550px) {
+  .health-dashboard-header .breadcrumbs {
+    display: none;
+  }
+  .health-dashboard-header.banner-with-title {
+    height: 365px;
+  }
+  .banner-with-title.health-dashboard-header h1 {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 95%;
+    margin-left: 2%;
+  }
+  #spc-home-banner-search {
+    margin: 0 10px !important;
+  }
+  .stacked-chart-global {
+    padding: 20px 15px;
+    padding-bottom: 60px;
+  }
+  .health-dashboard-content .legend:before {
+    width: 18px;
+    margin-right: 5px;
+  }
+  .health-dashboard-countries a {
+    width: 91px;
+  }
+  .toggle {
+    right: 15px;
+  }
+  .category-countries .country-id {
+    width: 40%;
+  }
+  .category-countries .country-indicators.helth-indicators {
+    width: 60%;
+  }
+}
+@media (max-width: 380px) {
+  .category-countries .country-id {
+    width: 50%;
+  }
+  .category-countries .country-indicators.helth-indicators {
+    width: 50%;
+  }
 }
 /*# sourceMappingURL=spc_health_dashboard.css.map */
