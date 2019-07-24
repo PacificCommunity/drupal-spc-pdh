@@ -120,14 +120,24 @@
                     let descriptionTitle = $('#pdf-' + chartId + ' .definition h5').text();   
                     let descriptionBody = $('#pdf-' + chartId + ' .definition p').text();
                     
+                    let strHeight = 400;
+                    let blockSpasing = 25;
+                    let titleSpasing = 20;
+                    
                     if (descriptionBody.length > 0){
                         let descriptionBodyTosize = pdf.splitTextToSize(descriptionBody, 500);
+                        
                         pdf.setFontSize(14);
-                        pdf.text(60, 400, descriptionTitle);
+                        pdf.text(60, strHeight, descriptionTitle);
+                        strHeight += titleSpasing;
+                        
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 420, descriptionBodyTosize);
+                        pdf.text(60, strHeight, descriptionBodyTosize);
+                        strHeight += descriptionBodyTosize.length * 10; 
                     }
+                    
+                    strHeight += blockSpasing;
 
                     let thresholdTitle = $('#pdf-' + chartId + ' .threshold h5').text(); 
                     let thresholdValue = $('#pdf-' + chartId + ' .threshold .values').text();
@@ -136,24 +146,36 @@
                     if (thresholdValue.length > 0 || thresholdBody.length > 0){
                         let thresholdBodyTosize = pdf.splitTextToSize(thresholdBody, 500);
                         let thresholdValueTosize = pdf.splitTextToSize(thresholdValue, 500);
+                        
                         pdf.setFontSize(14);
-                        pdf.text(60, 480, thresholdTitle);
+                        pdf.text(60, strHeight, thresholdTitle);
+                        strHeight += titleSpasing;
+                        
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 500, thresholdValueTosize);
-                        pdf.text(60, 520, thresholdBodyTosize);
+
+                        pdf.text(60, strHeight, thresholdValueTosize);
+                        strHeight += thresholdValueTosize.length * 10;
+
+                        pdf.text(60, strHeight, thresholdBodyTosize);
+                        strHeight += thresholdBodyTosize.length * 10;
                     }
+                    
+                    strHeight += blockSpasing;
                     
                     let rationaleTitle = $('#pdf-' + chartId + ' .rationale h5').text();   
                     let rationaleBody = $('#pdf-' + chartId + ' .rationale p').text(); 
                     
                     if (rationaleBody.length > 0){
                         let rationaleBodyTosize = pdf.splitTextToSize(rationaleBody, 500);
+                        
                         pdf.setFontSize(14);
-                        pdf.text(60, 600, rationaleTitle);
+                        pdf.text(60, strHeight, rationaleTitle);
+                        strHeight += titleSpasing;
+                        
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 620, rationaleBodyTosize);
+                        pdf.text(60, strHeight, rationaleBodyTosize);
                     }
                     
                     pdf.save('chart-'+ chartId +'.pdf');
@@ -278,10 +300,6 @@
                 
                 svgSetLine(svg, 30, 210, 580, 211, orange);
                 svgSetText(svg, 0, 214, '-1%', orange);
-            }
-            
-            function setCartExtremum(svg, data, threshold, x, y, width, height){
-                //todo set cart extremum function
             }
             
             function setToolText(svg, className){
@@ -610,7 +628,6 @@
                 
                 svgSetText(svg, 0, 20, '18%', green);
                 svgSetText(svg, 0, 230, '3.8%', red);
-                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
             }
             
             //Out of School Children chart
@@ -643,7 +660,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart2data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
             }
             
             //Over age students chart
@@ -676,7 +692,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart3data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY, id);
-                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
             }
        
             //Learning outcomes
@@ -750,7 +765,6 @@
                 }
                 
                 setCartBarsReverse(svg, chart4yearLiteracy,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
 
                 //enable switcher    
                 $.switcher('input.slider');
@@ -791,7 +805,6 @@
                     appendTolltip(id);
                     
                     setCartBarsReverse(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 });
 
                 $('.sw-4 a').on('click', function(e){
@@ -831,7 +844,6 @@
                     appendTolltip(id);
                     
                     setCartBarsReverse(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 });            
             }
             
@@ -873,7 +885,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart5ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 
                 $('.sw-5 a').on('click', function(e){
                     e.preventDefault();
@@ -905,7 +916,6 @@
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 });    
             }
             
@@ -947,7 +957,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart6ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 
                 $('.sw-6 a').on('click', function(e){
                     e.preventDefault();
@@ -979,7 +988,6 @@
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);   
-                    svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 });    
             } 
             
@@ -1171,8 +1179,6 @@
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
 
-		svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor, xAxisClass);
-
             }
             
             //Progression to secondary school
@@ -1360,8 +1366,6 @@
                     .duration(1000)
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
-
-		svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor, xAxisClass);
             }
             
             //Transition rate
@@ -1393,7 +1397,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart9data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
             }
             
             // Lower secondary completion rate
@@ -1581,8 +1584,6 @@
                     .duration(1000)
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
-
-                svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor, xAxisClass);
             }
 
             //Pupil-teacher ratio (PTR)
@@ -1626,7 +1627,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart11ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 
                 $('.sw-11 a').on('click', function(e){
                     e.preventDefault();
@@ -1662,7 +1662,6 @@
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    svgSetText(svg, 0, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 });    
             }            
             
@@ -1695,7 +1694,6 @@
                 const tipY = function(d){ return y(d.percentage)-30;}
                 
                 setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, xAxisText, xAxisTextColor, xAxisClass);
             }
             
             //Trained teachers
@@ -1946,10 +1944,7 @@
                     appendTolltip(id);
                     setThreshold(svg, threshold13, x0, y, width, height, '%', 'gender');
                     setSvgGenderBarData(svg, newData, x0, x1, y, width, height, tooltip, tooltext, boyWrap);
-                    svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor, xAxisClass);
                 });
-
-		svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor, xAxisClass);
             }
             
         //end context

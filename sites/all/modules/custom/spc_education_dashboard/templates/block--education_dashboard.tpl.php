@@ -45,6 +45,7 @@
                 </div>
                 <?php endif; ?>
                 <div class="chart-<?php print $item['id']; ?>"></div>
+                <p class="sample <?php print $item['type']; ?>"> <?php print t('*Sample of countries from the pacific region.'); ?></p>
             </div>
 
             <?php $ds_cols =  (count($item['charts'][0]['data']) >= 10 && $item['type'] == "gender")? 5 : 7; ?>
