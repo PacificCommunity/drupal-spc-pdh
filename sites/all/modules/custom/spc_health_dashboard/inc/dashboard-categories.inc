@@ -30,7 +30,7 @@ function spc_health_dashboard_pages($category, $indicator = NULL) {
   return theme(
     'spc_health_dashboard_page',
     [
-      'title' => t('Status of NCD policy and legislation in <br><strong>Pacific Island countries</strong> and territories'),
+      'title' => _health_dashboard_title(),
       'content' => $content,
       'breadcrumbs' => _category_breadcrumbs($category, $indicator),
       'search' => spc_health_dashboard_home_search(),
