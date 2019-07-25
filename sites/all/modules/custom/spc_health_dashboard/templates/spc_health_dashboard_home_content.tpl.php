@@ -43,6 +43,13 @@
           <div class="legend development"><span><?php print t('Under Development'); ?></span></div>
           <div class="legend not-present"><span><?php print t('Not Present'); ?></span></div>
         </div>
+        <div class="chart-pdf-export">
+          <a target="_blank"href="/sites/all/modules/custom/spc_health_dashboard/pdf/Status-of-non-communicable-diseases-policy-and-legislation-in-Pacific-Island-countries-and-territories-2018.pdf"></a>
+          <div class="chart-pdf-text">
+            <p><strong><?php print t('Downlode pdf file'); ?></strong></p>
+            <p><?php print t('Summary of status of indicators across the categories (%) across the 21 PICTs'); ?></p>
+          </div>
+        </div>
     </div>    
 </div>
 

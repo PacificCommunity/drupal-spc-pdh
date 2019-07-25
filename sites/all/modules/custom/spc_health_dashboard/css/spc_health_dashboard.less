@@ -176,6 +176,81 @@
     .not-present:before {
         background: #ff000080;
         border-color: #FF0000;
+    } 
+    .chart-pdf-export {
+        a {
+            display: block;
+            width: 80px;
+            height: 80px;
+            float: left;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 15px rgba(0, 5, 160, 0.102);
+            border-radius: 10px;    
+            background-image: url(../img/download-to-storage-drive.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        a:hover{
+            background: #F2F2F2;
+            background-image: url(../img/download-to-storage-drive.svg);
+            background-position: center;
+            background-repeat: no-repeat;            
+        }
+        .chart-pdf-text {
+            float: left;
+            width: 160px;
+            margin-left: 10px;         
+            p {
+                font-size: 10px;
+                line-height: 16px;
+                strong {
+                    font-size: 12px;
+                }
+            }
+        }
+        @media (max-width: 1200px) {
+            a {
+                width: 60px;
+                height: 60px;
+            }
+            .chart-pdf-text {
+                width: 120px;
+            }
+        }
+        @media (max-width: 1000px) {
+            a {
+                width: 40px;
+                height: 40px;
+            }
+            .chart-pdf-text {
+                width: 100px;
+            }
+        }
+        @media (max-width: 767px) {
+            a {
+                width: 60px;
+                height: 60px;
+            }
+        } 
+    }
+    @media (max-width: 767px) {
+        .chart-pdf-export {
+            float: right;
+            margin-top: -50px;
+        }
+        a {
+            width: 80px;
+            height: 80px;
+        }
+    }
+    @media (max-width: 500px) {
+        .chart-pdf-export {
+            margin-top: 0px;
+            float: left;            
+        }
+        .chart-pdf-text {
+            width: 50% !important;
+        }
     }    
 }
 
