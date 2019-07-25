@@ -45,6 +45,7 @@
                 </div>
                 <?php endif; ?>
                 <div class="chart-<?php print $item['id']; ?>"></div>
+                <p class="sample <?php print $item['type']; ?>"> <?php print t('*Sample of countries from the pacific region.'); ?></p>
             </div>
 
             <?php $ds_cols =  (count($item['charts'][0]['data']) >= 10 && $item['type'] == "gender")? 5 : 7; ?>
@@ -114,7 +115,8 @@
 
         </div>
       </div>
-        <a href="#" data-chart-id="<?php print $item['id']; ?>" class="education-pdf"><?php print t('Export PDF'); ?></a>  
+        <a href="#" id="export-chart-<?php print $item['id']; ?>" data-chart-id="<?php print $item['id']; ?>" data-chart-mode="<?php print $chart_mode; ?>" class="education-pdf"><?php print t('Export PDF'); ?></a> 
+        <div id="chart-clone-<?php print $item['id']; ?>"></div>
     </div> 
     <?php endforeach; ?>
     

@@ -2,7 +2,7 @@
     Drupal.behaviors.educationDashboard = {
         attach: function (context, settings) {
         //start context
-        
+			
             const availableTags = [];
             let availableItems = {};
 
@@ -41,16 +41,65 @@
                 }
             });
             
+            // Download solution
+            function updateDownloadURL(id) {
+              let d3svgClone = $('.chart-' + id + ' svg').clone().appendTo('#chart-clone-'+ id ).hide();
+              let d3svg = d3.select("#chart-clone-" + id + " svg");
+              
+              d3svg.selectAll('text.sample').remove();
+
+              let viewBox = d3svg.attr("viewBox").split(',');
+              let width = viewBox[2];
+              let height = viewBox[3];
+              
+              d3svg.attr("width", width)
+                   .attr("height", height)
+                   .attr("viewBox", null);
+
+              let svg = document.querySelector("#chart-clone-" + id + " svg");
+              let source = svg.parentNode.innerHTML;
+              
+              let canvas;
+              let image = d3.select('body')
+                .append('img')
+                .style('display', 'none')
+                .attr('width', width)
+                .attr('height', height)
+                .node();    
+
+              image.onload = function() {
+                canvas = d3.select('body')
+                    .append('canvas')
+                    .style('display', 'none')
+                    .attr('width', width)
+                    .attr('height', height)
+                    .node();
+
+                let ctx = canvas.getContext('2d');
+                ctx.drawImage(image, 0, 0);
+                
+                d3.selectAll([ canvas, image ]).remove();
+                
+                d3svg.attr("width", null)
+                   .attr("height", null)
+                   .attr("viewBox", [0, 0, width, height])
+           
+                d3svgClone.remove();
+              };
+
+              image.src = 'data:image/svg+xml,' + encodeURIComponent(source);
+
+              return image.src;
+            }
+           
             //Exporting chart to PDF.
             $('.education-pdf').on('click', function(e){
                 e.preventDefault();
+                
                 let chartId = $(this).attr('data-chart-id');
-                
-                let svg = document.querySelector(".chart-" + chartId + " svg")
-                let svg_xml = (new XMLSerializer()).serializeToString(svg);
-                
+
                 var img = new Image();
-                img.src = "data:image/svg+xml;base64," + btoa(svg_xml);
+                img.src = updateDownloadURL(chartId);
 
                 //creating PDF
                 let pdf = new jsPDF('p', 'pt', 'letter');
@@ -62,35 +111,33 @@
                     let subTitle = $('#pdf-' + chartId + ' .subtitle').text();
                     pdf.setFontSize(10);
                     pdf.text(60, 80, subTitle);
-                    
-                    pdf.addImage(base64Img, 'PNG', 60, 120, 200, 100);
 
-                    let source = $('#pdf-' + chartId + ' .description').clone();
-                    source.find('.switchers').html('');
-
-                    let specialElementHandlers = {
-                        '#bypassme': function(element, renderer){
-                            return true;
-                        }
-                    }
-
-                    let margins = {
-                        top: 250,
-                        left: 60,
-                        width: 500
-                      };
-                      
+                    pdf.addImage(base64Img, 'PNG', 60, 100, 500, 250);
+                    pdf.setFontSize(8);
+                    pdf.text(60, 370, '*Sample of countries from the pacific region.');
+                    pdf.setFontSize(10);
+ 
                     let descriptionTitle = $('#pdf-' + chartId + ' .definition h5').text();   
-                    let descriptionBody = $('#pdf-' + chartId + ' .definition p').text(); 
+                    let descriptionBody = $('#pdf-' + chartId + ' .definition p').text();
+                    
+                    let strHeight = 400;
+                    let blockSpasing = 25;
+                    let titleSpasing = 20;
                     
                     if (descriptionBody.length > 0){
                         let descriptionBodyTosize = pdf.splitTextToSize(descriptionBody, 500);
+                        
                         pdf.setFontSize(14);
-                        pdf.text(60, 280, descriptionTitle);
+                        pdf.text(60, strHeight, descriptionTitle);
+                        strHeight += titleSpasing;
+                        
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 300, descriptionBodyTosize);                       
+                        pdf.text(60, strHeight, descriptionBodyTosize);
+                        strHeight += descriptionBodyTosize.length * 10; 
                     }
+                    
+                    strHeight += blockSpasing;
 
                     let thresholdTitle = $('#pdf-' + chartId + ' .threshold h5').text(); 
                     let thresholdValue = $('#pdf-' + chartId + ' .threshold .values').text();
@@ -98,24 +145,37 @@
                     
                     if (thresholdValue.length > 0 || thresholdBody.length > 0){
                         let thresholdBodyTosize = pdf.splitTextToSize(thresholdBody, 500);
+                        let thresholdValueTosize = pdf.splitTextToSize(thresholdValue, 500);
+                        
                         pdf.setFontSize(14);
-                        pdf.text(60, 380, thresholdTitle);
+                        pdf.text(60, strHeight, thresholdTitle);
+                        strHeight += titleSpasing;
+                        
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 400, thresholdValue);
-                        pdf.text(60, 420, thresholdBodyTosize);
+
+                        pdf.text(60, strHeight, thresholdValueTosize);
+                        strHeight += thresholdValueTosize.length * 10;
+
+                        pdf.text(60, strHeight, thresholdBodyTosize);
+                        strHeight += thresholdBodyTosize.length * 10;
                     }
+                    
+                    strHeight += blockSpasing;
                     
                     let rationaleTitle = $('#pdf-' + chartId + ' .rationale h5').text();   
                     let rationaleBody = $('#pdf-' + chartId + ' .rationale p').text(); 
                     
                     if (rationaleBody.length > 0){
                         let rationaleBodyTosize = pdf.splitTextToSize(rationaleBody, 500);
+                        
                         pdf.setFontSize(14);
-                        pdf.text(60, 480, rationaleTitle);
+                        pdf.text(60, strHeight, rationaleTitle);
+                        strHeight += titleSpasing;
+                        
                         pdf.setFontSize(10);
                         pdf.setFontType("normal");
-                        pdf.text(60, 500, rationaleBodyTosize);
+                        pdf.text(60, strHeight, rationaleBodyTosize);
                     }
                     
                     pdf.save('chart-'+ chartId +'.pdf');
@@ -140,10 +200,9 @@
                   
                   canvas = null;
                 };
-                
+
                 img.src = src;
-                if (img.complete || img.complete === undefined) {
-                  img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+                if (img.complete || img.complete === undefined) { 
                   img.src = src;
                 }
             }
@@ -155,6 +214,10 @@
             const orange = '#F79663';
             const green = '#00ACB3';
             const grey = '#ccc';
+            const black = '#000';
+            const xAxisText = "*Sample of countries from the pacific region.";
+            const xAxisTextColor = grey;
+            const xAxisClass = 'sample';
             
             function addColorsToData(data, threshold){
                 const thdGreen = threshold.dots.green;
@@ -207,7 +270,7 @@
                 const thdOrange = threshold.dots.orange;
                 const thdRed = threshold.dots.red;
                 
-                let textX = -5
+                let textX = 0
                 if (type == 'gender'){
                     textX = -25
                 }
@@ -230,17 +293,13 @@
             
             function setNegativeThreshold(svg, threshold, x, y, width, height, symbol){
                 svgSetLine(svg, 30, 190, 580, 191, green);
-                svgSetText(svg, -5, 194, '1%', green);
+                svgSetText(svg, 0, 194, '1%', green);
                 
                 svgSetLine(svg, 30, 200, 580, 201, grey);
-                svgSetText(svg, -5, 204, '0', grey);
+                svgSetText(svg, 0, 204, '0', grey);
                 
                 svgSetLine(svg, 30, 210, 580, 211, orange);
-                svgSetText(svg, -5, 214, '-1%', orange);
-            }
-            
-            function setCartExtremum(svg, data, threshold, x, y, width, height){
-                //todo set cart extremum function
+                svgSetText(svg, 0, 214, '-1%', orange);
             }
             
             function setToolText(svg, className){
@@ -295,6 +354,8 @@
                 return d3
                     .select(chart)
                     .append("svg")
+                    .attr('version', 1.1)
+                    .attr('xmlns', 'http://www.w3.org/2000/svg')
                     .attr('class', className)
                     .attr("viewBox", [0, 0, width, height])
                     .append("g");
@@ -418,12 +479,13 @@
                     .attr("stroke-dasharray", "10");
             }
             
-            function svgSetText(svg, x, y, text, fill){
+            function svgSetText(svg, x, y, text, fill, className){
                 svg.append("text")
                     .attr("x", x)
                     .attr("y", y)
                     .text(text)
                     .attr("font-size", "12px")
+                    .attr('class', className)
                     .attr("fill", fill);
             }
             
@@ -453,6 +515,8 @@
                 return d3
                     .select('.chart-' + id)
                     .append("svg")
+                    .attr('version', 1.1)
+                    .attr('xmlns', 'http://www.w3.org/2000/svg')
                     .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
                     .append("g")
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");   
@@ -562,10 +626,8 @@
                 
                 setCartBars(svg, chart1data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
                 
-                svgSetText(svg, -5, 20, '18%', green);
-                svgSetText(svg, -5, 230, '3.8%', red);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
-                
+                svgSetText(svg, 0, 20, '18%', green);
+                svgSetText(svg, 0, 230, '3.8%', red);
             }
             
             //Out of School Children chart
@@ -598,7 +660,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart2data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
             }
             
             //Over age students chart
@@ -631,7 +692,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart3data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY, id);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
             }
        
             //Learning outcomes
@@ -639,6 +699,8 @@
                 const id = '4';
                 let year = 4;
                 let option = 'literacy';
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-four');
 
                 let chart4yearLiteracy = settings.spc_education_dashboard.chart4[0].data;
                 let chart4yearNumeracy = settings.spc_education_dashboard.chart4[1].data;
@@ -703,14 +765,13 @@
                 }
                 
                 setCartBarsReverse(svg, chart4yearLiteracy,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
 
                 //enable switcher    
                 $.switcher('input.slider');
                 
                 $('.swch-4 .ui-switcher').on('click', function(e){
                     e.preventDefault();
-                    let newData = [];                    
+                    let newData = [];
                     
                     $(this).closest('.switch-wrapper').find('.labels span').toggleClass('checked');
 
@@ -718,15 +779,19 @@
                         year = 6;
                         if(option == 'literacy'){
                             newData = chart6yearLiteracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'literacy-six');
                         } else {
                             newData = chart6yearNumeracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-six');
                         }                       
                     } else {
                         year = 4;
                         if(option == 'literacy'){
                             newData = chart4yearLiteracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'literacy-four');
                         } else {
                             newData = chart4yearNumeracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-four');
                         }
                     }
                     
@@ -740,7 +805,6 @@
                     appendTolltip(id);
                     
                     setCartBarsReverse(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });
 
                 $('.sw-4 a').on('click', function(e){
@@ -753,16 +817,20 @@
                     if ($(this).attr('id') == 'numeracy'){
                         option = 'numeracy';
                         if(year == 6){
-                            newData = chart6yearNumeracy;;
+                            newData = chart6yearNumeracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-six');
                         } else {
                             newData = chart4yearNumeracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'numeracy-four');
                         }                       
                     } else {
                         option = 'literacy';
                         if(year == 4){
                             newData = chart4yearLiteracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'literacy-four');
                         } else {
                             newData = chart6yearLiteracy;
+                            $('#export-chart-'+id).attr('data-chart-mode', 'literacy-six');
                         }
                     }
                     
@@ -776,7 +844,6 @@
                     appendTolltip(id);
                     
                     setCartBarsReverse(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });            
             }
             
@@ -787,6 +854,8 @@
                 let chart5primary = settings.spc_education_dashboard.chart5[1].data;
                 let chart5secondary = settings.spc_education_dashboard.chart5[2].data;
                 const chart5Thd = settings.spc_education_dashboard.threshold5;
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                 
                 chart5ece.sort(barSort);
                 chart5primary.sort(barSort);
@@ -816,7 +885,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart5ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 
                 $('.sw-5 a').on('click', function(e){
                     e.preventDefault();
@@ -827,12 +895,15 @@
 
                     if($(this).attr('id') == 'secondary'){
                         newData = chart5secondary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'secondary');
                     }
                     else if ($(this).attr('id') == 'primary'){
                         newData = chart5primary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                     }
                     else if ($(this).attr('id') == 'ece'){
                         newData = chart5ece;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
@@ -845,7 +916,6 @@
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });    
             }
             
@@ -856,6 +926,8 @@
                 let chart6primary = settings.spc_education_dashboard.chart6[1].data;
                 let chart6secondary = settings.spc_education_dashboard.chart6[2].data;
                 const chart6Thd = settings.spc_education_dashboard.threshold6;
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                 
                 chart6ece.sort(barSort);
                 chart6primary.sort(barSort);
@@ -885,7 +957,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart6ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 
                 $('.sw-6 a').on('click', function(e){
                     e.preventDefault();
@@ -896,12 +967,15 @@
                     
                     if($(this).attr('id') == 'secondary'){
                         newData = chart6secondary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'secondary');
                     }
                     else if ($(this).attr('id') == 'primary'){
                         newData = chart6primary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                     }
                     else if ($(this).attr('id') == 'ece'){
                         newData = chart6ece;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
@@ -914,7 +988,6 @@
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);   
-                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });    
             } 
             
@@ -1105,6 +1178,7 @@
                     .duration(1000)
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
+
             }
             
             //Progression to secondary school
@@ -1323,7 +1397,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart9data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
             }
             
             // Lower secondary completion rate
@@ -1511,7 +1584,6 @@
                     .duration(1000)
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
-                
             }
 
             //Pupil-teacher ratio (PTR)
@@ -1520,6 +1592,8 @@
                 let chart11ece = settings.spc_education_dashboard.chart11[0].data;
                 let chart11primary = settings.spc_education_dashboard.chart11[1].data;
                 let chart11secondary = settings.spc_education_dashboard.chart11[2].data;
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                 
                 chart11ece.sort(barSort).reverse();
                 chart11primary.sort(barSort).reverse();
@@ -1553,7 +1627,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart11ece,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 
                 $('.sw-11 a').on('click', function(e){
                     e.preventDefault();
@@ -1566,14 +1639,17 @@
                     if($(this).attr('id') == 'secondary'){
                         newData = chart11secondary;
                         newThreshold = threshold11Secondary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'secondary');
                     }
                     else if ($(this).attr('id') == 'primary'){
                         newData = chart11primary;
                         newThreshold = threshold11Primary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                     }
                     else if ($(this).attr('id') == 'ece'){
                         newData = chart11ece;
                         newThreshold = threshold11Ece;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'ece');
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();
@@ -1586,7 +1662,6 @@
                     appendTolltip(id);
                     
                     setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                    svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
                 });    
             }            
             
@@ -1619,7 +1694,6 @@
                 const tipY = function(d){ return y(d.percentage)-30;}
                 
                 setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                svgSetText(svg, -5, height+30, '*Sample of countries from the pacific region.', grey);
             }
             
             //Trained teachers
@@ -1629,6 +1703,8 @@
                 let chart13secondary = settings.spc_education_dashboard.chart13[1].data;
                 const threshold13 = settings.spc_education_dashboard.threshold13;
                 const threshold = threshold13.dots;
+                
+                $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                 
                 chart13primary.sort(barSortGroup);
                 chart13secondary.sort(barSortGroup);
@@ -1760,8 +1836,10 @@
 
                     if($(this).attr('aria-checked') == 'true'){
                         newData = chart13secondary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'secondary');
                     } else {
                         newData = chart13primary;
+                        $('#export-chart-'+id).attr('data-chart-mode', 'primary');
                     }
                     
                     d3.select(".chart-" + id + " svg").remove();

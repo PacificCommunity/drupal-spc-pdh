@@ -252,6 +252,14 @@ svg.male-bar{
 .rationale > p {
     padding-right: 30px;
 }
+.sample {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+.sample.gender {
+    margin: 0;
+}
 
 @media (max-width: 767px) {
     .banner-with-title {
