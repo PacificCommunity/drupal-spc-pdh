@@ -417,13 +417,8 @@
             //indicators map 
             if ($('.pacific-map').length){
                 const countriesData = settings.spc_health_chart.countries_detales;
-                //console.log(countriesData);
-                
                 const curCategory = $('.map-svg').attr('data-current-category');
-                //console.log(curCategory);
-                
-                const curIndicator = $('.map-svg').attr('data-current-indicator');
-                //console.log(curIndicator);                
+                const curIndicator = $('.map-svg').attr('data-current-indicator');              
                 
                 const width = 800;
                 const height = 600;
@@ -550,6 +545,136 @@
                         .style("opacity", 0);
                 }); 
             }
+
+            //search by countries, categories and indicators.
+            if ($('.health-dashboard-search-form')){
+                
+                const searchCountries = settings.spc_health_chart.search_countries;
+                const searchCategories = settings.spc_health_chart.search_categories;
+                const searchIndicators = settings.spc_health_chart.search_indicators;
+
+                $('#health-dashboard-search').on('keyup', function(e){
+
+                    let term = $(this).val().toLowerCase();
+                    let contryRes = getCountries(term);
+                    if(contryRes !== '') {
+                        $('.sug-countries .sug-list').html(contryRes);
+                        $('.sug-countries').show();
+                    } else {
+                        $('.sug-countries .sug-list').html('');
+                        $('.sug-countries').hide();
+                    }
+                    
+                    let categoriesRes = getCategories(term);
+                    if (categoriesRes !== ''){
+                        $('.sug-categories .sug-list').html(categoriesRes);
+                        $('.sug-categories').show();
+                    } else {
+                        $('.sug-categories .sug-list').html('');
+                        $('.sug-categories').hide();
+                    }
+                    
+                    let indicatorsRes = getIndicators(term);
+                    if (indicatorsRes !== ''){
+                        $('.sug-indicators .sug-list').html(indicatorsRes);
+                        $('.sug-indicators').show();
+                    } else {
+                        $('.sug-indicators .sug-list').html('');
+                        $('.sug-indicators').hide();
+                    }
+                        
+                    $('.search-sugestion').show();
+                    $('.health-dashboard-content').css({
+                        'z-index': -1
+                    });
+                    
+                    let code = e.keyCode || e.which;
+                    if (code == 40){
+                        
+                        let activeItem = false;
+                        let searchList = $('.sug-list li a');
+
+                        searchList.each(function(key, value){
+                            if($(value).hasClass('active')){
+                                activeItem = true;
+                            }
+                        });
+
+                        if (activeItem == true){
+                            searchList.each(function(key, value){
+                                if($(value).hasClass('active')){
+                                    $(searchList[key]).removeClass('active');
+                                    $(searchList[key+1]).addClass('active');
+
+                                }
+                            });                                
+                        } else {
+                            $(searchList[0]).addClass('active');
+                        }
+
+
+                     }
+                    
+                });
+                
+                $('.health-dashboard-search-form').submit(function(e){
+                    e.preventDefault();
+                    window.location.href = $('.sug-list li a.active').attr('href');
+                });
+                
+                $(document).mouseup(function(e){
+                    var container = $('.search-sugestion');
+                    if (!container.is(e.target) && container.has(e.target).length === 0){
+                        container.hide();
+                        $('.health-dashboard-content').css({
+                            'z-index': 0
+                        });
+                    }
+                });
+                
+                function getCountries(term){
+                    let html = '';
+                    for (let Key in searchCountries){
+                        let title = searchCountries[Key]['#title'].toLowerCase();
+                        if (title.indexOf(term) != -1){
+                            html += '<li>'
+                                +'<a href="/health-dashboard/country/' + Key + '">'
+                                + searchCountries[Key]['#title']
+                                + '</li>';                            
+                        }
+                    }
+                    return html;
+                }
+                
+                function getCategories(term){
+                    let html = '';
+                    for (let Key in searchCategories){
+                        let title = searchCategories[Key]['#title'].toLowerCase();
+                        if (title.indexOf(term) != -1){
+                            html += '<li>'
+                                +'<a href="/health-dashboard/' + Key + '">'
+                                + searchCategories[Key]['#title']
+                                + '</li>';
+                        }
+                    }
+                    return html;
+                }
+                
+                function getIndicators(term){
+                    let html = '';
+                    for (let Key in searchIndicators){
+                        let title = searchIndicators[Key]['title'].toLowerCase();
+                        if (title.indexOf(term) != -1){
+                            html += '<li>'
+                                +'<a href="/health-dashboard/' + searchIndicators[Key]['indicator-category'] + '/' + Key + '">'
+                                + searchIndicators[Key]['title']
+                                + '</li>';
+                        }
+                    }
+                    return html;
+                }                     
+            }
+            
                         
         //end context
         }
