@@ -675,6 +675,17 @@ function get_health_dashboard_default_data($default_file) {
 function spc_health_dashboard_home_search() {
   $data = array();
   
+  $data['countries'] = variable_get('health_dashboard_countries');
+  drupal_add_js(['spc_health_chart' => ['search_countries' => $data['countries']]], ['type' => 'setting']);
+  
+  $data['categories'] = variable_get('health_dashboard_categories_list');
+  drupal_add_js(['spc_health_chart' => ['search_categories' => $data['categories']]], ['type' => 'setting']);
+  
+  if ($indicators = get_health_dashboard_data('health_indicators_fid', 'indicators')) {
+    $data['indicators'] = $indicators;
+    drupal_add_js(['spc_health_chart' => ['search_indicators' => $data['indicators']]], ['type' => 'setting']);
+  }
+  
   $content = theme('spc_health_dashboard_home_search', array('search' => $data));
   
   return $content;

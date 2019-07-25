@@ -141,9 +141,9 @@
   overflow: visible !important;
 }
 .health-dashboard-content {
-  margin: 40px auto;
-}
-.health-dashboard-content {
+    position: relative;
+    margin: 40px auto;
+
     .chart-global-legend {
         margin-top: 100px;
     }
@@ -1407,5 +1407,47 @@
         .country-indicators.helth-indicators {
             width: 50%;
         }      
+    }
+}
+
+.health-dashboard-search-form {
+    color: #000;
+    
+    .search-sugestion {
+        display: none;
+        background: #fff;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+        margin-top: 0px;
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+        z-index: 10;
+        position: absolute;
+        width: 100%;
+    }
+    .sug-block {
+        
+        .lable{
+            text-align: left;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+        }
+        ul {
+            li {
+                list-style-type: none;
+                text-align: left;
+                a {
+                    display: block;
+                    width: 100%;
+                    color: #00000090;
+                    text-decoration: none;
+                }
+                a:hover,
+                a.active {
+                    color: #000;
+                }
+            }
+        }
+        
     }
 }
