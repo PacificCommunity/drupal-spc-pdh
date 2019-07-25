@@ -417,7 +417,7 @@
             //indicators map 
             if ($('.pacific-map').length){
                 const countriesData = settings.spc_health_chart.countries_detales;
-                console.log(countriesData);
+                //console.log(countriesData);
                 
                 const curCategory = $('.map-svg').attr('data-current-category');
                 //console.log(curCategory);
@@ -517,6 +517,7 @@
                                             .attr("y", coordinates.cy + 35)
                                             .attr("font-size", "10px")
                                             .attr("fill", "#fff")
+                                            .style("text-shadow", "2px 2px 2px black")
                                             .style("opacity", 0);
                                     }
                                 }
