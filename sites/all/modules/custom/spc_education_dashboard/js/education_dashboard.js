@@ -43,53 +43,57 @@
             
             // Download solution
             function updateDownloadURL(id) {
-              let d3svgClone = $('.chart-' + id + ' svg').clone().appendTo('#chart-clone-'+ id ).hide();
-              let d3svg = d3.select("#chart-clone-" + id + " svg");
-              
-              d3svg.selectAll('text.sample').remove();
+                let d3svgClone = $('.chart-' + id + ' svg').clone().appendTo('#chart-clone-'+ id ).hide();
+                let d3svg = d3.select("#chart-clone-" + id + " svg");
 
-              let viewBox = d3svg.attr("viewBox").split(',');
-              let width = viewBox[2];
-              let height = viewBox[3];
-              
-              d3svg.attr("width", width)
-                   .attr("height", height)
-                   .attr("viewBox", null);
+                d3svg.selectAll('text.sample').remove();
 
-              let svg = document.querySelector("#chart-clone-" + id + " svg");
-              let source = svg.parentNode.innerHTML;
-              
-              let canvas;
-              let image = d3.select('body')
-                .append('img')
-                .style('display', 'none')
-                .attr('width', width)
-                .attr('height', height)
-                .node();    
+                let viewBox = d3svg.attr("viewBox").split(',');
+                let width = viewBox[2];
+                let height = viewBox[3];
 
-              image.onload = function() {
-                canvas = d3.select('body')
-                    .append('canvas')
-                    .style('display', 'none')
-                    .attr('width', width)
-                    .attr('height', height)
-                    .node();
-
-                let ctx = canvas.getContext('2d');
-                ctx.drawImage(image, 0, 0);
-                
-                d3.selectAll([ canvas, image ]).remove();
-                
-                d3svg.attr("width", null)
-                   .attr("height", null)
-                   .attr("viewBox", [0, 0, width, height])
+                d3svg.attr("width", width)
+                     .attr("height", height)
+                     .attr("viewBox", null);
            
-                d3svgClone.remove();
-              };
+                if(id == 12){
+                    d3svg.selectAll('text.thresh-green').attr("y", 10);
+                }
+              
+                let svg = document.querySelector("#chart-clone-" + id + " svg");
+                let source = svg.parentNode.innerHTML;
 
-              image.src = 'data:image/svg+xml,' + encodeURIComponent(source);
+                let canvas;
+                let image = d3.select('body')
+                  .append('img')
+                  .style('display', 'none')
+                  .attr('width', width)
+                  .attr('height', height)
+                  .node();    
 
-              return image.src;
+                image.onload = function() {
+                  canvas = d3.select('body')
+                      .append('canvas')
+                      .style('display', 'none')
+                      .attr('width', width)
+                      .attr('height', height)
+                      .node();
+
+                  let ctx = canvas.getContext('2d');
+                  ctx.drawImage(image, 0, 0);
+
+                  d3.selectAll([ canvas, image ]).remove();
+
+                  d3svg.attr("width", null)
+                     .attr("height", null)
+                     .attr("viewBox", [0, 0, width, height])
+
+                  d3svgClone.remove();
+                };
+
+                image.src = 'data:image/svg+xml,' + encodeURIComponent(source);
+
+                return image.src;
             }
            
             //Exporting chart to PDF.
@@ -100,7 +104,7 @@
 
                 var img = new Image();
                 img.src = updateDownloadURL(chartId);
-
+                
                 //creating PDF
                 let pdf = new jsPDF('p', 'pt', 'letter');
                 
@@ -276,19 +280,19 @@
                 }
                 
                 svgSetLine(svg, 30, y(thdGreen), width, y(thdGreen)+1, green);
-                svgSetText(svg, textX, y(thdGreen)+4, thdGreen+symbol, green);
+                svgSetText(svg, textX, y(thdGreen)+4, thdGreen+symbol, green, 'thresh-green');
                 
                 if (thdGreen !== thdOrange){
                     svgSetLine(svg, 30, y(thdOrange), width, y(thdOrange)+1, orange);
-                    svgSetText(svg, textX, y(thdOrange)+4, thdOrange+symbol, orange);
+                    svgSetText(svg, textX, y(thdOrange)+4, thdOrange+symbol, orange, 'thresh-orange');
                 }
                 
                 if (threshold.dots.overlap){
                     svgSetLine(svg, 30, y(threshold.dots.overlap), width, y(threshold.dots.overlap)+1, orange);
-                    svgSetText(svg, textX, y(threshold.dots.overlap)+4, threshold.dots.overlap+symbol, orange);
+                    svgSetText(svg, textX, y(threshold.dots.overlap)+4, threshold.dots.overlap+symbol, orange, 'thresh-overlap');
                 }
                 
-                svgSetText(svg, textX, height, '0', grey);                
+                svgSetText(svg, textX, height, '0', grey, 'thresh-zero');                
             }
             
             function setNegativeThreshold(svg, threshold, x, y, width, height, symbol){
@@ -422,7 +426,7 @@
                         } else {
                             return height - y(data.percentage);                             
                         }
-
+                        
                     });
             }
             
@@ -1693,7 +1697,7 @@
                 const attrH = function(d){ return y(0) - y(d.percentage);}
                 const tipY = function(d){ return y(d.percentage)-30;}
                 
-                setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
+                setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY, id);
             }
             
             //Trained teachers
