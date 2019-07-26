@@ -167,7 +167,22 @@
 
                         tooltip.style("opacity", 0)
                         tooltext.style("opacity", 0)
-                    });            
+                    });
+                    
+                $(window).on('load resize', function(){
+                    let Width = $(window).width(); 
+                    let svgGlobe = d3.select(".stacked-chart-global svg");
+
+                    if (Width < 767){
+                        svgGlobe.selectAll('.x text').attr("y", "-7");
+                        svgGlobe.selectAll('.x text').attr("x", "10");
+                    } else {
+                        svgGlobe.selectAll('.x text').attr("y", "9");
+                        svgGlobe.selectAll('.x text').attr("x", "-7");
+                    }                    
+                });    
+
+                    
             }
 
             $('.toggle').add('.toggle-lbl').on('click', function(e){
@@ -362,45 +377,6 @@
                 });
             }
 
-            $(window).on('load resize', function(){
-                let Width = $(window).width(); 
-                if (Width <= 550){
-                    $('.category-content>h4').show();
-                    $('.category-countries>h4').hide();
-                    $('.category-countries.col-sm-6')
-                        .width($('.container').width())
-                        .css({
-                            "overflow-x": "scroll"
-                        });                
-                } else {
-                   $('.category-content>h4').hide();
-                   $('.category-countries>h4').show(); 
-                   $('.category-countries.col-sm-6')
-                        .width(500)
-                        .css({
-                            "overflow-x": "visible"
-                        });
-                }
-                if (Width <= 980){
-                    $('.category-content>h4').show();
-                    $('.category-countries>h4').hide();
-                    $('.category-countries.col-sm-12')
-                        .width($('.container').width())
-                        .css({
-                            "overflow-x": "scroll"
-                        });  
-                } else {
-                    $('.category-content>h4').hide();
-                    $('.category-countries>h4').show();
-                    $('.category-countries.col-sm-12')
-                        .width(900)
-                        .css({
-                            "overflow-x": "visible"
-                        });
-                }
-
-            });
-
             $('.more-less').on('click', function(){
                 if ($(this).hasClass('show-more')){
                     $(this).siblings('.dots').hide(); 
@@ -582,11 +558,27 @@
                         $('.sug-indicators .sug-list').html('');
                         $('.sug-indicators').hide();
                     }
+                    
+                    if (indicatorsRes == '' && categoriesRes == '' && contryRes == ''){
+                        $('.no-results').show();
+                    } else {
+                        $('.no-results').hide();
+                    }
                         
                     $('.search-sugestion').show();
                     $('.health-dashboard-content').css({
                         'z-index': -1
                     });
+
+                    if ($('.sug-wrapper').height() < 410){
+                         $('.sug-wrapper').css({
+                            'overflow-y': 'visible'
+                         });
+                    } else {
+                        $('.sug-wrapper').css({
+                           'overflow-y': 'scroll'
+                        });
+                    }
                     
                     let code = e.keyCode || e.which;
                     if (code == 40){
@@ -605,21 +597,18 @@
                                 if($(value).hasClass('active')){
                                     $(searchList[key]).removeClass('active');
                                     $(searchList[key+1]).addClass('active');
-
                                 }
                             });                                
                         } else {
-                            $(searchList[0]).addClass('active');
+                            //$(searchList[0]).addClass('active');
                         }
-
-
                      }
                     
                 });
                 
                 $('.health-dashboard-search-form').submit(function(e){
                     e.preventDefault();
-                    window.location.href = $('.sug-list li a.active').attr('href');
+                    //window.location.href = $('.sug-list li a.active').attr('href');
                 });
                 
                 $(document).mouseup(function(e){
