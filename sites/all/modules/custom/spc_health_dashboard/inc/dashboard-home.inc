@@ -58,6 +58,15 @@ function spc_health_dashboard_home_content() {
   }
   $data['categories'] = $category_menu;
 
+  if (!empty($fid = variable_get('health_chart_download_fid'))){
+      $health_chart_download = file_load($fid);
+      $health_chart_download_url = file_create_url($health_chart_download->uri);
+      $data['chart-pdf-export'] = $health_chart_download_url;
+  } else {
+    $data['chart-pdf-export'] = drupal_get_path('module', 'spc_health_dashboard') . '/pdf/ncd-2018.pdf';
+  }
+  
+
   $content = theme('spc_health_dashboard_home_content', ['data' => $data]);
 
   return $content;

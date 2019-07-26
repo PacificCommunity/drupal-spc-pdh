@@ -1262,13 +1262,13 @@
   padding: 0 20px;
 }
 @media (max-width: 1000px) {
-  .category-countries .country-id {
-    width: 20%;
-    position: relative;
-  }
-  .category-countries .country-indicators.helth-indicators {
+  .category-content .country-indicators.helth-indicators {
     width: 80%;
     overflow-x: scroll;
+    position: relative;
+  }
+  .category-countries .country-id {
+    width: 20%;
     position: relative;
   }
   .category-countries .country-id:before {
@@ -1367,6 +1367,9 @@
   .category-countries .country-indicators.helth-indicators {
     width: 70%;
     overflow-x: scroll;
+  }
+  .pacific-map svg text {
+    font-size: 18px;
   }
 }
 @media (max-width: 550px) {
@@ -1470,8 +1473,5 @@
 .health-dashboard-search-form .sug-block ul li a:hover,
 .health-dashboard-search-form .sug-block ul li a.active {
   color: #000;
-}
-.pacific-map svg text {
-  font-size: 18px;
 }
 /*# sourceMappingURL=spc_health_dashboard.css.map */
