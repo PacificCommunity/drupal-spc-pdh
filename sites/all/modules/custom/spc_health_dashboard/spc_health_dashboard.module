@@ -99,6 +99,7 @@ function spc_health_dashboard_form() {
   $health_json_fid = (!empty(variable_get('health_json_fid'))) ? variable_get('health_json_fid') : '';
   $categories_json_fid = (!empty(variable_get('health_categories_fid'))) ? variable_get('health_categories_fid') : '';
   $indicators_json_fid = (!empty(variable_get('health_indicators_fid'))) ? variable_get('health_indicators_fid') : '';
+  $chart_pdf_fid = (!empty(variable_get('health_chart_download_fid'))) ? variable_get('health_chart_download_fid') : '';
 
   $form['health_json_file'] = [
     '#type' => 'managed_file',
@@ -134,6 +135,18 @@ function spc_health_dashboard_form() {
     '#process' => ['process_health_json_file'],
     '#upload_location' => 'public://charts/',
     '#default_value' => $indicators_json_fid,
+    '#required' => FALSE,
+  ];
+  $form['health_chart_download_file'] = [
+    '#type' => 'managed_file',
+    '#title' => t('Upload Health Chart Download File'),
+    '#description' => t('Upload a Health Chart PDF File her.'),
+    '#upload_validators' => [
+      'file_validate_extensions' => ['pdf'],
+    ],
+    '#process' => ['process_health_json_file'],
+    '#upload_location' => 'public://charts/',
+    '#default_value' => $chart_pdf_fid,
     '#required' => FALSE,
   ];
   $form['update_categories'] = [
@@ -221,6 +234,13 @@ function spc_health_dashboard_form_validate($form, &$form_state) {
       variable_set('health_indicators_fid', $form_state['values']['health_indicators_file']->fid);
     }
   }
+  if ($form_state['values']['health_chart_download_file']){
+    $validators = [];
+    if ($health_chart_download_file = file_save_upload('health_chart_download_file', $validators)) {
+      $form_state['values']['health_chart_download_file'] = $health_chart_download_file;
+      variable_set('health_chart_download_fid', $form_state['values']['health_chart_download_file']->fid);
+    }
+  }  
 }
 
 /**
@@ -280,6 +300,18 @@ function spc_health_dashboard_form_submit($form, &$form_state) {
     
     $indicators_path = file_create_url($health_indicators_file->uri);
     variable_set('health_indicators_json', $indicators_path);
+    drupal_set_message('New Indicators file was uploaded.');
+  }
+  
+  if (is_object($form_state['values']['health_chart_download_file'])){
+    $health_chart_download_file = $form_state['values']['health_chart_download_file'];
+    $health_chart_download_file->status = FILE_STATUS_PERMANENT;
+    
+    file_save($health_chart_download_file);
+    file_usage_add($health_chart_download_file, 'spc_health_dashboard', 'node', $health_chart_download_file->fid);
+    
+    $chart_download_path = file_create_url($health_chart_download_file->uri);
+    variable_set('health_chart_download_pdf', $indicators_path);
     drupal_set_message('New Indicators file was uploaded.');
   }
 }
