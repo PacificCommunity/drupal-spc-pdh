@@ -237,10 +237,11 @@
         .chart-pdf-export {
             float: right;
             margin-top: -50px;
-        }
-        a {
-            width: 80px;
-            height: 80px;
+
+            a {
+                width: 80px;
+                height: 80px;
+            }
         }
     }
     @media (max-width: 500px) {
@@ -898,6 +899,25 @@
 .category-countries {
     min-width: 290px;
     
+    .ind-count-1 {
+        width: 180px !important;
+    }
+    .ind-count-2 {
+        width: 280px !important;
+    }
+    .ind-count-3 {
+        width: 380px !important;
+    }
+    .ind-count-4 {
+        width: 480px !important;
+    }
+    .ind-count-5 {
+        width: 580px !important;
+    }    
+    .ind-count-6 {
+        width: 720px !important;
+    }
+    
     .country-indicators{
         display: block;
     }
@@ -1062,7 +1082,6 @@
     position: absolute;
     right: 0px;
 }
-
 .categories-switcher {
   &::before {
     content: '';
@@ -1085,7 +1104,6 @@
     z-index: 0;
   }
 }
-
 .categories-switcher.indicator {
     padding: 20px 50px;
     
@@ -1101,7 +1119,6 @@
       }
     }
 }
-
 .category-countries {
     margin-bottom: 30px;
     
@@ -1165,7 +1182,7 @@
         }        
         p.value {
             display: inline-block;
-            width: 45px;
+            width: 50px;
             text-align: center;
             font-weight: 300;
             font-size: 10px;
@@ -1174,9 +1191,7 @@
     }
 }
 @media (max-width: 1200px) {
-    .category-countries.col-sm-12 > div{
-        width: 930px;
-    }
+    .category-countries.col-sm-6,
     .category-detales.col-sm-6 {
         width: 100%;
         padding: 0 10px;
@@ -1263,6 +1278,29 @@
         padding: 0 20px;
     }
 }
+@media (max-width: 1000px) {
+    .category-countries {
+        .country-id {
+            width: 20%;
+            position: relative;
+        }
+        .country-indicators.helth-indicators {
+            width: 80%;
+            overflow-x: scroll;
+            position: relative;
+        }
+        .country-id:before{
+            content: '';
+            display: block;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(90deg, #FFFFFF 5%, rgba(255, 255, 255, 0) 102.54%);
+            position: absolute;
+            right: -20px;
+            z-index: 1;
+        }
+    }
+}
 @media (max-width: 767px) {
     .health-dashboard-header {
       &.banner-with-title {
@@ -1294,11 +1332,12 @@
     .x.axis text {
         transform: rotate(90deg);
         text-anchor: start !important;
+        font-size: 12px;
     }
     .stacked-chart-global {
         border-radius: 10px;
         padding: 20px 25px;
-        padding-bottom: 60px;
+        padding-bottom: 80px;
     }
     .health-dashboard-content h4 {
         font-size: 18px;
@@ -1353,12 +1392,8 @@
         .country-indicators.helth-indicators {
             width: 70%;
             overflow-x: scroll;
-        }
-        .country-indicators-scroll {
-            width: 380px;
-        }        
+        }      
     } 
-
 }
 @media (max-width: 550px) {
     .health-dashboard-header .breadcrumbs {
@@ -1378,7 +1413,7 @@
     }
     .stacked-chart-global {
         padding: 20px 15px;
-        padding-bottom: 60px;
+        padding-bottom: 80px;
     }
     .health-dashboard-content .legend:before {
         width: 18px;
@@ -1386,6 +1421,8 @@
     }
     .health-dashboard-countries a {
         width: 91px;
+        font-size: 7px;
+        padding-top: 10px;
     }
     .toggle {
         right: 15px;
@@ -1397,6 +1434,9 @@
         .country-indicators.helth-indicators {
             width: 60%;
         }      
+    }  
+    .x.axis text {
+        font-size: 16px;
     }    
 }
 @media (max-width: 380px) {
@@ -1408,21 +1448,39 @@
             width: 50%;
         }      
     }
+    .x.axis text {
+        font-size: 20px;
+    }     
 }
-
+#ckan-search-form > div:first-child:after {
+    z-index: 12;
+}
 .health-dashboard-search-form {
     color: #000;
     
+    #health-dashboard-search {
+        position: relative;
+        z-index: 11;
+    }
     .search-sugestion {
         display: none;
         background: #fff;
         border-radius: 25px;
-        padding: 10px 20px 10px 20px;
-        margin-top: 0px;
+        padding: 60px 20px 20px 20px;
+        margin-top: -40px;
         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
         z-index: 10;
         position: absolute;
         width: 100%;
+        
+        .no-results {
+            display: none;
+            color: #00000090;
+        }
+    }
+    .sug-wrapper {
+        max-height: 410px;
+        overflow-y: scroll;
     }
     .sug-block {
         
@@ -1448,6 +1506,8 @@
                 }
             }
         }
-        
     }
+}
+.pacific-map svg text {
+    font-size: 18px;
 }

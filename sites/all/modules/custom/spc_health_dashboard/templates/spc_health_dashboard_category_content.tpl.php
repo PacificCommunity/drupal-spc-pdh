@@ -57,7 +57,7 @@
       </div>
           
       <div class="country-indicators helth-indicators">
-        <div class="country-indicators-scroll">
+        <div class="country-indicators-scroll ind-count-<?php print $indicators_count; ?>">
           <div class="category-header clearfix">  
             <div class="country-indicators">
             <?php foreach ($data['indicator_detales'] as $indicator_key => $indicator): ?>
