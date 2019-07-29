@@ -64,7 +64,12 @@
   <div class="category-countries col-sm-3">
       
       <?php foreach ($data['countries-data'] as $country): ?>
-      <div class="country-item clearfix">
+      <div class="country-item clearfix"
+           data-country="<?php print $country['id']; ?>"
+           data-name="<?php print $country['title']; ?>"
+           data-lat="<?php print $country['map-coordinates']['lat']; ?>"
+           data-lng="<?php print $country['map-coordinates']['lng']; ?>"
+           data-value="<?php print $country['indicators'][$current_indicator]['value']; ?>">
         <div class="country-flag">
               <?php $map = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/flags/' . $country['id'] . '.svg';?>
             <img id="<?php print $country['id']; ?>" src="<?php print $map; ?>">       
@@ -95,12 +100,106 @@
   </div>
     
   <div class="pacific-map col-sm-9">
-      <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/pacific-map.svg'?>
-      <div data-src="<?php print $src; ?>" 
-           data-current-category="<?php print $data['current_category']; ?>"
-           data-current-indicator="<?php print $data['current_indicator']; ?>"
-           class="map-svg">
-      </div>
+    <div id="pacific-map"></div>
+    <script>
+      function initMap() {
+
+        const map = new google.maps.Map(document.getElementById('pacific-map'), {
+          disableDefaultUI: true
+        });
+
+        const iconBase = '<?php print $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/markers/'?>';
+        const lebleDefault = {
+          color: "#fff",
+          fontWeight: "bold",
+          fontSize: "0px"
+        }
+        
+        let countriesData = []; 
+        const countryItems = document.querySelectorAll('.country-item');
+        
+        for (let i = 0; i < countryItems.length; i++){
+          
+          let countryId = countryItems[i].dataset.country;
+          let lat = countryItems[i].dataset.lat;
+          let lng = countryItems[i].dataset.lng;
+          
+          countriesData[countryId] = {};
+          countriesData[countryId]['lat'] = countryItems[i].dataset.lat;
+          countriesData[countryId]['lng'] = countryItems[i].dataset.lng;
+          countriesData[countryId]['name'] = countryItems[i].dataset.name;
+          countriesData[countryId]['value'] = countryItems[i].dataset.value;
+          countriesData[countryId]['position'] = new google.maps.LatLng(lat, lng);
+          countriesData[countryId]['icon'] = iconBase + countryItems[i].dataset.value + '.png';
+          
+          countriesData[countryId]['label'] = {
+              text: countryItems[i].dataset.name,
+              color: lebleDefault.color,
+              fontWeight: lebleDefault.fontWeight,
+              fontSize: lebleDefault.fontSize
+          }
+        }
+        
+        let bounds = new google.maps.LatLngBounds();
+
+        let markers = {};
+        
+        // Create markers.
+        for (let key in countriesData) {
+          markers[key] = new google.maps.Marker({
+            position: countriesData[key].position,
+            icon: countriesData[key].icon,
+            map: map,
+            label: countriesData[key].label
+          });
+          
+          bounds.extend(markers[key].position);
+          
+          markers[key].addListener('mouseover', function() {
+                let label = this.getLabel();
+                label.fontSize="10px";
+                this.setLabel(label);
+          });
+
+          markers[key].addListener('mouseout', function() {
+                let label = this.getLabel();
+                label.fontSize="0px";
+                this.setLabel(label);
+          });
+        };
+        
+        map.fitBounds(bounds);
+
+        for (var i = 0; i < countryItems.length; i++) {
+          let countryId = countryItems[i].dataset.country;
+          
+          countryItems[i].addEventListener('mouseover', function(event) {
+            if (markers[countryId] != 'undefined'){
+              let label = markers[countryId].getLabel();
+              label.fontSize="10px";
+              markers[countryId].setLabel(label);                
+            }
+
+          });
+        }     
+        
+        for (var i = 0; i < countryItems.length; i++) {
+          let countryId = countryItems[i].dataset.country;
+          
+          countryItems[i].addEventListener('mouseout', function(event) {
+            if (markers[countryId] != 'undefined'){
+              let label = markers[countryId].getLabel();
+              label.fontSize="0px";
+              markers[countryId].setLabel(label);                
+            }
+
+          });
+        }
+        
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEy9EQCIbFOhOfh-PPqxesjbjirYC6WZ0&callback=initMap" async defer></script>
+      
   </div>
 </div>
 
