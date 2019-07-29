@@ -16,8 +16,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 540,
-            "cy": 315
+            "lat": -14.275632,
+            "lng": -170.702042
           },
           "indicators": {
                 
@@ -347,8 +347,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 60,
-            "cy": 35
+            "lat": 15.1063896,
+            "lng": 145.7065244
           },            
           "indicators": {
                 
@@ -616,8 +616,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 700,
-            "cy": 300
+            "lat": -21.2367363,
+            "lng": -159.7776642
           },
           "indicators": {
                 
@@ -885,8 +885,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 155,
-            "cy": 50
+            "lat": 6.916663,
+            "lng": 158.1833326
           },            
           "indicators": {
                 
@@ -1154,8 +1154,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 395,
-            "cy": 360
+            "lat": -17.713371,
+            "lng": 178.065033
           }, 
           "indicators": {
                 
@@ -1423,8 +1423,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 705,
-            "cy": 370
+            "lat": -17.6874,
+            "lng":  -149.3729
           }, 
           "indicators": {
                 
@@ -1692,8 +1692,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 220,
-            "cy": 35
+            "lat": 13.444304,
+            "lng": 144.793732
           }, 
           "indicators": {
                 
@@ -1961,8 +1961,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 700,
-            "cy": 110
+            "lat": 1.8709,
+            "lng": -157.3626
           },            
           "indicators": {
                 
@@ -2230,8 +2230,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 260,
-            "cy": 135
+            "lat": -0.5284,
+            "lng": 166.9342
           }, 
           "indicators": {
                 
@@ -2499,8 +2499,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 550,
-            "cy": 380
+            "lat": -19.054445,
+            "lng": -169.867233
           },  
           "indicators": {
                 
@@ -2768,8 +2768,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 240,
-            "cy": 400
+            "lat": -22.2763 ,
+            "lng": 166.4572
           },  
           "indicators": {
                 
@@ -3037,8 +3037,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 55,
-            "cy": 100
+            "lat": 7.3500,
+            "lng": 134.4667
           },            
           "indicators": {
                 
@@ -3306,8 +3306,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 55,
-            "cy": 250
+            "lat": -6.478378,
+            "lng": 145.241749
           },            
           "indicators": {
                 
@@ -3575,8 +3575,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 285,
-            "cy": 50
+            "lat": 7.131474,
+            "lng": 171.1844788
           },            
           "indicators": {
                 
@@ -3844,8 +3844,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 520,
-            "cy": 250
+            "lat":  -9.1668,
+            "lng": -171.8182
           },   
           "indicators": {
                 
@@ -4113,8 +4113,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 480,
-            "cy": 400
+            "lat": -21.178986,
+            "lng": -175.198242
           }, 
           "indicators": {
                 
@@ -4382,8 +4382,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 510,
-            "cy": 300
+            "lat": -13.8333,
+            "lng": -171.7667
           }, 
           "indicators": {
                 
@@ -4651,8 +4651,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 180,
-            "cy": 250
+            "lat": -9.64571 ,
+            "lng": 160.156189
           }, 
           "indicators": {
                 
@@ -4920,8 +4920,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 410,
-            "cy": 240
+            "lat": -7.4784,
+            "lng": 178.6799
           }, 
           "indicators": {
                 
@@ -5189,8 +5189,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 260,
-            "cy": 320
+            "lat": -17.734818,
+            "lng": 168.322021
           },  
           "indicators": {
                 
@@ -5458,8 +5458,8 @@
           "icon_small": null,
           "map_image": null,
           "map-coordinates": {
-            "cx": 445,
-            "cy": 310
+            "lat": -13.7687521,
+            "lng": -177.1560974
           },  
           "indicators": {
                 
