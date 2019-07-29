@@ -16,6 +16,16 @@
   line-height: 44px;
   color: #FFFFFF;
   text-transform: none;
+  margin: 0;
+}
+.health-dashboard-header .title {
+  margin-top: 10px;
+}
+.health-dashboard-header .search {
+  margin: 40px 10px 60px;
+}
+.health-dashboard-header .search #spc-home-banner-search {
+  margin: 0 !important;
 }
 .health-dashboard-header .left-label {
   background: #FFFFFF;
@@ -29,7 +39,7 @@
   border-radius: 0px 30px 30px 0px;
   width: 272px;
   align-self: flex-start;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 .health-dashboard-header .breadcrumbs {
   align-self: flex-start;
@@ -38,6 +48,11 @@
 .health-dashboard-header .breadcrumb {
   color: white;
   padding-left: 12px;
+}
+@media (max-width: 767px) {
+  .health-dashboard-header .breadcrumb {
+    display: none;
+  }
 }
 .health-dashboard-header .breadcrumb > div {
   float: left;
@@ -55,8 +70,18 @@
   max-height: 50px;
   margin-top: 5px;
 }
+@media (max-width: 1000px) {
+  .health-dashboard-header .breadcrumb .dropdown {
+    padding: 5px 15px;
+  }
+}
 .health-dashboard-header .breadcrumb .dropdown > a {
   pointer-events: none;
+}
+@media (max-width: 1000px) {
+  .health-dashboard-header .breadcrumb .dropdown > a {
+    font-size: 12px;
+  }
 }
 .health-dashboard-header .breadcrumb .dropdown .breadcrumb-subitems {
   display: none;
@@ -377,6 +402,7 @@
   width: 26px;
   border-radius: 100%;
   padding: 2px 6px 0px;
+  margin-left: 15px;
 }
 .health-dashboard-categories label.first-level svg {
   color: #00C6EC;
@@ -1288,8 +1314,11 @@
     justify-content: flex-end;
     padding-bottom: 0px;
   }
+  .health-dashboard-header .title {
+    margin-top: 60px;
+  }
   .health-dashboard-header .search {
-    margin: 20px 0 40px;
+    margin: 40px 10px 80px;
   }
   .health-dashboard-header .left-label {
     font-size: 16px;
@@ -1302,7 +1331,7 @@
     margin: 10px auto;
   }
   .banner-with-title.health-dashboard-header h1 {
-    font-size: 20px;
+    font-size: 26px;
     line-height: 30px;
   }
   .health-dashboard-header .breadcrumbs {
@@ -1376,6 +1405,9 @@
   .health-dashboard-header .breadcrumbs {
     display: none;
   }
+  .health-dashboard-header .title {
+    margin-top: 10px;
+  }
   .health-dashboard-header.banner-with-title {
     height: 365px;
   }
@@ -1384,6 +1416,9 @@
     line-height: 24px;
     max-width: 95%;
     margin-left: 2%;
+  }
+  .health-dashboard-header .search {
+    margin: 40px 10px 60px;
   }
   #spc-home-banner-search {
     margin: 0 10px !important;
@@ -1424,6 +1459,9 @@
   .x.axis text {
     font-size: 20px;
   }
+}
+#spc-home-banner-search {
+  margin-bottom: 50px;
 }
 #ckan-search-form > div:first-child:after {
   z-index: 12;
