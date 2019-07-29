@@ -1,4 +1,3 @@
-<?php //print_r($search); ?>
 <div id="spc-home-banner-search">
   <form action="/" method="post" id="ckan-search-form" class="health-dashboard-search-form" accept-charset="UTF-8">
     <div>
