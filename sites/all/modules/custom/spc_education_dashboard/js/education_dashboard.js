@@ -41,6 +41,20 @@
                 }
             });
             
+            //read more
+            $('.more-less').on('click', function(){
+                if ($(this).hasClass('show-more')){
+                    $(this).siblings('.dots').hide(); 
+                    $(this).siblings('.more').show();
+                    $(this).removeClass('show-more').addClass('show-less').text('Read less');                
+                } else {
+                    $(this).siblings('.dots').show(); 
+                    $(this).siblings('.more').hide();
+                    $(this).removeClass('show-less').addClass('show-more').text('Read more');                
+                }
+
+            });
+            
             // Download solution
             function updateDownloadURL(id) {
                 let d3svgClone = $('.chart-' + id + ' svg').clone().appendTo('#chart-clone-'+ id ).hide();
@@ -629,7 +643,6 @@
                 const tipY = function(d){ return y(d.percentage)-30; }
                 
                 setCartBars(svg, chart1data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
-                
                 svgSetText(svg, 0, 20, '18%', green);
                 svgSetText(svg, 0, 230, '3.8%', red);
             }
@@ -991,7 +1004,7 @@
                     tooltip = setToolBox(svg);
                     appendTolltip(id);
                     
-                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);   
+                    setCartBars(svg, newData,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY);
                 });    
             } 
             
@@ -1182,7 +1195,6 @@
                     .duration(1000)
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
-
             }
             
             //Progression to secondary school
@@ -1370,6 +1382,8 @@
                     .duration(1000)
                     .attr("y", function(d) { return y(d.value); })
                     .attr("height", function(d) { return height - y(d.value); });
+
+				svgSetText(svg, -20, height+30, xAxisText, xAxisTextColor);
             }
             
             //Transition rate
@@ -1696,8 +1710,6 @@
                 const attrY = function(d) { return y(d.percentage); }
                 const attrH = function(d){ return y(0) - y(d.percentage);}
                 const tipY = function(d){ return y(d.percentage)-30;}
-                
-                setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY, id);
             }
             
             //Trained teachers
