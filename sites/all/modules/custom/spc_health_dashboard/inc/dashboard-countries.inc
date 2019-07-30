@@ -94,13 +94,13 @@ function _health_dashboard_country_chart($country_data){
   $summary_filtred = [];
   foreach($summary as $key => $detales){
     $count = 0;
-    $count = $detales['present'] + $detales['under-development'] + $detales['not-present'];
+    $count = @$detales['present'] + @$detales['under-development'] + @$detales['not-present'];
 
     $summary_filtred[] = [
       'indicator' => ucfirst(str_replace('-', ' ', $key)),
-      'present' => ($detales['present']/$count) * 100,
-      'under-development' => ($detales['under-development']/$count) * 100,
-      'not-present' => ($detales['not-present']/$count) * 100
+      'present' => (@$detales['present']/$count) * 100,
+      'under-development' => (@$detales['under-development']/$count) * 100,
+      'not-present' => (@$detales['not-present']/$count) * 100
       ] ;
   }
   
