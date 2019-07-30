@@ -4,10 +4,10 @@
     
     <div class="category-description">
         <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/categories/' . $data['current_category']['id'] . '.png'?>
-        <img class="category-img" src="<?php print $src; ?>" alt="<?php print $data['country']; ?>" onerror="this.style.display = 'none'">
+        <img class="category-img" src="<?php print $src; ?>" alt="<?php print @$data['country']; ?>" onerror="this.style.display = 'none'">
         
         <div class="text">
-          <?php $description = $data['category_data']['description']; ?>  
+          <?php $description = @$data['category_data']['description']; ?>  
           <?php $limit = 300; ?>
           <span class="less"><?php print substr($description, 0, $limit); ?></span>
           <?php if (strlen($description) > $limit): ?>

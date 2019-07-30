@@ -211,7 +211,7 @@ function home_page_default_page_manager_pages() {
   $pane->panel = 'one_fw_main';
   $pane->type = 'block';
   $pane->subtype = 'spc_health_dashboard-health_dashboard_home_link';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
