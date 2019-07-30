@@ -3,7 +3,7 @@
 <div class="row indicator-content">
   <h4><?php print $data['indicator_detales']['code'] . '. ' . $data['indicator_detales']['title']; ?></h4>
     
-  <div class="category-detales <?php print $category_detales_class; ?>">
+  <div class="category-detales <?php print @$category_detales_class; ?>">
     <h4><?php print t('Summary of findings '. $data['indicator_detales']['title']); ?></h4>
     
     <div class="wrapper">
@@ -14,7 +14,7 @@
 
           <div class="country-indicators">
               <div class="indicator-title">
-                  <a data-name="<?php print $indicator_key; ?>" href="/health-dashboard/<?php print $indicator['indicator-category']; ?>/<?php print $indicator_key; ?>">
+                  <a data-name="<?php print @$indicator_key; ?>" href="/health-dashboard/<?php print @$indicator['indicator-category']; ?>/<?php print @$indicator_key; ?>">
                   <?php print $data['indicator_detales']['code'] .'. '. $data['indicator_detales']['title']; ?>
                 </a>
               </div>
@@ -88,7 +88,7 @@
               <?php if ($indicator['indicator-category'] == $data['current_category'] && $ind_key == $data['current_indicator']): ?>
                 <div class="status-strength <?php print $indicator['value']?>" 
                      data-value="<?php print $indicator['value']?>"
-                     data-category="<?php print $data['current_category']['id']; ?>"
+                     data-category="<?php print @$data['current_category']['id']; ?>"
                      data-indicator="<?php print $ind_key; ?>"
                      data-country-title="<?php print $country['title']; ?>"
                      data-country="<?php print $country['id']; ?>"></div>
