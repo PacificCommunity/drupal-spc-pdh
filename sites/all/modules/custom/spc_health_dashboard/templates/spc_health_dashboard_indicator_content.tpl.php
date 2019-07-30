@@ -150,18 +150,25 @@
             position: countriesData[key].position,
             icon: countriesData[key].icon,
             map: map,
-            label: countriesData[key].label
+            label: countriesData[key].label,
+            value: countriesData[key].value
           });
           
           bounds.extend(markers[key].position);
           
           markers[key].addListener('mouseover', function() {
+                let marker = this;
+                marker.setIcon( iconBase + marker.value + '-stroke.png');
+                        
                 let label = this.getLabel();
                 label.fontSize="10px";
                 this.setLabel(label);
           });
 
           markers[key].addListener('mouseout', function() {
+                let marker = this;
+                marker.setIcon( iconBase + marker.value + '.png');
+            
                 let label = this.getLabel();
                 label.fontSize="0px";
                 this.setLabel(label);
@@ -175,9 +182,13 @@
           
           countryItems[i].addEventListener('mouseover', function(event) {
             if (markers[countryId] != 'undefined'){
-              let label = markers[countryId].getLabel();
+              
+              let marker = markers[countryId];
+              marker.setIcon( iconBase + marker.value + '-stroke.png');
+              
+              let label = marker.getLabel();
               label.fontSize="10px";
-              markers[countryId].setLabel(label);                
+              marker.setLabel(label);                
             }
 
           });
@@ -188,9 +199,13 @@
           
           countryItems[i].addEventListener('mouseout', function(event) {
             if (markers[countryId] != 'undefined'){
-              let label = markers[countryId].getLabel();
+              
+              let marker = markers[countryId];
+              marker.setIcon( iconBase + marker.value + '.png');
+              
+              let label = marker.getLabel();
               label.fontSize="0px";
-              markers[countryId].setLabel(label);                
+              marker.setLabel(label);                
             }
 
           });
