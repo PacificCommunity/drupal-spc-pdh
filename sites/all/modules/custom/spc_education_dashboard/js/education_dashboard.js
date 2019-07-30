@@ -41,6 +41,20 @@
                 }
             });
             
+            //read more
+            $('.more-less').on('click', function(){
+                if ($(this).hasClass('show-more')){
+                    $(this).siblings('.dots').hide(); 
+                    $(this).siblings('.more').show();
+                    $(this).removeClass('show-more').addClass('show-less').text('Read less');                
+                } else {
+                    $(this).siblings('.dots').show(); 
+                    $(this).siblings('.more').hide();
+                    $(this).removeClass('show-less').addClass('show-more').text('Read more');                
+                }
+
+            });
+            
             // Download solution
             function updateDownloadURL(id) {
                 let d3svgClone = $('.chart-' + id + ' svg').clone().appendTo('#chart-clone-'+ id ).hide();

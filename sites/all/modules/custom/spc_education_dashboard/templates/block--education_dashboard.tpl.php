@@ -27,7 +27,26 @@
   </div>
 </div>
 
-<section class="education-block-content"> 
+<section class="education-block-content">
+    
+    <?php if (!empty($data['description']['text'])): ?>
+      <div class="education-description">
+          <h2><?php print $data['description']['title']; ?></h2>
+          <div class="text">
+            <?php $description = @$data['description']['text']; ?>  
+            <?php $limit = 300; ?>
+            <span class="less"><?php print substr($description, 0, $limit); ?></span>
+            <?php if (@strlen($description) > $limit): ?>
+              <span class="dots"><?php print t('...'); ?></span>
+            <?php endif; ?>
+            <span class="more"><?php print substr($description, $limit+1, strlen($description)); ?></span>
+            <?php if (@strlen($description) > $limit): ?>
+              <p class="more-less show-more"><?php print t('Read more'); ?></p>
+            <?php endif; ?>
+          </div>
+      </div>
+    <?php endif; ?>
+    
     <?php foreach ($items as $item): ?>
     <div class="panel-pane education-block-pane" data-id="<?php print $item['id']; ?>">
       <div id="pdf-<?php print $item['id'];?>">  
@@ -36,19 +55,19 @@
           <p class="subtitle"><?php print $item['title']; ?></p>
         </div>
         <div class="info clearfix" >
-            <?php $ch_cols = (count($item['charts'][0]['data']) >= 10 && $item['type'] == "gender")? 7 : 5; ?>
+            <?php $ch_cols = (count($item['charts'][0]['data']) >= 10 && @$item['type'] == "gender")? 7 : 5; ?>
             <div class="chart col-sm-<?php print $ch_cols; ?>">
-                <?php if ($item['type'] == "gender"): ?>
+                <?php if (@$item['type'] == "gender"): ?>
                 <div class="gender-wrapp">
                   <div class="male"><?php print $item['marker'][0]; ?></div>
                   <div class="female"><?php print $item['marker'][1]; ?></div>
                 </div>
                 <?php endif; ?>
                 <div class="chart-<?php print $item['id']; ?>"></div>
-                <p class="sample <?php print $item['type']; ?>"> <?php print t('*Sample of countries from the pacific region.'); ?></p>
+                <p class="sample <?php print @$item['type']; ?>"> <?php print t('*Sample of countries from the pacific region.'); ?></p>
             </div>
 
-            <?php $ds_cols =  (count($item['charts'][0]['data']) >= 10 && $item['type'] == "gender")? 5 : 7; ?>
+            <?php $ds_cols =  (count($item['charts'][0]['data']) >= 10 && @$item['type'] == "gender")? 5 : 7; ?>
             <div class="description col-sm-<?php print $ds_cols; ?>">
 
               <?php if (!empty($item['switchers'])): ?> 
@@ -115,7 +134,7 @@
 
         </div>
       </div>
-        <a href="#" id="export-chart-<?php print $item['id']; ?>" data-chart-id="<?php print $item['id']; ?>" data-chart-mode="<?php print $chart_mode; ?>" class="education-pdf"><?php print t('Export PDF'); ?></a> 
+        <a href="#" id="export-chart-<?php print $item['id']; ?>" data-chart-id="<?php print $item['id']; ?>" data-chart-mode="<?php print @$chart_mode; ?>" class="education-pdf"><?php print t('Export PDF'); ?></a> 
         <div id="chart-clone-<?php print $item['id']; ?>"></div>
     </div> 
     <?php endforeach; ?>

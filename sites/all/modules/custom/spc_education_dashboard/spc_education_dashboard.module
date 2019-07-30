@@ -149,11 +149,13 @@ function spc_education_dashboard_block_view($delta = '') {
   switch ($delta) {
     case 'education_dashboard_block':
       if (user_access('access content')) {
-        $data = get_charts_data();
+        
+        $json_data = get_charts_data();
+        $data = $json_data['educationChartsData'];
         
         if(!empty($data)){
           foreach ($data as $chart_data){
-            $thresholds = $chart_data['threshold']['dots'];
+            @$thresholds = $chart_data['threshold']['dots'];
             
             $charts =  $chart_data['charts'];
             
@@ -171,9 +173,12 @@ function spc_education_dashboard_block_view($delta = '') {
           }
         }
         
+        $description = [];
+        $description['description'] = $json_data['description'];
+        
         $block['subject'] = t('Education dashboard block');
         $block['content'] = array(
-          '#markup' => theme('education_dashboard_block_theme', array('items' => $data))
+          '#markup' => theme('education_dashboard_block_theme', array('items' => $data, 'data' => $description))
         );
       }
     break;
@@ -198,14 +203,11 @@ function get_charts_data(){
     
     if($education_chart_data = file_get_contents($uri)){
       $data = json_decode($education_chart_data, true);
-      $data = $data['educationChartsData'];
     } else {
       $data = get_charts_default_data();
-      $data = $data['educationChartsData'];
     }
   } else {
     $data = get_charts_default_data();
-    $data = $data['educationChartsData'];
   }
   
   return $data;
@@ -230,6 +232,7 @@ function spc_education_dashboard_theme($existing, $type, $theme, $path) {
   $themes['education_dashboard_block_theme'] = [
     'variables'     => array(
       'items' => NULL,
+      'data' => NULL,
       ),
     'template'      => 'block--education_dashboard',
     'original hook' => 'block',
