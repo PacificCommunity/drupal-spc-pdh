@@ -9578,7 +9578,7 @@ button.header-menu-btn:focus {
 }
 .dashboards-home {
   padding-top: 20px;
-  padding-bottom: 55px;
+  padding-bottom: 0px;
   text-align: center;
   color: #000;
 }
