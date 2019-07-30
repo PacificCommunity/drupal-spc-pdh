@@ -46,7 +46,7 @@
         <div class="chart-pdf-export">
             <a target="_blank"href="<?php print $data['chart-pdf-export']; ?>"></a>
           <div class="chart-pdf-text">
-            <p><strong><?php print t('Downlode pdf file'); ?></strong></p>
+            <p><strong><?php print t('Download pdf file'); ?></strong></p>
             <p><?php print t('Summary of status of indicators across the categories (%) across the 21 PICTs'); ?></p>
           </div>
         </div>
