@@ -164,7 +164,7 @@
                 label.fontSize="10px";
                 this.setLabel(label);
           });
-
+          
           markers[key].addListener('mouseout', function() {
                 let marker = this;
                 marker.setIcon( iconBase + marker.value + '.png');
@@ -172,6 +172,23 @@
                 let label = this.getLabel();
                 label.fontSize="0px";
                 this.setLabel(label);
+          });
+          
+          markers[key].addListener('click', function() {
+                let marker = this;
+                if (marker.icon.indexOf('stroke') == -1){
+                    marker.setIcon( iconBase + marker.value + '-stroke.png');
+
+                    let label = this.getLabel();
+                    label.fontSize="10px";
+                    this.setLabel(label);
+                } else {
+                    marker.setIcon( iconBase + marker.value + '.png');
+
+                    let label = this.getLabel();
+                    label.fontSize="0px";
+                    this.setLabel(label);
+                }
           });
         };
         
