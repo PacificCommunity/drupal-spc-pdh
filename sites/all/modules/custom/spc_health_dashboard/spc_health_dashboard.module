@@ -850,5 +850,5 @@ function spc_health_dashboard_block_view($delta = '') {
  * @return string with title for all health dashboard pages.
  */
 function _health_dashboard_title(){
-  return t('Status of NCD policy and&nbsplegislation&nbspin <br><strong>Pacific Island countries</strong> and&nbspterritories');
+  return t('<h1><strong>Pacific Monitoring Alliance</strong> for NCD Action (MANA)</h1><br><h3>Status of NCD policy and legislation in <strong>Pacific Island countries</strong> and&nbspterritories</h3>');
 }
