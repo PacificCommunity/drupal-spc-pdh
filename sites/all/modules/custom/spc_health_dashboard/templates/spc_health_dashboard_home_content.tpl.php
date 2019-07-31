@@ -86,7 +86,7 @@
                         <?php foreach ($item2['#indicators'] as $key3 => $item3): ?>
                             <li>
                               <a href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key2 . '/' . $key3 ?>">
-                                <?php echo $item3['code'] . ' ' . $item3['title'] ?>
+                                <?php echo $item3['code'] . '. ' . $item3['title'] ?>
                               </a>
                             </li>
                         <?php endforeach; ?>
@@ -97,7 +97,7 @@
                       <input id="sub-group-<?php echo $key2 ?>" type="checkbox" hidden />
                       <label for="sub-group-<?php echo $key2 ?>">
                         <a href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key . '/' . $key2 ?>">
-                            <?php echo $item2['code'] .' '. $item2['title'] ?>
+                            <?php echo $item2['code'] .'. '. $item2['title'] ?>
                         </a>
                       </label>
                   </li>
