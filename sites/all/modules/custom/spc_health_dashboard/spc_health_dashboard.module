@@ -83,7 +83,15 @@ function spc_health_dashboard_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => ['spc_health_dashboard_form'],
     'access arguments' => ['access administration pages'],
-    'type' => MENU_NORMAL_ITEM,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  ];
+  $items['admin/config/health-dashboard/countries'] = [
+    'title' => t('Health dashboard countries settings'),
+    'description' => t('Health dashboard settings'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['spc_health_dashboard_countries_form'],
+    'access arguments' => ['access administration pages'],
+    'type' => MENU_LOCAL_TASK,
   ];
 
   return $items;
@@ -851,4 +859,70 @@ function spc_health_dashboard_block_view($delta = '') {
  */
 function _health_dashboard_title(){
   return t('<h1><strong>Pacific Monitoring Alliance</strong> for NCD Action (MANA)</h1><br><h3>Status of NCD policy and legislation in <strong>Pacific Island countries</strong> and&nbspterritories</h3>');
+}
+
+/**
+ * Implementation of hook_form().
+ */
+function spc_health_dashboard_countries_form($form, &$form_state){
+  $form = [];
+  $countries = variable_get('health_dashboard_countries');
+  
+  foreach ($countries as $country_key => $country){
+    $form['pdf_' . $country_key . '_file'] = [
+      '#type' => 'managed_file',
+      '#title' => t('Upload '. $country['#title'] .' helth dashboadr PDF File'),
+      '#description' => t('Upload ' . $country['#title'] . ' helth dashboadr PDF File.'),
+      '#upload_validators' => [
+        'file_validate_extensions' => ['pdf'],
+      ],
+      '#process' => ['process_health_json_file'],
+      '#upload_location' => 'public://pdf/',
+      '#default_value' => variable_get('pdf_' . $country_key . '_fid'),
+      '#required' => FALSE,    
+    ];    
+  }
+
+  $form['#validate'][] = 'spc_health_dashboard_countries_form_validate';
+  $form['#submit'][] = 'spc_health_dashboard_countries_form_submit';
+  
+  return system_settings_form($form);
+}
+
+/**
+ * Custom validation for spc_health_dashboard_countries_form.
+ */
+function spc_health_dashboard_countries_form_validate($form, &$form_state){
+  $validators = [];
+  $countries = variable_get('health_dashboard_countries');
+  
+  foreach ($countries as $country_key => $country){
+    if ($form_state['values']['pdf_' . $country_key . '_file']){
+      $pdf_country_file = null;
+      if ($pdf_country_file = file_save_upload('pdf_' . $country_key . '_file', $validators)) {
+        $form_state['values']['pdf_' . $country_key . '_file'] = $pdf_country_file;
+        variable_set('pdf_' . $country_key . '_fid', $pdf_country_file->fid);
+      }
+    }
+  }
+  
+}
+
+/**
+ * Custom submit for spc_health_dashboard_countries_form.
+ */
+function spc_health_dashboard_countries_form_submit($form, &$form_state){
+  $countries = variable_get('health_dashboard_countries');
+  
+  foreach ($countries as $country_key => $country){  
+    if (is_object($form_state['values']['pdf_' . $country_key . '_file'])){
+      $pdf_country_file = null;
+      $pdf_country_file = $form_state['values']['pdf_' . $country_key . '_file'];
+      $pdf_country_file->status = FILE_STATUS_PERMANENT;
+
+      file_save($pdf_country_file);
+      file_usage_add($pdf_country_file, 'spc_health_dashboard', 'node', $pdf_country_file->fid);
+      drupal_set_message('New ' . $country['#title'] . ' PDF file was uploaded.');
+    }
+  }
 }

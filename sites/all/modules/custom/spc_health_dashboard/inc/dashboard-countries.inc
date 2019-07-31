@@ -48,6 +48,12 @@ function spc_health_dashboard_country_content($country){
       $data['indicators'] = $country_data['indicators'];
       $data['categories'] = variable_get('health_dashboard_categories_list', []);
       $country_chart = _health_dashboard_country_chart($country_data['indicators']);
+      
+      if (!empty($fid = variable_get('pdf_' . $country . '_fid'))){
+          $pdf_country_file = file_load($fid);
+          $pdf_country_file_url = file_create_url($pdf_country_file->uri);
+          $data['chart-pdf-export'] = $pdf_country_file_url;
+      }
     }
     
   }
