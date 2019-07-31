@@ -75,9 +75,6 @@
     padding: 5px 15px;
   }
 }
-.health-dashboard-header .breadcrumb .dropdown > a {
-  pointer-events: none;
-}
 @media (max-width: 1000px) {
   .health-dashboard-header .breadcrumb .dropdown > a {
     font-size: 12px;
@@ -94,7 +91,8 @@
   left: -1px;
   right: -1px;
   padding: 0px 15px 10px 20px;
-  border-radius: 0px 0px 30px 30px;  
+  border-radius: 0px 0px 30px 30px;
+  z-index: 12;
 }
 .health-dashboard-header .breadcrumb .dropdown:hover {
   background: #FFFFFF;
@@ -102,8 +100,6 @@
 }
 .health-dashboard-header .breadcrumb .dropdown:hover .breadcrumb-subitems {
   display: block;
-
-  z-index: 12;
 }
 .health-dashboard-header .breadcrumb .dropdown:hover .breadcrumb-subitems .subitems-wrapper {
   overflow: auto;
@@ -132,8 +128,6 @@
 }
 .health-dashboard-header .breadcrumb .dropdown:hover a {
   color: #CACACA;
-  text-decoration: none;
-  cursor: default;
 }
 .health-dashboard-header .breadcrumb a {
   font-family: 'Montserrat', sans-serif;
