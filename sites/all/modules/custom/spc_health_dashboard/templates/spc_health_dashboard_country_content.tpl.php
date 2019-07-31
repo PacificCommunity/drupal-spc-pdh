@@ -9,6 +9,15 @@
           <div class="legend development"><span><?php print t('Under Development'); ?></span></div>
           <div class="legend not-present"><span><?php print t('Not Present'); ?></span></div>
         </div>
+        <?php if (!empty($data['chart-pdf-export'])): ?>
+          <div class="chart-pdf-export">
+              <a target="_blank"href="<?php print $data['chart-pdf-export']; ?>"></a>
+            <div class="chart-pdf-text">
+              <p><strong><?php print t('Download pdf file'); ?></strong></p>
+              <p><?php print t('Summary of status of indicators across the categories (%)'); ?></p>
+            </div>
+          </div>
+        <?php endif; ?>
     </div>    
 </div>
 
