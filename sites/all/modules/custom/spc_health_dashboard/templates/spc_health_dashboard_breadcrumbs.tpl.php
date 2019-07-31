@@ -10,7 +10,7 @@
                     <div class="subitems-wrapper">
                     <?php foreach ($item['submenu'] as $subitem): ?>
                         <a href="<?php echo $subitem['url'] ?>">
-                            <?php echo $subitem['title'] ?>
+                          <?php echo $subitem['title'] ?>
                         </a>
                     <?php endforeach; ?>
                     </div>

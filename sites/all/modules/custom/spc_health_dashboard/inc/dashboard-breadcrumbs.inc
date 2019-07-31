@@ -67,12 +67,12 @@ function _category_breadcrumbs($category, $indicator) {
   $category_name = $all_categories[$category]['#title'];
 
   if ($indicator) {
-    $indicator_name = $all_categories[$category]['#indicators'][$indicator];
+    $indicator_name = $all_categories[$category]['#indicators'][$indicator]['title'];
     $indicators = $all_categories[$category]['#indicators'];
     foreach ($all_categories[$category]['#indicators'] as $key => $item) {
       $indicators[$key] = [];
       $indicators[$key]['url'] = HEALTH_DASHBOARD_URL . '/' . $category . '/' . $key;
-      $indicators[$key]['title'] = $item;
+      $indicators[$key]['title'] = $item['title'];
     }
   }
 

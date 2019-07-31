@@ -17,7 +17,7 @@
 
   <?php if (!empty($data['methods'])): ?>
     <div>
-      <h4 class="title-text"><?php print t('Methods'); ?> </h4>
+      <h4 class="title-text"><?php print t(''); ?> </h4>
       <?php $methods = $data['methods']; ?> 
       <?php $limit = 300; ?>
       <span class="less"><?php print substr($methods, 0, $limit); ?></span>
@@ -54,7 +54,7 @@
 </div>
 
 <div class="health-dashboard-categories">
-    <h4><?php echo t('NCD Response Measures') ?> </h4>
+    <h4><?php echo t('NCD Response Areas') ?> </h4>
     <ul class="nav__list">
         <?php foreach ($data['categories'] as $key => $item): ?>
         <li class="<?php echo $key ?>">
@@ -84,7 +84,10 @@
                       </label>
                         <ul class="sub-group-list">
                         <?php foreach ($item2['#indicators'] as $key3 => $item3): ?>
-                            <li><a href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key2 . '/' . $key3 ?>"><?php echo $item3 ?></a>
+                            <li>
+                              <a href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key2 . '/' . $key3 ?>">
+                                <?php echo $item3['code'] . ' ' . $item3['title'] ?>
+                              </a>
                             </li>
                         <?php endforeach; ?>
                       </ul>
@@ -94,7 +97,7 @@
                       <input id="sub-group-<?php echo $key2 ?>" type="checkbox" hidden />
                       <label for="sub-group-<?php echo $key2 ?>">
                         <a href="<?php echo HEALTH_DASHBOARD_URL . '/' . $key . '/' . $key2 ?>">
-                            <?php echo $item2 ?>
+                            <?php echo $item2['code'] .' '. $item2['title'] ?>
                         </a>
                       </label>
                   </li>

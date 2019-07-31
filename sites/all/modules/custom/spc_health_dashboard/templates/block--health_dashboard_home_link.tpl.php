@@ -15,12 +15,12 @@
         </div>        
         
         <div class="group-content" style="z-index: 1;">
-            <div class="group-content-left">
-                <?php print t('Status of NCD <strong> policy and legislation </strong>'); ?>
+            <div class="group-content-left" >
+                <?php print t('<strong>MANA</strong> &nbsp&nbsp Dashboard &nbsp&nbsp'); ?>
             </div>
-            <div class="group-content-right">
+            <div class="group-content-right" style="flex: 1 1 75%;">
                 <div class="dashboard-description">
-                    <?php print t('This Dashboard will enable monitoring of progress against the 2030 agenda for sustainable development'); ?>
+                    <?php print t('The Pacific Monitoring Alliance for NCD Action (MANA) dashboard will enable PICTs to monitor <strong>status and progress of NCD policy and legislation</strong> against the <strong>Pacific NCD Roadmap</strong>, the <strong>Health Islands Monitoring Frameworks</strong> as well as the <strong>Sustainable Development Goals</strong>'); ?>
                 </div>
                 <div class="field field-type-ds">
                     <a href="/health-dashboard" class="banner-button btn"><?php print t('View DASHBOARD'); ?></a>
