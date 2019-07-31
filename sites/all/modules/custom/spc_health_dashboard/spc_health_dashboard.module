@@ -83,8 +83,17 @@ function spc_health_dashboard_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => ['spc_health_dashboard_form'],
     'access arguments' => ['access administration pages'],
-    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 50
   ];
+  
+  $items['admin/config/health-dashboard/settings'] = [
+    'title' => t('Health dashboard countries settings'),
+    'description' => t('Health dashboard settings'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 0
+  ];  
+  
   $items['admin/config/health-dashboard/countries'] = [
     'title' => t('Health dashboard countries settings'),
     'description' => t('Health dashboard settings'),
@@ -92,6 +101,7 @@ function spc_health_dashboard_menu() {
     'page arguments' => ['spc_health_dashboard_countries_form'],
     'access arguments' => ['access administration pages'],
     'type' => MENU_LOCAL_TASK,
+      'weight' => 1    
   ];
 
   return $items;
