@@ -327,9 +327,18 @@ function spc_health_dashboard_update_categories() {
       '#wrapper' => FALSE,
       '#weight' => 0,
       '#indicators' => [
-        'multi-sectoral-ncd-taskforce' => t('Multi-sectoral NCD taskforce'),
-        'national-strategy-addressing-ncds-and-risk-factors' => t('National strategy addressing NCDs and risk factors'),
-        'explicit-ncd-indicators-and-targets' => t('Explicit NCD indicators and targets'),
+        'multi-sectoral-ncd-taskforce' => [
+          'code' => 'L1',
+          'title' => t('Multi-sectoral NCD taskforce')
+        ],
+        'national-strategy-addressing-ncds-and-risk-factors' => [
+          'code' => 'L2',
+          'title' => t('National strategy addressing NCDs and risk factors'),
+        ],
+        'explicit-ncd-indicators-and-targets' => [
+          'code' => 'L3',
+          'title' => t('Explicit NCD indicators and targets')
+        ],
       ],
     ],
     'tobacco' => [
@@ -337,12 +346,30 @@ function spc_health_dashboard_update_categories() {
       '#wrapper' => t('Preventive policies'),
       '#weight' => 1,
       '#indicators' => [
-        'tobacco-excise-taxes' => t('Tobacco excise taxes'),
-        'smoke-free-environments' => t('Smoke-free environments'),
-        'tobacco-health-warnings' => t('Tobacco health warnings'),
-        'tobacco-advertising-promotion-sponsorship' => t('Tobacco advertising, promotion and sponsorship'),
-        'tobacco-sales-and-licencing' => t('Tobacco sales and licencing'),
-        'tobacco-industry-interference' => t('Tobacco industry interference'),        
+        'tobacco-excise-taxes' => [
+          'code' => 'T1',
+          'title' => t('Tobacco excise taxes'),
+        ],
+        'smoke-free-environments' => [
+          'code' => 'T2',
+          'title' => t('Smoke-free environments'),
+        ],
+        'tobacco-health-warnings' => [
+          'code' => 'T3',
+          'title' => t('Tobacco health warnings'),
+        ],
+        'tobacco-advertising-promotion-sponsorship' => [
+          'code' => 'T4',
+          'title' => t('Tobacco advertising, promotion and sponsorship'),
+        ],
+        'tobacco-sales-and-licencing' => [
+          'code' => 'T5',
+          'title' => t('Tobacco sales and licencing'),
+        ],
+        'tobacco-industry-interference' => [
+          'code' => 'T6',
+          'title' => t('Tobacco industry interference'),
+        ],        
       ],
     ],
     'alcohol' => [
@@ -350,10 +377,22 @@ function spc_health_dashboard_update_categories() {
       '#wrapper' => t('Preventive policies'),
       '#weight' => 2,
       '#indicators' => [
-        'alcohol-licencing-to-restrict-sales' => t('Alcohol licencing to restrict sales'),
-        'alcohol-advertising' => t('Alcohol advertising'),
-        'alcohol-taxation' => t('Alcohol taxation'),
-        'drink-driving' => t('Drink driving'),
+        'alcohol-licencing-to-restrict-sales' => [
+          'code' => 'A1',
+          'title' => t('Alcohol licencing to restrict sales'),
+        ],
+        'alcohol-advertising' => [
+          'code' => 'A2',
+          'title' => t('Alcohol advertising'),
+        ],
+        'alcohol-taxation' => [
+          'code' => 'A3',
+          'title' => t('Alcohol taxation'),
+        ],
+        'drink-driving' => [
+          'code' => 'A4',
+          'title' => t('Drink driving'),
+        ],
       ],
     ],
     'food' => [
@@ -361,12 +400,30 @@ function spc_health_dashboard_update_categories() {
       '#wrapper' => t('Preventive policies'),
       '#weight' => 3,
       '#indicators' => [
-        'reducing-salt-consumption' => t('Reducing salt consumption'),
-        'trans-fats' => t('Trans-fats'),
-        'unhealthy-food-marketing-to-children' => t('Unhealthy food marketing to children'),
-        'food-fiscal-policies' => t('Food fiscal policies'),
-        'healthy-food-policies-in-schools' => t('Healthy food policies in schools'),
-        'food-based-dietary-guidelines' => t('Food-based dietary guidelines'),        
+        'reducing-salt-consumption' => [
+          'code' => 'F1',
+          'title' => t('Reducing salt consumption'),
+        ],
+        'trans-fats' => [
+          'code' => 'F2',
+          'title' => t('Trans-fats'),
+        ],
+        'unhealthy-food-marketing-to-children' => [
+          'code' => 'F3',
+          'title' => t('Unhealthy food marketing to children'),
+        ],
+        'food-fiscal-policies' => [
+          'code' => 'F4',
+          'title' => t('Food fiscal policies'),
+        ],
+        'healthy-food-policies-in-schools' => [
+          'code' => 'F5',
+          'title' => t('Healthy food policies in schools'),
+        ],
+        'food-based-dietary-guidelines' => [
+          'code' => 'F6',
+          'title' => t('Food-based dietary guidelines'),
+        ],        
       ],
     ], 
     'physical-activity' => [
@@ -374,7 +431,10 @@ function spc_health_dashboard_update_categories() {
       '#wrapper' => t('Preventive policies'),
       '#weight' => 4,
       '#indicators' => [
-        'compulsory-physical-education-in-school-curriculum' => t('Compulsory physical education in school curriculum'),       
+        'compulsory-physical-education-in-school-curriculum' => [
+          'code' => 'P1',
+          'title' => t('Compulsory physical education in school curriculum'),
+        ],       
       ],
     ], 
     'enforcement' => [
@@ -382,7 +442,10 @@ function spc_health_dashboard_update_categories() {
       '#wrapper' => t('Preventive policies'),
       '#weight' => 5,
       '#indicators' => [
-        'enforcement-of-laws-and-regulations-related-to-ncd-risk-factors' => t('Enforcement of laws and regulations related to NCD risk factors'),       
+        'enforcement-of-laws-and-regulations-related-to-ncd-risk-factors' => [
+          'code' => 'E1',
+          'title' => t('Enforcement of laws and regulations related to NCD risk factors'),
+        ],       
       ],
     ],
     'health-system' => [
@@ -390,12 +453,30 @@ function spc_health_dashboard_update_categories() {
       '#wrapper' => FALSE,
       '#weight' => 5,
       '#indicators' => [
-        'national-guidelines-for-care-of-main-ncds' => t('National guidelines for care of main NCDs'),
-        'essential-drugs' => t('Essential drugs'),
-        'smoking-cessation' => t('Smoking cessation'),
-        'marketing-of-breast-milk-substitutes' => t('Marketing of breast milk substitutes'),
-        'baby-friendly-hospitals' => t('Baby friendly hospitals'),
-        'maternity-leave-and-breastfeeding' => t('Maternity leave and breastfeeding'),
+        'national-guidelines-for-care-of-main-ncds' => [
+          'code' => 'H1',
+          'title' => t('National guidelines for care of main NCDs'),
+          ],
+        'essential-drugs' => [
+          'code' => 'H2',
+          'title' => t('Essential drugs'), 
+        ] ,
+        'smoking-cessation' => [
+          'code' => 'H3',
+          'title' => t('Smoking cessation'),
+        ],
+        'marketing-of-breast-milk-substitutes' => [
+          'code' => 'H4',
+          'title' => t('Marketing of breast milk substitutes'),
+        ],
+        'baby-friendly-hospitals' => [
+          'code' => 'H5',
+          'title' => t('Baby friendly hospitals'),
+        ],
+        'maternity-leave-and-breastfeeding' => [
+          'code' => 'H6',
+          'title' => t('Maternity leave and breastfeeding'),
+        ],
       ],
     ],    
     'monitoring' => [
@@ -403,10 +484,22 @@ function spc_health_dashboard_update_categories() {
       '#wrapper' => FALSE,
       '#weight' => 10,
       '#indicators' => [
-        'population-risk-factor-prevalence-surveys-adults' => t('Population risk factor prevalence surveys - adults'),
-        'population-risk-factor-prevalence-surveys-youth' => t('Population risk factor prevalence surveys - youth'),
-        'child-growth-monitoring' => t('Child growth monitoring'),
-        'routine-cause-specific-mortality' => t('Routine cause-specific mortality'),
+        'population-risk-factor-prevalence-surveys-adults' => [
+          'code' => 'M1',
+          'title' => t('Population risk factor prevalence surveys - adults'),
+        ],
+        'population-risk-factor-prevalence-surveys-youth' => [
+          'code' => 'M2',
+          'title' => t('Population risk factor prevalence surveys - youth'),
+        ],
+        'child-growth-monitoring' => [
+          'code' => 'M3',
+          'title' => t('Child growth monitoring'),
+        ],
+        'routine-cause-specific-mortality' => [
+          'code' => 'M4',
+          'title' => t('Routine cause-specific mortality'),
+        ],
       ],
     ],
   ];
