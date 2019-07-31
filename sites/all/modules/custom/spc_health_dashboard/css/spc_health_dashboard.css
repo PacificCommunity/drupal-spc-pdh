@@ -18,6 +18,17 @@
   text-transform: none;
   margin: 0;
 }
+.banner-with-title.health-dashboard-header h1 strong {
+  color: #FFBC00;
+}
+.banner-with-title.health-dashboard-header h3 {
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 0px;
+}
+.banner-with-title.health-dashboard-header h3 strong {
+  color: #FFBC00;
+}
 .health-dashboard-header .title {
   margin-top: 10px;
 }
@@ -37,7 +48,7 @@
   height: 50px;
   padding: 11px 40px 11px 30px;
   border-radius: 0px 30px 30px 0px;
-  width: 272px;
+  width: 295px;
   align-self: flex-start;
   margin-top: 80px;
 }
@@ -1327,7 +1338,7 @@
     line-height: 20px;
     height: 40px;
     padding: 11px 40px 11px 30px;
-    width: 210px;
+    width: 220px;
   }
   .health-dashboard-content {
     margin: 10px auto;
@@ -1335,6 +1346,10 @@
   .banner-with-title.health-dashboard-header h1 {
     font-size: 26px;
     line-height: 30px;
+  }
+  .banner-with-title.health-dashboard-header h3 {
+    font-size: 20px;
+    line-height: 24px;
   }
   .health-dashboard-header .breadcrumbs {
     margin: 0px;
@@ -1418,6 +1433,14 @@
     line-height: 24px;
     max-width: 95%;
     margin-left: 2%;
+    margin-top: 20px;
+  }
+  .banner-with-title.health-dashboard-header h3 {
+    font-size: 16px;
+    line-height: 18px;
+    max-width: 95%;
+    margin-left: 2%;
+    margin-bottom: 0px;
   }
   .health-dashboard-header .search {
     margin: 40px 10px 60px;
@@ -1514,4 +1537,3 @@
 .health-dashboard-search-form .sug-block ul li a.active {
   color: #000;
 }
-/*# sourceMappingURL=spc_health_dashboard.css.map */
