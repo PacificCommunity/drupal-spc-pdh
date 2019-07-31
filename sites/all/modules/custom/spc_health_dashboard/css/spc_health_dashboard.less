@@ -4,15 +4,28 @@
   background-image: url('../img/Fishes-background.png');
 }
 
-.banner-with-title.health-dashboard-header h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 44px;
-  color: #FFFFFF;
-  text-transform: none;
-  margin: 0;
+.banner-with-title.health-dashboard-header {
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+    color: #FFFFFF;
+    text-transform: none;
+    margin: 0;
+    strong {
+      color: #FFBC00;
+    }
+  }
+  h3 {
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 0px;
+    strong {
+      color: #FFBC00;
+    }
+  }
 }
 
 .health-dashboard-header {
@@ -36,7 +49,7 @@
     height: 50px;
     padding: 11px 40px 11px 30px;
     border-radius: 0px 30px 30px 0px;
-    width: 272px;
+    width: 295px;
     align-self: flex-start;
     margin-top: 80px;
   }
@@ -1349,15 +1362,21 @@
         line-height: 20px;
         height: 40px;
         padding: 11px 40px 11px 30px;
-        width: 210px;
+        width: 220px;
       }
     }
     .health-dashboard-content {
         margin: 10px auto;
     }  
-    .banner-with-title.health-dashboard-header h1 {
-      font-size: 26px;
-      line-height: 30px;
+    .banner-with-title.health-dashboard-header {
+      h1 {
+          font-size: 26px;
+          line-height: 30px;
+        }
+      h3 {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
     .health-dashboard-header .breadcrumbs {
       margin: 0px
@@ -1444,11 +1463,21 @@
     .health-dashboard-header.banner-with-title {
       height: 365px;
     }
-    .banner-with-title.health-dashboard-header h1 {
-      font-size: 20px;
-      line-height: 24px;
-      max-width: 95%;
-      margin-left: 2%;
+    .banner-with-title.health-dashboard-header {
+      h1 {
+        font-size: 20px;
+        line-height: 24px;
+        max-width: 95%;
+        margin-left: 2%;
+        margin-top: 20px;
+      }
+      h3 {
+        font-size: 16px;
+        line-height: 18px;
+        max-width: 95%;
+        margin-left: 2%;
+        margin-bottom: 0px;
+      }
     }
     .health-dashboard-header {
         .search {
