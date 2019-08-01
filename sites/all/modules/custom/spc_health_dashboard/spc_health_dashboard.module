@@ -881,8 +881,8 @@ function spc_health_dashboard_countries_form($form, &$form_state){
   foreach ($countries as $country_key => $country){
     $form['pdf_' . $country_key . '_file'] = [
       '#type' => 'managed_file',
-      '#title' => t('Upload '. $country['#title'] .' helth dashboadr PDF File'),
-      '#description' => t('Upload ' . $country['#title'] . ' helth dashboadr PDF File.'),
+      '#title' => t('Upload '. $country['#title'] .' health dashboard PDF File'),
+      '#description' => t('File will be able to download on ' . $country['#title'] . ' country page.'),
       '#upload_validators' => [
         'file_validate_extensions' => ['pdf'],
       ],
