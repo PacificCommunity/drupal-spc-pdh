@@ -2,8 +2,8 @@
     
     "leadership-and-governance": {
         "name": "Leadership and governance",
-        "description": "Thirteen of the 21 PICTs included in this report have a current national multisectoral strategy addressing NCDs and risk factors, 15 have established NCD indicators and targets, and five have an active multisectoral NCD taskforce. Substantial efforts are required to strengthen leadership and governance of NCDs in PICTs. The NCD crisis is driven by multiple factors, both within and outside the health sector, so a multisectoral approach is essential to address this issue. Pacific health ministers have already committed to taking a multisectoral approach to address NCDs.9,10Establishing a multisectoral NCD strategy with target indicators and taskforces are essential activities to operationalise this commitment.",
-        "image": "",
+        "description": "Thirteen of the 21 PICTs included in this report have a current national multisectoral strategy addressing NCDs and risk factors, 15 have established NCD indicators and targets, and five have an active multisectoral NCD taskforce. Substantial efforts are required to strengthen leadership and governance of NCDs in PICTs. The NCD crisis is driven by multiple factors, both within and outside the health sector, so a multisectoral approach is essential to address this issue. Pacific health ministers have already committed to taking a multisectoral approach to address NCDs. Establishing a multisectoral NCD strategy with target indicators and taskforces are essential activities to operationalise this commitment.",
+        "image": "https://assets.privy.com/picture_photos/1029770/medium/7f78ba25556e4794bb14a0a926a14be1?1554197117",
         "indicators": {
             "multi-sectoral-ncd-taskforce": {
                 "not-present": {
@@ -11,15 +11,16 @@
                     "percentage": 19
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 12,
+                    "percentage": 57
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 5,
+                    "percentage": 24,
                     "countries": [
                         "Guam",
                         "Palau",
+                        "Samoa",
                         "Tonga",
                         "Tuvalu"
                     ]
@@ -31,17 +32,27 @@
                     "percentage": 10
                 },
                 "under-development": {
-                    "number" : 6,
-                    "percentage": 29
+                    "number" : 5,
+                    "percentage": 24
                 },
                 "present": {
-                    "number" : 13,
-                    "percentage": 62,
+                    "number" : 14,
+                    "percentage": 67,
                     "countries": [
                         "American Samoa",
                         "Cook Islands",
                         "FSM",
-                        "Tuvalu"
+                        "Fiji",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "Niue",
+                        "Palau",
+                        "PNG",
+                        "Samoa",
+                        "Tonga",
+                        "Tuvalu",
+                        "Vanuatu"
                     ]
                 }                
             },
@@ -51,15 +62,26 @@
                     "percentage": 14
                 },
                 "under-development": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 3,
+                    "percentage": 14
                 },
                 "present": {
-                    "number" : 14,
-                    "percentage": 67,
+                    "number" : 15,
+                    "percentage": 71,
                     "countries": [
                         "American Samoa",
                         "Cook Islands",
+                        "Fiji",
+                        "FSM",
+                        "Guam",
+                        "Kiribati",
+                        "New Caledonia",
+                        "Niue",
+                        "Palau",
+                        "PNG",
+                        "Samoa",
+                        "Tokelau",
+                        "Tonga",
                         "Tuvalu",
                         "Vanuatu"
                     ]
@@ -70,46 +92,74 @@
     
     "tobacco": {
         "name": "Tobacco",
-        "description": "Thirteen of the 21 PICTs included in this report have a current national multisectoral strategy addressing NCDs and risk factors, 15 have established NCD indicators and targets, and five have an active multisectoral NCD taskforce. Substantial efforts are required to strengthen leadership and governance of NCDs in PICTs. The NCD crisis is driven by multiple factors, both within and outside the health sector, so a multisectoral approach is essential to address this issue. Pacific health ministers have already committed to taking a multisectoral approach to address NCDs.9,10Establishing a multisectoral NCD strategy with target indicators and taskforces are essential activities to operationalise this commitment.",
+        "description": "All PICTs have introduced legislation to reduce tobacco consumption, with 18 PICTs implementing tobacco taxation measures. Most PICTs have legislation to create smoke-free public places (18 PICTs), health warnings on tobacco packaging (16 PICTs), restrictions on tobacco sales and licensing (14 PICTs), and restrictions on tobacco advertising, promotion and sponsorship (17 PICTs). However, no PICT currently has a national policy or legislation in place to prevent tobacco industry interference.",
         "image": "",
         "indicators": {
             "tobacco-excise-taxes": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 0,
+                    "percentage": 0
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 3,
+                    "percentage": 14
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 18,
+                    "percentage": 86,
                     "countries": [
+                        "American Samoa",
+                        "CNMI",
+                        "Cook Islands",
+                        "Fiji",
+                        "FSM",
+                        "French Polynesia",
                         "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
                         "Palau",
+                        "PNG",
+                        "Samoa",
                         "Tonga",
-                        "Tuvalu"
+                        "Tuvalu",
+                        "Vanuatu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "smoke-free-environments": {
                 "not-present": {
-                    "number" : 2,
-                    "percentage": 10
+                    "number" : 0,
+                    "percentage": 0
                 },
                 "under-development": {
-                    "number" : 6,
-                    "percentage": 29
+                    "number" : 3,
+                    "percentage": 14
                 },
                 "present": {
-                    "number" : 13,
-                    "percentage": 62,
+                    "number" : 18,
+                    "percentage": 86,
                     "countries": [
                         "American Samoa",
+                        "CNMI",
                         "Cook Islands",
-                        "FSM",
-                        "Tuvalu"
+                        "Fiji",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Palau",
+                        "PNG",
+                        "Marshall Islands",
+                        "Samoa",
+                        "Solomon",
+                        "Tokelau",
+                        "Tonga",
+                        "Tuvalu",
+                        "Vanuatu"
                     ]
                 }                
             },
@@ -119,78 +169,109 @@
                     "percentage": 14
                 },
                 "under-development": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 2,
+                    "percentage": 10
                 },
                 "present": {
-                    "number" : 14,
-                    "percentage": 67,
+                    "number" : 16,
+                    "percentage": 76,
                     "countries": [
-                        "American Samoa",
+                        "CNMI",
                         "Cook Islands",
+                        "Fiji",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Marshall Islands",
+                        "PNG",
+                        "Samoa",
+                        "Solomon",
+                        "Tonga",
                         "Tuvalu",
-                        "Vanuatu"
+                        "Vanuatu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "tobacco-advertising-promotion-sponsorship": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 3,
+                    "percentage": 14
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 17,
+                    "percentage": 81,
                     "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Fiji",
+                        "French Polynesia",
                         "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
                         "Palau",
+                        "Marshall Islands",
+                        "PNG",
+                        "Samoa",
+                        "Solomon Islands",
                         "Tonga",
-                        "Tuvalu"
+                        "Tuvalu",
+                        "Vanuatu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "tobacco-sales-and-licencing": {
                 "not-present": {
+                    "number" : 4,
+                    "percentage": 20
+                },
+                "under-development": {
                     "number" : 2,
                     "percentage": 10
+                },
+                "present": {
+                    "number" : 14,
+                    "percentage": 70,
+                    "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Fiji",
+                        "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Palau",
+                        "PNG",
+                        "Solomon Islands",
+                        "Tonga",
+                        "Tuvalu",
+                        "Vanuatu",
+                        "Wallis and Futuna"
+                    ]
+                }                
+            },
+            "tobacco-industry-interference": {
+                "not-present": {
+                    "number" : 15,
+                    "percentage": 71
                 },
                 "under-development": {
                     "number" : 6,
                     "percentage": 29
                 },
                 "present": {
-                    "number" : 13,
-                    "percentage": 62,
+                    "number" : 0,
+                    "percentage": 0,
                     "countries": [
-                        "American Samoa",
-                        "Cook Islands",
-                        "FSM",
-                        "Tuvalu"
-                    ]
-                }                
-            },
-            "tobacco-industry-interference": {
-                "not-present": {
-                    "number" : 3,
-                    "percentage": 14
-                },
-                "under-development": {
-                    "number" : 4,
-                    "percentage": 19
-                },
-                "present": {
-                    "number" : 14,
-                    "percentage": 67,
-                    "countries": [
-                        "American Samoa",
-                        "Cook Islands",
-                        "Tuvalu",
-                        "Vanuatu"
-                    ]
+                                            ]
                 }                
             }            
         }
@@ -198,86 +279,135 @@
     
     "alcohol": {
         "name": "Alcohol",
-        "description": "Thirteen of the 21 PICTs included in this report have a current national multisectoral strategy addressing NCDs and risk factors, 15 have established NCD indicators and targets, and five have an active multisectoral NCD taskforce. Substantial efforts are required to strengthen leadership and governance of NCDs in PICTs. The NCD crisis is driven by multiple factors, both within and outside the health sector, so a multisectoral approach is essential to address this issue. Pacific health ministers have already committed to taking a multisectoral approach to address NCDs.9,10Establishing a multisectoral NCD strategy with target indicators and taskforces are essential activities to operationalise this commitment.",
+        "description": "All PICTs included in this report have national licensing regulations in place to restrict the sale of alcohol (except FSM where this is state jurisdiction, and Tuvalu), and 18 PICTs have legislation in place to control drink driving. However, only six PICTs have regulations governing alcohol advertising. Nineteen PICTs have alcohol taxation mechanisms in place but, in most cases, taxation is based on beverage type, rather than on ethanol content, the recommended mechanism for discouraging consumption of beverages with high ethanol content, thereby reducing alcohol-related harm. Based on findings from this report, there are two key areas where very few PICTs have an established alcohol policy: alcohol taxation based on ethanol content, and regulating alcohol advertising.",
         "image": "",
         "indicators": {
             "alcohol-licencing-to-restrict-sales": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 0,
+                    "percentage": 0
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 0,
+                    "percentage": 0
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 20,
+                    "percentage": 100,
                     "countries": [
+                        "American Samoa",
+                        "CNMI",
+                        "Cook Islands",
+                        "Fiji",
+                        "French Polynesia",
                         "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
                         "Palau",
+                        "PNG",
+                        "Marshall Islands",
+                        "Samoa",
+                        "Solomon Islands",
+                        "Tokelau",
                         "Tonga",
-                        "Tuvalu"
+                        "Tuvalu",
+                        "Vanuatu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "alcohol-advertising": {
                 "not-present": {
-                    "number" : 2,
-                    "percentage": 10
+                    "number" : 12,
+                    "percentage": 60
                 },
                 "under-development": {
-                    "number" : 6,
-                    "percentage": 29
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "present": {
-                    "number" : 13,
-                    "percentage": 62,
+                    "number" : 7,
+                    "percentage": 35,
                     "countries": [
-                        "American Samoa",
-                        "Cook Islands",
-                        "FSM",
-                        "Tuvalu"
+                        "French Polynesia",
+                        "Guam",
+                        "New Caledonia",
+                        "PNG",
+                        "Samoa",
+                        "Tuvalu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "alcohol-taxation": {
                 "not-present": {
-                    "number" : 3,
-                    "percentage": 14
+                    "number" : 0,
+                    "percentage": 0
                 },
                 "under-development": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "present": {
-                    "number" : 14,
-                    "percentage": 67,
+                    "number" : 20,
+                    "percentage": 95,
                     "countries": [
                         "American Samoa",
+                        "CNMI",
                         "Cook Islands",
+                        "Fiji",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
+                        "Palau",
+                        "PNG",
+                        "Marshall Islands",
+                        "Samoa",
+                        "Solomon Islands",
+                        "Tokelau",
+                        "Tonga",
                         "Tuvalu",
-                        "Vanuatu"
+                        "Vanuatu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "drink-driving": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 0,
+                    "percentage": 0
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 2,
+                    "percentage": 10
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 18,
+                    "percentage": 90,
                     "countries": [
+                        "American Samoa",
+                        "CNMI",
+                        "Cook Islands",
+                        "Fiji",
+                        "French Polynesia",
                         "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
                         "Palau",
+                        "Marshall Islands",
+                        "Samoa",
+                        "Solomon Islands",
+                        "Tokelau",
                         "Tonga",
-                        "Tuvalu"
+                        "Tuvalu",
+                        "Wallis and Futuna"
                     ]
                 }                
             }
@@ -286,6 +416,8 @@
     
     "food": {
         "name": "Food",
+        "description": "Fourteen PICTs have policies or activities in place to reduce population salt consumption. Thirteen PICTs have fiscal policies in place to make healthy food choices easier and cheaper and to discourage unhealthy food choices, but only four PICTs were rated as having ‘strong’ (i.e. three-star rating) measures in place. Thirteen PICTs have national food-based dietary guidelines for adults. No PICTs have policies or legislation to limit trans-fats in the food supply. In terms of actions to encourage healthy eating among children, only two PICTs have policies in place to restrict marketing of unhealthy food to children, and 11 PICTs have policies or guidelines encouraging healthy food services in schools. Based on findings from this report, there are two key areas where very few PICTs have established policy: limiting trans-fats and restricting marketing of unhealthy foods to children. Banning transfats is recommended by WHO as a cost-effective intervention, given the evidence that eliminating trans-fats from the food supply is expected to impact directly on cardiovascular disease mortality. The Report of Commission on Ending Childhood Obesity recommends implementing the Set of Recommendations on the Marketing of Foods and Non-alcoholic Beverages to Children16 to reduce the power of the marketing of unhealthy foods and the exposure of children and adolescents to it. Further work on other areas of food policy is also critical.",
+        "image": "",
         "indicators": {
             "reducing-salt-consumption": {
                 "not-present": {
@@ -293,116 +425,146 @@
                     "percentage": 19
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 15,
+                    "percentage": 71,
                     "countries": [
-                        "Guam",
-                        "Palau",
-                        "Tonga",
-                        "Tuvalu"
-                    ]
-                }                
-            },
-            "trans-fats": {
-                "not-present": {
-                    "number" : 2,
-                    "percentage": 10
-                },
-                "under-development": {
-                    "number" : 6,
-                    "percentage": 29
-                },
-                "present": {
-                    "number" : 13,
-                    "percentage": 62,
-                    "countries": [
-                        "American Samoa",
                         "Cook Islands",
+                        "Fiji",
                         "FSM",
-                        "Tuvalu"
-                    ]
-                }                
-            },
-            "unhealthy-food-marketing-to-children": {
-                "not-present": {
-                    "number" : 3,
-                    "percentage": 14
-                },
-                "under-development": {
-                    "number" : 4,
-                    "percentage": 19
-                },
-                "present": {
-                    "number" : 14,
-                    "percentage": 67,
-                    "countries": [
-                        "American Samoa",
-                        "Cook Islands",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
+                        "Palau",
+                        "PNG",
+                        "Samoa",
+                        "Solomon Islands",
                         "Tuvalu",
                         "Vanuatu"
                     ]
                 }                
             },
-            "food-fiscal-policies": {
+            "trans-fats": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 10,
+                    "percentage": 48
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 11,
+                    "percentage": 52
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 0,
+                    "percentage": 0,
                     "countries": [
-                        "Guam",
-                        "Palau",
-                        "Tonga",
-                        "Tuvalu"
                     ]
                 }                
             },
-            "healthy-food-policies-in-schools": {
+            "unhealthy-food-marketing-to-children": {
                 "not-present": {
-                    "number" : 2,
-                    "percentage": 10
+                    "number" : 15,
+                    "percentage": 71
                 },
                 "under-development": {
-                    "number" : 6,
-                    "percentage": 29
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "present": {
+                    "number" : 2,
+                    "percentage": 10,
+                    "countries": [
+                        "French Polynesia",
+                        "Kiribati"
+                    ]
+                }                
+            },
+            "food-fiscal-policies": {
+                "not-present": {
+                    "number" : 5,
+                    "percentage": 24
+                },
+                "under-development": {
+                    "number" : 3,
+                    "percentage": 14
                 },
                 "present": {
                     "number" : 13,
                     "percentage": 62,
                     "countries": [
-                        "American Samoa",
                         "Cook Islands",
+                        "Fiji",
                         "FSM",
-                        "Tuvalu"
+                        "French Polynesia",
+                        "Kiribati",
+                        "Nauru",
+                        "Niue",
+                        "Marshall Islands",
+                        "Samoa",
+                        "Tokelau",
+                        "Tonga",
+                        "Vanuatu",
+                        "Wallis and Futuna"
+                    ]
+                }                
+            },
+            "healthy-food-policies-in-schools": {
+                "not-present": {
+                    "number" : 3,
+                    "percentage": 15
+                },
+                "under-development": {
+                    "number" : 6,
+                    "percentage": 30
+                },
+                "present": {
+                    "number" : 11,
+                    "percentage": 55,
+                    "countries": [
+                        "American Samoa",
+                        "CNMI",
+                        "Cook Islands",
+                        "Fiji",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "New Caledonia",
+                        "Niue",
+                        "Samoa",
+                        "Vanuatu"
                     ]
                 }                
             },
             "food-based-dietary-guidelines": {
                 "not-present": {
-                    "number" : 3,
-                    "percentage": 14
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "under-development": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 7,
+                    "percentage": 33
                 },
                 "present": {
-                    "number" : 14,
-                    "percentage": 67,
+                    "number" : 13,
+                    "percentage": 62,
                     "countries": [
-                        "American Samoa",
                         "Cook Islands",
-                        "Tuvalu",
+                        "Fiji",
+                        "FSM",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "New Caledonia",
+                        "Niue",
+                        "Marshall Islands",
+                        "Samoa",
+                        "Solomon Islands",
+                        "Tonga",
                         "Vanuatu"
                     ]
                 }                
@@ -412,26 +574,36 @@
     
     "physical-activity": {
         "name": "Physical Activity",
-        "description": "Thirteen of the 21 PICTs included in this report have a current national multisectoral strategy addressing NCDs and risk factors, 15 have established NCD indicators and targets, and five have an active multisectoral NCD taskforce. Substantial efforts are required to strengthen leadership and governance of NCDs in PICTs. The NCD crisis is driven by multiple factors, both within and outside the health sector, so a multisectoral approach is essential to address this issue. Pacific health ministers have already committed to taking a multisectoral approach to address NCDs.9,10Establishing a multisectoral NCD strategy with target indicators and taskforces are essential activities to operationalise this commitment.",
+        "description": "Fourteen PICTs have included physical activity as a compulsory component of the school curriculum.",
         "image": "",
         "indicators": {
             "compulsory-physical-education-in-school-curriculum": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 2,
+                    "percentage": 9
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 5,
+                    "percentage": 24
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 14,
+                    "percentage": 67,
                     "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "French Polynesia",
                         "Guam",
-                        "Palau",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
+                        "PNG",
+                        "Samoa",
+                        "Solomon Islands",
+                        "Tokelau",
                         "Tonga",
-                        "Tuvalu"
+                        "Wallis and Futuna"
                     ]
                 }                
             }
@@ -440,26 +612,36 @@
     
     "enforcement": {
         "name": "Enforcement",
-        "description": "Thirteen of the 21 PICTs included in this report have a current national multisectoral strategy addressing NCDs and risk factors, 15 have established NCD indicators and targets, and five have an active multisectoral NCD taskforce. Substantial efforts are required to strengthen leadership and governance of NCDs in PICTs. The NCD crisis is driven by multiple factors, both within and outside the health sector, so a multisectoral approach is essential to address this issue. Pacific health ministers have already committed to taking a multisectoral approach to address NCDs.9,10Establishing a multisectoral NCD strategy with target indicators and taskforces are essential activities to operationalise this commitment.",
+        "description": "Fourteen PICTs have a government-level system in place to support enforcement of tobacco, alcohol, food and betel-nut legislation, although the strength of enforcement systems varies greatly.",
         "image": "",
         "indicators": {
             "enforcement-of-laws-and-regulations-related-to-ncd-risk-factors": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 2,
+                    "percentage": 10
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 5,
+                    "percentage": 23
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 13,
+                    "percentage": 67,
                     "countries": [
+                        "CNMI",
+                        "Cook Islands",
+                        "Fiji",
                         "Guam",
-                        "Palau",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
+                        "PNG",
+                        "Samoa",
+                        "Solomon Islands",
                         "Tonga",
-                        "Tuvalu"
+                        "Tuvalu",
+                        "Wallis and Futuna"
                     ]
                 }                
             }
@@ -468,125 +650,171 @@
     
     "health-system": {
         "name": "Health system response programmes",
-        "description": "Thirteen of the 21 PICTs included in this report have a current national multisectoral strategy addressing NCDs and risk factors, 15 have established NCD indicators and targets, and five have an active multisectoral NCD taskforce. Substantial efforts are required to strengthen leadership and governance of NCDs in PICTs. The NCD crisis is driven by multiple factors, both within and outside the health sector, so a multisectoral approach is essential to address this issue. Pacific health ministers have already committed to taking a multisectoral approach to address NCDs.9,10Establishing a multisectoral NCD strategy with target indicators and taskforces are essential activities to operationalise this commitment.",
+        "description": "Nineteen PICTs have national guidelines in place for the diagnosis and management of at least one of the four main NCDs (cardiovascular disease, diabetes, cancer and chronic respiratory disease). Fifteen PICTs have included all essential NCD medicines in the national list of essential medicines and have systems in place to ensure their availability. Smoking cessation support of some kind is available in 15 PICTs. Regarding programmes related to infant nutrition, seven PICTs have restrictions on the marketing of breast milk substitutes, six have a public hospital certified as a baby-friendly hospital, and eight provide at least 12 weeks paid maternity leave. Based on findings from this report, there are three key areas where very few PICTs have an established policy: restricting marketing of breast milk substitutes, baby-friendly hospitals accreditation, and provisionof paid maternity leave and breastfeeding breaks and facilities. Action in these areas are identified by  the Commission on Ending Childhood Obesity as key strategies to address childhood obesity.",
         "image": "",
         "indicators": {
             "national-guidelines-for-care-of-main-ncds": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 19,
+                    "percentage": 90,
                     "countries": [
+                        "American Samoa",
+                        "Cook Islands",
+                        "Fiji",
+                        "FSM",
+                        "French Polynesia",
                         "Guam",
-                        "Palau",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
+                        "PNG",
+                        "Marshall Islands",
+                        "Samoa",
+                        "Solomon Islands",
+                        "Tokelau",
                         "Tonga",
-                        "Tuvalu"
+                        "Tuvalu",
+                        "Vanuatu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "essential-drugs": {
                 "not-present": {
-                    "number" : 2,
-                    "percentage": 10
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "under-development": {
-                    "number" : 6,
-                    "percentage": 29
+                    "number" : 4,
+                    "percentage": 20
                 },
                 "present": {
-                    "number" : 13,
-                    "percentage": 62,
+                    "number" : 15,
+                    "percentage": 75,
                     "countries": [
                         "American Samoa",
+                        "CNMI",
                         "Cook Islands",
-                        "FSM",
-                        "Tuvalu"
+                        "Fiji",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
+                        "Samoa",
+                        "Tokelau",
+                        "Tonga",
+                        "Tuvalu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "smoking-cessation": {
                 "not-present": {
                     "number" : 3,
-                    "percentage": 14
+                    "percentage": 15
                 },
                 "under-development": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 2,
+                    "percentage": 10
                 },
                 "present": {
-                    "number" : 14,
-                    "percentage": 67,
+                    "number" : 15,
+                    "percentage": 75,
                     "countries": [
                         "American Samoa",
+                        "CNMI",
                         "Cook Islands",
+                        "Fiji",
+                        "French Polynesia",
+                        "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
+                        "Samoa",
+                        "Tokelau",
+                        "Tonga",
                         "Tuvalu",
-                        "Vanuatu"
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "marketing-of-breast-milk-substitutes": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 11,
+                    "percentage": 52
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 3,
+                    "percentage": 14
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 7,
+                    "percentage": 33,
                     "countries": [
-                        "Guam",
+                        "Fiji",
+                        "French Polynesia",
+                        "Kiribati",
+                        "New Caledonia",
                         "Palau",
-                        "Tonga",
-                        "Tuvalu"
+                        "PNG",
+                        "Solomon Islands"
                     ]
                 }                
             },
             "baby-friendly-hospitals": {
                 "not-present": {
-                    "number" : 2,
-                    "percentage": 10
+                    "number" : 8,
+                    "percentage": 38
                 },
                 "under-development": {
-                    "number" : 6,
-                    "percentage": 29
+                    "number" : 7,
+                    "percentage": 33
                 },
                 "present": {
-                    "number" : 13,
-                    "percentage": 62,
+                    "number" : 6,
+                    "percentage": 29,
                     "countries": [
                         "American Samoa",
-                        "Cook Islands",
+                        "Fiji",
                         "FSM",
-                        "Tuvalu"
+                        "Kiribati",
+                        "PNG",
+                        "Solomon Islands"
                     ]
                 }                
             },
             "maternity-leave-and-breastfeeding": {
                 "not-present": {
-                    "number" : 3,
-                    "percentage": 14
-                },
-                "under-development": {
                     "number" : 4,
                     "percentage": 19
                 },
+                "under-development": {
+                    "number" : 9,
+                    "percentage": 43
+                },
                 "present": {
-                    "number" : 14,
-                    "percentage": 67,
+                    "number" : 8,
+                    "percentage": 38,
                     "countries": [
-                        "American Samoa",
-                        "Cook Islands",
-                        "Tuvalu",
+                        "Fiji",
+                        "French Polynesia",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
+                        "Solomon Islands",
                         "Vanuatu"
                     ]
                 }                
@@ -596,24 +824,36 @@
     
     "monitoring": {
         "name": "Monitoring",
-        "description": "Thirteen of the 21 PICTs included in this report have a current national multisectoral strategy addressing NCDs and risk factors, 15 have established NCD indicators and targets, and five have an active multisectoral NCD taskforce. Substantial efforts are required to strengthen leadership and governance of NCDs in PICTs. The NCD crisis is driven by multiple factors, both within and outside the health sector, so a multisectoral approach is essential to address this issue. Pacific health ministers have already committed to taking a multisectoral approach to address NCDs.9,10Establishing a multisectoral NCD strategy with target indicators and taskforces are essential activities to operationalise this commitment.",
+        "description": "Sixteen PICTs have established mechanisms to monitor NCD risk factor prevalence in adults, typically via population-based surveys such as STEPS, and have collected data within the last five years. Fourteen PICTs have collected adolescent NCD risk factor prevalence data in the last five years, typically via school-based surveys such as the Global School-based Student Health Survey and the Global Youth Tobacco Survey. While several PICTs have completed at least one adult and one adolescent risk factor survey, further action is required to ensure that surveys are planned and implemented at defined intervals.",
         "image": "",
         "indicators": {
             "population-risk-factor-prevalence-surveys-adults": {
                 "not-present": {
+                    "number" : 0,
+                    "percentage": 0
+                },
+                "under-development": {
                     "number" : 4,
                     "percentage": 19
                 },
-                "under-development": {
-                    "number" : 13,
-                    "percentage": 62
-                },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 17,
+                    "percentage": 81,
                     "countries": [
+                        "American Samoa",
+                        "CNMI",
+                        "Cook Islands",
+                        "Fiji",
+						"FSM",
                         "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
                         "Palau",
+                        "PNG",
+                        "Samoa",
+                        "Solomon Islands",
+                        "Tokelau",
                         "Tonga",
                         "Tuvalu"
                     ]
@@ -621,61 +861,92 @@
             },
             "population-risk-factor-prevalence-surveys-youth": {
                 "not-present": {
+                    "number" : 4,
+                    "percentage": 19
+                },
+                "under-development": {
                     "number" : 2,
                     "percentage": 10
                 },
-                "under-development": {
-                    "number" : 6,
-                    "percentage": 29
-                },
                 "present": {
-                    "number" : 13,
-                    "percentage": 62,
+                    "number" : 15,
+                    "percentage": 71,
                     "countries": [
-                        "American Samoa",
+                        "CNMI",
                         "Cook Islands",
-                        "FSM",
-                        "Tuvalu"
+                        "Fiji",
+                        "French Polynesia",
+						"FSM",
+                        "Guam",
+                        "New Caledonia",
+                        "Palau",
+                        "PNG",
+                        "Marshall Islands",
+                        "Tokelau",
+                        "Tonga",
+                        "Tuvalu",
+                        "Vanuatu",
+                        "Wallis and Futuna"
                     ]
                 }                
             },
             "child-growth-monitoring": {
                 "not-present": {
-                    "number" : 3,
-                    "percentage": 14
+                    "number" : 0,
+                    "percentage": 0
                 },
                 "under-development": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 11,
+                    "percentage": 52
                 },
                 "present": {
-                    "number" : 14,
-                    "percentage": 67,
+                    "number" : 10,
+                    "percentage": 48,
                     "countries": [
-                        "American Samoa",
+                        "CNMI",
                         "Cook Islands",
-                        "Tuvalu",
-                        "Vanuatu"
+                        "Kiribati",
+                        "Nauru",
+                        "Niue",
+                        "Palau",
+                        "PNG",
+                        "Samoa",
+                        "Solomon Islands",
+                        "Tokelau"
                     ]
                 }                
             },
             "routine-cause-specific-mortality": {
                 "not-present": {
-                    "number" : 4,
-                    "percentage": 19
+                    "number" : 1,
+                    "percentage": 5
                 },
                 "under-development": {
-                    "number" : 13,
-                    "percentage": 62
+                    "number" : 2,
+                    "percentage": 10
                 },
                 "present": {
-                    "number" : 4,
-                    "percentage": 19,
+                    "number" : 18,
+                    "percentage": 86,
                     "countries": [
+                        "American Samoa",
+                        "CNMI",
+                        "Cook Islands",
+                        "Fiji",
+						"FSM",
+                        "French Polynesia",
                         "Guam",
+                        "Kiribati",
+                        "Nauru",
+                        "New Caledonia",
+                        "Niue",
                         "Palau",
+                        "Marshall Islands",
+                        "Samoa",
+                        "Tokelau",
                         "Tonga",
-                        "Tuvalu"
+                        "Tuvalu",
+                        "Vanuatu"
                     ]
                 }                
             }
