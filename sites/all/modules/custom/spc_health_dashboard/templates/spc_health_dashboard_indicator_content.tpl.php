@@ -86,7 +86,8 @@
         <div class="country-indicators helth-indicators">
             <?php foreach ($country['indicators'] as $ind_key => $indicator): ?>
               <?php if ($indicator['indicator-category'] == $data['current_category'] && $ind_key == $data['current_indicator']): ?>
-                <div class="status-strength <?php print $indicator['value']?>" 
+                <div id ="country-<?php print $country['id']; ?>-id"
+                     class="status-strength <?php print $indicator['value']?>" 
                      data-value="<?php print $indicator['value']?>"
                      data-category="<?php print @$data['current_category']['id']; ?>"
                      data-indicator="<?php print $ind_key; ?>"
@@ -105,7 +106,82 @@
       function initMap() {
 
         const map = new google.maps.Map(document.getElementById('pacific-map'), {
-          disableDefaultUI: true
+          disableDefaultUI: true,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#ffffff'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#ffffff'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#000000'}]},
+            {
+              featureType: 'administrative',
+              elementType: 'geometry.fill',
+              stylers: [{color: '#000000'}]
+            },
+            {
+              featureType: 'administrative.province',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#000000'}]
+            },
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#000000'}]
+            },            
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#000000'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#000000'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#33c5ec'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
         });
 
         const iconBase = '<?php print $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/markers/'?>';
@@ -129,7 +205,7 @@
           countriesData[countryId]['lng'] = countryItems[i].dataset.lng;
           countriesData[countryId]['name'] = countryItems[i].dataset.name;
           countriesData[countryId]['value'] = countryItems[i].dataset.value;
-          countriesData[countryId]['position'] = new google.maps.LatLng(lat, lng);
+          countriesData[countryId]['position'] = new google.maps.LatLng(lat+10, lng+10);
           countriesData[countryId]['icon'] = iconBase + countryItems[i].dataset.value + '.png';
           
           countriesData[countryId]['label'] = {
@@ -148,17 +224,27 @@
         for (let key in countriesData) {
           markers[key] = new google.maps.Marker({
             position: countriesData[key].position,
-            icon: countriesData[key].icon,
+            icon: { 
+              url: countriesData[key].icon,
+              scaledSize: new google.maps.Size(60, 60),
+              anchor: new google.maps.Point(30, 30),
+            },
             map: map,
             label: countriesData[key].label,
-            value: countriesData[key].value
+            value: countriesData[key].value,
+            cid: key
           });
           
           bounds.extend(markers[key].position);
           
           markers[key].addListener('mouseover', function() {
                 let marker = this;
-                marker.setIcon( iconBase + marker.value + '-stroke.png');
+                
+                marker.setIcon({
+                  url: iconBase + marker.value + '-stroke.png',
+                  scaledSize: new google.maps.Size(60, 60),
+                  anchor: new google.maps.Point(30, 30),
+                });
                         
                 let label = this.getLabel();
                 label.fontSize="10px";
@@ -167,7 +253,12 @@
           
           markers[key].addListener('mouseout', function() {
                 let marker = this;
-                marker.setIcon( iconBase + marker.value + '.png');
+                
+                marker.setIcon({
+                  url: iconBase + marker.value + '.png',
+                  scaledSize: new google.maps.Size(60, 60),
+                  anchor: new google.maps.Point(30, 30),                  
+                });
             
                 let label = this.getLabel();
                 label.fontSize="0px";
@@ -176,14 +267,26 @@
           
           markers[key].addListener('click', function() {
                 let marker = this;
-                if (marker.icon.indexOf('stroke') == -1){
-                    marker.setIcon( iconBase + marker.value + '-stroke.png');
 
+                let countryIndicator = document.querySelector('#country-' + marker.cid + '-id');
+                countryIndicator.click();
+                
+                if (marker.icon.url.indexOf('stroke') == -1){
+                    marker.setIcon({
+                      url: iconBase + marker.value + '-stroke.png',
+                      scaledSize: new google.maps.Size(60, 60),
+                      anchor: new google.maps.Point(30, 30),
+                    });
+                    
                     let label = this.getLabel();
                     label.fontSize="10px";
                     this.setLabel(label);
                 } else {
-                    marker.setIcon( iconBase + marker.value + '.png');
+                    marker.setIcon({
+                      url: iconBase + marker.value + '.png',
+                      scaledSize: new google.maps.Size(60, 60),
+                      anchor: new google.maps.Point(30, 30),                  
+                    });
 
                     let label = this.getLabel();
                     label.fontSize="0px";
@@ -201,7 +304,11 @@
             if (markers[countryId] != 'undefined'){
               
               let marker = markers[countryId];
-              marker.setIcon( iconBase + marker.value + '-stroke.png');
+              marker.setIcon({
+                  url: iconBase + marker.value + '-stroke.png',
+                  scaledSize: new google.maps.Size(60, 60),
+                  anchor: new google.maps.Point(30, 30),
+                });
               
               let label = marker.getLabel();
               label.fontSize="10px";
@@ -218,7 +325,11 @@
             if (markers[countryId] != 'undefined'){
               
               let marker = markers[countryId];
-              marker.setIcon( iconBase + marker.value + '.png');
+              marker.setIcon({
+                  url: iconBase + marker.value + '.png',
+                  scaledSize: new google.maps.Size(60, 60),
+                  anchor: new google.maps.Point(30, 30),                  
+                });
               
               let label = marker.getLabel();
               label.fontSize="0px";
