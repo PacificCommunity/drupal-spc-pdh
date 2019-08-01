@@ -913,6 +913,8 @@ function spc_health_dashboard_countries_form_validate($form, &$form_state){
         $form_state['values']['pdf_' . $country_key . '_file'] = $pdf_country_file;
         variable_set('pdf_' . $country_key . '_fid', $pdf_country_file->fid);
       }
+    } else {
+      variable_set('pdf_' . $country_key . '_fid', '');
     }
   }
   
