@@ -54,7 +54,7 @@ function spc_education_dashboard_init(){
  */
 function spc_education_dashboard_menu(){
   
-  $items['admin/education-dashboard'] = array(
+  $items['admin/config/education-dashboard'] = array(
     'title' => 'Education Dashboard',
     'description' => 'Settings related to formatting and authoring content.',
     'type' => MENU_NORMAL_ITEM,
