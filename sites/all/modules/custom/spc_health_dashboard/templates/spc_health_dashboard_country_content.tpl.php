@@ -39,7 +39,7 @@
             <h6><?php print t('Code'); ?></h6>  
             <?php foreach($data['indicators'] as $indicator): ?>
                 <?php if ($key == $indicator['indicator-category']): ?>
-                  <p><?php print $indicator['code']; ?></p>
+                  <p><?php print @$indicator['code']; ?></p>
                 <?php endif; ?> 
             <?php endforeach;?>
           </div>
@@ -68,7 +68,7 @@
                 <h6><?php print t('WHO Equivalent indicator #'); ?></h6>    
                 <?php foreach($data['indicators'] as $indicator): ?>
                     <?php if ($key == $indicator['indicator-category']): ?>
-                      <p><?php print $indicator['who']; ?></p>
+                      <p><?php print @$indicator['who']; ?></p>
                     <?php endif; ?> 
                 <?php endforeach;?>
               </div>
