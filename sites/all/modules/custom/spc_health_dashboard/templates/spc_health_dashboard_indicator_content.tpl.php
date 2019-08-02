@@ -2,7 +2,24 @@
 
 <div class="row indicator-content">
   <h4><?php print $data['indicator_detales']['code'] . '. ' . $data['indicator_detales']['title']; ?></h4>
-    
+  
+  <?php $description = @$data['indicator_detales']['indicator-description']; ?> 
+  <?php if (!empty(@$description)): ?>
+    <div class="category-description">
+        <div class="text">
+          <?php $limit = 300; ?>
+          <span class="less"><?php print substr($description, 0, $limit); ?></span>
+          <?php if (strlen($description) > $limit): ?>
+            <span class="dots"><?php print t('...'); ?></span>
+          <?php endif; ?>
+          <span class="more"><?php print substr($description, $limit+1, strlen($description)); ?></span>
+          <?php if (strlen($description) > $limit): ?>
+            <p class="more-less show-more"><?php print t('Read more'); ?></p>
+          <?php endif; ?>
+        </div>
+    </div>
+  <?php endif; ?>
+  
   <div class="category-detales <?php print @$category_detales_class; ?>">
     <h4><?php print t('Summary of findings '. $data['indicator_detales']['title']); ?></h4>
     

@@ -3,7 +3,12 @@
     <h2><?php print $data['category_data']['name'];?></h2>
     
     <div class="category-description">
-        <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/categories/' . $data['current_category']['id'] . '.png'?>
+        <?php if (!empty(@$data['category_data']['image'])): ?>
+          <?php $src = $data['category_data']['image']; ?>
+        <?php else: ?>
+          <?php $src = '/' . drupal_get_path('module', 'spc_health_dashboard') . '/img/categories/' . $data['current_category']['id'] . '.png'?>
+        <?php endif; ?>
+        
         <img class="category-img" src="<?php print $src; ?>" alt="<?php print @$data['country']; ?>" onerror="this.style.display = 'none'">
         
         <div class="text">
