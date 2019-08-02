@@ -10817,6 +10817,9 @@ button.header-menu-btn:focus {
   text-align: left;
   padding-left: 30px;
 }
+.hl-dashboard-link .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left {
+	padding-left: 60px;
+}
 .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left strong {
   font-weight: 500;
   color: #ffc72e;
@@ -10861,8 +10864,9 @@ button.header-menu-btn:focus {
     flex-direction: column;
     max-width: 400px;
   }
+  .hl-dashboard-link .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left,
   .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left {
-    padding: 0;
+    padding: 0 17px;
     margin-bottom: 20px;
     text-align: center;
   }
