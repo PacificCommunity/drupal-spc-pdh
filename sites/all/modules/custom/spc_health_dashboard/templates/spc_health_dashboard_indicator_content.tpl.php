@@ -256,7 +256,6 @@
           
           markers[key].addListener('mouseover', function() {
                 let marker = this;
-                
                 marker.setIcon({
                   url: iconBase + marker.value + '-stroke.png',
                   scaledSize: new google.maps.Size(60, 60),
@@ -266,6 +265,8 @@
                 let label = this.getLabel();
                 label.fontSize="10px";
                 this.setLabel(label);
+                
+                marker.setZIndex(1000);
           });
           
           markers[key].addListener('mouseout', function() {
@@ -274,12 +275,14 @@
                 marker.setIcon({
                   url: iconBase + marker.value + '.png',
                   scaledSize: new google.maps.Size(60, 60),
-                  anchor: new google.maps.Point(30, 30),                  
+                  anchor: new google.maps.Point(30, 30),
                 });
             
                 let label = this.getLabel();
                 label.fontSize="0px";
                 this.setLabel(label);
+                
+                marker.setZIndex(0);
           });
           
           markers[key].addListener('click', function() {
@@ -329,7 +332,8 @@
               
               let label = marker.getLabel();
               label.fontSize="10px";
-              marker.setLabel(label);                
+              marker.setLabel(label);
+              marker.setZIndex(1000);
             }
 
           });
@@ -350,7 +354,8 @@
               
               let label = marker.getLabel();
               label.fontSize="0px";
-              marker.setLabel(label);                
+              marker.setLabel(label);
+              marker.setZIndex(0);
             }
 
           });
