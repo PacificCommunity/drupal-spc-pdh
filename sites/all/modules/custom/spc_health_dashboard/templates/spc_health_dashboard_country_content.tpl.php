@@ -36,18 +36,22 @@
     <div class="helth-indicators">
       <div class="row"> 
           <div class="col-sm-2 code">
-            <h6><?php print t('Code'); ?></h6>  
-            <?php foreach($data['indicators'] as $indicator): ?>
+            <h6><?php print t('Code'); ?></h6> 
+            <?php foreach($data['indicators'] as $ikey => $indicator): ?>
                 <?php if ($key == $indicator['indicator-category']): ?>
-                  <p><?php print @$indicator['code']; ?></p>
+                  <a href="/health-dashboard/<?php print $indicator['indicator-category']?>/<?php print $ikey; ?> ">
+                      <p><?php print @$indicator['code']; ?></p>
+                  </a>
                 <?php endif; ?> 
             <?php endforeach;?>
           </div>
           <div class="col-sm-5 title">
             <h6><?php print t('Description'); ?></h6>    
-            <?php foreach($data['indicators'] as $indicator): ?>
+            <?php foreach($data['indicators'] as $ikey => $indicator): ?>
                 <?php if ($key == $indicator['indicator-category']): ?>
-                  <p><?php print $indicator['title']; ?></p>
+                  <a href="/health-dashboard/<?php print $indicator['indicator-category']?>/<?php print $ikey; ?> ">
+                    <p><?php print $indicator['title']; ?></p>
+                  </a>  
                 <?php endif; ?> 
             <?php endforeach;?>
           </div>

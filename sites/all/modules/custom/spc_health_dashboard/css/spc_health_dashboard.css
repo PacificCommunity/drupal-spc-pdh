@@ -643,6 +643,10 @@
   font-size: 10px;
   line-height: 14px;
 }
+.helth-indicators a,
+.helth-indicators a:hover {
+  color: #000;
+}
 .helth-indicators p {
   font-size: 10px;
   line-height: 22px;
@@ -1253,8 +1257,7 @@
   font-size: 16px;
   line-height: 24px;
 }
-.category-description .more-less,
-.health-home-description .more-less {
+.category-description .more-less {
   display: none;
   font-weight: 600;
   color: #021e73;
@@ -1262,30 +1265,43 @@
   cursor: pointer;
 }
 @media (max-width: 767px) {
-  .category-description .more-less,
+  .category-description .more-less {
+    display: block;
+  }
+}
+.category-description .dots {
+  display: none;
+}
+@media (max-width: 767px) {
+  .category-description .dots {
+    display: inline;
+  }
+}
+.category-description .more {
+  display: inline;
+}
+@media (max-width: 767px) {
+  .category-description .more {
+    display: none;
+  }
+}
+.health-home-description .more-less {
+  display: block;
+  font-weight: 600;
+  color: #021e73;
+  margin: 10px 0;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
   .health-home-description .more-less {
     display: block;
   }
 }
-.category-description .dots,
 .health-home-description .dots {
-  display: none;
-}
-@media (max-width: 767px) {
-  .category-description .dots,
-  .health-home-description .dots {
-    display: inline;
-  }
-}
-.category-description .more,
-.health-home-description .more {
   display: inline;
 }
-@media (max-width: 767px) {
-  .category-description .more,
-  .health-home-description .more {
-    display: none;
-  }
+.health-home-description .more {
+  display: none;
 }
 .indicator-content > h4 {
   text-align: center;
@@ -1322,11 +1338,6 @@
     z-index: 1;
   }
 }
-
-.health-dashboard-header.banner-with-title {
-  height: 470px;
-}
-
 @media (max-width: 767px) {
   .health-dashboard-header.banner-with-title {
     height: 470px;
@@ -1432,7 +1443,7 @@
     margin-top: 10px;
   }
   .health-dashboard-header.banner-with-title {
-    height: 420px;
+    height: 400px;
   }
   .banner-with-title.health-dashboard-header h1 {
     font-size: 20px;
