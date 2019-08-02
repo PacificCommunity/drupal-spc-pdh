@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="ed-dashboard-link-container" style="margin-bottom: 50px;" >
+<div class="ed-dashboard-link-container container" style="margin-bottom: 50px;" >
     <div about="/content/17-goals-transform-pacific" typeof="sioc:Item foaf:Document" class="ds-1col node node-dashboards node-promoted contextual-links-region view-mode-dashboard_highlight clearfix">
  
         <div class="group-content">

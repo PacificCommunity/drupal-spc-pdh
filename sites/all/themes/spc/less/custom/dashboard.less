@@ -311,6 +311,8 @@
 		border-bottom: 1px solid #b5b5b5;
 	}
 }
+
+.hl-dashboard-link.node-dashboards,
 .node-dashboards {
 	&.view-mode-dashboards_preview {
 		display: flex;
@@ -451,7 +453,7 @@
 					flex-direction: column;
 					max-width: 400px;
 					.group-content-left {
-						padding: 0;
+						padding: 0 17px;
 						margin-bottom: 20px;
 						text-align: center;
 					}
@@ -478,6 +480,23 @@
 				}
 			}
 		}
+	}
+}
+
+.hl-dashboard-link .node-dashboards {
+        &.view-mode-dashboard_highlight {
+                .group-content {
+                        .group-content-left {
+                                padding-left: 60px;
+                        }
+                }
+		@media (max-width: @screen-sm) {
+			.group-content {
+                        	.group-content-left {
+                                	padding: 0 17px;
+                        	}		
+                	}
+        	}	
 	}
 }
 

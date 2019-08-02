@@ -38,7 +38,7 @@
        
         <div class="category-header clearfix">
             <div class="countries-names">
-                <?php print t('indicator'); ?>
+                <?php print t('Indicator'); ?>
             </div>  
         </div>
           
@@ -97,7 +97,7 @@
     <div class="wrapper">
       <div class="summary-indicators ">
           <div class="indicator-name">
-              <?php print t('indicator'); ?>
+              <?php print t('Indicator'); ?>
           </div>
 
           <div class="country-indicators">

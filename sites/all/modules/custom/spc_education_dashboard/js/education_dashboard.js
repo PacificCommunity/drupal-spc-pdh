@@ -1710,6 +1710,8 @@
                 const attrY = function(d) { return y(d.percentage); }
                 const attrH = function(d){ return y(0) - y(d.percentage);}
                 const tipY = function(d){ return y(d.percentage)-30;}
+                
+                setCartBars(svg, chart12data,  x, y, width, height, tooltip, tooltext, attrX, attrY, attrH, tipY, id);
             }
             
             //Trained teachers

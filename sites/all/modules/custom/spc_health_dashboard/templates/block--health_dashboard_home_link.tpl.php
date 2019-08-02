@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="ed-dashboard-link container">
+<div class="hl-dashboard-link container">
     <div about="/content/17-goals-transform-pacific" typeof="sioc:Item foaf:Document" style="" class="node-dashboards node-promoted view-mode-dashboard_highlight clearfix">
 
         <div class="group-chart" style="z-index: 2;">
@@ -15,8 +15,8 @@
         </div>        
         
         <div class="group-content" style="z-index: 1;">
-            <div class="group-content-left" >
-                <?php print t('<strong>MANA</strong> &nbsp&nbsp Dashboard &nbsp&nbsp'); ?>
+            <div class="group-content-left">
+                <?php print t('<strong>MANA</strong> Dashboard'); ?>
             </div>
             <div class="group-content-right" style="flex: 1 1 75%;">
                 <div class="dashboard-description">

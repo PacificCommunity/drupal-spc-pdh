@@ -110,7 +110,7 @@
 </div>
 
 <div class="health-dashboard-countries">
-    <h4><?php echo t('Pacific island countries') ?></h4>
+    <h4><?php echo t('Pacific Island Countries and Territories (PICTs)') ?></h4>
   <?php foreach ($data['countries'] as $key => $item): ?>
     <?php echo $key == 0 ? '' : '<div class="delimiter">&gt;</div>' ?>
       <a class="one-country <?php echo $key ?>" href="<?php echo HEALTH_DASHBOARD_URL . '/country/' . $key ?>" title="<?php echo $item['#title'] ?>">
