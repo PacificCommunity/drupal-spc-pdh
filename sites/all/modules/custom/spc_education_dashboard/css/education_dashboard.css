@@ -1,0 +1,359 @@
+html {
+  scroll-behavior: smooth;
+}
+.banner-with-title h1 {
+    margin-top: 90px;
+    text-transform: none !important;
+}
+.clearfix {
+    margin-bottom: 15px;
+}
+.chart svg:not(:root) {
+    padding-top: 30px;
+    overflow: visible !important; 
+}
+.ed-lable {
+    position: absolute;
+    display: block;
+    text-align: left;
+    left: 0;
+    top: 20%;
+    background: #fff;
+    padding: 11px;
+    font-size: 24px;
+    line-height: 29px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.ui-autocomplete {
+    display: block;
+    border-radius: 25px;
+    padding: 20px;
+}
+.ui-menu .ui-menu-item-wrapper {
+    padding: 5px;
+}
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+    border:1px solid #ccc !important;
+    border-radius: 25px;
+    background:#ccc !important;
+}
+.education-block-content {
+    margin: 60px 45px;
+}
+.panel-pane.education-block-pane {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+    border-radius: 25px;
+    padding: 20px;
+    margin: 30px 10px;
+}
+.chart-item {
+    border-radius: 5px;
+}
+.definition,
+.threshold,
+.rationale {
+    position: relative;
+    margin-bottom: 30px;
+}
+.d3-tip>div {
+    background: red;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+}
+.toggle {
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    border: 1px solid #00C6EC;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+rect.bar:hover {
+    /*cursor: pointer;*/
+}
+.arrow {
+    width: 10px;
+    height: 10px;
+    background-image: url(../img/arrow-down.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    margin-top: 10px;
+    margin-left: 7px;
+    cursor: pointer;
+}
+.arrow.down {
+    margin-top: 8px;
+    background-image: url(../img/arrow-up.svg);
+}
+.education-block-content h4 {
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.education-block-content h5 {
+    font-weight: 500;
+    font-size: 16px;
+}
+.education-block-content .subtitle{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+.education-pdf,
+.education-pdf:hover,
+.education-pdf:focus {
+    position: absolute;
+    right: 35px;
+    bottom: 30px;
+    color: #000;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+}
+.education-pdf:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-image: url(../img/share.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float: right;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.switchers {
+    margin-bottom: 50px;
+    margin-top: -50px;
+}
+.switchers .switch-wrapper {
+    float: right;
+}
+.switchers .vertical .switcher {
+    transform: rotate(90deg);
+    width: 50px;
+    margin-top: 15px;
+    float: right;
+}
+.switchers .labels {
+    float: left;
+}
+.switchers .labels .checked {
+    font-size: 14px;
+    font-weight: 800;
+    text-align: right;
+}
+.switchers .labels {
+    text-align: right;
+}
+.switchers .labels span {
+    display: block;
+    margin-bottom: 10px;
+}
+.switch-wrapper.horizontal {
+    margin-top: 10px;
+}
+.switch-wrapper.horizontal .switcher a {
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    background: #ccc;
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin: 5px 10px;
+    border: 1px solid #ccc;
+    width: 100px;
+    z-index: 0;
+    transition: transform 2s;
+}
+.switch-wrapper.horizontal .switcher a.checked {
+    background: #0039DC;
+    border: 1px solid #0039DC;
+    padding-left: 40px;
+}
+.switch-wrapper.horizontal .switcher a.checked:before {
+    content: '';
+    background-color: #fff;
+    background-image: url(../img/checked.svg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 50%;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 15px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    z-index: 1;
+}
+.chart {
+    position: relative;
+    padding: 10px 10px 30px 10px;
+    overflow: hidden;
+}
+svg.male-bar,
+svg.female-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+svg.male-bar{
+    left: 25px;
+}
+.gender-wrapp > div {
+    float: left;
+    position: relative;
+    margin: 10px 20px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+}
+.gender-wrapp {
+    margin-left: 60px;
+}
+.male:before,
+.female:before {
+    display: block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin: 10px;
+    position: absolute;
+    left: -35px;
+    top: -10px;
+}
+.male:before {
+    background: #ccc;
+}
+.title {
+    margin-left: 10px;
+}
+.description.col-sm-7,
+.description.col-sm-5 {
+    padding-right: 0;
+}
+.definition > p,
+.rationale > p {
+    padding-right: 30px;
+}
+.sample {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+.sample.gender {
+    margin: 0;
+}
+.education-description {
+    padding: 15px;
+}
+.education-description h2 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+}
+.education-description .text {
+  font-size: 16px;
+  line-height: 24px;
+}
+.education-description .more-less {
+  display: none;
+  font-weight: 600;
+  color: #021e73;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.education-description .dots{
+  display: none;
+}
+.education-description .more {
+  display: inline;
+}
+@media (max-width: 767px) {
+    .banner-with-title {
+        height: 280px !important;
+    }
+    #spc-home-banner-search {
+        margin-top: 0 !important;
+        padding: 0 10px;
+    }
+    .ed-lable {
+        font-size: 14px;
+        padding: 0 10px;
+        top: 25%;
+    }
+    .ui-widget-content {
+        margin: 10px;
+    }
+    .education-block-content {
+        margin: 10px;
+    }
+    .description.col-sm-7 {
+        margin-top: 60px;
+    }
+    .description.col-sm-7 {
+        margin-top: 60px;
+    }
+    .switch-wrapper.vertical {
+        margin-top: 60px;
+    }
+    .education-description .more-less {
+      display: block;
+    }
+    .education-description .dots{
+      display: inline;
+    }
+    .education-description .more{
+      display: none;
+    }
+}
+
+@media (max-width: 956px) {
+    .switch-wrapper.vertical.swch-4 {
+        margin-top: 15px;
+    }
+    .switch-wrapper.vertical.swch-4 span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 850px) {
+    .switch-wrapper.horizontal .switcher a {
+        font-size: 11px;
+    }
+    .switch-wrapper.horizontal .switcher a.checked:before {
+        width: 23px;
+        height: 23px;
+    }
+}
+@media (max-width: 450px) {
+    .switch-wrapper.horizontal .switcher a {
+        margin: 5px 2px;
+    }
+    .gender-wrapp > div {
+        margin: 10px 12px;
+        font-size: 10px;
+    }
+    .male:before, .female:before {
+        width: 15px;
+        height: 15px;
+        margin: 13px;
+        left: -30px;
+    }    
+}
