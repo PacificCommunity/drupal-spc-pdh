@@ -5,7 +5,7 @@ html {
     margin-top: 90px;
     text-transform: none !important;
 }
-.clearfix {
+.info {
     margin-bottom: 15px;
 }
 .chart svg:not(:root) {

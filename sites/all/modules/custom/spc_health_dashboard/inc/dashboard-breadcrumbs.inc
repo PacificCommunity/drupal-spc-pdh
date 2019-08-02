@@ -33,7 +33,7 @@ function _country_breadcrumbs($selected_country) {
     $countries[$key]['title'] = $country['#title'];
   }
   $breadcrumbs[] = [
-    'title' => t('NCD Dashboard'),
+    'title' => t('MANA Dashboard'),
     'url' => HEALTH_DASHBOARD_URL,
     'submenu' => []
   ];
@@ -82,7 +82,7 @@ function _category_breadcrumbs($category, $indicator) {
     $all_categories[$key]['title'] = $item['#title'];
   }
   $breadcrumbs[] = [
-    'title' => t('NCD Dashboard'),
+    'title' => t('MANA Dashboard'),
     'url' => HEALTH_DASHBOARD_URL,
     'submenu' => []
   ];
