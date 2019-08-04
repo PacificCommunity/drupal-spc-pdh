@@ -1,0 +1,13 @@
+name = SPC Health Dashboard
+description = 'Service features for SPC Health Dashboard. See health-dashboard.less to change styles. Path: /health-dashboard/'
+package = SPC service modules
+version = 7.1
+core = 7.x
+configure = admin/config/health-dashboard
+files[] = spc_health_dashboard.module
+files[] = spc_health_dashboard.install
+files[] = default.json
+files[] = inc/dashboard-categories.inc
+files[] = inc/dashboard-countries.inc
+files[] = inc/dashboard-home.inc
+files[] = templates/spc_health_dashboard_page.tpl.php

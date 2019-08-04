@@ -5,7 +5,7 @@ html {
     margin-top: 90px;
     text-transform: none !important;
 }
-.clearfix {
+.info {
     margin-bottom: 15px;
 }
 .chart svg:not(:root) {
@@ -79,7 +79,7 @@ html {
     cursor: pointer;
 }
 rect.bar:hover {
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 .arrow {
     width: 10px;
@@ -252,7 +252,39 @@ svg.male-bar{
 .rationale > p {
     padding-right: 30px;
 }
-
+.sample {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+.sample.gender {
+    margin: 0;
+}
+.education-description {
+    padding: 15px;
+}
+.education-description h2 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+}
+.education-description .text {
+  font-size: 16px;
+  line-height: 24px;
+}
+.education-description .more-less {
+  display: none;
+  font-weight: 600;
+  color: #021e73;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.education-description .dots{
+  display: none;
+}
+.education-description .more {
+  display: inline;
+}
 @media (max-width: 767px) {
     .banner-with-title {
         height: 280px !important;
@@ -280,6 +312,15 @@ svg.male-bar{
     }
     .switch-wrapper.vertical {
         margin-top: 60px;
+    }
+    .education-description .more-less {
+      display: block;
+    }
+    .education-description .dots{
+      display: inline;
+    }
+    .education-description .more{
+      display: none;
     }
 }
 
