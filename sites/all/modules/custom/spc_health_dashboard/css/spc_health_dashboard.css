@@ -7,6 +7,7 @@
 }
 .banner-with-title.health-dashboard-header {
   background-image: url('../img/Fishes-background.png');
+  height: 484px;
 }
 .banner-with-title.health-dashboard-header h1 {
   font-family: 'Montserrat', sans-serif;
@@ -55,6 +56,7 @@
 .health-dashboard-header .breadcrumbs {
   align-self: flex-start;
   margin: 0px 20px 10px;
+  min-height: 63px;
 }
 .health-dashboard-header .breadcrumb {
   color: white;
