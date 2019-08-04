@@ -651,6 +651,10 @@
         font-size: 10px;
         line-height: 14px;
     }
+    a,
+    a:hover {
+        color: #000;
+    }
     p{
         font-size: 10px;
         line-height: 22px;
@@ -1278,8 +1282,7 @@
         line-height: 24px;
     }
 }
-.category-description, 
-.health-home-description {
+.category-description {
     .more-less {
         display: none;
         font-weight: 600;
@@ -1301,6 +1304,24 @@
         @media (max-width: 767px) {
             display: none;
         }
+    }    
+}
+.health-home-description {
+    .more-less {
+        display: block;
+        font-weight: 600;
+        color: #021e73;
+        margin: 10px 0;
+        cursor: pointer;
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
+    .dots {
+        display: inline;
+    }
+    .more {
+         display: none;
     }    
 }
 .indicator-content>h4{

@@ -2,30 +2,14 @@
   <?php if (!empty($data['background'])): ?> 
     <div>
       <h4 class="title-text"><?php print t('Background'); ?> </h4>
-      <?php $background = $data['background']; ?> 
-      <?php $limit = 300; ?>
+      <?php $background = '' . $data['background'] . '<br><br>' .  $data['methods'] . ''; ?> 
+      <?php $limit = 682; ?>
       <span class="less"><?php print substr($background, 0, $limit); ?></span>
       <?php if (strlen($background) > $limit): ?>
         <span class="dots"><?php print t('...'); ?></span>
       <?php endif; ?>
-      <span class="more"><?php print substr($background, $limit+1, strlen($background)); ?></span>
+      <span class="more"><?php print substr($background, $limit, strlen($background)); ?></span>
       <?php if (strlen($background) > $limit): ?>
-        <p class="more-less show-more"><?php print t('Read more'); ?></p>
-      <?php endif; ?>
-    </div>  
-  <?php endif; ?>
-
-  <?php if (!empty($data['methods'])): ?>
-    <div>
-      <h4 class="title-text"><?php print t(''); ?> </h4>
-      <?php $methods = $data['methods']; ?> 
-      <?php $limit = 300; ?>
-      <span class="less"><?php print substr($methods, 0, $limit); ?></span>
-      <?php if (strlen($methods) > $limit): ?>
-        <span class="dots"><?php print t('...'); ?></span>
-      <?php endif; ?>
-      <span class="more"><?php print substr($methods, $limit+1, strlen($methods)); ?></span>
-      <?php if (strlen($methods) > $limit): ?>
         <p class="more-less show-more"><?php print t('Read more'); ?></p>
       <?php endif; ?>
     </div>  
