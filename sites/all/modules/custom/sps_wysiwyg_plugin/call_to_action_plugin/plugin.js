@@ -10,7 +10,7 @@
                 + 'color: #fff;'
                 + 'margin: 10px 0px;';
                 
-            const text = 'Call To Action';
+            const text = 'Make Double click to set the text';
 
             editor.addCommand( 'call_to_action_command', {
                 exec : function( editor ) {
