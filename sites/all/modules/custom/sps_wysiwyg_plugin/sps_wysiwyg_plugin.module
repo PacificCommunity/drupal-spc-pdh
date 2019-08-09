@@ -1,47 +1,19 @@
 <?php
 
-
-/**
- * Implements hook_views_pre_build().
- * Resolve the bugs with AJAX filters in the view block.
- */
-function spc_views_fix_views_pre_build(&$view) {
-  if ($view->name == 'master_results_framework') {
-    // Set the override path to the current page. This will redirect the back view to
-    // the current page when submitted in case AJAX fails.
-    $view->override_path = $_GET['q'];
-  }
-}
-
-/**
- * Implements hook_form_formID_alter().
- * Adds some technical information to the importer form.
- */
-function spc_views_fix_form_feeds_import_form_alter(&$form, &$form_state, $form_id) {
-  //Add link to change Year for Import form.
-  if ($form['#importer_id'] == 'csv_to_master_results') {
-    $form['feeds']['FeedsCSVParser']['no_headers']['#default_value'] = 1;
-    $form['feeds']['FeedsCSVParser']['#access'] = FALSE;
-    $form['feeds']['header_rule'] = [
-      '#markup' =>
-        t("Please remove the row with header from CSV before import!") .
-        '<br>',
-      '#weight' => '-21',
-    ];
-    $form['feeds']['year_text'] = [
-      '#markup' =>
-        t("To set 'Year' field fill one more column in the 
-      csv file with the year value. Or you can set the year default value
-      using the following link:") . ' ',
-      '#weight' => '-20',
-    ];
-    $form['feeds']['year_link'] = [
-      '#markup' => l(
-        t('Change default year'),
-        '/admin/structure/feeds/csv_to_master_results/tamper/csv_to_master_results-9-default_value/edit',
-        ['attributes' => ['target' => '_blank']]
+ function sps_wysiwyg_plugin_wysiwyg_plugin($editor, $version) {
+ 
+  switch ($editor) {
+   case 'ckeditor':
+    return array(
+     'call_to_action_plugin' => array(
+      'path' => drupal_get_path('module', 'sps_wysiwyg_plugin') . '/call_to_action_plugin',
+      'buttons' => array(
+       'call_to_action_button' => t('Call to Action'),
       ),
-      '#weight' => '-19',
-    ];
+      'load' => TRUE,
+     ),
+    );
+    break;
   }
-}
+  
+ }

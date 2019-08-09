@@ -1,5 +1,11 @@
-name = SPC Views fix for Master results and Feeds Importer settings
-description = Just a little fix for Views AJAX. And additional settings to set Year using Feeds Importer form
+name = SPC Wysiwyng Plugin
+description = SPC Wysiwyng Plugin
 version = VERSION
 core = 7.x
-files[] = spc_views_fix.module
+
+project = "wysiwyg"
+
+dependencies[] = wysiwyg
+
+files[] = sps_wysiwyg_plugin.module
+
