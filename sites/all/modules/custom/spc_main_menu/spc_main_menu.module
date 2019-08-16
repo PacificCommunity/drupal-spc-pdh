@@ -3,15 +3,21 @@
 // Usual menu tree
 function loop_menu_main($menu, $menu_layout) {
   foreach ($menu as $key => $value) {
+    $link_atributes = '';
+    $link_classes = '';
     if (!empty($menu[$key]['#localized_options']['attributes'])){
       $link_atributes = get_menu_atributes($menu[$key]['#localized_options']['attributes']);
+      $link_classes = get_menu_classes($menu[$key]['#localized_options']['attributes']);
     }
+    $item_atributes = '';
+    $item_classes = '';
     if (!empty($menu[$key]['#localized_options']['item_attributes'])){
       $item_atributes = get_menu_atributes($menu[$key]['#localized_options']['item_attributes']);
+      $item_classes = get_menu_classes($menu[$key]['#localized_options']['attributes']);
     }
     
     if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title'])) {
-      $menu_layout .= '<li  ' . $item_atributes . ' class="' . (!empty($menu[$key]['#below']) ? 'dropdown' : '') . '">';
+      $menu_layout .= '<li class=" ' . $item_classes. ' ' . (!empty($menu[$key]['#below']) ? 'dropdown' : '') . '">';
     }
 
     if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title']) && empty($menu[$key]['#below'])) {
@@ -30,7 +36,6 @@ function loop_menu_main($menu, $menu_layout) {
 
     $menu_layout .= '</li>';
   }
-  print_r($menu_layout);
   return $menu_layout;
 }
 
@@ -89,6 +94,20 @@ function get_menu_atributes($atrebutes){
   $item_atributes = '';
   foreach($atrebutes as $attribute => $value){
     if (!empty($value)){
+      if ($attribute != 'class') {
+        $item_atributes .= ' ' . $attribute . '="' . $value . '" ';
+      }
+    }  
+  }
+  
+  return $item_atributes;
+}
+
+function get_menu_classes($atrebutes){
+  
+  $item_classes = '';
+  foreach($atrebutes as $attribute => $value){
+    if (!empty($value)){
       if ($attribute == 'class') {
         $classes = '';
         foreach ($value as $class_value){
@@ -96,12 +115,10 @@ function get_menu_atributes($atrebutes){
             $classes .= $class_value . ' ';            
           }
         }
-        $item_atributes .= ' ' . $attribute . '="' . $classes . '" ';
-      } else {
-        $item_atributes .= ' ' . $attribute . '="' . $value . '" ';
+        $item_classes .= ' ' . $classes;
       }
     }  
   }
   
-  return $item_atributes;
+  return $item_classes;
 }
