@@ -3,17 +3,26 @@
 // Usual menu tree
 function loop_menu_main($menu, $menu_layout) {
   foreach ($menu as $key => $value) {
+    if (!empty($menu[$key]['#localized_options']['attributes'])){
+      $link_atributes = get_menu_atributes($menu[$key]['#localized_options']['attributes']);
+    }
+    if (!empty($menu[$key]['#localized_options']['item_attributes'])){
+      $item_atributes = get_menu_atributes($menu[$key]['#localized_options']['item_attributes']);
+    }
+    
     if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title'])) {
-      $menu_layout .= '<li class="' . (!empty($menu[$key]['#below']) ? 'dropdown' : '') . '">';
+      $menu_layout .= '<li  ' . $item_atributes . ' class="' . (!empty($menu[$key]['#below']) ? 'dropdown' : '') . '">';
     }
 
     if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title']) && empty($menu[$key]['#below'])) {
-      $menu_layout .= '<li>';
-      $menu_layout .= '<a href="' . ($menu[$key]['#href'] == '<front>' ? '/' : url(drupal_get_path_alias($menu[$key]['#href']))) . '">' . $menu[$key]['#title'] . '</a>';
+      
+      $menu_layout .= '<li ' . $item_atributes . '>';
+      
+      $menu_layout .= '<a ' . $link_atributes . ' href="' . ($menu[$key]['#href'] == '<front>' ? '/' : url(drupal_get_path_alias($menu[$key]['#href']))) . '">' . $menu[$key]['#title'] . '</a>';
     }
     
     if (!empty($menu[$key]['#below'])) {
-      $menu_layout .= '<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $menu[$key]['#title'] . '<i class="fa fa-chevron-down"></i></a>';
+      $menu_layout .= '<a ' . $link_atributes . ' href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $menu[$key]['#title'] . '<i class="fa fa-chevron-down"></i></a>';
       $menu_layout .= '<ul class="dropdown-menu">';
       $menu_layout = loop_menu_main($menu[$key]['#below'], $menu_layout);
       $menu_layout .= '</ul>';
@@ -21,6 +30,7 @@ function loop_menu_main($menu, $menu_layout) {
 
     $menu_layout .= '</li>';
   }
+  print_r($menu_layout);
   return $menu_layout;
 }
 
@@ -72,4 +82,26 @@ function create_mobile_menu() {
   $menu_layout .= '</ul></nav></div>';
 
   return $menu_layout;
+}
+
+function get_menu_atributes($atrebutes){
+  
+  $item_atributes = '';
+  foreach($atrebutes as $attribute => $value){
+    if (!empty($value)){
+      if ($attribute == 'class') {
+        $classes = '';
+        foreach ($value as $class_value){
+          if (!empty($class_value)){
+            $classes .= $class_value . ' ';            
+          }
+        }
+        $item_atributes .= ' ' . $attribute . '="' . $classes . '" ';
+      } else {
+        $item_atributes .= ' ' . $attribute . '="' . $value . '" ';
+      }
+    }  
+  }
+  
+  return $item_atributes;
 }
