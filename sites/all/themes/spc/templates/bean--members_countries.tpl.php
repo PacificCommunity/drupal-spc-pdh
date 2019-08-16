@@ -47,14 +47,13 @@
 								<?php print t('Member Countries'); ?>
 							</div>
 							<?php if (!empty($countries_list)) : ?>
-                  <ul class="dropdown-menu">
-                    <div class="dropdown-list">  
-                    <?php foreach (element_children($countries_list) as $children_key) : ?>
-                      <li><?php print drupal_render($countries_list[$children_key]); ?></li>
-                    <?php endforeach; ?>
-                    </div>  
-                  </ul>
-                </div>    
+								<ul class="dropdown-menu">
+                  <div class="dropdown-list">
+									<?php foreach (element_children($countries_list) as $children_key) : ?>
+										<li><?php print drupal_render($countries_list[$children_key]); ?></li>
+									<?php endforeach; ?>
+                  </div>  
+								</ul>
 							<?php endif; ?>
 						</div>
 					</div>
