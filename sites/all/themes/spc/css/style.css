@@ -9531,6 +9531,10 @@ button.header-menu-btn:focus {
 #member-countries-block .dropdown .dropdown-menu {
   position: relative;
 }
+#member-countries-block .dropdown .dropdown-list {
+    height: 200px;
+    overflow-y: scroll;
+}
 #member-countries-block .dropdown.open .btn.dropdown-toggle:after {
   top: 15px;
   -webkit-transform: rotate(-135deg);
