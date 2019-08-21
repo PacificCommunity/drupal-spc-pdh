@@ -378,7 +378,7 @@ $( document ).ready(function() {
     let title_block = $(this).find('.views-field-title');
     if (title_block.length > 0) {
       let num = i + 1;
-      title_block.prepend(`<div class="slide-num">${num <= 9 ? '0'+num : num}</div>`)
+      title_block.prepend('<div class="slide-num">' + (num <= 9 ? '0'+num : num) + '</div>')
     }
   })
 
