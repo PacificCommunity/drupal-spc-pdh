@@ -277,7 +277,7 @@
   };
 
   var dataset_titles = $('.dataset-preview .dataset-title a');
-  dataset_titles.each((ind, tiitle) => {
+  dataset_titles.each(function(ind, tiitle){
     $(tiitle).dotdotdot({
       height: 50
     });
