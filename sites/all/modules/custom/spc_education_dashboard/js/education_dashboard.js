@@ -12,7 +12,7 @@
             });
 
             function getKeyByValue(object, value) {
-              return Object.keys(object).find(key => object[key] === value);
+              return Object.keys(object).find(function (key) { return object[key] === value; });
             }
 
             $('#education-dashboard-search').autocomplete({
@@ -391,9 +391,9 @@
                     .append("rect")
                     .attr("width", 20)
                     .attr("class", "bar")
-                    .attr("country", data => data.country)
-                    .attr("percentage", data => data.percentage)
-                    .style("fill", data => data.color)
+                    .attr("country", function (data) { return data.country; })
+                    .attr("percentage", function (data) { return data.percentage; })
+                    .style("fill", function (data) { return data.color; })
                     .attr("rx", 10)
                     .attr("ry", 10)
                     .attr("x", attrX)            
@@ -451,9 +451,9 @@
                     .append("rect")
                     .attr("width", 20)
                     .attr("class", "bar")
-                    .attr("country", data => data.country)
-                    .attr("percentage", data => data.percentage)
-                    .style("fill", data => data.color)
+                    .attr("country", function (data) { return data.country; })
+                    .attr("percentage", function (data) { return data.percentage;})
+                    .style("fill", function (data) { return data.color; })
                     .attr("rx", 10)
                     .attr("ry", 10)
                     .attr("x", attrX)            
