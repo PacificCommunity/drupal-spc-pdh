@@ -369,14 +369,28 @@
             }
             
             function setChartSvg(chart, width, height, className){
-                return d3
-                    .select(chart)
-                    .append("svg")
-                    .attr('version', 1.1)
-                    .attr('xmlns', 'http://www.w3.org/2000/svg')
-                    .attr('class', className)
-                    .attr("viewBox", [0, 0, width, height])
-                    .append("g");
+                let svg = {};
+                const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+                if (isIE11){
+                    svg = d3.select(chart)
+                        .append("svg")
+                        .attr('version', 1.1)
+                        .attr('xmlns', 'http://www.w3.org/2000/svg')
+                        .attr('class', className)
+                        .attr("height", height)
+                        .attr("viewBox", [0, 0, width, height])
+                        .append("g");
+                } else {
+                    svg = d3.select(chart)
+                        .append("svg")
+                        .attr('version', 1.1)
+                        .attr('xmlns', 'http://www.w3.org/2000/svg')
+                        .attr('class', className)
+                        .attr("viewBox", [0, 0, width, height])
+                        .append("g");
+                }
+            
+                return svg;
             }
             
             function setSvgDomains(data, x, y){
@@ -530,14 +544,31 @@
             }
             
             function setGenderChartSvg(id, width, height, margin){
-                return d3
-                    .select('.chart-' + id)
-                    .append("svg")
-                    .attr('version', 1.1)
-                    .attr('xmlns', 'http://www.w3.org/2000/svg')
-                    .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
-                    .append("g")
-                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");   
+                let svg = {};
+                const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+                
+                if (isIE11){
+                    svg = d3
+                        .select('.chart-' + id)
+                        .append("svg")
+                        .attr('version', 1.1)
+                        .attr('xmlns', 'http://www.w3.org/2000/svg')
+                        .attr("height", height + margin.top + margin.bottom)
+                        .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
+                        .append("g")
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                } else {
+                    svg = d3
+                        .select('.chart-' + id)
+                        .append("svg")
+                        .attr('version', 1.1)
+                        .attr('xmlns', 'http://www.w3.org/2000/svg')
+                        .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
+                        .append("g")
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");                     
+                }
+
+                return svg;
             }
             
             function setSvgGenderBarData(svg, data, x0, x1, y, width, height, tooltip, tooltext, boyWrap){
