@@ -23,7 +23,7 @@
                     <?php print t('The Pacific Monitoring Alliance for NCD Action (MANA) dashboard will enable PICTs to monitor <strong>status and progress of NCD policy and legislation</strong> against the <strong>Pacific NCD Roadmap</strong>, the <strong>Health Islands Monitoring Frameworks</strong> as well as the <strong>Sustainable Development Goals</strong>'); ?>
                 </div>
                 <div class="field field-type-ds">
-                    <a href="/health-dashboard" class="banner-button btn"><?php print t('View DASHBOARD'); ?></a>
+                    <a href="<?php echo HEALTH_DASHBOARD_URL; ?>" class="banner-button btn"><?php print t('View DASHBOARD'); ?></a>
                 </div>
             </div>
 
