@@ -16,7 +16,7 @@ function education_dashboard_page_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Education Dashboard';
   $page->admin_description = '';
-  $page->path = 'education-dashboard';
+  $page->path = 'dashboard/education-dashboard';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();
