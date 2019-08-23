@@ -19,7 +19,7 @@
                     <?php print t('An overview, based on available comparable data, of the current status on education in the Pacific to provide an evidence base around key education indicators.'); ?>
                 </div>
                 <div class="field field-type-ds">
-                    <a href="/education-dashboard" class="banner-button btn"><?php print t('View DASHBOARD'); ?></a>        
+                    <a href="<?php echo EDUCATION_DASHBOARD_URL; ?>" class="banner-button btn"><?php print t('View DASHBOARD'); ?></a>        
                 </div>
             </div>
 
