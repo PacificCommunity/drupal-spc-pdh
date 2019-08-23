@@ -52,7 +52,6 @@
 }
 #mini-panel-footer h2.pane-title {
   margin-bottom: 14px;
-  margin-top: 1px;
 }
 #mini-panel-footer h2 {
   margin-bottom: 20px;
@@ -91,8 +90,8 @@
   box-sizing: border-box;
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 #mini-panel-footer .footer-menus-block h2 {
   margin-bottom: 12px;
