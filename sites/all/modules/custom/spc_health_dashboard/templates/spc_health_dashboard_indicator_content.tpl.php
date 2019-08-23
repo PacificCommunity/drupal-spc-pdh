@@ -31,7 +31,7 @@
 
           <div class="country-indicators">
               <div class="indicator-title">
-                  <a data-name="<?php print @$indicator_key; ?>" href="/health-dashboard/<?php print @$indicator['indicator-category']; ?>/<?php print @$indicator_key; ?>">
+                  <a data-name="<?php print @$indicator_key; ?>" href="<?php echo HEALTH_DASHBOARD_URL; ?>/<?php print @$indicator['indicator-category']; ?>/<?php print @$indicator_key; ?>">
                   <?php print $data['indicator_detales']['code'] .'. '. $data['indicator_detales']['title']; ?>
                 </a>
               </div>
@@ -94,7 +94,7 @@
 
         <div class="country-name">
             <a data-country-id="<?php print $country['id']; ?>" 
-               href="/health-dashboard/country/<?php print $country['id']; ?>"
+               href="<?php echo HEALTH_DASHBOARD_URL; ?>/country/<?php print $country['id']; ?>"
                class="country-on-map">
                 <?php print $country['title']; ?>
             </a>
@@ -378,7 +378,7 @@
           <?php $current = 'current'; ?>
         <?php endif; ?>
           <div class="category-item <?php print $current ?>">
-              <a href="/health-dashboard/<?php print $data['current_category']; ?>/<?php print $indicator_key; ?>">
+              <a href="<?php echo HEALTH_DASHBOARD_URL; ?>/<?php print $data['current_category']; ?>/<?php print $indicator_key; ?>">
                 <?php print $indicator['code'] ?>
               </a>
           </div>   

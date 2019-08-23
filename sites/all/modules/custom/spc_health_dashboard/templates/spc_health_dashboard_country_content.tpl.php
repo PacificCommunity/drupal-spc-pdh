@@ -39,8 +39,8 @@
             <h6><?php print t('Code'); ?></h6> 
             <?php foreach($data['indicators'] as $ikey => $indicator): ?>
                 <?php if ($key == $indicator['indicator-category']): ?>
-                  <a href="/health-dashboard/<?php print $indicator['indicator-category']?>/<?php print $ikey; ?> ">
-                      <p><?php print @$indicator['code']; ?></p>
+                  <a href="<?php echo HEALTH_DASHBOARD_URL; ?>/<?php print $indicator['indicator-category']?>/<?php print $ikey; ?> ">
+                      <p><?php print @$indicator['code  ']; ?></p>
                   </a>
                 <?php endif; ?> 
             <?php endforeach;?>
@@ -49,7 +49,7 @@
             <h6><?php print t('Description'); ?></h6>    
             <?php foreach($data['indicators'] as $ikey => $indicator): ?>
                 <?php if ($key == $indicator['indicator-category']): ?>
-                  <a href="/health-dashboard/<?php print $indicator['indicator-category']?>/<?php print $ikey; ?> ">
+                  <a href="<?php echo HEALTH_DASHBOARD_URL; ?>/<?php print $indicator['indicator-category']?>/<?php print $ikey; ?> ">
                     <p><?php print $indicator['title']; ?></p>
                   </a>  
                 <?php endif; ?> 
