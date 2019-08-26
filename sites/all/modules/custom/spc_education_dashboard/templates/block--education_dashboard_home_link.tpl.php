@@ -25,7 +25,7 @@
 
         </div>
         <div class="group-chart">
-            <div class="chart-static" style="background: url(/sites/all/modules/custom/spc_education_dashboard/img/education-home.svg) 50% 50% no-repeat"></div>
+            <div class="chart-static lazy-load" data-background="/sites/all/modules/custom/spc_education_dashboard/img/education-home.svg"></div>
         </div>
         
     </div>        

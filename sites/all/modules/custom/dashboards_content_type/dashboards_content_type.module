@@ -16,7 +16,7 @@ function dashboards_content_type_preprocess_node(&$variables) {
 			$search_form_state['search_form_settings']['input_text'] = t('Search');
 			$ckan_search_form = drupal_build_form('ckan_search_form', $search_form_state);
 
-      $ckan_search_form['ckan_tags']['#value'] =  $variables['node']->field_ckan_tags[LANGUAGE_NONE][0]['safe_value'] ?? null;
+                        $ckan_search_form['ckan_tags']['#value'] =  $variables['node']->field_ckan_tags[LANGUAGE_NONE][0]['safe_value'] ?? null;
 
 			$variables['content']['ckan_search_form'] = array(
 				'#type' => 'container',
@@ -29,7 +29,7 @@ function dashboards_content_type_preprocess_node(&$variables) {
 			$variables['content']['ckan_search_form']['form'] = $ckan_search_form;
 		}
 		$variables['content']['chart_static'] = array(
-			'#markup' => "<div class='chart-static'></div>"
+			'#markup' => "<div class='chart-static lazy-load' data-background='/sites/all/themes/spc/img/spc_new/dashboard-chart.png'></div>"
 		);
 	}
 }
