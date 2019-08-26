@@ -428,4 +428,31 @@ $( document ).ready(function() {
 });
 
 
+  Drupal.behaviors.lazyLoader = {
+    attach: function (context) {
+      $( document ).ready(function() {
+
+        const lazyDiv = $('div.lazy-load');
+        lazyDiv.each(function(){
+            $(this).css({
+                'background': 'url(' + $(this).attr('data-background') + ') 50% 50% no-repeat',
+                'background-size': 'contain'
+            });
+
+        });
+
+        const lazyImg = $('img.lazy-load');
+        lazyImg.each(function(){
+            $(this).attr(
+                'src', $(this).attr('data-src')
+            ).css({
+                'background': 'none'
+            });
+        });
+        
+      });
+    }
+  };
+  
+
 })(jQuery);
