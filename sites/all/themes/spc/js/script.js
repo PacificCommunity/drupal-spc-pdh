@@ -277,7 +277,7 @@
   };
 
   var dataset_titles = $('.dataset-preview .dataset-title a');
-  dataset_titles.each((ind, tiitle) => {
+  dataset_titles.each(function(ind, tiitle){
     $(tiitle).dotdotdot({
       height: 50
     });
@@ -366,10 +366,10 @@ $( document ).ready(function() {
   if ($('.data-insights-promoted-group').length > 0 && $('.data-insights-promoted-group .slick-dots li').length > 0) {
     let slides_num_di = $('.data-insights-promoted-group .slick-dots li').length;
     let slide = $('.data-insights-promoted-group .slick-dots .slick-active button').text();
-    $('.data-insights-promoted-group').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_di}</strong></div>`);
+    $('.data-insights-promoted-group').append('<div class="slide-number"><strong>' + slide + '</strong> of <strong>' + slides_num_di + '</strong></div>');
     $('.data-insights-promoted-group .slick-arrow').on('click', function(){
       slide = $('.data-insights-promoted-group .slick-dots .slick-active button').text();
-      $('.data-insights-promoted-group .slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_di}</strong>`);
+      $('.data-insights-promoted-group .slide-number').html('<strong>' + slide + '</strong> of <strong>' + slides_num_di + '</strong>');
     });
   };
 
@@ -378,7 +378,7 @@ $( document ).ready(function() {
     let title_block = $(this).find('.views-field-title');
     if (title_block.length > 0) {
       let num = i + 1;
-      title_block.prepend(`<div class="slide-num">${num <= 9 ? '0'+num : num}</div>`)
+      title_block.prepend('<div class="slide-num">' + (num <= 9 ? '0'+num : num) + '</div>')
     }
   })
 
@@ -399,10 +399,10 @@ $( document ).ready(function() {
   if ($('.latest-stories-slider').length > 0 && $('.latest-stories-slider .slick-dots li').length > 0) {
     let slides_num_stories = $('.latest-stories-slider .slick-dots li').length;
     let slide = $('.latest-stories-slider .slick-dots .slick-active button').text();
-    $('.latest-stories-slider').append(`<div class="slide-number"><strong>${slide}</strong> of <strong>${slides_num_stories}</strong></div>`);
+    $('.latest-stories-slider').append('<div class="slide-number"><strong>'+ slide +'</strong> of <strong>' + slides_num_stories + '</strong></div>');
     $('.latest-stories-slider .slick-arrow').on('click', function(){
       slide = $('.latest-stories-slider .slick-dots .slick-active button').text();
-      $('.latest-stories-slider .slide-number').html(`<strong>${slide}</strong> of <strong>${slides_num_stories}</strong>`);
+      $('.latest-stories-slider .slide-number').html('<strong>' + slide + '</strong> of <strong>' + slides_num_stories + '</strong>');
     });
   };
 
