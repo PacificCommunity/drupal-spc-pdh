@@ -252,6 +252,59 @@ function spc_preprocess_views_view_fields(&$vars) {
     $vars['row_header'] .= '<div class="field-content arrow"><span class="icon"></span></div>';
     $vars['row_label'] .= '<span class="header-empty"></span>';
   }
+  
+  if ($vars['view']->name == 'data_insights_promoted'){
+    $preview = $vars['fields']['field_data_insights_preview']->content;
+    
+    $img_pos = strpos($preview, '<img');
+    if ($img_pos !== false){
+      $new_preview = substr_replace($preview, 'class="lazy-load"', $img_pos + 5, 0);
+      $vars['fields']['field_data_insights_preview']->content = $new_preview;
+    }
+    
+    $iframe_pos = strpos($preview, '<iframe');
+    if ($iframe_pos !== false){
+      $new_preview = substr_replace($preview, 'class="lazy-load"', $iframe_pos + 8, 0);
+      $vars['fields']['field_data_insights_preview']->content = $new_preview;
+    }
+    
+  }
+}
+
+function spc_preprocess_views_view_unformatted(&$vars){
+  if ($vars['view']->name == 'data_insights_list_page'){
+    $rows = $vars['rows'];
+    
+    foreach($rows as $key => $row){
+      $img_pos = strpos($row, '<img');
+      if ($img_pos !== false){
+        
+        $pattern = '(src=".+")';
+        preg_match($pattern, $row, $matches);
+        $row = preg_replace($pattern, 'src=""', $row);
+        
+        $src = explode('=', $matches[0]);
+        $lazy = 'class="lazy-load"' . ' data-src=' . $src[1];
+        $new_preview = substr_replace($row, $lazy, $img_pos + 5, 0);
+        
+        $vars['rows'][$key] = $new_preview;        
+      }
+
+      $iframe_pos = strpos($row, '<iframe');
+      if ($iframe_pos !== false){
+        
+        $pattern = '(src=".+" )';
+        preg_match($pattern, $row, $matches);
+        $row = preg_replace($pattern, 'src=""', $row);
+        
+        $src = explode('=', $matches[0]);
+        $lazy = 'class="lazy-load"' . ' data-src=' . $src[1]; 
+        
+        $new_preview = substr_replace($row, $lazy, $iframe_pos + 8, 0);
+        $vars['rows'][$key] = $new_preview;
+      }   
+    }
+  }
 }
 
 /**
