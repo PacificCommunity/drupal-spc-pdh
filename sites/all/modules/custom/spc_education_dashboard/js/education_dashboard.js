@@ -537,7 +537,7 @@
                     .attr('xmlns', 'http://www.w3.org/2000/svg')
                     .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
                     .append("g")
-                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");   
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
             }
             
             function setSvgGenderBarData(svg, data, x0, x1, y, width, height, tooltip, tooltext, boyWrap){
