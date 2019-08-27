@@ -450,6 +450,15 @@ $( document ).ready(function() {
             });
         });
         
+        const lazyIframe = $('iframe.lazy-load');
+        lazyIframe.each(function(){
+            $(this).attr(
+                'src', $(this).attr('data-src')
+            ).css({
+                'background': 'none'
+            });
+        });        
+        
       });
     }
   };
