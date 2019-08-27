@@ -52,15 +52,29 @@
                   .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
                   .range([height, 0]);
 
-                const colors = ["#cfff6fb3", "#ffc00080", "#ff000080" ];
+                let colors = [];
                 const border = ['#CFFF6F',  '#FFC000', '#FF0000' ];
                 const range = ["Present", "Under Development", "Not Present"];
                 const rangeWidth = [95, 170, 120];
 
-                let svg = d3.select(".stacked-chart-global")
-                  .append("svg")
-                  .attr("viewBox", [0, 0, width, height])
-                  .append("g"); 
+                const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+                let svg = {};
+                
+                if (isIE11){
+                   svg = d3.select(".stacked-chart-global")
+                    .append("svg")
+                    .attr("height", height)
+                    .attr("viewBox", [0, 0, width, height])
+                    .append("g");
+            
+                  colors = ["#cfff6f", "#ffc000", "#ff0000" ];
+                } else {
+                  svg = d3.select(".stacked-chart-global")
+                    .append("svg")
+                    .attr("viewBox", [0, 0, width, height])
+                    .append("g");
+                  colors = ["#cfff6fb3", "#ffc00080", "#ff000080" ];
+                } 
 
                 let defs = svg.append("defs");
 
