@@ -184,7 +184,22 @@ function spc_theme($existing, $type, $theme, $path)
       ]
     ];
   }
-  return [];
+  
+  $items['user_login'] = array(
+    'render element' => 'form',
+    'path' => drupal_get_path('theme', 'spc') . '/templates/pages',
+    'template' => 'user-login',
+    'preprocess functions' => array(
+       'spc_preprocess_user_login'
+    ),
+  );
+  
+  return $items;
+}
+
+function spc_preprocess_user_login(&$vars) {
+  $vars['messages'] = drupal_get_messages();
+//  print_r($vars['messages']);
 }
 
 function spc_preprocess_entity(&$variables) {

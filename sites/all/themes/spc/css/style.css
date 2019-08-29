@@ -8124,6 +8124,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 .page-user-login #header,
 .page-user #header {
+  position: relative;  
   background-image: linear-gradient(135deg, #007AD8 0%, #031F79 100%);
 }
 .page-user-login form#user-login,
