@@ -430,13 +430,15 @@ $( document ).ready(function() {
 
   Drupal.behaviors.lazyLoader = {
     attach: function (context) {
-      $( document ).ready(function() {
+      $( document, context ).ready(function() {
 
         const lazyDiv = $('div.lazy-load');
         lazyDiv.each(function(){
             $(this).css({
-                'background': 'url(' + $(this).attr('data-background') + ') 50% 50% no-repeat',
-                'background-size': 'contain'
+                'background': 'url(' + $(this).attr('data-background') + ')',
+                'background-position-x': $(this).attr('data-sx'),
+                'background-position-y': $(this).attr('data-sy'),
+                'background-repeat': 'no-repeat'
             });
 
         });

@@ -29,7 +29,7 @@ function dashboards_content_type_preprocess_node(&$variables) {
 			$variables['content']['ckan_search_form']['form'] = $ckan_search_form;
 		}
 		$variables['content']['chart_static'] = array(
-			'#markup' => "<div class='chart-static lazy-load' data-background='/sites/all/themes/spc/img/spc_new/dashboard-chart.png'></div>"
+			'#markup' => "<div class='chart-static lazy-load' data-background='/sites/all/themes/spc/img/sprite/spc_sprite.png' data-sx='-3176px' data-sy='-1376px'></div>"
 		);
 	}
 }
