@@ -14,10 +14,13 @@ function articles_syndication_menu() {
 }
 
 function article_syndicate() {
-  $access = check_access();
-  if (!$access[0]) {
-    return drupal_json_output(array('code'=> 403, 'message' => $access[1]));
-  }
+//  $access = check_access();
+//  if (!$access[0]) {
+//    return drupal_json_output(array('code'=> 403, 'message' => $access[1]));
+//  }
+  
+//  print_r($_POST);
+//  die;
 
   $syndicated_id = $_POST['original_id'];
 
@@ -106,7 +109,7 @@ function syndication_article_create() {
   node_object_prepare($node); 
   $node->language = LANGUAGE_NONE; 
   $node->uid = $user_uid; 
-  $node->status = 1; 
+  $node->status = 0; 
   $node->promote = 0; 
   $node->comment = 0;
   $node->field_syndicated_id[LANGUAGE_NONE][] = array(
@@ -115,6 +118,19 @@ function syndication_article_create() {
 
   // Creates a node with received fields
   $node = node_set_fields($node, $values);
+  
+  $message = "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true);
+  $email = 'datahub@spc.int';
+  
+  // Send the email.
+  $params = array(
+    'subject' => t('Syndicated Article - created'),
+    'body' => check_markup(
+      t($message),
+      'plain_text'
+    ),
+  );
+  drupal_mail('articles_syndication', 'syndicated_article_created', $email, language_default(), $params);
 
   // Saves logs
   watchdog('syndication_article', "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
@@ -188,6 +204,10 @@ function node_set_fields($node, $values) {
         ));
       }
     };
+    
+    $attached_tags = $node->field_tags[LANGUAGE_NONE];
+    
+    
     $node->field_tags[LANGUAGE_NONE] = $tags_field;
   }
   if (!empty($values['image'])) {
@@ -236,4 +256,16 @@ function articles_syndication_article_uri($node) {
   return array(
     'path' => 'node/' . $node->nid,
   );
+}
+
+/**
+ * Implements hook_mail for module_name.
+ */
+function articles_syndication_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'syndicated_article_created':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
 }
