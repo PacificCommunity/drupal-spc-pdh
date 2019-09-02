@@ -8124,7 +8124,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 .page-user-login #header,
 .page-user #header {
-  position: relative;  
+  position: relative;
   background-image: linear-gradient(135deg, #007AD8 0%, #031F79 100%);
 }
 .page-user-login form#user-login,
@@ -10131,6 +10131,33 @@ button.header-menu-btn:focus {
 }
 .article .group-title-block .insights-topic .thematic-fa-link .field-name-field-fa-icon {
   color: #0091C7;
+}
+.article .group-title-block .field-type-taxonomy-term-reference {
+  display: inline-block;
+}
+.article .group-title-block .field-type-taxonomy-term-reference .field-items {
+  display: inline-block;
+}
+.article .group-title-block .field-type-taxonomy-term-reference .field-items .field-item {
+  display: inline-block;
+  color: #191a1b;
+  font-weight: 300;
+}
+.article .group-title-block .field-type-taxonomy-term-reference .field-items .field-item:after {
+  content: ',';
+  display: inline;
+}
+.article .group-title-block .field-type-taxonomy-term-reference:before {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/spc_new/tag.png);
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 20px;
+  background-size: 100%;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
 }
 .article .body-text {
   font-weight: 300;
