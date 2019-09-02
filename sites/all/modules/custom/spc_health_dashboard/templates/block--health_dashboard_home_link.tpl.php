@@ -11,7 +11,7 @@
     <div about="/content/17-goals-transform-pacific" typeof="sioc:Item foaf:Document" style="" class="node-dashboards node-promoted view-mode-dashboard_highlight clearfix">
 
         <div class="group-chart" style="z-index: 2;">
-            <div class="chart-static lazy-load" data-background="/sites/all/themes/spc/img/sprite/spc_sprite.png" data-sx="-2845px" data-sy="-1376px" style="margin-left: 0; margin-right: -90px;"></div>
+            <div class="chart-static lazy-load" data-background="/sites/all/themes/spc/img/sprite/spc_sprite.png" data-sx="-1825px" data-sy="-780px" style="margin-left: 0; margin-right: -90px;"></div>
         </div>        
         
         <div class="group-content" style="z-index: 1;">

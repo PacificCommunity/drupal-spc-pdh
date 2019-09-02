@@ -1,11 +1,12 @@
 const gulp = require('gulp');
 const spritesmith = require('gulp.spritesmith');
 
+//npx gulp sprite
 gulp.task('sprite', () => {
     var spriteData = 
-        gulp.src('./img/spc_new/*.*')
+        gulp.src('./img/spc_new/sprite_src/*.*')
             .pipe(spritesmith({
-                imgName: '/sites/all/themes/spc/img/sprite/spc_sprite.png',
+                imgName: 'spc_sprite.png',
                 cssName: 'spc_sprite.css',
                 padding: 20
             }));
