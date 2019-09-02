@@ -25,7 +25,7 @@
 
         </div>
         <div class="group-chart">
-            <div class="chart-static lazy-load" data-background="/sites/all/themes/spc/img/sprite/spc_sprite.png" data-sx="-2845px" data-sy="-1707px"></div>
+            <div class="chart-static lazy-load" data-background="/sites/all/themes/spc/img/sprite/spc_sprite.png" data-sx="-2156px" data-sy="-780px"></div>
         </div>
         
     </div>        
