@@ -14,10 +14,10 @@ function articles_syndication_menu() {
 }
 
 function article_syndicate() {
-//  $access = check_access();
-//  if (!$access[0]) {
-//    return drupal_json_output(array('code'=> 403, 'message' => $access[1]));
-//  }
+  $access = check_access();
+  if (!$access[0]) {
+    return drupal_json_output(array('code'=> 403, 'message' => $access[1]));
+  }
 
   $syndicated_id = $_POST['original_id'];
 
@@ -25,7 +25,6 @@ function article_syndicate() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'article')
-    ->propertyCondition('status', 1)
     ->fieldCondition('field_syndicated_id', 'value', $syndicated_id, '=')
     ->addMetaData('account', user_load(1));
   $result = $query->execute();
