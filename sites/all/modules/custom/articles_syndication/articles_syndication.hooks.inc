@@ -18,9 +18,6 @@ function article_syndicate() {
 //  if (!$access[0]) {
 //    return drupal_json_output(array('code'=> 403, 'message' => $access[1]));
 //  }
-  
-//  print_r($_POST);
-//  die;
 
   $syndicated_id = $_POST['original_id'];
 
@@ -120,8 +117,13 @@ function syndication_article_create() {
   $node = node_set_fields($node, $values);
   
   $message = "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true);
-  $email = 'datahub@spc.int';
   
+  if (variable_get('syndication_email')){
+    $email = variable_get('syndication_email');
+  } else {
+    $email = 'datahub@spc.int';
+  }
+
   // Send the email.
   $params = array(
     'subject' => t('Syndicated Article - created'),
@@ -206,9 +208,14 @@ function node_set_fields($node, $values) {
     };
     
     $attached_tags = $node->field_tags[LANGUAGE_NONE];
-    
-    
-    $node->field_tags[LANGUAGE_NONE] = $tags_field;
+
+    foreach ($tags_field as $f_teg){
+       if (!in_array($f_teg, $attached_tags)){
+         $attached_tags[] = $f_teg;
+       }
+    }
+
+    $node->field_tags[LANGUAGE_NONE] = $attached_tags;
   }
   if (!empty($values['image'])) {
     $file_image = system_retrieve_file($values['image'], 'public://pictures/', TRUE);

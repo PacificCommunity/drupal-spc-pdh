@@ -78,15 +78,26 @@ function spc_preprocess_block(&$vars, $hook) {
 
 }
 
-function spc_preprocess_node(&$vars,$hook) {
+function spc_preprocess_node(&$vars, $hook) {
+  //kpr($vars['content']);
+  $node = $vars['node'];
+  switch ($node->type) {
+    case 'article':
+      switch ($vars['view_mode']) {
+        case 'full':
+          $body = $vars['content']['body'][0]['#markup'];
+          $vars['content']['body'][0]['#markup'] = substr($body, 0, strpos($body, '</p>'));
+          //$vars['content']['field_tags']['#access'] = false;
+      break;
+    }
+  }
+}
+
+function spc_preprocess_comment(&$vars, $hook) {
   //  kpr($vars['content']);
 }
 
-function spc_preprocess_comment(&$vars,$hook) {
-  //  kpr($vars['content']);
-}
-
-function spc_preprocess_field(&$vars,$hook) {
+function spc_preprocess_field(&$vars, $hook) {
   //  kpr($vars['content']);
   //add class to a specific field
   switch ($vars['element']['#field_name']) {
@@ -199,7 +210,6 @@ function spc_theme($existing, $type, $theme, $path)
 
 function spc_preprocess_user_login(&$vars) {
   $vars['messages'] = drupal_get_messages();
-//  print_r($vars['messages']);
 }
 
 function spc_preprocess_entity(&$variables) {
