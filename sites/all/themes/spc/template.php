@@ -85,9 +85,13 @@ function spc_preprocess_node(&$vars, $hook) {
     case 'article':
       switch ($vars['view_mode']) {
         case 'full':
-          $body = $vars['content']['body'][0]['#markup'];
-          $vars['content']['body'][0]['#markup'] = substr($body, 0, strpos($body, '</p>'));
-          //$vars['content']['field_tags']['#access'] = false;
+          if (!empty($node->field_syndicated_id)){
+            $body = $vars['content']['body'][0]['#markup'];
+            $vars['content']['body'][0]['#markup'] = substr($body, 0, strpos($body, '</p>'));            
+          } else {
+            $vars['content']['field_tags']['#access'] = false;
+            $vars['content']['node_link']['#access'] = false;
+          }
       break;
     }
   }
