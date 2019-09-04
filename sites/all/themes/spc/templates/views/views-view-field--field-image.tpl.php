@@ -26,13 +26,19 @@
 <?php 
     $entity = $row->_field_data['nid']['entity'];
     $uri = $entity->field_image['und'][0]['uri'];
-    $url = file_create_url($uri);
-    
+
     $nid = $row->nid;
     $path = drupal_get_path_alias('node/'.$nid); 
+    
+    if (!empty($stile_name = $field->view->result[0]->field_field_image[0]['rendered']['#image_style'])) {
+        $img_src = image_style_url($stile_name, $uri);
+    } else {
+      $img_src = file_create_url($uri);
+    }
+
 ?>
 <div class="field field-type-image">
     <a href="/<?php print $path; ?>">
-        <img typeof="foaf:Image"  data-src="<?php print $url; ?>" src="/sites/all/themes/spc/img/loader.gif" class="lazy-load"  width="320" height="224" alt="">
+        <img typeof="foaf:Image"  data-src="<?php print $img_src; ?>" src="/sites/all/themes/spc/img/loader.gif" class="lazy-load"  width="320" height="224" alt="">
     </a>
 </div>
