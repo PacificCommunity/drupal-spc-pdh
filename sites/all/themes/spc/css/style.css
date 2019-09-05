@@ -9121,7 +9121,7 @@ button.header-menu-btn:focus {
   height: 385px;
   display: block;
   background-image: url(/sites/all/themes/spc/img/sprite/spc_sprite.png);
-  background-position: -846px -780px;
+  background-position: -846px 0px;
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
@@ -9406,7 +9406,7 @@ button.header-menu-btn:focus {
 #member-countries-block .block-content .left-column {
   width: 375px;
   background-image: url(/sites/all/themes/spc/img/sprite/spc_sprite.png);
-  background-position: -187px -1043px;
+  background-position: -200px -250px;
   background-size: auto;
   padding: 57px 30px 28px 30px;
   position: relative;
