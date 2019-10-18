@@ -158,6 +158,45 @@
           });
 
           map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
+            
+            $.ajax({
+                url: '/ajax/members_countries',
+                type: 'GET',
+                success: function(data) {
+                    data.forEach(function(country, i, arr) {
+                        var coordinates = country.geometry.coordinates
+                        var tag = country.properties.ISO_Ter1;
+                        var polygonData = [];
+
+                        coordinates.forEach(function(point, i, arr) {
+                            point.forEach(function(item, i, arr) {
+                                polygonData.push(new google.maps.LatLng(item[1], item[0]));
+                            });
+                        });
+
+                        var shape = new google.maps.Polygon({
+                            paths: polygonData,
+                            strokeColor: '#e6f0f6',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#e6f0f6',
+                            fillOpacity: 0.35,
+                            country: tag
+                        });
+
+                        shape.setMap(map);
+                        
+                        google.maps.event.addListener(shape,"mouseover",function(){
+                            this.setOptions({fillColor: "#00FF00"});
+                            console.log(this.country);
+                        }); 
+
+                        google.maps.event.addListener(shape,"mouseout",function(){
+                            this.setOptions({fillColor: "#e6f0f6"});
+                        });
+                    });
+                },
+            });
         });
     });
 

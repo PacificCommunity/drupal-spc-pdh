@@ -162,3 +162,24 @@ function home_page_block_view($delta='') {
 
 	return $block;
 }
+
+function home_page_menu() {
+
+  $items['ajax/members_countries'] = array(
+    'title' => 'Get content by AJAX',
+    'page callback' => 'home_page_ajax_members_countries_ajax',
+    'page arguments' => array(),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function home_page_ajax_members_countries_ajax() {
+
+  if ($countries_data = file_get_contents('sites/all/modules/custom/home_page/geo.json')) {
+    $data = json_decode($countries_data, TRUE);
+  }  
+
+  return drupal_json_output($data['features']);
+}
