@@ -7782,7 +7782,8 @@ body {
   height: 421px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-position: 50% 0;
   z-index: 0;
 }
 .banner-with-title h1 {
@@ -8770,7 +8771,8 @@ button.header-menu-btn:focus {
   align-items: center;
   justify-content: center;
   height: 648px;
-  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
 }
