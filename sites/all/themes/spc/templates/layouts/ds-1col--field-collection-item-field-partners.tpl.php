@@ -81,13 +81,16 @@
 */
 ?>
 <?php if (!empty($content['field_partner_link']) && !empty($content['field_partner_logo'])) { ?>
-  <div class="partner-logo-item">
+  <!-- <div class="partner-logo-item"> -->
     <?php 
       $url = $content['field_partner_link']['#items'][0]['safe_value'];
       $img_path = $content['field_partner_logo'][0]['#item']['uri'];
     ?>
-    <div class="partner-item">
-      <a class="" href="<?= $url ?>" style="background:url(<?php print file_create_url($img_path); ?>) center center no-repeat; background-size: contain; height: 100%; display: block;" target="_blank"></a>
-    </div>
-  </div>
+    <!-- <div class="partner-item"> -->
+<!--       <a class="" href="<?= $url ?>" style="background:url(<?php print file_create_url($img_path); ?>) center center no-repeat; background-size: contain; height: 100%; display: block;" target="_blank"></a> -->
+	<a href="<?= $url ?>">
+		<img src="<?= file_create_url($img_path) ?>">
+	</a>
+    <!-- </div> -->
+  <!-- </div> -->
 <?php }; ?>
