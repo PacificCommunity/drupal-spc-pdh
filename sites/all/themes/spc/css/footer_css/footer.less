@@ -1,170 +1,107 @@
 #mini-panel-footer {
+  background: url("../../img/spc_new/new_footer.svg") right bottom repeat;
+  background-attachment: fixed;
+  padding: 0;
+  min-height: 250px;
+  position: relative;
+  display: block;
+  margin-top: auto;
+  margin: 0;
+  box-sizing: border-box;
+  &::after {
+    background-image: linear-gradient(to right,rgba(17,94,163,0.97),rgba(86,95,202,0.97));
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    display: block;
+    height: 100%;
+    visibility: initial;
+  }
   .container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-  #two-50-top-wrapper {
-    margin-left: -15px;
-    margin-right: -15px;
-    box-sizing: border-box;   
-  }
-  #two-50-top-wrapper .two-50-top {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  background-size: cover;
-  background-image:url('../../img/spc_new/new_footer.png'), linear-gradient(135deg, rgba(0, 127, 187, 1) 0%, rgba(0, 58, 140, 1) 100%);
-  padding: 72px 0 45px;
-  font-size: 18px;
-  color: #d6deea;
-  a {
-      color: #d6deea;
-  }
-  ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      margin-bottom: 10px;
-      padding: 0;
-      li {
-          font-size: 15px;
-          font-weight: 300;
-      }
-  }
-  p {
-      font-size: 15px;
-      font-weight: 300;
-      margin-bottom: 20px;
-  }
-  .pane-title, h2 {
-      font-size: 15px;
-      text-transform: uppercase;
-      color: #ffffff;
-      text-align: left;
-      font-weight: normal;
-  }
-  h2.pane-title {
-      margin-bottom: 14px;
-      margin-top: 1px;
-  }
-  h2 {
-      margin-bottom: 20px;
-
-  }
-  .bean-partner-logos {
-      margin-bottom: 28px;
-      .field-items {
-          .partner-logo-item {
-              width: 50%;
-              padding-right:5px;
-              float: left;
-          }
-          .partner-item {
-              padding: 10px;
-              height: 100px;
-              box-sizing: border-box;
-          }
-      }
-  }
-  .social-links-block {
-      .bean-social-links {
-          margin-top: 26px;
-          .field-items {
-              .field-item {
-                  height: 45px;
-                  width: 45px;
-                  float: left;
-                  margin: 0 13px 5px 13px;
-                  &:first-child {
-                    margin-left: 0;
-                  }
-                  &:last-child {
-                    margin-right: 0;
-                  }
-              }
-          }
-      }
-  }
-  .footer-menus-block {
-    width: 50%;
-    float: left;
-    box-sizing: border-box;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    h2 {
-      margin-bottom: 12px;
-    }
-  }
-  nav {
-      ul {
-          li {
-              margin-bottom: 4px;
-              a {
-                  font-size: 13px;
-                  font-weight: lighter;
-              }
-          }
-      }
-  }
-}
-
-@media (min-width: 768px) {
-  #mini-panel-footer {
-    .bean-partner-logos {
-      .field-items {
-        .partner-logo-item {
-          width: 50%;
-          float: left;
-        }
-        .partner-item {
-          height: 100px;
-        }
-      }
-    }
-    .social-links-block {
-      .bean-social-links {
+    #two-50-top-wrapper {
+      z-index: 1;
+      position: relative;
+      min-height: 250px;
+      padding: 40px 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+      margin: 0 auto;
+      .region-inner {
         .field-items {
-          .field-item {
-            height: 39px;
-            width: 39px;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: distribute;
+          justify-content: space-around;
+          max-width: 950px;
+          margin: 0 auto;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+          padding: 40px 40px 0 40px;
+          a {
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+            display: block;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+            opacity: 1;
+            transform: translateY(0);
+            margin: 0 40px 40px 0;
+            text-align: center;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            min-height: 55px;
+            &:hover {
+              transform: translateY(-10%);
+              opacity: 1;
+            }
+            img {
+              max-height: 55px;
+              max-width: 120px;
+            }
+          }
+        }
+        .contextual-links-wrapper {
+          display: none;
+        }
+        .footer-menus-block {
+          nav {
+            padding: 0 40px;
+            max-width: 950px;
+            margin: 0 auto;
+          }
+          ul {
+            color: rgba(255,255,255,0.6);
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            text-align: right;
+            font-size: 11px;
+            font-weight: 400;
+            margin: 0;
+            list-style: none;
+            float: left;
+            display: flex;
+            padding: 0;
+            li {
+              margin-right: 10px;
+              a {
+                color: rgba(255,255,255,.6);
+              }
+            }
           }
         }
       }
-    }
-  }  
-}
-
-@media (min-width: 992px) {
-  #mini-panel-footer {
-    .container {
-      padding: 0px 200px !important;
-    }
-    .bean-partner-logos {
-      .field-items {
-        .partner-logo-item {
-          width: 46%;
-          padding-right:5px;
-        }
-        .partner-item {
-          height: 75px;
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 1134px) {
-  #mini-panel-footer {
-    .container {
-      width: 1134px;
     }
   }
 }
