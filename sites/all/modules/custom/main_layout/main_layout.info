@@ -1,7 +1,7 @@
 name = Main layout
 core = 7.x
 package = Features
-version = 7.x-1.09
+version = 7.x-1.10
 dependencies[] = bean
 dependencies[] = bean_admin_ui
 dependencies[] = ctools

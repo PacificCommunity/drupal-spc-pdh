@@ -50,58 +50,6 @@ function main_layout_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-945576cf-ddf3-431a-b8fa-73913c0b6b0c';
-  $pane->panel = 'two_50_bottom';
-  $pane->type = 'block';
-  $pane->subtype = 'bean-social-links';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Connect',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'social-links-block col-md-6 col-md-pull-6',
-  );
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '945576cf-ddf3-431a-b8fa-73913c0b6b0c';
-  $display->content['new-945576cf-ddf3-431a-b8fa-73913c0b6b0c'] = $pane;
-  $display->panels['two_50_bottom'][0] = 'new-945576cf-ddf3-431a-b8fa-73913c0b6b0c';
-  $pane = new stdClass();
-  $pane->pid = 'new-51845a8a-8b30-4b73-9b15-0ba2f331d208';
-  $pane->panel = 'two_50_bottom';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-resources-menu';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Resources',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'footer-menus-block footer-menus-block-resources',
-  );
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '51845a8a-8b30-4b73-9b15-0ba2f331d208';
-  $display->content['new-51845a8a-8b30-4b73-9b15-0ba2f331d208'] = $pane;
-  $display->panels['two_50_bottom'][1] = 'new-51845a8a-8b30-4b73-9b15-0ba2f331d208';
-  $pane = new stdClass();
   $pane->pid = 'new-9249440d-656f-420a-87c3-19268c25088b';
   $pane->panel = 'two_50_top';
   $pane->type = 'block';
