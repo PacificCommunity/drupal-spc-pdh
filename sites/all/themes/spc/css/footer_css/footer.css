@@ -35,6 +35,10 @@
   flex-flow: row wrap;
   margin: 0 auto;
 }
+#mini-panel-footer .container #two-50-top-wrapper .two-50-top {
+  float: left;
+  width: 100%;
+}
 #mini-panel-footer .container #two-50-top-wrapper .region-inner .field-items {
   display: -ms-flexbox;
   display: flex;
