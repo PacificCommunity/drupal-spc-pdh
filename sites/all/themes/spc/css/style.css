@@ -9425,7 +9425,7 @@ button.header-menu-btn:focus {
   background-image: linear-gradient(181deg, rgba(0, 0, 0, 0) 0%, #000 100%);
 }
 #member-countries-block .block-content .left-column .column-header {
-  z-index: 1;
+  z-index: 2;
 }
 #member-countries-block .block-content .left-column .column-header h2 {
   font-size: 38px;
