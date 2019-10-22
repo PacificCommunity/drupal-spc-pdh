@@ -163,18 +163,42 @@
                 url: '/ajax/members_countries',
                 type: 'GET',
                 success: function(data) {
+                    
+                    let markers = [];
+                    let polygons = [];
+                    
                     data.forEach(function(country, i, arr) {
                         var coordinates = country.geometry.coordinates
                         var tag = country.properties.ISO_Ter1;
                         var polygonData = [];
-
+                        var id = country.properties.MRGID
+                        
+                        var x = country.properties.x_1;
+                        var y = country.properties.y_1;
+                        
                         coordinates.forEach(function(point, i, arr) {
                             point.forEach(function(item, i, arr) {
                                 polygonData.push(new google.maps.LatLng(item[1], item[0]));
                             });
+
+                            markers[id] = new google.maps.Marker({
+                              position: new google.maps.LatLng(y, x),
+                              map: map,
+                              label: {
+                                text: tag,
+                                color: '#fff',
+                                fontWeight: '800',
+                                fontSize: '12px',
+                              },
+                              icon: {
+                                url: 'none' 
+                              },
+                              opacity: 0
+                            });
+                            
                         });
 
-                        var shape = new google.maps.Polygon({
+                        polygons[id] = new google.maps.Polygon({
                             paths: polygonData,
                             strokeColor: '#e6f0f6',
                             strokeOpacity: 0.8,
@@ -184,15 +208,24 @@
                             country: tag
                         });
 
-                        shape.setMap(map);
+                        polygons[id].setMap(map);
                         
-                        google.maps.event.addListener(shape,"mouseover",function(){
-                            this.setOptions({fillColor: "#00FF00"});
-                            console.log(this.country);
+                        google.maps.event.addListener(polygons[id],"mouseover",function(){
+                            this.setOptions({fillColor: "#ccc"});
+                            markers[id].setOpacity(1);
                         }); 
 
-                        google.maps.event.addListener(shape,"mouseout",function(){
+                        google.maps.event.addListener(polygons[id],"mouseout",function(){
                             this.setOptions({fillColor: "#e6f0f6"});
+                            markers[id].setOpacity(0);
+                        });
+                        
+                        google.maps.event.addListener(polygons[id],"click",function(){
+                            var bounds = new google.maps.LatLngBounds();
+                            polygons[id].getPath().forEach(function (element, index) { 
+                                bounds.extend(element); 
+                            });
+                            map.fitBounds(bounds);
                         });
                     });
                 },
