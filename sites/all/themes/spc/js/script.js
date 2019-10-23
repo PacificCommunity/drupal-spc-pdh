@@ -226,6 +226,11 @@
                                 bounds.extend(element); 
                             });
                             map.fitBounds(bounds);
+                            
+                            console.log($('#member-countries-block .dropdown-menu a#' + this.country));
+                            
+                            $('#member-countries-block .dropdown-menu a#' + this.country).trigger('click');
+                            
                         });
                     });
                 },
@@ -310,7 +315,7 @@
               if (point_zoom) {
                 zoom = point_zoom;
               }
-              map.setZoom(zoom);
+              //map.setZoom(zoom);
               e.stopPropagation();
               e.preventDefault();
             });
