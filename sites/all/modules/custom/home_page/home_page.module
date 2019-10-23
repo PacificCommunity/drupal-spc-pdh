@@ -46,6 +46,7 @@ function home_page_preprocess_entity(&$variables) {
               $data_request = url($request_path, $request_options);
             }
             $link_attributes['data-request'] = $data_request;
+            $link_attributes['id'] = $country_code;
             // Setting coordinates.
             if (isset($country->field_mcountries_location) && !empty($country->field_mcountries_location)) {
               $location = $country->field_mcountries_location[LANGUAGE_NONE][0];
@@ -161,4 +162,51 @@ function home_page_block_view($delta='') {
 	}
 
 	return $block;
+}
+
+function home_page_menu() {
+
+  $items['ajax/members_countries'] = array(
+    'title' => 'Get content by AJAX',
+    'page callback' => 'home_page_ajax_members_countries_ajax',
+    'page arguments' => array(),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function home_page_ajax_members_countries_ajax() { 
+  
+  $block = module_invoke('bean', 'block_view', 'home-members-countries');
+  if (!empty($block)){
+    $mcountries = $block['content']['bean']['home-members-countries']['field_mcountries']['#items'];
+    $eez_ids = [];
+    
+    foreach ($mcountries as $country){
+      $eez_id = field_collection_item_load($country['value'])->field_eez['und'][0]['value'];
+      $eez_ids[] = $eez_id;
+    }
+    
+    $countries_eez = [];
+    foreach ($eez_ids as $id){
+      $eez_field = field_collection_item_load($id);
+      $tag = $eez_field->field_country_tag['und'][0]['value'];
+      $countries_eez[] = [
+        'properties' => [
+          'MRGID' => $eez_field->field_country_tag['und'][0]['value'],
+          'ISO_Ter1' => $eez_field->field_country_tag['und'][0]['value'],
+          'y_1' => $eez_field->field_center['und'][0]['lat'],
+          'x_1' => $eez_field->field_center['und'][0]['lon'],
+        ],
+        'geometry' => json_decode(preg_replace( "/\r|\n/", "", $eez_field->field_polygon['und'][0]['value'])),
+      ];
+    }
+  } else {
+    if ($countries_data = file_get_contents('sites/all/modules/custom/home_page/geo.json')) {
+      $countries_eez = json_decode($countries_data, TRUE);
+    }  
+  }
+  
+  return drupal_json_output($countries_eez);
 }
