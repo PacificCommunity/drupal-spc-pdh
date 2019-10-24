@@ -7736,7 +7736,7 @@ body {
 }
 #header #main-menu ul li a:hover {
   text-decoration: none;
-  color: #F8DA10 !important;
+  color: #F8DA10;
 }
 #header #main-menu ul li.dropdown:hover {
   background: #fff;
@@ -7750,6 +7750,7 @@ body {
   box-shadow: none;
 }
 #header #main-menu .dropdown-menu li {
+  position: relative;
   display: block;
   padding: 0px;
 }
@@ -7757,10 +7758,11 @@ body {
   display: block;
   transition: all 0.3s;
   font-size: 12px;
-  color: #000;
+  color: #7B7B7B;
   text-transform: uppercase;
+  font-family: 'Montserrat';
   font-weight: 400;
-  padding: 15px 15px;
+  padding: 15px 50px;
   position: relative;
   border: none;
   border-left: 3px solid #fff;
@@ -7768,6 +7770,16 @@ body {
 #header #main-menu .dropdown-menu li a:hover {
   background-color: #f5f5f5;
   border-left: 3px solid #000000;
+}
+#header #main-menu .dropdown-menu .fp:before {
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  left: 15px;
+  z-index: 1;
+}
+#header #main-menu .dropdown-menu .fp:hover:before {
+  color: #000;
 }
 .login-icon {
   background-image: url('../img/sprite/spc_new_sprite.png');
