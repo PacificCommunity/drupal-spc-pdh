@@ -1,5 +1,6 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 @import url("../css/font-awesome/font-awesome.min.css");
+@import url("../css/data-portal/css/external.css");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -7727,17 +7728,46 @@ body {
   font-size: 13px;
   color: #fff;
   padding: 0px 24px;
+  text-transform: uppercase;
+  transition: all 0.3s;
 }
 #header #main-menu ul li a svg {
   margin-left: 7px;
 }
+#header #main-menu ul li a:hover {
+  text-decoration: none;
+  color: #F8DA10 !important;
+}
+#header #main-menu ul li.dropdown:hover {
+  background: #fff;
+}
+#header #main-menu ul li.dropdown:hover a {
+  color: #000;
+}
+#header #main-menu .dropdown-menu {
+  margin: 0px;
+  padding: 0px;
+  box-shadow: none;
+}
 #header #main-menu .dropdown-menu li {
   display: block;
+  padding: 0px;
 }
 #header #main-menu .dropdown-menu li a {
   display: block;
+  transition: all 0.3s;
+  font-size: 12px;
   color: #000;
-  padding: 5px 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 15px 15px;
+  position: relative;
+  border: none;
+  border-left: 3px solid #fff;
+}
+#header #main-menu .dropdown-menu li a:hover {
+  background-color: #f5f5f5;
+  border-left: 3px solid #000000;
 }
 .login-icon {
   background-image: url('../img/sprite/spc_new_sprite.png');
@@ -7753,7 +7783,7 @@ body {
 .dropdown-menu {
   background: #fff;
   border: none;
-  border-radius: 18px;
+  border-radius: 0 3px 3px 0;
   padding: 5px 15px;
 }
 .dropdown-menu li {
@@ -11540,3 +11570,4 @@ button.header-menu-btn:focus {
   font-weight: 300;
   font-style: normal;
 }
+/*# sourceMappingURL=style.css.map */
