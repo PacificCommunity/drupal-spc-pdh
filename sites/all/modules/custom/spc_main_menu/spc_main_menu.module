@@ -8,7 +8,6 @@ function loop_menu_main($menu, $menu_layout) {
     }
 
     if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title']) && empty($menu[$key]['#below'])) {
-      $menu_layout .= '<li>';
       $menu_layout .= '<a href="' . ($menu[$key]['#href'] == '<front>' ? '/' : url(drupal_get_path_alias($menu[$key]['#href']))) . '">' . $menu[$key]['#title'] . '</a>';
     }
     
