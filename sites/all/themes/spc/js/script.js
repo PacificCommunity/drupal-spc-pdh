@@ -500,7 +500,15 @@ $( document ).ready(function() {
       $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
     }
   })
-
+  
+  $('#main-menu li.dropdown').hover(
+    function(){
+      $(this).find('.dropdown-menu').show();
+    },
+    function() {
+      $(this).find('.dropdown-menu').hide();
+    }
+  );
 
 });
 
