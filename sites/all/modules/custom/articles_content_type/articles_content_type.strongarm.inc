@@ -202,6 +202,12 @@ function articles_content_type_strongarm() {
       'topic_preview' => array(
         'custom_settings' => FALSE,
       ),
+      'basic_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'dashboard_highlight' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

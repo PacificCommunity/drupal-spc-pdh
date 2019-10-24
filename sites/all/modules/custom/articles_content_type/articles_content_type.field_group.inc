@@ -308,10 +308,11 @@ function articles_content_type_field_group_info() {
     'label' => 'Title block',
     'weight' => '0',
     'children' => array(
-      0 => 'field_thematic_group',
-      1 => 'title',
-      2 => 'author',
-      3 => 'post_date',
+      0 => 'field_tags',
+      1 => 'field_thematic_group',
+      2 => 'title',
+      3 => 'author',
+      4 => 'post_date',
     ),
     'format_type' => 'div',
     'format_settings' => array(

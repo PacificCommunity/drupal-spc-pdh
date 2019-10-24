@@ -8155,6 +8155,7 @@ a.view-mode-group_with_icon .field-name-field-fa-icon:hover {
 }
 .page-user-login #header,
 .page-user #header {
+  position: relative;
   background-image: linear-gradient(135deg, #007AD8 0%, #031F79 100%);
 }
 .page-user-login form#user-login,
@@ -9146,9 +9147,19 @@ button.header-menu-btn:focus {
   padding: 25px 40px 0;
   margin: 0 auto;
 }
+.latest-stories-slider .stories-list:before {
+  content: '';
+  width: 635px;
+  height: 385px;
+  display: block;
+  background-image: url(/sites/all/themes/spc/img/sprite/spc_sprite.png);
+  background-position: -846px 0px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 .latest-stories-slider .stories-list {
-  background: url('../img/spc_new/stories_slides_bg.png') no-repeat 100% 0;
-  background-size: auto 385px;
   padding-top: 160px;
 }
 .latest-stories-slider .stories-list .slick-list {
@@ -9426,7 +9437,8 @@ button.header-menu-btn:focus {
 }
 #member-countries-block .block-content .left-column {
   width: 375px;
-  background: url(../img/spc_new/member-country-bg-left.png) 50% 50% no-repeat;
+  background-image: url(/sites/all/themes/spc/img/sprite/spc_sprite.png);
+  background-position: -200px -250px;
   background-size: auto;
   padding: 57px 30px 28px 30px;
   position: relative;
@@ -9445,7 +9457,7 @@ button.header-menu-btn:focus {
   background-image: linear-gradient(181deg, rgba(0, 0, 0, 0) 0%, #000 100%);
 }
 #member-countries-block .block-content .left-column .column-header {
-  z-index: 1;
+  z-index: 2;
 }
 #member-countries-block .block-content .left-column .column-header h2 {
   font-size: 38px;
@@ -9561,7 +9573,11 @@ button.header-menu-btn:focus {
   transform: rotate(45deg);
 }
 #member-countries-block .dropdown .dropdown-menu {
-  position: relative;
+  /*position: relative;*/
+}
+#member-countries-block .dropdown .dropdown-list {
+    height: 200px;
+    overflow-y: scroll;
 }
 #member-countries-block .dropdown.open .btn.dropdown-toggle:after {
   top: 15px;
@@ -9677,6 +9693,9 @@ button.header-menu-btn:focus {
   height: 30px;
   position: absolute;
   top: 5px;
+}
+.lazy-load {
+  background: url(../img/loader.gif) 50% 50% no-repeat;
 }
 #ckan-dataset-tabs-block {
   background-color: #F9F9F9;
@@ -10144,6 +10163,33 @@ button.header-menu-btn:focus {
 }
 .article .group-title-block .insights-topic .thematic-fa-link .field-name-field-fa-icon {
   color: #0091C7;
+}
+.article .group-title-block .field-type-taxonomy-term-reference {
+  display: inline-block;
+}
+.article .group-title-block .field-type-taxonomy-term-reference .field-items {
+  display: inline-block;
+}
+.article .group-title-block .field-type-taxonomy-term-reference .field-items .field-item {
+  display: inline-block;
+  color: #191a1b;
+  font-weight: 300;
+}
+.article .group-title-block .field-type-taxonomy-term-reference .field-items .field-item:after {
+  content: ',';
+  display: inline;
+}
+.article .group-title-block .field-type-taxonomy-term-reference:before {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/spc_new/tag.png);
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 20px;
+  background-size: 100%;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
 }
 .article .body-text {
   font-weight: 300;
@@ -10898,7 +10944,7 @@ button.header-menu-btn:focus {
   margin-left: -110px;
   width: 315px;
   height: 315px;
-  background: url(../img/spc_new/dashboard-chart.png) 50% 50% no-repeat;
+  border-radius: 50%;
   background-size: contain;
 }
 @media (max-width: 768px) {

@@ -389,9 +389,20 @@
     max-width: 1440px;
     padding: 25px 40px 0;
     margin: 0 auto;
+    
+    .stories-list:before {
+        content: '';
+        width: 635px;
+        height: 385px;
+        display: block;
+        background-image: url(/sites/all/themes/spc/img/sprite/spc_sprite.png);
+        background-position: -846px 0px;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
     .stories-list {
-        background: url('../img/spc_new/stories_slides_bg.png') no-repeat 100% 0;
-        background-size: auto 385px;
         padding-top: 160px;
         .slick-list {
             max-width: 1072px;
@@ -676,7 +687,8 @@
         }
         .left-column {
             width: 375px;
-            background: url(../img/spc_new/member-country-bg-left.png) 50% 50% no-repeat;
+            background-image: url(/sites/all/themes/spc/img/sprite/spc_sprite.png);
+            background-position: -200px -250px;
             background-size: auto;
             padding: 57px 30px 28px 30px;
             position: relative;
@@ -693,7 +705,7 @@
                 background-image: linear-gradient(181deg, rgba(0, 0, 0, 0) 0%, #000 100%);
             }
             .column-header {
-                z-index: 1;
+                z-index: 2;
                 h2 {
                     font-size: 38px;
                     font-weight: 700;
@@ -812,7 +824,11 @@
             }
         }
         .dropdown-menu {
-            position: relative;
+            /*position: relative;*/
+        }
+        .dropdown-list {
+            height: 200px;
+            overflow-y: scroll;
         }
         &.open {
             .btn.dropdown-toggle {
@@ -936,6 +952,10 @@
             top: 5px;
         }
     }
+}
+
+.lazy-load {
+    background: url(../img/loader.gif) 50% 50% no-repeat;
 }
 
 #ckan-dataset-tabs-block {

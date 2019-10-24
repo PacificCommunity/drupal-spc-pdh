@@ -1,0 +1,11 @@
+name = SPC Wysiwyng Plugin
+description = SPC Wysiwyng Plugin
+version = VERSION
+core = 7.x
+
+project = "wysiwyg"
+
+dependencies[] = wysiwyg
+
+files[] = sps_wysiwyg_plugin.module
+
