@@ -8328,8 +8328,14 @@ button.header-menu-btn:focus {
   cursor: pointer;
 }
 .ma5-menu-panel a {
+  font-family: 'Montserrat';
   color: #fff;
   font-weight: 300;
+}
+.ma5-menu-panel a:before {
+  font: normal normal normal 20px/1 'PngDataPortal';
+  display: inline-block;
+  padding: 0 10px;
 }
 .res-format-aac {
   background-image: url('../img/sprite/sprite_res.png');
