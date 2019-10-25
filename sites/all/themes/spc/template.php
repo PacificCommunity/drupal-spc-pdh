@@ -5,7 +5,7 @@
 
 
 function spc_preprocess_html(&$vars) {
-  //  kpr($vars['content']);
+  drupal_add_css('https://fonts.googleapis.com/css?family=Roboto&display=swap', array('type' => 'external'));
 }
 
 function spc_preprocess_page(&$vars,$hook) {
