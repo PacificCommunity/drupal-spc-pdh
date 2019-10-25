@@ -205,7 +205,7 @@
                             strokeWeight: 2,
                             fillColor: '#e6f0f6',
                             fillOpacity: 0.35,
-                            country: tag
+                            country: tag.toLowerCase()
                         });
 
                         polygons[id].setMap(map);
@@ -226,9 +226,6 @@
                                 bounds.extend(element); 
                             });
                             map.fitBounds(bounds);
-                            
-                            console.log($('#member-countries-block .dropdown-menu a#' + this.country));
-                            
                             $('#member-countries-block .dropdown-menu a#' + this.country).trigger('click');
                             
                         });
