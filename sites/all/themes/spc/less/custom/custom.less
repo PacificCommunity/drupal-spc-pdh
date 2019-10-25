@@ -40,13 +40,13 @@ body {
                 }
                 a:hover {
                   text-decoration: none;
-                  color: #F8DA10;
+                  color: #F8DA10!important;
                 }
             }
             li.dropdown:hover {
                 background: #fff;
-                a{
-                  color: #000;
+                >a {
+                    color: #000;
                 }
             }
         }
@@ -54,6 +54,7 @@ body {
             margin: 0px; 
             padding: 0px;
             box-shadow: none;
+            border-radius: 0 3px 3px 0;
             li {
                 position: relative;
                 display: block;
@@ -72,6 +73,7 @@ body {
                     border-left: 3px solid #fff;
                 }
                 a:hover{
+                    color: #000 !important;
                     background-color: #f5f5f5;
                     border-left: 3px solid #000000;
                 }
@@ -79,6 +81,7 @@ body {
             .fp:before {
                 position: absolute;
                 font-size: 20px;
+                color: #7B7B7B;
                 top: 10px;
                 left: 15px;
                 z-index: 1;
@@ -98,7 +101,7 @@ body {
 .dropdown-menu {
     background: #fff;
     border: none;
-    border-radius: 0 3px 3px 0;
+    border-radius: 19px;
     padding: 5px 15px;
     li {
         display: block;
