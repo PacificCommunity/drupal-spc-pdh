@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * @file
+ * Code for the SPC Dataset Suggestion feature.
+ */
+
+include_once 'spc_dataset_suggestion.features.inc';
+
+
+/**
+ * Implements hook_menu().
+ */
+function spc_dataset_suggestion_menu() {
+  $items = [];
+
+  $items['dataset-suggestion'] = [
+    'title' => t('Dataset suggestion page'),
+    'description' => t('Dataset suggestion page'),
+    'page callback' => 'spc_dataset_suggestion_form',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  ];
+  
+  return $items;
+}
+
+function spc_dataset_suggestion_form_alter(&$form, &$form_state, $form_id){
+  //print $form_id;
+  if ($form_id == 'dataset_suggestion_node_form'){
+    $form['#validate'][] = 'spc_dataset_suggestion_form_validate';
+  }
+}
+
+function spc_dataset_suggestion_form_validate(&$form, &$form_state){
+  $suggester_email = $form_state['values']['field_suggester_email']['und'][0]['value'];
+  if (!filter_var($suggester_email, FILTER_VALIDATE_EMAIL)) {
+    print_r('Email address incorrect.');
+    form_set_error('field_suggester_email', 'Email address incorrect.');
+  }
+}
+
+function spc_dataset_suggestion_form(){
+    return theme(
+    'spc_dataset_suggestion_form',
+    [
+      'title' => t('Dataset <strong>suggestion</strong>'),
+      'content' => spc_dataset_suggestion_content(),
+    ]
+  );
+}
+
+function spc_dataset_suggestion_content(){
+  
+  module_load_include('inc', 'node', 'node.pages');
+
+  $form = node_add('dataset_suggestion');
+  
+  $form['title']['#attributes']['placeholder'] = t('Dataset Title');
+  $form['body']['#attributes']['placeholder'] = t('Dataset Description');
+  $form['field_suggester_name']['und'][0]['value']['#attributes']['placeholder'] = t('Your Name');
+  $form['field_suggester_email']['und'][0]['value']['#attributes']['placeholder'] = t('Email Address');
+  
+  $form['actions']['submit']['#value'] = 'Submit';
+  $form['actions']['cancel'] = array(
+    '#markup' => l(t('Clear'), '/dataset-suggestion', array('attributes' => array('class' => 'clear-form'))),
+    '#weight' => 20,
+  );
+  
+  $output['form'] = drupal_render($form);
+  
+  $output['messages'] = theme('status_messages');
+  
+  $output['tip']['title'] = 'Tip';
+  $output['tip']['text'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
+  
+  return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function spc_dataset_suggestion_theme() {
+  return [
+    'spc_dataset_suggestion_form' => [
+      'variables' => [
+        'title' => NULL,
+        'content' => NULL,
+      ],
+      'template' => 'templates/spc_dataset_suggestion_form',
+    ],
+  ];  
+}
+
