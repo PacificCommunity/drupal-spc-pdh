@@ -11176,6 +11176,91 @@ button.header-menu-btn:focus {
 .overridden-title .pane-title strong {
   color: #FFBC00;
 }
+.dataset-suggestion-content .container {
+  position: relative;
+  background: #fff;
+  padding: 20px 60px;
+  margin: 50px auto;
+  box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+  border-radius: 10px;
+}
+.dataset-suggestion-content .container .suggestion-form {
+  padding-left: 0;
+  padding-right: 40px;
+}
+.dataset-suggestion-content .container .suggestion-form form label {
+  width: 100%;
+  color: #000;
+}
+.dataset-suggestion-content .container .suggestion-form form label:after {
+  content: '*';
+  display: inline-block;
+  color: #21a9d6;
+  padding: 3px;
+}
+.dataset-suggestion-content .container .suggestion-form form input,
+.dataset-suggestion-content .container .suggestion-form form textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  color: #000;
+}
+.dataset-suggestion-content .container .suggestion-form form input:active,
+.dataset-suggestion-content .container .suggestion-form form textarea:active,
+.dataset-suggestion-content .container .suggestion-form form input:focus,
+.dataset-suggestion-content .container .suggestion-form form textarea:focus {
+  border: 1px solid #21a9d6;
+  box-shadow: 0px 0px 5px #21a9d6;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions {
+  display: table;
+  float: right;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions #edit-submit {
+  width: 100px;
+  float: right;
+  color: #fff;
+  background: #0060a6;
+  border: 1px solid #0060a6;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions #edit-submit:hover {
+  opacity: 0.8;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions .clear-form {
+  color: #fff;
+  background: #ccc;
+  padding: 7px 20px;
+  border-radius: 5px;
+  float: right;
+  margin-right: 20px;
+  text-decoration: none;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions .clear-form:hover {
+  opacity: 0.8;
+}
+.dataset-suggestion-content .container .suggestion-tip {
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  padding: 20px;
+}
+.dataset-suggestion-content .container .suggestion-tip h4 {
+  padding: 10px;
+  background: #c6c6c650;
+  border-radius: 5px;
+}
+.dataset-suggestion-content .container .suggestion-tip h4:before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(../img/spc/lamp.svg);
+  background-size: 100%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
 @media (max-width: 1439px) {
   .data-insights-promoted-group.slick-slider {
     max-width: 100%;

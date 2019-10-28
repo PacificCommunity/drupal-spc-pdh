@@ -1,0 +1,93 @@
+.dataset-suggestion-content {
+    .container{
+        position: relative;
+        background:#fff;
+        padding: 20px 60px;
+        margin: 50px auto;
+        box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+        border-radius: 10px;
+        
+        .suggestion-form {
+            padding-left: 0;
+            padding-right: 40px;
+            
+            form {
+                label {
+                    width: 100%;
+                    color: #000;
+                }
+                label:after {
+                    content: '*';
+                    display: inline-block;
+                    color: #21a9d6;
+                    padding: 3px;
+                }
+                input,
+                textarea{
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    padding: 10px;
+                    width: 100%;
+                    color: #000;
+                }
+                input:active,
+                textarea:active,
+                input:focus,
+                textarea:focus{
+                    border: 1px solid #21a9d6;
+                    box-shadow: 0px 0px 5px #21a9d6;
+                }
+                #edit-actions {
+                    display: table;
+                    float: right;
+                    
+                    #edit-submit {
+                        width: 100px;
+                        float: right;
+                        color: #fff;
+                        background: #0060a6;
+                        border: 1px solid #0060a6;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                    }
+                    #edit-submit:hover {
+                        opacity: 0.8;
+                    }
+                    .clear-form {
+                        color: #fff;
+                        background: #ccc;
+                        padding: 7px 20px;
+                        border-radius: 5px;
+                        float: right;
+                        margin-right: 20px;
+                        text-decoration: none;
+                    }
+                    .clear-form:hover {
+                        opacity: 0.8;
+                    }
+                }
+            } 
+        }
+        .suggestion-tip {
+            border: 1px solid #c6c6c6;
+            border-radius: 5px;
+            padding: 20px;
+
+            h4 {
+                padding: 10px;
+                background: #c6c6c650;
+                border-radius: 5px;
+            }
+            h4:before {
+                content: '';
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                background: url(../img/spc/lamp.svg);
+                background-size: 100%;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        }
+    }
+}
