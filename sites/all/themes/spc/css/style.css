@@ -11073,6 +11073,9 @@ button.header-menu-btn:focus {
 .overridden-title .pane-title strong {
   color: #FFBC00;
 }
+.page-dataset-suggestion {
+  background: #efefef;
+}
 .dataset-suggestion-content .container {
   position: relative;
   background: #fff;
