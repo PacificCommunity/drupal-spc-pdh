@@ -29,6 +29,7 @@ function spc_dataset_suggestion_form_alter(&$form, &$form_state, $form_id){
   //print $form_id;
   if ($form_id == 'dataset_suggestion_node_form'){
     $form['#validate'][] = 'spc_dataset_suggestion_form_validate';
+    $form['#submit'][] = 'spc_dataset_suggestion_form_submit';
   }
 }
 
@@ -37,6 +38,26 @@ function spc_dataset_suggestion_form_validate(&$form, &$form_state){
   if (!filter_var($suggester_email, FILTER_VALIDATE_EMAIL)) {
     form_set_error('field_suggester_email', 'Email address incorrect.');
   }
+}
+
+function spc_dataset_suggestion_form_submit($form, &$form_state){
+  
+    $message = 'New Dataset suggestion has been added.';
+    // Send the email.
+    $params = array(
+      'subject' => t('New Dataset suggestion'),
+      'body' => check_markup(
+        t($message),
+        'plain_text'
+      ),
+    );
+    
+    //$email = 'data-portal@spc.int';
+    $email = 'sergey.shchedrin@linkdigital.com.au'; //test email
+    
+    drupal_mail('spc_dataset_suggestion', 'dataset_suggestion', $email, language_default(), $params);
+    
+    $form_state['redirect'] = '/dataset-suggestion';
 }
 
 function spc_dataset_suggestion_form(){
