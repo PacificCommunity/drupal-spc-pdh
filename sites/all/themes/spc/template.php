@@ -132,6 +132,14 @@ function spc_preprocess_field(&$vars,$hook) {
     $vars['items'][0]['#prefix'] = '<span id="'.drupal_html_class($target_title).'">';
     $vars['items'][0]['#suffix'] = '</span>';
   }
+  
+  if($vars['element']['#field_name'] == 'field_fa_icon') {
+    $icon_markup = $vars['items'][0]['#markup'];
+    
+    if (strpos($icon_markup, 'fp ') !== false){
+      $vars['items'][0]['#markup'] = str_replace('fa ', ' ', $vars['items'][0]['#markup']);
+    }
+  }
 }
 
 function spc_preprocess_maintenance_page(){
