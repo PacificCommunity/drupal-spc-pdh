@@ -8975,6 +8975,10 @@ button.header-menu-btn:focus {
   font-size: 20px;
   color: #fff;
 }
+.topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item .field-name-field-fa-icon .fp {
+  font-size: 30px;
+  color: #fff;
+}
 .topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item h4 {
   margin-top: 12px;
   margin-bottom: 0;
@@ -8999,6 +9003,9 @@ button.header-menu-btn:focus {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
 .topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item:hover .field-name-field-fa-icon svg {
+  color: #001E73;
+}
+.topics-home .jcarousel-skin-default .jcarousel-list .jcarousel-item:hover .field-name-field-fa-icon .fp {
   color: #001E73;
 }
 .topics-home .jcarousel-next,
