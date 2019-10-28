@@ -35,7 +35,6 @@ function spc_dataset_suggestion_form_alter(&$form, &$form_state, $form_id){
 function spc_dataset_suggestion_form_validate(&$form, &$form_state){
   $suggester_email = $form_state['values']['field_suggester_email']['und'][0]['value'];
   if (!filter_var($suggester_email, FILTER_VALIDATE_EMAIL)) {
-    print_r('Email address incorrect.');
     form_set_error('field_suggester_email', 'Email address incorrect.');
   }
 }
