@@ -24,7 +24,7 @@ function spc_dataset_suggestion_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Dataset Title'),
       'help' => '',
     ),
   );

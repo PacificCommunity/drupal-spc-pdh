@@ -69,19 +69,21 @@ function spc_dataset_suggestion_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'label' => 'Dataset Description',
+    'required' => 1,
     'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
+      'display_summary' => 0,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -113,7 +115,7 @@ function spc_dataset_suggestion_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_suggester_email',
-    'label' => 'suggester email',
+    'label' => 'Email Address',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -126,7 +128,7 @@ function spc_dataset_suggestion_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -154,7 +156,7 @@ function spc_dataset_suggestion_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_suggester_name',
-    'label' => 'suggester name',
+    'label' => 'Your Name',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -167,16 +169,16 @@ function spc_dataset_suggestion_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body');
   t('Comment');
-  t('suggester email');
-  t('suggester name');
+  t('Dataset Description');
+  t('Email Address');
+  t('Your Name');
 
   return $field_instances;
 }

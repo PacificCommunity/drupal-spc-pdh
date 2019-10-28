@@ -110,10 +110,10 @@ function spc_dataset_suggestion_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
@@ -151,7 +151,7 @@ function spc_dataset_suggestion_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_dataset_suggestion';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_dataset_suggestion'] = $strongarm;
 
   $strongarm = new stdClass();
