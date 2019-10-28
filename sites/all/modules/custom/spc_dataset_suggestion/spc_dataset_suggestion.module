@@ -60,6 +60,18 @@ function spc_dataset_suggestion_form_submit($form, &$form_state){
     $form_state['redirect'] = '/dataset-suggestion';
 }
 
+/**
+ * Implements hook_mail for module_name.
+ */
+function spc_dataset_suggestion_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'dataset_suggestion':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
+
 function spc_dataset_suggestion_form(){
     return theme(
     'spc_dataset_suggestion_form',
