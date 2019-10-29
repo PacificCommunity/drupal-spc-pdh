@@ -11126,18 +11126,22 @@ button.header-menu-btn:focus {
   border: 1px solid #0060a6;
   padding: 5px 10px;
   border-radius: 5px;
+  height: 38px;
+  font-weight: 800;
 }
 .dataset-suggestion-content .container .suggestion-form form #edit-actions #edit-submit:hover {
   opacity: 0.8;
 }
 .dataset-suggestion-content .container .suggestion-form form #edit-actions .clear-form {
-  color: #fff;
-  background: #ccc;
+  color: #b2b2b2;
+  background: #f0f0f0;
   padding: 7px 20px;
   border-radius: 5px;
   float: right;
   margin-right: 20px;
   text-decoration: none;
+  height: 38px;
+  font-weight: 800;
 }
 .dataset-suggestion-content .container .suggestion-form form #edit-actions .clear-form:hover {
   opacity: 0.8;
@@ -11161,6 +11165,92 @@ button.header-menu-btn:focus {
   background-size: 100%;
   vertical-align: middle;
   margin-right: 10px;
+}
+.view-dataset-suggestions {
+  margin: 40px 0;
+}
+.view-dataset-suggestions .action-add {
+  border-radius: 5px;
+  background-color: #009fde;
+  display: block;
+  color: #fff;
+  float: right;
+  height: 38px;
+  padding: 9px 20px;
+  text-decoration: none;
+}
+.view-dataset-suggestions .action-add:hover {
+  opacity: 0.8;
+}
+.view-dataset-suggestions .total {
+  float: left;
+  margin-top: 10px;
+}
+.view-dataset-suggestions .view-content {
+  margin-top: 20px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view {
+  margin: 40px 0;
+  border-collapse: separate;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr,
+.view-dataset-suggestions table.dataset-suggestions-view tr > td {
+  background: #fff;
+  height: 100px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:hover td {
+  background: #f1f1f195;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr > th {
+  background: #f8f8f8;
+  padding: 10px;
+  text-align: center;
+}
+.view-dataset-suggestions table.dataset-suggestions-view td,
+.view-dataset-suggestions table.dataset-suggestions-view th {
+  border: solid 1px #c6c6c6;
+  padding: 10px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:nth-child(2n),
+.view-dataset-suggestions table.dataset-suggestions-view td:nth-child(2n),
+.view-dataset-suggestions table.dataset-suggestions-view th:nth-child(2n) {
+  border-right: none;
+  border-left: none;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:first-child,
+.view-dataset-suggestions table.dataset-suggestions-view td:first-child,
+.view-dataset-suggestions table.dataset-suggestions-view th:first-child {
+  border-top-left-radius: 10px;
+  border-right: none;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:first-child,
+.view-dataset-suggestions table.dataset-suggestions-view td:last-child,
+.view-dataset-suggestions table.dataset-suggestions-view th:last-child {
+  border-top-right-radius: 10px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:last-child,
+.view-dataset-suggestions table.dataset-suggestions-view td:first-child,
+.view-dataset-suggestions table.dataset-suggestions-view th:first-child {
+  border-bottom-left-radius: 10px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:last-child,
+.view-dataset-suggestions table.dataset-suggestions-view td:last-child,
+.view-dataset-suggestions table.dataset-suggestions-view th:last-child {
+  border-bottom-right-radius: 10px;
+  border-left: none;
+}
+.view-dataset-suggestions .pager .current {
+  background: #073875;
+  padding: 5px;
+  color: #fff;
+  border-radius: 5px;
+  min-width: 30px;
+  display: inline-block;
+}
+.view-dataset-suggestions .pager li a {
+  border-radius: 5px;
+  border: none;
+  color: #000;
 }
 @media (max-width: 1439px) {
   .data-insights-promoted-group.slick-slider {

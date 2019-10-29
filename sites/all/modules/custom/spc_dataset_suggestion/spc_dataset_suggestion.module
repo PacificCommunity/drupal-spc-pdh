@@ -14,7 +14,7 @@ include_once 'spc_dataset_suggestion.features.inc';
 function spc_dataset_suggestion_menu() {
   $items = [];
 
-  $items['dataset-suggestion'] = [
+  $items['dataset-suggestions/add'] = [
     'title' => t('Dataset suggestion page'),
     'description' => t('Dataset suggestion page'),
     'page callback' => 'spc_dataset_suggestion_form',
@@ -69,13 +69,13 @@ function spc_dataset_suggestion_form_submit($form, &$form_state){
     drupal_mail('spc_dataset_suggestion', 'dataset_suggestion', $email, language_default(), $params);  
 
     drupal_set_message(t('Thank you. Your suggestion has been successfully submitted.'), 'status');
-    drupal_goto('/dataset-suggestion/list');
-    $form_state['redirect'] = '/dataset-suggestion';
+    drupal_goto('/dataset-suggestions');
+    $form_state['redirect'] = '/dataset-suggestions';
     
   } else {
     drupal_set_message(t('Your suggestion not submitted, please try again.'), 'error');
-    drupal_goto('/dataset-suggestion');
-    $form_state['redirect'] = '/dataset-suggestion';
+    drupal_goto('/dataset-suggestions/add');
+    $form_state['redirect'] = '/dataset-suggestions/add';
   }
 }
 
