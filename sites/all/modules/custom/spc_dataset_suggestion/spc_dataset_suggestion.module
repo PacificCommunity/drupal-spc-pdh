@@ -29,6 +29,7 @@ function spc_dataset_suggestion_form_alter(&$form, &$form_state, $form_id){
   //print $form_id;
   if ($form_id == 'dataset_suggestion_node_form'){
     $form['#validate'][] = 'spc_dataset_suggestion_form_validate';
+    $form['#submit'][] = 'spc_dataset_suggestion_form_submit';
   }
 }
 
@@ -36,6 +37,57 @@ function spc_dataset_suggestion_form_validate(&$form, &$form_state){
   $suggester_email = $form_state['values']['field_suggester_email']['und'][0]['value'];
   if (!filter_var($suggester_email, FILTER_VALIDATE_EMAIL)) {
     form_set_error('field_suggester_email', 'Email address incorrect.');
+  }
+}
+
+function spc_dataset_suggestion_form_submit($form, &$form_state){
+  
+  $node = new stdClass();
+  $node->type = "dataset_suggestion";
+  $node->status = 1;
+  $node->language = LANGUAGE_NONE; 
+  
+  node_object_prepare($node);
+  
+  $node->title = $form_state['values']['title'];
+  $node->body[$node->language][0]['value'] = $form_state['values']['body']['und'][0]['value'];
+  $node->field_suggester_name[$node->language][0]['value'] = $form_state['values']['field_suggester_name']['und'][0]['value'];
+  $node->field_suggester_email[$node->language][0]['value'] = $form_state['values']['field_suggester_email']['und'][0]['value'];
+
+  if ($node = node_submit($node)) {
+    node_save($node);
+    $message = 'New Dataset suggestion has been added.';
+    // Send the email.
+    $params = array(
+      'subject' => t('New Dataset suggestion'),
+      'body' => check_markup(
+        t($message),
+        'plain_text'
+      ),
+    );
+    $email = 'data-portal@spc.int';
+    drupal_mail('spc_dataset_suggestion', 'dataset_suggestion', $email, language_default(), $params);  
+
+    drupal_set_message(t('Thank you. Your suggestion has been successfully submitted.'), 'status');
+    drupal_goto('/dataset-suggestion/list');
+    $form_state['redirect'] = '/dataset-suggestion';
+    
+  } else {
+    drupal_set_message(t('Your suggestion not submitted, please try again.'), 'error');
+    drupal_goto('/dataset-suggestion');
+    $form_state['redirect'] = '/dataset-suggestion';
+  }
+}
+
+/**
+ * Implements hook_mail for module_name.
+ */
+function spc_dataset_suggestion_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'dataset_suggestion':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
   }
 }
 
@@ -71,7 +123,7 @@ function spc_dataset_suggestion_content(){
   $output['messages'] = theme('status_messages');
   
   $output['tip']['title'] = 'Tip';
-  $output['tip']['text'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
+  $output['tip']['text'] = 'Example copy: Use this form to let us know what the dataset you would like to make available, but first search the <a href="/dataset-suggestion">Dataset&nbspSuggestions</a> to see if someone else has already requested the same dataset. If you find it there, you can check on its status and add your request by clicking on the upvote button. ';
   
   return $output;
 }
