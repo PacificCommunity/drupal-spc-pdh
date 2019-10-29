@@ -9161,6 +9161,9 @@ button.header-menu-btn:focus {
   font-weight: 400;
   margin-bottom: 55px;
 }
+#mini-panel-data_insights .rtecenter {
+  text-align: center;
+}
 .view-all-link {
   font-size: 15px;
   color: #0091C7;
