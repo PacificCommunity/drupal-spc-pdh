@@ -20,7 +20,7 @@
  * @ingroup views_templates
  */
 ?>
-<table <?php if ($classes): ?> class="<?php print $classes; ?>"<?php endif ?><?php print $attributes; ?>>
+<table <?php if ($classes): ?> class="<?php print $classes; ?> dataset-suggestions-view"<?php endif ?><?php print $attributes; ?>>
    <?php if (!empty($title) || !empty($caption)): ?>
      <caption><?php print $caption . $title; ?></caption>
   <?php endif; ?>
@@ -28,9 +28,11 @@
     <thead>
       <tr>
         <?php foreach ($header as $field => $label): ?>
-          <th <?php if ($header_classes[$field]): ?> class="<?php print $header_classes[$field]; ?>"<?php endif; ?> scope="col">
-            <?php print $label; ?>
-          </th>
+          <?php if ($field != 'title') { ?>
+            <th <?php if ($header_classes[$field]): ?> class="<?php print $header_classes[$field]; ?>"<?php endif; ?> scope="col">
+              <?php print $label; ?>
+            </th>
+          <?php } ?>
         <?php endforeach; ?>
       </tr>
     </thead>
@@ -38,12 +40,28 @@
   <tbody>
     <?php foreach ($rows as $row_count => $row): ?>
       <tr <?php if ($row_classes[$row_count]): ?> class="<?php print implode(' ', $row_classes[$row_count]); ?>"<?php endif; ?>>
+        <?php $dataset = ''; ?>
         <?php foreach ($row as $field => $content): ?>
+          <?php 
+            if ($field == 'title'){
+              $dataset = '<h5>' . $content . '</h5>';
+            } elseif ($field == 'body') {
+              $dataset .=  $content;
+            }
+          ?>
+          <?php if ($field != 'title') { ?>
           <td <?php if ($field_classes[$field][$row_count]): ?> class="<?php print $field_classes[$field][$row_count]; ?>"<?php endif; ?><?php print drupal_attributes($field_attributes[$field][$row_count]); ?>>
-            <?php print $content; ?>
+            <?php 
+              if ($field == 'body'){
+                print $dataset;
+              } else {
+                 print $content;
+              }
+            ?>
           </td>
+          <?php } ?>
         <?php endforeach; ?>
       </tr>
     <?php endforeach; ?>
   </tbody>
-</table>
+</table>  

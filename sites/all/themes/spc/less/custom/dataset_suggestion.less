@@ -99,6 +99,97 @@
         }
     }
 }
-.dataset-suggestions-view {
-    margin: 50px 0; 
+.view-dataset-suggestions{
+    margin: 40px 0;
+    
+    .action-add {
+        border-radius: 5px;
+        background-color: #009fde;
+        display: block;
+        color: #fff;
+        float: right;
+        height: 38px;
+        padding: 9px 20px;
+        text-decoration: none;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .total {
+        float: left;
+        margin-top: 10px;
+    }
+    .view-content {
+        margin-top: 20px;
+    }
+    table.dataset-suggestions-view {
+        margin: 40px 0;
+        border-collapse: separate;
+
+        tr, tr > td {
+            background: #fff;
+            height: 100px;
+        }
+        tr:hover td {
+            background: #f1f1f195;
+        }
+
+        tr >th {
+            background: #f8f8f8;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td, th { 
+            border: solid 1px #c6c6c6;
+            padding: 10px;
+        }
+        tr:nth-child(2n),
+        td:nth-child(2n),
+        th:nth-child(2n) {
+            border-right: none;
+            border-left: none; 
+        }
+        tr:first-child,
+        td:first-child,
+        th:first-child { 
+            border-top-left-radius: 10px;
+            border-right: none; 
+        }
+        tr:first-child,
+        td:last-child,
+        th:last-child { 
+            border-top-right-radius: 10px; 
+        }
+        tr:last-child,
+        td:first-child,
+        th:first-child {
+            border-bottom-left-radius: 10px; 
+        }
+        tr:last-child,
+        td:last-child,
+        th:last-child
+        { 
+            border-bottom-right-radius: 10px;
+            border-left: none; 
+        }
+    }
+    .pager {
+        .current {
+           background: #073875;
+           padding: 5px;
+           color: #fff;
+           border-radius: 5px;
+           min-width: 30px;
+           display: inline-block;
+        }
+        li {
+            a{
+                border-radius: 5px;
+                border: none;
+                color: #000;
+            }
+        }
+    }
+
 }
