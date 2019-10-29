@@ -11091,6 +11091,7 @@ button.header-menu-btn:focus {
 .dataset-suggestion-content .container .suggestion-form form label {
   width: 100%;
   color: #000;
+  margin-top: 20px;
 }
 .dataset-suggestion-content .container .suggestion-form form label:after {
   content: '*';

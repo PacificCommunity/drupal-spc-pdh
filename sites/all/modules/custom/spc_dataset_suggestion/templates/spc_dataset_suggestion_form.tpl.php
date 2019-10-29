@@ -1,6 +1,13 @@
 <div class="bean-banner-with-title">
     <div class="content">
         <div style="" class="banner-with-title dataset-suggestion-header">
+            <div class="breadcrumb-box container">
+              <div class="breadcrumb">
+                  <span class="inline odd first"><a href="/"><?php print t('Home'); ?></a></span> 
+                  <span class="delimiter">&gt;</span> 
+                  <span class="inline even last"><?php print t('Data Insights'); ?></span>
+              </div>
+            </div>
             <div class="title">
                 <h1><?php print $title; ?></h1>
             </div>
