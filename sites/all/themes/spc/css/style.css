@@ -11232,18 +11232,22 @@ button.header-menu-btn:focus {
   border: 1px solid #0060a6;
   padding: 5px 10px;
   border-radius: 5px;
+  height: 38px;
+  font-weight: 800;
 }
 .dataset-suggestion-content .container .suggestion-form form #edit-actions #edit-submit:hover {
   opacity: 0.8;
 }
 .dataset-suggestion-content .container .suggestion-form form #edit-actions .clear-form {
-  color: #fff;
-  background: #ccc;
+  color: #b2b2b2;
+  background: #f0f0f0;
   padding: 7px 20px;
   border-radius: 5px;
   float: right;
   margin-right: 20px;
   text-decoration: none;
+  height: 38px;
+  font-weight: 800;
 }
 .dataset-suggestion-content .container .suggestion-form form #edit-actions .clear-form:hover {
   opacity: 0.8;
@@ -11267,6 +11271,9 @@ button.header-menu-btn:focus {
   background-size: 100%;
   vertical-align: middle;
   margin-right: 10px;
+}
+.dataset-suggestions-view {
+  margin: 50px 0;
 }
 @media (max-width: 1439px) {
   .data-insights-promoted-group.slick-slider {
