@@ -9099,6 +9099,9 @@ button.header-menu-btn:focus {
   font-weight: 400;
   margin-bottom: 55px;
 }
+#mini-panel-data_insights .rtecenter {
+  text-align: center;
+}
 .view-all-link {
   font-size: 15px;
   color: #0091C7;
@@ -9532,8 +9535,8 @@ button.header-menu-btn:focus {
   position: relative;
 }
 #member-countries-block .dropdown .dropdown-list {
-    height: 200px;
-    overflow-y: scroll;
+  height: 200px;
+  overflow-y: scroll;
 }
 #member-countries-block .dropdown.open .btn.dropdown-toggle:after {
   top: 15px;
@@ -10732,47 +10735,57 @@ button.header-menu-btn:focus {
   padding: 10px;
   border-bottom: 1px solid #b5b5b5;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboards_preview,
 .node-dashboards.view-mode-dashboards_preview {
   display: flex;
   justify-content: center;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .group-content,
 .node-dashboards.view-mode-dashboards_preview .group-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .group-content .group-content-right,
 .node-dashboards.view-mode-dashboards_preview .group-content .group-content-right {
   max-width: 175px;
   padding-left: 20px;
   text-align: left;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .group-content .group-content-right .dashboard-title a,
 .node-dashboards.view-mode-dashboards_preview .group-content .group-content-right .dashboard-title a {
   font-size: 13px;
   font-weight: 700;
   color: #1b1b1b;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .group-content .group-content-right .dashboard-description a,
 .node-dashboards.view-mode-dashboards_preview .group-content .group-content-right .dashboard-description a {
   font-size: 12px;
   font-weight: 400;
   color: #404040;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .field-type-image,
 .node-dashboards.view-mode-dashboards_preview .field-type-image {
   border: 1px solid #bdbdbd;
   border-radius: 25px 25px 25px 0;
   padding: 3px 30px;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .field-type-image img,
 .node-dashboards.view-mode-dashboards_preview .field-type-image img {
   width: 120px;
   height: auto;
 }
 @media (max-width: 768px) {
+  .hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .group-content,
   .node-dashboards.view-mode-dashboards_preview .group-content {
     display: block;
     width: 100%;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .group-content .group-content-right,
   .node-dashboards.view-mode-dashboards_preview .group-content .group-content-right {
     display: none;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .field-type-image,
   .node-dashboards.view-mode-dashboards_preview .field-type-image {
     text-align: center;
     width: 100%;
@@ -10781,10 +10794,12 @@ button.header-menu-btn:focus {
     padding: 25px;
     margin: auto;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboards_preview .field-type-image img,
   .node-dashboards.view-mode-dashboards_preview .field-type-image img {
     width: auto;
   }
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight,
 .node-dashboards.view-mode-dashboard_highlight {
   position: relative;
   margin: auto;
@@ -10793,9 +10808,11 @@ button.header-menu-btn:focus {
   justify-content: center;
   align-items: center;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .field-type-image,
 .node-dashboards.view-mode-dashboard_highlight .field-type-image {
   z-index: 1;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .field-type-image img,
 .node-dashboards.view-mode-dashboard_highlight .field-type-image img {
   height: auto;
   max-width: 124px;
@@ -10803,6 +10820,7 @@ button.header-menu-btn:focus {
   border-bottom-right-radius: 13px;
   border-top-right-radius: 13px;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content,
 .node-dashboards.view-mode-dashboard_highlight .group-content {
   padding: 32px 110px 32px 62px;
   border-radius: 13px;
@@ -10813,6 +10831,7 @@ button.header-menu-btn:focus {
   justify-content: space-around;
   align-items: center;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left,
 .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left {
   color: #fff;
   font-size: 25px;
@@ -10821,13 +10840,12 @@ button.header-menu-btn:focus {
   text-align: left;
   padding-left: 30px;
 }
-.hl-dashboard-link .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left {
-	padding-left: 60px;
-}
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left strong,
 .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left strong {
   font-weight: 500;
   color: #ffc72e;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .group-content-right,
 .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-right {
   color: #fff;
   font-size: 13px;
@@ -10836,6 +10854,7 @@ button.header-menu-btn:focus {
   padding-left: 30px;
   text-align: left;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .btn,
 .node-dashboards.view-mode-dashboard_highlight .group-content .btn {
   border-radius: 20px;
   background: #fff;
@@ -10845,9 +10864,11 @@ button.header-menu-btn:focus {
   text-transform: uppercase;
   padding: 5px 25px;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .dashboard-description,
 .node-dashboards.view-mode-dashboard_highlight .group-content .dashboard-description {
   margin-bottom: 15px;
 }
+.hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-chart .chart-static,
 .node-dashboards.view-mode-dashboard_highlight .group-chart .chart-static {
   margin-left: -110px;
   width: 315px;
@@ -10856,10 +10877,12 @@ button.header-menu-btn:focus {
   background-size: contain;
 }
 @media (max-width: 768px) {
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight,
   .node-dashboards.view-mode-dashboard_highlight {
     margin-bottom: 22px;
     flex-direction: column;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content,
   .node-dashboards.view-mode-dashboard_highlight .group-content {
     order: 1;
     padding-right: 70px;
@@ -10868,32 +10891,46 @@ button.header-menu-btn:focus {
     flex-direction: column;
     max-width: 400px;
   }
-  .hl-dashboard-link .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left,
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left,
   .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left {
     padding: 0 17px;
     margin-bottom: 20px;
     text-align: center;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .group-content-right,
   .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-right {
     padding: 0;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .dashboard-description,
   .node-dashboards.view-mode-dashboard_highlight .group-content .dashboard-description {
     display: none;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-content .btn,
   .node-dashboards.view-mode-dashboard_highlight .group-content .btn {
     margin-bottom: 45px;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .field-type-image,
   .node-dashboards.view-mode-dashboard_highlight .field-type-image {
     order: 2;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .field-type-image img,
   .node-dashboards.view-mode-dashboard_highlight .field-type-image img {
     margin: -41px 0 0 0;
     border-radius: 0px;
     border-top-right-radius: 13px;
     border-top-left-radius: 13px;
   }
+  .hl-dashboard-link.node-dashboards.view-mode-dashboard_highlight .group-chart,
   .node-dashboards.view-mode-dashboard_highlight .group-chart {
     display: none;
+  }
+}
+.hl-dashboard-link .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left {
+  padding-left: 60px;
+}
+@media (max-width: 768px) {
+  .hl-dashboard-link .node-dashboards.view-mode-dashboard_highlight .group-content .group-content-left {
+    padding: 0 17px;
   }
 }
 /* dsp */
@@ -11508,3 +11545,4 @@ button.header-menu-btn:focus {
   font-weight: 300;
   font-style: normal;
 }
+/*# sourceMappingURL=style.css.map */
