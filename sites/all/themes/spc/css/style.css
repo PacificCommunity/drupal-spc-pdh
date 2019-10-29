@@ -11317,6 +11317,11 @@ button.header-menu-btn:focus {
   border: solid 1px #c6c6c6;
   padding: 10px;
 }
+.view-dataset-suggestions table.dataset-suggestions-view td h4,
+.view-dataset-suggestions table.dataset-suggestions-view th h4 {
+  font-size: 15px;
+  font-weight: bold;
+}
 .view-dataset-suggestions table.dataset-suggestions-view tr:nth-child(2n),
 .view-dataset-suggestions table.dataset-suggestions-view td:nth-child(2n),
 .view-dataset-suggestions table.dataset-suggestions-view th:nth-child(2n) {
