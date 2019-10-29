@@ -4,8 +4,10 @@
             <div class="breadcrumb-box container">
               <div class="breadcrumb">
                   <span class="inline odd first"><a href="/"><?php print t('Home'); ?></a></span> 
+                  <span class="delimiter">&gt;</span>
+                  <span class="inline odd first"><a href="/dataset-suggestions"><?php print t('Dataset Suggestions'); ?></a></span> 
                   <span class="delimiter">&gt;</span> 
-                  <span class="inline even last"><?php print t('Data Insights'); ?></span>
+                  <span class="inline even last"><?php print t('Add'); ?></span>
               </div>
             </div>
             <div class="title">
