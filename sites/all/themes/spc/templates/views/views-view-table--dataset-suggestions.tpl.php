@@ -44,7 +44,7 @@
         <?php foreach ($row as $field => $content): ?>
           <?php 
             if ($field == 'title'){
-              $dataset = '<h5>' . $content . '</h5>';
+              $dataset = '<h4>' . $content . '</h4>';
             } elseif ($field == 'body') {
               $dataset .=  $content;
             }
