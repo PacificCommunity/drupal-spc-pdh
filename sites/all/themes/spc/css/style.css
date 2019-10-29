@@ -11196,6 +11196,9 @@ button.header-menu-btn:focus {
 .view-dataset-suggestions table.dataset-suggestions-view tr,
 .view-dataset-suggestions table.dataset-suggestions-view tr > td {
   background: #fff;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tbody tr > td {
+  background: #fff;
   height: 100px;
 }
 .view-dataset-suggestions table.dataset-suggestions-view tr:hover td {
