@@ -261,7 +261,7 @@
         // dropping this class is required for re-attaching the behavior
         field.removeClass('autocomplete-processed');
         field.val(
-          '/autocomplete/search/' + event.target.value
+          '/autocomplete/search/' + event.target.value + '/' + form.find('[name="thematic_area"]').val()
         );
         Drupal.behaviors.autocomplete.attach(form[0]);
       });

@@ -146,7 +146,7 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
   $node = menu_get_object();
   $id = _ckan_tweaks_get_thematic_area_from_node($node);
 
-  $form['term']['#autocomplete_path'] = 'autocomplete/search/dataset';
+  $form['term']['#autocomplete_path'] = 'autocomplete/search/dataset/any';
 
   if ($id) {
     $form['thematic_area'] = [

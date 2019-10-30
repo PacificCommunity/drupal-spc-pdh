@@ -141,7 +141,8 @@ function ckan_tweaks_menu() {
   ];
 }
 
-function ckan_discovery_autocomplete($q) {
+function ckan_discovery_autocomplete($area, $q) {
+
   $client = govcms_ckan_client();
   $resp = $client->get('action/discovery_search_suggest', ['q' => $q]);
   if (!$resp->valid) {
@@ -160,18 +161,21 @@ function ckan_discovery_autocomplete($q) {
   drupal_json_output($result);
 }
 
-function spc_drupal_article_autocomplete($q) {
+function spc_drupal_article_autocomplete($area, $q) {
  $matches = array();
-
   if ($q) {
-    $result = db_select('node')
-            ->fields('node', array(
-              'type',
+    $query = db_select('node', 'n')
+            ->fields('n', array(
               'title',
             ))
-            ->condition('type', 'article')
-            ->condition('title', '%' . db_like($q) . '%', 'LIKE')
-            ->range(0, 10)
+            ->condition('n.type', 'article')
+           ->condition('n.title', '%' . db_like($q) . '%', 'LIKE');
+    if ($area) {
+      $query->join('field_data_field_thematic_group', 'tg', 'n.nid = tg.entity_id');
+      $query->join('node', 'ta', 'tg.field_thematic_group_target_id = ta.nid');
+      $query->condition('ta.title', $area);
+    }
+    $result = $query->range(0, 10)
             ->execute();
     foreach ($result as $node) {
       $matches[$node->title] = check_plain($node->title);
