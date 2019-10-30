@@ -7,3 +7,6 @@ sites/*/private
 
 .DS_Store
 /nbproject
+
+node_modules
+package-lock.json
