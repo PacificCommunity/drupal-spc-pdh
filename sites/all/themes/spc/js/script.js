@@ -283,6 +283,17 @@
    */
   Drupal.behaviors.sortDatasetSuggestions = {
     attach: function (context) {
+        
+        $('#suggestion-search-form').on('submit', function(e){
+            e.preventDefault();
+            let key = $(this).find('#suggestion-search').val();
+            console.log(key);
+            
+            $('#edit-body-value').val(key);
+            $('#edit-title').val(key);
+            $('#views-exposed-form-dataset-suggestions-page').submit();
+            
+        });
 
       let sortList = $('.datasets-sorting ul li a');
       $('#sorting-select span').text($(sortList[0]).text());

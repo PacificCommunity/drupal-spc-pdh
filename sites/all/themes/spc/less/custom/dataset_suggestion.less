@@ -101,23 +101,70 @@
 }
 .view-dataset-suggestions{
     margin: 40px 0;
-    
-    .action-add {
-        border-radius: 5px;
-        background-color: #009fde;
-        display: block;
-        color: #fff;
-        float: right;
-        height: 38px;
-        padding: 9px 20px;
-        text-decoration: none;
-        &:hover {
-            opacity: 0.8;
+   
+    .suggestion-search {
+        margin-top: 50px;
+        margin-bottom: 30px;
+
+        .suggestion-search-field {
+            position: relative;
+            width: 70%;
+            float: left;
+            
+            #suggestion-search-submit{
+                position: absolute;
+                top: 6px;
+                right: 20px;
+                background-image: url('../img/sprite/spc_new_sprite.png');
+                background-position: -9px -6px;
+                background-repeat: no-repeat;
+                width: 22px;
+                height: 30px;
+                display: inline-block;
+                background-size: 310%;
+                border: none;
+                background-color: #fff;
+                font-size: 0;
+            }                
+
+            #suggestion-search {
+                width: 100%;
+                padding: 10px 20px;
+                border-radius: 25px;
+                border: 1px solid #ccc;
+            }
+        }
+
+        .action-add {
+            border-radius: 5px;
+            background-color: #009fde;
+            display: block;
+            color: #fff;
+            float: right;
+            height: 38px;
+            padding: 9px 20px;
+            text-decoration: none;
+            &:hover {
+                opacity: 0.8;
+            }
         }
     }
+    
+        
+    .views-exposed-widgets {
+        display: none;
+    }
+    
     .datasets-sorting {
         position: relative;
         float: right;
+
+        label {
+            margin-right: 10px;
+        }
+        .fa-chevron-down {
+            margin-left: 5px;
+        }
         ul {
             position: absolute;
             display: none;
@@ -137,6 +184,7 @@
             }
         }
     }
+
     .total {
         float: left;
         margin-top: 10px;
@@ -145,7 +193,6 @@
         margin-top: 20px;
     }
     table.dataset-suggestions-view {
-        margin: 40px 0;
         border-collapse: separate;
 
         tr, tr > td {

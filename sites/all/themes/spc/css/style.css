@@ -11172,7 +11172,37 @@ button.header-menu-btn:focus {
 .view-dataset-suggestions {
   margin: 40px 0;
 }
-.view-dataset-suggestions .action-add {
+.view-dataset-suggestions .suggestion-search {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.view-dataset-suggestions .suggestion-search .suggestion-search-field {
+  position: relative;
+  width: 70%;
+  float: left;
+}
+.view-dataset-suggestions .suggestion-search .suggestion-search-field #suggestion-search-submit {
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  background-image: url('../img/sprite/spc_new_sprite.png');
+  background-position: -9px -6px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 30px;
+  display: inline-block;
+  background-size: 310%;
+  border: none;
+  background-color: #fff;
+  font-size: 0;
+}
+.view-dataset-suggestions .suggestion-search .suggestion-search-field #suggestion-search {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.view-dataset-suggestions .suggestion-search .action-add {
   border-radius: 5px;
   background-color: #009fde;
   display: block;
@@ -11182,12 +11212,21 @@ button.header-menu-btn:focus {
   padding: 9px 20px;
   text-decoration: none;
 }
-.view-dataset-suggestions .action-add:hover {
+.view-dataset-suggestions .suggestion-search .action-add:hover {
   opacity: 0.8;
+}
+.view-dataset-suggestions .views-exposed-widgets {
+  display: none;
 }
 .view-dataset-suggestions .datasets-sorting {
   position: relative;
   float: right;
+}
+.view-dataset-suggestions .datasets-sorting label {
+  margin-right: 10px;
+}
+.view-dataset-suggestions .datasets-sorting .fa-chevron-down {
+  margin-left: 5px;
 }
 .view-dataset-suggestions .datasets-sorting ul {
   position: absolute;
@@ -11215,7 +11254,6 @@ button.header-menu-btn:focus {
   margin-top: 20px;
 }
 .view-dataset-suggestions table.dataset-suggestions-view {
-  margin: 40px 0;
   border-collapse: separate;
 }
 .view-dataset-suggestions table.dataset-suggestions-view tr,
