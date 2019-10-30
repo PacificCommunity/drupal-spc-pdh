@@ -11185,6 +11185,28 @@ button.header-menu-btn:focus {
 .view-dataset-suggestions .action-add:hover {
   opacity: 0.8;
 }
+.view-dataset-suggestions .datasets-sorting {
+  position: relative;
+  float: right;
+}
+.view-dataset-suggestions .datasets-sorting ul {
+  position: absolute;
+  display: none;
+  background: #fff;
+  width: 200px;
+  right: 0;
+  padding: 0;
+  box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+  border-radius: 10px;
+}
+.view-dataset-suggestions .datasets-sorting ul li {
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+}
+.view-dataset-suggestions .datasets-sorting ul li:hover {
+  background: #f8f8f8;
+}
 .view-dataset-suggestions .total {
   float: left;
   margin-top: 10px;

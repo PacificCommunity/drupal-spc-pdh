@@ -276,6 +276,36 @@
       $('.node-type-thematic-group #ckan-search-form select').niceSelect();
     }
   };
+  
+  /**
+   * Element sortDatasetSuggestions
+   *
+   */
+  Drupal.behaviors.sortDatasetSuggestions = {
+    attach: function (context) {
+
+      let sortList = $('.datasets-sorting ul li a');
+      $('#sorting-select span').text($(sortList[0]).text());
+
+      let searchParams = new URLSearchParams(window.location.search);
+      let sort = searchParams.get('sort');
+      let order = searchParams.get('order');
+      
+      if (sort && order){        
+        sortList.each(function(){
+            if ( $(this).data('sort') == sort && $(this).data('order') == order ){
+                $('#sorting-select span').text($(this).text());
+            }
+        });
+      }
+      
+      $('#sorting-select').on('click', function(e){
+          e.preventDefault();
+          $(this).siblings('ul').toggle();
+      });
+      
+    }
+  };
 
   /**
    * Master results accordion
