@@ -250,6 +250,23 @@
 
   }
 
+  Drupal.behaviors.autocompleteSPC = {
+    attach: function(context) {
+      var form = $('#ckan-search-form', context);
+      form.find('#edit-search-type').on('change', function(event) {
+        // remove old autocomplete listener
+        form.find('#edit-term').unbind();
+
+        var field = form.find('#edit-term-autocomplete');
+        // dropping this class is required for re-attaching the behavior
+        field.removeClass('autocomplete-processed');
+        field.val(
+          '/autocomplete/search/' + event.target.value
+        );
+        Drupal.behaviors.autocomplete.attach(form[0]);
+      });
+    }
+  };
   /**
    * Element niceSelect
    *
