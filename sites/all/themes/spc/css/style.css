@@ -11204,7 +11204,7 @@ button.header-menu-btn:focus {
   height: 100px;
 }
 .view-dataset-suggestions table.dataset-suggestions-view tr:hover td {
-  background: #f1f1f195;
+  background: #f8f8f866;
 }
 .view-dataset-suggestions table.dataset-suggestions-view tr > th {
   background: #f8f8f8;
@@ -11261,6 +11261,38 @@ button.header-menu-btn:focus {
   border-radius: 5px;
   border: none;
   color: #000;
+}
+.view-dataset-suggestions .rate-widget {
+  min-width: 100px;
+  text-align: center;
+}
+.view-dataset-suggestions .rate-widget .upvote,
+.view-dataset-suggestions .rate-widget .result {
+  display: inline-block;
+}
+.view-dataset-suggestions .rate-widget .rate-action {
+  border-radius: 25px;
+  padding: 5px;
+}
+.view-dataset-suggestions .rate-widget .rate-action .upvote {
+  padding: 5px;
+}
+.view-dataset-suggestions .rate-widget .rate-action .upvote .rate-button {
+  font-size: 0;
+}
+.view-dataset-suggestions .rate-widget .rate-action .upvote .rate-button:before {
+  content: '';
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url(../img/spc/upvote.svg);
+}
+.view-dataset-suggestions .rate-widget .rate-action .result {
+  padding: 0 5px;
+  font-size: 16px;
+}
+.view-dataset-suggestions .rate-widget .rate-action:hover {
+  background: #f2f2f2;
 }
 @media (max-width: 1439px) {
   .data-insights-promoted-group.slick-slider {

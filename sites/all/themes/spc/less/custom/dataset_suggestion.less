@@ -136,7 +136,7 @@
             height: 100px;
         }
         tr:hover td {
-            background: #f1f1f195;
+            background: #f8f8f866;
         }
 
         tr >th {
@@ -199,6 +199,40 @@
                 border: none;
                 color: #000;
             }
+        }
+    }
+    .rate-widget {
+        min-width: 100px;
+        text-align: center;
+        
+        .upvote,
+        .result {
+            display: inline-block;
+        }
+        .rate-action {
+            border-radius: 25px;
+            padding: 5px;
+            
+            .upvote {
+                padding: 5px;
+                .rate-button {
+                    font-size: 0;
+                }
+                .rate-button:before {
+                    content: '';
+                    display: inline-block;
+                    width: 17px;
+                    height: 17px;
+                    background: url(../img/spc/upvote.svg);
+                }
+            }
+            .result{
+                padding: 0 5px;
+                font-size: 16px;
+            }
+        }
+        .rate-action:hover{
+            background: #f2f2f2;
         }
     }
 
