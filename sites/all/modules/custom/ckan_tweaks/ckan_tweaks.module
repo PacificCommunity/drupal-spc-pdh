@@ -127,11 +127,17 @@ function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instan
  */
 function ckan_tweaks_menu() {
   return [
-    'ckan/discovery/autocomplete' => [
+    'autocomplete/search/dataset' => [
       'page callback' => 'ckan_discovery_autocomplete',
       'access arguments' => ['access content'],
       'type' => MENU_CALLBACK
+    ],
+    'autocomplete/search/article' => [
+      'page callback' => 'spc_drupal_article_autocomplete',
+      'access arguments' => ['access content'],
+      'type' => MENU_CALLBACK
     ]
+
   ];
 }
 
@@ -152,4 +158,24 @@ function ckan_discovery_autocomplete($q) {
     $result[$item->value] = check_plain($item->value);
   }
   drupal_json_output($result);
+}
+
+function spc_drupal_article_autocomplete($q) {
+ $matches = array();
+
+  if ($q) {
+    $result = db_select('node')
+            ->fields('node', array(
+              'type',
+              'title',
+            ))
+            ->condition('type', 'article')
+            ->condition('title', '%' . db_like($q) . '%', 'LIKE')
+            ->range(0, 10)
+            ->execute();
+    foreach ($result as $node) {
+      $matches[$node->title] = check_plain($node->title);
+    }
+  }
+  drupal_json_output($matches);
 }
