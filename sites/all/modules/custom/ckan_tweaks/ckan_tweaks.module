@@ -118,3 +118,38 @@ function ckan_tweaks_field_formatter_view($entity_type, $entity, $field, $instan
 	}
 	return $element;
 }
+
+
+/**
+ * Implements hook_menu().
+ *
+ *
+ */
+function ckan_tweaks_menu() {
+  return [
+    'ckan/discovery/autocomplete' => [
+      'page callback' => 'ckan_discovery_autocomplete',
+      'access arguments' => ['access content'],
+      'type' => MENU_CALLBACK
+    ]
+  ];
+}
+
+function ckan_discovery_autocomplete($q) {
+  $client = govcms_ckan_client();
+  $resp = $client->get('action/discovery_search_suggest', ['q' => $q]);
+  if (!$resp->valid) {
+    watchdog(
+      'ckan_tweaks',
+      'Cannot autocomplete query <%query>: %status',
+      ['%status' => $resp->status, '%query' => $q],
+      WATCHDOG_WARNING
+    );
+    return [];
+  }
+  $result = [];
+  foreach ($resp->data as $item) {
+    $result[$item->value] = check_plain($item->value);
+  }
+  drupal_json_output($result);
+}
