@@ -9,3 +9,6 @@ sites/all/themes/spc/node_modules/
 
 .DS_Store
 /nbproject
+
+node_modules
+package-lock.json

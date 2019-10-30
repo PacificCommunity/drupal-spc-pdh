@@ -8889,8 +8889,11 @@ button.header-menu-btn:focus {
 #ckan-search-form {
   position: relative;
   width: 494px;
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
+}
+#ckan-search-form input.form-autocomplete {
+  background-image: none;
 }
 #ckan-search-form > div:first-child {
   position: relative;
@@ -11837,4 +11840,3 @@ button.header-menu-btn:focus {
   font-weight: 300;
   font-style: normal;
 }
-/*# sourceMappingURL=style.css.map */
