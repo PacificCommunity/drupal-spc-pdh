@@ -55,18 +55,6 @@
     <?php if ($header): ?>
       <div class="view-header clearfix">
         <?php print $header; ?>
-      <div class="datasets-sorting">
-        <label>Order by</label>
-        <a id="sorting-select" href="#">
-            <span></span>
-            <i class="fa fa-chevron-down"></i></a>
-        <ul>
-            <li><a data-order="value" data-sort="desc" href="/dataset-suggestions?order=value&sort=desc">Most popular first</a></li>
-            <li><a data-order="value" data-sort="asc" href="/dataset-suggestions?order=value&sort=asc">Least popular first</a></li>
-            <li><a data-order="created" data-sort="desc" href="/dataset-suggestions?order=created&sort=desc">Latest first</a></li>
-            <li><a data-order="created" data-sort="asc" href="/dataset-suggestions?order=created&sort=asc">Oldest first</a></li>
-        </ul>
-      </div>
       </div>
     <?php endif; ?>
 
@@ -75,8 +63,6 @@
         <?php print $exposed; ?>
       </div>
     <?php endif; ?>
-      
-    <a class="action-add" href="/dataset-suggestions/add"><?php print t('Suggest a Dataset'); ?></a>
 
     <?php if ($attachment_before): ?>
       <div class="attachment attachment-before">
