@@ -1,7 +1,7 @@
 name = Dashboards content type
 core = 7.x
 package = Features
-version = 7.x-1.17
+version = 7.x-1.18
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = entityreference
@@ -96,5 +96,6 @@ features[variable][] = menu_parent_dashboards
 features[variable][] = node_options_dashboards
 features[variable][] = node_preview_dashboards
 features[variable][] = node_submitted_dashboards
+features[variable][] = pathauto_node_dashboards_pattern
 features[views_view][] = dashboard_goals
 features[views_view][] = dashboards_on_home_page
