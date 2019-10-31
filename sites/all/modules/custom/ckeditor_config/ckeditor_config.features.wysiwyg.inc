@@ -2,13 +2,13 @@
 
 /**
  * @file
- * spc_content_editing.features.wysiwyg.inc
+ * ckeditor_config.features.wysiwyg.inc
  */
 
 /**
  * Implements hook_wysiwyg_default_profiles().
  */
-function spc_content_editing_wysiwyg_default_profiles() {
+function ckeditor_config_wysiwyg_default_profiles() {
   $profiles = array();
 
   // Exported profile: filtered_html.
@@ -74,6 +74,9 @@ function spc_content_editing_wysiwyg_default_profiles() {
         ),
         'imce' => array(
           'imce' => 1,
+        ),
+        'call_to_action_plugin' => array(
+          'call_to_action_button' => 1,
         ),
         'drupal' => array(
           'break' => 1,
