@@ -28,7 +28,7 @@ function loop_menu_main($menu, $menu_layout) {
     }
     
     if (!empty($menu[$key]['#below'])) {
-      $menu_layout .= '<a ' . $link_atributes . ' href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $menu[$key]['#title'] . '<i class="fa fa-chevron-down"></i></a>';
+      $menu_layout .= '<a ' . $link_atributes . ' href="'.$menu[$key]['#href'].'" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">' . $menu[$key]['#title'] . '<i class="fa fa-caret-down"></i></a>';
       $menu_layout .= '<ul class="dropdown-menu">';
       $menu_layout = loop_menu_main($menu[$key]['#below'], $menu_layout);
       $menu_layout .= '</ul>';
