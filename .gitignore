@@ -5,5 +5,7 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 
+sites/all/themes/spc/node_modules/
+
 .DS_Store
 /nbproject

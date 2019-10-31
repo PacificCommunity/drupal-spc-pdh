@@ -51,7 +51,7 @@ function main_layout_default_panels_mini() {
   $display->panels = array();
   $pane = new stdClass();
   $pane->pid = 'new-9249440d-656f-420a-87c3-19268c25088b';
-  $pane->panel = 'two_50_top';
+  $pane->panel = 'two_50_second';
   $pane->type = 'block';
   $pane->subtype = 'bean-partner-logos';
   $pane->shown = TRUE;
@@ -74,7 +74,7 @@ function main_layout_default_panels_mini() {
   $pane->locks = array();
   $pane->uuid = '9249440d-656f-420a-87c3-19268c25088b';
   $display->content['new-9249440d-656f-420a-87c3-19268c25088b'] = $pane;
-  $display->panels['two_50_top'][0] = 'new-9249440d-656f-420a-87c3-19268c25088b';
+  $display->panels['two_50_second'][0] = 'new-9249440d-656f-420a-87c3-19268c25088b';
   $pane = new stdClass();
   $pane->pid = 'new-6fb19fad-fe86-4aa6-aa90-3615809dc482';
   $pane->panel = 'two_50_top';
