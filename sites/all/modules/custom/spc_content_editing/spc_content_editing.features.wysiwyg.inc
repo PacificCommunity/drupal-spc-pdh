@@ -72,6 +72,9 @@ function spc_content_editing_wysiwyg_default_profiles() {
           'Templates' => 1,
           'CopyFormatting' => 1,
         ),
+        'imce' => array(
+          'imce' => 1,
+        ),
         'drupal' => array(
           'break' => 1,
         ),
@@ -164,6 +167,9 @@ function spc_content_editing_wysiwyg_default_profiles() {
           'About' => 1,
           'Templates' => 1,
           'CopyFormatting' => 1,
+        ),
+        'imce' => array(
+          'imce' => 1,
         ),
         'call_to_action_plugin' => array(
           'call_to_action_button' => 1,

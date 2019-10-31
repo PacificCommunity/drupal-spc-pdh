@@ -2,5 +2,7 @@
 
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the SPC Content Editing feature.
  */
+
+include_once 'spc_content_editing.features.inc';
