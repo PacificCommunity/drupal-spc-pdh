@@ -46,5 +46,14 @@ function spc_dataset_suggestion_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'view rate results page'.
+  $permissions['view rate results page'] = array(
+    'name' => 'view rate results page',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rate',
+  );
+
   return $permissions;
 }

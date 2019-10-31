@@ -164,6 +164,59 @@ function spc_dataset_suggestion_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'rate_widgets';
+  $strongarm->value = array(
+    1 => (object) array(
+      'name' => 'suggestion_rate',
+      'tag' => 'vote',
+      'title' => 'Suggestion Rate',
+      'node_types' => array(
+        0 => 'dataset_suggestion',
+      ),
+      'comment_types' => array(),
+      'options' => array(
+        0 => array(
+          0 => 1,
+          1 => '+1',
+        ),
+        1 => array(
+          0 => -1,
+          1 => '-1',
+        ),
+      ),
+      'template' => 'number_up_down',
+      'node_display' => '2',
+      'teaser_display' => FALSE,
+      'comment_display' => '2',
+      'node_display_mode' => '1',
+      'teaser_display_mode' => '1',
+      'comment_display_mode' => '1',
+      'roles' => array(
+        3 => '3',
+        1 => '1',
+        2 => '2',
+        4 => '4',
+        5 => '5',
+      ),
+      'allow_voting_by_author' => 1,
+      'noperm_behaviour' => '3',
+      'displayed' => '3',
+      'displayed_just_voted' => '1',
+      'description' => '',
+      'description_in_compact' => FALSE,
+      'delete_vote_on_second_click' => '0',
+      'use_source_translation' => TRUE,
+      'value_type' => 'points',
+      'theme' => 'rate_template_number_up_down',
+      'css' => 'sites/all/modules/contrib/rate/templates/number-up-down/number-up-down.css',
+      'translate' => FALSE,
+    ),
+  );
+  $export['rate_widgets'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'save_continue_dataset_suggestion';
   $strongarm->value = 'Save and add fields';
   $export['save_continue_dataset_suggestion'] = $strongarm;
