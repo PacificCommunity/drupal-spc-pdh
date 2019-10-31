@@ -11178,8 +11178,23 @@ button.header-menu-btn:focus {
 }
 .view-dataset-suggestions .suggestion-search .suggestion-search-field {
   position: relative;
-  width: 70%;
   float: left;
+  width: 80%;
+}
+@media (max-width: 1200px) {
+  .view-dataset-suggestions .suggestion-search .suggestion-search-field {
+    width: 70%;
+  }
+}
+@media (max-width: 700px) {
+  .view-dataset-suggestions .suggestion-search .suggestion-search-field {
+    width: 60%;
+  }
+}
+@media (max-width: 530px) {
+  .view-dataset-suggestions .suggestion-search .suggestion-search-field {
+    width: 100%;
+  }
 }
 .view-dataset-suggestions .suggestion-search .suggestion-search-field #suggestion-search-submit {
   position: absolute;
@@ -11214,6 +11229,16 @@ button.header-menu-btn:focus {
 }
 .view-dataset-suggestions .suggestion-search .action-add:hover {
   opacity: 0.8;
+}
+.view-dataset-suggestions .suggestion-search .action-add .fa-plus {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  color: #009fde;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  padding: 2px;
 }
 .view-dataset-suggestions .views-exposed-widgets {
   display: none;
@@ -11252,6 +11277,7 @@ button.header-menu-btn:focus {
 }
 .view-dataset-suggestions .view-content {
   margin-top: 20px;
+  overflow-x: scroll;
 }
 .view-dataset-suggestions table.dataset-suggestions-view {
   border-collapse: separate;
@@ -11349,6 +11375,9 @@ button.header-menu-btn:focus {
   width: 17px;
   height: 17px;
   background: url(../img/spc/upvote.svg);
+}
+.view-dataset-suggestions .rate-widget .rate-action .voted .rate-button:before {
+  background: url(../img/spc/voted.svg);
 }
 .view-dataset-suggestions .rate-widget .rate-action .result {
   padding: 0 5px;
