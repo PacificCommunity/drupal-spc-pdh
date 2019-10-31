@@ -191,7 +191,6 @@ function spc_dataset_suggestion_views_default_views() {
   $handler->display->display_options['fields']['value']['label'] = 'Votes';
   $handler->display->display_options['fields']['value']['alter']['text'] = '[value]';
   $handler->display->display_options['fields']['value']['precision'] = '0';
-  $handler->display->display_options['fields']['value']['appearance'] = 'rate_views_widget_compact_disabled';
   /* Field: Content: Email Address */
   $handler->display->display_options['fields']['field_suggester_email']['id'] = 'field_suggester_email';
   $handler->display->display_options['fields']['field_suggester_email']['table'] = 'field_data_field_suggester_email';
