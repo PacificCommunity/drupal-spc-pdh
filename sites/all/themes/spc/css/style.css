@@ -11262,6 +11262,7 @@ button.header-menu-btn:focus {
   padding: 0;
   box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
   border-radius: 10px;
+  z-index: 1;
 }
 .view-dataset-suggestions .datasets-sorting ul li {
   list-style: none;
@@ -11860,3 +11861,4 @@ button.header-menu-btn:focus {
   font-weight: 300;
   font-style: normal;
 }
+/*# sourceMappingURL=style.css.map */
