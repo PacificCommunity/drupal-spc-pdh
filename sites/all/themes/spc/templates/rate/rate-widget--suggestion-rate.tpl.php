@@ -40,7 +40,13 @@
 ?>
 
 <div class="rate-action">
-  <div class="upvote"><?php print $buttons[0]; ?></div>
-  <div class="result"><?php print  $results['rating']; ?></div>
+  <div class="upvote  <?php  ($info)? print 'voted': '' ?> ">
+    <?php print $buttons[0]; ?>
+  </div>
+  <div class="result">
+    <?php print  $results['rating']; ?>
+  </div>
 </div>
-<div class="rate-info"><?php print $info; ?></div>
+<div class="rate-info">
+  <?php //print $info; ?>
+</div>
