@@ -55,7 +55,7 @@
           </div>
 
           <div class="country-name">
-              <a href="/health-dashboard/country/<?php print $country['id']; ?>"><?php print $country['title']; ?></a>
+              <a href="<?php echo HEALTH_DASHBOARD_URL; ?>/country/<?php print $country['id']; ?>"><?php print $country['title']; ?></a>
           </div>
         </div>   
         <?php endforeach;?>  
@@ -68,7 +68,7 @@
             <?php foreach ($data['indicator_detales'] as $indicator_key => $indicator): ?>
               <?php if ($indicator['indicator-category'] == $data['current_category']['id']): ?>
                 <div class="indicator-title">
-                    <a data-name="<?php print $indicator_key; ?>" href="/health-dashboard/<?php print $indicator['indicator-category']; ?>/<?php print $indicator_key; ?>">
+                    <a data-name="<?php print $indicator_key; ?>" href="<?php echo HEALTH_DASHBOARD_URL; ?>/<?php print $indicator['indicator-category']; ?>/<?php print $indicator_key; ?>">
                     <?php print $indicator['code'] .'. '. $indicator['title']; ?>
                   </a>
                 </div>
@@ -109,7 +109,7 @@
           <?php foreach ($data['indicator_detales'] as $indicator_key => $indicator): ?>
             <?php if ($indicator['indicator-category'] == $data['current_category']['id']): ?>
               <div class="indicator-title">
-                  <a data-name="<?php print $indicator_key; ?>" href="/health-dashboard/<?php print $indicator['indicator-category']; ?>/<?php print $indicator_key; ?>">
+                  <a data-name="<?php print $indicator_key; ?>" href="<?php echo HEALTH_DASHBOARD_URL; ?>/<?php print $indicator['indicator-category']; ?>/<?php print $indicator_key; ?>">
                   <?php print $indicator['code'] .'. '. $indicator['title']; ?>
                 </a>
               </div>
@@ -170,7 +170,7 @@
         <?php $current = 'current'?>
       <?php endif; ?>
       <div class="category-item <?php print $current ?>">
-          <a href="/health-dashboard/<?php print $category_key; ?>"><?php print $category['#title'] ?></a>
+          <a href="<?php echo HEALTH_DASHBOARD_URL; ?>/<?php print $category_key; ?>"><?php print $category['#title'] ?></a>
       </div>    
     <?php endforeach; ?>
     </div>    

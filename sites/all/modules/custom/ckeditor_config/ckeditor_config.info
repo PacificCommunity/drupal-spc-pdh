@@ -2,6 +2,7 @@ name = Wysiwyg config
 core = 7.x
 package = Site Configurations
 version = 7.x-1.07
+version = 7.x-1.06
 project = ckeditor_config
 dependencies[] = ctools
 dependencies[] = features
