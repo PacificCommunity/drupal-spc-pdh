@@ -1,0 +1,19 @@
+<?php
+
+ function sps_wysiwyg_plugin_wysiwyg_plugin($editor, $version) {
+ 
+  switch ($editor) {
+   case 'ckeditor':
+    return array(
+     'call_to_action_plugin' => array(
+      'path' => drupal_get_path('module', 'sps_wysiwyg_plugin') . '/call_to_action_plugin',
+      'buttons' => array(
+       'call_to_action_button' => t('Call to Action'),
+      ),
+      'load' => TRUE,
+     ),
+    );
+    break;
+  }
+  
+ }

@@ -5,7 +5,7 @@
 
 
 function spc_preprocess_html(&$vars) {
-  //  kpr($vars['content']);
+  drupal_add_css('https://fonts.googleapis.com/css?family=Roboto&display=swap', array('type' => 'external'));
 }
 
 function spc_preprocess_page(&$vars,$hook) {
@@ -146,6 +146,14 @@ function spc_preprocess_field(&$vars, $hook) {
     $target_title = $vars['element']['#items'][0]['value'];
     $vars['items'][0]['#prefix'] = '<span id="'.drupal_html_class($target_title).'">';
     $vars['items'][0]['#suffix'] = '</span>';
+  }
+  
+  if($vars['element']['#field_name'] == 'field_fa_icon') {
+    $icon_markup = $vars['items'][0]['#markup'];
+    
+    if (strpos($icon_markup, 'fp ') !== false){
+      $vars['items'][0]['#markup'] = str_replace('fa ', ' ', $vars['items'][0]['#markup']);
+    }
   }
 }
 
