@@ -5,12 +5,14 @@
  * Code for the Education Dashboard page content.
  */
 
+define('EDUCATION_DASHBOARD_URL', '/dashboard/education-dashboard');
+
 /**
  * Implementation of hook_init().
  */
 function spc_education_dashboard_init(){
   $path = current_path();
-  if($path == 'education-dashboard'){
+  if($path == 'dashboard/education-dashboard'){
     //including jquery-autocomplete library
     drupal_add_css(
       drupal_get_path('module', 'spc_education_dashboard') . '/lib/jquery-autocomplete/jquery-autocomplete.css',

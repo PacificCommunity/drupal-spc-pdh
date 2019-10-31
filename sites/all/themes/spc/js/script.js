@@ -509,5 +509,42 @@ $( document ).ready(function() {
 
 });
 
+  Drupal.behaviors.lazyLoader = {
+    attach: function (context) {
+      $( document, context ).ready(function() {
 
+        const lazyDiv = $('div.lazy-load');
+        lazyDiv.each(function(){
+            $(this).css({
+                'background': 'url(' + $(this).attr('data-background') + ')',
+                'background-position-x': $(this).attr('data-sx'),
+                'background-position-y': $(this).attr('data-sy'),
+                'background-repeat': 'no-repeat'
+            });
+
+        });
+
+        const lazyImg = $('img.lazy-load');
+        lazyImg.each(function(){
+            $(this).attr(
+                'src', $(this).attr('data-src')
+            ).css({
+                'background': 'none'
+            });
+        });
+        
+        const lazyIframe = $('iframe.lazy-load');
+        lazyIframe.each(function(){
+            $(this).attr(
+                'src', $(this).attr('data-src')
+            ).css({
+                'background': 'none'
+            });
+        });        
+        
+      });
+    }
+  };
+  
 })(jQuery);
+

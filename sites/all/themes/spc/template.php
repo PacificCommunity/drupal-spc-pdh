@@ -78,15 +78,30 @@ function spc_preprocess_block(&$vars, $hook) {
 
 }
 
-function spc_preprocess_node(&$vars,$hook) {
+function spc_preprocess_node(&$vars, $hook) {
+  //kpr($vars['content']);
+  $node = $vars['node'];
+  switch ($node->type) {
+    case 'article':
+      switch ($vars['view_mode']) {
+        case 'full':
+          if (!empty($node->field_syndicated_id)){
+            $body = $vars['content']['body'][0]['#markup'];
+            $vars['content']['body'][0]['#markup'] = substr($body, 0, strpos($body, '</p>'));            
+          } else {
+            $vars['content']['field_tags']['#access'] = false;
+            $vars['content']['node_link']['#access'] = false;
+          }
+      break;
+    }
+  }
+}
+
+function spc_preprocess_comment(&$vars, $hook) {
   //  kpr($vars['content']);
 }
 
-function spc_preprocess_comment(&$vars,$hook) {
-  //  kpr($vars['content']);
-}
-
-function spc_preprocess_field(&$vars,$hook) {
+function spc_preprocess_field(&$vars, $hook) {
   //  kpr($vars['content']);
   //add class to a specific field
   switch ($vars['element']['#field_name']) {
@@ -192,7 +207,21 @@ function spc_theme($existing, $type, $theme, $path)
       ]
     ];
   }
-  return [];
+  
+  $items['user_login'] = array(
+    'render element' => 'form',
+    'path' => drupal_get_path('theme', 'spc') . '/templates/pages',
+    'template' => 'user-login',
+    'preprocess functions' => array(
+       'spc_preprocess_user_login'
+    ),
+  );
+  
+  return $items;
+}
+
+function spc_preprocess_user_login(&$vars) {
+  $vars['messages'] = drupal_get_messages();
 }
 
 function spc_preprocess_entity(&$variables) {
@@ -259,6 +288,59 @@ function spc_preprocess_views_view_fields(&$vars) {
     }
     $vars['row_header'] .= '<div class="field-content arrow"><span class="icon"></span></div>';
     $vars['row_label'] .= '<span class="header-empty"></span>';
+  }
+  
+  if ($vars['view']->name == 'data_insights_promoted'){
+    $preview = $vars['fields']['field_data_insights_preview']->content;
+    
+    $img_pos = strpos($preview, '<img');
+    if ($img_pos !== false){
+      $new_preview = substr_replace($preview, 'class="lazy-load"', $img_pos + 5, 0);
+      $vars['fields']['field_data_insights_preview']->content = $new_preview;
+    }
+    
+    $iframe_pos = strpos($preview, '<iframe');
+    if ($iframe_pos !== false){
+      $new_preview = substr_replace($preview, 'class="lazy-load"', $iframe_pos + 8, 0);
+      $vars['fields']['field_data_insights_preview']->content = $new_preview;
+    }
+    
+  }
+}
+
+function spc_preprocess_views_view_unformatted(&$vars){
+  if ($vars['view']->name == 'data_insights_list_page'){
+    $rows = $vars['rows'];
+    
+    foreach($rows as $key => $row){
+      $img_pos = strpos($row, '<img');
+      if ($img_pos !== false){
+        
+        $pattern = '(src=".+")';
+        preg_match($pattern, $row, $matches);
+        $row = preg_replace($pattern, 'src=""', $row);
+        
+        $src = explode('=', $matches[0]);
+        $lazy = 'class="lazy-load"' . ' data-src=' . $src[1];
+        $new_preview = substr_replace($row, $lazy, $img_pos + 5, 0);
+        
+        $vars['rows'][$key] = $new_preview;        
+      }
+
+      $iframe_pos = strpos($row, '<iframe');
+      if ($iframe_pos !== false){
+        
+        $pattern = '(src=".+" )';
+        preg_match($pattern, $row, $matches);
+        $row = preg_replace($pattern, 'src=""', $row);
+        
+        $src = explode('=', $matches[0]);
+        $lazy = 'class="lazy-load"' . ' data-src=' . $src[1]; 
+        
+        $new_preview = substr_replace($row, $lazy, $iframe_pos + 8, 0);
+        $vars['rows'][$key] = $new_preview;
+      }   
+    }
   }
 }
 
