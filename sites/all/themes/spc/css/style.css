@@ -7746,6 +7746,7 @@ body {
 }
 #header #main-menu ul li.dropdown:hover .dropdown-menu {
   display: block;
+  margin-top: -1px;
 }
 #header #main-menu .dropdown-menu {
   margin: 0px;
