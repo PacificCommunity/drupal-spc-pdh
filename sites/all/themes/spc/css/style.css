@@ -11382,8 +11382,13 @@ button.header-menu-btn:focus {
   margin-top: 10px;
 }
 .view-dataset-suggestions .view-content {
+  position: relative;
   margin-top: 20px;
-  overflow-x: scroll;
+}
+@media (max-width: 768px) {
+  .view-dataset-suggestions .view-content {
+    overflow-x: scroll;
+  }
 }
 .view-dataset-suggestions table.dataset-suggestions-view {
   border-collapse: separate;

@@ -209,8 +209,11 @@
         margin-top: 10px;
     }
     .view-content {
+        position: relative;
         margin-top: 20px;
-        overflow-x: scroll;
+        @media (max-width: 768px) {
+            overflow-x: scroll;
+        }
     }
     table.dataset-suggestions-view {
         border-collapse: separate;
