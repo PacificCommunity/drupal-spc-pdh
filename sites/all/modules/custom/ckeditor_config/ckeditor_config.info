@@ -11,6 +11,7 @@ dependencies[] = imce_wysiwyg
 dependencies[] = strongarm
 dependencies[] = token_filter
 dependencies[] = wysiwyg
+dependencies[] = sps_wysiwyg_plugin
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[filter][] = filtered_html
