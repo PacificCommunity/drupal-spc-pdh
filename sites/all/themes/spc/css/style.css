@@ -7744,6 +7744,9 @@ body {
 #header #main-menu ul li.dropdown:hover > a {
   color: #000;
 }
+#header #main-menu ul li.dropdown:hover .dropdown-menu {
+  display: block;
+}
 #header #main-menu .dropdown-menu {
   margin: 0px;
   padding: 0px;
