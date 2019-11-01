@@ -11405,6 +11405,10 @@ button.header-menu-btn:focus {
 .view-dataset-suggestions table.dataset-suggestions-view thead tr {
   height: 50px;
 }
+.view-dataset-suggestions table.dataset-suggestions-view thead tr a {
+  pointer-events: none;
+  color: #000;
+}
 .view-dataset-suggestions table.dataset-suggestions-view tbody tr {
   height: 100px;
 }
