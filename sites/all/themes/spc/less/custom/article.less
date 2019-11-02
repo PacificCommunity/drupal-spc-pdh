@@ -74,6 +74,33 @@
                 }
             }
         }
+        .field-type-taxonomy-term-reference {
+            display: inline-block;
+            .field-items {
+                display: inline-block;
+                .field-item {
+                    display: inline-block;
+                    color: #191a1b;
+                    font-weight: 300;
+                }
+                .field-item:after {
+                    content: ',';
+                    display: inline;
+                }
+            }
+        }
+        .field-type-taxonomy-term-reference:before {
+            content: '';
+            display: inline-block;
+            background-image: url(../img/spc_new/tag.png);
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 20px;
+            background-size: 100%;
+            position: relative;
+            top: 5px;
+            margin-right: 5px;
+        }
     }
     .body-text {
         font-weight: 300;

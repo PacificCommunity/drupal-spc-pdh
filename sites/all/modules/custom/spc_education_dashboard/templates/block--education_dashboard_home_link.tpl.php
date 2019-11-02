@@ -19,13 +19,13 @@
                     <?php print t('An overview, based on available comparable data, of the current status on education in the Pacific to provide an evidence base around key education indicators.'); ?>
                 </div>
                 <div class="field field-type-ds">
-                    <a href="/education-dashboard" class="banner-button btn"><?php print t('View DASHBOARD'); ?></a>        
+                    <a href="<?php echo EDUCATION_DASHBOARD_URL; ?>" class="banner-button btn"><?php print t('View DASHBOARD'); ?></a>        
                 </div>
             </div>
 
         </div>
         <div class="group-chart">
-            <div class="chart-static" style="background: url(/sites/all/modules/custom/spc_education_dashboard/img/education-home.svg) 50% 50% no-repeat"></div>
+            <div class="chart-static lazy-load" data-background="/sites/all/themes/spc/img/sprite/spc_sprite.png" data-sx="-331px" data-sy="-972px"></div>
         </div>
         
     </div>        

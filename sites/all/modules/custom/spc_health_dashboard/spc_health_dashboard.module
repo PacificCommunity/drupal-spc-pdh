@@ -1,12 +1,12 @@
 <?php
 
-define('HEALTH_DASHBOARD_URL', '/health-dashboard');
+define('HEALTH_DASHBOARD_URL', '/dashboard/health-dashboard');
 
 /**
  * Implementation of hook_init().
  */
 function spc_health_dashboard_init() {
-  if (arg(0) == 'health-dashboard') {
+  if (arg(1) == 'health-dashboard') {
     drupal_add_css(
       drupal_get_path('module', 'spc_health_dashboard') . '/css/spc_health_dashboard.css',
       ['group' => CSS_DEFAULT, 'every_page' => TRUE]
@@ -38,7 +38,7 @@ function spc_health_dashboard_init() {
 function spc_health_dashboard_menu() {
   $items = [];
 
-  $items['health-dashboard'] = [
+  $items['dashboard/health-dashboard'] = [
     'title' => t('Health dashboard home page'),
     'description' => t('Health dashboard home page'),
     'page callback' => 'spc_health_dashboard_home_page',
@@ -47,31 +47,31 @@ function spc_health_dashboard_menu() {
     'type' => MENU_CALLBACK,
   ];
 
-  $items['health-dashboard/%'] = [
+  $items['dashboard/health-dashboard/%'] = [
     'title' => t('Health dashboard'),
     'description' => t('Health dashboard'),
     'page callback' => 'spc_health_dashboard_pages',
-    'page arguments' => [1],
+    'page arguments' => [2],
     'access callback' => TRUE,
     'file' => 'inc/dashboard-categories.inc',
     'type' => MENU_CALLBACK,
   ];
 
-  $items['health-dashboard/%/%'] = [
+  $items['dashboard/health-dashboard/%/%'] = [
     'title' => t('Health dashboard'),
     'description' => t('Health dashboard'),
     'page callback' => 'spc_health_dashboard_pages',
-    'page arguments' => [1, 2],
+    'page arguments' => [2, 3],
     'access callback' => TRUE,
     'file' => 'inc/dashboard-categories.inc',
     'type' => MENU_CALLBACK,
   ];
 
-  $items['health-dashboard/country/%'] = [
+  $items['dashboard/health-dashboard/country/%'] = [
     'title' => t('Country'),
     'description' => t('Health dashboard - country'),
     'page callback' => 'spc_health_dashboard_country',
-    'page arguments' => [2],
+    'page arguments' => [3],
     'access callback' => TRUE,
     'file' => 'inc/dashboard-countries.inc',
     'type' => MENU_CALLBACK,

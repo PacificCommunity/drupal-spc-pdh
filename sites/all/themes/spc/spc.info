@@ -45,6 +45,7 @@ stylesheets[all][] = css/footer_css/footer.css
 stylesheets[all][] = css/jquery-ui.min.css
 stylesheets[all][] = css/accordion.css
 stylesheets[all][] = css/chosen.min.css
+stylesheets[all][] = css/social-share.css
 
 ;-------------- CSS FOAD -------------
 ;stylesheets[all][] = donteverloadmeagain.css
@@ -86,6 +87,8 @@ scripts[] = js/script.js
 ; jQuery-ui 1.11.4 include accordion plugin only
 scripts[] = js/jquery-ui.min.js
 scripts[] = js/chosen.jquery.min.js
+
+scripts[] = js/social-share.js
 
 ;-------------- Panel layouts --------------
 plugins[panels][styles] = plugins/styles
