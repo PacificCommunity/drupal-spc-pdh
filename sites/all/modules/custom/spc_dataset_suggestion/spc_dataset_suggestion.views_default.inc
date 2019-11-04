@@ -80,7 +80,7 @@ function spc_dataset_suggestion_views_default_views() {
     ),
     'created' => array(
       'sortable' => 1,
-      'default_sort_order' => 'asc',
+      'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -197,7 +197,7 @@ function spc_dataset_suggestion_views_default_views() {
   $handler->display->display_options['fields']['field_suggester_email']['field'] = 'field_suggester_email';
   $handler->display->display_options['fields']['field_suggester_email']['label'] = 'Send Email';
   $handler->display->display_options['fields']['field_suggester_email']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_suggester_email']['alter']['text'] = '<a href="mailto:[field_suggester_email-value]" title="Send email" class="views-ajax-processed-processed">Send email</a>';
+  $handler->display->display_options['fields']['field_suggester_email']['alter']['text'] = '<a href="mailto:[field_suggester_email-value]" title="Send email" class="views-ajax-processed-processed" target="_blank">Send email</a>';
   $handler->display->display_options['fields']['field_suggester_email']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_suggester_email']['alter']['path'] = 'mailto:[field_suggester_email-value]';
   $handler->display->display_options['fields']['field_suggester_email']['alter']['alt'] = 'Send email';
