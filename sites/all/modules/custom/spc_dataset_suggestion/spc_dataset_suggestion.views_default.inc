@@ -43,7 +43,7 @@ function spc_dataset_suggestion_views_default_views() {
     'body' => 'body',
     'created' => 'created',
   );
-  $handler->display->display_options['style_options']['default'] = 'created';
+  $handler->display->display_options['style_options']['default'] = 'value';
   $handler->display->display_options['style_options']['info'] = array(
     'value' => array(
       'sortable' => 1,
@@ -162,12 +162,12 @@ function spc_dataset_suggestion_views_default_views() {
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'Y/m/d';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'insights_date_format';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Sort';
+  /* Sort criterion: Vote results: Value */
+  $handler->display->display_options['sorts']['value']['id'] = 'value';
+  $handler->display->display_options['sorts']['value']['table'] = 'votingapi_cache';
+  $handler->display->display_options['sorts']['value']['field'] = 'value';
+  $handler->display->display_options['sorts']['value']['relationship'] = 'votingapi_cache';
+  $handler->display->display_options['sorts']['value']['coalesce'] = 0;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
