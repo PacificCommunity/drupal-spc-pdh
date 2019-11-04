@@ -106,6 +106,56 @@ function home_page_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_center'.
+  $field_bases['field_center'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_center',
+    'indexes' => array(
+      'bbox' => array(
+        0 => 'top',
+        1 => 'bottom',
+        2 => 'left',
+        3 => 'right',
+      ),
+      'bottom' => array(
+        0 => 'bottom',
+      ),
+      'centroid' => array(
+        0 => 'lat',
+        1 => 'lon',
+      ),
+      'geohash' => array(
+        0 => 'geohash',
+      ),
+      'lat' => array(
+        0 => 'lat',
+      ),
+      'left' => array(
+        0 => 'left',
+      ),
+      'lon' => array(
+        0 => 'lon',
+      ),
+      'right' => array(
+        0 => 'right',
+      ),
+      'top' => array(
+        0 => 'top',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'geofield',
+    'settings' => array(
+      'backend' => 'default',
+      'srid' => 4326,
+    ),
+    'translatable' => 0,
+    'type' => 'geofield',
+  );
+
   // Exported field_base: 'field_country_data_background'.
   $field_bases['field_country_data_background'] = array(
     'active' => 1,
@@ -126,6 +176,27 @@ function home_page_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_country_tag'.
+  $field_bases['field_country_tag'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_country_tag',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_dashboards_background'.
@@ -170,6 +241,32 @@ function home_page_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_eez'.
+  $field_bases['field_eez'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_eez',
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'hide_initial_item' => 0,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
   );
 
   // Exported field_base: 'field_mcountries'.
@@ -315,6 +412,25 @@ function home_page_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_polygon'.
+  $field_bases['field_polygon'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_polygon',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_show'.

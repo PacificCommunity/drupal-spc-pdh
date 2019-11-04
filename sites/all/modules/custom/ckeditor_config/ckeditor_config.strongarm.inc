@@ -19,12 +19,12 @@ function ckeditor_config_strongarm() {
     1 => array(
       'name' => 'User-1',
       'usertab' => 1,
-      'filesize' => 0,
-      'quota' => 0,
-      'tuquota' => 0,
+      'filesize' => '0',
+      'quota' => '0',
+      'tuquota' => '0',
       'extensions' => '*',
       'dimensions' => '1200x1200',
-      'filenum' => 0,
+      'filenum' => '0',
       'directories' => array(
         0 => array(
           'name' => '.',
@@ -34,6 +34,8 @@ function ckeditor_config_strongarm() {
           'thumb' => 1,
           'delete' => 1,
           'resize' => 1,
+          'mkdir' => 1,
+          'rmdir' => 0,
         ),
       ),
       'thumbnails' => array(
@@ -56,6 +58,7 @@ function ckeditor_config_strongarm() {
           'suffix' => '',
         ),
       ),
+      'mkdirnum' => '0',
     ),
     2 => array(
       'name' => 'Basic Profile',
@@ -63,7 +66,7 @@ function ckeditor_config_strongarm() {
       'filesize' => '10',
       'quota' => '0',
       'tuquota' => '0',
-      'extensions' => '*',
+      'extensions' => 'pdf jpg jpeg png csv xlsx xls doc docx pptx',
       'dimensions' => '1200x1200',
       'filenum' => '1',
       'directories' => array(
@@ -75,15 +78,19 @@ function ckeditor_config_strongarm() {
           'thumb' => 1,
           'delete' => 1,
           'resize' => 1,
+          'mkdir' => 1,
+          'rmdir' => 1,
         ),
         1 => array(
           'name' => '.',
-          'subnav' => 0,
+          'subnav' => 1,
           'browse' => 1,
           'upload' => 0,
           'thumb' => 0,
           'delete' => 0,
           'resize' => 0,
+          'mkdir' => 0,
+          'rmdir' => 0,
         ),
       ),
       'thumbnails' => array(
@@ -94,6 +101,7 @@ function ckeditor_config_strongarm() {
           'suffix' => '',
         ),
       ),
+      'mkdirnum' => '2',
     ),
   );
   $export['imce_profiles'] = $strongarm;
@@ -105,28 +113,23 @@ function ckeditor_config_strongarm() {
   $strongarm->value = array(
     3 => array(
       'weight' => '0',
-      'public_pid' => 0,
-      'private_pid' => 0,
+      'public_pid' => '1',
     ),
     4 => array(
       'weight' => '0',
       'public_pid' => 0,
-      'private_pid' => 0,
     ),
     5 => array(
       'weight' => '0',
-      'public_pid' => 0,
-      'private_pid' => 0,
+      'public_pid' => '1',
     ),
     2 => array(
       'weight' => 11,
       'public_pid' => '2',
-      'private_pid' => 0,
     ),
     1 => array(
       'weight' => 12,
       'public_pid' => 0,
-      'private_pid' => 0,
     ),
   );
   $export['imce_roles_profiles'] = $strongarm;
