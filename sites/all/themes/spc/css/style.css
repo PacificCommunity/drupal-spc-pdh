@@ -1,5 +1,5 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
-@import url("../css/font-awesome/font-awesome.css");
+@import url("../css/font-awesome/font-awesome.min.css");
 @import url("../css/data-portal/css/external.css");
 html {
   font-family: sans-serif;
@@ -7778,7 +7778,8 @@ body {
   border-left: 3px solid #000000;
 }
 #header #main-menu .dropdown-menu .fa:before,
-#header #main-menu .dropdown-menu .fp:before {
+#header #main-menu .dropdown-menu .fp:before,
+#header #main-menu .dropdown-menu .with-icon .svg-inline--fa {
   position: absolute;
   font-size: 20px;
   color: #7B7B7B;
@@ -7787,7 +7788,8 @@ body {
   z-index: 1;
 }
 #header #main-menu .dropdown-menu .fa:hover:before,
-#header #main-menu .dropdown-menu .fp:hover:before {
+#header #main-menu .dropdown-menu .fp:hover:before,
+#header #main-menu .dropdown-menu .with-icon:hover .svg-inline--fa {
   color: #000;
 }
 .login-icon {
