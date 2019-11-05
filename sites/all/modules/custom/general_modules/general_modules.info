@@ -1,7 +1,7 @@
 name = General Modules
 core = 7.x
 package = Features
-version = 7.x-1.06
+version = 7.x-1.07
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = articles_syndication
@@ -38,6 +38,8 @@ dependencies[] = panels_everywhere
 dependencies[] = panels_mini
 dependencies[] = pathauto
 dependencies[] = redirect
+dependencies[] = rules
+dependencies[] = rules_admin
 dependencies[] = taxonomy
 dependencies[] = token
 dependencies[] = views
