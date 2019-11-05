@@ -15,9 +15,20 @@ function loop_menu_main($menu, $menu_layout) {
       $item_atributes = get_menu_atributes($menu[$key]['#localized_options']['item_attributes']);
       $item_classes = get_menu_classes($menu[$key]['#localized_options']['attributes']);
     }
-    
+
+    $tmp_classes_array = array();
+
+    if(!empty($item_classes)) {
+      $tmp_classes_array =  explode(' ', $item_classes);
+    }
     if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title'])) {
-      $menu_layout .= '<li class=" ' . $item_classes. ' ' . (!empty($menu[$key]['#below']) ? 'dropdown' : '') . '">';
+      if(in_array('fa', $tmp_classes_array)) {
+        $menu_layout .= '<li class="'. 'with-icon' .  ' ' . (!empty($menu[$key]['#below']) ? 'dropdown' : '') . '">';
+        $menu_layout .= '<i class="'. $item_classes .'"></i>';
+      }
+      else {
+        $menu_layout .= '<li class=" ' . $item_classes. ' ' . (!empty($menu[$key]['#below']) ? 'dropdown' : '') . '">';
+      }
     }
 
     if (!empty($menu[$key]['#href']) && !empty($menu[$key]['#title']) && empty($menu[$key]['#below'])) {
