@@ -99,7 +99,20 @@
         }
     }
 }
+.spc-rate-btn-up {
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        background: url(../img/spc/upvote.svg);
+    }
+}
+
 .view-dataset-suggestions{
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 14px;
     margin: 40px 0;
    
     .suggestion-search {
@@ -122,7 +135,7 @@
             
             #suggestion-search-submit{
                 position: absolute;
-                top: 6px;
+                top: 11px;
                 right: 20px;
                 background-image: url('../img/sprite/spc_new_sprite.png');
                 background-position: -9px -6px;
@@ -138,7 +151,7 @@
 
             #suggestion-search {
                 width: 100%;
-                padding: 10px 20px;
+                padding: 14px 20px;
                 border-radius: 25px;
                 border: 1px solid #ccc;
             }
@@ -153,6 +166,8 @@
             height: 38px;
             padding: 9px 20px;
             text-decoration: none;
+            font-weight: 600;
+            margin-top: 5px;
             &:hover {
                 opacity: 0.8;
             }
@@ -179,7 +194,21 @@
         float: right;
 
         label {
-            margin-right: 10px;
+            margin-right: 15px;
+            font-weight: 300;
+        }
+        #sorting-select {
+            font-weight: bold;
+            color: #000000;
+            span {
+                margin-right: 10px;
+            }
+            .svg-inline--fa {
+                color: #009fde;
+                font-size: 18px;
+                position: relative;
+                top: 2px;
+            }
         }
         .fa-chevron-down {
             margin-left: 5px;
@@ -206,8 +235,13 @@
     }
 
     .total {
+        font-size: 19px;
+        span {
+            font-weight: bold;
+            margin-right: 4px;
+        }
         float: left;
-        margin-top: 10px;
+        margin-left: 20px;
     }
     .view-content {
         position: relative;
@@ -240,6 +274,8 @@
             background: #f8f8f8;
             padding: 10px;
             text-align: center;
+            font-size: 16px;
+            font-weight: 600;
         }
 
         td, th { 
@@ -278,7 +314,8 @@
         th:last-child
         { 
             border-bottom-right-radius: 10px;
-            border-left: none; 
+            border-left: none;
+            min-width: 180px;
         }
     }
     .pager {
