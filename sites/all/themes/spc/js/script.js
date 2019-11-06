@@ -359,6 +359,23 @@
 
   }
 
+  Drupal.behaviors.autocompleteSPC = {
+    attach: function(context) {
+      var form = $('#ckan-search-form', context);
+      form.find('#edit-search-type').on('change', function(event) {
+        // remove old autocomplete listener
+        form.find('#edit-term').unbind();
+
+        var field = form.find('#edit-term-autocomplete');
+        // dropping this class is required for re-attaching the behavior
+        field.removeClass('autocomplete-processed');
+        field.val(
+          '/autocomplete/search/' + event.target.value + '/' + form.find('[name="thematic_area"]').val()
+        );
+        Drupal.behaviors.autocomplete.attach(form[0]);
+      });
+    }
+  };
   /**
    * Element niceSelect
    *
@@ -366,6 +383,47 @@
   Drupal.behaviors.niceSelect = {
     attach: function (context) {
       $('.node-type-thematic-group #ckan-search-form select').niceSelect();
+    }
+  };
+  
+  /**
+   * Element sortDatasetSuggestions
+   *
+   */
+  Drupal.behaviors.sortDatasetSuggestions = {
+    attach: function (context) {
+        
+        $('#suggestion-search-form').on('submit', function(e){
+            e.preventDefault();
+            let key = $(this).find('#suggestion-search').val();
+            console.log(key);
+            
+            $('#edit-body-value').val(key);
+            $('#edit-title').val(key);
+            $('#views-exposed-form-dataset-suggestions-page').submit();
+            
+        });
+
+      let sortList = $('.datasets-sorting ul li a');
+      $('#sorting-select span').text($(sortList[0]).text());
+
+      let searchParams = new URLSearchParams(window.location.search);
+      let sort = searchParams.get('sort');
+      let order = searchParams.get('order');
+      
+      if (sort && order){        
+        sortList.each(function(){
+            if ( $(this).data('sort') == sort && $(this).data('order') == order ){
+                $('#sorting-select span').text($(this).text());
+            }
+        });
+      }
+      
+      $('#sorting-select').on('click', function(e){
+          e.preventDefault();
+          $(this).siblings('ul').toggle();
+      });
+      
     }
   };
 
