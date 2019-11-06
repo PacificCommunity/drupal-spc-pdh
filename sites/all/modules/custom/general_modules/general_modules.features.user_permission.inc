@@ -80,6 +80,13 @@ function general_modules_user_default_permissions() {
     'module' => 'menu',
   );
 
+  // Exported permission: 'administer meta tags'.
+  $permissions['administer meta tags'] = array(
+    'name' => 'administer meta tags',
+    'roles' => array(),
+    'module' => 'metatag',
+  );
+
   // Exported permission: 'administer nodequeue'.
   $permissions['administer nodequeue'] = array(
     'name' => 'administer nodequeue',
@@ -320,6 +327,13 @@ function general_modules_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'bean',
+  );
+
+  // Exported permission: 'edit meta tags'.
+  $permissions['edit meta tags'] = array(
+    'name' => 'edit meta tags',
+    'roles' => array(),
+    'module' => 'metatag',
   );
 
   // Exported permission: 'edit own article content'.

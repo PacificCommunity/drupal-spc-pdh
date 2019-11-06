@@ -158,6 +158,115 @@
           });
 
           map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
+            
+            $.ajax({
+                url: '/ajax/members_countries',
+                type: 'GET',
+                success: function(data) {
+                    
+                    let markers = [];
+                    let polygons = [];
+                    
+                    let kiribatiPolygons = [];
+                    let kiribatiMarkers = [];
+                    
+                    data.forEach(function(country, i, arr) {
+                        var coordinates = country.geometry.coordinates
+                        var tag = country.properties.ISO_Ter1;
+                        var polygonData = [];
+                        var id = country.properties.MRGID
+                        
+                        var x = country.properties.x_1;
+                        var y = country.properties.y_1;
+                        
+                        coordinates.forEach(function(point, i, arr) {
+                            point.forEach(function(item, i, arr) {
+                                polygonData.push(new google.maps.LatLng(item[1], item[0]));
+                            });
+                            
+                            if (id.toLowerCase().includes('ki')){
+                                tag = 'KI'
+                            }
+
+                            markers[id] = new google.maps.Marker({
+                              position: new google.maps.LatLng(y, x),
+                              map: map,
+                              label: {
+                                text: tag,
+                                color: '#fff',
+                                fontWeight: '800',
+                                fontSize: '12px',
+                              },
+                              icon: {
+                                url: 'none' 
+                              },
+                              opacity: 0
+                            });
+                            
+                            if (id.toLowerCase().includes('ki')){
+                                kiribatiMarkers.push(markers[id]);
+                            }
+                           
+                        });
+
+                        polygons[id] = new google.maps.Polygon({
+                            paths: polygonData,
+                            strokeColor: '#e6f0f6',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#e6f0f6',
+                            fillOpacity: 0.35,
+                            country: tag.toLowerCase(),
+                            id: id.toLowerCase()
+                        });
+                        
+                        polygons[id].setMap(map);
+                        
+                        if (id.toLowerCase().includes('ki')){
+                            kiribatiPolygons.push(polygons[id]);
+                        }
+                        
+                        google.maps.event.addListener(polygons[id],"mouseover",function(){
+                            this.setOptions({fillColor: "#ccc"});
+                            markers[id].setOpacity(1);
+                            
+                            if (id.toLowerCase().includes('ki')){
+                                kiribatiPolygons.forEach(function(ki, i, arr) {
+                                    ki.setOptions({fillColor: "#ccc"});
+                                });
+                                kiribatiMarkers.forEach(function(ki, i, arr) {
+                                    ki.setOpacity(1);
+                                });
+                            }
+                        }); 
+
+                        google.maps.event.addListener(polygons[id],"mouseout",function(){
+                            this.setOptions({fillColor: "#e6f0f6"});
+                            markers[id].setOpacity(0);
+                            
+                            if (id.toLowerCase().includes('ki')){
+                                kiribatiPolygons.forEach(function(ki, i, arr) {
+                                    ki.setOptions({fillColor: "#e6f0f6"});
+                                });
+                                kiribatiMarkers.forEach(function(ki, i, arr) {
+                                    ki.setOpacity(0);
+                                });
+                            }                            
+                        });
+                        
+                        google.maps.event.addListener(polygons[id],"click",function(){
+                            console.log(this.country);
+                            var bounds = new google.maps.LatLngBounds();
+                            polygons[id].getPath().forEach(function (element, index) { 
+                                bounds.extend(element); 
+                            });
+                            map.fitBounds(bounds);
+                            $('#member-countries-block .dropdown-menu a#' + this.id).trigger('click');
+                            
+                        });
+                    });
+                },
+            });
         });
     });
 
@@ -238,7 +347,7 @@
               if (point_zoom) {
                 zoom = point_zoom;
               }
-              map.setZoom(zoom);
+              //map.setZoom(zoom);
               e.stopPropagation();
               e.preventDefault();
             });
@@ -481,9 +590,54 @@ $( document ).ready(function() {
       $('#nav-popular-datasets .ckan-dataset-tab-container .carusel-of-items').slick('refresh');
     }
   })
-
+  
+  $('#main-menu li.dropdown').hover(
+    function(){
+      $(this).find('.dropdown-menu').show();
+    },
+    function() {
+      $(this).find('.dropdown-menu').hide();
+    }
+  );
 
 });
 
+  Drupal.behaviors.lazyLoader = {
+    attach: function (context) {
+      $( document, context ).ready(function() {
 
+        const lazyDiv = $('div.lazy-load');
+        lazyDiv.each(function(){
+            $(this).css({
+                'background': 'url(' + $(this).attr('data-background') + ')',
+                'background-position-x': $(this).attr('data-sx'),
+                'background-position-y': $(this).attr('data-sy'),
+                'background-repeat': 'no-repeat'
+            });
+
+        });
+
+        const lazyImg = $('img.lazy-load');
+        lazyImg.each(function(){
+            $(this).attr(
+                'src', $(this).attr('data-src')
+            ).css({
+                'background': 'none'
+            });
+        });
+        
+        const lazyIframe = $('iframe.lazy-load');
+        lazyIframe.each(function(){
+            $(this).attr(
+                'src', $(this).attr('data-src')
+            ).css({
+                'background': 'none'
+            });
+        });        
+        
+      });
+    }
+  };
+  
 })(jQuery);
+

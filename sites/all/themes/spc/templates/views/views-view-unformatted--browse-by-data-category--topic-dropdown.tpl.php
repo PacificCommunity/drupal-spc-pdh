@@ -13,13 +13,17 @@
     $cur_icon_uri = $current_node->field_icon[LANGUAGE_NONE][0]['uri'] ?? null;
     $cur_icon_url = parse_url(file_create_url($cur_icon_uri));
     $fa_icon = $current_node->field_fa_icon[LANGUAGE_NONE][0]['value'] ?? null;
+    
+    if (explode(' ', $fa_icon)[0] != 'fp'){
+      $fa_icon = 'fa ' . $fa_icon;
+    }
 ?>
 
 <div class="thematic-heading-block">
 	<div class="dropdown">
 	  <button type="button" id="thematic_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 		<?php if ($fa_icon): ?>
-			<i class="thematic-fa-icon text-primary fa <?=$fa_icon?>"></i>
+			<i class="thematic-fa-icon text-primary <?=$fa_icon?>"></i>
 		<?php else: ?>
 			<img src="<?=$cur_icon_url['path']?>">
 		<?php endif; ?>

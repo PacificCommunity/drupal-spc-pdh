@@ -25,7 +25,6 @@ function article_syndicate() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'article')
-    ->propertyCondition('status', 1)
     ->fieldCondition('field_syndicated_id', 'value', $syndicated_id, '=')
     ->addMetaData('account', user_load(1));
   $result = $query->execute();
@@ -106,7 +105,7 @@ function syndication_article_create() {
   node_object_prepare($node); 
   $node->language = LANGUAGE_NONE; 
   $node->uid = $user_uid; 
-  $node->status = 1; 
+  $node->status = 0; 
   $node->promote = 0; 
   $node->comment = 0;
   $node->field_syndicated_id[LANGUAGE_NONE][] = array(
@@ -115,6 +114,24 @@ function syndication_article_create() {
 
   // Creates a node with received fields
   $node = node_set_fields($node, $values);
+  
+  $message = "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true);
+  
+  if (variable_get('syndication_email')){
+    $email = variable_get('syndication_email');
+  } else {
+    $email = 'datahub@spc.int';
+  }
+
+  // Send the email.
+  $params = array(
+    'subject' => t('Syndicated Article - created'),
+    'body' => check_markup(
+      t($message),
+      'plain_text'
+    ),
+  );
+  drupal_mail('articles_syndication', 'syndicated_article_created', $email, language_default(), $params);
 
   // Saves logs
   watchdog('syndication_article', "Node '$node->title' ($node->nid) was successfully created with data: ".print_r($values,true));
@@ -188,7 +205,16 @@ function node_set_fields($node, $values) {
         ));
       }
     };
-    $node->field_tags[LANGUAGE_NONE] = $tags_field;
+    
+    $attached_tags = $node->field_tags[LANGUAGE_NONE];
+
+    foreach ($tags_field as $f_teg){
+       if (!in_array($f_teg, $attached_tags)){
+         $attached_tags[] = $f_teg;
+       }
+    }
+
+    $node->field_tags[LANGUAGE_NONE] = $attached_tags;
   }
   if (!empty($values['image'])) {
     $file_image = system_retrieve_file($values['image'], 'public://pictures/', TRUE);
@@ -236,4 +262,16 @@ function articles_syndication_article_uri($node) {
   return array(
     'path' => 'node/' . $node->nid,
   );
+}
+
+/**
+ * Implements hook_mail for module_name.
+ */
+function articles_syndication_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'syndicated_article_created':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
 }
