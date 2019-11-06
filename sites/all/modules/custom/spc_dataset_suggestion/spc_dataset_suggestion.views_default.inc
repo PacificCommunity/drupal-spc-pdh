@@ -306,8 +306,8 @@ function spc_dataset_suggestion_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Intro';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Example copy:  Cannot find your desired data? Search below to see if someone else has already requested the same dataset. If you find it, you can add your request by clicking on the upvote button. If you still can’t find the dataset you want in the list, make use of our “Suggest a dataset” form. ';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['content'] = 'Cannot find your desired data? Search below to see if someone else has already requested the same dataset. If you find it, you can add your request by clicking on the upvote button <span class="spc-rate-btn-up"></span>. If you still can’t find the dataset you want in the list, make use of our “Suggest a dataset” form. ';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
@@ -317,7 +317,7 @@ function spc_dataset_suggestion_views_default_views() {
   $handler->display->display_options['header']['area_1']['content'] = '<div class="suggestion-search clearfix">
 <div class="suggestion-search-field">
 <form id="suggestion-search-form">
-<input id="suggestion-search" type="text" placeholder="Search Suggestion" name="suggestion">
+<input id="suggestion-search" type="text" placeholder="Search suggestions" name="suggestion">
 <input  id="suggestion-search-submit" type="submit" Value="search">
 </form>
 </div>
@@ -330,7 +330,7 @@ function spc_dataset_suggestion_views_default_views() {
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['label'] = 'Listed';
   $handler->display->display_options['header']['result']['empty'] = TRUE;
-  $handler->display->display_options['header']['result']['content'] = '<div class="total"><b>@total</b> suggestions listed</div>';
+  $handler->display->display_options['header']['result']['content'] = '<div class="total"><span>@total</span> suggestions listed</div>';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area_2']['id'] = 'area_2';
   $handler->display->display_options['header']['area_2']['table'] = 'views';
@@ -385,8 +385,8 @@ function spc_dataset_suggestion_views_default_views() {
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'Submit date';
-  $handler->display->display_options['fields']['created']['date_format'] = 'short';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'Y/m/d';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd/m/Y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'insights_date_format';
   /* Sort criterion: Vote results: Value */
   $handler->display->display_options['sorts']['value']['id'] = 'value';
