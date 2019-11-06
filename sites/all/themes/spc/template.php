@@ -190,6 +190,7 @@ function spc_form_ckan_search_form_alter(&$form, &$form_state, $form_id) {
     // Put submit after newly added fields
     $form['submit']['#weight'] = 10;
   }
+  $form['term']['#suffix'] = '<label for="edit-term" class="element-invisible">Term</label>';
 }
 
 

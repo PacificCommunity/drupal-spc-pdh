@@ -5,7 +5,7 @@
 			<h2>Datasets</h2>
 			<div class="ckan-dataset-tabs-intro"><?php print t('Discover our latest and popular datasets'); ?></div>
 			<div class="ckan-dataset-tabs-section">
-				<ul class="nav">
+				<ul class="nav" role="tablist">
 					<li class="ckan-dataset-tabs-tab nav-item active">
 						<a class="nav-link" id="nav-recent-datasets-tab" data-toggle="pill" role="tab" href="#nav-recent-datasets" aria-selected="true">Latest</a>
 					</li>

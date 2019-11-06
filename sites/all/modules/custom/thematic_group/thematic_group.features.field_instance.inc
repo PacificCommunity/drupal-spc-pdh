@@ -477,7 +477,7 @@ function thematic_group_field_default_field_instances() {
     'bundle' => 'thematic_group',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'For adding new Font Awesome Data Portal icons, please insert class manually, for example "fp fa-water", class "fp" let system know that is Data Portal icons',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -816,6 +816,7 @@ function thematic_group_field_default_field_instances() {
   t('Display image');
   t('Display tweets on Topic page.');
   t('FA Icon');
+  t('For adding new Font Awesome Data Portal icons, please insert class manually, for example "fp fa-water", class "fp" let system know that is Data Portal icons');
   t('Icon');
   t('Publications');
   t('Show tweets');
