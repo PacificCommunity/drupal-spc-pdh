@@ -11419,6 +11419,7 @@ button.header-menu-btn:focus {
 }
 .view-dataset-suggestions .total span {
   font-weight: bold;
+  margin-right: 4px;
 }
 .view-dataset-suggestions .view-content {
   position: relative;
@@ -11646,6 +11647,9 @@ button.header-menu-btn:focus {
     height: auto;
     width: 100%;
   }
+  #member-countries-block .block-content .left-column {
+    background-size: 305%;
+  }
 }
 @media (max-width: 991px) {
   #main-menu {
@@ -11662,6 +11666,10 @@ button.header-menu-btn:focus {
   }
   .data-insights-promoted-group.slick-slider .slick-arrow.slick-prev {
     left: 44%;
+  }
+  .latest-stories-slider .stories-list:before,
+  .latest-stories-slider.pane-articles-list-topic-latest .stories-list:before {
+    content: unset;
   }
   .latest-stories-slider .stories-list .slick-list .field-item img,
   .latest-stories-slider.pane-articles-list-topic-latest .stories-list .slick-list .field-item img {
@@ -11774,7 +11782,7 @@ button.header-menu-btn:focus {
     margin-bottom: 10px;
   }
   #mini-panel-stories_on_the_hp {
-    margin-bottom: 60px;
+    padding-bottom: 60px;
   }
   .latest-stories-slider,
   .latest-stories-slider.pane-articles-list-topic-latest {
@@ -11784,7 +11792,7 @@ button.header-menu-btn:focus {
   .latest-stories-slider.pane-articles-list-topic-latest .stories-list {
     background: url(../img/spc_new/stories_slides_bg.png) no-repeat 50% 0%;
     background-size: 120%;
-    padding: 180px 15px 15px;
+    padding: 120px 15px 15px;
     overflow: hidden;
   }
   .latest-stories-slider .stories-list .slick-list .field-item img,
@@ -11808,7 +11816,6 @@ button.header-menu-btn:focus {
     left: 20px;
     max-width: 200px;
     font-size: 32px;
-    color: #fff;
     margin: 0;
   }
   .banner-links {
@@ -11917,6 +11924,9 @@ button.header-menu-btn:focus {
   .overridden-title .pane-title {
     top: 56%;
     font-size: 38px;
+  }
+  .hl-dashboard-link .node-dashboards.view-mode-dashboard_highlight {
+    flex-direction: initial;
   }
 }
 @media (max-width: 569px) {
