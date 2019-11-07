@@ -8788,6 +8788,11 @@ button.header-menu-btn:focus {
     opacity: 0;
   }
 }
+.someinput::-ms-clear {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
 #mini-panel-home_banner,
 #thematic_landing_banner {
   position: relative;
@@ -11419,6 +11424,7 @@ button.header-menu-btn:focus {
 }
 .view-dataset-suggestions .total span {
   font-weight: bold;
+  margin-right: 4px;
 }
 .view-dataset-suggestions .view-content {
   position: relative;

@@ -33,7 +33,7 @@ body {
                     padding: 0px 24px;
                     text-transform: uppercase;
                     transition: all 0.3s;
-                    
+
                     svg {
                         margin-left: 7px;
                     }
@@ -55,7 +55,7 @@ body {
             }
         }
         .dropdown-menu {
-            margin: 0px; 
+            margin: 0px;
             padding: 0px;
             box-shadow: none;
             border-radius: 0 3px 3px 0;
@@ -660,12 +660,12 @@ button.header-menu-btn {
         display: inline-block;
         padding: 0 10px;
         width: 50px;
-    } 
-    
+    }
+
 }
 
 .res-format-aac { .res-sprite(0, 0); }
-.res-format-3ds { .res-sprite(1, 0); } 
+.res-format-3ds { .res-sprite(1, 0); }
 .res-format-ai { .res-sprite(2, 0); }
 .res-format-avi { .res-sprite(3, 0); }
 .res-format-bmp { .res-sprite(4, 0); }
@@ -795,4 +795,9 @@ button.header-menu-btn {
     100% {
         opacity: 0;
     }
+}
+.someinput::-ms-clear {
+  display: none;
+  width: 0px;
+  height: 0px;
 }
