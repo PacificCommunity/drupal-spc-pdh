@@ -8788,10 +8788,8 @@ button.header-menu-btn:focus {
     opacity: 0;
   }
 }
-.someinput::-ms-clear {
+::-ms-clear {
   display: none;
-  width: 0px;
-  height: 0px;
 }
 #mini-panel-home_banner,
 #thematic_landing_banner {
