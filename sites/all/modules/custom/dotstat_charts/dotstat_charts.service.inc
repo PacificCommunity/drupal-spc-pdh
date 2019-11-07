@@ -20,7 +20,6 @@ class DotStatRenderer {
     list($q, $parser) = $this->fieldValue(
       'field_dotstat_chart_query', 'field_dotstat_chart_parser'
     );
-
     $cid = 'dotstat_chart_data_' . $this->bean->bid . '_' . md5($q);
     if ($cached = cache_get($cid, 'cache_block')) {
       $data = $cached->data;
@@ -28,6 +27,7 @@ class DotStatRenderer {
       $data = DotStatRequest::getParsedResults($q, $parser);
       cache_set($cid, $data, 'cache_block', CACHE_TEMPORARY);
     }
+
     return $data;
   }
 

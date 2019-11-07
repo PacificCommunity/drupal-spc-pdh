@@ -11,18 +11,18 @@ var chartMonoColors = (function () {
 }());
 
 function DotStatChart(id, title, link, opts) {
-  
+
   this.debug = opts.debug?true:false;
-  
+
   this.id = id;
   this.title = title;
   this.sublink = link;
-  
+
   var btns = ['viewFullscreen','printChart','showDatTable','separator','downloadPNG','downloadPDF','downloadSVG'];
   if (link) {
     btns = ['viewFullscreen','printChart','sourceLink','showDatTable','separator','downloadCVS','downloadPNG','downloadPDF','downloadSVG'];
   }
-  
+
   var o_title = opts.title?opts.title:this.title;
   if (typeof o_title == 'string' && o_title.length > 0) {
     opts.title = {
@@ -44,7 +44,7 @@ function DotStatChart(id, title, link, opts) {
   } else {
     opts.subtitle = { }
   }
-  
+
   this.options = {
     exporting: {
       menuItemDefinitions: {
@@ -100,13 +100,13 @@ function DotStatChart(id, title, link, opts) {
     series: [ this.series ],
     credits: { enabled: true }
   };
-  
+
   this.loader = '<svg viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" class="highcharts-loader"><rect x="0" y="5" width="15" height="140" rx="6"><animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" /><animate attributeName="y" begin="0s" dur="1s" values="25;35;45;55;65;75;85;95;105;5;25" calcMode="linear" repeatCount="indefinite" /></rect><rect x="30" y="50" width="15" height="100" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" /><animate attributeName="y" begin="0.25s" dur="1s" values="25;35;45;55;65;75;85;95;105;5;25" calcMode="linear" repeatCount="indefinite" /></rect><rect x="60" y="25" width="15" height="120" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="90;80;70;60;45;30;140;120;120;110;100" calcMode="linear" repeatCount="indefinite" /><animate attributeName="y" begin="0.5s" dur="1s" values="55;65;75;85;100;115;5;25;25;35;45" calcMode="linear" repeatCount="indefinite" /></rect><rect x="90" y="30" width="15" height="120" rx="6"><animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" /><animate attributeName="y" begin="0.25s" dur="1s" values="25;35;45;55;65;75;85;95;105;5;25" calcMode="linear" repeatCount="indefinite" /></rect><rect x="120" y="70" width="15" height="80" rx="6"><animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" /><animate attributeName="y" begin="0.5s" dur="1s" values="25;35;45;55;65;75;85;95;105;5;25" calcMode="linear" repeatCount="indefinite" /></rect></svg>';
-  
+
   this.series = false;
-  
+
   jQuery.extend(true, this.options, opts);
-  
+
   // set options from passed argument
   /*
   for (var key in this.options) {
@@ -116,9 +116,9 @@ function DotStatChart(id, title, link, opts) {
       this[key] = this.options[key];
     }
   } */
-  
+
   // @todo check options are valid
-  
+
   this.initHtml = function() {
     var $d = jQuery('#'+this.id);
     if (!$d[0]) {
@@ -147,11 +147,11 @@ function DotStatChart(id, title, link, opts) {
     }
     html += this.loader
       +'</div>';
-    
+
     if (this.options.showTable) {
       html += '<div id="'+this.id+'-data-table" class="highcharts-data-table tab-pane fade">Loading...</div>';
     }
-    if (this.debug) {    
+    if (this.debug) {
       html += '<div id="'+this.id+'-jsondata" class="highcharts-jsondata tab-pane fade">...</div>';
     }
     if (tabs) {
@@ -164,30 +164,30 @@ function DotStatChart(id, title, link, opts) {
     $d.html(html);
     return true;
   }
-  
+
   this.parseDotStat = function(data) {
     alert('ERR: Parser method not defined');
     return false;
   };
-  
+
   // generate chart
   this.render = function() {
-    
+
     var obj = this;
-    
+
     this.options.series = [ { data: this.jsdata} ];
-        
+
     obj.dbg('Rendering...');
     obj.dbg(this.options);
-    
+
     this.chart = Highcharts.chart(this.id+'-chart', this.options, function() {
       if (obj.options.showTable ) {
         jQuery('#'+obj.id+'-data-table').html(this.getTable());
-      }  
+      }
     });
-    
+
   };
-  
+
   // launch
   this.go = function(data) {
     if (this.initHtml()) {
@@ -198,7 +198,7 @@ function DotStatChart(id, title, link, opts) {
       this.render();
     }
   };
-  
+
   // new launch (no data parsing needed)
   this.gen = function(data) {
     if (this.initHtml()) {
@@ -209,12 +209,12 @@ function DotStatChart(id, title, link, opts) {
       this.render();
     }
   };
-  
+
   // debug ?
   this.dbg = function(s) {
     if (this.debug) { console.log(s); }
   }
-  
+
   return this;
-  
+
 }
