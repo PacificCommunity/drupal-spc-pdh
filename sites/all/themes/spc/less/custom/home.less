@@ -56,7 +56,7 @@
 }
 
 #spc-home-banner-search {
-    margin-top: 49px;
+  margin-top: 49px;
     .nice-select {
         .current {
             display: none;
@@ -103,8 +103,11 @@
 #ckan-search-form {
     position: relative;
     width: 494px;
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
+    input.form-autocomplete {
+      background-image: none;
+    }
     &>div:first-child {
         position: relative;
         width: 100%;
@@ -835,7 +838,7 @@
             }
         }
         .dropdown-menu {
-            position: relative;
+            /*position: relative;*/
         }
         .dropdown-list {
             height: 200px;

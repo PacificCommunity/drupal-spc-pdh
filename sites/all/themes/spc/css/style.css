@@ -8897,8 +8897,11 @@ button.header-menu-btn:focus {
 #ckan-search-form {
   position: relative;
   width: 494px;
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
+}
+#ckan-search-form input.form-autocomplete {
+  background-image: none;
 }
 #ckan-search-form > div:first-child {
   position: relative;
@@ -9613,7 +9616,7 @@ button.header-menu-btn:focus {
   transform: rotate(45deg);
 }
 #member-countries-block .dropdown .dropdown-menu {
-  position: relative;
+  /*position: relative;*/
 }
 #member-countries-block .dropdown .dropdown-list {
   height: 200px;
@@ -11186,6 +11189,326 @@ button.header-menu-btn:focus {
 }
 .overridden-title .pane-title strong {
   color: #FFBC00;
+}
+.page-dataset-suggestion {
+  background: #efefef;
+}
+.dataset-suggestion-content .container {
+  position: relative;
+  background: #fff;
+  padding: 20px 60px;
+  margin: 50px auto;
+  box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+  border-radius: 10px;
+}
+.dataset-suggestion-content .container .suggestion-form {
+  padding-left: 0;
+  padding-right: 40px;
+}
+.dataset-suggestion-content .container .suggestion-form form label {
+  width: 100%;
+  color: #000;
+  margin-top: 20px;
+}
+.dataset-suggestion-content .container .suggestion-form form label:after {
+  content: '*';
+  display: inline-block;
+  color: #21a9d6;
+  padding: 3px;
+}
+.dataset-suggestion-content .container .suggestion-form form input,
+.dataset-suggestion-content .container .suggestion-form form textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  color: #000;
+}
+.dataset-suggestion-content .container .suggestion-form form input:active,
+.dataset-suggestion-content .container .suggestion-form form textarea:active,
+.dataset-suggestion-content .container .suggestion-form form input:focus,
+.dataset-suggestion-content .container .suggestion-form form textarea:focus {
+  border: 1px solid #21a9d6;
+  box-shadow: 0px 0px 5px #21a9d6;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions {
+  display: table;
+  float: right;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions #edit-submit {
+  width: 100px;
+  float: right;
+  color: #fff;
+  background: #0060a6;
+  border: 1px solid #0060a6;
+  padding: 5px 10px;
+  border-radius: 5px;
+  height: 38px;
+  font-weight: 800;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions #edit-submit:hover {
+  opacity: 0.8;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions .clear-form {
+  color: #b2b2b2;
+  background: #f0f0f0;
+  padding: 7px 20px;
+  border-radius: 5px;
+  float: right;
+  margin-right: 20px;
+  text-decoration: none;
+  height: 38px;
+  font-weight: 800;
+}
+.dataset-suggestion-content .container .suggestion-form form #edit-actions .clear-form:hover {
+  opacity: 0.8;
+}
+.dataset-suggestion-content .container .suggestion-tip {
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  padding: 20px;
+}
+.dataset-suggestion-content .container .suggestion-tip h4 {
+  padding: 10px;
+  background: #c6c6c650;
+  border-radius: 5px;
+}
+.dataset-suggestion-content .container .suggestion-tip h4:before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(../img/spc/lamp.svg);
+  background-size: 100%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.view-dataset-suggestions {
+  margin: 40px 0;
+}
+.view-dataset-suggestions .suggestion-search {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.view-dataset-suggestions .suggestion-search .suggestion-search-field {
+  position: relative;
+  float: left;
+  width: 80%;
+}
+@media (max-width: 1200px) {
+  .view-dataset-suggestions .suggestion-search .suggestion-search-field {
+    width: 70%;
+  }
+}
+@media (max-width: 700px) {
+  .view-dataset-suggestions .suggestion-search .suggestion-search-field {
+    width: 60%;
+  }
+}
+@media (max-width: 530px) {
+  .view-dataset-suggestions .suggestion-search .suggestion-search-field {
+    width: 100%;
+  }
+}
+.view-dataset-suggestions .suggestion-search .suggestion-search-field #suggestion-search-submit {
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  background-image: url('../img/sprite/spc_new_sprite.png');
+  background-position: -9px -6px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 30px;
+  display: inline-block;
+  background-size: 310%;
+  border: none;
+  background-color: #fff;
+  font-size: 0;
+}
+.view-dataset-suggestions .suggestion-search .suggestion-search-field #suggestion-search {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.view-dataset-suggestions .suggestion-search .action-add {
+  border-radius: 5px;
+  background-color: #009fde;
+  display: block;
+  color: #fff;
+  float: right;
+  height: 38px;
+  padding: 9px 20px;
+  text-decoration: none;
+}
+.view-dataset-suggestions .suggestion-search .action-add:hover {
+  opacity: 0.8;
+}
+.view-dataset-suggestions .suggestion-search .action-add .fa-plus {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  color: #009fde;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  padding: 2px;
+}
+.view-dataset-suggestions .views-exposed-widgets {
+  display: none;
+}
+.view-dataset-suggestions .datasets-sorting {
+  position: relative;
+  float: right;
+}
+.view-dataset-suggestions .datasets-sorting label {
+  margin-right: 10px;
+}
+.view-dataset-suggestions .datasets-sorting .fa-chevron-down {
+  margin-left: 5px;
+}
+.view-dataset-suggestions .datasets-sorting ul {
+  position: absolute;
+  display: none;
+  background: #fff;
+  width: 200px;
+  right: 0;
+  padding: 0;
+  box-shadow: 0px 2px 50px rgba(0, 5, 160, 0.102);
+  border-radius: 10px;
+  z-index: 1;
+}
+.view-dataset-suggestions .datasets-sorting ul li {
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+}
+.view-dataset-suggestions .datasets-sorting ul li:hover {
+  background: #f8f8f8;
+}
+.view-dataset-suggestions .total {
+  float: left;
+  margin-top: 10px;
+}
+.view-dataset-suggestions .view-content {
+  position: relative;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .view-dataset-suggestions .view-content {
+    overflow-x: scroll;
+  }
+}
+.view-dataset-suggestions table.dataset-suggestions-view {
+  border-collapse: separate;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr,
+.view-dataset-suggestions table.dataset-suggestions-view tr > td {
+  background: #fff;
+}
+.view-dataset-suggestions table.dataset-suggestions-view thead tr {
+  height: 50px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view thead tr a {
+  pointer-events: none;
+  color: #000;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tbody tr {
+  height: 100px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:hover td {
+  background: #f8f8f866;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr > th {
+  background: #f8f8f8;
+  padding: 10px;
+  text-align: center;
+}
+.view-dataset-suggestions table.dataset-suggestions-view td,
+.view-dataset-suggestions table.dataset-suggestions-view th {
+  border: solid 1px #c6c6c6;
+  padding: 10px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view td h4,
+.view-dataset-suggestions table.dataset-suggestions-view th h4 {
+  font-size: 15px;
+  font-weight: bold;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:nth-child(2n),
+.view-dataset-suggestions table.dataset-suggestions-view td:nth-child(2n),
+.view-dataset-suggestions table.dataset-suggestions-view th:nth-child(2n) {
+  border-right: none;
+  border-left: none;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:first-child,
+.view-dataset-suggestions table.dataset-suggestions-view td:first-child,
+.view-dataset-suggestions table.dataset-suggestions-view th:first-child {
+  border-top-left-radius: 10px;
+  border-right: none;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:first-child,
+.view-dataset-suggestions table.dataset-suggestions-view td:last-child,
+.view-dataset-suggestions table.dataset-suggestions-view th:last-child {
+  border-top-right-radius: 10px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:last-child,
+.view-dataset-suggestions table.dataset-suggestions-view td:first-child,
+.view-dataset-suggestions table.dataset-suggestions-view th:first-child {
+  border-bottom-left-radius: 10px;
+}
+.view-dataset-suggestions table.dataset-suggestions-view tr:last-child,
+.view-dataset-suggestions table.dataset-suggestions-view td:last-child,
+.view-dataset-suggestions table.dataset-suggestions-view th:last-child {
+  border-bottom-right-radius: 10px;
+  border-left: none;
+}
+.view-dataset-suggestions .pager .current {
+  background: #073875;
+  padding: 5px;
+  color: #fff;
+  border-radius: 5px;
+  min-width: 30px;
+  display: inline-block;
+}
+.view-dataset-suggestions .pager li a {
+  border-radius: 5px;
+  border: none;
+  color: #000;
+}
+.view-dataset-suggestions .rate-widget {
+  min-width: 100px;
+  text-align: center;
+}
+.view-dataset-suggestions .rate-widget .upvote,
+.view-dataset-suggestions .rate-widget .result {
+  display: inline-block;
+}
+.view-dataset-suggestions .rate-widget .rate-action {
+  border-radius: 25px;
+  padding: 5px;
+}
+.view-dataset-suggestions .rate-widget .rate-action .upvote {
+  padding: 5px;
+}
+.view-dataset-suggestions .rate-widget .rate-action .upvote .rate-button {
+  font-size: 0;
+}
+.view-dataset-suggestions .rate-widget .rate-action .upvote .rate-button:before {
+  content: '';
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url(../img/spc/upvote.svg);
+}
+.view-dataset-suggestions .rate-widget .rate-action .voted .rate-button:before {
+  background: url(../img/spc/voted.svg);
+}
+.view-dataset-suggestions .rate-widget .rate-action .result {
+  padding: 0 5px;
+  font-size: 16px;
+}
+.view-dataset-suggestions .rate-widget .rate-action:hover {
+  background: #f2f2f2;
 }
 @media (max-width: 1439px) {
   .data-insights-promoted-group.slick-slider {

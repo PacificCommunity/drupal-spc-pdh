@@ -167,6 +167,9 @@
                     let markers = [];
                     let polygons = [];
                     
+                    let kiribatiPolygons = [];
+                    let kiribatiMarkers = [];
+                    
                     data.forEach(function(country, i, arr) {
                         var coordinates = country.geometry.coordinates
                         var tag = country.properties.ISO_Ter1;
@@ -180,6 +183,10 @@
                             point.forEach(function(item, i, arr) {
                                 polygonData.push(new google.maps.LatLng(item[1], item[0]));
                             });
+                            
+                            if (id.toLowerCase().includes('ki')){
+                                tag = 'KI'
+                            }
 
                             markers[id] = new google.maps.Marker({
                               position: new google.maps.LatLng(y, x),
@@ -196,6 +203,10 @@
                               opacity: 0
                             });
                             
+                            if (id.toLowerCase().includes('ki')){
+                                kiribatiMarkers.push(markers[id]);
+                            }
+                           
                         });
 
                         polygons[id] = new google.maps.Polygon({
@@ -205,28 +216,52 @@
                             strokeWeight: 2,
                             fillColor: '#e6f0f6',
                             fillOpacity: 0.35,
-                            country: tag.toLowerCase()
+                            country: tag.toLowerCase(),
+                            id: id.toLowerCase()
                         });
-
+                        
                         polygons[id].setMap(map);
+                        
+                        if (id.toLowerCase().includes('ki')){
+                            kiribatiPolygons.push(polygons[id]);
+                        }
                         
                         google.maps.event.addListener(polygons[id],"mouseover",function(){
                             this.setOptions({fillColor: "#ccc"});
                             markers[id].setOpacity(1);
+                            
+                            if (id.toLowerCase().includes('ki')){
+                                kiribatiPolygons.forEach(function(ki, i, arr) {
+                                    ki.setOptions({fillColor: "#ccc"});
+                                });
+                                kiribatiMarkers.forEach(function(ki, i, arr) {
+                                    ki.setOpacity(1);
+                                });
+                            }
                         }); 
 
                         google.maps.event.addListener(polygons[id],"mouseout",function(){
                             this.setOptions({fillColor: "#e6f0f6"});
                             markers[id].setOpacity(0);
+                            
+                            if (id.toLowerCase().includes('ki')){
+                                kiribatiPolygons.forEach(function(ki, i, arr) {
+                                    ki.setOptions({fillColor: "#e6f0f6"});
+                                });
+                                kiribatiMarkers.forEach(function(ki, i, arr) {
+                                    ki.setOpacity(0);
+                                });
+                            }                            
                         });
                         
                         google.maps.event.addListener(polygons[id],"click",function(){
+                            console.log(this.country);
                             var bounds = new google.maps.LatLngBounds();
                             polygons[id].getPath().forEach(function (element, index) { 
                                 bounds.extend(element); 
                             });
                             map.fitBounds(bounds);
-                            $('#member-countries-block .dropdown-menu a#' + this.country).trigger('click');
+                            $('#member-countries-block .dropdown-menu a#' + this.id).trigger('click');
                             
                         });
                     });
@@ -324,6 +359,23 @@
 
   }
 
+  Drupal.behaviors.autocompleteSPC = {
+    attach: function(context) {
+      var form = $('#ckan-search-form', context);
+      form.find('#edit-search-type').on('change', function(event) {
+        // remove old autocomplete listener
+        form.find('#edit-term').unbind();
+
+        var field = form.find('#edit-term-autocomplete');
+        // dropping this class is required for re-attaching the behavior
+        field.removeClass('autocomplete-processed');
+        field.val(
+          '/autocomplete/search/' + event.target.value + '/' + form.find('[name="thematic_area"]').val()
+        );
+        Drupal.behaviors.autocomplete.attach(form[0]);
+      });
+    }
+  };
   /**
    * Element niceSelect
    *
@@ -331,6 +383,47 @@
   Drupal.behaviors.niceSelect = {
     attach: function (context) {
       $('.node-type-thematic-group #ckan-search-form select').niceSelect();
+    }
+  };
+  
+  /**
+   * Element sortDatasetSuggestions
+   *
+   */
+  Drupal.behaviors.sortDatasetSuggestions = {
+    attach: function (context) {
+        
+        $('#suggestion-search-form').on('submit', function(e){
+            e.preventDefault();
+            let key = $(this).find('#suggestion-search').val();
+            console.log(key);
+            
+            $('#edit-body-value').val(key);
+            $('#edit-title').val(key);
+            $('#views-exposed-form-dataset-suggestions-page').submit();
+            
+        });
+
+      let sortList = $('.datasets-sorting ul li a');
+      $('#sorting-select span').text($(sortList[0]).text());
+
+      let searchParams = new URLSearchParams(window.location.search);
+      let sort = searchParams.get('sort');
+      let order = searchParams.get('order');
+      
+      if (sort && order){        
+        sortList.each(function(){
+            if ( $(this).data('sort') == sort && $(this).data('order') == order ){
+                $('#sorting-select span').text($(this).text());
+            }
+        });
+      }
+      
+      $('#sorting-select').on('click', function(e){
+          e.preventDefault();
+          $(this).siblings('ul').toggle();
+      });
+      
     }
   };
 

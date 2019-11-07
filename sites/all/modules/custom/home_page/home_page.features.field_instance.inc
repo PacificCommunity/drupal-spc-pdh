@@ -484,6 +484,153 @@ function home_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_eez-field_center'.
+  $field_instances['field_collection_item-field_eez-field_center'] = array(
+    'bundle' => 'field_eez',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'geofield',
+        'settings' => array(
+          'data' => 'full',
+        ),
+        'type' => 'geofield_wkt',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_center',
+    'label' => 'Center',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geofield',
+      'settings' => array(
+        'html5_geolocation' => 0,
+      ),
+      'type' => 'geofield_latlon',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_eez-field_country_tag'.
+  $field_instances['field_collection_item-field_eez-field_country_tag'] = array(
+    'bundle' => 'field_eez',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_country_tag',
+    'label' => 'country tag',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_eez-field_polygon'.
+  $field_instances['field_collection_item-field_eez-field_polygon'] = array(
+    'bundle' => 'field_eez',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_polygon',
+    'label' => 'Polygon',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_mcountries-field_eez'.
+  $field_instances['field_collection_item-field_mcountries-field_eez'] = array(
+    'bundle' => 'field_mcountries',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'translate' => 'Translate',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 4,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_eez',
+    'label' => 'EEZ',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance:
   // 'field_collection_item-field_mcountries-field_mcountries_geocode'.
   $field_instances['field_collection_item-field_mcountries-field_mcountries_geocode'] = array(
@@ -668,22 +815,26 @@ function home_page_field_default_field_instances() {
   t('Banner Image');
   t('Banner Sub Title');
   t('Banner Title');
+  t('Center');
   t('Countries');
   t('Country Data Background');
   t('Dashboards background');
   t('Datasets background');
   t('Do you need to re-geocode? Press it if you need.');
+  t('EEZ');
   t('Geocode');
   t('Image dimensions must be 1000px x 400px or larger');
   t('Is it Thematic Landing Page?');
   t('Is it banner for Thematic Landing Page?');
   t('Link');
   t('Location');
+  t('Polygon');
   t('Show');
   t('Thematic Groups Home');
   t('Thematic Page');
   t('Thematic banner');
   t('Zoom');
+  t('country tag');
 
   return $field_instances;
 }
