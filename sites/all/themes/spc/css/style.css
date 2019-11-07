@@ -7777,7 +7777,9 @@ body {
   background-color: #f5f5f5;
   border-left: 3px solid #000000;
 }
-#header #main-menu .dropdown-menu .fp:before {
+#header #main-menu .dropdown-menu .fa:before,
+#header #main-menu .dropdown-menu .fp:before,
+#header #main-menu .dropdown-menu .with-icon .svg-inline--fa {
   position: absolute;
   font-size: 20px;
   color: #7B7B7B;
@@ -7785,7 +7787,9 @@ body {
   left: 15px;
   z-index: 1;
 }
-#header #main-menu .dropdown-menu .fp:hover:before {
+#header #main-menu .dropdown-menu .fa:hover:before,
+#header #main-menu .dropdown-menu .fp:hover:before,
+#header #main-menu .dropdown-menu .with-icon:hover .svg-inline--fa {
   color: #000;
 }
 .login-icon {
@@ -11975,4 +11979,3 @@ button.header-menu-btn:focus {
   font-weight: 300;
   font-style: normal;
 }
-/*# sourceMappingURL=style.css.map */
