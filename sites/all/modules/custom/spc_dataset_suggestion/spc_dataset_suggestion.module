@@ -26,8 +26,7 @@ function spc_dataset_suggestion_menu() {
 }
 
 function spc_dataset_suggestion_form_alter(&$form, &$form_state, $form_id){
-  //print $form_id;
-  if ($form_id == 'dataset_suggestion_node_form'){
+  if ($form_id == 'dataset_suggestion_node_form' && $form['#action'] == '/dataset-suggestions/add'){
     $form['#validate'][] = 'spc_dataset_suggestion_form_validate';
     $form['#submit'][] = 'spc_dataset_suggestion_form_submit';
   }
@@ -41,10 +40,8 @@ function spc_dataset_suggestion_form_validate(&$form, &$form_state){
 }
 
 function spc_dataset_suggestion_form_submit($form, &$form_state){
-  
   $node = new stdClass();
   $node->type = "dataset_suggestion";
-  $node->status = 1;
   $node->language = LANGUAGE_NONE; 
   
   node_object_prepare($node);
@@ -123,7 +120,7 @@ function spc_dataset_suggestion_content(){
   $output['messages'] = theme('status_messages');
   
   $output['tip']['title'] = 'Tip';
-  $output['tip']['text'] = 'Example copy: Use this form to let us know what the dataset you would like to make available, but first search the <a href="/dataset-suggestion">Dataset&nbspSuggestions</a> to see if someone else has already requested the same dataset. If you find it there, you can check on its status and add your request by clicking on the upvote button. ';
+  $output['tip']['text'] = 'Use this form to let us know what the dataset you would like to make available, but first search the <a href="/dataset-suggestions">Dataset&nbspSuggestions</a> to see if someone else has already requested the same dataset. If you find it there, you can check on its status and add your request by clicking on the upvote button. ';
   
   return $output;
 }
