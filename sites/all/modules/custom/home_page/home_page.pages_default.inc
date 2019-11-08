@@ -257,7 +257,7 @@ function home_page_default_page_manager_pages() {
   $pane->panel = 'one_fw_main';
   $pane->type = 'panels_mini';
   $pane->subtype = 'data_insights';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,

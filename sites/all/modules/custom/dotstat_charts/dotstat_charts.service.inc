@@ -84,12 +84,13 @@ class DotStatRequest {
    */
   public static function queryRaw($url) {
     try {
-      $response = drupal_http_request($url, [
+      $response = drupal_http_request(trim($url), [
         'headers' => [
           'Accept' => 'text/json',
           // 'If-Modified-Since' => gmdate(DATE_RFC1123, $last_fetched),
         ],
       ]);
+
       return $response->data;
     }
     catch (Exception $e) {
