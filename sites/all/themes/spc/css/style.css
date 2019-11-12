@@ -11956,6 +11956,12 @@ button.header-menu-btn:focus {
   .hl-dashboard-link .node-dashboards.view-mode-dashboard_highlight {
     flex-direction: initial;
   }
+  .dataset-suggestion-content .container .suggestion-form {
+    padding-right: 0;
+  }
+  .dataset-suggestion-content .container .suggestion-form form #edit-actions {
+    float: none;
+  }
 }
 @media (max-width: 569px) {
   #mini-panel-blog_preview .bean-article-on-home-page .field-items .field-item {
