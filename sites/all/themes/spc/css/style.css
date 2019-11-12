@@ -8917,6 +8917,8 @@ button.header-menu-btn:focus {
 }
 #ckan-search-form #autocomplete li {
   padding: 4px 7px;
+  white-space: initial;
+  word-break: break-word;
 }
 #ckan-search-form #autocomplete li:hover {
   background: #e5f5fc;
