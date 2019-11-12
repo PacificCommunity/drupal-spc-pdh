@@ -8905,6 +8905,25 @@ button.header-menu-btn:focus {
 }
 #ckan-search-form input.form-autocomplete {
   background-image: none;
+  outline: none;
+}
+#ckan-search-form #autocomplete {
+  border-radius: 25px;
+  border: solid 2px #dddddd;
+  padding: 22px;
+  background: #ffffff;
+  margin-top: 1px;
+  color: #333333;
+}
+#ckan-search-form #autocomplete li {
+  padding: 4px 7px;
+}
+#ckan-search-form #autocomplete li:hover {
+  background: #e5f5fc;
+  border-radius: 13px;
+}
+#ckan-search-form #autocomplete li:hover div {
+  color: #33333e;
 }
 #ckan-search-form > div:first-child {
   position: relative;
@@ -8927,8 +8946,12 @@ button.header-menu-btn:focus {
   height: 40px;
   width: 100%;
   border-radius: 20px;
-  border: none;
+  border: 2px solid white;
   padding: 0 28px;
+  transition: border-color 0.2s;
+}
+#ckan-search-form > div:first-child input:focus {
+  border: 2px solid #006ed6;
 }
 #ckan-search-form > div:first-child input[type='text'] {
   font-size: 15px;

@@ -107,6 +107,25 @@
     margin: 0 auto;
     input.form-autocomplete {
       background-image: none;
+      outline: none;
+    }
+    #autocomplete {
+        border-radius: 25px;
+        border: solid 2px #dddddd;
+        padding: 22px;
+        background: #ffffff;
+        margin-top: 1px;
+        color: #333333;
+        li {
+          padding: 4px 7px;
+          &:hover {
+            background: #e5f5fc;
+            border-radius: 13px;
+            div {
+              color: #33333e;
+            }
+          }
+        }
     }
     &>div:first-child {
         position: relative;
@@ -123,8 +142,12 @@
             height: 40px;
             width: 100%;
             border-radius: 20px;
-            border: none;
+            border: 2px solid white;
             padding: 0 28px;
+            transition: border-color .2s;
+            &:focus {
+              border: 2px solid #006ed6;
+            }
             &[type='text'] {
                 font-size: 15px;
                 box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.16);
@@ -189,7 +212,7 @@
                         font-size: 30px;
                         color:#fff;
                     }
-                    
+
                 }
                 h4 {
                     margin-top: 12px;
@@ -403,7 +426,7 @@
     max-width: 1440px;
     padding: 25px 40px 0;
     margin: 0 auto;
-    
+
     .stories-list:before {
         content: '';
         width: 635px;
