@@ -448,5 +448,14 @@ function general_modules_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'bypass advanced aggregation'.
+  $permissions['bypass advanced aggregation'] = array(
+    'name' => 'bypass advanced aggregation',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'advagg',
+  );
+
   return $permissions;
 }
