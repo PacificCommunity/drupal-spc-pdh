@@ -148,11 +148,11 @@ function ckan_discovery_autocomplete($area, $q) {
   if (!$resp->valid) {
     watchdog(
       'ckan_tweaks',
-      'Cannot autocomplete query <%query>: %status',
-      ['%status' => $resp->status, '%query' => $q],
+      'Cannot autocomplete query <%query>(%url): %status',
+      ['%status' => $resp->status, '%query' => $q, '%url' => $resp->url],
       WATCHDOG_WARNING
     );
-    return [];
+    return drupal_json_output([]);
   }
   $result = [];
   foreach ($resp->data as $item) {
