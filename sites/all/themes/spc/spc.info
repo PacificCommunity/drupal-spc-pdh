@@ -47,6 +47,7 @@ stylesheets[all][] = css/accordion.css
 stylesheets[all][] = css/chosen.min.css
 stylesheets[all][] = css/social-share.css
 
+stylesheets[all][] = css/v4-shims.css
 ;-------------- CSS FOAD -------------
 ;stylesheets[all][] = donteverloadmeagain.css
 stylesheets[all][] = mothership-layout.css
