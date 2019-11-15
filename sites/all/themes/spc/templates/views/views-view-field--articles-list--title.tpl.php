@@ -23,17 +23,19 @@
  */
 ?>
 
-<?php 
-	$url = 'node/' . $row->nid;
-	$options = array(
-		'html' => TRUE
-	);
-	if (!empty($row->field_field_syndicated_id[0]['raw']['value'])) {
-		$syndicated_base_url = variable_get('syndicated_base_url');
-		if (!empty($syndicated_base_url)) {
-			$url = $syndicated_base_url . '/node/' . $row->field_field_syndicated_id[0]['raw']['value'];
-			$options['attributes']['target'] = '_blank';
+<?php
+	if (isset($row->nid)) {
+		$url = 'node/' . $row->nid;
+		$options = array(
+			'html' => TRUE
+		);
+		if (!empty($row->field_field_syndicated_id[0]['raw']['value'])) {
+			$syndicated_base_url = variable_get('syndicated_base_url');
+			if (!empty($syndicated_base_url)) {
+				$url = $syndicated_base_url . '/node/' . $row->field_field_syndicated_id[0]['raw']['value'];
+				$options['attributes']['target'] = '_blank';
+			}
 		}
+		print l($output, $url, $options);
 	}
 ?>
-<?php print l($output, $url, $options); ?>
